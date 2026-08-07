@@ -1,0 +1,8 @@
+batch,completed_summary_count,csv_file_count,k_protocol_records_seen,label_flag_records_seen,notes,raw_completed_row_count,result_root,source_hash_records_seen,status,summary_dataset_adhoc_count,summary_file_count,unique_datasets_seen,unique_seeds_seen,unique_variants_seen,version
+v9_paper_preprocess,72,1,72,72,Check label flag before promoting to a paper table.,24,result/v9_results_2026-08-02_paper_preprocess,72,usable_with_review,0,72,24,3,1,V9
+v9_advantage_ablation,105,1,21,21,Use CSV/run_record identity when summary.json says adhoc.,84,result/v9_results_2026-08-02_advantage_ablation,105,metadata_gap,84,105,8,3,6,V9
+v12_advantage,144,1,0,0,Use CSV/run_record identity when summary.json says adhoc.,144,result/v12_results_2026-08-03_advantage,144,metadata_gap,144,144,13,3,6,V12
+v11_minimum_5x3,30,3,30,0,Check label flag before promoting to a paper table.,30,result/V11/topogate_v11_minimum_5x3,30,metadata_gap,0,30,5,3,3,V11
+static_gate_legacy_table,0,1,0,0,Check label flag before promoting to a paper table.,120,result/ablation,0,metadata_gap,0,0,15,1,8,StaticGate
+v13_advantage,72,1,72,0,Check label flag before promoting to a paper table.,72,result/v13_results_2026-08-03_advantage,144,metadata_gap,0,72,12,3,3,V13
+v14_advantage_5ds,30,1,30,0,Check label flag before promoting to a paper table.,30,result/v14_results_2026-08-03_advantage_5ds,60,metadata_gap,0,30,5,3,3,V14

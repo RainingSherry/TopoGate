@@ -1,15 +1,29 @@
 # TopoGate 实验结果汇总（事实表）
 
-**最后更新**：2026-08-07 (V16.1 expanded-count search-limit closure; hrvatin completed; Norman Stage-0 incomplete)
+**最后更新**：2026-08-07 (V17-reference implemented without performance evidence; V16.1 search closed)
 **目的**：消除 static_gate/learnable_gate、K 错误、MAE freeze 概念混淆，便于后续 multi-seed 验证对照
 
 > **存储与证据声明（2026-08-03）**：本文件位于项目结果软链接
-> `source-repository/result`，实际目标为 `external-result-storage/result`。
+> `source-repository/result`，实际目标为 `external-storage/result`。
 > 本事实表中的项目根路径统一写作 `result/...`；同一结果盘内的相对路径可省略
 > `result/`。本轮已清理 `learnable_gate_smoke`、V6/V7/HVF smoke、AHDPC
-> verified smoke、V10/V11 iris smoke 以及 `/tmp` 中明确的 V11 semantic
+> verified smoke、V10/V11 iris smoke 以及 `unpublished-temp` 中明确的 V11 semantic
 > 临时产物。旧条目若仍保留这些路径，只代表历史工程记录，不再是当前可复核的
 > 权威产物；正式结论只能引用仍存在的 `summary.json`、CSV、数组和配置。
+
+## 2026-08-07 V17 topology-native reference implementation（无性能证据）
+
+V17 独立 reference solver 已实现于 `methods/TopoGate/V17_topology_native/`，入口为
+`scripts/V17/run_reference.py`。当前闭环为 sparse-safe input adapter、多 sparse
+random projection candidate union、candidate-restricted group-Huber elastic sparse
+self-expression、exact-zero `C` gate、`A=|C|+|C.T|` 和 normalized spectral readout。
+`fit_topology` 不接收标签或 `K`；degree-zero 节点显式 abstain，不通过第二个 latent
+聚类器补分区。
+
+工程验证：compileall 通过，focused tests `11 passed`，模块与脚本入口 `--help` 均通过。
+本轮没有运行真实数据、single-seed smoke 或 benchmark，因此本节不报告 ARI/NMI/AMI，
+也不能据此称 V17 有效或优于任一 V 系列/外部方法。spectral feedback 与 learnable
+unrolling 尚未实现，当前版本固定标记为 `V17-reference`。
 
 ## 2026-08-07 V16.1 expanded-count continuation（固定协议）
 
@@ -126,7 +140,7 @@ encoding 无法恢复标记 `theory_domain_not_supported`。以上 exploratory �
 
 扩展策略只把维度、零比例、行 nnz 和空行作为分层指标；count 语义、CSR/分块读取、
 held-out split 和行数一致性仍是硬条件。`scripts/V16_1/count_candidate_registry.json`
-登记本地 scCluBench scRNA H5 源，转换及静态审计暂存于 `/tmp`。新增候选中
+登记本地 scCluBench scRNA H5 源，转换及静态审计暂存于 `unpublished-temp`。新增候选中
 `Melanoma_5K`（recurrence `0.8439`，正支持行 `3.8777%`）和 `Guo`（`0.5195`，
 `1.2327%`）最值得进入后续固定 Stage-1；`Limb_Muscle` 与 `worm_neuron_cell`
 的 support 为负，仍不做性能判定。`Bach`、`Macosko`、`Shekhar`、`Tosches` 已完成
@@ -198,7 +212,7 @@ EMA cluster-frequency correction 和 sampled-zero reconstruction。
 当前源码工程验证：`compileall` 通过；
 V15 focused 回归测试 → **48 passed**（后续只保留与 readout/utility 语义直接
 相关的测试）。
-cnae9 真实 NPZ smoke 和 Stage-1 engineering panel 产物暂存 `/tmp`，未作为正式
+cnae9 真实 NPZ smoke 和 Stage-1 engineering panel 产物暂存 `unpublished-temp`，未作为正式
 benchmark 结果写入事实表：当前源码 v2 panel 为六个代表集加受控 2D/noisy 集、
 2 epochs、单 seed，7/7 完成；真实集 utility AUROC 达标 2/6，candidate
 recall 中位数约 0.70，受控边界/低密度/离群 null-AUROC 均为 0.5。
@@ -449,7 +463,7 @@ neighbour latent alignment；runner 不调用 `make_pseudo_batch`，并记录实
 
 工程对照（seed=42、CPU、single-seed、缩短或诊断性训练）曾得到：flame 8 epoch
 full/NoMix ARI=`0.377868/0.388210`，flame 80 epoch=`0.357486/0.206987`；
-enron 8 epoch=`0.885082/0.890737`。这些运行的数组和 summary 均写入 `/tmp`
+enron 8 epoch=`0.885082/0.890737`。这些运行的数组和 summary 均写入 `unpublished-temp`
 后清理，不能作为论文性能结论；正式判断仍需至少五个数据集、seeds
 `[42,123,7]` 和预注册配对控制。
 
@@ -520,7 +534,7 @@ persistence，并将 bounded、detached prior 映射到 V11 当前候选边。�
 `h0_mst`、`fixed_filtration` 和 `random` 对照模式。
 
 工程验证：`compileall` 通过；V11 回归测试 `19 passed`；iris CPU 3-epoch
-TDA smoke 成功写入 graph/history 诊断后清理了 `/tmp` 临时输出。该 smoke 只证明
+TDA smoke 成功写入 graph/history 诊断后清理了 `unpublished-temp` 临时输出。该 smoke 只证明
 实现和产物契约，**没有**形成持久化性能 CSV，也不能支持 TDA 的 ARI/NMI 结论。
 完整数学说明和正式比较结果见
 `result/analysis/topogate_v11_tda_h0_pilot_2026-08-03.md`；下方正式五数据集条目

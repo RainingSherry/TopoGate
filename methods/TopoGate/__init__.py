@@ -18,6 +18,7 @@ _MODULE_EXPORTS = {
     "v10_reliable_graph": "methods.TopoGate.v10_reliable_graph",
     "V11": "methods.TopoGate.V11",
     "V12_latent_topology": "methods.TopoGate.V12_latent_topology",
+    "V17_topology_native": "methods.TopoGate.V17_topology_native",
 }
 
 _ATTRIBUTE_EXPORTS = {

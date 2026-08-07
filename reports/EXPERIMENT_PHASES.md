@@ -66,7 +66,7 @@ readout 均不改变；当前仅部分 clean seed 已落盘，仍不能据此写
 `Arabidopsis_Stereo_seq_leaf` count 源。Shekhar/Paul15 support 全负；Tosches、HCA 和
 Arabidopsis support 非退化，已分别把 Tosches/HCA 放入 GPU4/GPU5 的固定 paired 测试，
 Arabidopsis 的三 seed clean/compound 已完成但为 `empirical_not_supported`。Tabula 的
-clean 三 seed已完成，compound 仍在运行；所有新输出仍暂存 `/tmp`，未写入正例表。
+clean 三 seed已完成，compound 仍在运行；所有新输出仍暂存 `unpublished-temp`，未写入正例表。
 
 扩展输入策略已登记 10 个本地 H5AD 原始 count 源并生成 CSR bundle。固定 Stage-0
 完成 9 个新增源的无标签审计；`Human_Pancreas_1`、`Bone_Marrow`、`Blood_BoneMarrow`
@@ -392,3 +392,30 @@ V1--V16 中长期通过弱 pseudo branch 耦合，造成目标错位、自证循
    不能直接因为其名称含 graph/neighborhood 就视为目标一致。
 
 该段是研究计划和停止规则，不构成新模型或性能结果。
+
+---
+
+## V17 topology-native reference phase（2026-08-07）
+
+V17 已建立独立 code path，但当前阶段只完成机制 reference solver，不启动真实数据
+benchmark。唯一主变量为 candidate-restricted sparse relation `C`：其支持集是 gate，
+`A=|C|+|C.T|` 是唯一 affinity，normalized spectral readout 是唯一输出。scMAE、EMA
+teacher、predictive utility/support、forced Top-k、独立 gate probability 和 encoder
+latent KMeans 均不在该路径中。
+
+当前阶段已完成：
+
+1. sparse-safe input adapter 与多个 sparse random projection 视图；
+2. blockwise multi-projection candidate union，不物化完整 `n x n` 距离矩阵；
+3. group-Huber + elastic sparse self-expression 与 exact-zero proximal gate；
+4. same-`C` affinity、谱读出、degree-zero abstention 和标签/K 隔离产物契约；
+5. compileall、两个 runner `--help` 和 `11` 个 focused tests。
+
+进入最小真实机制验证前必须保持固定顺序：先只读检查 Campbell、
+`hrvatin_geo_maintype_counts`、Mouse_retina、enron 和一个 count/text 数据的输入语义；
+随后只比较 candidate affinity、single-view self-expression、shuffled candidate/C 和
+V17-reference。若 `C` 大面积全零、门控后图纯度不升或同一 affinity 的谱输出不改善，
+立即停止 unrolling/encoder 开发；不得通过新增 utility 或逐数据集调 gate 挽救。
+
+当前未实现的 spectral feedback 与 learnable unfolded layers 是后续条件项，不属于已经
+完成的 V17，也没有任何 V17 性能结论。

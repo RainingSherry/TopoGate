@@ -32,7 +32,7 @@ shuffled support 未形成预注册机制收益。因此状态固定为 `empiric
 记录论文的重大变动、思路演变、改动灵感，用于保持论文叙事统一性。
 
 > 存储说明（2026-08-03）：本文保留历史实验叙述。凡标注为 smoke、临时或
-> `/tmp` 的旧路径，若未在当前 `result/` 目标中核验，不得视为当前产物；正式
+> `unpublished-temp` 的旧路径，若未在当前 `result/` 目标中核验，不得视为当前产物；正式
 > 结果使用项目根路径 `result/...`，并遵守根目录不堆积结果的规则。
 
 ## 2026-08-07 V16.1 去重汇总更新
@@ -199,7 +199,7 @@ sparsemax gate。已转换并完成部分静态审计的候选包括 `Bach`、`G
 `Young` Stage-1 clean/stress 仅有 clean `+0.00259` 且 stress 无保留；`Bach` 的固定三
 seed Stage-1 在 1800 秒窗口未完成。`Wang` 的非整数值检查失败，记录为理论域外；
 新增候选没有因单 seed 或固定图表现自动晋级。
-Stage-0 临时产物在 `/tmp`，正式 Stage-1 仍等待可用 GPU，未使用 CPU 代替。
+Stage-0 临时产物在 `unpublished-temp`，正式 Stage-1 仍等待可用 GPU，未使用 CPU 代替。
 
 ## 2026-08-06 V16 Stage-0/1：锚点机制未通过晋级条件
 
@@ -671,7 +671,7 @@ V9 的论文匹配协议结果显示，相对 AHDPC 的正差值仅出现在 `sp
 
 - `pytest -q methods/TopoGate/V11/tests/test_v11.py`：**6 passed**。覆盖 edge/null/cluster 非零有限梯度、EMA 数值更新与 stop-gradient、概率归一化、动态图不读标签、duplicate/tie kNN 按 node id 去 self、V9 freeze manifest、真实 iris NPZ CPU smoke，以及严格 NoMix 不构图且 gate 恒为 0。
 - 历史 V11 smoke：`result/V11/smoke/iris__V11__seed42/` 已清理；真实 iris、CPU、seed=42、3 epochs 的历史记录显示动态图刷新 2 次，最终 gate/target gate=0.214/0.142，head ARI=0.6129。该数值只验证链路，禁止作性能结论。
-- 探索性 iris 80-epoch 3-seed 诊断（产物位于 `/tmp`）显示 V11 full head ARI `0.6738 ± 0.0165`，V11 NoMix `0.6840 ± 0.0244`；full 暂低 `0.0102`。这不是跨数据集结论，但明确说明当前 V11 尚未达到投稿 go 条件，必须先完成预注册的多数据集消融并继续调查 topology 对 iris 的净负贡献。
+- 探索性 iris 80-epoch 3-seed 诊断（产物位于 `unpublished-temp`）显示 V11 full head ARI `0.6738 ± 0.0165`，V11 NoMix `0.6840 ± 0.0244`；full 暂低 `0.0102`。这不是跨数据集结论，但明确说明当前 V11 尚未达到投稿 go 条件，必须先完成预注册的多数据集消融并继续调查 topology 对 iris 的净负贡献。
 
 ## 2026-07-30 TopoGate V10 Reliable-Graph 核心重构（已实现）
 
@@ -764,18 +764,18 @@ knn_pca_dim: 200      # adaptive 模式上限
 
 ## 2026-07-28 环境配置
 
-- **LaTeX 编译器路径**: `external-storage/texlive`
+- **LaTeX 编译器路径**: `external-texlive`
 - **用途**: 论文编译
 - **后续 Agent 须知**: 此路径用于 `pdflatex`、`xelatex` 等编译命令
 
 ## 2026-07-27 Stage 1 sweep 恢复（134-dataset learnable_gate_sched 粗扫）
 
 **背景**：LearnableGate 在 134 个数据集上的 Stage 1 sweep（mr∈{0.3,0.4}, k∈{5,10}, gate_max=0.15, ep=80, seed=42）原计划 3 worker 并行执行。前两轮启动均因以下原因中断：
-- 第一轮：磁盘满（`/` 100%）—— `/tmp` 累积 13GB × 多个 npz 临时文件（`tempfile.NamedTemporaryFile` 默认路径）
+- 第一轮：磁盘满（`/` 100%）—— `unpublished-temp` 累积 13GB × 多个 npz 临时文件（`tempfile.NamedTemporaryFile` 默认路径）
 - 第二轮：CUDA OOM —— 多 worker 共用同一 GPU 导致抢资源（worker 0/1/2 各自指定 `[0,1,2]`, `[1,3,6]`, `[2,7,3]`，但实际每 worker 通过 `args.gpu_ids[worker_id % len(...)]` 只取一个 GPU——经排查，单 worker 也无法独占）
 
 **修复方案**：
-1. **磁盘**：设置 `TMPDIR=external-result-storage/tmp`（/data 1.6TB 空间），让 `tempfile.NamedTemporaryFile` 写到 /data
+1. **磁盘**：设置 `TMPDIR=external-storageunpublished-temp`（/data 1.6TB 空间），让 `tempfile.NamedTemporaryFile` 写到 /data
 2. **GPU 隔离**：每个 worker 指定单一 GPU（`--gpu_ids 1` / `--gpu_ids 7` / `--gpu_ids 0`），`--num_workers 3` 让 3 个 worker shard job list
 3. **任务分阶段**：先跑 small（<5000 samples, 95 个数据集 × 4 configs = 380 任务），再分批跑 medium/large
 4. **代码改动**：在 `run_learnable_gate_134_sweep.py` 增加 `DATASET_CSV` 环境变量支持，让 `run_small_only.py` 用 filtered CSV 启动 worker
@@ -1156,7 +1156,7 @@ class LearnableGate(nn.Module):
 
 **背景**：基于消融数据真实信号（StaticGate 的 4 个 β 完全不参与梯度），实施 v2 LearnableGate 改造：将 4 个 β 从 argparse 默认值改为 `torch.nn.Parameter`，并加入 warmup+ramp 调度防止训练初期拓扑干扰。
 
-**v2 改造设计**（参考 plan `local-config/plans/learnable_gate_sched_learnable_gate_feec891b.plan.md`）：
+**v2 改造设计**（参考 plan `external-home/.cursor/plans/learnable_gate_sched_learnable_gate_feec891b.plan.md`）：
 
 | 关键决策 | 选择 | 理由 |
 |----------|------|------|
@@ -1361,9 +1361,9 @@ class LearnableGate(nn.Module):
 **背景**：首次将 CLUBench 项目的 10 个样本数据集纳入 ToPoGate 项目统一管理，并规范项目目录结构。
 
 **变更内容**：
-- 将 `source-repository/baseline/CLUBench/CLUBench/datasets/` 下 10 个 `.npz` 样本数据集移动到 `external-result-storage/datasets/`
-- 创建软链接 `source-repository/datasets` -> `external-result-storage/datasets`
-- 删除 `external-result-storage/datasets` 旧内容（无关 git 仓库，已备份为 `datasets_backup_20260723_234557.tar.gz`）
+- 将 `source-repository/baseline/CLUBench/CLUBench/datasets/` 下 10 个 `.npz` 样本数据集移动到 `external-storage/datasets/`
+- 创建软链接 `source-repository/datasets` -> `external-storage/datasets`
+- 删除 `external-storage/datasets` 旧内容（无关 git 仓库，已备份为 `datasets_backup_20260723_234557.tar.gz`）
 - 创建三个维护文档：`CHANGELOG.md`、`CHANGELOG_data.md`、`CHANGELOG_errors.md`
 
 **灵感来源**：遵循 `.cursor/rules/project-structure.mdc` 关于输入数据软链接规范。
@@ -1390,7 +1390,7 @@ class LearnableGate(nn.Module):
 **变更内容**：
 - 弃用 `huggingface_hub` 库（mirror redirect 失败）和 `curl`（2MB/s 太慢）
 - 改用 hf-mirror 官方 `hfd.sh` 工具（aria2c 内核，~26MB/s，**自动断点续传**）
-- 解压后 131 npz 全部平铺到 `external-result-storage/datasets/`
+- 解压后 131 npz 全部平铺到 `external-storage/datasets/`
 - 软链接 `baseline/CLUBench/CLUBench/datasets` 自动可见（已验证 OK 131/131）
 
 **灵感来源**：
@@ -2333,6 +2333,29 @@ readout。污染图概率混合模型列为理论备选，普通图对比聚类�
 
 V1--V16.1 的综合结果不支持继续在 scMAE / V15 / V16 上堆叠 utility、teacher、可靠性系数或 gate 形式。V16.1 固定 expanded-count 协议约 35 个候选没有形成 `candidate_positive`；特别是 `hrvatin_geo_maintype_counts` 的高 candidate purity/recall、fixed-graph 强增益和 predictive support 全负同时出现，否定了“单 donor predictive support 可代理 topology 聚类收益”的核心假设。
 
-下一阶段不创建 V16.2。拟议 V17 的唯一统一对象是稀疏关系矩阵 `C`：`C` 的精确零支持为 edge gate，`A=|C|+|C^T|` 为 affinity，最终 partition 直接读取该 `A`。scMAE 从默认主干降为历史对照/可选初始化；ZEUS 保持 frozen external baseline 或 controlled representation diagnostic，不作为默认前置 encoder。详细理论、文献和最小实施顺序见 `papers/参考资料/TopoGate_V17_统一目标与ZEUS评估_2026-08-07.md`。
+下一阶段不创建 V16.2。拟议 V17 的唯一统一对象是稀疏关系矩阵 `C`：`C` 的精确零支持为 edge gate，`A=|C|+|C^T|` 为 affinity，最终 partition 直接读取该 `A`。scMAE 从默认主干降为历史对照/可选初始化；ZEUS 保持 frozen external baseline 或 controlled representation diagnostic，不作为默认前置 encoder。详细理论、文献和最小实施顺序见 `analysis/V17_design_and_ZEUS_assessment_2026-08-07.md`。
 
 这是一项研究定位更新，不是算法实现或性能结论；未修改 V1--V16.1、外部 baseline 或既有结果。
+
+## 2026-08-07 V17 topology-native reference solver 落地
+
+新增独立目录 `methods/TopoGate/V17_topology_native/` 与 `scripts/V17/`，未修改
+V1--V16.1 或外部 baseline。第一版实现的是非深度 reference solver，用来先验证
+统一关系命题，而不是直接把标准 SSC/DSC 包装成论文主方法：
+
+- count、非负连续和一般连续输入经 sparse-safe 语义适配与行归一化；
+- 多个固定 sparse random projection 视图分别构造 blockwise cosine 小候选集，
+  union 只限定可计算支持集，不强制使用任何边；
+- 共享鲁棒稀疏自表达系数 `C` 由 group-Huber residual、`L1` proximal gate 和轻量
+  `L2` 组成，严格满足 `diag(C)=0` 与 `supp(C) subset E0`；
+- `C` 的精确零就是 edge rejection，唯一 affinity 为 `A=|C|+|C.T|`，最终输出只
+  读取该 `A` 的 normalized spectral embedding；degree-zero 样本显式输出 `-1`
+  abstention，不回退到第二个 feature-space 聚类器；
+- `fit_topology(X, config)` 不接收 `K` 或标签，`K` 只进入 `readout_topology`，标签
+  只用于后验 benchmark 指标。
+
+当前未实现 spectral feedback `Tr(F^T L(A(C))F)` 或可学习展开层；它们只有在
+reference solver 证明 candidate recall、非退化 `C`、门控纯度和 same-`C` 输出四项
+均有信号后才进入下一阶段。静态验证为 compileall 通过、focused tests `11 passed`，
+两个 CLI 入口 `--help` 均通过。本轮未运行任何真实数据实验，没有 V17 性能结论，
+也未重复计算 SHA256 或其他哈希。

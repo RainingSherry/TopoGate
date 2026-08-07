@@ -1,0 +1,16 @@
+seed: 42
+input_mode: auto
+projection_views: 3
+projection_dim: 128
+projection_density: auto
+candidate_k: 20
+candidate_union_k: 40
+candidate_block_size: 128
+lambda_l1: 0.02
+lambda_l2: 0.001
+lambda_outlier: 0.25
+solver_max_iter: 300
+solver_tol: 0.00001
+coefficient_epsilon: 0.00000001
+spectral_n_init: 20
+degree_epsilon: 0.000000000001

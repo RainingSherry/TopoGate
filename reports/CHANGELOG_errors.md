@@ -24,7 +24,7 @@
 |---|---|---|
 | 补跑 `Blood_BoneMarrow` clean 缺失 seeds 时在 Adam 状态初始化阶段发生 CUDA OOM | GPU1 同时运行外部 `llama-server`，约 43.6 GiB 已被占用，剩余显存不足以分配约 14.1 GiB optimizer state | 该进程在产生性能 summary 前退出，不计为模型性能失败；待 GPU3--6 中任一 V16.1 任务完成后，在空闲卡按相同固定配置补跑，不修改 batch、decoder 或 gate |
 
-验证：保留运行日志 `external-result-storage/result/V16_1/expanded_count_stage1_20260807/blood_bonemarrow_logs/clean_missing.log`；没有重算任何 SHA256 或其他哈希。
+验证：保留运行日志 `external-storage/result/V16_1/expanded_count_stage1_20260807/blood_bonemarrow_logs/clean_missing.log`；没有重算任何 SHA256 或其他哈希。
 
 ### [2026-08-07 V16.1 duplicate Stage-1 continuation stopped]
 
@@ -74,7 +74,7 @@
 |---|---|---|
 | 将关闭 pseudo branch 的 V9 NoMix 直接称作独立 scMAE 原版 | NoMix 仍初始化 learned gate/graph；独立 scMAE runner 还有不同的数据加载与预处理协议 | 注册单独 `scmae` 变体（`gate_mode=none`、`mix_mode=none`、`pseudo_weight=0`），并在报告中限定为 V9-compatible vanilla scMAE task baseline；不改变 Full/NoMix 主估计量 |
 | 把 3-seed confirmation 的正差写成稳定机制收益 | `ahdpc_prepared__2d_4c_no4` 等数据集存在 seed 方向翻转，且总体 CI 跨 0 | 216/216 runs 完成后固定报告 Full-scMAE：mean `-0.000455`、median `+0.004032`、95% CI `[-0.020967,+0.014298]`；不启动额外搜索或把候选包装成 5-seed confirmed positive |
-| 无法把临时汇总写入正式结果盘 | `source-repository/result` 指向当前只读的 `external-result-storage/result` | 保留完整临时产物及路径 `unpublished-temp/v9_regime_20260806_scmae_confirmation_summary/`；未伪造 `result/RESULTS_SUMMARY.md` 条目 |
+| 无法把临时汇总写入正式结果盘 | `source-repository/result` 指向当前只读的 `external-storage/result` | 保留完整临时产物及路径 `unpublished-temp/v9_regime_20260806_scmae_confirmation_summary/`；未伪造 `result/RESULTS_SUMMARY.md` 条目 |
 
 验证：`python -m compileall -q scripts/v9_regime methods/TopoGate/learnable_gate`；
 `PYTHONPATH=. pytest -q tests/v9_regime`；Full/scMAE confirmation 的 216 条记录均为
@@ -162,7 +162,7 @@ V1--V16、baseline 或历史结果。
 | 将低 epoch 单 seed panel 当作 Stage-1 通过证据 | panel 采用 2 epochs、CPU、engineering 配置，只验证运行链路和诊断是否可计算 | 当前源码重跑 7/7 runs 完成，证据为 `unpublished-temp/v15_stage1_panel_v2`；6 个真实集 utility AUROC 达标 2/6，candidate recall 中位数约 0.70，仍不能进入正式多数据集矩阵 |
 | 受控 2D/noisy 集的边界、低密度和离群拒绝被误读为模型能力 | 当前 gate 没有针对这些标签的监督，panel 中三类 null-AUROC 均为 0.5 | 记录为可证伪的机制失败边界；V15 不宣称 outlier detector，正式 Stage-1 需先改善或接受 no-go |
 | 只用单个污染比例推断 null abstention 的鲁棒性 | graph pollution 是连续压力轴，单点不能证明单调关系 | 当前源码 cnae9 的 replacement fraction 0/0.5/1.0 工程梯度得到 null mass 0.885/0.884/1.000：端点上升但中间点略降，不能宣称严格单调；不替代六集门槛 |
-| 计划要求的 Stage-0/1 run 产物不能写入当前结果盘 | `source-repository/result` 指向 `external-result-storage/result`，训练产物目录在本环境不可写（事实表 Markdown 后续可更新） | Stage-0/1 run 产物暂存 `/tmp`；`result/RESULTS_SUMMARY.md` 只记录 restricted no-go 边界，未伪造正式 run，Stage-3 未启动 |
+| 计划要求的 Stage-0/1 run 产物不能写入当前结果盘 | `source-repository/result` 指向 `external-storage/result`，训练产物目录在本环境不可写（事实表 Markdown 后续可更新） | Stage-0/1 run 产物暂存 `unpublished-temp`；`result/RESULTS_SUMMARY.md` 只记录 restricted no-go 边界，未伪造正式 run，Stage-3 未启动 |
 
 ### [2026-08-04 V12 edge-rank stage-2 修复与多数据集验证边界]
 
@@ -236,7 +236,7 @@ entropy / 多视图一致性）。详细报告见
 
 | 错误/风险 | 原因 | 纠正与当前状态 |
 |---|---|---|
-| 为核验新默认输出路径执行 `scripts/V12/run_stage1.py --dry-run` 时，写入 `command.json` 返回 `OSError: [Errno 30] Read-only file system` | `result/` 仍指向 `external-result-storage/result`，当前挂载对该正式结果目标不可写；不是训练、模型或配置错误 | 核对确认当前 warmup-fixed 目录仍有 30 个 `summary.json`，已有 `command.json`/预测/配置文件未被覆盖；后续等价 dry-run 改写到 `/tmp`，正式结果目录保持不动 |
+| 为核验新默认输出路径执行 `scripts/V12/run_stage1.py --dry-run` 时，写入 `command.json` 返回 `OSError: [Errno 30] Read-only file system` | `result/` 仍指向 `external-storage/result`，当前挂载对该正式结果目标不可写；不是训练、模型或配置错误 | 核对确认当前 warmup-fixed 目录仍有 30 个 `summary.json`，已有 `command.json`/预测/配置文件未被覆盖；后续等价 dry-run 改写到 `unpublished-temp`，正式结果目录保持不动 |
 
 **复现**：`python scripts/V12/run_stage1.py --dry-run --max-parallel 1`（默认 warmup-fixed 结果路径）。
 
@@ -265,7 +265,7 @@ entropy / 多视图一致性）。详细报告见
 | 正式 V12 launcher 第一次只生成空 run.log | 工具调用误设 `timeout_ms=1000`，runner 在第一个 batch 启动前被终止 | 核对确认没有残留训练进程；用 3600 秒调用时限重新启动，最终 30/30 completed、0 errors，空目录未纳入汇总 |
 | self/null 没有形成逐边选择 | self mass 分支可学习，但 conditional edge entropy 在 30-run 批次约等于 `log(5)`，edge 权重近似均匀 | 将其记录为当前机制的失败边界；保留 `edge_only`、self/null 和 NoMix 可回退配置，不把 gate 活跃误写成拓扑收益 |
 | lambda=0.03/0.1 在 enron 出现 seed-sensitive collapse | latent topology consistency 在当前 MSE、固定图和 20/10 schedule 下后期扰动表示几何；lambda=0.01 才保持均值 ARI 在 0.03 边界内 | 暂停第二阶段五数据集扩展；详细配对差值、loss、self mass 和 entropy 见 `result/analysis/V12_self_null_stage1_2026-08-03.md` |
-| 汇总器第一次无法写入正式目录 | 默认沙箱对 `external-result-storage/result` 软链接目标返回 read-only；不是模型或数据失败 | 在授权 host execution 下重跑汇总，`runs.csv`、`summary_by_dataset.csv`、`summary_by_variant.csv`、`paired_deltas.csv`、`report.md` 和 `coverage.json` 均已生成 |
+| 汇总器第一次无法写入正式目录 | 默认沙箱对 `external-storage/result` 软链接目标返回 read-only；不是模型或数据失败 | 在授权 host execution 下重跑汇总，`runs.csv`、`summary_by_dataset.csv`、`summary_by_variant.csv`、`paired_deltas.csv`、`report.md` 和 `coverage.json` 均已生成 |
 | LearnableGate 初版补丁使用不存在的 Tensor `concat` 方法 | 代码编辑阶段 API 拼写错误，compile 前发现 | 改为 `torch.cat`，compileall、7 个 V12 tests 和 smoke 通过；未进入正式运行 |
 
 ### [2026-08-03 V12 性能骤降的同协议根因诊断]
@@ -296,8 +296,8 @@ entropy / 多视图一致性）。详细报告见
 |---|---|---|
 | V9 的节点级门控、输入空间伪混合和 NumPy 采样不适合作为新拓扑对齐主路径 | `build_gate_stats_tensor` 在 legacy V9 中把 `(N,K)` mutual/SNN 压成节点均值，`make_pseudo_batch*` 在 NumPy 中构造邻居均值；继续直接修改 V9 会破坏可回退对照 | 新建独立 `methods/TopoGate/V12_latent_topology/`，V9/V10/V11 既有路径未改；新 gate 保留 `[N,K,4]` Torch edge features，训练中用 Torch gather + softmax weighted sum |
 | 直接对完整 `reliable_neighbor_mean` 使用 `.detach()` 会切断 edge-gate 梯度 | 拓扑目标需要阻止邻居 encoder 被当前 batch 反向拖动，但 gate 仍应根据对齐损失学习 | `topology_alignment_loss` 只 detach `z_neighbors`，保留 `edge_weights` 计算图；V12 单测和实际 runner 均核验 gate 梯度非零 |
-| 短 smoke 被误读为性能结论 | `flame`/`enron` 运行采用单 seed、缩短 epoch，且 K 由 benchmark 标签仅用于后验指标 | 全部 smoke 写入 `/tmp`；`flame` 8 epoch full/NoMix ARI=`0.377868/0.388210`，80 epoch=`0.357486/0.206987`；`enron` 8 epoch=`0.885082/0.890737`。这些数值只证明工程链路和数据依赖，尚不足以支持多数据集多 seed 性能主张 |
-| 首次临时目录清理命令遍历 `/tmp` 时产生大量权限提示 | `find` 过滤条件未在遍历前 prune 其他系统临时目录 | 改用仅针对 `topogate_v12_*` 的目标清理；核验确认这些 V12 smoke 目录已不存在，未触碰其他临时目录 |
+| 短 smoke 被误读为性能结论 | `flame`/`enron` 运行采用单 seed、缩短 epoch，且 K 由 benchmark 标签仅用于后验指标 | 全部 smoke 写入 `unpublished-temp`；`flame` 8 epoch full/NoMix ARI=`0.377868/0.388210`，80 epoch=`0.357486/0.206987`；`enron` 8 epoch=`0.885082/0.890737`。这些数值只证明工程链路和数据依赖，尚不足以支持多数据集多 seed 性能主张 |
+| 首次临时目录清理命令遍历 `unpublished-temp` 时产生大量权限提示 | `find` 过滤条件未在遍历前 prune 其他系统临时目录 | 改用仅针对 `topogate_v12_*` 的目标清理；核验确认这些 V12 smoke 目录已不存在，未触碰其他临时目录 |
 
 **验证**：`python -m compileall -q methods/TopoGate/V12_latent_topology`；
 `python -m pytest -q methods/TopoGate/V12_latent_topology/tests` 得到 `3 passed`；
@@ -322,7 +322,7 @@ entropy / 多视图一致性）。详细报告见
 **验证**：`python -m compileall -q methods/TopoGate/V11 scripts/V11`；
 `PYTHONPATH=source-repository pytest -q methods/TopoGate/V11/tests/test_v11.py`
 得到 `20 passed`；iris CPU 3-epoch `h0_early_mst` engineering smoke 成功，
-摘要已核验后清理 `/tmp` 临时目录。该 smoke 不进入性能事实表。
+摘要已核验后清理 `unpublished-temp` 临时目录。该 smoke 不进入性能事实表。
 
 ### [2026-08-03 跨版本景观审计脚本首次运行接口错误]
 
@@ -337,7 +337,7 @@ entropy / 多视图一致性）。详细报告见
 | 将固定稀疏 kNN 图误称为完整 persistent homology 的风险 | 当前模型没有 dense VR complex、H1 boundary 或 persistence diagram；只有有限图统计 | 新实现明确限定为固定 raw-kNN 1-skeleton 上的精确 H0 union-find；代码、报告和 README 均标注不含 H1/dense VR |
 | TDA prior 可能泄漏标签或反向改变主模型 | prior 若从 y、学习 gate 或动态 latent 生成，会破坏无标签和可解释边界 | raw skeleton、filtration metric、scale 在训练前固定；prior 为 NumPy detached 数组，只进入现有 graph-prior score；默认 mode=none、weight=0 |
 | H0 prior 单独接入后缺少可比较控制 | 额外 prior 的收益可能只是随机扰动或距离项，而非 persistence | 注册 `h0_mst`、`fixed_filtration`、`random` 三种模式；本条目写入时正式实验尚未运行，后续 75/75 正式批次见下方“正式批次 runner 与审计”，不能宣称性能增益 |
-| TDA smoke 输出可能违反结果目录规则 | 短 smoke 若长期写入结果盘会污染事实表 | smoke 只写 `/tmp`，完成后用目标目录 `find -depth -delete` 清理；持久化只保留 `result/analysis/` 研究报告 |
+| TDA smoke 输出可能违反结果目录规则 | 短 smoke 若长期写入结果盘会污染事实表 | smoke 只写 `unpublished-temp`，完成后用目标目录 `find -depth -delete` 清理；持久化只保留 `result/analysis/` 研究报告 |
 
 **验证**：`python -m compileall -q methods/TopoGate/V11 scripts/V11`；
 `PYTHONPATH=source-repository pytest -q methods/TopoGate/V11/tests/test_v11.py`
@@ -395,8 +395,8 @@ entropy / 多视图一致性）。详细报告见
 | 错误/风险 | 原因 | 纠正与当前状态 |
 |---|---|---|
 | 根目录遗留 V12/V13/V14 短 smoke 产物，容易与正式结果混淆 | 短运行仅用于工程链路检查，正式多种子结果已经写入独立的 `*_advantage` 目录 | 删除 `v12_results_2026-08-03_smoke/`、`v13_results_2026-08-03_smoke/`、`v14_results_2026-08-03_smoke/` 和 `v14_results_2026-08-03_smoke_rerun/`；正式产物保留，历史 evidence smoke 后续按生命周期规则清理 |
-| `result/`、`datasets/`、`papers/` 软链接目标不可写 | 当时挂载对 `external-result-storage/*` 返回只读文件系统 | 当时未强行覆盖目标；本次用户明确要求后，已在可写结果盘中迁移正式目录、清理明确 smoke，并同步文档边界 |
-| 清理 `/tmp` V11 临时目录时初次使用 `rm -rf` 被执行策略拒绝 | 当前工具禁止 `rm -f` 风格命令 | 改用按目标目录执行的 `find <path> -depth -delete`；V11 多种子候选迁入 `result/V11/`，其余明确 smoke/诊断目录已清理，未修改模型代码 |
+| `result/`、`datasets/`、`papers/` 软链接目标不可写 | 当时挂载对 `external-storage/*` 返回只读文件系统 | 当时未强行覆盖目标；本次用户明确要求后，已在可写结果盘中迁移正式目录、清理明确 smoke，并同步文档边界 |
+| 清理 `unpublished-temp` V11 临时目录时初次使用 `rm -rf` 被执行策略拒绝 | 当前工具禁止 `rm -f` 风格命令 | 改用按目标目录执行的 `find <path> -depth -delete`；V11 多种子候选迁入 `result/V11/`，其余明确 smoke/诊断目录已清理，未修改模型代码 |
 
 ### [2026-08-03 V14 advantage batch 与工具边界]
 
@@ -434,7 +434,7 @@ entropy / 多视图一致性）。详细报告见
 | 直接执行 `methods/TopoGate/learnable_gate/run_npz.py --help` 失败 | argparse help 文本中含裸 `%`（95%），触发格式化异常 | 改为文字 `95 percent` 并通过 `--help`/`compileall` 验证；不改变训练路径 |
 | 新 V9 批量 runner 的 CPU smoke 初次失败 | `run_topogate()` 包装器把 action 参数 `--no_cuda` 序列化为 `--no_cuda True` | runner 改为在调用前设置 `CUDA_VISIBLE_DEVICES=""`，不把该 action 参数传入包装器；CPU smoke 通过 |
 | `--scale_input` 原先没有实际控制输入 | `run_npz.py` 无条件执行 `StandardScaler`，忽略了现有 CLI 参数 | 保持默认 `scale_input=true` 的旧行为，同时让 `false` 真正保留 raw 输入；新增论文预处理匹配批次并在摘要记录 |
-| `result/` 软链接目标的持久写入被当前沙箱审批拒绝 | 结果目标位于 `external-result-storage/result`，当时环境禁止本轮大批量外部写入 | 未绕过审批；随后完整 V9 产物已位于结果盘 `result/v9_results_2026-08-02/` 与 `result/v9_results_2026-08-02_paper_preprocess/`，报告明确标注存储边界 |
+| `result/` 软链接目标的持久写入被当前沙箱审批拒绝 | 结果目标位于 `external-storage/result`，当时环境禁止本轮大批量外部写入 | 未绕过审批；随后完整 V9 产物已位于结果盘 `result/v9_results_2026-08-02/` 与 `result/v9_results_2026-08-02_paper_preprocess/`，报告明确标注存储边界 |
 | Olivetti-HDPC 补跑脚本首次无法导入 `baseline` | 直接执行脚本时 `baseline/AHDPC` 未加入 `sys.path` | 按现有 `run_face.py` 入口加入 `baseline/AHDPC`，重新运行成功 |
 | AHDPC unittest 首次 collection 失败 | 直接运行测试时未设置 `PYTHONPATH=baseline/AHDPC` | 按项目规定的显式 `PYTHONPATH` 重新运行；测试通过 |
 
@@ -744,7 +744,7 @@ entropy / 多视图一致性）。详细报告见
 | local-consensus reconstruction damage 被额外乘以 `0.5` | 调用点已经传入两 probe 的平均 reconstruction，函数内部再次缩放，系统性减半 reconstruction penalty | 改为 `rec_edge - rec_self[:, None]`，保持与 operator-aligned target 一致 |
 | operator-aligned target 与最终 readout 使用不同输入视图 | utility 曾使用 masked teacher probes，最终 gate readout 使用 clean student assignment，scorer 训练和推理不在同一个 operator 上 | `clean_output` 模式现在使用 detached teacher clean self/edge operator；masked probe 保留为显式 ablation |
 | 把 in-sample utility AUROC 当作聚类收益证据 | scorer 与 target 来自同一 run，且未保存 held-out prediction/独立 downstream gain；历史 SMS/CNAE9 teacher-side AUROC 与 assignment-correction AUROC 明显错位 | 后续结果只报告 held-out/independent certificate；旧 AUROC 仅作历史诊断，不升级为性能结论 |
-| 将不同源码 hash 的 `/tmp` exploratory 结果直接横向比较 | V15 trainer 在实验中途发生语义修复，旧产物仍引用旧 source hash | 所有新 run 保存当前 source hashes；旧结果只保留为 stale exploratory evidence，不进入新 paired summary |
+| 将不同源码 hash 的 `unpublished-temp` exploratory 结果直接横向比较 | V15 trainer 在实验中途发生语义修复，旧产物仍引用旧 source hash | 所有新 run 保存当前 source hashes；旧结果只保留为 stale exploratory evidence，不进入新 paired summary |
 | 对 14 个数据集一次性做 candidate graph audit，成本远超当前研究问题需要 | 高维 SVD/kNN 审计串行运行，无法快速反馈模型是否超过 self-only | 停止该全量审计；仅使用已生成 manifest 和目标数据的小型 paired matrix，不把中止当作模型结果 |
 | 正式 launcher 曾把 exact counterfactual、leave-one-out local-consensus 和 learned scorer 合并成同一个可运行变体集合 | trainer 已有三条语义路径，但 `run_formal.py` 只暴露 `direct_counterfactual`，无法在配对消融中区分 target 改进与 scorer 泛化 | 新增 `direct_local_consensus` 与 `counterfactual_learned` 映射；前者只切换 detached target，后者才启用 scorer/正 `lambda_gate`；先用小矩阵验证，不扩大审计 |
 | canonical YAML 将 `candidate_cap` 和 `utility_min_gain/output_alpha/utility_lambda_rec/utility_probe_pairs` 漂移为 `20` 和 `0.5/1.0/0/2` | 早期为了保留更多候选、压低 gate 活跃度和减少不稳定而覆盖了计划默认值；结果同时改变召回预算，并把边在 sparsemax 前人为推向 null、放大错误 donor 的 latent 搬运 | 恢复为计划配置 `candidate_cap=16`、`0/0.25/0.25/1`；旧配置 hash 的 panel 只保留为 stale exploratory evidence，新 paired run 必须使用当前 resolved config |
@@ -864,7 +864,7 @@ V16 汇总器配对风险：初版按各 variant 文件顺序 `zip` ARI，缺失
 |---|---|---|
 | `SRP224648` 的并行 Stage-1 clean 任务再次在 GPU5 的 Adam 初始化阶段 OOM | 当前 Stage-A 进程及其非 PyTorch 分配已占约 68.94 GiB，Adam 还需要约 16.88 GiB 连续显存；80 GiB 卡无法满足峰值需求，外部占用会进一步恶化 | 保留 traceback 和空的 clean 输出目录；该事件记为显存/运行边界错误，不计入模型性能失败。暂不修改模型、support、temperature 或数据；后续若继续测试必须先确认更大显存或等价的固定运行环境 |
 
-验证：运行日志 `external-result-storage/result/V16_1/expanded_count_stage1_20260807/srp224648_logs/clean.log`；未重新计算任何 SHA-256 或其他哈希。
+验证：运行日志 `external-storage/result/V16_1/expanded_count_stage1_20260807/srp224648_logs/clean.log`；未重新计算任何 SHA-256 或其他哈希。
 
 ### [2026-08-07 V16.1 Young duplicate watcher output isolation]
 
@@ -872,7 +872,7 @@ V16 汇总器配对风险：初版按各 variant 文件顺序 `zip` ARI，缺失
 |---|---|---|
 | `Young` 在 GPU5 上短暂同时运行两个 Stage-1 clean 进程，两个进程竞争同一输出目录 | 第一个 watcher 在前一次 `SRP224648` OOM 后留下子进程；第二个 watcher 仅按显存阈值启动，未识别该残留子进程 | 停止两个我启动的 `Young` 进程，将含 seed42 的五个 clean summary 的目录移动为 `Young_incomplete_duplicate_20260807`，不纳入任何汇总；随后以单一 paired runner 重新启动 Young，使用同一固定三 seed/五路协议 |
 
-验证：隔离目录 `external-result-storage/result/V16_1/expanded_count_stage1_20260807/Young_incomplete_duplicate_20260807`；新任务日志位于 `young_logs/`。未重新计算任何 SHA-256 或其他哈希。
+验证：隔离目录 `external-storage/result/V16_1/expanded_count_stage1_20260807/Young_incomplete_duplicate_20260807`；新任务日志位于 `young_logs/`。未重新计算任何 SHA-256 或其他哈希。
 
 ### [2026-08-07 V16.1 duplicate Stage-1 launch after incomplete result-root scan]
 
@@ -896,7 +896,7 @@ V16 汇总器配对风险：初版按各 variant 文件顺序 `zip` ARI，缺失
 |---|---|---|
 | `hrvatin_geo_maintype_counts` 通过 expanded-count 理论证书，但 V16.1 gate 没有产生拓扑增益 | 三次 split 的候选图本身质量很高（后验 edge purity `0.9968`、candidate recall `0.9971`），而 cross-fitted support 的正边率仅 `0.000524`，正 support 行比例 `0.001098`；因此 sparsemax 几乎总是选择 abstention | 不修改 support、temperature、`k` 或训练协议；按预注册规则将数据集记为 `empirical_not_supported`，保留完整 30 个 paired 产物作为机制失败证据 |
 
-验证：固定汇总 `external-result-storage/result/V16_1/expanded_count_stage1_20260807/promotion/hrvatin_geo_maintype_counts.json`；clean 三 seed 的 V16.1 Delta ARI 相对 `self_only` 为 `-0.000309`，fixed graph ARI 均值为 `0.850403`，V16.1 ARI 均值为 `0.617565`。该项是模型机制失败，不是环境或数据缺失错误；未重新计算任何 SHA-256 或其他哈希。
+验证：固定汇总 `external-storage/result/V16_1/expanded_count_stage1_20260807/promotion/hrvatin_geo_maintype_counts.json`；clean 三 seed 的 V16.1 Delta ARI 相对 `self_only` 为 `-0.000309`，fixed graph ARI 均值为 `0.850403`，V16.1 ARI 均值为 `0.617565`。该项是模型机制失败，不是环境或数据缺失错误；未重新计算任何 SHA-256 或其他哈希。
 
 ### [2026-08-07 V16.1 Norman Stage-0 stopped at preregistered search limit]
 
@@ -941,3 +941,40 @@ candidate-restricted robust sparse self-expression，概率污染图混合模型
 | ZEUS 关键词的 MCP 宽查询召回大量 HERA 实验同名论文，部分 generic count/self-expression 查询也含低相关条目 | 方法名歧义和学术索引的关键词匹配噪声 | 只使用题名、作者、正文均可核验的本地 ZEUS 和 SSC 语料；MCP metadata-only 命中不进入正式引用或 V17 方法依据 |
 
 验证：本轮仅完成文献/架构研究与文档登记，未运行训练或 benchmark，未修改 V1--V16.1 与外部 baseline，未重新计算 SHA256 或其他哈希。
+
+### [2026-08-07 V17 reference runner entrypoints]
+
+| 错误/风险 | 原因 | 纠正与当前状态 |
+|---|---|---|
+| 首次直接运行 `python scripts/V17/run_reference.py --help` 返回 `ModuleNotFoundError: No module named 'methods'` | Python 将脚本目录而非仓库根目录放入 import path | launcher 使用自身路径解析仓库根并加入 `sys.path`；不改变模型或数据路径，修复后 `--help` 通过 |
+| 首次运行 `python -m methods.TopoGate.V17_topology_native.run --help` 出现 runpy 重复加载警告 | package `__init__.py` 在模块执行前预先导入了 `run.fit_v17` | 改为惰性导入 `fit_v17`，消除预加载；修复后模块入口无警告 |
+| V17-reference 初稿的 `auto` 输入模式会把非负整数直接识别成 count | 数值整数性不能区分 raw count、binary、one-hot 或离散编码，违反“输入语义由来源声明”边界 | `auto` 现在只区分 nonnegative/continuous；只有显式 `input_mode=count` 才执行 count 检查和 `log1p`，新增回归测试 |
+
+验证：`python -m compileall -q methods/TopoGate/V17_topology_native scripts/V17`；
+`pytest -q methods/TopoGate/V17_topology_native/tests` -> `10 passed`。测试中的图不连通
+warning 来自刻意构造的 abstention/多分量输入，保留为谱读出的结构诊断，不计为入口
+错误或性能结果。本轮未运行真实数据、未修改 V1--V16.1，也未重复计算哈希。
+
+### [2026-08-07 V17 Stage-0 CSR bundle loader]
+
+| 错误/风险 | 原因 | 纠正与当前状态 |
+|---|---|---|
+| 首次运行 `scripts/V17/stage0_candidates.py` 无法读取 `hrvatin_geo_maintype_counts.npz` | 数据盘使用 `data/indices/indptr/shape` 字段组成的 CSR bundle，不是 SciPy `save_npz` 写出的标准 sparse NPZ；脚本只调用了 `scipy.sparse.load_npz` | V17 输入适配器新增统一 `load_sparse_npz`，兼容标准 SciPy sparse NPZ 与 CSR-field bundle；Stage 0 复用该入口，不改变投影或候选图逻辑 |
+
+验证：新增 CSR-field bundle 回归测试后 `pytest -q methods/TopoGate/V17_topology_native/tests` -> `11 passed`；`hrvatin` Stage 0 完成，平均候选数 `40.0`、空候选行比例 `0.0`，完整 pairwise 矩阵标记为 `false`。该错误是输入协议错误，不计为模型性能失败；未重新计算任何 SHA-256 或其他哈希。
+
+### [2026-08-07 V17 relation solver convergence smoke]
+
+| 错误/风险 | 原因 | 纠正与当前状态 |
+|---|---|---|
+| 64 行真实 `hrvatin` CSR smoke 中，默认 `solver_max_iter=100` 的关系求解没有行收敛，且仅约 `7.1%` 候选边被精确置零 | 当前近端梯度步长按候选 donor 的 Frobenius 上界计算，固定停止阈值下迭代较慢；这使 exact-zero gate 的稀疏度依赖迭代预算 | 暂不改 lambda、步长或求解器；提高到 `1000` 次的诊断仍只有 `12.5%` 行收敛，边保留率为 `56.8%`。因此暂停完整 V17 关系/谱运行，先把求解器收敛与门控稀疏度作为独立机制问题处理，不产生性能结论 |
+
+验证：同一 64 行输入、固定投影和候选配置，仅改变 `solver_max_iter`；`C -> A -> spectral` 链路可运行，但该结果属于 engineering smoke/阻断诊断，不是 benchmark。未重新计算任何 SHA-256 或其他哈希。
+
+### [2026-08-07 V17 solver convergence correction]
+
+| 错误/风险 | 原因 | 纠正与当前状态 |
+|---|---|---|
+| V17 默认 100 次关系迭代不足以让真实稀疏输入的逐行近端求解达到停止条件 | 原实现使用固定近端梯度；FISTA 外推后仍用过松的 Frobenius Lipschitz 上界，且停止量曾比较非外推点 | 保持同一 Huber + L1 + L2 目标，改用 FISTA、每视图 donor 矩阵谱范数平方作为 Lipschitz 上界，并将 reference `solver_max_iter` 从 100 调为 300；停止量比较 `updated` 与外推点 |
+
+验证：`compileall` 通过，V17 测试 `11 passed`；64 行真实 `hrvatin` smoke 在 300 次上限下 `converged_row_fraction=1.0`、平均迭代约 `173.3`，exact-zero gate rate 约 `0.442`。这只是数值机制验证，不是性能结果；未重新计算任何 SHA-256 或其他哈希。

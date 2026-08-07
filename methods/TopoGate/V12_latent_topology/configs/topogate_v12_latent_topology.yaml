@@ -1,0 +1,19 @@
+variant_name: topogate_v12_latent_topology
+mask_loss_weight: 0.1
+mask_loss_mode: additive
+decoder_mode: legacy_mask_conditioned
+topology_enabled: true
+topology_mode: self_null
+lambda_topology: 0.1
+rank_loss_weight: 0.1
+rank_margin: 0.1
+topology_warmup_epochs: 20
+topology_ramp_epochs: 10
+self_init_weight: 0.8
+neighbor_k: 5
+gate_temperature: 1.0
+description: >-
+  Default V12 self/null latent topology alignment. Clean masked reconstruction
+  with Torch-only edge weighting, self fallback, no input-space mixing, and a
+  per-edge rank signal that pushes the gate toward higher weight on reliable
+  neighbours.

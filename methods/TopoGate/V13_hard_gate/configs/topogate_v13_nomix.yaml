@@ -1,0 +1,19 @@
+# V13 NoMix baseline: no topology, pure autoencoder
+variant_name: topogate_v13_nomix
+mask_loss_weight: 0.1
+mask_loss_mode: additive
+decoder_mode: legacy_mask_conditioned
+topology_enabled: false
+topology_mode: topk2
+lambda_topology: 0.0
+topology_warmup_epochs: 0
+topology_ramp_epochs: 0
+gumbel_tau: 1.0
+gumbel_tau_min: 0.1
+gumbel_tau_anneal_epochs: 50
+top_k_neighbors: 2
+neighbor_k: 5
+description: >-
+  V13 NoMix: topology disabled. Pure masked autoencoder baseline with the same
+  architecture as V13 but no topology alignment, no Gumbel gate. Serves as the
+  no-topology baseline for paired comparisons.

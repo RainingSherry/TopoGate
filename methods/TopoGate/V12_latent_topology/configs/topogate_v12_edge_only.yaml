@@ -1,0 +1,18 @@
+variant_name: topogate_v12_edge_only
+mask_loss_weight: 0.1
+mask_loss_mode: additive
+decoder_mode: legacy_mask_conditioned
+topology_enabled: true
+topology_mode: edge_only
+lambda_topology: 0.1
+rank_loss_weight: 0.1
+rank_margin: 0.1
+topology_warmup_epochs: 20
+topology_ramp_epochs: 10
+self_init_weight: 0.8
+neighbor_k: 5
+gate_temperature: 1.0
+description: >-
+  V12 edge-only topology ablation. It keeps the clean input and differentiable
+  gate but has no self/null fallback. The rank signal still pushes the gate
+  toward higher weight on reliable neighbours.

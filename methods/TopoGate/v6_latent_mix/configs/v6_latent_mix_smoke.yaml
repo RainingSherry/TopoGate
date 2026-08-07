@@ -1,0 +1,32 @@
+method_name: TopoGate
+variant_name: v6_latent_mix_smoke
+mix_mode: reliability
+gate_mode: learned
+edge_reliability_mode: sim_mutual_snn_distance
+neighbor_k: 5
+mix_neighbors: 4
+# v6-patch (2026-07-26): gate_max aligned to LearnableGate default (0.15).
+# Phase 1 smoke test exposes only the "where to mix" variable, holding the
+# gate range and schedule behaviour identical to the input-space variant.
+# If a 0.5 ablation is needed, override --gate_max on the CLI (the model
+# preserves both values through the schedule-aware gate path).
+gate_max: 0.15
+gate_min: 0.0
+pseudo_weight: 0.3
+learned_gate_init_mode: zero
+learnable_gate_max: true
+gate_max_min: 0.05
+gate_max_max: 1.0
+gate_lr_multiplier: 10.0
+enhanced_stats: 4
+latent_consistency_weight: 0.0   # Phase 1: pure "where to mix" effect, no aux loss
+# v6-patch: schedule parity with run_npz.py / learnable_gate_sched.yaml.
+# First 10 epochs use the v1 static gate; epoch 11-20 ramp to learnable gate.
+warmup_epochs: 10
+ramp_epochs: 10
+freeze_mae_after_epoch: 1000000000   # default disabled (matches run_npz.py)
+epochs: 150
+batch_size: 256
+hidden_size: 128
+mask_ratio: 0.3
+lr: 1.0e-3

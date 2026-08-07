@@ -1,0 +1,7 @@
+# Reversible TDA pilot. Prefer early H0 component merges and downweight late
+# bridge-like merges; unspecified fields inherit V11Config defaults.
+tda_prior_mode: h0_early_mst
+tda_prior_weight: 1.0
+tda_scale_mode: median
+tda_scale_quantile: 0.50
+tda_scale_floor: 0.000001

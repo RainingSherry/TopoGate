@@ -1,0 +1,11 @@
+method_name: TopoGate
+variant_name: static_gate_no_topology_features
+mix_mode: reliability
+gate_mode: topology
+edge_reliability_mode: sim
+neighbor_k: 10
+mix_neighbors: 4
+gate_max: 0.15
+pseudo_weight: 0.3
+beta_mutual: 0.0
+beta_snn: 0.0

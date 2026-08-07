@@ -1,0 +1,74 @@
+# TopoGate V11.3 candidate: counterfactual semantic gate plus a
+# target-guided latent geometry term. The target is detached and comes from
+# paired reconstruction/assignment interventions, so the geometry term cannot
+# be satisfied by changing the learned gate posterior itself.
+seed: 42
+input_mode: raw
+scale_input: true
+n_top_features: 0
+pca_dim: 128
+pca_variance: 0.95
+
+hidden_size: 256
+latent_size: 64
+dropout: 0.10
+weight_decay: 0.0001
+reconstruction_distribution: student_t
+student_t_nu: 4.0
+masked_data_weight: 0.75
+mask_prediction_weight: 0.10
+mask_ratio: 0.30
+mask_ratio_end: 0.30
+
+epochs: 80
+batch_size: 256
+lr: 0.001
+warmup_epochs: 20
+ramp_epochs: 10
+graph_refresh_interval: 5
+ema_decay: 0.99
+confidence_threshold: 0.55
+confidence_quantile: 0.50
+cluster_temperature: 0.20
+cluster_assignment_kernel: diagonal_product
+cluster_logit_normalization: sqrt_dim
+cluster_scale_floor_ratio: 0.00
+cluster_weight: 0.50
+clean_cluster_weight: 1.00
+mixed_cluster_weight: 0.50
+graph_weight: 0.20
+edge_consistency_weight: 0.10
+edge_alignment_temperature: 0.20
+mix_reconstruction_weight: 0.25
+dirichlet_strength: 0.001
+gradient_clip: 5.0
+
+neighbor_k: 5
+candidate_k: 10
+knn_backend: auto
+knn_exact_max_nodes: 5000
+knn_hnsw_m: 32
+knn_hnsw_ef_search: 64
+edge_temperature: 1.0
+raw_prior_temperature: 0.20
+raw_prior_weight: 1.0
+latent_prior_weight: 0.0
+gate_risk_temperature: 0.25
+gate_cluster_risk_temperature: 0.25
+semantic_help_combiner: harmonic_mean
+graph_probe_strength: 0.25
+gate_initial_null_bias: 2.5
+risk_target_mode: paired_ema_eval
+topology_path: assignment_residual
+gate_target_source: counterfactual_semantic
+temporal_gate_max: 0.25
+residual_assignment_weight: 0.50
+
+use_dynamic_graph: true
+use_topology: true
+use_edge_reliability: true
+use_teacher: true
+use_cluster_head: true
+use_mixed_reconstruction: false
+use_graph_prior: true
+use_edge_consistency: true

@@ -1,0 +1,24 @@
+method_name: TopoGate
+variant_name: learnable_gate_hvf_adaptive
+mix_mode: reliability
+gate_mode: learned
+edge_reliability_mode: sim_mutual_snn_distance
+neighbor_k: 5
+mix_neighbors: 4
+gate_max: 0.15
+pseudo_weight: 0.3
+warmup_epochs: 20
+ramp_epochs: 10
+learned_gate_init_mode: zero
+# ── HVF + Adaptive PCA (new) ──────────────────────────────────────────────
+# HVF: keep top-N high-variance features before PCA.
+#   0 = disabled (use all features). Recommended: 1000-2000 for d > 5000.
+#   For datasets with very high d (e.g. scRNA, MNIST), HVF dramatically
+#   improves kNN quality by removing noisy dimensions.
+n_top_features: 1000
+# Adaptive PCA: auto-select dim to retain ≥95% variance.
+#   fixed = use knn_pca_dim directly.
+#   adaptive = auto-select (capped at knn_pca_dim).
+knn_pca_mode: adaptive
+# Upper bound for adaptive PCA. Only used when knn_pca_mode=adaptive.
+knn_pca_dim: 200

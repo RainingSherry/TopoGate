@@ -1,0 +1,9 @@
+method_name: TopoGate
+variant_name: static_gate_edge_only
+mix_mode: reliability
+gate_mode: constant
+edge_reliability_mode: sim_mutual_snn_distance
+neighbor_k: 10
+mix_neighbors: 4
+gate_max: 0.15
+pseudo_weight: 0.3

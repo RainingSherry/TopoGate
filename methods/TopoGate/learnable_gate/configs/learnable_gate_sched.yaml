@@ -1,0 +1,12 @@
+method_name: TopoGate
+variant_name: learnable_gate_sched
+mix_mode: reliability
+gate_mode: learned
+edge_reliability_mode: sim_mutual_snn_distance
+neighbor_k: 5
+mix_neighbors: 4
+gate_max: 0.15
+pseudo_weight: 0.3
+warmup_epochs: 20
+ramp_epochs: 10
+learned_gate_init_mode: zero

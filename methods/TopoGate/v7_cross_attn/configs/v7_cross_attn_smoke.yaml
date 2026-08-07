@@ -1,0 +1,47 @@
+# v7_cross_attn smoke config — parity with v6 + B-side unmask modification.
+#
+# 与 v6_latent_mix_smoke.yaml 唯一差异：
+#   - mix 方式从 "linear (1-gate)*z_a + gate*z_n" 改为 "cross-attention residual"
+#   - B-side 不再 mask：B 用完整指纹喂 attention，让 attention 真正学到 "anchor 该问什么"
+#   - schedule/β 默认与 v6 完全一致（warmup_epochs=10, ramp_epochs=10, freeze_mae=1e9）
+#
+# 注意：v7 不复用 v6_latent_mix/latent_mixer.py；它有独立的 cross_attn_mixer.py，
+# 接口与 LatentMixer forward 输出对齐（learned_gate_final_beta 取自内部 LearnableGate）。
+#
+# 复用机制（与 v6 一致）：
+#   - LearnableGate（4β / 6β，未改动）
+#   - AutoEncoder、compute_edge_reliability、build_*_neighbors
+#   - 所有 schedule / gradient path
+#
+# 这是 CHANGELOG_errors.md 反复强调的 v7 改动：**仅替换"邻居怎么参与"**，其他不变量。
+
+method_name: TopoGate
+variant_name: v7_cross_attn_smoke
+mix_mode: reliability
+gate_mode: learned
+edge_reliability_mode: sim_mutual_v7          #  v7-patch：cross-attention gate 改写（与 v6 同）
+neighbor_k: 5
+mix_neighbors: 4
+gate_max: 0.15                                 # 与 v6 默认对齐
+gate_min: 0.0
+pseudo_weight: 0.3
+learned_gate_init_mode: zero
+learnable_gate_max: true
+gate_max_min: 0.05
+gate_max_max: 1.0
+gate_lr_multiplier: 10.0
+enhanced_stats: 4
+# v7-patch：B-side unmask。B 完整指纹喂 cross-attention，让 attention 真正学到 query
+mask_b_anchor: false                           # B 不 mask
+mask_b_ratio: 0.0                              # 无 mask noise（mask_b_anchor=False 时不调用）
+# Cross-attention 参数（v7 新增）
+cross_attn_heads: 1                            # 单头 cross-attention
+cross_attn_residual_dropout: 0.0
+warmup_epochs: 10
+ramp_epochs: 10
+freeze_mae_after_epoch: 1000000000             # 默认 disabled（与 v6/run_npz 一致）
+epochs: 150
+batch_size: 256
+hidden_size: 128
+mask_ratio: 0.3
+lr: 1.0e-3

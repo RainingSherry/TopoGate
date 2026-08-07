@@ -1,0 +1,18 @@
+variant_name: topogate_v12_self_null
+mask_loss_weight: 0.1
+mask_loss_mode: additive
+decoder_mode: legacy_mask_conditioned
+topology_enabled: true
+topology_mode: self_null
+lambda_topology: 0.1
+rank_loss_weight: 0.1
+rank_margin: 0.1
+topology_warmup_epochs: 20
+topology_ramp_epochs: 10
+self_init_weight: 0.8
+neighbor_k: 5
+gate_temperature: 1.0
+description: >-
+  Registered V12 repair: additive masked reconstruction and self/null latent
+  topology alignment with a learned refusal mass and a per-edge rank signal
+  that pushes the gate toward higher weight on reliable neighbours.

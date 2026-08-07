@@ -108,6 +108,7 @@ from methods.TopoGate.learnable_gate.run_npz import run_topogate
 labels = run_topogate(X, n_clusters=K, gpu=4, seed=42, variant="learnable_gate_sched",
                       epochs=150)
 ```
+
 ## Modifications log
 
 - 2026-07-25: created this directory during the static_gate/learnable_gate split.  Source files

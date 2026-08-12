@@ -1,0 +1,106 @@
+{
+  "status": "completed",
+  "evidence_level": "engineering_smoke",
+  "protocol_id": "v22_topology_discriminator_hard_mask_v1",
+  "variant": "v22_topology_discriminator_hard_gate",
+  "seed": 42,
+  "dataset": "PBMC3k",
+  "dataset_path": "datasets/external/v22_dataset_extension_20260812/processed/PBMC3k.npz",
+  "input_protocol": "scRNA_count",
+  "n_samples": 2700,
+  "n_features_original": 32738,
+  "n_features": 2000,
+  "labels_used_during_fit": false,
+  "K_used_during_fit": false,
+  "K_source": "explicit_n_clusters",
+  "prediction_semantics": "kmeans_clean_embedding",
+  "mask_semantics": {
+    "reconstruction": "random_topk_donor_corruption; effective changed positions train scMAE",
+    "adversarial": "hard topk donor corruption; M=1 means coordinate is reconstructed",
+    "discriminator": "matched real/fake coordinate pairs; no mask or hint input"
+  },
+  "metrics": {
+    "labels_available": false,
+    "n_clusters": 8,
+    "cluster_method": "kmeans_clean_embedding",
+    "K_source": "explicit_n_clusters",
+    "labels_used_during_fit": false,
+    "K_used_during_fit": false
+  },
+  "diagnostics": {
+    "graph_profile": {
+      "neighbor_k_requested": 20,
+      "neighbor_k_effective": 20,
+      "svd_target": 0.95,
+      "svd_min_dim": 32,
+      "svd_max_dim": 128,
+      "svd_dim": 128,
+      "variance_target_reached": false,
+      "explained_variance_ratio_sum": 0.3187883138889447,
+      "mean_neighbor_cosine_distance": 0.09673585742712021,
+      "self_edges": 0,
+      "label_leakage_diagnostic": false,
+      "enabled": true
+    },
+    "stats_profile": {
+      "storage": "memmap",
+      "path": "result/V22/engineering_smoke_pbmc3k_20260812/cache/topology_statistics.dat",
+      "dtype": "float32",
+      "shape": [
+        2700,
+        2000,
+        4
+      ],
+      "block_size": 512,
+      "clip": 5.0,
+      "feature_names": [
+        "deviation_z",
+        "dispersion_z",
+        "neighbor_support",
+        "stability"
+      ],
+      "support_is_label_free": true
+    },
+    "history": [
+      {
+        "loss": 1.133180856704712,
+        "reconstruction_loss": 0.13241657343777744,
+        "mask_loss": 0.48097117380662396,
+        "discriminator_loss": 0.6970071250742133,
+        "generator_adversarial_loss": 0.6954266916621815,
+        "gate_reconstruction_loss": 0.9005008827556263,
+        "gate_loss": -0.007434936219149015,
+        "gate_reward": 0.007481601068072699,
+        "gate_coverage": 0.004666468636556106,
+        "random_requested_mask_rate": 0.4000000059604645,
+        "random_effective_mask_rate": 0.1412977413697676,
+        "adversarial_selected_rate": 0.0884693596850742,
+        "adversarial_effective_rate": 0.050863941284743225,
+        "discriminator_pair_count": 7854.545454545455,
+        "gate_grad_norm": 0.0010627047227548321,
+        "epoch": 1.0,
+        "discriminator_steps_epoch": 11.0,
+        "gate_updates_epoch": 11.0
+      }
+    ],
+    "variant_contract": {
+      "scmae_backbone": true,
+      "discriminator": true,
+      "coordinate_matched_real_fake": true,
+      "mask_or_hint_passed_to_discriminator": false,
+      "gate": true,
+      "topology_gate": true,
+      "gate_reward_mode": "discriminator_difficulty",
+      "clean_embedding_kmeans_primary": true
+    },
+    "labels_used_during_fit": false,
+    "K_used_during_fit": false,
+    "discriminator_steps": 11,
+    "discriminator_finite_step_rate": 1.0,
+    "gate_updates": 11,
+    "gate_nonzero_update_rate": 1.0,
+    "model_parameter_count": 5078432,
+    "discriminator_parameter_count": 56001,
+    "gate_parameter_count": 33537
+  }
+}

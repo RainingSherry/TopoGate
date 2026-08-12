@@ -1,0 +1,11 @@
+{
+  "labels_available": true,
+  "n_clusters": 5,
+  "cluster_method": "kmeans_clean_embedding",
+  "K_source": "benchmark_oracle_from_y",
+  "labels_used_during_fit": false,
+  "K_used_during_fit": false,
+  "ari": 0.2901214038069284,
+  "nmi": 0.5030165532113205,
+  "acc": 0.540948275862069
+}

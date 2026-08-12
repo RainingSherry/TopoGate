@@ -1,0 +1,22 @@
+[
+  {
+    "loss": 1.133180856704712,
+    "reconstruction_loss": 0.13241657343777744,
+    "mask_loss": 0.48097117380662396,
+    "discriminator_loss": 0.6970071250742133,
+    "generator_adversarial_loss": 0.6954266916621815,
+    "gate_reconstruction_loss": 0.9005008827556263,
+    "gate_loss": -0.007434936219149015,
+    "gate_reward": 0.007481601068072699,
+    "gate_coverage": 0.004666468636556106,
+    "random_requested_mask_rate": 0.4000000059604645,
+    "random_effective_mask_rate": 0.1412977413697676,
+    "adversarial_selected_rate": 0.0884693596850742,
+    "adversarial_effective_rate": 0.050863941284743225,
+    "discriminator_pair_count": 7854.545454545455,
+    "gate_grad_norm": 0.0010627047227548321,
+    "epoch": 1.0,
+    "discriminator_steps_epoch": 11.0,
+    "gate_updates_epoch": 11.0
+  }
+]

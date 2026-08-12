@@ -1,0 +1,14 @@
+{
+  "neighbor_k_requested": 20,
+  "neighbor_k_effective": 20,
+  "svd_target": 0.95,
+  "svd_min_dim": 32,
+  "svd_max_dim": 128,
+  "svd_dim": 128,
+  "variance_target_reached": false,
+  "explained_variance_ratio_sum": 0.5497134812176228,
+  "mean_neighbor_cosine_distance": 0.5946462154388428,
+  "self_edges": 0,
+  "label_leakage_diagnostic": false,
+  "enabled": true
+}

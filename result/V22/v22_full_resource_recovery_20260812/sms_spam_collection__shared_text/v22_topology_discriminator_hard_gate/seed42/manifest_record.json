@@ -1,0 +1,16 @@
+{
+  "dataset_id": "sms_spam_collection__shared_text",
+  "name": "sms_spam_collection",
+  "stratum": "original8_shared_text",
+  "input_protocol": "shared_text",
+  "source_path": "datasets/sms_spam_collection.npz",
+  "source_sha256": "1d9c068c43dc4f58e759169906dae9dff0ac6a8def7315ce7e4989a3b28d7070",
+  "n_samples": 835,
+  "n_features_original": 500,
+  "labels_available_outer_only": true,
+  "expected_labels_unique": 2,
+  "k_source": "benchmark_oracle_from_y",
+  "run_key": "sms_spam_collection__shared_text::v22_topology_discriminator_hard_gate::seed42",
+  "batch_size": 4096,
+  "topology_cache_source": "result/V22/v22_full_single_seed_20260812/sms_spam_collection__shared_text/v22_topology_discriminator_hard_gate/seed42/cache"
+}

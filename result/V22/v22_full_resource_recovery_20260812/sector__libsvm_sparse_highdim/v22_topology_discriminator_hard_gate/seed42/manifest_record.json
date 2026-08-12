@@ -1,0 +1,18 @@
+{
+  "dataset_id": "sector__libsvm_sparse_highdim",
+  "name": "sector",
+  "stratum": "new_sparse_highdim",
+  "input_protocol": "shared_text",
+  "source_path": "datasets/external/v22_dataset_extension_20260812/processed/sector.npz",
+  "source_sha256": "ad0142398c446988acd0e4a4f8337337ee7f7d3afe8215a5ec2811a1b1024912",
+  "source_archive_sha256": "cba3d66eed97803665eeb76379fe9d9955712ea0e5c61d7003f644713ed842b5",
+  "n_samples": 6412,
+  "n_features_original": 55197,
+  "labels_available_outer_only": true,
+  "expected_labels_unique": 105,
+  "k_source": "benchmark_oracle_from_y",
+  "source_manifest": "datasets/external/v22_dataset_extension_20260812/manifest.json",
+  "run_key": "sector__libsvm_sparse_highdim::v22_topology_discriminator_hard_gate::seed42",
+  "batch_size": 4096,
+  "topology_cache_source": "result/V22/v22_full_single_seed_20260812/sector__libsvm_sparse_highdim/v22_topology_discriminator_hard_gate/seed42/cache"
+}

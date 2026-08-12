@@ -1,0 +1,19 @@
+{
+  "storage": "memmap",
+  "path": "result/V22/v22_full_single_seed_20260812/sms_spam_collection__shared_text/v22_topology_discriminator_hard_gate/seed42/cache/topology_statistics.dat",
+  "dtype": "float32",
+  "shape": [
+    835,
+    500,
+    4
+  ],
+  "block_size": 512,
+  "clip": 5.0,
+  "feature_names": [
+    "deviation_z",
+    "dispersion_z",
+    "neighbor_support",
+    "stability"
+  ],
+  "support_is_label_free": true
+}

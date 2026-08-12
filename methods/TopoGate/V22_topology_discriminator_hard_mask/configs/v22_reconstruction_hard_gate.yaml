@@ -1,0 +1,10 @@
+protocol_id: v22_topology_discriminator_hard_mask_v1
+variant: scmae_plus_discriminator_reconstruction_hard_gate
+epochs: 80
+batch_size: 128
+hidden_size: 128
+feature_cap: 2000
+random_mask_ratio: 0.4
+adversarial_mask_ratio: 0.25
+lambda_adversarial: 0.1
+gate_reward_clip: 4.0

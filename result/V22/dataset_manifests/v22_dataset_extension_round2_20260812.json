@@ -1,0 +1,136 @@
+{
+  "manifest_id": "v22_dataset_extension_round2_manifest_20260812",
+  "protocol_id": "v22_topology_discriminator_hard_mask_v1",
+  "description": "Second fixed V22 panel: sparse text, dense image control, and unlabelled scRNA count",
+  "download_tls_verify": false,
+  "download_tls_note": "The local proxy certificate chain is not trusted; URLs and raw SHA256 are retained for later independent verification.",
+  "selection_policy": {
+    "selection_uses_labels_or_outcomes": false,
+    "primary_strata": [
+      "sparse_highdim_text",
+      "scRNA_count_unlabelled"
+    ],
+    "control_strata": [
+      "dense_image_control"
+    ],
+    "labels_used_during_fit": false,
+    "unlabelled_records_excluded_from_ari_aggregate": true,
+    "selected_before_round2_results": true
+  },
+  "datasets": [
+    {
+      "dataset_id": "news20__libsvm_sparse_highdim",
+      "name": "news20",
+      "family": "sparse_highdim_text",
+      "input_protocol": "shared_text",
+      "source_kind": "LIBSVMTools",
+      "source_identity": "LIBSVM multiclass/news20 scaled",
+      "citation": "LIBSVM Data: news20 multiclass benchmark",
+      "url": "https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/multiclass/news20.scale.bz2",
+      "archive_name": "news20.scale.bz2",
+      "status": "eligible",
+      "source_path": "datasets/external/v22_dataset_extension_round2_20260812/processed/news20.npz",
+      "raw_path": "datasets/external/v22_dataset_extension_round2_20260812/raw/news20.scale.bz2",
+      "raw_sha256": "f7cdf4acb311f9c5385c18d80c8f3918ea1879dcb1ba8f6a1fb265468d66d21a",
+      "processed_sha256": "b71e5008a4ed74981c72d79aecdd78e566ee5c0d246920bb2127bf3e375ecb5c",
+      "labels_used_during_fit": false,
+      "selection_uses_labels_or_outcomes": false,
+      "selection_basis": "fixed public LIBSVM sparse/high-dimensional or dense control candidate",
+      "profile": {
+        "n_samples": 15935,
+        "n_features": 62061,
+        "nnz": 1272569,
+        "zero_fraction": 0.9987132016286475,
+        "storage": "csr_npz",
+        "labels_unique": 20
+      }
+    },
+    {
+      "dataset_id": "rcv1_train__libsvm_sparse_highdim",
+      "name": "rcv1_train",
+      "family": "sparse_highdim_text",
+      "input_protocol": "shared_text",
+      "source_kind": "LIBSVMTools",
+      "source_identity": "LIBSVM binary/rcv1 train split",
+      "citation": "LIBSVM Data: RCV1 binary benchmark, train split",
+      "url": "https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary/rcv1_train.binary.bz2",
+      "archive_name": "rcv1_train.binary.bz2",
+      "status": "eligible",
+      "source_path": "datasets/external/v22_dataset_extension_round2_20260812/processed/rcv1_train.npz",
+      "raw_path": "datasets/external/v22_dataset_extension_round2_20260812/raw/rcv1_train.binary.bz2",
+      "raw_sha256": "dda0c6381811484e284e70dd0641335917debce50948346416fde7fb32fad2e2",
+      "processed_sha256": "085d6bc9713e985670c588250a5e524bb36920c32e4471e20dcd41291d96644e",
+      "labels_used_during_fit": false,
+      "selection_uses_labels_or_outcomes": false,
+      "selection_basis": "fixed public LIBSVM sparse/high-dimensional or dense control candidate",
+      "profile": {
+        "n_samples": 20242,
+        "n_features": 47236,
+        "nnz": 1498952,
+        "zero_fraction": 0.9984323063779483,
+        "storage": "csr_npz",
+        "labels_unique": 2
+      }
+    },
+    {
+      "dataset_id": "mnist__libsvm_dense_control",
+      "name": "mnist",
+      "family": "dense_image_control",
+      "input_protocol": "shared_text",
+      "source_kind": "LIBSVMTools",
+      "source_identity": "LIBSVM multiclass/mnist scaled",
+      "citation": "LIBSVM Data: MNIST multiclass benchmark",
+      "url": "https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/multiclass/mnist.scale.bz2",
+      "archive_name": "mnist.scale.bz2",
+      "status": "eligible",
+      "source_path": "datasets/external/v22_dataset_extension_round2_20260812/processed/mnist.npz",
+      "raw_path": "datasets/external/v22_dataset_extension_round2_20260812/raw/mnist.scale.bz2",
+      "raw_sha256": "32664896e8c00cdf18cdc319311a4326551410443460805ef92ae2b313132f37",
+      "processed_sha256": "da5c449aa936d87b615c0075bf6f19f24f9ad141af705c099359c25d5b99ae68",
+      "labels_used_during_fit": false,
+      "selection_uses_labels_or_outcomes": false,
+      "selection_basis": "fixed public LIBSVM sparse/high-dimensional or dense control candidate",
+      "profile": {
+        "n_samples": 60000,
+        "n_features": 780,
+        "nnz": 8994156,
+        "zero_fraction": 0.8078171794871795,
+        "storage": "csr_npz",
+        "labels_unique": 10
+      }
+    },
+    {
+      "dataset_id": "pbmc_1k_v3__10x_unlabelled_count",
+      "name": "pbmc_1k_v3",
+      "family": "scRNA_count_unlabelled",
+      "input_protocol": "scRNA_count",
+      "source_kind": "10x Genomics",
+      "source_identity": "10x PBMC 1k v3 filtered feature-barcode matrix",
+      "citation": "10x Genomics public PBMC 1k v3 count matrix",
+      "url": "https://cf.10xgenomics.com/samples/cell-exp/3.0.0/pbmc_1k_v3/pbmc_1k_v3_filtered_feature_bc_matrix.tar.gz",
+      "archive_name": "pbmc_1k_v3_filtered_feature_bc_matrix.tar.gz",
+      "status": "eligible_unlabelled",
+      "source_path": "datasets/external/v22_dataset_extension_round2_20260812/processed/pbmc_1k_v3.npz",
+      "raw_path": "datasets/external/v22_dataset_extension_round2_20260812/raw/pbmc_1k_v3_filtered_feature_bc_matrix.tar.gz",
+      "raw_sha256": "9beae9e7852b2514b4449ecdc5d5a762445289dcfbe5ddb70a44866380b673ce",
+      "processed_sha256": "39105a0f1b0ce3f3ec67525b9a131743eb196eaa70453d4f1d7c8a8a8737e454",
+      "labels_used_during_fit": false,
+      "selection_uses_labels_or_outcomes": false,
+      "selection_basis": "fixed 10x count-matrix deployment control; no cell-type labels in source archive",
+      "profile": {
+        "n_samples": 1222,
+        "n_features": 33538,
+        "nnz": 2498225,
+        "zero_fraction": 0.9390430563215831,
+        "storage": "csr_npz",
+        "labels_unique": null
+      },
+      "evaluation_status": "no_ari_without_external_labels"
+    }
+  ],
+  "formal_seeds": [
+    42,
+    123,
+    7
+  ]
+}

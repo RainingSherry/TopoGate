@@ -1,0 +1,13 @@
+{
+  "storage": "memmap",
+  "path": "result/V22/v22_full_single_seed_20260812/baron_human__clubench_bridge/v22_topology_discriminator_hard_gate/seed42/cache/topology_statistics.dat",
+  "dtype": "float32",
+  "shape": [
+    8451,
+    2000,
+    4
+  ],
+  "cache_reused": true,
+  "cache_validation": "exact_byte_shape",
+  "support_is_label_free": true
+}

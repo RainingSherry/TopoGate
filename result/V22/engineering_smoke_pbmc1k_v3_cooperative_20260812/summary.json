@@ -1,0 +1,178 @@
+{
+  "status": "completed",
+  "evidence_level": "engineering_smoke",
+  "protocol_id": "v22_topology_discriminator_cooperative_keep_gate_v1",
+  "variant": "v22_topology_discriminator_cooperative_keep_gate",
+  "seed": 42,
+  "dataset": "pbmc_1k_v3",
+  "dataset_path": "datasets/external/v22_dataset_extension_round2_20260812/processed/pbmc_1k_v3.npz",
+  "source_sha256": "39105a0f1b0ce3f3ec67525b9a131743eb196eaa70453d4f1d7c8a8a8737e454",
+  "input_protocol": "scRNA_count",
+  "n_samples": 1222,
+  "n_features_original": 33538,
+  "n_features": 2000,
+  "labels_used_during_fit": false,
+  "K_used_during_fit": false,
+  "K_source": "explicit_n_clusters",
+  "prediction_semantics": "kmeans_clean_embedding",
+  "mask_semantics": {
+    "reconstruction": "random_topk_donor_corruption; effective changed positions train scMAE",
+    "adversarial": "cooperative keep Gate; selected keep coordinates remain visible and the complementary changed coordinates are reconstructed",
+    "discriminator": "matched real/fake coordinate pairs; no mask or hint input"
+  },
+  "metrics": {
+    "labels_available": false,
+    "n_clusters": 8,
+    "cluster_method": "kmeans_clean_embedding",
+    "K_source": "explicit_n_clusters",
+    "labels_used_during_fit": false,
+    "K_used_during_fit": false
+  },
+  "diagnostics": {
+    "graph_profile": {
+      "neighbor_k_requested": 20,
+      "neighbor_k_effective": 20,
+      "svd_target": 0.95,
+      "svd_min_dim": 32,
+      "svd_max_dim": 128,
+      "svd_dim": 128,
+      "variance_target_reached": false,
+      "explained_variance_ratio_sum": 0.5999068890232593,
+      "mean_neighbor_cosine_distance": 0.0772022232413292,
+      "self_edges": 0,
+      "label_leakage_diagnostic": false,
+      "enabled": true
+    },
+    "stats_profile": {
+      "storage": "memmap",
+      "path": "result/V22/engineering_smoke_pbmc1k_v3_cooperative_20260812/cache/topology_statistics.dat",
+      "dtype": "float32",
+      "shape": [
+        1222,
+        2000,
+        4
+      ],
+      "block_size": 512,
+      "clip": 5.0,
+      "feature_names": [
+        "deviation_z",
+        "dispersion_z",
+        "neighbor_support",
+        "stability"
+      ],
+      "support_is_label_free": true
+    },
+    "history": [
+      {
+        "loss": 1.2846262216567994,
+        "reconstruction_loss": 0.12203333303332328,
+        "mask_loss": 0.4867939382791519,
+        "discriminator_loss": 0.6976216554641723,
+        "generator_adversarial_loss": 0.675154858827591,
+        "gate_reconstruction_loss": 1.2165669202804565,
+        "gate_loss": 1.0973414480686188,
+        "gate_reward": -1.0970957815647124,
+        "gate_coverage": 0.024566938169300556,
+        "random_requested_mask_rate": 0.4000000059604645,
+        "random_effective_mask_rate": 0.24436279833316804,
+        "adversarial_selected_rate": 0.15201851725578308,
+        "adversarial_effective_rate": 0.15201851725578308,
+        "discriminator_pair_count": 3910.4,
+        "discriminator_real_accuracy": 0.7683495044708252,
+        "discriminator_gate_fake_accuracy": 0.23909371346235275,
+        "discriminator_scmae_fake_accuracy": 0.3446944773197174,
+        "discriminator_confusion_pair_count": 3910.4,
+        "discriminator_real_abs_value_mean": 1.0779955983161926,
+        "discriminator_fake_abs_value_mean": 0.5388328924775123,
+        "discriminator_real_nonzero_rate": 1.0,
+        "discriminator_fake_nonzero_rate": 1.0,
+        "discriminator_value_low_accuracy": 0.49944537281990053,
+        "discriminator_value_mid_accuracy": 0.4997574210166931,
+        "discriminator_value_high_accuracy": 0.5396917998790741,
+        "discriminator_value_matched_accuracy": 0.4984571158885956,
+        "gate_grad_norm": 0.22929550612570404,
+        "gate_grad_reconstruction_norm": 0.22773266576280968,
+        "gate_grad_discriminator_norm": 0.0033162807242360067,
+        "epoch": 1.0,
+        "discriminator_steps_epoch": 10.0,
+        "gate_updates_epoch": 10.0
+      }
+    ],
+    "variant_contract": {
+      "scmae_backbone": true,
+      "discriminator": true,
+      "coordinate_matched_real_fake": true,
+      "mask_or_hint_passed_to_discriminator": false,
+      "gate": true,
+      "topology_gate": true,
+      "gate_reward_mode": "cooperative_keep",
+      "gate_semantics": "cooperative_keep_complementary_mask",
+      "clean_embedding_kmeans_primary": true
+    },
+    "labels_used_during_fit": false,
+    "K_used_during_fit": false,
+    "discriminator_steps": 10,
+    "discriminator_finite_step_rate": 1.0,
+    "gate_updates": 10,
+    "gate_nonzero_update_rate": 1.0,
+    "adversarial_mask_profile": {
+      "selected_total": 371199,
+      "unique_feature_count": 1411,
+      "unique_feature_fraction": 0.7055,
+      "top10_mass": 0.030854070188766673,
+      "coverage_entropy": 6.704015747431555
+    },
+    "adversarial_effective_mask_profile": {
+      "selected_total": 371199,
+      "unique_feature_count": 1411,
+      "unique_feature_fraction": 0.7055,
+      "top10_mass": 0.030854070188766673,
+      "coverage_entropy": 6.704015747431555
+    },
+    "random_mask_profile": {
+      "selected_total": 977600,
+      "unique_feature_count": 2000,
+      "unique_feature_fraction": 1.0,
+      "top10_mass": 0.00555441898527005,
+      "coverage_entropy": 7.600300955586552
+    },
+    "random_effective_mask_profile": {
+      "selected_total": 597370,
+      "unique_feature_count": 2000,
+      "unique_feature_fraction": 1.0,
+      "top10_mass": 0.008609404556639938,
+      "coverage_entropy": 7.5462034497636425
+    },
+    "gate_mask_profile": {
+      "selected_total": 372921,
+      "unique_feature_count": 2000,
+      "unique_feature_fraction": 1.0,
+      "top10_mass": 0.011900643836093973,
+      "coverage_entropy": 7.501337910400082
+    },
+    "gate_effective_mask_profile": {
+      "selected_total": 372921,
+      "unique_feature_count": 2000,
+      "unique_feature_fraction": 1.0,
+      "top10_mass": 0.011900643836093973,
+      "coverage_entropy": 7.501337910400082
+    },
+    "gate_keep_profile": {
+      "selected_total": 1120554,
+      "unique_feature_count": 2000,
+      "unique_feature_fraction": 1.0,
+      "top10_mass": 0.009443543104571489,
+      "coverage_entropy": 7.540331413389702
+    },
+    "gate_keep_effective_profile": {
+      "selected_total": 1120554,
+      "unique_feature_count": 2000,
+      "unique_feature_fraction": 1.0,
+      "top10_mass": 0.009443543104571489,
+      "coverage_entropy": 7.540331413389702
+    },
+    "model_parameter_count": 5078432,
+    "discriminator_parameter_count": 56001,
+    "gate_parameter_count": 33537
+  }
+}

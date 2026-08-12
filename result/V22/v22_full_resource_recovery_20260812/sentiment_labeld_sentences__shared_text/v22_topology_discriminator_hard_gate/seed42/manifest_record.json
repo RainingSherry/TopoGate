@@ -1,0 +1,16 @@
+{
+  "dataset_id": "sentiment_labeld_sentences__shared_text",
+  "name": "sentiment_labeld_sentences",
+  "stratum": "original8_shared_text",
+  "input_protocol": "shared_text",
+  "source_path": "datasets/sentiment_labeld_sentences.npz",
+  "source_sha256": "8f5363cdbad8dcd77cbcac71306c1ddcfbd71d386d37a096b4d765c316845051",
+  "n_samples": 2748,
+  "n_features_original": 200,
+  "labels_available_outer_only": true,
+  "expected_labels_unique": 2,
+  "k_source": "benchmark_oracle_from_y",
+  "run_key": "sentiment_labeld_sentences__shared_text::v22_topology_discriminator_hard_gate::seed42",
+  "batch_size": 4096,
+  "topology_cache_source": "result/V22/v22_full_single_seed_20260812/sentiment_labeld_sentences__shared_text/v22_topology_discriminator_hard_gate/seed42/cache"
+}

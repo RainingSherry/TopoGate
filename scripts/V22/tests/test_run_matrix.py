@@ -1,0 +1,43 @@
+from __future__ import annotations
+
+from pathlib import Path
+
+import pytest
+
+from scripts.V22.run_matrix import _load_manifest, _parse_n_clusters, build_jobs
+
+
+def test_unlabelled_dataset_requires_explicit_k_mapping(tmp_path: Path) -> None:
+    manifest = _load_manifest(
+        Path("result/V22/dataset_manifests/v22_dataset_extension_20260812.json"),
+        require_sources=False,
+    )
+    pbmc_id = "pbmc3k__10x_unlabelled_count"
+    jobs = build_jobs(
+        manifest,
+        ("v22_topology_discriminator_hard_gate",),
+        (42,),
+        tmp_path,
+    )
+    pbmc_job = next(job for job in jobs if job["dataset_id"] == pbmc_id)
+    assert pbmc_job["n_clusters"] is None
+
+    mapped = build_jobs(
+        manifest,
+        ("v22_topology_discriminator_hard_gate",),
+        (42,),
+        tmp_path,
+        n_clusters_by_dataset={pbmc_id: 8},
+    )
+    mapped_pbmc_job = next(job for job in mapped if job["dataset_id"] == pbmc_id)
+    assert mapped_pbmc_job["n_clusters"] == 8
+
+
+def test_n_clusters_parser_rejects_ambiguous_specs() -> None:
+    assert _parse_n_clusters(["pbmc3k__10x_unlabelled_count=8"]) == {
+        "pbmc3k__10x_unlabelled_count": 8
+    }
+    with pytest.raises(ValueError, match="DATASET_ID=K"):
+        _parse_n_clusters(["pbmc3k__10x_unlabelled_count"])
+    with pytest.raises(ValueError, match="duplicate"):
+        _parse_n_clusters(["pbmc3k__10x_unlabelled_count=8", "pbmc3k__10x_unlabelled_count=9"])

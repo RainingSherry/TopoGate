@@ -1,0 +1,179 @@
+{
+  "status": "completed",
+  "evidence_level": "engineering_smoke",
+  "protocol_id": "v22_topology_discriminator_hard_mask_v1",
+  "variant": "v22_topology_discriminator_hard_gate",
+  "seed": 123,
+  "dataset": "micro-mass",
+  "dataset_path": "datasets/micro-mass.npz",
+  "input_protocol": "clubench_bridge",
+  "n_samples": 360,
+  "n_features_original": 1300,
+  "n_features": 1300,
+  "labels_used_during_fit": false,
+  "K_used_during_fit": false,
+  "K_source": "benchmark_oracle_from_y",
+  "prediction_semantics": "kmeans_clean_embedding",
+  "mask_semantics": {
+    "reconstruction": "random_topk_donor_corruption; effective changed positions train scMAE",
+    "adversarial": "hard topk donor corruption; M=1 means coordinate is reconstructed",
+    "discriminator": "matched real/fake coordinate pairs; no mask or hint input"
+  },
+  "metrics": {
+    "labels_available": true,
+    "n_clusters": 10,
+    "cluster_method": "kmeans_clean_embedding",
+    "K_source": "benchmark_oracle_from_y",
+    "labels_used_during_fit": false,
+    "K_used_during_fit": false,
+    "ari": 0.4594380702912993,
+    "nmi": 0.6885875047691514,
+    "acc": 0.5555555555555556
+  },
+  "diagnostics": {
+    "graph_profile": {
+      "neighbor_k_requested": 20,
+      "neighbor_k_effective": 20,
+      "svd_target": 0.95,
+      "svd_min_dim": 32,
+      "svd_max_dim": 128,
+      "svd_dim": 128,
+      "variance_target_reached": false,
+      "explained_variance_ratio_sum": 0.8868319006869569,
+      "mean_neighbor_cosine_distance": 0.4128373861312866,
+      "self_edges": 0,
+      "label_leakage_diagnostic": false,
+      "enabled": true
+    },
+    "stats_profile": {
+      "storage": "memmap",
+      "path": "result/V22/engineering_smoke_micro_mass_sanity_20260812/topology_s123/cache/topology_statistics.dat",
+      "dtype": "float32",
+      "shape": [
+        360,
+        1300,
+        4
+      ],
+      "block_size": 512,
+      "clip": 5.0,
+      "feature_names": [
+        "deviation_z",
+        "dispersion_z",
+        "neighbor_support",
+        "stability"
+      ],
+      "support_is_label_free": true
+    },
+    "history": [
+      {
+        "loss": 2.7230655749638877,
+        "reconstruction_loss": 0.11218840132157008,
+        "mask_loss": 0.49010489384333294,
+        "discriminator_loss": 0.7020818591117859,
+        "generator_adversarial_loss": 0.6438218057155609,
+        "gate_reconstruction_loss": 4.112780213356018,
+        "gate_loss": -0.005508665538703402,
+        "gate_reward": 0.005547684850171208,
+        "gate_coverage": 0.0039019325049594045,
+        "random_requested_mask_rate": 0.4000000059604645,
+        "random_effective_mask_rate": 0.07383934284249942,
+        "adversarial_selected_rate": 0.04590104209880034,
+        "adversarial_effective_rate": 0.030730368259052437,
+        "discriminator_pair_count": 1920.0,
+        "discriminator_real_accuracy": 0.869075670838356,
+        "discriminator_gate_fake_accuracy": 0.13823992293328047,
+        "discriminator_scmae_fake_accuracy": 0.2745768229166667,
+        "discriminator_confusion_pair_count": 1920.0,
+        "gate_grad_norm": 0.0014580099327778067,
+        "epoch": 1.0,
+        "discriminator_steps_epoch": 6.0,
+        "gate_updates_epoch": 6.0
+      },
+      {
+        "loss": 1.9653988480567932,
+        "reconstruction_loss": 0.11813429743051529,
+        "mask_loss": 0.487916832168897,
+        "discriminator_loss": 0.6942777931690216,
+        "generator_adversarial_loss": 0.7468283573786417,
+        "gate_reconstruction_loss": 2.5693297386169434,
+        "gate_loss": -0.005879824825872977,
+        "gate_reward": 0.005918919496859114,
+        "gate_coverage": 0.003909466594147186,
+        "random_requested_mask_rate": 0.4000000059604645,
+        "random_effective_mask_rate": 0.07273557657996814,
+        "adversarial_selected_rate": 0.046233173459768295,
+        "adversarial_effective_rate": 0.03128525676826636,
+        "discriminator_pair_count": 1920.0,
+        "discriminator_real_accuracy": 0.20537671695152918,
+        "discriminator_gate_fake_accuracy": 0.8066506485144297,
+        "discriminator_scmae_fake_accuracy": 0.8219401041666666,
+        "discriminator_confusion_pair_count": 1920.0,
+        "gate_grad_norm": 0.002415779852554228,
+        "epoch": 2.0,
+        "discriminator_steps_epoch": 6.0,
+        "gate_updates_epoch": 6.0
+      }
+    ],
+    "variant_contract": {
+      "scmae_backbone": true,
+      "discriminator": true,
+      "coordinate_matched_real_fake": true,
+      "mask_or_hint_passed_to_discriminator": false,
+      "gate": true,
+      "topology_gate": true,
+      "gate_reward_mode": "discriminator_difficulty",
+      "clean_embedding_kmeans_primary": true
+    },
+    "labels_used_during_fit": false,
+    "K_used_during_fit": false,
+    "discriminator_steps": 12,
+    "discriminator_finite_step_rate": 1.0,
+    "gate_updates": 12,
+    "gate_nonzero_update_rate": 1.0,
+    "adversarial_mask_profile": {
+      "selected_total": 43180,
+      "unique_feature_count": 410,
+      "unique_feature_fraction": 0.3153846153846154,
+      "top10_mass": 0.1198934691987031,
+      "coverage_entropy": 5.427810046766124
+    },
+    "adversarial_effective_mask_profile": {
+      "selected_total": 29085,
+      "unique_feature_count": 380,
+      "unique_feature_fraction": 0.2923076923076923,
+      "top10_mass": 0.14615781330582775,
+      "coverage_entropy": 5.320606169801675
+    },
+    "random_mask_profile": {
+      "selected_total": 374400,
+      "unique_feature_count": 1300,
+      "unique_feature_fraction": 1.0,
+      "top10_mass": 0.008664529914529914,
+      "coverage_entropy": 7.16903134407183
+    },
+    "random_effective_mask_profile": {
+      "selected_total": 68681,
+      "unique_feature_count": 1080,
+      "unique_feature_fraction": 0.8307692307692308,
+      "top10_mass": 0.03647296923457725,
+      "coverage_entropy": 6.609153785238412
+    },
+    "gate_mask_profile": {
+      "selected_total": 43166,
+      "unique_feature_count": 1065,
+      "unique_feature_fraction": 0.8192307692307692,
+      "top10_mass": 0.04820923875272205,
+      "coverage_entropy": 6.548506806307854
+    },
+    "gate_effective_mask_profile": {
+      "selected_total": 43166,
+      "unique_feature_count": 1065,
+      "unique_feature_fraction": 0.8192307692307692,
+      "top10_mass": 0.04820923875272205,
+      "coverage_entropy": 6.548506806307854
+    },
+    "model_parameter_count": 2408632,
+    "discriminator_parameter_count": 44801,
+    "gate_parameter_count": 22337
+  }
+}

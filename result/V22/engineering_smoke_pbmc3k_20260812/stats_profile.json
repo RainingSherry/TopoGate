@@ -1,0 +1,19 @@
+{
+  "storage": "memmap",
+  "path": "result/V22/engineering_smoke_pbmc3k_20260812/cache/topology_statistics.dat",
+  "dtype": "float32",
+  "shape": [
+    2700,
+    2000,
+    4
+  ],
+  "block_size": 512,
+  "clip": 5.0,
+  "feature_names": [
+    "deviation_z",
+    "dispersion_z",
+    "neighbor_support",
+    "stability"
+  ],
+  "support_is_label_free": true
+}

@@ -1,0 +1,13 @@
+{
+  "description": "Frozen V9 comparison manifest after isolating the legacy beta-scale schedule. This is a reproducibility checkpoint, not a claim that the bytes equal the original 2026-07-29 run.",
+  "files": {
+    "methods/TopoGate/learnable_gate/run_npz.py": "2a2c12065c8a4f6603011fdcbfbf66c7420776335405c0779636210eb48086b2",
+    "methods/TopoGate/learnable_gate/learnable_gate.py": "9f261b5c850d1f92c534afce569632044f9beb3e1b8a2ec49144cbf7e5f53a6f",
+    "methods/TopoGate/learnable_gate/mixing.py": "a742994e65e5f55335eec75f5d550dd3b64c6212b2da69f0911e1064db929d94",
+    "methods/TopoGate/learnable_gate/neighbor_graph.py": "d40721759fcf24b343fd94f4b362608833f51fb20897f951a3f6b766dffd013c",
+    "methods/TopoGate/learnable_gate/model.py": "512cf1eadc2df1471fbfcbf7bbc083362c362ba1f54ab1840ba59187074f1401",
+    "methods/TopoGate/learnable_gate/uncertainty.py": "c261075ecce1436a95f74b1a6cdb6a2d8d1cf2ea74b6120b81d462e6ea8fcd18",
+    "methods/TopoGate/learnable_gate/configs/learnable_gate_v9_adaptive.yaml": "3d50fe6ced15005821afbee5741364fd2b663c9e9389db7e4c8da278194d14ef",
+    "scripts/v9_learnable_gate/run_v9_multiseed.py": "92a29d93aa97c5d17fc8e94ea93315f2bfe3d97f7a172ea0a36c3e518036a7e6"
+  }
+}

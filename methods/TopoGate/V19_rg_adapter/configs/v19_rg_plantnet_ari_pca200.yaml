@@ -1,0 +1,33 @@
+# Fixed PlantNet ARI-selected RG configuration ported to the V19 adapter.
+# Only the graph PCA dimension is changed from the PlantNet selection: 50 -> 200.
+# The protocol remains the V19 adapter contract; the independent experiment
+# identity is recorded by the output root and launcher provenance.
+protocol_id: v19_rg_selected_advantage_v1
+variant: rg_full
+hidden_size: 256
+epochs: 80
+batch_size: 512
+lr: 0.001396484852449938
+mask_ratio: 0.3689141599917436
+dropout: 0.260664592287061
+masked_data_weight: 0.8146965883816917
+mask_loss_weight: 0.6360685897622333
+neighbor_k: 5
+mix_neighbors: 4
+knn_pca_dim: 200
+tau: 0.49397135890361477
+gate_min: 0.0
+gate_max: 0.06445450610034464
+pseudo_weight: 0.5646927539221318
+gamma_sim: 1.0
+gamma_mutual: 1.0
+gamma_snn: 1.0
+gamma_distance: 1.0
+beta_mutual: 1.0
+beta_snn: 1.0
+beta_perturb: 2.0
+beta_uncertainty: 1.0
+n_top_features: 1500
+target_sum: 10000.0
+kmeans_n_init: 20
+num_workers: 0

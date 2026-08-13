@@ -27,7 +27,7 @@ VARIANT_CONFIGS = {
 }
 
 
-def _load_manifest(path: Path = MANIFEST, *, require_sources: bool = True) -> dict[str, Any]:
+def _load_manifest(path: Path = MANIFEST) -> dict[str, Any]:
     payload = json.loads(path.read_text(encoding="utf-8"))
     records = [row for row in payload.get("datasets", []) if row.get("status", "").startswith("eligible")]
     if not records:
@@ -36,7 +36,7 @@ def _load_manifest(path: Path = MANIFEST, *, require_sources: bool = True) -> di
         for key in ("dataset_id", "name", "source_path", "input_protocol"):
             if key not in row:
                 raise ValueError(f"manifest record missing {key}: {row}")
-        if require_sources and not Path(row["source_path"]).is_file():
+        if not Path(row["source_path"]).is_file():
             raise FileNotFoundError(row["source_path"])
     return {**payload, "datasets": records}
 
@@ -180,18 +180,8 @@ def main() -> int:
         help="explicit K for an unlabelled dataset; repeat once per dataset",
     )
     parser.add_argument("--dry-run", action="store_true")
-    parser.add_argument(
-        "--allow-missing-sources",
-        action="store_true",
-        help="allow provenance-only manifests whose dataset files are not present; execution still requires real files",
-    )
     args = parser.parse_args()
-    manifest = _load_manifest(
-        args.manifest,
-        require_sources=not args.allow_missing_sources,
-    )
-    if args.allow_missing_sources and not args.dry_run:
-        raise ValueError("--allow-missing-sources is valid only with --dry-run")
+    manifest = _load_manifest(args.manifest)
     n_clusters_by_dataset = _parse_n_clusters(args.n_clusters)
     jobs = build_jobs(
         manifest,

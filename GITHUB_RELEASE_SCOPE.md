@@ -1,13 +1,16 @@
 # GitHub Release Scope
 
 This repository is a reproducibility snapshot of the ToPoGate research project.
-This release includes curated final result tables and audit summaries for the
-versioned experiments. It does not publish the paper or any paper source bundle.
+This release includes the main versioned implementations (V9-V22), their
+direct scMAE dependencies and runners, plus curated final result tables and
+audit summaries. It does not publish the paper or any paper source bundle.
 
 ## Included
 
 - Core TopoGate/scMAE dependencies, versioned source code, configurations,
-  tests, and runnable scripts already present in the repository.
+  tests, and runnable scripts already present in the repository, including
+  V18 latent-gate, V19 RG adapter, V20 adversarial mask, V21 assignment-gate,
+  and V22 discriminator/Keep-Gate implementations.
 - `result/final_results/`: one curated final result table or summary set for
   each audited version with non-smoke evidence, including V09-V14, V16.1, and
   V18-V22. The directory README records versions with no promotable result.

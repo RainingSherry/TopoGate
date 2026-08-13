@@ -1,8 +1,8 @@
 # TopoGate
 
 Repository for the TopoGate research implementations and their reversible
-variant configurations. The current public snapshot adds curated, auditable
-final result tables and summaries for the available V-series experiments; it
+variant configurations. The current public snapshot includes the core V9-V22
+code paths, curated auditable result tables, and concise evidence summaries; it
 does not publish papers or dataset binaries.
 
 This repository intentionally excludes raw datasets, model outputs,
@@ -12,8 +12,11 @@ caller to provide input data and an output directory.
 
 ## Contents
 
-- `methods/TopoGate/`: TopoGate variants and configuration files.
-- `scripts/V17/`: V17 reference and sparse-input audit entrypoints.
+- `methods/TopoGate/`: TopoGate variants and configuration files from V9
+  through V22, including the independent V17 relation-native reference and
+  the V22 discriminator/Keep-Gate prototype.
+- `scripts/V11/` through `scripts/V22/`: version-specific runners, matrix
+  preparation, audits, and summarizers.
 - `methods/NeighborMix_scMAE/model.py`: the scMAE backbone used by several
   TopoGate variants.
 - `methods/DeepLearning/scMAE_family.py` and `methods/shared_utils.py`: direct
@@ -23,6 +26,10 @@ caller to provide input data and an output directory.
 - `result/final_results/`: the largest final result table or summary retained
   for each audited V version. Check its README for coverage and evidence
   boundaries.
+
+The public release is code-first. Result files are metadata-only summaries;
+raw arrays, checkpoints, worker logs, and smoke/debug directories remain
+outside Git.
 
 The versioned directories under `methods/TopoGate/` are research variants.
 They are kept as separate implementations for traceability; choose a specific

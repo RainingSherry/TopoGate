@@ -1,0 +1,16 @@
+[
+  {
+    "dataset": "Quake_Smart-seq2_Lung",
+    "status": "empirical_not_supported",
+    "reason": "fixed_preregistered_clean_and_compound_promotion_rule",
+    "domain_tier": "high_sparse_bonus",
+    "clean_self_ari_mean": 0.4175670003433365,
+    "clean_fixed_ari_mean": 0.39570177417730873,
+    "clean_v16_1_ari_mean": 0.41747250343570436,
+    "clean_shuffled_ari_mean": 0.4166362714530623,
+    "clean_output_disabled_ari_mean": 0.4175670003433365,
+    "clean_delta_self_mean": -9.449690763208007e-05,
+    "compound_delta_self_mean": 0.0,
+    "compound_retention": null
+  }
+]

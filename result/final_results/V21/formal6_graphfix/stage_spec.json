@@ -1,0 +1,77 @@
+{
+  "protocol_id": "v21_assignment_adversarial_full6_graphfix_v1",
+  "stage": "formal_six_dataset_matrix",
+  "datasets": [
+    {
+      "dataset": "cnae9",
+      "input_protocol": "shared_text",
+      "data": "<local_data_root>/datasets/cnae9.npz"
+    },
+    {
+      "dataset": "Mouse_retina",
+      "input_protocol": "clubench_bridge",
+      "data": "<local_data_root>/datasets/Mouse_retina.npz"
+    },
+    {
+      "dataset": "Baron Human",
+      "input_protocol": "clubench_bridge",
+      "data": "<local_data_root>/datasets/Baron Human.npz"
+    },
+    {
+      "dataset": "Campbell",
+      "input_protocol": "clubench_bridge",
+      "data": "<local_data_root>/datasets/Campbell.npz"
+    },
+    {
+      "dataset": "sms_spam_collection",
+      "input_protocol": "shared_text",
+      "data": "<local_data_root>/datasets/sms_spam_collection.npz"
+    },
+    {
+      "dataset": "hate_speech",
+      "input_protocol": "shared_text",
+      "data": "<local_data_root>/datasets/hate_speech.npz"
+    }
+  ],
+  "variants": [
+    "topology_assignment_adversarial",
+    "scmae_only"
+  ],
+  "seeds": [
+    42,
+    123,
+    7
+  ],
+  "gpu_pool": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "forbidden_gpus": [
+    0,
+    7
+  ],
+  "expected_jobs": 36,
+  "label_isolation": {
+    "fit_receives_y": false,
+    "graph_receives_y": false,
+    "gate_receives_y": false,
+    "loss_receives_y": false,
+    "K_source": "benchmark_oracle_from_y_for_cluster_head_variants",
+    "metrics_use_y_after_fit": true
+  },
+  "selection": "fixed_v21_config; no ARI-based variant or hyperparameter selection",
+  "cpu_fallback": {
+    "enabled": true,
+    "datasets": [
+      "cnae9",
+      "hate_speech",
+      "sms_spam_collection"
+    ],
+    "max_workers": 6
+  },
+  "created_at": "2026-08-10T18:36:29.043541+00:00"
+}

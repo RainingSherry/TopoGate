@@ -1,13 +1,14 @@
 # TopoGate
 
 Repository for the TopoGate research implementations and their reversible
-variant configurations. The current public snapshot adds auditable V22 result
-metadata; it does not publish papers or dataset binaries.
+variant configurations. The current public snapshot adds curated, auditable
+final result tables and summaries for the available V-series experiments; it
+does not publish papers or dataset binaries.
 
 This repository intentionally excludes raw datasets, model outputs,
-checkpoints, papers, logs, caches, and local machine paths. V22 result metadata
-is retained under `result/V22/`; runners still expect the caller to provide
-input data and an output directory.
+checkpoints, papers, logs, caches, and local machine paths. Curated result
+metadata is retained under `result/final_results/`; runners still expect the
+caller to provide input data and an output directory.
 
 ## Contents
 
@@ -19,8 +20,9 @@ input data and an output directory.
   runtime dependencies retained for the included code paths.
 - `reports/`: curated result facts, aggregate tables, and experiment reports;
   it contains no raw model outputs.
-- `result/V22/`: V22 aggregate audits, per-run JSON metadata, and dataset
-  provenance manifests. Check `result/V22/README.md` for the evidence boundary.
+- `result/final_results/`: the largest final result table or summary retained
+  for each audited V version. Check its README for coverage and evidence
+  boundaries.
 
 The versioned directories under `methods/TopoGate/` are research variants.
 They are kept as separate implementations for traceability; choose a specific

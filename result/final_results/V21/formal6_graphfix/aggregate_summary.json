@@ -1,0 +1,341 @@
+{
+  "matrix_protocol_id": "v21_assignment_adversarial_full6_graphfix_v1",
+  "model_protocol_id": "v21_assignment_adversarial_v2_graphfix_v1",
+  "expected_jobs": 36,
+  "audited_jobs": 36,
+  "completed_valid_jobs": 36,
+  "provenance_ok": true,
+  "errors": [],
+  "audit_ok": true,
+  "per_dataset_variant": [
+    {
+      "dataset": "Baron Human",
+      "variant": "scmae_only",
+      "n_runs": 3,
+      "ari_mean": 0.20583432052310505,
+      "ari_std": 0.03361468125771873,
+      "nmi_mean": 0.4103335370612057,
+      "nmi_std": 0.04469844874486717
+    },
+    {
+      "dataset": "Baron Human",
+      "variant": "topology_assignment_adversarial",
+      "n_runs": 3,
+      "ari_mean": -0.007672291757349497,
+      "ari_std": 0.013288799134221237,
+      "nmi_mean": 0.027994209928498756,
+      "nmi_std": 0.04848739391390895
+    },
+    {
+      "dataset": "Campbell",
+      "variant": "scmae_only",
+      "n_runs": 3,
+      "ari_mean": 0.199442806289712,
+      "ari_std": 0.0323497557412885,
+      "nmi_mean": 0.3139952263746506,
+      "nmi_std": 0.006049170158980838
+    },
+    {
+      "dataset": "Campbell",
+      "variant": "topology_assignment_adversarial",
+      "n_runs": 3,
+      "ari_mean": 0.054696023999446945,
+      "ari_std": 0.10554037697825218,
+      "nmi_mean": 0.11661093258893601,
+      "nmi_std": 0.11020938025904656
+    },
+    {
+      "dataset": "Mouse_retina",
+      "variant": "scmae_only",
+      "n_runs": 3,
+      "ari_mean": 0.9363244287895276,
+      "ari_std": 0.00925247975878377,
+      "nmi_mean": 0.8902183371320247,
+      "nmi_std": 0.012748492885550522
+    },
+    {
+      "dataset": "Mouse_retina",
+      "variant": "topology_assignment_adversarial",
+      "n_runs": 3,
+      "ari_mean": 0.44159776013888397,
+      "ari_std": 0.23745961930235002,
+      "nmi_mean": 0.5927753088372386,
+      "nmi_std": 0.1321681179998545
+    },
+    {
+      "dataset": "cnae9",
+      "variant": "scmae_only",
+      "n_runs": 3,
+      "ari_mean": 0.3600053973347922,
+      "ari_std": 0.020018161143736262,
+      "nmi_mean": 0.5958538544330649,
+      "nmi_std": 0.00750801038863435
+    },
+    {
+      "dataset": "cnae9",
+      "variant": "topology_assignment_adversarial",
+      "n_runs": 3,
+      "ari_mean": 0.5083175650236864,
+      "ari_std": 0.06854749253148915,
+      "nmi_mean": 0.6286325893491661,
+      "nmi_std": 0.0351062015277511
+    },
+    {
+      "dataset": "hate_speech",
+      "variant": "scmae_only",
+      "n_runs": 3,
+      "ari_mean": -0.015962465845482957,
+      "ari_std": 0.010629087519268169,
+      "nmi_mean": 0.050383217360773086,
+      "nmi_std": 0.008615316870776756
+    },
+    {
+      "dataset": "hate_speech",
+      "variant": "topology_assignment_adversarial",
+      "n_runs": 3,
+      "ari_mean": -0.07520592105013021,
+      "ari_std": 0.015662162960642417,
+      "nmi_mean": 0.033044883195036026,
+      "nmi_std": 0.01098978248746673
+    },
+    {
+      "dataset": "sms_spam_collection",
+      "variant": "scmae_only",
+      "n_runs": 3,
+      "ari_mean": 0.8258313888383718,
+      "ari_std": 0.003107352481388054,
+      "nmi_mean": 0.6853161050900644,
+      "nmi_std": 0.008205767248803198
+    },
+    {
+      "dataset": "sms_spam_collection",
+      "variant": "topology_assignment_adversarial",
+      "n_runs": 3,
+      "ari_mean": 0.32442620194934113,
+      "ari_std": 0.15331529795115917,
+      "nmi_mean": 0.29660931632403614,
+      "nmi_std": 0.08018509962393991
+    }
+  ],
+  "paired_seed_rows": [
+    {
+      "dataset": "Baron Human",
+      "seed": 7,
+      "full_ari": 0.0,
+      "scmae_only_ari": 0.18406477085314732,
+      "delta_ari": -0.18406477085314732,
+      "full_nmi": 0.0,
+      "scmae_only_nmi": 0.37949986140706654,
+      "delta_nmi": -0.37949986140706654
+    },
+    {
+      "dataset": "Baron Human",
+      "seed": 42,
+      "full_ari": -0.02301687527204849,
+      "scmae_only_ari": 0.18888904278117596,
+      "delta_ari": -0.21190591805322445,
+      "full_nmi": 0.08398262978549627,
+      "scmae_only_nmi": 0.38990466866787793,
+      "delta_nmi": -0.3059220388823817
+    },
+    {
+      "dataset": "Baron Human",
+      "seed": 123,
+      "full_ari": 0.0,
+      "scmae_only_ari": 0.24454914793499183,
+      "delta_ari": -0.24454914793499183,
+      "full_nmi": 0.0,
+      "scmae_only_nmi": 0.4615960811086725,
+      "delta_nmi": -0.4615960811086725
+    },
+    {
+      "dataset": "Campbell",
+      "seed": 7,
+      "full_ari": 0.17656347735254158,
+      "scmae_only_ari": 0.16209625133773184,
+      "delta_ari": 0.014467226014809736,
+      "full_nmi": 0.12213872761861203,
+      "scmae_only_nmi": 0.3174375375111553,
+      "delta_nmi": -0.19529880989254325
+    },
+    {
+      "dataset": "Campbell",
+      "seed": 42,
+      "full_ari": -0.006356162100791085,
+      "scmae_only_ari": 0.21745819210663309,
+      "delta_ari": -0.22381435420742418,
+      "full_nmi": 0.22395239420191493,
+      "scmae_only_nmi": 0.3070104855129005,
+      "delta_nmi": -0.08305809131098557
+    },
+    {
+      "dataset": "Campbell",
+      "seed": 123,
+      "full_ari": -0.006119243253409655,
+      "scmae_only_ari": 0.2187739754247711,
+      "delta_ari": -0.22489321867818074,
+      "full_nmi": 0.0037416759462810686,
+      "scmae_only_nmi": 0.3175376560998961,
+      "delta_nmi": -0.31379598015361504
+    },
+    {
+      "dataset": "Mouse_retina",
+      "seed": 7,
+      "full_ari": 0.20518695771699233,
+      "scmae_only_ari": 0.9292227391580575,
+      "delta_ari": -0.7240357814410652,
+      "full_nmi": 0.45734075942830615,
+      "scmae_only_nmi": 0.8771997640497008,
+      "delta_nmi": -0.41985900462139464
+    },
+    {
+      "dataset": "Mouse_retina",
+      "seed": 42,
+      "full_ari": 0.43951384273468835,
+      "scmae_only_ari": 0.9467877901492143,
+      "delta_ari": -0.507273947414526,
+      "full_nmi": 0.5995703089992763,
+      "scmae_only_nmi": 0.9026783914411369,
+      "delta_nmi": -0.3031080824418606
+    },
+    {
+      "dataset": "Mouse_retina",
+      "seed": 123,
+      "full_ari": 0.6800924799649711,
+      "scmae_only_ari": 0.9329627570613108,
+      "delta_ari": -0.2528702770963397,
+      "full_nmi": 0.7214148580841334,
+      "scmae_only_nmi": 0.8907768559052363,
+      "delta_nmi": -0.16936199782110284
+    },
+    {
+      "dataset": "cnae9",
+      "seed": 7,
+      "full_ari": 0.48520713051426306,
+      "scmae_only_ari": 0.38007186889127553,
+      "delta_ari": 0.10513526162298753,
+      "full_nmi": 0.614950911560892,
+      "scmae_only_nmi": 0.5923818905533769,
+      "delta_nmi": 0.022569021007515122
+    },
+    {
+      "dataset": "cnae9",
+      "seed": 42,
+      "full_ari": 0.4543122026978009,
+      "scmae_only_ari": 0.3400358989276127,
+      "delta_ari": 0.11427630377018821,
+      "full_nmi": 0.6024271855615632,
+      "scmae_only_nmi": 0.590710205560907,
+      "delta_nmi": 0.01171698000065613
+    },
+    {
+      "dataset": "cnae9",
+      "seed": 123,
+      "full_ari": 0.5854333618589951,
+      "scmae_only_ari": 0.3599084241854884,
+      "delta_ari": 0.22552493767350668,
+      "full_nmi": 0.6685196709250433,
+      "scmae_only_nmi": 0.604469467184911,
+      "delta_nmi": 0.06405020374013226
+    },
+    {
+      "dataset": "hate_speech",
+      "seed": 7,
+      "full_ari": -0.05718769490895951,
+      "scmae_only_ari": -0.0053997966350360325,
+      "delta_ari": -0.05178789827392348,
+      "full_nmi": 0.025018887356885365,
+      "scmae_only_nmi": 0.0574606160557001,
+      "delta_nmi": -0.03244172869881474
+    },
+    {
+      "dataset": "hate_speech",
+      "seed": 42,
+      "full_ari": -0.08556076576184753,
+      "scmae_only_ari": -0.015830851545047896,
+      "delta_ari": -0.06972991421679964,
+      "full_nmi": 0.04557039321256512,
+      "scmae_only_nmi": 0.052898979638315934,
+      "delta_nmi": -0.007328586425750815
+    },
+    {
+      "dataset": "hate_speech",
+      "seed": 123,
+      "full_ari": -0.0828693024795836,
+      "scmae_only_ari": -0.026656749356364938,
+      "delta_ari": -0.05621255312321866,
+      "full_nmi": 0.0285453690156576,
+      "scmae_only_nmi": 0.04079005638830322,
+      "delta_nmi": -0.01224468737264562
+    },
+    {
+      "dataset": "sms_spam_collection",
+      "seed": 7,
+      "full_ari": 0.24106855670893762,
+      "scmae_only_ari": 0.8231286867113877,
+      "delta_ari": -0.5820601300024502,
+      "full_nmi": 0.2611063634517304,
+      "scmae_only_nmi": 0.6826075611867463,
+      "delta_nmi": -0.4215011977350159
+    },
+    {
+      "dataset": "sms_spam_collection",
+      "seed": 42,
+      "full_ari": 0.5013611069497227,
+      "scmae_only_ari": 0.8292265574947976,
+      "delta_ari": -0.3278654505450749,
+      "full_nmi": 0.38841688943501584,
+      "scmae_only_nmi": 0.6945337388281593,
+      "delta_nmi": -0.30611684939314343
+    },
+    {
+      "dataset": "sms_spam_collection",
+      "seed": 123,
+      "full_ari": 0.23084894218936308,
+      "scmae_only_ari": 0.8251389223089303,
+      "delta_ari": -0.5942899801195671,
+      "full_nmi": 0.24030469608536223,
+      "scmae_only_nmi": 0.6788070152552875,
+      "delta_nmi": -0.4385023191699253
+    }
+  ],
+  "per_dataset_delta": [
+    {
+      "dataset": "Baron Human",
+      "delta_ari_mean": -0.21350661228045453,
+      "delta_ari_std": 0.03027394315664058,
+      "n_seeds": 3
+    },
+    {
+      "dataset": "Campbell",
+      "delta_ari_mean": -0.14474678229026505,
+      "delta_ari_std": 0.13788443101946965,
+      "n_seeds": 3
+    },
+    {
+      "dataset": "Mouse_retina",
+      "delta_ari_mean": -0.49472666865064363,
+      "delta_ari_std": 0.23583322237205853,
+      "n_seeds": 3
+    },
+    {
+      "dataset": "cnae9",
+      "delta_ari_mean": 0.14831216768889413,
+      "delta_ari_std": 0.0670242385216478,
+      "n_seeds": 3
+    },
+    {
+      "dataset": "hate_speech",
+      "delta_ari_mean": -0.05924345520464726,
+      "delta_ari_std": 0.009347125739713342,
+      "n_seeds": 3
+    },
+    {
+      "dataset": "sms_spam_collection",
+      "delta_ari_mean": -0.5014051868890307,
+      "delta_ari_std": 0.150414169466241,
+      "n_seeds": 3
+    }
+  ],
+  "macro_dataset_delta_ari": -0.21088608960435784
+}

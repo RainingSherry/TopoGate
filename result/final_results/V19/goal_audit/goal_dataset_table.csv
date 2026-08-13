@@ -1,0 +1,14 @@
+dataset_id,dataset,panel,rg_ari_mean,scmae_ari_mean,delta_ari_mean,rg_win_scmae,baseline_methods_completed,best_baseline_method,best_baseline_ari,rg_win_best_baseline,baseline_complete_for_winner
+arcene__uci_highdim,arcene,external_highdim_bridge_only,0.09771296799487136,0.09771296799487136,0.0,False,[],,,False,True
+dexter__uci_sparse_highdim,dexter,external_highdim_bridge_only,0.004956568897387984,0.000876137927816824,0.00408043096957116,True,"['AHDPC', 'DPC_GFNN', 'GCC']",DPC_GFNN,0.033271856961010066,False,True
+dorothea__uci_sparse_highdim,dorothea,external_highdim_bridge_only,-0.0835445254558831,-0.08440674880666615,0.000862223350783046,True,"['AHDPC', 'DPC_GFNN', 'GCC']",AHDPC,-0.0015416044652185675,False,True
+fabert__local_sparse_text,fabert,external_highdim_bridge_only,0.03276555758239731,0.07876240284610632,-0.045996845263709014,False,[],,,False,True
+fbis_wc__local_sparse_text,fbis.wc,external_highdim_bridge_only,0.2906449314280173,0.3093465907423514,-0.018701659314334058,False,[],,,False,True
+gina_prior2__local_sparse_highdim,gina_prior2,external_highdim_bridge_only,0.36199169453271185,0.3546915848045192,0.007300109728192672,True,"['AHDPC', 'DPC_GFNN', 'GCC']",GCC,0.25080008613851723,True,True
+gisette__uci_highdim_dense,gisette,external_highdim_bridge_only,0.07230673380697485,0.0967919177141497,-0.024485183907174846,False,[],,,False,True
+internet_advertisements__uci_sparse,internet_advertisements,external_highdim_bridge_only,-0.06029193137990785,-0.07254934978133472,0.012257418401426865,True,"['AHDPC', 'DPC_GFNN', 'GCC']",GCC,0.040161638314129444,False,True
+madelon__uci_highdim_control,madelon,external_highdim_bridge_only,0.028290763714252435,0.02575331298659162,0.0025374507276608137,True,"['AHDPC', 'DPC_GFNN', 'GCC']",GCC,0.02800546337055295,True,True
+micro_mass__local_sparse_highdim,micro-mass,external_highdim_bridge_only,0.4943704908534361,0.5017114805339078,-0.007340989680471699,False,[],,,False,True
+quake_smartseq2_lung__local_sparse_expression,Quake_Smart-seq2_Lung,external_highdim_bridge_only,0.1696441295367239,0.17911976171149196,-0.009475632174768054,False,[],,,False,True
+sms_spam_full__uci_sparse_text,sms_spam_collection_full_tfidf500,external_highdim_bridge_only,0.8614375634977197,0.8756753305737017,-0.01423776707598201,False,[],,,False,True
+tr45_wc__local_sparse_text,tr45.wc,external_highdim_bridge_only,0.009203193636781981,0.004462222773125916,0.0047409708636560665,True,"['AHDPC', 'DPC_GFNN', 'GCC']",DPC_GFNN,0.031047080061697277,False,True

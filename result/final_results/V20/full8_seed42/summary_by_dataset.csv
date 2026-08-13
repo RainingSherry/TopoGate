@@ -1,0 +1,9 @@
+dataset,input_protocol,variant,seed,status,ari,nmi,acc,effective_mask_rate,source_summary
+Baron Human,clubench_bridge,topology_adversarial_full,42,completed,0.2040156497562061,0.3461168214129477,0.39356289196544786,,baron_human__clubench_bridge__summary.json
+Campbell,clubench_bridge,topology_adversarial_full,42,completed,0.0999936630654169,0.25421304271940337,0.19523666566596617,,campbell__clubench_bridge__summary.json
+cnae9,shared_text,topology_adversarial_full,42,completed,0.18140792473785647,0.46739975960888674,0.4722222222222222,,cnae9__shared_text__summary.json
+hate_speech,shared_text,topology_adversarial_full,42,completed,-0.02918338845383534,0.007178926623759785,0.5240608506674945,,hate_speech__shared_text__summary.json
+imdb,shared_text,topology_adversarial_full,42,completed,0.0008881632076716546,0.0010512240189106952,0.5169230769230769,,imdb__shared_text__summary.json
+Mouse_retina,clubench_bridge,topology_adversarial_full,42,completed,0.3418890721013034,0.4328612243477882,0.5859674329501916,,mouse_retina__clubench_bridge__summary.json
+sentiment_labeld_sentences,shared_text,topology_adversarial_full,42,completed,-7.412563229522349e-05,1.97300645245365e-05,0.5032751091703057,,sentiment_labeld_sentences__shared_text__summary.json
+sms_spam_collection,shared_text,topology_adversarial_full,42,completed,0.16779205583838722,0.1255266465465813,0.881437125748503,,sms_spam_collection__shared_text__summary.json

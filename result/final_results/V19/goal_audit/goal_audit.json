@@ -1,0 +1,230 @@
+{
+  "status": "completed",
+  "extension_panels": 1,
+  "n_datasets": 13,
+  "rg_wins_over_scmae": 6,
+  "minimum_required_rg_wins": 5,
+  "goal_met": true,
+  "rg_wins_over_best_baseline": 2,
+  "missing_baseline_for_winners": [],
+  "baseline_methods": [
+    "AHDPC",
+    "DPC_GFNN",
+    "GCC"
+  ],
+  "datasets": [
+    {
+      "dataset_id": "arcene__uci_highdim",
+      "dataset": "arcene",
+      "panel": "external_highdim_bridge_only",
+      "rg_ari_mean": 0.09771296799487136,
+      "scmae_ari_mean": 0.09771296799487136,
+      "delta_ari_mean": 0.0,
+      "rg_win_scmae": false,
+      "baseline_methods_completed": [],
+      "best_baseline_method": null,
+      "best_baseline_ari": null,
+      "rg_win_best_baseline": false,
+      "baseline_complete_for_winner": true
+    },
+    {
+      "dataset_id": "dexter__uci_sparse_highdim",
+      "dataset": "dexter",
+      "panel": "external_highdim_bridge_only",
+      "rg_ari_mean": 0.004956568897387984,
+      "scmae_ari_mean": 0.000876137927816824,
+      "delta_ari_mean": 0.00408043096957116,
+      "rg_win_scmae": true,
+      "baseline_methods_completed": [
+        "AHDPC",
+        "DPC_GFNN",
+        "GCC"
+      ],
+      "best_baseline_method": "DPC_GFNN",
+      "best_baseline_ari": 0.033271856961010066,
+      "rg_win_best_baseline": false,
+      "baseline_complete_for_winner": true
+    },
+    {
+      "dataset_id": "dorothea__uci_sparse_highdim",
+      "dataset": "dorothea",
+      "panel": "external_highdim_bridge_only",
+      "rg_ari_mean": -0.0835445254558831,
+      "scmae_ari_mean": -0.08440674880666615,
+      "delta_ari_mean": 0.000862223350783046,
+      "rg_win_scmae": true,
+      "baseline_methods_completed": [
+        "AHDPC",
+        "DPC_GFNN",
+        "GCC"
+      ],
+      "best_baseline_method": "AHDPC",
+      "best_baseline_ari": -0.0015416044652185675,
+      "rg_win_best_baseline": false,
+      "baseline_complete_for_winner": true
+    },
+    {
+      "dataset_id": "fabert__local_sparse_text",
+      "dataset": "fabert",
+      "panel": "external_highdim_bridge_only",
+      "rg_ari_mean": 0.03276555758239731,
+      "scmae_ari_mean": 0.07876240284610632,
+      "delta_ari_mean": -0.045996845263709014,
+      "rg_win_scmae": false,
+      "baseline_methods_completed": [],
+      "best_baseline_method": null,
+      "best_baseline_ari": null,
+      "rg_win_best_baseline": false,
+      "baseline_complete_for_winner": true
+    },
+    {
+      "dataset_id": "fbis_wc__local_sparse_text",
+      "dataset": "fbis.wc",
+      "panel": "external_highdim_bridge_only",
+      "rg_ari_mean": 0.2906449314280173,
+      "scmae_ari_mean": 0.3093465907423514,
+      "delta_ari_mean": -0.018701659314334058,
+      "rg_win_scmae": false,
+      "baseline_methods_completed": [],
+      "best_baseline_method": null,
+      "best_baseline_ari": null,
+      "rg_win_best_baseline": false,
+      "baseline_complete_for_winner": true
+    },
+    {
+      "dataset_id": "gina_prior2__local_sparse_highdim",
+      "dataset": "gina_prior2",
+      "panel": "external_highdim_bridge_only",
+      "rg_ari_mean": 0.36199169453271185,
+      "scmae_ari_mean": 0.3546915848045192,
+      "delta_ari_mean": 0.007300109728192672,
+      "rg_win_scmae": true,
+      "baseline_methods_completed": [
+        "AHDPC",
+        "DPC_GFNN",
+        "GCC"
+      ],
+      "best_baseline_method": "GCC",
+      "best_baseline_ari": 0.25080008613851723,
+      "rg_win_best_baseline": true,
+      "baseline_complete_for_winner": true
+    },
+    {
+      "dataset_id": "gisette__uci_highdim_dense",
+      "dataset": "gisette",
+      "panel": "external_highdim_bridge_only",
+      "rg_ari_mean": 0.07230673380697485,
+      "scmae_ari_mean": 0.0967919177141497,
+      "delta_ari_mean": -0.024485183907174846,
+      "rg_win_scmae": false,
+      "baseline_methods_completed": [],
+      "best_baseline_method": null,
+      "best_baseline_ari": null,
+      "rg_win_best_baseline": false,
+      "baseline_complete_for_winner": true
+    },
+    {
+      "dataset_id": "internet_advertisements__uci_sparse",
+      "dataset": "internet_advertisements",
+      "panel": "external_highdim_bridge_only",
+      "rg_ari_mean": -0.06029193137990785,
+      "scmae_ari_mean": -0.07254934978133472,
+      "delta_ari_mean": 0.012257418401426865,
+      "rg_win_scmae": true,
+      "baseline_methods_completed": [
+        "AHDPC",
+        "DPC_GFNN",
+        "GCC"
+      ],
+      "best_baseline_method": "GCC",
+      "best_baseline_ari": 0.040161638314129444,
+      "rg_win_best_baseline": false,
+      "baseline_complete_for_winner": true
+    },
+    {
+      "dataset_id": "madelon__uci_highdim_control",
+      "dataset": "madelon",
+      "panel": "external_highdim_bridge_only",
+      "rg_ari_mean": 0.028290763714252435,
+      "scmae_ari_mean": 0.02575331298659162,
+      "delta_ari_mean": 0.0025374507276608137,
+      "rg_win_scmae": true,
+      "baseline_methods_completed": [
+        "AHDPC",
+        "DPC_GFNN",
+        "GCC"
+      ],
+      "best_baseline_method": "GCC",
+      "best_baseline_ari": 0.02800546337055295,
+      "rg_win_best_baseline": true,
+      "baseline_complete_for_winner": true
+    },
+    {
+      "dataset_id": "micro_mass__local_sparse_highdim",
+      "dataset": "micro-mass",
+      "panel": "external_highdim_bridge_only",
+      "rg_ari_mean": 0.4943704908534361,
+      "scmae_ari_mean": 0.5017114805339078,
+      "delta_ari_mean": -0.007340989680471699,
+      "rg_win_scmae": false,
+      "baseline_methods_completed": [],
+      "best_baseline_method": null,
+      "best_baseline_ari": null,
+      "rg_win_best_baseline": false,
+      "baseline_complete_for_winner": true
+    },
+    {
+      "dataset_id": "quake_smartseq2_lung__local_sparse_expression",
+      "dataset": "Quake_Smart-seq2_Lung",
+      "panel": "external_highdim_bridge_only",
+      "rg_ari_mean": 0.1696441295367239,
+      "scmae_ari_mean": 0.17911976171149196,
+      "delta_ari_mean": -0.009475632174768054,
+      "rg_win_scmae": false,
+      "baseline_methods_completed": [],
+      "best_baseline_method": null,
+      "best_baseline_ari": null,
+      "rg_win_best_baseline": false,
+      "baseline_complete_for_winner": true
+    },
+    {
+      "dataset_id": "sms_spam_full__uci_sparse_text",
+      "dataset": "sms_spam_collection_full_tfidf500",
+      "panel": "external_highdim_bridge_only",
+      "rg_ari_mean": 0.8614375634977197,
+      "scmae_ari_mean": 0.8756753305737017,
+      "delta_ari_mean": -0.01423776707598201,
+      "rg_win_scmae": false,
+      "baseline_methods_completed": [],
+      "best_baseline_method": null,
+      "best_baseline_ari": null,
+      "rg_win_best_baseline": false,
+      "baseline_complete_for_winner": true
+    },
+    {
+      "dataset_id": "tr45_wc__local_sparse_text",
+      "dataset": "tr45.wc",
+      "panel": "external_highdim_bridge_only",
+      "rg_ari_mean": 0.009203193636781981,
+      "scmae_ari_mean": 0.004462222773125916,
+      "delta_ari_mean": 0.0047409708636560665,
+      "rg_win_scmae": true,
+      "baseline_methods_completed": [
+        "AHDPC",
+        "DPC_GFNN",
+        "GCC"
+      ],
+      "best_baseline_method": "DPC_GFNN",
+      "best_baseline_ari": 0.031047080061697277,
+      "rg_win_best_baseline": false,
+      "baseline_complete_for_winner": true
+    }
+  ],
+  "extension_summaries": [
+    "<local_data_root>/result/V19/v19_rg_extended_sparse_ari_v1/summary/extension_summary.json"
+  ],
+  "baseline_summaries": [
+    "<local_data_root>/result/V19/v19_rg_extended_winner_baselines_v1/baseline_summary_reconstructed.json",
+    "<local_data_root>/result/V19/v19_rg_extended_winner_baselines_missing_v1/baseline_summary.json"
+  ]
+}

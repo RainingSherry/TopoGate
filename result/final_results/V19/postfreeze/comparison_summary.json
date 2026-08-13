@@ -1,0 +1,29 @@
+{
+  "status": "completed",
+  "final_protocol_id": "v19_rg_final_postfreeze_v1",
+  "final_root": "result/V19/v19_rg_final_postfreeze_rel_both2_20260810",
+  "baseline_source": "result/baseline_comparison/summary.csv",
+  "rows": 258,
+  "datasets": [
+    "baron_human__clubench_bridge",
+    "baron_human__rg_native",
+    "campbell__clubench_bridge",
+    "campbell__rg_native",
+    "cnae9__shared_text",
+    "hate_speech__shared_text",
+    "imdb__shared_text",
+    "mouse_retina__clubench_bridge",
+    "mouse_retina__rg_native",
+    "sentiment_labeld_sentences__shared_text",
+    "sms_spam_collection__shared_text"
+  ],
+  "labels_used_during_fit": false,
+  "variant_selection_uses_labels_or_outcomes": false,
+  "selection_status": "proxy_supported",
+  "no_go": false,
+  "diagnostic": false,
+  "outputs": {
+    "comparison_csv": "result/V19/v19_rg_final_comparison_rel_both2_20260810/comparison.csv",
+    "comparison_md": "result/V19/v19_rg_final_comparison_rel_both2_20260810/comparison.md"
+  }
+}

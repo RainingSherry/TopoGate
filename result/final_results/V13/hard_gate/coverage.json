@@ -1,0 +1,19 @@
+{
+  "completed_runs": 30,
+  "failed_runs": 0,
+  "datasets": [
+    "balance_scale",
+    "enron",
+    "flame",
+    "spect_heart",
+    "vehicle"
+  ],
+  "variants": [
+    "nomix",
+    "topk2"
+  ],
+  "v12_stage2_dir": "<local_data_root>/result/V12/v12_edge_rank_stage2_2026-08-04",
+  "labels_used_during_fit_values": [
+    "False"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "status": "completed",
+  "protocol_id": "v19_rg_final_postfreeze_v1",
+  "return_codes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "audit_ok": true,
+  "audit_message": "ok",
+  "audit": {
+    "completed_runs": 198,
+    "expected_runs": 198
+  },
+  "expected_runs": 198,
+  "labels_used_during_fit": false,
+  "variant_selection_uses_labels_or_outcomes": false,
+  "selection_status": "proxy_supported",
+  "no_go": false,
+  "diagnostic_postfreeze": false,
+  "resume": false,
+  "selected_candidate_id": "rel_both2",
+  "selected_overrides": {
+    "gamma_sim": 0.0,
+    "gamma_mutual": 2.0,
+    "gamma_snn": 2.0,
+    "gamma_distance": 0.0
+  },
+  "variants": [
+    "rg_full",
+    "rg_default",
+    "scmae_only",
+    "rg_nomix",
+    "rg_reliability_off",
+    "rg_constant_gate"
+  ],
+  "seeds": [
+    42,
+    123,
+    7
+  ],
+  "dataset_ids": [
+    "mouse_retina__rg_native",
+    "mouse_retina__clubench_bridge",
+    "campbell__rg_native",
+    "campbell__clubench_bridge",
+    "baron_human__rg_native",
+    "baron_human__clubench_bridge",
+    "sms_spam_collection__shared_text",
+    "cnae9__shared_text",
+    "imdb__shared_text",
+    "hate_speech__shared_text",
+    "sentiment_labeld_sentences__shared_text"
+  ]
+}

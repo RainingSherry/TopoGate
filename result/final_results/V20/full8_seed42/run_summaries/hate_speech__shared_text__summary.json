@@ -1,0 +1,780 @@
+{
+  "status": "completed",
+  "protocol_id": "v20_topology_conditioned_adv_mask_v1",
+  "variant": "topology_adversarial_full",
+  "seed": 42,
+  "dataset": "hate_speech",
+  "dataset_path": "<local_data_root>/datasets/hate_speech.npz",
+  "input_protocol": "shared_text",
+  "n_samples": 3221,
+  "n_features": 100,
+  "K_used_only_in_readout": true,
+  "labels_used_during_fit": false,
+  "mask_semantics": "requested_mask_is_training_target; effective_value_changes_are_diagnostic",
+  "metrics": {
+    "labels_available": true,
+    "n_clusters": 3,
+    "cluster_method": "kmeans_known_k",
+    "ari": -0.02918338845383534,
+    "nmi": 0.007178926623759785,
+    "acc": 0.5240608506674945,
+    "labels_used_during_fit": false,
+    "K_source": "benchmark_oracle_from_y"
+  },
+  "diagnostics": {
+    "graph_profile": {
+      "neighbor_k_requested": 20,
+      "neighbor_k_effective": 20,
+      "svd_target": 0.95,
+      "svd_min_dim": 50,
+      "svd_max_dim": 100,
+      "svd_dim": 93,
+      "variance_target_reached": true,
+      "explained_variance_ratio_sum": 0.9563431511633098,
+      "mean_neighbor_cosine_distance": 0.22839124500751495,
+      "self_edges": 21,
+      "label_leakage_diagnostic": false
+    },
+    "stats_profile": {
+      "storage": "memmap",
+      "path": "<excluded_cache>/topology_statistics.dat",
+      "dtype": "float32",
+      "shape": [
+        3221,
+        100,
+        2
+      ],
+      "block_size": 1024,
+      "clip": 5.0
+    },
+    "history": [
+      {
+        "loss": 0.6167167929502634,
+        "reconstruction_loss": 0.13773754239082336,
+        "mask_loss": 0.47897924597446734,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022591091692447662,
+        "gate_loss": 0.0,
+        "epoch": 1.0
+      },
+      {
+        "loss": 0.607653911297138,
+        "reconstruction_loss": 0.13492759947593397,
+        "mask_loss": 0.4727263106749608,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022765531706122253,
+        "gate_loss": 0.0,
+        "epoch": 2.0
+      },
+      {
+        "loss": 0.6031674696848943,
+        "reconstruction_loss": 0.1309329907481487,
+        "mask_loss": 0.47223447607113767,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.0226656672759698,
+        "gate_loss": 0.0,
+        "epoch": 3.0
+      },
+      {
+        "loss": 0.6035812405439523,
+        "reconstruction_loss": 0.131428422836157,
+        "mask_loss": 0.4721528131228227,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.02244139577333744,
+        "gate_loss": 0.0,
+        "epoch": 4.0
+      },
+      {
+        "loss": 0.6018239213870122,
+        "reconstruction_loss": 0.12964648065658715,
+        "mask_loss": 0.472177443596033,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022850351837965157,
+        "gate_loss": 0.0,
+        "epoch": 5.0
+      },
+      {
+        "loss": 0.6021666801892794,
+        "reconstruction_loss": 0.1296522542834282,
+        "mask_loss": 0.4725144299177023,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022720621182368353,
+        "gate_loss": 0.0,
+        "epoch": 6.0
+      },
+      {
+        "loss": 0.6010357370743384,
+        "reconstruction_loss": 0.12856767097344765,
+        "mask_loss": 0.47246806208903974,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022624144760461953,
+        "gate_loss": 0.0,
+        "epoch": 7.0
+      },
+      {
+        "loss": 0.6002111572485703,
+        "reconstruction_loss": 0.12783412979199335,
+        "mask_loss": 0.472377034334036,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.02279009440770516,
+        "gate_loss": 0.0,
+        "epoch": 8.0
+      },
+      {
+        "loss": 0.5982378262739915,
+        "reconstruction_loss": 0.12568819809418458,
+        "mask_loss": 0.47254961041303783,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022582299147660915,
+        "gate_loss": 0.0,
+        "epoch": 9.0
+      },
+      {
+        "loss": 0.5993908368624173,
+        "reconstruction_loss": 0.12714240642694327,
+        "mask_loss": 0.47224843272796047,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022867836487980988,
+        "gate_loss": 0.0,
+        "epoch": 10.0
+      },
+      {
+        "loss": 0.5999156924394461,
+        "reconstruction_loss": 0.1274516015098645,
+        "mask_loss": 0.4724640892102168,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022884634968179923,
+        "gate_loss": 0.0,
+        "epoch": 11.0
+      },
+      {
+        "loss": 0.5980476828721853,
+        "reconstruction_loss": 0.1257904005738405,
+        "mask_loss": 0.47225727484776425,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022753875559339158,
+        "gate_loss": 0.0,
+        "epoch": 12.0
+      },
+      {
+        "loss": 0.5961386194595923,
+        "reconstruction_loss": 0.12391348011218585,
+        "mask_loss": 0.47222514106677127,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022573808924509928,
+        "gate_loss": 0.0,
+        "epoch": 13.0
+      },
+      {
+        "loss": 0.5982166895499597,
+        "reconstruction_loss": 0.12589569962941682,
+        "mask_loss": 0.4723209853355701,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022839421692949075,
+        "gate_loss": 0.0,
+        "epoch": 14.0
+      },
+      {
+        "loss": 0.5974312929006723,
+        "reconstruction_loss": 0.12522134127525184,
+        "mask_loss": 0.4722099441748399,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022943965087716397,
+        "gate_loss": 0.0,
+        "epoch": 15.0
+      },
+      {
+        "loss": 0.5965247475183927,
+        "reconstruction_loss": 0.12421642931608054,
+        "mask_loss": 0.472308317056069,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022831536972751983,
+        "gate_loss": 0.0,
+        "epoch": 16.0
+      },
+      {
+        "loss": 0.5953944279597356,
+        "reconstruction_loss": 0.12325253796118957,
+        "mask_loss": 0.47214189859536976,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.02232874586031987,
+        "gate_loss": 0.0,
+        "epoch": 17.0
+      },
+      {
+        "loss": 0.5966598987579346,
+        "reconstruction_loss": 0.12447252353796592,
+        "mask_loss": 0.47218737464684707,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022835650409643467,
+        "gate_loss": 0.0,
+        "epoch": 18.0
+      },
+      {
+        "loss": 0.5952867223666265,
+        "reconstruction_loss": 0.12311472972998252,
+        "mask_loss": 0.47217198747854966,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022832242628702752,
+        "gate_loss": 0.0,
+        "epoch": 19.0
+      },
+      {
+        "loss": 0.5945175794454721,
+        "reconstruction_loss": 0.12234950237549268,
+        "mask_loss": 0.4721680742043715,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022632211016920898,
+        "gate_loss": 0.0,
+        "epoch": 20.0
+      },
+      {
+        "loss": 0.5945340440823481,
+        "reconstruction_loss": 0.12251429202464911,
+        "mask_loss": 0.47201975263082063,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022754016547248915,
+        "gate_loss": 0.0,
+        "epoch": 21.0
+      },
+      {
+        "loss": 0.5948225076381977,
+        "reconstruction_loss": 0.12280530024033326,
+        "mask_loss": 0.472017207970986,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.023132642874350913,
+        "gate_loss": 0.0,
+        "epoch": 22.0
+      },
+      {
+        "loss": 0.5933931561616751,
+        "reconstruction_loss": 0.12124822116815127,
+        "mask_loss": 0.472144929262308,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022297144652559206,
+        "gate_loss": 0.0,
+        "epoch": 23.0
+      },
+      {
+        "loss": 0.5957416387704703,
+        "reconstruction_loss": 0.12368805419940215,
+        "mask_loss": 0.472053587436676,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022822078460684188,
+        "gate_loss": 0.0,
+        "epoch": 24.0
+      },
+      {
+        "loss": 0.5957159033188453,
+        "reconstruction_loss": 0.12357621410718331,
+        "mask_loss": 0.47213968405356777,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022786343613496192,
+        "gate_loss": 0.0,
+        "epoch": 25.0
+      },
+      {
+        "loss": 0.591947995699369,
+        "reconstruction_loss": 0.11997756304649207,
+        "mask_loss": 0.471970429787269,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022482615967209522,
+        "gate_loss": 0.0,
+        "epoch": 26.0
+      },
+      {
+        "loss": 0.5925417496607854,
+        "reconstruction_loss": 0.12048636204921283,
+        "mask_loss": 0.472055373283533,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.02276976664478962,
+        "gate_loss": 0.0,
+        "epoch": 27.0
+      },
+      {
+        "loss": 0.5918392263925992,
+        "reconstruction_loss": 0.11990475597289893,
+        "mask_loss": 0.4719344744315514,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022819840134336397,
+        "gate_loss": 0.0,
+        "epoch": 28.0
+      },
+      {
+        "loss": 0.5942661395439734,
+        "reconstruction_loss": 0.12223087537747163,
+        "mask_loss": 0.4720352658858666,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022721750518450372,
+        "gate_loss": 0.0,
+        "epoch": 29.0
+      },
+      {
+        "loss": 0.5941520012342013,
+        "reconstruction_loss": 0.12219196959183766,
+        "mask_loss": 0.4719600287767557,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.02262351891169181,
+        "gate_loss": 0.0,
+        "epoch": 30.0
+      },
+      {
+        "loss": 0.5944879330121554,
+        "reconstruction_loss": 0.12234502686904027,
+        "mask_loss": 0.47214290270438564,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022458275206960164,
+        "gate_loss": 0.0,
+        "epoch": 31.0
+      },
+      {
+        "loss": 0.591671870304988,
+        "reconstruction_loss": 0.119816025862327,
+        "mask_loss": 0.47185584673514736,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.02238892248043647,
+        "gate_loss": 0.0,
+        "epoch": 32.0
+      },
+      {
+        "loss": 0.5947463649969834,
+        "reconstruction_loss": 0.12282740152799167,
+        "mask_loss": 0.4719189680539645,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.02284944444321669,
+        "gate_loss": 0.0,
+        "epoch": 33.0
+      },
+      {
+        "loss": 0.5940272212028503,
+        "reconstruction_loss": 0.12211744544597772,
+        "mask_loss": 0.47190977518375105,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022510949952098038,
+        "gate_loss": 0.0,
+        "epoch": 34.0
+      },
+      {
+        "loss": 0.592461136671213,
+        "reconstruction_loss": 0.12049819471744391,
+        "mask_loss": 0.471962944819377,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.02259308801820645,
+        "gate_loss": 0.0,
+        "epoch": 35.0
+      },
+      {
+        "loss": 0.5946069634877719,
+        "reconstruction_loss": 0.12267958487455662,
+        "mask_loss": 0.4719273791863368,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022812196984887123,
+        "gate_loss": 0.0,
+        "epoch": 36.0
+      },
+      {
+        "loss": 0.5929323159731351,
+        "reconstruction_loss": 0.12100317271856162,
+        "mask_loss": 0.4719291512782757,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.02278101960053811,
+        "gate_loss": 0.0,
+        "epoch": 37.0
+      },
+      {
+        "loss": 0.5942781750972455,
+        "reconstruction_loss": 0.12239934733280769,
+        "mask_loss": 0.47187883808062625,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.02289875138264436,
+        "gate_loss": 0.0,
+        "epoch": 38.0
+      },
+      {
+        "loss": 0.5934487902201139,
+        "reconstruction_loss": 0.12159009793630013,
+        "mask_loss": 0.4718586871257195,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022692407982853744,
+        "gate_loss": 0.0,
+        "epoch": 39.0
+      },
+      {
+        "loss": 0.5919309212611272,
+        "reconstruction_loss": 0.12020582648424002,
+        "mask_loss": 0.4717250924844008,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.022651167443165414,
+        "gate_loss": 0.0,
+        "epoch": 40.0
+      },
+      {
+        "loss": 0.6529033963496869,
+        "reconstruction_loss": 0.1812982066319539,
+        "mask_loss": 0.4716051908639761,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.029696211218833923,
+        "gate_loss": -0.04239351130448855,
+        "epoch": 41.0
+      },
+      {
+        "loss": 0.6531711312440726,
+        "reconstruction_loss": 0.18185231204216296,
+        "mask_loss": 0.4713188157631801,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.029733035426873427,
+        "gate_loss": -0.04136447952343868,
+        "epoch": 42.0
+      },
+      {
+        "loss": 0.65811576293065,
+        "reconstruction_loss": 0.18688213022855613,
+        "mask_loss": 0.4712336223859053,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03044083886421644,
+        "gate_loss": -0.04128603866467109,
+        "epoch": 43.0
+      },
+      {
+        "loss": 0.6601792252980746,
+        "reconstruction_loss": 0.18912841150393853,
+        "mask_loss": 0.47105081723286557,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.030679852343522586,
+        "gate_loss": -0.057493200668921836,
+        "epoch": 44.0
+      },
+      {
+        "loss": 0.6610312553552481,
+        "reconstruction_loss": 0.18993826898244712,
+        "mask_loss": 0.4710929852265578,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03123084154839699,
+        "gate_loss": -0.04381283315328451,
+        "epoch": 45.0
+      },
+      {
+        "loss": 0.6655557889204758,
+        "reconstruction_loss": 0.1945777042553975,
+        "mask_loss": 0.4709780835188352,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03164294376396216,
+        "gate_loss": -0.04672698676586151,
+        "epoch": 46.0
+      },
+      {
+        "loss": 0.6677225002875695,
+        "reconstruction_loss": 0.1968558682845189,
+        "mask_loss": 0.4708666251255916,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.031849670582092725,
+        "gate_loss": -0.04393089734590971,
+        "epoch": 47.0
+      },
+      {
+        "loss": 0.6712189408449026,
+        "reconstruction_loss": 0.20041726185725287,
+        "mask_loss": 0.4708016789876498,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03266217831808787,
+        "gate_loss": -0.06175599075280703,
+        "epoch": 48.0
+      },
+      {
+        "loss": 0.6704726815223694,
+        "reconstruction_loss": 0.19966802803369668,
+        "mask_loss": 0.4708046546349159,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03243962073555359,
+        "gate_loss": -0.04641603621152731,
+        "epoch": 49.0
+      },
+      {
+        "loss": 0.6710410393201388,
+        "reconstruction_loss": 0.2003015669492575,
+        "mask_loss": 0.47073947007839495,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03283964312420441,
+        "gate_loss": -0.04783784540799948,
+        "epoch": 50.0
+      },
+      {
+        "loss": 0.6745099975512578,
+        "reconstruction_loss": 0.20377918160878694,
+        "mask_loss": 0.47073081823495716,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03329984270609342,
+        "gate_loss": -0.047823156301791854,
+        "epoch": 51.0
+      },
+      {
+        "loss": 0.6751429897088271,
+        "reconstruction_loss": 0.20452520136649793,
+        "mask_loss": 0.47061779178105867,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.033178258973818556,
+        "gate_loss": -0.06303542852401733,
+        "epoch": 52.0
+      },
+      {
+        "loss": 0.6753497352966895,
+        "reconstruction_loss": 0.2048357381270482,
+        "mask_loss": 0.4705139971696414,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03340607967514258,
+        "gate_loss": -0.04918245283456949,
+        "epoch": 53.0
+      },
+      {
+        "loss": 0.6764977115851182,
+        "reconstruction_loss": 0.2060237733217386,
+        "mask_loss": 0.47047394055586594,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.0335982466259828,
+        "gate_loss": -0.04720059724954458,
+        "epoch": 54.0
+      },
+      {
+        "loss": 0.677441418170929,
+        "reconstruction_loss": 0.20704749341194445,
+        "mask_loss": 0.47039391902776867,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.034046829893038824,
+        "gate_loss": -0.047204057757671065,
+        "epoch": 55.0
+      },
+      {
+        "loss": 0.6785233891927279,
+        "reconstruction_loss": 0.20813055107226738,
+        "mask_loss": 0.4703928323892447,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03432004554913594,
+        "gate_loss": -0.06492527516988608,
+        "epoch": 56.0
+      },
+      {
+        "loss": 0.6785759192246658,
+        "reconstruction_loss": 0.20820853687249696,
+        "mask_loss": 0.4703673766209529,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03436283910503754,
+        "gate_loss": -0.046102238389161915,
+        "epoch": 57.0
+      },
+      {
+        "loss": 0.6783346717174237,
+        "reconstruction_loss": 0.2080917885670295,
+        "mask_loss": 0.47024288085790783,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03431022453766603,
+        "gate_loss": -0.04978312208102299,
+        "epoch": 58.0
+      },
+      {
+        "loss": 0.6793941030135522,
+        "reconstruction_loss": 0.2092594848229335,
+        "mask_loss": 0.47013461131315964,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.034676085297877975,
+        "gate_loss": -0.04921765740101154,
+        "epoch": 59.0
+      },
+      {
+        "loss": 0.679115721812615,
+        "reconstruction_loss": 0.20894566522194788,
+        "mask_loss": 0.4701700508594513,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03473944818744293,
+        "gate_loss": -0.06582454190804408,
+        "epoch": 60.0
+      },
+      {
+        "loss": 0.6792943294231708,
+        "reconstruction_loss": 0.20927208432784447,
+        "mask_loss": 0.47002224509532636,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03480317443609238,
+        "gate_loss": -0.04794209851668431,
+        "epoch": 61.0
+      },
+      {
+        "loss": 0.6789142581132742,
+        "reconstruction_loss": 0.20890511457736677,
+        "mask_loss": 0.47000914353590745,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03475209268239828,
+        "gate_loss": -0.04680028901650356,
+        "epoch": 62.0
+      },
+      {
+        "loss": 0.6801601785879868,
+        "reconstruction_loss": 0.2103436325605099,
+        "mask_loss": 0.4698165517586928,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03491610661149025,
+        "gate_loss": -0.04769706840698536,
+        "epoch": 63.0
+      },
+      {
+        "loss": 0.6796756799404438,
+        "reconstruction_loss": 0.20978774359593025,
+        "mask_loss": 0.4698879351982704,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03475485541499578,
+        "gate_loss": -0.06496450648857997,
+        "epoch": 64.0
+      },
+      {
+        "loss": 0.6800228632413424,
+        "reconstruction_loss": 0.21035322776207557,
+        "mask_loss": 0.46966962860180783,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03527246874112349,
+        "gate_loss": -0.04968108466038337,
+        "epoch": 65.0
+      },
+      {
+        "loss": 0.6804946248347943,
+        "reconstruction_loss": 0.21084714852846587,
+        "mask_loss": 0.4696474763063284,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03539020052322975,
+        "gate_loss": -0.049643486738204956,
+        "epoch": 66.0
+      },
+      {
+        "loss": 0.6817359190720779,
+        "reconstruction_loss": 0.212063913161938,
+        "mask_loss": 0.4696720013251671,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.035429707226844936,
+        "gate_loss": -0.04884838943298046,
+        "epoch": 67.0
+      },
+      {
+        "loss": 0.6809948636935308,
+        "reconstruction_loss": 0.21143596676679757,
+        "mask_loss": 0.46955889004927415,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03527525181953724,
+        "gate_loss": -0.06606357028851143,
+        "epoch": 68.0
+      },
+      {
+        "loss": 0.6800165359790509,
+        "reconstruction_loss": 0.21057529976734748,
+        "mask_loss": 0.4694412350654602,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.035396815492556646,
+        "gate_loss": -0.04899948720748608,
+        "epoch": 69.0
+      },
+      {
+        "loss": 0.6808600104772128,
+        "reconstruction_loss": 0.2114433841063426,
+        "mask_loss": 0.46941662980959964,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03552896615404349,
+        "gate_loss": -0.048457483832652755,
+        "epoch": 70.0
+      },
+      {
+        "loss": 0.6813725829124451,
+        "reconstruction_loss": 0.21219483361794397,
+        "mask_loss": 0.4691777481482579,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03572804967944439,
+        "gate_loss": -0.04944862883824568,
+        "epoch": 71.0
+      },
+      {
+        "loss": 0.6814678769845229,
+        "reconstruction_loss": 0.2121043847157405,
+        "mask_loss": 0.46936348997629607,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.0355964434834627,
+        "gate_loss": -0.06533263623714447,
+        "epoch": 72.0
+      },
+      {
+        "loss": 0.68162778707651,
+        "reconstruction_loss": 0.2125401130089393,
+        "mask_loss": 0.46908767177508426,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03634429723024368,
+        "gate_loss": -0.04773099949726692,
+        "epoch": 73.0
+      },
+      {
+        "loss": 0.6809014953099765,
+        "reconstruction_loss": 0.21186335728718683,
+        "mask_loss": 0.4690381426077623,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03563334792852402,
+        "gate_loss": -0.0501323204774123,
+        "epoch": 74.0
+      },
+      {
+        "loss": 0.6813359077160175,
+        "reconstruction_loss": 0.21220669494225428,
+        "mask_loss": 0.46912921162752,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03584541867558773,
+        "gate_loss": -0.0465435660802401,
+        "epoch": 75.0
+      },
+      {
+        "loss": 0.6817158231368432,
+        "reconstruction_loss": 0.21281318825024825,
+        "mask_loss": 0.46890262686289275,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03597430340372599,
+        "gate_loss": -0.06633332600960365,
+        "epoch": 76.0
+      },
+      {
+        "loss": 0.6815357941847581,
+        "reconstruction_loss": 0.21275992462268242,
+        "mask_loss": 0.4687758661233462,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03597521065519406,
+        "gate_loss": -0.049368864068618186,
+        "epoch": 77.0
+      },
+      {
+        "loss": 0.6809807832424457,
+        "reconstruction_loss": 0.2123529016971588,
+        "mask_loss": 0.46862788842274594,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03629664474954972,
+        "gate_loss": -0.04863256559922145,
+        "epoch": 78.0
+      },
+      {
+        "loss": 0.6821064673937284,
+        "reconstruction_loss": 0.21357150719715998,
+        "mask_loss": 0.46853495790408206,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03610096900508954,
+        "gate_loss": -0.046874980513866134,
+        "epoch": 79.0
+      },
+      {
+        "loss": 0.6812314299436716,
+        "reconstruction_loss": 0.21288363635540009,
+        "mask_loss": 0.468347790149542,
+        "requested_mask_rate": 0.3999999784506284,
+        "effective_mask_rate": 0.03647735657600256,
+        "gate_loss": -0.06639477839836708,
+        "epoch": 80.0
+      }
+    ],
+    "requested_mask_rate": 0.4,
+    "gate_updates": 130,
+    "gate_nonzero_update_rate": 1.0,
+    "model_parameter_count": 111832,
+    "gate_parameter_count": 257,
+    "labels_used_during_fit": false,
+    "K_used_during_fit": false
+  }
+}

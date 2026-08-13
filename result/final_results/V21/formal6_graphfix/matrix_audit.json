@@ -1,0 +1,10 @@
+{
+  "matrix_protocol_id": "v21_assignment_adversarial_full6_graphfix_v1",
+  "model_protocol_id": "v21_assignment_adversarial_v2_graphfix_v1",
+  "expected_jobs": 36,
+  "audited_jobs": 36,
+  "completed_valid_jobs": 36,
+  "provenance_ok": true,
+  "errors": [],
+  "audit_ok": true
+}

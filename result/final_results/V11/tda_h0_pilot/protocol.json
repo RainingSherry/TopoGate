@@ -1,0 +1,27 @@
+{
+  "datasets": [
+    "balance_scale",
+    "spect_heart",
+    "banknote",
+    "flame",
+    "vehicle"
+  ],
+  "seeds": [
+    42,
+    123,
+    7
+  ],
+  "variants": [
+    "V11_full",
+    "V11_nomix",
+    "V11_tda_h0_mst",
+    "V11_tda_fixed_filtration",
+    "V11_tda_random"
+  ],
+  "expected_runs": 75,
+  "labels_used_during_fit": false,
+  "k_protocol": "benchmark_oracle_from_y",
+  "output_dir": "<local_project_root>/result/V11/tda_h0_pilot_2026-08-03",
+  "runner": "scripts/V11/run_v11_multiseed.py",
+  "analysis_script": "<local_project_root>/scripts/analysis/analyze_v11_tda_h0_pilot.py"
+}

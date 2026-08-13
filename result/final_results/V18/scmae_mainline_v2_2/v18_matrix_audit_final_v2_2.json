@@ -1,0 +1,14 @@
+{
+  "manifest_id": "v18_scmae_mainline_v2_2_20260808",
+  "eligible_datasets": 149,
+  "expected_run_keys": 4470,
+  "observed_run_keys": 4470,
+  "status_counts": {
+    "completed": 4470
+  },
+  "missing_run_keys": [],
+  "malformed_run_keys": [],
+  "bad_contracts": [],
+  "complete": true,
+  "hashes_recomputed": false
+}

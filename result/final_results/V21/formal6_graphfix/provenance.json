@@ -1,0 +1,115 @@
+{
+  "matrix_protocol_id": "v21_assignment_adversarial_full6_graphfix_v1",
+  "model_protocol_id": "v21_assignment_adversarial_v2_graphfix_v1",
+  "created_at": "2026-08-10T18:43:15.482795+00:00",
+  "source_files": [
+    {
+      "path": "<local_project_root>/methods/TopoGate/V21_assignment_adversarial_gate/config.py",
+      "relative_path": "methods/TopoGate/V21_assignment_adversarial_gate/config.py",
+      "bytes": 4864,
+      "sha256": "af516712790946197f5a51a1b1db0e6a21f712eb0f941baa433dccf3266506a8"
+    },
+    {
+      "path": "<local_project_root>/methods/TopoGate/V21_assignment_adversarial_gate/graph.py",
+      "relative_path": "methods/TopoGate/V21_assignment_adversarial_gate/graph.py",
+      "bytes": 6236,
+      "sha256": "850b1ed36aa413b369adcbc3365921af7acae621b493fb829e0be9f3e84bc4d1"
+    },
+    {
+      "path": "<local_project_root>/methods/TopoGate/V21_assignment_adversarial_gate/input_adapter.py",
+      "relative_path": "methods/TopoGate/V21_assignment_adversarial_gate/input_adapter.py",
+      "bytes": 4460,
+      "sha256": "df762c1b9809deaab0bf0cdf80d8b77556d82df008a15abd3df3cb3331ff36cd"
+    },
+    {
+      "path": "<local_project_root>/methods/TopoGate/V21_assignment_adversarial_gate/model.py",
+      "relative_path": "methods/TopoGate/V21_assignment_adversarial_gate/model.py",
+      "bytes": 9014,
+      "sha256": "ecefc786e8e26294ecc2371310fb27fc687661b5cb4c25d873c97eadcd8f7992"
+    },
+    {
+      "path": "<local_project_root>/methods/TopoGate/V21_assignment_adversarial_gate/run.py",
+      "relative_path": "methods/TopoGate/V21_assignment_adversarial_gate/run.py",
+      "bytes": 9154,
+      "sha256": "3b32d512a83eedcaacb2d684359131dda2131a9ee5ac9bf20de174ad5d862f9d"
+    },
+    {
+      "path": "<local_project_root>/methods/TopoGate/V21_assignment_adversarial_gate/trainer.py",
+      "relative_path": "methods/TopoGate/V21_assignment_adversarial_gate/trainer.py",
+      "bytes": 19602,
+      "sha256": "b3398835ba27f129e09234733b884a301f898a31f8431eedbe848739c7a603b9"
+    },
+    {
+      "path": "<local_project_root>/scripts/V21/run_formal_matrix.py",
+      "relative_path": "scripts/V21/run_formal_matrix.py",
+      "bytes": 17023,
+      "sha256": "529b5986d563e603abd4a6c58d51b8ef62db3ec667e5a840d6b897b1222a1c37"
+    },
+    {
+      "path": "<local_project_root>/scripts/V21/summarize_formal_matrix.py",
+      "relative_path": "scripts/V21/summarize_formal_matrix.py",
+      "bytes": 13560,
+      "sha256": "3564cf8b2fc6d3ea5901a7c47921ede9cfc5792bbbd0c961a076f9f7d52de856"
+    }
+  ],
+  "config_files": [
+    {
+      "path": "<local_project_root>/methods/TopoGate/V21_assignment_adversarial_gate/configs/v21_scmae_only.yaml",
+      "relative_path": "methods/TopoGate/V21_assignment_adversarial_gate/configs/v21_scmae_only.yaml",
+      "bytes": 766,
+      "sha256": "ec71f6bfc9bed21621ef54a414ef45eee94282f307930efebe67d765bfbd9b6d"
+    },
+    {
+      "path": "<local_project_root>/methods/TopoGate/V21_assignment_adversarial_gate/configs/v21_topology_assignment_adversarial.yaml",
+      "relative_path": "methods/TopoGate/V21_assignment_adversarial_gate/configs/v21_topology_assignment_adversarial.yaml",
+      "bytes": 787,
+      "sha256": "a290aacf76ac4bedea9c324ff5a7a064504a1016941f317277d392a5a21d4067"
+    }
+  ],
+  "data_files": [
+    {
+      "path": "<local_data_root>/datasets/Baron Human.npz",
+      "relative_path": "<local_data_root>/datasets/Baron Human.npz",
+      "bytes": 680373598,
+      "sha256": "99c5bb7a272f5b22d64949179c6d49b4b52220670f3a7cef38e9e405902249d8"
+    },
+    {
+      "path": "<local_data_root>/datasets/Campbell.npz",
+      "relative_path": "<local_data_root>/datasets/Campbell.npz",
+      "bytes": 1070290762,
+      "sha256": "f26c9568baf8e8fade7a61e6fed80f16ceb3980afe38b7c9ccbe9aaad2b96e04"
+    },
+    {
+      "path": "<local_data_root>/datasets/Mouse_retina.npz",
+      "relative_path": "<local_data_root>/datasets/Mouse_retina.npz",
+      "bytes": 207130090,
+      "sha256": "d3bc2eb08d95acd12d324f668c537ae4208de57c355862f8e5800d4ba1e727c1"
+    },
+    {
+      "path": "<local_data_root>/datasets/cnae9.npz",
+      "relative_path": "<local_data_root>/datasets/cnae9.npz",
+      "bytes": 7404970,
+      "sha256": "e3a22bcfa761a837b8881a3a1966f6008d911b77948b76a4e4a8ca2aae65a71e"
+    },
+    {
+      "path": "<local_data_root>/datasets/hate_speech.npz",
+      "relative_path": "<local_data_root>/datasets/hate_speech.npz",
+      "bytes": 2603058,
+      "sha256": "c39fc08366c0423b8a2f4e3543df6d5b06f2e0b065813e120263b99e7d1e44bb"
+    },
+    {
+      "path": "<local_data_root>/datasets/sms_spam_collection.npz",
+      "relative_path": "<local_data_root>/datasets/sms_spam_collection.npz",
+      "bytes": 3347170,
+      "sha256": "1d9c068c43dc4f58e759169906dae9dff0ac6a8def7315ce7e4989a3b28d7070"
+    }
+  ],
+  "label_isolation": {
+    "fit_receives_y": false,
+    "graph_receives_y": false,
+    "gate_receives_y": false,
+    "loss_receives_y": false,
+    "K_source": "benchmark_oracle_from_y_for_cluster_head_variants",
+    "metrics_use_y_after_fit": true
+  }
+}

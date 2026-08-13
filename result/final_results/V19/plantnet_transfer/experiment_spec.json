@@ -1,0 +1,31 @@
+{
+  "experiment_id": "v19_rg_plantnet_ari_pca200_20260810",
+  "purpose": "Fixed PlantNet ARI-selected RG configuration evaluated on V19 eight comparable datasets",
+  "config": "<local_project_root>/methods/TopoGate/V19_rg_adapter/configs/v19_rg_plantnet_ari_pca200.yaml",
+  "manifest": "<local_data_root>/result/V19/v19_rg_dataset_manifest_20260808.json",
+  "dataset_ids": [
+    "mouse_retina__clubench_bridge",
+    "campbell__clubench_bridge",
+    "baron_human__clubench_bridge",
+    "sms_spam_collection__shared_text",
+    "cnae9__shared_text",
+    "imdb__shared_text",
+    "hate_speech__shared_text",
+    "sentiment_labeld_sentences__shared_text"
+  ],
+  "variants": [
+    "rg_full",
+    "scmae_only"
+  ],
+  "seeds": [
+    42,
+    123,
+    7
+  ],
+  "expected_runs": 48,
+  "pca_requested": 200,
+  "selection_labels_used": true,
+  "labels_used_during_fit": false,
+  "K_source": "benchmark_oracle_from_y",
+  "hash_policy": "reuse existing provenance; no SHA/hash recomputation"
+}

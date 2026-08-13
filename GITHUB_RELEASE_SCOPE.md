@@ -1,18 +1,19 @@
 # GitHub Release Scope
 
 This repository is a reproducibility snapshot of the ToPoGate research project.
-This release is scoped to the V22 implementation and its auditable result
-metadata. It does not publish the paper or any paper source bundle.
+This release includes curated final result tables and audit summaries for the
+versioned experiments. It does not publish the paper or any paper source bundle.
 
 ## Included
 
-- Core scMAE dependencies and the V22 source code, configurations, tests, and
-  runnable scripts needed to inspect or rerun the V22 protocol.
-- Key V22 result metadata only: the V22 manifests, aggregate summaries,
-  aggregate reports, selected run summaries, resolved configurations, metrics,
-  histories, and incomplete-compute records where available.
-- Dataset provenance manifests for the V22 panel. No dataset binary is part of
-  this release.
+- Core TopoGate/scMAE dependencies, versioned source code, configurations,
+  tests, and runnable scripts already present in the repository.
+- `result/final_results/`: one curated final result table or summary set for
+  each audited version with non-smoke evidence, including V09-V14, V16.1, and
+  V18-V22. The directory README records versions with no promotable result.
+- Aggregate reports, manifests, protocol metadata, and incomplete-compute
+  records needed to interpret the retained tables. No dataset binary is part
+  of this release.
 
 ## Excluded
 
@@ -21,9 +22,9 @@ metadata. It does not publish the paper or any paper source bundle.
 - Raw download archives and all dataset binaries.
 - All paper files, manuscript sources, and literature PDFs.
 
-The excluded artifacts remain on the project data volume. Their original
+The excluded artifacts remain on the project data volume. Where retained,
 source URLs, dataset profiles, labels-used-during-fit flags, and SHA-256 values
-are retained in `result/V22/dataset_manifests/` and the result records. Local
+are recorded in the corresponding final-result manifests and summaries. Local
 machine paths are sanitized in this public snapshot. A result record marked
 `incomplete_compute` is intentionally not treated as a completed performance
 result.

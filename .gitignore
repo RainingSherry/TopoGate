@@ -27,20 +27,20 @@ checkpoints/
 
 .DS_Store
 
-# V22 release metadata is intentionally versioned; large runtime artifacts
-# remain excluded by the rules above and the explicit guards below.
+# Curated final result metadata is intentionally versioned; large runtime
+# artifacts remain excluded by the rules above and the explicit guards below.
 !result/
-!result/V22/
-!result/V22/**/
-!result/V22/**/*.json
-!result/V22/**/*.md
-!result/V22/**/*.csv
-!result/V22/**/result_record.json
-result/V22/**/cache/
-result/V22/**/logs/
-result/V22/**/*.ckpt
-result/V22/**/*.pt
-result/V22/**/*.pth
-result/V22/**/*.npy
-result/V22/**/*.npz
-result/V22/**/*.dat
+!result/final_results/
+!result/final_results/**/
+!result/final_results/**/*.json
+!result/final_results/**/*.md
+!result/final_results/**/*.csv
+!result/final_results/**/*.txt
+result/final_results/**/cache/
+result/final_results/**/logs/
+result/final_results/**/*.ckpt
+result/final_results/**/*.pt
+result/final_results/**/*.pth
+result/final_results/**/*.npy
+result/final_results/**/*.npz
+result/final_results/**/*.dat

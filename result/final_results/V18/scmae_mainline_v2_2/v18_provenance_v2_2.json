@@ -1,0 +1,1579 @@
+{
+  "protocol_id": "v18_scmae_mainline_v2_2",
+  "manifest_id": "v18_scmae_mainline_v2_2_20260808",
+  "source_hash_policy": "reuse_existing_metadata_only_no_hash_computation",
+  "hashes_recomputed": false,
+  "source_manifest": "result/V18/v18_dataset_manifest_v2_2_20260808.json",
+  "datasets": [
+    {
+      "dataset_id": "ahdpc_prepared__2d_20c_no0",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/2d_20c_no0.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": "1c8a800e844f7da230c51b407bd831a999ef9562f7cada027bb3776cf8bd87ab",
+      "source_hash_status": "reused_existing_manifest_value",
+      "source_hash_manifest": "datasets/AHDPC/MANIFEST.json",
+      "recorded_path": "processed/2d_20c_no0.npz"
+    },
+    {
+      "dataset_id": "ahdpc_prepared__2d_4c_no4",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/2d_4c_no4.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": "40b2dfb8c9cf115c01f3c5fc724c8dfed870f8db6521692c30f93c308f79d3c0",
+      "source_hash_status": "reused_existing_manifest_value",
+      "source_hash_manifest": "datasets/AHDPC/MANIFEST.json",
+      "recorded_path": "processed/2d_4c_no4.npz"
+    },
+    {
+      "dataset_id": "ahdpc_prepared__2d_4c_no9",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/2d_4c_no9.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": "db58543c5ce887804772fd1cb789cc76d6caeb5af5e5d8e76c2e74f6d4c7817c",
+      "source_hash_status": "reused_existing_manifest_value",
+      "source_hash_manifest": "datasets/AHDPC/MANIFEST.json",
+      "recorded_path": "processed/2d_4c_no9.npz"
+    },
+    {
+      "dataset_id": "ahdpc_prepared__aggregation",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/aggregation.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": "c1def3b20ddbecd8142dc589db9e43ff5f42aa405d2da32fe6dc64d05165a99c",
+      "source_hash_status": "reused_existing_manifest_value",
+      "source_hash_manifest": "datasets/AHDPC/MANIFEST.json",
+      "recorded_path": "processed/aggregation.npz"
+    },
+    {
+      "dataset_id": "ahdpc_prepared__asymmetric",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/asymmetric.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": "62097fdc219c9123efe21f9b63d9f1c765a6f1edb64a574826e7f92cc53259a3",
+      "source_hash_status": "reused_existing_manifest_value",
+      "source_hash_manifest": "datasets/AHDPC/MANIFEST.json",
+      "recorded_path": "processed/asymmetric.npz"
+    },
+    {
+      "dataset_id": "ahdpc_prepared__balance_scale",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/balance_scale.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": "aebeaa2574dc6f01651d1f13c1b354d7d19373d7cff8975d0ed05b63a5cf883b",
+      "source_hash_status": "reused_existing_manifest_value",
+      "source_hash_manifest": "datasets/AHDPC/MANIFEST.json",
+      "recorded_path": "processed/balance_scale.npz"
+    },
+    {
+      "dataset_id": "ahdpc_prepared__banknote",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/banknote.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": "ac0372ad09af9f5539448dbee76d0dd58731ec5866e8f3b8bbef6eddd5e3b6a6",
+      "source_hash_status": "reused_existing_manifest_value",
+      "source_hash_manifest": "datasets/AHDPC/MANIFEST.json",
+      "recorded_path": "processed/banknote.npz"
+    },
+    {
+      "dataset_id": "ahdpc_prepared__dim064",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/dim064.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": "4d8f5b5a423353b9890b88ab5e159d34711ccdfa8888f66834b4eac143daa9c3",
+      "source_hash_status": "reused_existing_manifest_value",
+      "source_hash_manifest": "datasets/AHDPC/MANIFEST.json",
+      "recorded_path": "processed/dim064.npz"
+    },
+    {
+      "dataset_id": "ahdpc_prepared__dim512",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/dim512.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": "c0407915d1ba98161a0e7b298353983f6bcab6dfc3bdccadeb7d4cef2ff94c81",
+      "source_hash_status": "reused_existing_manifest_value",
+      "source_hash_manifest": "datasets/AHDPC/MANIFEST.json",
+      "recorded_path": "processed/dim512.npz"
+    },
+    {
+      "dataset_id": "ahdpc_prepared__flame",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/flame.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": "045e1826ad81f23942c2c37f8855b7b56d1351d11376eba61a5211f2dbe3ab52",
+      "source_hash_status": "reused_existing_manifest_value",
+      "source_hash_manifest": "datasets/AHDPC/MANIFEST.json",
+      "recorded_path": "processed/flame.npz"
+    },
+    {
+      "dataset_id": "ahdpc_prepared__glass",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/glass.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": "82ba9fce4cb9df7ce9f11e2b513cbf1cd3394d791e73be465bbdeca08d77b560",
+      "source_hash_status": "reused_existing_manifest_value",
+      "source_hash_manifest": "datasets/AHDPC/MANIFEST.json",
+      "recorded_path": "processed/glass.npz"
+    },
+    {
+      "dataset_id": "ahdpc_prepared__glass_without_id",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/glass_without_id.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "ahdpc_prepared__image_segment",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/image_segment.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": "ef764bd1d712b44a6d4886f6b5662e8f4b700d4b858c8515a3fe648df0f29ff9",
+      "source_hash_status": "reused_existing_manifest_value",
+      "source_hash_manifest": "datasets/AHDPC/MANIFEST.json",
+      "recorded_path": "processed/image_segment.npz"
+    },
+    {
+      "dataset_id": "ahdpc_prepared__landsat",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/landsat.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": "22ab32bfc065ff8a82b79a2912a3fd7f3dc2965b89d1a8fe7f8d7748a6d4d5b3",
+      "source_hash_status": "reused_existing_manifest_value",
+      "source_hash_manifest": "datasets/AHDPC/MANIFEST.json",
+      "recorded_path": "processed/landsat.npz"
+    },
+    {
+      "dataset_id": "ahdpc_prepared__libras_movement",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/libras_movement.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": "7beeb60e348a83f854aca36cd14528448b0dfcffa5b6c83996c44fe6b9f02b38",
+      "source_hash_status": "reused_existing_manifest_value",
+      "source_hash_manifest": "datasets/AHDPC/MANIFEST.json",
+      "recorded_path": "processed/libras_movement.npz"
+    },
+    {
+      "dataset_id": "ahdpc_prepared__rice",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/rice.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": "118992b5c55ac1ae7e972defc33366c566171f7cc57a09a11806794fc34e1493",
+      "source_hash_status": "reused_existing_manifest_value",
+      "source_hash_manifest": "datasets/AHDPC/MANIFEST.json",
+      "recorded_path": "processed/rice.npz"
+    },
+    {
+      "dataset_id": "ahdpc_prepared__smile",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/smile.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": "09b15050e8e5f7d69bc66b08b5fc8aa86d90470d55a3296c29b6b762b696b865",
+      "source_hash_status": "reused_existing_manifest_value",
+      "source_hash_manifest": "datasets/AHDPC/MANIFEST.json",
+      "recorded_path": "processed/smile.npz"
+    },
+    {
+      "dataset_id": "ahdpc_prepared__spect_heart",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/spect_heart.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": "07ce03b3056bcb87c7afcc29eeedc511a28738b817fa458c70502dd35b6858c6",
+      "source_hash_status": "reused_existing_manifest_value",
+      "source_hash_manifest": "datasets/AHDPC/MANIFEST.json",
+      "recorded_path": "processed/spect_heart.npz"
+    },
+    {
+      "dataset_id": "ahdpc_prepared__student_evaluation",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/student_evaluation.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": "d28e153b3371da7bba67509a5eeb593866c09e6c877be4800112b5ea12396dc6",
+      "source_hash_status": "reused_existing_manifest_value",
+      "source_hash_manifest": "datasets/AHDPC/MANIFEST.json",
+      "recorded_path": "processed/student_evaluation.npz"
+    },
+    {
+      "dataset_id": "ahdpc_prepared__student_evaluation_without_instr",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/student_evaluation_without_instr.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "ahdpc_prepared__twodiamonds",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/twodiamonds.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": "b524b1be0739df7d0921ce1812475f94b91b6cd14adbf0cedfa3e6abb37e2080",
+      "source_hash_status": "reused_existing_manifest_value",
+      "source_hash_manifest": "datasets/AHDPC/MANIFEST.json",
+      "recorded_path": "processed/twodiamonds.npz"
+    },
+    {
+      "dataset_id": "ahdpc_prepared__unbalance",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/unbalance.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": "884947b435adebded929be43d8c351610548e109197dae6f2fd5d84e7d78a832",
+      "source_hash_status": "reused_existing_manifest_value",
+      "source_hash_manifest": "datasets/AHDPC/MANIFEST.json",
+      "recorded_path": "processed/unbalance.npz"
+    },
+    {
+      "dataset_id": "ahdpc_prepared__vertebral_column",
+      "source_path": "<local_data_root>/datasets/AHDPC/processed/vertebral_column.npz",
+      "source_kind": "ahdpc_prepared",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": "a02522583395d43367b20524b79e2b32c8f3ef6547bd7e1ccd24c3de56a31c95",
+      "source_hash_status": "reused_existing_manifest_value",
+      "source_hash_manifest": "datasets/AHDPC/MANIFEST.json",
+      "recorded_path": "processed/vertebral_column.npz"
+    },
+    {
+      "dataset_id": "local__20newsgroups",
+      "source_path": "<local_data_root>/datasets/20newsgroups.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__banknote_authentication",
+      "source_path": "<local_data_root>/datasets/banknote_authentication.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__baron_human",
+      "source_path": "<local_data_root>/datasets/Baron Human.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__birds_bones_and_living_habits",
+      "source_path": "<local_data_root>/datasets/birds_bones_and_living_habits.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__blood_transfusion_service_center",
+      "source_path": "<local_data_root>/datasets/blood_transfusion_service_center.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__boston",
+      "source_path": "<local_data_root>/datasets/boston.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__breast_cancer_coimbra",
+      "source_path": "<local_data_root>/datasets/breast_cancer_coimbra.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__breast_cancer_wisconsin_original",
+      "source_path": "<local_data_root>/datasets/breast_cancer_wisconsin_original.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__breast_cancer_wisconsin_prognostic",
+      "source_path": "<local_data_root>/datasets/breast_cancer_wisconsin_prognostic.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__breast_tissue",
+      "source_path": "<local_data_root>/datasets/breast_tissue.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__campbell",
+      "source_path": "<local_data_root>/datasets/Campbell.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__cardiovascular_study",
+      "source_path": "<local_data_root>/datasets/cardiovascular_study.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__cifar10",
+      "source_path": "<local_data_root>/datasets/cifar10.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__cifar10_clip",
+      "source_path": "<local_data_root>/datasets/CIFAR10_CLIP.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__classification_in_asteroseismology",
+      "source_path": "<local_data_root>/datasets/classification_in_asteroseismology.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__cnae9",
+      "source_path": "<local_data_root>/datasets/cnae9.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__coil20",
+      "source_path": "<local_data_root>/datasets/coil20.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__coil20_clip",
+      "source_path": "<local_data_root>/datasets/COIL20_CLIP.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__credit_risk_classification",
+      "source_path": "<local_data_root>/datasets/credit_risk_classification.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__crowdsourced_mapping",
+      "source_path": "<local_data_root>/datasets/crowdsourced_mapping.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__customer_classification",
+      "source_path": "<local_data_root>/datasets/customer_classification.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__date_fruit",
+      "source_path": "<local_data_root>/datasets/date_fruit.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__dermatology",
+      "source_path": "<local_data_root>/datasets/dermatology.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__diabetic_retinopathy_debrecen",
+      "source_path": "<local_data_root>/datasets/diabetic_retinopathy_debrecen.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__dilbert",
+      "source_path": "<local_data_root>/datasets/dilbert.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__drug_consumption",
+      "source_path": "<local_data_root>/datasets/Drug Consumption.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__dry_bean",
+      "source_path": "<local_data_root>/datasets/dry_bean.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__durum_wheat_features",
+      "source_path": "<local_data_root>/datasets/durum_wheat_features.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__echocardiogram",
+      "source_path": "<local_data_root>/datasets/echocardiogram.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__ecoli",
+      "source_path": "<local_data_root>/datasets/ecoli.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__enron",
+      "source_path": "<local_data_root>/datasets/enron.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__epileptic_seizure_recognition",
+      "source_path": "<local_data_root>/datasets/epileptic_seizure_recognition.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__extyaleb",
+      "source_path": "<local_data_root>/datasets/extyaleb.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__fabert",
+      "source_path": "<local_data_root>/datasets/fabert.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__fashion_mnist",
+      "source_path": "<local_data_root>/datasets/fashion_mnist.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__fashionmnist_clip",
+      "source_path": "<local_data_root>/datasets/FashionMNIST_CLIP.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__fbis_wc",
+      "source_path": "<local_data_root>/datasets/fbis.wc.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__fetal_health_classification",
+      "source_path": "<local_data_root>/datasets/fetal_health_classification.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__first_order_theorem_proving",
+      "source_path": "<local_data_root>/datasets/first-order-theorem-proving.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__flickr_material_database",
+      "source_path": "<local_data_root>/datasets/flickr_material_database.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__fraud_detection_bank",
+      "source_path": "<local_data_root>/datasets/fraud_detection_bank.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__gas_drift",
+      "source_path": "<local_data_root>/datasets/gas-drift.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__gina_prior2",
+      "source_path": "<local_data_root>/datasets/gina_prior2.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__glass_identification",
+      "source_path": "<local_data_root>/datasets/glass_identification.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__har",
+      "source_path": "<local_data_root>/datasets/har.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__harbermans_survival",
+      "source_path": "<local_data_root>/datasets/harbermans_survival.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__hate_speech",
+      "source_path": "<local_data_root>/datasets/hate_speech.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__heart_attack_analysis_prediction_dataset",
+      "source_path": "<local_data_root>/datasets/heart_attack_analysis_prediction_dataset.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__heart_disease",
+      "source_path": "<local_data_root>/datasets/heart_disease.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__hepatitis",
+      "source_path": "<local_data_root>/datasets/hepatitis.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__hrvatin",
+      "source_path": "<local_data_root>/datasets/hrvatin.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__hrvatin_filtered",
+      "source_path": "<local_data_root>/datasets/hrvatin_filtered.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__htru2",
+      "source_path": "<local_data_root>/datasets/htru2.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__human_stress_detection",
+      "source_path": "<local_data_root>/datasets/human_stress_detection.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__image_segmentation",
+      "source_path": "<local_data_root>/datasets/image_segmentation.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__imdb",
+      "source_path": "<local_data_root>/datasets/imdb.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__indian_pines",
+      "source_path": "<local_data_root>/datasets/Indian_pines.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__insurance_company_benchmark",
+      "source_path": "<local_data_root>/datasets/insurance_company_benchmark.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__ionosphere",
+      "source_path": "<local_data_root>/datasets/ionosphere.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__iris",
+      "source_path": "<local_data_root>/datasets/iris.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__isolet",
+      "source_path": "<local_data_root>/datasets/ISOLET.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__japanesevowels",
+      "source_path": "<local_data_root>/datasets/JapaneseVowels.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__labeled_faces_in_the_wild",
+      "source_path": "<local_data_root>/datasets/labeled_faces_in_the_wild.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__letter_recognition",
+      "source_path": "<local_data_root>/datasets/letter_recognition.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__magic_gamma_telescope",
+      "source_path": "<local_data_root>/datasets/magic_gamma_telescope.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__mammographic_mass",
+      "source_path": "<local_data_root>/datasets/mammographic_mass.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__mfeat_factors",
+      "source_path": "<local_data_root>/datasets/mfeat-factors.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__mfeat_fourier",
+      "source_path": "<local_data_root>/datasets/mfeat-fourier.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__mfeat_karhunen",
+      "source_path": "<local_data_root>/datasets/mfeat-karhunen.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__mfeat_morphological",
+      "source_path": "<local_data_root>/datasets/mfeat-morphological.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__micro_mass",
+      "source_path": "<local_data_root>/datasets/micro-mass.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__microbes",
+      "source_path": "<local_data_root>/datasets/microbes.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__mnist64",
+      "source_path": "<local_data_root>/datasets/mnist64.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__mnist_clip",
+      "source_path": "<local_data_root>/datasets/MNIST_CLIP.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__mobile_price_classification",
+      "source_path": "<local_data_root>/datasets/mobile_price_classification.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__mouse_retina",
+      "source_path": "<local_data_root>/datasets/Mouse_retina.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__music_genre_classification",
+      "source_path": "<local_data_root>/datasets/music_genre_classification.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__olivetti_faces",
+      "source_path": "<local_data_root>/datasets/olivetti_faces.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__optical_recognition_of_handwritten_digits",
+      "source_path": "<local_data_root>/datasets/optical_recognition_of_handwritten_digits.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__orbit_classification_for_prediction_nasa",
+      "source_path": "<local_data_root>/datasets/orbit_classification_for_prediction_nasa.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__paris_housing_classification",
+      "source_path": "<local_data_root>/datasets/paris_housing_classification.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__parkinsons",
+      "source_path": "<local_data_root>/datasets/parkinsons.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__patient_treatment_classification",
+      "source_path": "<local_data_root>/datasets/patient_treatment_classification.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__pcam",
+      "source_path": "<local_data_root>/datasets/PCam.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__pen_based_recognition_of_handwritten_digits",
+      "source_path": "<local_data_root>/datasets/pen_based_recognition_of_handwritten_digits.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__ph_recognition",
+      "source_path": "<local_data_root>/datasets/ph_recognition.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__pima_indians_diabetes_database",
+      "source_path": "<local_data_root>/datasets/pima_indians_diabetes_database.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__pistachio",
+      "source_path": "<local_data_root>/datasets/pistachio.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__planning_relax",
+      "source_path": "<local_data_root>/datasets/planning_relax.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__poker_hand",
+      "source_path": "<local_data_root>/datasets/poker-hand.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__predicting_pulsar_star",
+      "source_path": "<local_data_root>/datasets/predicting_pulsar_star.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__pumpkin_seeds",
+      "source_path": "<local_data_root>/datasets/pumpkin_seeds.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__quake_smart_seq2_lung",
+      "source_path": "<local_data_root>/datasets/Quake_Smart-seq2_Lung.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__raisin",
+      "source_path": "<local_data_root>/datasets/raisin.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__reuters",
+      "source_path": "<local_data_root>/datasets/reuters.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__rice_dataset_cammeo_and_osmancik",
+      "source_path": "<local_data_root>/datasets/rice_dataset_cammeo_and_osmancik.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__rice_seed_gonen_jasmine",
+      "source_path": "<local_data_root>/datasets/rice_seed_gonen_jasmine.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__rmftsa_sleepdata",
+      "source_path": "<local_data_root>/datasets/rmftsa_sleepdata.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__satellite_image",
+      "source_path": "<local_data_root>/datasets/satellite_image.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__secom",
+      "source_path": "<local_data_root>/datasets/secom.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__seeds",
+      "source_path": "<local_data_root>/datasets/seeds.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__seismic_bumps",
+      "source_path": "<local_data_root>/datasets/seismic_bumps.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__sentiment_labeld_sentences",
+      "source_path": "<local_data_root>/datasets/sentiment_labeld_sentences.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__shuttle",
+      "source_path": "<local_data_root>/datasets/shuttle.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__siberian_weather_stats",
+      "source_path": "<local_data_root>/datasets/siberian_weather_stats.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__skillcraft1_master_table_dataset",
+      "source_path": "<local_data_root>/datasets/skillcraft1_master_table_dataset.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__smoker_condition",
+      "source_path": "<local_data_root>/datasets/smoker_condition.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__sms_spam_collection",
+      "source_path": "<local_data_root>/datasets/sms_spam_collection.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__spambase",
+      "source_path": "<local_data_root>/datasets/spambase.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__spectf_heart",
+      "source_path": "<local_data_root>/datasets/spectf_heart.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__statlog_german_credit",
+      "source_path": "<local_data_root>/datasets/statlog_german_credit.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__statlog_image_segmentation",
+      "source_path": "<local_data_root>/datasets/statlog_image_segmentation.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__steel_plates_fault",
+      "source_path": "<local_data_root>/datasets/steel-plates-fault.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__street_view_house_numbers",
+      "source_path": "<local_data_root>/datasets/street_view_house_numbers.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__student_grade",
+      "source_path": "<local_data_root>/datasets/student_grade.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__synthetic_control",
+      "source_path": "<local_data_root>/datasets/synthetic_control.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__tamilnadu_electricity",
+      "source_path": "<local_data_root>/datasets/tamilnadu-electricity.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__tr45_wc",
+      "source_path": "<local_data_root>/datasets/tr45.wc.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__turkish_music_emotion",
+      "source_path": "<local_data_root>/datasets/turkish_music_emotion.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__user_knowledge_modeling",
+      "source_path": "<local_data_root>/datasets/user_knowledge_modeling.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__vehicle",
+      "source_path": "<local_data_root>/datasets/vehicle.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__wall_robot_navigation",
+      "source_path": "<local_data_root>/datasets/wall-robot-navigation.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__water_quality",
+      "source_path": "<local_data_root>/datasets/water_quality.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__waveform",
+      "source_path": "<local_data_root>/datasets/Waveform.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__weather",
+      "source_path": "<local_data_root>/datasets/weather.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__website_phishing",
+      "source_path": "<local_data_root>/datasets/website_phishing.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__wine",
+      "source_path": "<local_data_root>/datasets/wine.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__wine_customer",
+      "source_path": "<local_data_root>/datasets/wine_customer.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__wine_quality",
+      "source_path": "<local_data_root>/datasets/wine_quality.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__wireless_indoor_localization",
+      "source_path": "<local_data_root>/datasets/wireless_indoor_localization.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__world12d",
+      "source_path": "<local_data_root>/datasets/world12d.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__wos",
+      "source_path": "<local_data_root>/datasets/wos.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__yeast",
+      "source_path": "<local_data_root>/datasets/yeast.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    },
+    {
+      "dataset_id": "local__zoo",
+      "source_path": "<local_data_root>/datasets/zoo.npz",
+      "source_kind": "local",
+      "source_version": "local_snapshot_2026-08-06",
+      "source_hash": null,
+      "source_hash_status": "unavailable",
+      "source_hash_manifest": null,
+      "recorded_path": null
+    }
+  ]
+}

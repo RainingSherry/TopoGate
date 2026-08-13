@@ -1,0 +1,31 @@
+{
+  "completed_runs": 144,
+  "failed_records": 0,
+  "configs_present": [
+    "edge_only_lam0.3_rm0.5",
+    "edge_only_lam0.3_rm1.0",
+    "edge_only_lam0.5_rm0.5",
+    "edge_only_lam0.5_rm1.0",
+    "self_null_lam0.3_rm0.5_si0.3",
+    "self_null_lam0.3_rm0.5_si0.5",
+    "self_null_lam0.3_rm1.0_si0.3",
+    "self_null_lam0.3_rm1.0_si0.5",
+    "self_null_lam0.5_rm0.5_si0.3",
+    "self_null_lam0.5_rm0.5_si0.5",
+    "self_null_lam0.5_rm1.0_si0.3",
+    "self_null_lam0.5_rm1.0_si0.5"
+  ],
+  "datasets_present": [
+    "balance_scale",
+    "flame",
+    "spect_heart",
+    "vehicle"
+  ],
+  "stage2_baseline_dir": "<local_data_root>/result/V12/v12_edge_rank_stage2_2026-08-04",
+  "stage2_baseline_lookup_rows": 12,
+  "below_log5_configurations": 48,
+  "below_target_1.0_configurations": 0,
+  "labels_used_during_fit_values": [
+    "False"
+  ]
+}

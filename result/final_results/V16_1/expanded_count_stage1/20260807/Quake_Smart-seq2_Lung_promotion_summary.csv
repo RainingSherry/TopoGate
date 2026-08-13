@@ -1,0 +1,2 @@
+dataset,status,reason,domain_tier,clean_self_ari_mean,clean_fixed_ari_mean,clean_v16_1_ari_mean,clean_shuffled_ari_mean,clean_output_disabled_ari_mean,clean_delta_self_mean,compound_delta_self_mean,compound_retention
+Quake_Smart-seq2_Lung,empirical_not_supported,fixed_preregistered_clean_and_compound_promotion_rule,high_sparse_bonus,0.4175670003433365,0.39570177417730873,0.41747250343570436,0.4166362714530623,0.4175670003433365,-9.449690763208007e-05,0.0,

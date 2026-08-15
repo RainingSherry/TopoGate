@@ -1,0 +1,9 @@
+{
+  "protocol_id": "v25_e3_offline_replay_gate_v1",
+  "artifact_complete_only": true,
+  "candidate_rows": 0,
+  "status": "not_run_no_artifact_complete_rows",
+  "causal_status": "observational",
+  "measurement_timing": "post_intervention",
+  "note": "No metadata-only row is replayed; local/global boundary rows from V23 remain separate evidence."
+}

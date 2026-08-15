@@ -1,0 +1,33 @@
+{
+  "epoch": 40,
+  "head_initialised": true,
+  "schedule_hashes": {
+    "batch_permutation_hash": "55896814950f47ef6321c31d7bb209a79d55db5c5c35a6c9ab152e5d108c54d0",
+    "donor_schedule_hash": "41059ccaae5ce2de6f5def9680d894335a5c3d68ea745d00dbf64e2b5e233ad6",
+    "selection_noise_seed_hash": "423acfedf7026c4e0cc9adaf6fcf3503c081e9dbdefa7a6ce549733769314bfa"
+  },
+  "topology_statistics_hash": "d9f5d560048f8ce90f41d96e0daf6d4f410a64b8781756c1b2f1d56a31555d8e",
+  "graph_profile": {
+    "neighbor_k_requested": 20,
+    "neighbor_k_effective": 20,
+    "svd_target": 0.95,
+    "svd_min_dim": 50,
+    "svd_max_dim": 500,
+    "svd_dim": 500,
+    "variance_target_reached": false,
+    "explained_variance_ratio_sum": 0.5502159355382901,
+    "mean_neighbor_cosine_distance": 0.41286274790763855,
+    "self_edges": 0,
+    "label_leakage_diagnostic": false
+  },
+  "stats_profile": {
+    "storage": "memory",
+    "shape": [
+      8352,
+      6198,
+      2
+    ],
+    "block_size": 1024,
+    "clip": 5.0
+  }
+}

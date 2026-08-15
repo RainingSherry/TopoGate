@@ -1,0 +1,134 @@
+\section{Study Design and Methods}
+
+\subsection{Evidence layers and statistical units}
+
+The A0 registry records dataset, protocol, variant, seed, source and
+preprocessing hashes, readout and $K$ provenance, structural source, selection
+policy, intervention location, training target, measurement timing, causal
+status, artifact availability, label/$K$ isolation, reuse provenance, and
+alternative explanations. V1--V22 enter the quantitative atlas. V23 and V24
+are registered as boundary evidence but are not pooled with
+structural-intervention rows.
+
+The primary retrospective unit is dataset/protocol/readout. Seed and variant
+rows are repeated measurements. We do not treat the 1,637 paired records as
+1,637 independent data sets. A1 uses raw Delta ARI as its primary descriptive
+quantity; headroom-aware summaries and intervention-magnitude descriptors are
+sensitivity or post-treatment diagnostics, not causal covariates.
+
+The A1 numbers are imported historical metrics: A1 does not reload labels or
+recompute historical ARI values. Consequently, the atlas preserves the
+original evaluation and selection provenance, including the historical V21
+dataset-selection bias, rather than presenting a newly harmonized label-free
+benchmark.
+
+\begin{table}[t]
+\centering
+\caption{Evidence layers and their inferential boundary.}
+\label{tab:layers}
+\input{tables/evidence_layers.tex}
+\end{table}
+
+\subsection{Failure Atlas and mechanism triage}
+
+A1 admits only artifact-complete cases to offline replay. Metadata-only
+snapshots remain provenance records and cannot be reconstructed into replay
+evidence. The atlas separates structural opportunity, baseline/headroom,
+local/global conversion, and post-treatment magnitude descriptors. Because no
+common fixed-graph/null opportunity endpoint exists across all historical
+protocols, the atlas is observational rather than a pooled causal test of
+structural quality.
+
+A2 constructs a Claim--Evidence Matrix with historical support, counterexamples,
+identifiability, required generality, fatal falsifiers, alternative
+explanations, novelty, and required new compute. It can retain E1, cancel E1,
+or authorize no prospective computation; it cannot invent an E4 after triage.
+In the frozen artifacts A2 retained E1 and froze the selection claim, the
+primary per-seed endpoint
+$S_{\mathrm{full\_ARI}}=\operatorname{ARI}_T-\operatorname{ARI}_R$,
+the claim-dependent holdout subset, and the practical threshold $\delta=0.03$.
+
+\subsection{Matched V21 case study}
+
+The prospective case study compares three arms:
+
+\begin{align}
+N&=\text{matched None},\\
+R&=\text{matched Random assignment policy},\\
+T&=\text{topology-dependent selection policy}.
+\end{align}
+
+The estimands are
+\begin{align}
+I_d &= Q(R)-Q(N),\\
+S_d &= Q(T)-Q(R),\\
+Q(T)-Q(N)&=I_d+S_d.
+\end{align}
+
+For E1, $Q$ is the clean-embedding, known-$K$ KMeans ARI for one seed. Thus
+$S_{\mathrm{full\_ARI}}$ is the primary seed-level endpoint and
+$S_d=\operatorname{mean}_{s\in\{42,123,7\}}S_{\mathrm{full\_ARI},d,s}$ is only
+the dataset-level summary used for the four-state rule and figures. Pilot and
+confirmation panels are audited and reported separately; they are not pooled.
+
+The losses are frozen as
+\begin{align}
+L_N &= L_{\mathrm{scMAE}}+\lambda_iL_{\mathrm{InfoMax}},\\
+L_R &= L_{\mathrm{scMAE}}+\lambda_iL_{\mathrm{InfoMax}}+\lambda_aL_{\mathrm{JS}}^R,\\
+L_T &= L_{\mathrm{scMAE}}+\lambda_iL_{\mathrm{InfoMax}}+\lambda_aL_{\mathrm{JS}}^T.
+\end{align}
+
+All arms start from one branchpoint after warmup and Student-$t$ head
+initialization and before the first assignment update. Base reconstruction
+masks and donors, assignment donors, eligible coordinates, exact effective
+budgets, batch order, topology statistics, Gumbel selection noise, and readout
+randomness are shared or hash-audited. The Random arm uses zero topology logits
+plus the same frozen Gumbel tensor; the Topology arm adds topology-dependent
+logits. None preserves the reconstruction and InfoMax terms and optimizer state
+but executes no assignment forward and no JS loss.
+
+The primary readout is clean embedding plus known-$K$ KMeans. The Student-$t$
+head is a secondary diagnostic. The full label vector is excluded from
+preprocessing, graph construction, Gate, loss, optimizer updates, and all model
+state transitions. Labels enter only after fitting for outer ARI/NMI evaluation;
+benchmark-known $K$ may nevertheless be derived from the outer labels to size
+the trainable head and primary readout. E1 is therefore a real-ground-truth,
+known-$K$ benchmark, not fully label-free fitting.
+
+The pilot contains cnae9, Mouse Retina, and SMS with seeds $[42,123,7]$; the
+confirmation panel contains Baron Human, Campbell, and \texttt{hate\_speech}
+with the same seeds. A dataset-level state is Positive or Negative only when
+the mean effect exceeds $\pm0.03$ and at least two of three seed effects share
+its sign. Observed-Small requires the mean and all three seed effects to be
+smaller in absolute value; otherwise the state is Inconclusive. No three-seed
+bootstrap is used to claim equivalence.
+
+\subsection{Localization diagnostics}
+
+E2-A compares topology-selected and eligible-but-not-selected coordinates, but
+aggregates each metric at dataset-by-seed level. Coordinate-level distributions
+are descriptive plots only. Fisher separation, mutual information, and
+class-support enrichment are post-hoc label-aware descriptors and are not fit
+inputs. E2-B records base, assignment, and InfoMax gradient geometry at T0, T1,
+and T2. E2-C clones model, head, and Adam state and executes actual N/R/T Adam
+one-step updates. These diagnostics do not establish a universal
+objective-compatibility law.
+
+E3 applies the artifact-complete replay gate and keeps label-free geometry
+separate from post-hoc supervised neighborhood metrics. The frozen replay
+summary has zero eligible rows (\texttt{candidate\_rows=0}), so no E3 replay
+was run; the V23 local/global rows remain separate boundary evidence. A local
+improvement accompanied by non-positive ARI is therefore only a possible
+conversion-failure pattern, not a universal local-to-global theorem.
+
+\subsection{Holdout and closure}
+
+Before E1 outcomes, the holdout candidate pool, input adapters, normalization,
+feature selection, graph/model inputs, source hashes, measurement schema, and
+claim-dependent activation rule were frozen. The manifest records a scRNA
+shortfall and does not silently fill it using outcomes. Phase C selected the
+selection claim, so Phase D activated the N/R/T subset and primary
+$S_{\mathrm{full\_ARI}}$ endpoint. The expected holdout contained six panels.
+No panel produced an evaluable primary endpoint under the frozen dense decoder/
+Adam resource path; this is incomplete compute, not an independent replication
+result.

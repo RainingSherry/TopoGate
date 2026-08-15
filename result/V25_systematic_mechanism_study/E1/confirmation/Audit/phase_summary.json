@@ -1,0 +1,183 @@
+{
+  "protocol_id": "v25_e1_phase_audit_v1",
+  "e1_protocol_id": "v25_e1_v21_matched_nrt_v1",
+  "phase_root": "/data/luolie/ToPoGate/result/V25_systematic_mechanism_study/E1/confirmation",
+  "manifest_id": "v25_e1_gated_manifest_v1",
+  "manifest_path": "/data/luolie/ToPoGate/result/V25_systematic_mechanism_study/E1/confirmation/manifest_snapshot.json",
+  "phase": "confirmation",
+  "manifest_valid": true,
+  "manifest_errors": [],
+  "expected_panel_count": 9,
+  "expected_arm_count": 27,
+  "expected_panel_keys": [
+    "v25_e1_confirmation::Baron Human::123",
+    "v25_e1_confirmation::Baron Human::42",
+    "v25_e1_confirmation::Baron Human::7",
+    "v25_e1_confirmation::Campbell::123",
+    "v25_e1_confirmation::Campbell::42",
+    "v25_e1_confirmation::Campbell::7",
+    "v25_e1_confirmation::hate_speech::123",
+    "v25_e1_confirmation::hate_speech::42",
+    "v25_e1_confirmation::hate_speech::7"
+  ],
+  "expected_datasets": [
+    "Baron Human",
+    "Campbell",
+    "hate_speech"
+  ],
+  "expected_seeds": [
+    7,
+    42,
+    123
+  ],
+  "observed_panel_count": 9,
+  "observed_panel_keys": [
+    "v25_e1_confirmation::Baron Human::123",
+    "v25_e1_confirmation::Baron Human::42",
+    "v25_e1_confirmation::Baron Human::7",
+    "v25_e1_confirmation::Campbell::123",
+    "v25_e1_confirmation::Campbell::42",
+    "v25_e1_confirmation::Campbell::7",
+    "v25_e1_confirmation::hate_speech::123",
+    "v25_e1_confirmation::hate_speech::42",
+    "v25_e1_confirmation::hate_speech::7"
+  ],
+  "missing_expected_panel_keys": [],
+  "unexpected_panel_keys": [],
+  "duplicate_panel_keys": [],
+  "coverage_complete": true,
+  "panel_count": 9,
+  "audit_ok_count": 9,
+  "datasets": {
+    "Baron Human": {
+      "I_d": {
+        "state": "Inconclusive",
+        "mean": -0.011462761580129386,
+        "n_seeds": 3,
+        "same_sign_count": 2,
+        "seed_values": [
+          0.01980225117099435,
+          0.02110374750103966,
+          -0.07529428341242217
+        ]
+      },
+      "S_d": {
+        "state": "Positive",
+        "mean": 0.04461680986715221,
+        "n_seeds": 3,
+        "same_sign_count": 3,
+        "seed_values": [
+          0.03056034885474085,
+          0.017532602931774638,
+          0.08575747781494114
+        ]
+      },
+      "seeds": [
+        7,
+        42,
+        123
+      ],
+      "required_seeds": [
+        7,
+        42,
+        123
+      ],
+      "inference_status": "complete_valid_seed_set",
+      "statistical_unit": "dataset; seeds are repeated measurements"
+    },
+    "Campbell": {
+      "I_d": {
+        "state": "Positive",
+        "mean": 0.1328413910553667,
+        "n_seeds": 3,
+        "same_sign_count": 2,
+        "seed_values": [
+          -0.011480739531167627,
+          0.12562733200580123,
+          0.28437758069146646
+        ]
+      },
+      "S_d": {
+        "state": "Negative",
+        "mean": -0.065331748172776,
+        "n_seeds": 3,
+        "same_sign_count": 2,
+        "seed_values": [
+          0.0317998924674992,
+          -0.09164831221361266,
+          -0.13614682477221451
+        ]
+      },
+      "seeds": [
+        7,
+        42,
+        123
+      ],
+      "required_seeds": [
+        7,
+        42,
+        123
+      ],
+      "inference_status": "complete_valid_seed_set",
+      "statistical_unit": "dataset; seeds are repeated measurements"
+    },
+    "hate_speech": {
+      "I_d": {
+        "state": "Observed-Small",
+        "mean": -0.002670791256734873,
+        "n_seeds": 3,
+        "same_sign_count": 1,
+        "seed_values": [
+          0.0037466197251364575,
+          -0.005810408866118416,
+          -0.00594858462922266
+        ]
+      },
+      "S_d": {
+        "state": "Negative",
+        "mean": -0.03340972612927077,
+        "n_seeds": 3,
+        "same_sign_count": 3,
+        "seed_values": [
+          -0.03932170753623912,
+          -0.024615670683843544,
+          -0.03629180016772965
+        ]
+      },
+      "seeds": [
+        7,
+        42,
+        123
+      ],
+      "required_seeds": [
+        7,
+        42,
+        123
+      ],
+      "inference_status": "complete_valid_seed_set",
+      "statistical_unit": "dataset; seeds are repeated measurements"
+    }
+  },
+  "phase_gate": {
+    "passes": true,
+    "material_dataset_count": 3,
+    "required_dataset_count": 2,
+    "expected_dataset_count": 3,
+    "expected_datasets": [
+      "Baron Human",
+      "Campbell",
+      "hate_speech"
+    ],
+    "material_datasets": [
+      "Baron Human",
+      "Campbell",
+      "hate_speech"
+    ],
+    "same_sign_across_datasets_not_required": true,
+    "rule": "at least 2/3 datasets have a seed-stable material I or S effect; signs may differ"
+  },
+  "invalid_or_incomplete_panel_count": 0,
+  "statistical_unit": "dataset; seeds are repeated measurements",
+  "equivalence_claim": false,
+  "effect_state_rule": "Positive/Negative/Observed-Small/Inconclusive at delta=0.03; no bootstrap equivalence inference"
+}

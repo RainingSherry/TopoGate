@@ -1,0 +1,44 @@
+{
+  "N": {
+    "arm": "N",
+    "metrics": {
+      "readout": "clean_embedding_known_k_kmeans",
+      "labels_used_for_fit": false,
+      "labels_used_for_readout": false,
+      "n_clusters": 10,
+      "unique_predicted_clusters": 10,
+      "ari": 0.33141675480817323,
+      "nmi": 0.5207364405645132,
+      "labels_used_after_fit_only": true
+    },
+    "loss": 0.5810297131538391
+  },
+  "R": {
+    "arm": "R",
+    "metrics": {
+      "readout": "clean_embedding_known_k_kmeans",
+      "labels_used_for_fit": false,
+      "labels_used_for_readout": false,
+      "n_clusters": 10,
+      "unique_predicted_clusters": 10,
+      "ari": 0.3365066630267956,
+      "nmi": 0.5272098206494392,
+      "labels_used_after_fit_only": true
+    },
+    "loss": 0.5817005038261414
+  },
+  "T": {
+    "arm": "T",
+    "metrics": {
+      "readout": "clean_embedding_known_k_kmeans",
+      "labels_used_for_fit": false,
+      "labels_used_for_readout": false,
+      "n_clusters": 10,
+      "unique_predicted_clusters": 10,
+      "ari": 0.3273817754893428,
+      "nmi": 0.5176269321948856,
+      "labels_used_after_fit_only": true
+    },
+    "loss": 0.5816247463226318
+  }
+}

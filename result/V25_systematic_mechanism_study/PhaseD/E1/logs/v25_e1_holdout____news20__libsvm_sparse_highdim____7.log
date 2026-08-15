@@ -1,0 +1,47 @@
+[W815 04:52:44.298227837 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 15439233024 bytes (free: 9508618240, total: 85017493504).
+[W815 04:52:44.298557054 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 15439233024 bytes (free: 9508618240, total: 85017493504).
+Traceback (most recent call last):
+  File "/home/luolie/ToPoGate/scripts/V25/run_e1_matched_protocol.py", line 121, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/home/luolie/ToPoGate/scripts/V25/run_e1_matched_protocol.py", line 91, in main
+    result = run_e1(
+        prepared.X_model,
+    ...<6 lines>...
+        output_dir=args.output_dir,
+    )
+  File "/home/luolie/ToPoGate/methods/TopoGate/V25_systematic_mechanism_study/e1_protocol.py", line 709, in run_e1
+    _run_warmup(components, X, schedule.warmup, config, runtime_device)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/luolie/ToPoGate/methods/TopoGate/V25_systematic_mechanism_study/e1_protocol.py", line 406, in _run_warmup
+    optimizer.step()
+    ~~~~~~~~~~~~~~^^
+  File "/data/luolie/conda/base/lib/python3.13/site-packages/torch/optim/optimizer.py", line 530, in wrapper
+    out = func(*args, **kwargs)
+  File "/data/luolie/conda/base/lib/python3.13/site-packages/torch/optim/optimizer.py", line 80, in _use_grad
+    ret = func(*args, **kwargs)
+  File "/data/luolie/conda/base/lib/python3.13/site-packages/torch/optim/adam.py", line 248, in step
+    adam(
+    ~~~~^
+        params_with_grad,
+        ^^^^^^^^^^^^^^^^^
+    ...<19 lines>...
+        decoupled_weight_decay=group["decoupled_weight_decay"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/data/luolie/conda/base/lib/python3.13/site-packages/torch/optim/optimizer.py", line 148, in maybe_fallback
+    return func(*args, **kwargs)
+  File "/data/luolie/conda/base/lib/python3.13/site-packages/torch/optim/adam.py", line 970, in adam
+    func(
+    ~~~~^
+        params,
+        ^^^^^^^
+    ...<17 lines>...
+        decoupled_weight_decay=decoupled_weight_decay,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/data/luolie/conda/base/lib/python3.13/site-packages/torch/optim/adam.py", line 790, in _multi_tensor_adam
+    exp_avg_sq_sqrt = torch._foreach_sqrt(device_exp_avg_sqs)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 14.38 GiB. GPU 0 has a total capacity of 79.18 GiB of which 8.86 GiB is free. Including non-PyTorch memory, this process has 70.31 GiB memory in use. Of the allocated memory 69.50 GiB is allocated by PyTorch, and 87.99 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)

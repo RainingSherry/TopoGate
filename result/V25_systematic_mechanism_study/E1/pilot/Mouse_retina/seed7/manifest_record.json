@@ -1,0 +1,25 @@
+{
+  "panel_run_key": "v25_e1_pilot::Mouse_retina::7",
+  "phase": "pilot",
+  "dataset": "Mouse_retina",
+  "input_protocol": "clubench_bridge",
+  "source_path": "/data/luolie/ToPoGate/datasets/Mouse_retina.npz",
+  "source_sha256": "d3bc2eb08d95acd12d324f668c537ae4208de57c355862f8e5800d4ba1e727c1",
+  "seed": 7,
+  "arms": [
+    "N",
+    "R",
+    "T"
+  ],
+  "primary_readout": "clean_embedding_known_k_kmeans",
+  "K_source": "benchmark_oracle_from_y",
+  "output_dir": "result/V25_systematic_mechanism_study/E1/pilot/Mouse_retina/seed7",
+  "status": "queued",
+  "attempts": 0,
+  "gpu": null,
+  "pid": null,
+  "started_at": null,
+  "finished_at": null,
+  "returncode": null,
+  "error": null
+}

@@ -1,0 +1,80 @@
+{
+  "protocol_id": "v25_phase_e_closure_v1",
+  "created_at": "2026-08-15T04:54:47+08:00",
+  "study": "V25_systematic_mechanism_study",
+  "closure_decision": "close_without_v26",
+  "frozen_claim": {
+    "claim_family": "selection",
+    "wording": "Topology-dependent selection has conditional incremental utility in the audited V21 case study; this is not a universal population claim.",
+    "primary_endpoint": "S_full_ARI = ARI_T - ARI_R",
+    "claim_file": "result/V25_systematic_mechanism_study/PhaseC/FROZEN_PAPER_CLAIM.json",
+    "claim_sha256": "42e1489f30d410219093f2198854476420bc4151eff290cd4dad66d42e63fd02"
+  },
+  "retrospective_evidence": {
+    "a0_rows": 2209,
+    "a0_paired_rows": 1637,
+    "a0_dataset_protocol_units": 431,
+    "a1_material_positive": 194,
+    "a1_material_negative": 680,
+    "a1_observed_small": 763,
+    "statistical_unit": "dataset/protocol/readout; seeds are repeated measurements",
+    "causal_status": "observational",
+    "v23_v24_boundary_isolated": true
+  },
+  "prospective_case_study": {
+    "protocol_id": "v25_e1_v21_matched_nrt_v1",
+    "pilot": {
+      "panel_count": 9,
+      "audit_ok_count": 9,
+      "pilot_gate_passes": true
+    },
+    "confirmation": {
+      "panel_count": 9,
+      "audit_ok_count": 9,
+      "datasets": {
+        "Baron Human": {
+          "S_d": 0.04461680986715221,
+          "state": "Positive"
+        },
+        "Campbell": {
+          "S_d": -0.065331748172776,
+          "state": "Negative"
+        },
+        "hate_speech": {
+          "S_d": -0.03340972612927077,
+          "state": "Negative"
+        }
+      },
+      "interpretation": "conditional/heterogeneous V21 case-study evidence",
+      "universal_population_claim": false
+    }
+  },
+  "independent_holdout": {
+    "manifest": "result/V25_systematic_mechanism_study/PhaseD/holdout_e1_manifest.json",
+    "manifest_sha256": "065e80549f61f26bc669032d1219e942dd6a63ab657d70a12e8d8a4e33b5f022",
+    "candidate_datasets": [
+      "news20__libsvm_sparse_highdim",
+      "rcv1_train__libsvm_sparse_highdim"
+    ],
+    "expected_panel_count": 6,
+    "completed_panel_count": 0,
+    "audit_ok_count": 0,
+    "status": "inconclusive_not_completed",
+    "queue": "result/V25_systematic_mechanism_study/PhaseD/E1/queue_state.json",
+    "queue_sha256": "17f6277843e0cc6af6514128294333f4ef79d588da75bdc3dc57f86603d181e1",
+    "queue_status": "incomplete_compute",
+    "queue_incomplete_panels": 6,
+    "audit": "result/V25_systematic_mechanism_study/PhaseD/Audit/phase_summary.json",
+    "audit_sha256": "addfff340b784bb614e4f533215b15e550152d11d3a467edba78accd450866cd",
+    "primary_endpoint_evaluable": false,
+    "reason": "The frozen dense V21 budget exceeded available GPU memory during Adam state initialization; no holdout summary or primary endpoint was produced. Three news20 seeds reached the same CUDA OOM path; the remaining panels were stopped or not started under the same frozen protocol.",
+    "performance_result": false
+  },
+  "claim_scope_after_closure": {
+    "retrospective_claim": "retained as observational V1-V22 failure-atlas evidence",
+    "mechanistic_claim": "retained only as conditional audited V21 case-study evidence",
+    "independent_replication": "not established",
+    "new_model_iteration": false,
+    "v26_or_rescue_route": false
+  }
+}

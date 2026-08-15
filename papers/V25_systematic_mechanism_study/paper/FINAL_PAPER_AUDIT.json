@@ -1,0 +1,257 @@
+{
+  "protocol_id": "v25_final_paper_audit_v1",
+  "status": "audit_ok",
+  "paper": "papers/V25_systematic_mechanism_study/paper",
+  "pdf": "papers/V25_systematic_mechanism_study/paper/main.pdf",
+  "checks": {
+    "latex_source_exists": true,
+    "pdf_exists_and_nonempty": true,
+    "pdftotext_succeeded": true,
+    "compile_log_exists": true,
+    "no_undefined_citation_or_reference": true,
+    "no_overfull_hbox_warning": true,
+    "pdf_has_no_unresolved_markers": true,
+    "five_figure_environments": true,
+    "five_figure_labels": true,
+    "five_figure_includes": true,
+    "pdf_contains_five_figure_captions": true,
+    "figure_manifest_has_15_assets": true,
+    "all_figure_assets_hash_match": true,
+    "table_manifest_exists": true,
+    "table_source_hashes_match": true,
+    "frozen_claim_audit_passes": true,
+    "pdf_numeric_anchors_present": true,
+    "scope_forbidden_phrases_absent": true,
+    "formal_citation_audit_passes": true
+  },
+  "failed_checks": [],
+  "forbidden_phrases_found": [],
+  "figure_assets": [
+    {
+      "asset": "figures/V25_Figure1_failure_atlas.png",
+      "evidence_exists": true,
+      "paper_exists": true,
+      "hash_equal": true
+    },
+    {
+      "asset": "figures/V25_Figure1_failure_atlas.pdf",
+      "evidence_exists": true,
+      "paper_exists": true,
+      "hash_equal": true
+    },
+    {
+      "asset": "figures/V25_Figure1_failure_atlas.svg",
+      "evidence_exists": true,
+      "paper_exists": true,
+      "hash_equal": true
+    },
+    {
+      "asset": "figures/V25_Figure2_mechanism_chain.png",
+      "evidence_exists": true,
+      "paper_exists": true,
+      "hash_equal": true
+    },
+    {
+      "asset": "figures/V25_Figure2_mechanism_chain.pdf",
+      "evidence_exists": true,
+      "paper_exists": true,
+      "hash_equal": true
+    },
+    {
+      "asset": "figures/V25_Figure2_mechanism_chain.svg",
+      "evidence_exists": true,
+      "paper_exists": true,
+      "hash_equal": true
+    },
+    {
+      "asset": "figures/V25_Figure3_e1_selectivity.png",
+      "evidence_exists": true,
+      "paper_exists": true,
+      "hash_equal": true
+    },
+    {
+      "asset": "figures/V25_Figure3_e1_selectivity.pdf",
+      "evidence_exists": true,
+      "paper_exists": true,
+      "hash_equal": true
+    },
+    {
+      "asset": "figures/V25_Figure3_e1_selectivity.svg",
+      "evidence_exists": true,
+      "paper_exists": true,
+      "hash_equal": true
+    },
+    {
+      "asset": "figures/V25_Figure4_diagnostics.png",
+      "evidence_exists": true,
+      "paper_exists": true,
+      "hash_equal": true
+    },
+    {
+      "asset": "figures/V25_Figure4_diagnostics.pdf",
+      "evidence_exists": true,
+      "paper_exists": true,
+      "hash_equal": true
+    },
+    {
+      "asset": "figures/V25_Figure4_diagnostics.svg",
+      "evidence_exists": true,
+      "paper_exists": true,
+      "hash_equal": true
+    },
+    {
+      "asset": "figures/V25_Figure5_local_global_boundary.png",
+      "evidence_exists": true,
+      "paper_exists": true,
+      "hash_equal": true
+    },
+    {
+      "asset": "figures/V25_Figure5_local_global_boundary.pdf",
+      "evidence_exists": true,
+      "paper_exists": true,
+      "hash_equal": true
+    },
+    {
+      "asset": "figures/V25_Figure5_local_global_boundary.svg",
+      "evidence_exists": true,
+      "paper_exists": true,
+      "hash_equal": true
+    }
+  ],
+  "table_sources": [
+    {
+      "name": "e1_dataset_effects.csv",
+      "exists": true,
+      "hash_equal": true
+    },
+    {
+      "name": "paper_evidence_summary.json",
+      "exists": true,
+      "hash_equal": true
+    },
+    {
+      "name": "source_manifest.json",
+      "exists": true,
+      "hash_equal": true
+    },
+    {
+      "name": "references.bib",
+      "exists": true,
+      "hash_equal": true
+    },
+    {
+      "name": "figure_manifest.json",
+      "exists": true,
+      "hash_equal": true
+    }
+  ],
+  "claim_audit": {
+    "status": "audit_ok",
+    "checks": {
+      "a0_v1_v22_rows": true,
+      "a0_v1_v22_paired_rows": true,
+      "a0_v1_v22_units": true,
+      "a0_v23_v24_boundary_records": true,
+      "a1_paired_rows": true,
+      "a1_positive_rows": true,
+      "a1_negative_rows": true,
+      "a1_small_rows": true,
+      "a0_a1_summary_reconciles": true,
+      "a1_observational_boundary": true,
+      "a2_retained_without_e4": true,
+      "claim_endpoint_frozen": true,
+      "e1_complete_audited_phase": true,
+      "e1_effect_rows_complete": true,
+      "e1_effect_states_recomputed": true,
+      "holdout_firewall": true,
+      "paper_scope_audit_passes": true
+    }
+  },
+  "formal_citation_audit": {
+    "protocol_id": "v25_formal_latex_citation_audit_v1",
+    "status": "audit_ok",
+    "manuscript": "papers/V25_systematic_mechanism_study/paper/main.tex",
+    "bib": "/home/luolie/ToPoGate/papers/V25_systematic_mechanism_study/references.bib",
+    "index": "/home/luolie/ToPoGate/papers/references/INDEX.md",
+    "cited_keys": [
+      "li2025dcboost",
+      "li2025lfss",
+      "xu2024sccdcg",
+      "yan2026scmib"
+    ],
+    "checks": {
+      "manuscript_exists": true,
+      "nonempty_citation_set": true,
+      "all_citations_known_local": true,
+      "all_citations_have_bib_keys": true,
+      "all_citations_have_verified_pdf": true,
+      "all_citations_have_index_entries": true,
+      "scmae_missing_pdf_boundary_declared": true
+    },
+    "references": [
+      {
+        "bib_key": "li2025dcboost",
+        "known_local_reference": true,
+        "bib_key_present": true,
+        "pdf": "papers/references/pdf/clustering_sota_2026/NeurIPS-2025-DCBoost.pdf",
+        "pdf_exists": true,
+        "pdf_size_bytes": 6393502,
+        "pdf_size_ok": true,
+        "index_marker": "### 37 | DCBoost",
+        "index_present": true
+      },
+      {
+        "bib_key": "li2025lfss",
+        "known_local_reference": true,
+        "bib_key_present": true,
+        "pdf": "papers/references/pdf/clustering_sota_2026/ICML-2025-LFSS.pdf",
+        "pdf_exists": true,
+        "pdf_size_bytes": 2067830,
+        "pdf_size_ok": true,
+        "index_marker": "### 57 | LFSS",
+        "index_present": true
+      },
+      {
+        "bib_key": "xu2024sccdcg",
+        "known_local_reference": true,
+        "bib_key_present": true,
+        "pdf": "papers/references/pdf/13_sccdcg_arxiv2024.pdf",
+        "pdf_exists": true,
+        "pdf_size_bytes": 4950458,
+        "pdf_size_ok": true,
+        "index_marker": "### 12 | scCDCG",
+        "index_present": true
+      },
+      {
+        "bib_key": "yan2026scmib",
+        "known_local_reference": true,
+        "bib_key_present": true,
+        "pdf": "papers/references/pdf/29_scdebcl_2026.pdf",
+        "pdf_exists": true,
+        "pdf_size_bytes": 11616064,
+        "pdf_size_ok": true,
+        "index_marker": "### 19 | scMIB",
+        "index_present": true
+      }
+    ],
+    "excluded_boundary": "scMAE local PDF unavailable; excluded from formal citation"
+  },
+  "pdf_text_error": null,
+  "pdf_anchor_presence": {
+    "2,209": true,
+    "1,637": true,
+    "431": true,
+    "194": true,
+    "680": true,
+    "763": true,
+    "+0.044617": true,
+    "-0.065332": true,
+    "-0.033410": true,
+    "0/6": true,
+    "inconclusive_not_completed": true
+  },
+  "source_hashes": {
+    "figure_manifest": "5d2dec47a1abe62cd3832a22bdd7a9b6257de8232422614da24dad4592cf009c",
+    "latex_assets_manifest": "e2f69c01a219d64ae29226827debdbbfcb62220526d72f51802609e2b3e00d3d"
+  }
+}

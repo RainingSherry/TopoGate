@@ -1,0 +1,29 @@
+{
+  "T0": {
+    "cos_base_assignment": -0.0008573158411309123,
+    "cos_base_infomax": -0.0012900320580229163,
+    "cos_base_assignment_plus_infomax": -0.0013355397386476398,
+    "norm_base": 0.3022404611110687,
+    "norm_assignment": 0.039894286543130875,
+    "norm_infomax": 0.522078812122345,
+    "norm_assignment_plus_infomax": 0.5298983454704285
+  },
+  "T1": {
+    "cos_base_assignment": -0.004089010413736105,
+    "cos_base_infomax": 0.00913989171385765,
+    "cos_base_assignment_plus_infomax": 0.008770527318120003,
+    "norm_base": 0.3069014847278595,
+    "norm_assignment": 0.03474421426653862,
+    "norm_infomax": 0.44514769315719604,
+    "norm_assignment_plus_infomax": 0.4476962387561798
+  },
+  "T2": {
+    "cos_base_assignment": -0.005808777175843716,
+    "cos_base_infomax": 0.011576512828469276,
+    "cos_base_assignment_plus_infomax": 0.01132200937718153,
+    "norm_base": 0.37051448225975037,
+    "norm_assignment": 0.03611231595277786,
+    "norm_infomax": 0.4718215763568878,
+    "norm_assignment_plus_infomax": 0.4638999402523041
+  }
+}

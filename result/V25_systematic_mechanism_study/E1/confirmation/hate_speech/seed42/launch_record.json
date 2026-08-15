@@ -1,0 +1,23 @@
+{
+  "panel_run_key": "v25_e1_confirmation::hate_speech::42",
+  "gpu": 2,
+  "command": [
+    "/data/luolie/conda/base/bin/python",
+    "/home/luolie/ToPoGate/scripts/V25/run_e1_matched_protocol.py",
+    "--data",
+    "/data/luolie/ToPoGate/datasets/hate_speech.npz",
+    "--dataset-name",
+    "hate_speech",
+    "--input-protocol",
+    "shared_text",
+    "--output-dir",
+    "/home/luolie/ToPoGate/result/V25_systematic_mechanism_study/E1/confirmation/hate_speech/seed42",
+    "--seed",
+    "42",
+    "--device",
+    "cuda",
+    "--gpu",
+    "2"
+  ],
+  "started_at": "2026-08-14T20:26:44.790620+00:00"
+}

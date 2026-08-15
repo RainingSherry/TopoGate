@@ -1,0 +1,32 @@
+{
+  "protocol_id": "v25_e1_v21_matched_nrt_v1",
+  "labels_used_during_fit": false,
+  "K_used_during_fit": true,
+  "K_source": "caller_outer_evaluation",
+  "arm_names": [
+    "N",
+    "R",
+    "T"
+  ],
+  "donor_schedule_hash": "19d9bb067e64a99bf49d564776b0e0cfa0cc3f2f8e29eb425b4120267d29a4cd",
+  "eligible_schedule_hash": "d3bde5df9f6cd430021ec64295931fb636ceaeaab1a102e3f11c8153035390b2",
+  "budget_schedule_hash": "b07a7060c3d43d291d0aea6ed81dc5a531637a00ed032694e317839b9b8edaed",
+  "selection_noise_hash": "6d474595df13aa934fa46cb54803961043eacf709fe103a77d1e802d862bd602",
+  "topology_statistics_hash": "58e29d61ba08ee345e65f4a581a305f6a0f03ff224fa937d99739281c54ce2f7",
+  "TR_shared_schedule_hashes": {
+    "donor": true,
+    "eligible": true,
+    "budget": true,
+    "selection_noise": true
+  },
+  "none_contract": {
+    "assignment_forward_calls": 0,
+    "js_forward_calls": 0,
+    "shadow_assignment_calls": 12
+  },
+  "branchpoint": {
+    "epoch": 1,
+    "head_initialised": true,
+    "warmup_branchpoint_before_first_assignment": true
+  }
+}

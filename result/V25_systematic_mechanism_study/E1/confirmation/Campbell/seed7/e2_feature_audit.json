@@ -1,0 +1,101 @@
+{
+  "protocol_id": "v25_e2a_feature_semantics_v1",
+  "dataset_id": "Campbell",
+  "seed": 7,
+  "statistical_unit": "dataset_seed_summary",
+  "coordinate_count": 10702103280,
+  "selected_coordinate_count": 471659463,
+  "eligible_not_selected_coordinate_count": 707089526,
+  "coordinate_distribution_is_descriptive_only": true,
+  "metrics": {
+    "class_support_enrichment_posthoc": {
+      "selected_mean": 0.14299301700758255,
+      "eligible_not_selected_mean": 0.15826077375352232,
+      "difference": -0.015267756745939776,
+      "selected_n_coordinates": 471659463,
+      "eligible_not_selected_n_coordinates": 707089526
+    },
+    "fisher_separation_posthoc": {
+      "selected_mean": 0.08297253107398297,
+      "eligible_not_selected_mean": 0.0963554559396143,
+      "difference": -0.013382924865631321,
+      "selected_n_coordinates": 471659463,
+      "eligible_not_selected_n_coordinates": 707089526
+    },
+    "model_support_frequency": {
+      "selected_mean": 1.0,
+      "eligible_not_selected_mean": 1.0,
+      "difference": 0.0,
+      "selected_n_coordinates": 471659463,
+      "eligible_not_selected_n_coordinates": 707089526
+    },
+    "model_variance": {
+      "selected_mean": 1.000000000926439,
+      "eligible_not_selected_mean": 1.00000000084035,
+      "difference": 8.608891377548389e-11,
+      "selected_n_coordinates": 471659463,
+      "eligible_not_selected_n_coordinates": 707089526
+    },
+    "model_zero_fraction": {
+      "selected_mean": 0.0,
+      "eligible_not_selected_mean": 0.0,
+      "difference": 0.0,
+      "selected_n_coordinates": 471659463,
+      "eligible_not_selected_n_coordinates": 707089526
+    },
+    "raw_support_frequency": {
+      "selected_mean": 0.23844549141358895,
+      "eligible_not_selected_mean": 0.28204031668146146,
+      "difference": -0.043594825267872506,
+      "selected_n_coordinates": 471659463,
+      "eligible_not_selected_n_coordinates": 707089526
+    },
+    "support_mutual_information_posthoc": {
+      "selected_mean": 0.02703977475130087,
+      "eligible_not_selected_mean": 0.030250322175704995,
+      "difference": -0.003210547424404124,
+      "selected_n_coordinates": 471659463,
+      "eligible_not_selected_n_coordinates": 707089526
+    },
+    "donor_change_magnitude": {
+      "selected_mean": 3.120332037086979,
+      "eligible_not_selected_mean": 2.63192468899142,
+      "difference": 0.4884073480955591,
+      "selected_n_coordinates": 471659463,
+      "eligible_not_selected_n_coordinates": 707089526
+    },
+    "topology_deviation": {
+      "selected_mean": 1.2048011562577814,
+      "eligible_not_selected_mean": 0.46887227724278524,
+      "difference": 0.7359288790149962,
+      "selected_n_coordinates": 471659463,
+      "eligible_not_selected_n_coordinates": 707089526
+    },
+    "topology_dispersion": {
+      "selected_mean": 0.2623722130520472,
+      "eligible_not_selected_mean": 0.1362257090336875,
+      "difference": 0.12614650401835972,
+      "selected_n_coordinates": 471659463,
+      "eligible_not_selected_n_coordinates": 707089526
+    }
+  },
+  "source_path": "/data/luolie/ToPoGate/datasets/Campbell.npz",
+  "source_sha256": "f26c9568baf8e8fade7a61e6fed80f16ceb3980afe38b7c9ccbe9aaad2b96e04",
+  "e1_protocol_id": "v25_e1_v21_matched_nrt_v1",
+  "selection_policy_snapshot": "training_time_topology_gate_policy",
+  "selection_policy_is_not_a_new_fit": true,
+  "measurement_timing": "post_intervention_policy_audit",
+  "causal_status": "observational",
+  "labels_used_for_fit": false,
+  "posthoc_labels_used": true,
+  "posthoc_label_metrics_are_not_fit_inputs": true,
+  "schedule_entry_count": null,
+  "schedule_coordinate_count": 10702103280,
+  "eligible_rate": 0.11014180653655586,
+  "selected_rate": 0.04407166055680225,
+  "selected_within_eligible_rate": 0.400135624633821,
+  "topology_statistics_hash": "088bd9720e767888ab9a8e28efe90e716dc0d851b7a8f538de78d85c1a160e3b",
+  "topology_statistics_profile": null,
+  "audit_ok": true,
+  "audit_source": "E1_training_time_saved_counts"
+}

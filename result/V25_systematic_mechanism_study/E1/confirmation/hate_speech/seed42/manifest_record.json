@@ -1,0 +1,25 @@
+{
+  "panel_run_key": "v25_e1_confirmation::hate_speech::42",
+  "phase": "confirmation",
+  "dataset": "hate_speech",
+  "input_protocol": "shared_text",
+  "source_path": "/data/luolie/ToPoGate/datasets/hate_speech.npz",
+  "source_sha256": "c39fc08366c0423b8a2f4e3543df6d5b06f2e0b065813e120263b99e7d1e44bb",
+  "seed": 42,
+  "arms": [
+    "N",
+    "R",
+    "T"
+  ],
+  "primary_readout": "clean_embedding_known_k_kmeans",
+  "K_source": "benchmark_oracle_from_y",
+  "output_dir": "/home/luolie/ToPoGate/result/V25_systematic_mechanism_study/E1/confirmation/hate_speech/seed42",
+  "status": "queued",
+  "attempts": 0,
+  "gpu": null,
+  "pid": null,
+  "started_at": null,
+  "finished_at": null,
+  "returncode": null,
+  "error": null
+}

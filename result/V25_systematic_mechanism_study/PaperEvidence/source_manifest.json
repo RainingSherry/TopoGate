@@ -1,0 +1,117 @@
+{
+  "protocol_id": "v25_paper_evidence_bundle_v1",
+  "sources": {
+    "A0/registry_summary.json": {
+      "sha256": "d005a28407497306db1734d6e9a75c863ed55dc4de5e5f9cf24c9e5a45584f67",
+      "exists": true
+    },
+    "A0/mechanism_evidence_registry.csv": {
+      "sha256": "016e29d6d7058ac1abed84ce4ba088ece8307460d21114865b30e62fa717f28c",
+      "exists": true
+    },
+    "A0/V23_V24_boundary_evidence.csv": {
+      "sha256": "0fa90e1eb008975c204b89cd9709a07afd766ee125cddf9898c86bb6285e2279",
+      "exists": true
+    },
+    "A1/a1_summary.json": {
+      "sha256": "2c3d71d8b54bc7c268fb38a85913908e523d6e356f4f1bfab5f3a2ef6a72d633",
+      "exists": true
+    },
+    "A1/failure_atlas.csv": {
+      "sha256": "ebf4a972a556b1e14975902f43322286b5abe1215310f8d834c6eb6e7891001c",
+      "exists": true
+    },
+    "A1/version_family_summary.csv": {
+      "sha256": "dede3b26808c7dc05bdec2def4a4a9250218cbd3d19ce3c342d60fd790e76aa0",
+      "exists": true
+    },
+    "A1/structural_opportunity_summary.csv": {
+      "sha256": "0f28860a52a4f6f7fda95120d7921761b6182108415ea75dc5b73abf59ae32e7",
+      "exists": true
+    },
+    "A1/magnitude_gain_summary.csv": {
+      "sha256": "98d892af1e6a23d818261bbde429c94b6021bf06ddee989f446038369f34e30b",
+      "exists": true
+    },
+    "A1/failure_localization_taxonomy.csv": {
+      "sha256": "ed71d8f8674d3b8732853e9789855d523cadf72a2f70fe0c782b4af99886d5fc",
+      "exists": true
+    },
+    "A1/e3_replay_summary.json": {
+      "sha256": "b73484a31b3b22cfc4b7ed5e7f6a3402e9f05b873d04633f45a9f474b44cc44c",
+      "exists": true
+    },
+    "A1/local_global_boundary.csv": {
+      "sha256": "d58c7bca881f2d04efdb45e80aa87f659258403b524c2f4a18c7acdafaa4014f",
+      "exists": true
+    },
+    "A2/A2_decision.json": {
+      "sha256": "5e2ca827ca87f9c8f2b583fac9c86b1296b8c7edfd87d24795eccb6152435245",
+      "exists": true
+    },
+    "A2/CLAIM_EVIDENCE_MATRIX.csv": {
+      "sha256": "6071e4c300b75526dfa276f9a2ade240d8a8bda4ec87343f2b95827d611cc784",
+      "exists": true
+    },
+    "A2/measurement_schema.json": {
+      "sha256": "46fbe84744e74617bf4c758f3c9578159357822aa5f0a859381c5a138583526f",
+      "exists": true
+    },
+    "A2/holdout_candidate_manifest.json": {
+      "sha256": "8f9b5f89045b6df43dfc2fb32124af7aaf22ec5720d44ed2449481d18a5eaec3",
+      "exists": true
+    },
+    "PhaseC/FROZEN_PAPER_CLAIM.json": {
+      "sha256": "42e1489f30d410219093f2198854476420bc4151eff290cd4dad66d42e63fd02",
+      "exists": true
+    },
+    "PhaseC/FROZEN_PAPER_CLAIM.md": {
+      "sha256": "4a900514e8edce8a29cb106424b64da1e9aa9dcab47d03346895a32d08e3a1e9",
+      "exists": true
+    },
+    "E1/confirmation/Audit/phase_summary.json": {
+      "sha256": "c5dce7c0c0b2c178dc23d1198fe874d9ab62746f58ea44cdb4d7fb4da441545b",
+      "exists": true
+    },
+    "E1/confirmation/manifest_snapshot.json": {
+      "sha256": "edf2d57bba15cc1a56b18d12dd72efd320e0cbc4a730875a513b79814c577339",
+      "exists": true
+    },
+    "E1/confirmation/Audit/pair_effects.csv": {
+      "sha256": "f70d817684fb6f4326221cbfa37a14f2e4042d0cef6c70b1d88aca0809f3f83c",
+      "exists": true
+    },
+    "E1/confirmation/Audit/e2_feature_audit.json": {
+      "sha256": "83715c8ed845bcf372413d0743de3a11c3c96e63edf2936c8b4aee16b93ee86e",
+      "exists": true
+    },
+    "E1/confirmation/Audit/gradient_probe.csv": {
+      "sha256": "442426e6ffce29473d2c7d19fe342c6290b664f38f2836c52c228abf71500d14",
+      "exists": true
+    },
+    "PhaseD/holdout_activation_manifest.json": {
+      "sha256": "c1de6086bc346677e4dfb04c1f53adf2d5ba9f8167fa155b81f6827fed7322c9",
+      "exists": true
+    },
+    "PhaseD/holdout_e1_manifest.json": {
+      "sha256": "53a64c42139c587acf1bcceb4404add0806b6e825284621c314835208faf3e62",
+      "exists": true
+    },
+    "PhaseD/E1/queue_state.json": {
+      "sha256": "987e598807a285742deb9da27b2d803f1ec3b0fa786248f82137dbb870c566dd",
+      "exists": true
+    },
+    "PhaseD/Audit/phase_summary.json": {
+      "sha256": "d1723a820430f59ef0225df720321ea528197e1a039a30b0768817988ac6159c",
+      "exists": true
+    },
+    "PhaseE/closure.json": {
+      "sha256": "062ca3bc4b2002457113cc3365410738035d27b21d563f943e7ad83dcc6bf798",
+      "exists": true
+    },
+    "PhaseE/closure_audit.json": {
+      "sha256": "de65ec88b46bd6639395a2db84d30a0493bdd8d5e876b7b6428c9f90e4a8bfe0",
+      "exists": true
+    }
+  }
+}

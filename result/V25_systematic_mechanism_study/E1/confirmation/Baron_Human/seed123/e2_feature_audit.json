@@ -1,0 +1,101 @@
+{
+  "protocol_id": "v25_e2a_feature_semantics_v1",
+  "dataset_id": "Baron Human",
+  "seed": 123,
+  "statistical_unit": "dataset_seed_summary",
+  "coordinate_count": 6803055000,
+  "selected_coordinate_count": 394715576,
+  "eligible_not_selected_coordinate_count": 591735668,
+  "coordinate_distribution_is_descriptive_only": true,
+  "metrics": {
+    "class_support_enrichment_posthoc": {
+      "selected_mean": 0.14947208869226525,
+      "eligible_not_selected_mean": 0.17425574920884418,
+      "difference": -0.02478366051657893,
+      "selected_n_coordinates": 394715576,
+      "eligible_not_selected_n_coordinates": 591735668
+    },
+    "fisher_separation_posthoc": {
+      "selected_mean": 0.07034090541974035,
+      "eligible_not_selected_mean": 0.09367240397365952,
+      "difference": -0.023331498553919167,
+      "selected_n_coordinates": 394715576,
+      "eligible_not_selected_n_coordinates": 591735668
+    },
+    "model_support_frequency": {
+      "selected_mean": 1.0,
+      "eligible_not_selected_mean": 1.0,
+      "difference": 0.0,
+      "selected_n_coordinates": 394715576,
+      "eligible_not_selected_n_coordinates": 591735668
+    },
+    "model_variance": {
+      "selected_mean": 0.9999999997401692,
+      "eligible_not_selected_mean": 0.9999999997262349,
+      "difference": 1.3934298159767877e-11,
+      "selected_n_coordinates": 394715576,
+      "eligible_not_selected_n_coordinates": 591735668
+    },
+    "model_zero_fraction": {
+      "selected_mean": 0.0,
+      "eligible_not_selected_mean": 0.0,
+      "difference": 0.0,
+      "selected_n_coordinates": 394715576,
+      "eligible_not_selected_n_coordinates": 591735668
+    },
+    "raw_support_frequency": {
+      "selected_mean": 0.24503074345869458,
+      "eligible_not_selected_mean": 0.3287886222725362,
+      "difference": -0.08375787881384161,
+      "selected_n_coordinates": 394715576,
+      "eligible_not_selected_n_coordinates": 591735668
+    },
+    "support_mutual_information_posthoc": {
+      "selected_mean": 0.0228350245891291,
+      "eligible_not_selected_mean": 0.026845483567685815,
+      "difference": -0.004010458978556716,
+      "selected_n_coordinates": 394715576,
+      "eligible_not_selected_n_coordinates": 591735668
+    },
+    "donor_change_magnitude": {
+      "selected_mean": 2.963459449820335,
+      "eligible_not_selected_mean": 2.052264840723572,
+      "difference": 0.9111946090967629,
+      "selected_n_coordinates": 394715576,
+      "eligible_not_selected_n_coordinates": 591735668
+    },
+    "topology_deviation": {
+      "selected_mean": 1.553628955921432,
+      "eligible_not_selected_mean": 0.09388361060069214,
+      "difference": 1.4597453453207399,
+      "selected_n_coordinates": 394715576,
+      "eligible_not_selected_n_coordinates": 591735668
+    },
+    "topology_dispersion": {
+      "selected_mean": 0.22031454067142056,
+      "eligible_not_selected_mean": 0.09374655435682556,
+      "difference": 0.12656798631459498,
+      "selected_n_coordinates": 394715576,
+      "eligible_not_selected_n_coordinates": 591735668
+    }
+  },
+  "source_path": "/data/luolie/ToPoGate/datasets/Baron Human.npz",
+  "source_sha256": "99c5bb7a272f5b22d64949179c6d49b4b52220670f3a7cef38e9e405902249d8",
+  "e1_protocol_id": "v25_e1_v21_matched_nrt_v1",
+  "selection_policy_snapshot": "training_time_topology_gate_policy",
+  "selection_policy_is_not_a_new_fit": true,
+  "measurement_timing": "post_intervention_policy_audit",
+  "causal_status": "observational",
+  "labels_used_for_fit": false,
+  "posthoc_labels_used": true,
+  "posthoc_label_metrics_are_not_fit_inputs": true,
+  "schedule_entry_count": null,
+  "schedule_coordinate_count": 6803055000,
+  "eligible_rate": 0.145001215483338,
+  "selected_rate": 0.05802034174352552,
+  "selected_within_eligible_rate": 0.4001369336810325,
+  "topology_statistics_hash": "daf718d16fb6a55d205b824a5f465a24fb27f476e3a76cac524c2bc52ef1cd0c",
+  "topology_statistics_profile": null,
+  "audit_ok": true,
+  "audit_source": "E1_training_time_saved_counts"
+}

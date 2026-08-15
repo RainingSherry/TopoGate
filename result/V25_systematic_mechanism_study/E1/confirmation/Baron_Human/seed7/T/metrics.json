@@ -1,0 +1,10 @@
+{
+  "readout": "clean_embedding_known_k_kmeans",
+  "labels_used_for_fit": false,
+  "labels_used_for_readout": false,
+  "n_clusters": 9,
+  "unique_predicted_clusters": 9,
+  "ari": 0.24213278842466163,
+  "nmi": 0.4417319054007504,
+  "labels_used_after_fit_only": true
+}

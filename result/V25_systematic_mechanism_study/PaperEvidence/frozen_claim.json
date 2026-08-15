@@ -1,0 +1,75 @@
+{
+  "protocol_id": "v25_claim_freeze_v1",
+  "study": "V25_systematic_mechanism_study",
+  "claim_family": "selection",
+  "claim": {
+    "claim_id": "selection_conditional_utility",
+    "primary_endpoint": "S_full_ARI = ARI_T - ARI_R",
+    "endpoint_key": "S_full_ARI",
+    "activation_subset": [
+      "E1_NRT"
+    ],
+    "required_evidence": [
+      "E1_full"
+    ],
+    "falsifier": "No predeclared holdout dataset has a seed-stable material S_full_ARI effect, or the T/R matching audit fails.",
+    "allowed_wording": "Topology-dependent selection has conditional incremental utility in the audited V21 case study; this is not a universal population claim.",
+    "secondary_metrics": [
+      "I_full_ARI",
+      "S_1step_ARI",
+      "NMI",
+      "E2-A feature summaries",
+      "E2-B gradient geometry"
+    ]
+  },
+  "primary_endpoint": "S_full_ARI = ARI_T - ARI_R",
+  "primary_endpoint_key": "S_full_ARI",
+  "delta_threshold": 0.03,
+  "threshold_sensitivity": [
+    0.02,
+    0.03,
+    0.05
+  ],
+  "activation_subset": [
+    "E1_NRT"
+  ],
+  "secondary_metrics": [
+    "I_full_ARI",
+    "S_1step_ARI",
+    "NMI",
+    "E2-A feature summaries",
+    "E2-B gradient geometry"
+  ],
+  "falsifier": "No predeclared holdout dataset has a seed-stable material S_full_ARI effect, or the T/R matching audit fails.",
+  "allowed_wording": "Topology-dependent selection has conditional incremental utility in the audited V21 case study; this is not a universal population claim.",
+  "selection_mode": "explicit_author_choice_after_predeclared_A2_schema; no automatic_best_result_selection",
+  "frozen_at": "2026-08-14T20:31:50.912860+00:00",
+  "author_note": "Confirmation shows dataset-conditional S_full_ARI: Baron Human positive, Campbell and hate_speech negative; this freezes conditional selection utility, not universal topology superiority.",
+  "evidence": [
+    {
+      "path": "/data/luolie/ToPoGate/result/V25_systematic_mechanism_study/A0/registry_summary.json",
+      "sha256": "d005a28407497306db1734d6e9a75c863ed55dc4de5e5f9cf24c9e5a45584f67"
+    },
+    {
+      "path": "/data/luolie/ToPoGate/result/V25_systematic_mechanism_study/A1/a1_summary.json",
+      "sha256": "2c3d71d8b54bc7c268fb38a85913908e523d6e356f4f1bfab5f3a2ef6a72d633"
+    },
+    {
+      "path": "/data/luolie/ToPoGate/result/V25_systematic_mechanism_study/A2/A2_decision.json",
+      "sha256": "5e2ca827ca87f9c8f2b583fac9c86b1296b8c7edfd87d24795eccb6152435245"
+    },
+    {
+      "path": "/data/luolie/ToPoGate/result/V25_systematic_mechanism_study/A2/measurement_schema.json",
+      "sha256": "46fbe84744e74617bf4c758f3c9578159357822aa5f0a859381c5a138583526f"
+    },
+    {
+      "path": "/data/luolie/ToPoGate/result/V25_systematic_mechanism_study/E1/confirmation/Audit/phase_summary.json",
+      "sha256": "42d63baad565f69fd66287de2a38c20795d6ce21154c39801342117155ba765d"
+    },
+    {
+      "path": "/data/luolie/ToPoGate/result/V25_systematic_mechanism_study/E1/confirmation/queue_state.json",
+      "sha256": "e15f2094b61a67dcb4dfdf092ff5cb61419f7f00556de953f4c586b3908e1358"
+    }
+  ],
+  "holdout_rule": "activate exactly the listed subset and endpoint; do not substitute a secondary metric"
+}

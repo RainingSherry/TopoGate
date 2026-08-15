@@ -1,0 +1,101 @@
+{
+  "protocol_id": "v25_e2a_feature_semantics_v1",
+  "dataset_id": "Campbell",
+  "seed": 42,
+  "statistical_unit": "dataset_seed_summary",
+  "coordinate_count": 10702103280,
+  "selected_coordinate_count": 471736806,
+  "eligible_not_selected_coordinate_count": 707205750,
+  "coordinate_distribution_is_descriptive_only": true,
+  "metrics": {
+    "class_support_enrichment_posthoc": {
+      "selected_mean": 0.13349023821263498,
+      "eligible_not_selected_mean": 0.16460862530845569,
+      "difference": -0.03111838709582071,
+      "selected_n_coordinates": 471736806,
+      "eligible_not_selected_n_coordinates": 707205750
+    },
+    "fisher_separation_posthoc": {
+      "selected_mean": 0.0725224723295556,
+      "eligible_not_selected_mean": 0.1033195985746109,
+      "difference": -0.030797126245055303,
+      "selected_n_coordinates": 471736806,
+      "eligible_not_selected_n_coordinates": 707205750
+    },
+    "model_support_frequency": {
+      "selected_mean": 1.0,
+      "eligible_not_selected_mean": 1.0,
+      "difference": 0.0,
+      "selected_n_coordinates": 471736806,
+      "eligible_not_selected_n_coordinates": 707205750
+    },
+    "model_variance": {
+      "selected_mean": 1.000000001010439,
+      "eligible_not_selected_mean": 1.0000000007840277,
+      "difference": 2.2641133412548697e-10,
+      "selected_n_coordinates": 471736806,
+      "eligible_not_selected_n_coordinates": 707205750
+    },
+    "model_zero_fraction": {
+      "selected_mean": 0.0,
+      "eligible_not_selected_mean": 0.0,
+      "difference": 0.0,
+      "selected_n_coordinates": 471736806,
+      "eligible_not_selected_n_coordinates": 707205750
+    },
+    "raw_support_frequency": {
+      "selected_mean": 0.20533595518548403,
+      "eligible_not_selected_mean": 0.3041467664364257,
+      "difference": -0.09881081125094165,
+      "selected_n_coordinates": 471736806,
+      "eligible_not_selected_n_coordinates": 707205750
+    },
+    "support_mutual_information_posthoc": {
+      "selected_mean": 0.024873217966112228,
+      "eligible_not_selected_mean": 0.031694191624004046,
+      "difference": -0.006820973657891818,
+      "selected_n_coordinates": 471736806,
+      "eligible_not_selected_n_coordinates": 707205750
+    },
+    "donor_change_magnitude": {
+      "selected_mean": 3.3442887907504812,
+      "eligible_not_selected_mean": 2.482788396570433,
+      "difference": 0.8615003941800481,
+      "selected_n_coordinates": 471736806,
+      "eligible_not_selected_n_coordinates": 707205750
+    },
+    "topology_deviation": {
+      "selected_mean": 1.8008107470263732,
+      "eligible_not_selected_mean": 0.0701257880354773,
+      "difference": 1.730684958990896,
+      "selected_n_coordinates": 471736806,
+      "eligible_not_selected_n_coordinates": 707205750
+    },
+    "topology_dispersion": {
+      "selected_mean": 0.2942760031407792,
+      "eligible_not_selected_mean": 0.11514252968359326,
+      "difference": 0.17913347345718592,
+      "selected_n_coordinates": 471736806,
+      "eligible_not_selected_n_coordinates": 707205750
+    }
+  },
+  "source_path": "/data/luolie/ToPoGate/datasets/Campbell.npz",
+  "source_sha256": "f26c9568baf8e8fade7a61e6fed80f16ceb3980afe38b7c9ccbe9aaad2b96e04",
+  "e1_protocol_id": "v25_e1_v21_matched_nrt_v1",
+  "selection_policy_snapshot": "training_time_topology_gate_policy",
+  "selection_policy_is_not_a_new_fit": true,
+  "measurement_timing": "post_intervention_policy_audit",
+  "causal_status": "observational",
+  "labels_used_for_fit": false,
+  "posthoc_labels_used": true,
+  "posthoc_label_metrics_are_not_fit_inputs": true,
+  "schedule_entry_count": null,
+  "schedule_coordinate_count": 10702103280,
+  "eligible_rate": 0.11015989335509384,
+  "selected_rate": 0.04407888745398091,
+  "selected_within_eligible_rate": 0.4001355312853767,
+  "topology_statistics_hash": "b9b95c813a4a3e983a570c966774ea8d7edd89e0b16a912228d65c4f613ae3ab",
+  "topology_statistics_profile": null,
+  "audit_ok": true,
+  "audit_source": "E1_training_time_saved_counts"
+}

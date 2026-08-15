@@ -1,0 +1,28 @@
+{
+  "statistical_unit": "dataset_seed_summary",
+  "selection_snapshot": "training_time_topology_gate_policy",
+  "coordinate_distribution_is_descriptive_only": true,
+  "coordinate_count": 12884000,
+  "eligible_coordinate_count": 732415,
+  "selected_coordinate_count": 344470,
+  "eligible_not_selected_coordinate_count": 387945,
+  "coordinate_metric_sums": {
+    "topology_deviation": {
+      "selected": 877481.7061767578,
+      "eligible_not_selected": 187135.0902481079
+    },
+    "topology_dispersion": {
+      "selected": 577478.1910400391,
+      "eligible_not_selected": 125080.03516769409
+    },
+    "donor_change_magnitude": {
+      "selected": 1853246.9439697266,
+      "eligible_not_selected": 1785361.6824951172
+    }
+  },
+  "feature_metric_names": [
+    "model_support_frequency",
+    "model_variance",
+    "model_zero_fraction"
+  ]
+}

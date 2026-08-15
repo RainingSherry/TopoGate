@@ -1,0 +1,11 @@
+causal_status,confidence,dataset_count,delta_mean,interpretation,magnitude_proxy_keys,measurement_timing,row_count,version
+observational,low_observational_summary,22,-0.005907264898449443,descriptor association only; magnitude is post-treatment and not a cause estimate,unavailable,post_intervention_descriptor,66,V09
+observational,low_observational_summary,3,-0.019822938397388412,descriptor association only; magnitude is post-treatment and not a cause estimate,unavailable,post_intervention_descriptor,9,V10
+observational,low_observational_summary,5,-0.002547620690699901,descriptor association only; magnitude is post-treatment and not a cause estimate,unavailable,post_intervention_descriptor,60,V11
+observational,low_observational_summary,4,0.01016842373442294,descriptor association only; magnitude is post-treatment and not a cause estimate,unavailable,post_intervention_descriptor,16,V12
+observational,low_observational_summary,5,-0.15559566122999674,descriptor association only; magnitude is post-treatment and not a cause estimate,unavailable,post_intervention_descriptor,15,V13
+observational,low_observational_summary,5,0.004373099308058459,descriptor association only; magnitude is post-treatment and not a cause estimate,unavailable,post_intervention_descriptor,15,V14
+observational,low_observational_summary,8,0.015732429687126733,descriptor association only; magnitude is post-treatment and not a cause estimate,unavailable,post_intervention_descriptor,24,V16.1
+observational,low_observational_summary,149,-0.10759555268102518,descriptor association only; magnitude is post-treatment and not a cause estimate,unavailable,post_intervention_descriptor,1338,V18
+observational,low_observational_summary,24,-0.0009955875014718372,descriptor association only; magnitude is post-treatment and not a cause estimate,unavailable,post_intervention_descriptor,76,V19
+observational,low_observational_summary,6,-0.21088608960435784,descriptor association only; magnitude is post-treatment and not a cause estimate,unavailable,post_intervention_descriptor,18,V21

@@ -1,0 +1,22 @@
+dataset_count,delta_mean,delta_std,incomplete_count,negative_count,observed_small_count,positive_count,row_count,statistical_unit,variant_family,version
+7,0.015356458195667081,0.03565057436583985,0,0,5,2,7,dataset/protocol/readout; seed and variant rows are repeated records,learned,V09
+22,-0.013462429005758818,0.048711177180225385,0,7,25,5,37,dataset/protocol/readout; seed and variant rows are repeated records,random,V09
+22,3.341738844288289e-05,0.03104570993088165,0,2,18,2,22,dataset/protocol/readout; seed and variant rows are repeated records,static,V09
+3,-0.019822938397388412,0.049348294236673605,0,2,7,0,9,dataset/protocol/readout; seed and variant rows are repeated records,learned,V10
+5,-0.00254918755422382,0.010969878844025236,0,2,28,0,30,dataset/protocol/readout; seed and variant rows are repeated records,fixed,V11
+5,-0.002555200201501895,0.0111629561948207,0,1,14,0,15,dataset/protocol/readout; seed and variant rows are repeated records,learned,V11
+5,-0.002536907452850068,0.011167185775897011,0,1,14,0,15,dataset/protocol/readout; seed and variant rows are repeated records,random,V11
+4,0.01016842373442294,0.019733887189263305,0,0,12,4,16,dataset/protocol/readout; seed and variant rows are repeated records,learned,V12
+5,-0.15559566122999674,0.31075657736289636,0,5,7,3,15,dataset/protocol/readout; seed and variant rows are repeated records,hard,V13
+5,0.004373099308058459,0.03765475028287687,0,2,12,1,15,dataset/protocol/readout; seed and variant rows are repeated records,learned,V14
+8,0.045994957365592413,0.09578076718247287,0,0,6,2,8,dataset/protocol/readout; seed and variant rows are repeated records,fixed,V16.1
+8,0.0008035987344635089,0.003922065331599711,0,0,8,0,8,dataset/protocol/readout; seed and variant rows are repeated records,learned,V16.1
+8,0.00039873296132428293,0.00337957109607397,0,0,8,0,8,dataset/protocol/readout; seed and variant rows are repeated records,random,V16.1
+149,-0.09315512128792038,0.1951888561935999,0,328,310,107,745,dataset/protocol/readout; seed and variant rows are repeated records,auxiliary,V18
+146,-0.23622337689072673,0.27076671408149144,0,100,39,7,146,dataset/protocol/readout; seed and variant rows are repeated records,fixed,V18
+149,-0.08245027462777364,0.1906460424642489,0,62,62,25,149,dataset/protocol/readout; seed and variant rows are repeated records,learned,V18
+149,-0.14062412067327734,0.18465918831401085,0,95,45,9,149,dataset/protocol/readout; seed and variant rows are repeated records,random,V18
+149,-0.045876417461800816,0.12357663240880985,0,58,68,23,149,dataset/protocol/readout; seed and variant rows are repeated records,static,V18
+24,-0.0022741239235652896,0.011910721023402385,0,1,64,0,65,dataset/protocol/readout; seed and variant rows are repeated records,learned,V19
+11,0.006559400447262201,0.026524235098157392,0,0,10,1,11,dataset/protocol/readout; seed and variant rows are repeated records,static,V19
+6,-0.21088608960435784,0.2622976383679622,0,14,1,3,18,dataset/protocol/readout; seed and variant rows are repeated records,assignment-adversarial,V21

@@ -1,0 +1,24 @@
+{
+  "protocol_id": "v25_phase_e_closure_audit_v1",
+  "closure_path": "result/V25_systematic_mechanism_study/PhaseE/closure.json",
+  "checks": {
+    "claim_freeze_hash_recorded": true,
+    "holdout_manifest_hash_recorded": true,
+    "holdout_queue_terminal": true,
+    "all_holdout_panels_marked_incomplete_compute": true,
+    "holdout_audit_has_zero_panels": true,
+    "holdout_audit_has_zero_audit_ok": true,
+    "no_holdout_summary_or_primary_endpoint": true,
+    "incomplete_not_completed_not_negative": true,
+    "no_v26_or_rescue_route": true
+  },
+  "holdout_queue_status": "incomplete_compute",
+  "holdout_expected_panels": 6,
+  "holdout_completed_panels": 0,
+  "holdout_incomplete_panels": 6,
+  "holdout_audit_panel_count": 0,
+  "holdout_audit_ok_count": 0,
+  "primary_endpoint": "S_full_ARI = ARI_T - ARI_R",
+  "primary_endpoint_evaluable": false,
+  "status": "audit_ok_with_inconclusive_holdout"
+}

@@ -1,0 +1,18 @@
+{
+  "protocol_id": "v25_e1_v21_matched_nrt_v1",
+  "phase": "holdout",
+  "gpu_pool": [
+    2
+  ],
+  "forbidden_gpus": [
+    0,
+    7
+  ],
+  "min_free_mib": 30000,
+  "max_parallel_per_gpu": 1,
+  "runner_sha256": "e8b729e6cae8e144d4c626210636900158778f40c1ad2d98f36c708914719c44",
+  "core_sha256": "28be42ef479fd7a3fc7a27bab00dfb5a81ecac7c010f80815fa71fbea947aae3",
+  "source_manifest": "/data/luolie/ToPoGate/result/V25_systematic_mechanism_study/PhaseD/holdout_e1_manifest.json",
+  "source_manifest_sha256": "065e80549f61f26bc669032d1219e942dd6a63ab657d70a12e8d8a4e33b5f022",
+  "created_at": "2026-08-14T20:44:55.513401+00:00"
+}

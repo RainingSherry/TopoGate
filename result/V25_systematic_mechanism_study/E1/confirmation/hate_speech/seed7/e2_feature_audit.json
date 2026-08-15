@@ -1,0 +1,101 @@
+{
+  "protocol_id": "v25_e2a_feature_semantics_v1",
+  "dataset_id": "hate_speech",
+  "seed": 7,
+  "statistical_unit": "dataset_seed_summary",
+  "coordinate_count": 12884000,
+  "selected_coordinate_count": 344272,
+  "eligible_not_selected_coordinate_count": 387383,
+  "coordinate_distribution_is_descriptive_only": true,
+  "metrics": {
+    "class_support_enrichment_posthoc": {
+      "selected_mean": 0.05491016273340643,
+      "eligible_not_selected_mean": 0.07846136636259113,
+      "difference": -0.023551203629184697,
+      "selected_n_coordinates": 344272,
+      "eligible_not_selected_n_coordinates": 387383
+    },
+    "fisher_separation_posthoc": {
+      "selected_mean": 0.014257873550556613,
+      "eligible_not_selected_mean": 0.01919341261640011,
+      "difference": -0.004935539065843498,
+      "selected_n_coordinates": 344272,
+      "eligible_not_selected_n_coordinates": 387383
+    },
+    "model_support_frequency": {
+      "selected_mean": 1.0,
+      "eligible_not_selected_mean": 1.0,
+      "difference": 0.0,
+      "selected_n_coordinates": 344272,
+      "eligible_not_selected_n_coordinates": 387383
+    },
+    "model_variance": {
+      "selected_mean": 1.0000000034133338,
+      "eligible_not_selected_mean": 1.0000000079549674,
+      "difference": -4.541633513710508e-09,
+      "selected_n_coordinates": 344272,
+      "eligible_not_selected_n_coordinates": 387383
+    },
+    "model_zero_fraction": {
+      "selected_mean": 0.0,
+      "eligible_not_selected_mean": 0.0,
+      "difference": 0.0,
+      "selected_n_coordinates": 344272,
+      "eligible_not_selected_n_coordinates": 387383
+    },
+    "raw_support_frequency": {
+      "selected_mean": 0.07192090174484535,
+      "eligible_not_selected_mean": 0.10808429065028621,
+      "difference": -0.036163388905440866,
+      "selected_n_coordinates": 344272,
+      "eligible_not_selected_n_coordinates": 387383
+    },
+    "support_mutual_information_posthoc": {
+      "selected_mean": 0.009864199498563065,
+      "eligible_not_selected_mean": 0.014913071605803635,
+      "difference": -0.00504887210724057,
+      "selected_n_coordinates": 344272,
+      "eligible_not_selected_n_coordinates": 387383
+    },
+    "donor_change_magnitude": {
+      "selected_mean": 5.529840401547845,
+      "eligible_not_selected_mean": 4.466341327927965,
+      "difference": 1.0634990736198802,
+      "selected_n_coordinates": 344272,
+      "eligible_not_selected_n_coordinates": 387383
+    },
+    "topology_deviation": {
+      "selected_mean": 2.6287428257594674,
+      "eligible_not_selected_mean": 0.41162110171650884,
+      "difference": 2.2171217240429586,
+      "selected_n_coordinates": 344272,
+      "eligible_not_selected_n_coordinates": 387383
+    },
+    "topology_dispersion": {
+      "selected_mean": 1.8553524989756465,
+      "eligible_not_selected_mean": 0.16359692174919116,
+      "difference": 1.6917555772264552,
+      "selected_n_coordinates": 344272,
+      "eligible_not_selected_n_coordinates": 387383
+    }
+  },
+  "source_path": "/data/luolie/ToPoGate/datasets/hate_speech.npz",
+  "source_sha256": "c39fc08366c0423b8a2f4e3543df6d5b06f2e0b065813e120263b99e7d1e44bb",
+  "e1_protocol_id": "v25_e1_v21_matched_nrt_v1",
+  "selection_policy_snapshot": "training_time_topology_gate_policy",
+  "selection_policy_is_not_a_new_fit": true,
+  "measurement_timing": "post_intervention_policy_audit",
+  "causal_status": "observational",
+  "labels_used_for_fit": false,
+  "posthoc_labels_used": true,
+  "posthoc_label_metrics_are_not_fit_inputs": true,
+  "schedule_entry_count": null,
+  "schedule_coordinate_count": 12884000,
+  "eligible_rate": 0.05678787643588948,
+  "selected_rate": 0.02672089413225706,
+  "selected_within_eligible_rate": 0.4705387101844449,
+  "topology_statistics_hash": "d61a4b3bcbcb20886d5aeee3fe3411080d3fb4d570d3a2d7d8da0f232ba9b0de",
+  "topology_statistics_profile": null,
+  "audit_ok": true,
+  "audit_source": "E1_training_time_saved_counts"
+}

@@ -1,0 +1,16 @@
+{
+  "protocol_id": "v25_e1_phase_audit_v1",
+  "e1_protocol_id": "v25_e1_v21_matched_nrt_v1",
+  "phase_root": "/data/luolie/ToPoGate/result/V25_systematic_mechanism_study/PhaseD/E1",
+  "panel_count": 0,
+  "audit_ok_count": 0,
+  "datasets": {},
+  "phase_gate": {
+    "passes": false,
+    "material_dataset_count": 0
+  },
+  "invalid_or_incomplete_panel_count": 0,
+  "statistical_unit": "dataset; seeds are repeated measurements",
+  "equivalence_claim": false,
+  "effect_state_rule": "Positive/Negative/Observed-Small/Inconclusive at delta=0.03; no bootstrap equivalence inference"
+}

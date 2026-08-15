@@ -1,0 +1,11 @@
+{
+  "assignment_forward_calls": 160,
+  "js_forward_calls": 160,
+  "shadow_assignment_calls": 160,
+  "none_assignment_forward_forbidden": false,
+  "none_js_forward_forbidden": false,
+  "eligible_schedule_hash": "eba8ec9b50d61cbdbb0c1e77f253b930161ed18f2980eac168894d8bf40ae058",
+  "budget_schedule_hash": "fdf5c098a53a5eb02e058e1a29312ea826e838c346c91c52ef9b6431dded791e",
+  "selection_noise_hash": "320c6222296c100c873cd20f1a94bcba9670f242b80ab07aa62ccfff422e3a32",
+  "donor_schedule_hash": "f923543a043ec8dd53bc9869c762819210f8ab8723790ccc431c0ea0bd5cedcf"
+}

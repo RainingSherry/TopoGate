@@ -1,0 +1,41 @@
+{
+  "status": "completed",
+  "pairs": {
+    "I_full_ARI": 0.01980225117099435,
+    "S_full_ARI": 0.03056034885474085,
+    "I_1step_ARI": -0.0005553810079238219,
+    "S_1step_ARI": 0.0004971034703941113
+  },
+  "audit": {
+    "protocol_id": "v25_e1_v21_matched_nrt_v1",
+    "labels_used_during_fit": false,
+    "K_used_during_fit": true,
+    "K_source": "caller_outer_evaluation",
+    "arm_names": [
+      "N",
+      "R",
+      "T"
+    ],
+    "donor_schedule_hash": "ea5f9715a1b175a638823fd8805b4e2166952c8263fcbe828ac16a6e109d0163",
+    "eligible_schedule_hash": "3257f38c5bb8ccd1d75fcb7bab292c9b3ffc07253b9fd8a835b291268f81e5b0",
+    "budget_schedule_hash": "9c15344707dab9c61ecae1b7687c97c5443157d5edc2e6a7a3fb5b5f795a0dd8",
+    "selection_noise_hash": "506821d3a62c78738f49dba7913abd3435273cccbf8f405f2f2901ed57776b46",
+    "topology_statistics_hash": "56079d998a01307d681ed1d41b0f325b549f4b4542fd148e5772732b37863b5a",
+    "TR_shared_schedule_hashes": {
+      "donor": true,
+      "eligible": true,
+      "budget": true,
+      "selection_noise": true
+    },
+    "none_contract": {
+      "assignment_forward_calls": 0,
+      "js_forward_calls": 0,
+      "shadow_assignment_calls": 1360
+    },
+    "branchpoint": {
+      "epoch": 40,
+      "head_initialised": true,
+      "warmup_branchpoint_before_first_assignment": true
+    }
+  }
+}

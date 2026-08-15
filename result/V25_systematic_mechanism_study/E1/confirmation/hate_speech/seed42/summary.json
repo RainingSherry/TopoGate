@@ -1,0 +1,54 @@
+{
+  "status": "completed",
+  "protocol_id": "v25_e1_v21_matched_nrt_v1",
+  "seed": 42,
+  "n_clusters": 3,
+  "labels_used_during_fit": false,
+  "schedule": {
+    "hashes": {
+      "batch_permutation_hash": "3633a3bce5f348033c74f990347f568bfbcf25b0ae4c95d23656c383eaed2508",
+      "donor_schedule_hash": "4f0ebfce5d5ad80bab9d308f855eb6b3a7e522bd58ae9a7d332e4de75ba6368f",
+      "selection_noise_seed_hash": "e0f2a70c3a44676b1cd1e4a5fc41e918aa133a930addb925c89b688a4777c1f5"
+    },
+    "warmup_entries": 520,
+    "post_branch_entries": 520
+  },
+  "pairs": {
+    "I_full_ARI": -0.005810408866118416,
+    "S_full_ARI": -0.024615670683843544,
+    "I_1step_ARI": -0.001596676469029593,
+    "S_1step_ARI": -0.0004105918730562229
+  },
+  "audit": {
+    "protocol_id": "v25_e1_v21_matched_nrt_v1",
+    "labels_used_during_fit": false,
+    "K_used_during_fit": true,
+    "K_source": "caller_outer_evaluation",
+    "arm_names": [
+      "N",
+      "R",
+      "T"
+    ],
+    "donor_schedule_hash": "6381b31247737557e17fc14eb8ed548db021d27480a62571730b61ea084479ed",
+    "eligible_schedule_hash": "ebb6d1e532d363734d0af07595e70a8ca90642f6d4b854dea19d9e0980103a44",
+    "budget_schedule_hash": "57c2b2d0b75ff65b74fbbbb42ac22103d218ebeea95f07a7ff8fc95954475df8",
+    "selection_noise_hash": "acae214bb65c4ddf926e244b0885e8214afd1ca10dac2038fa831a43d5a59484",
+    "topology_statistics_hash": "255d9a5a80a2ff7e6ccc4f8fb10c716b2f4c871cd2b2e68d8bd78f8cc94159e0",
+    "TR_shared_schedule_hashes": {
+      "donor": true,
+      "eligible": true,
+      "budget": true,
+      "selection_noise": true
+    },
+    "none_contract": {
+      "assignment_forward_calls": 0,
+      "js_forward_calls": 0,
+      "shadow_assignment_calls": 520
+    },
+    "branchpoint": {
+      "epoch": 40,
+      "head_initialised": true,
+      "warmup_branchpoint_before_first_assignment": true
+    }
+  }
+}

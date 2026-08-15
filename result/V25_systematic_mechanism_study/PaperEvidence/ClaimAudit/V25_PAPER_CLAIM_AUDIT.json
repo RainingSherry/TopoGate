@@ -1,0 +1,175 @@
+{
+  "protocol_id": "v25_paper_claim_audit_v1",
+  "generated_at": "2026-08-15T02:30:12.306037+00:00",
+  "review_independence": "deterministic_same_workspace",
+  "acceptance_status": "provisional",
+  "status": "audit_ok",
+  "checks": {
+    "a0_v1_v22_rows": true,
+    "a0_v1_v22_paired_rows": true,
+    "a0_v1_v22_units": true,
+    "a0_v23_v24_boundary_records": true,
+    "a1_paired_rows": true,
+    "a1_positive_rows": true,
+    "a1_negative_rows": true,
+    "a1_small_rows": true,
+    "a0_a1_summary_reconciles": true,
+    "a1_observational_boundary": true,
+    "a2_retained_without_e4": true,
+    "claim_endpoint_frozen": true,
+    "e1_complete_audited_phase": true,
+    "e1_effect_rows_complete": true,
+    "e1_effect_states_recomputed": true,
+    "holdout_firewall": true,
+    "paper_scope_audit_passes": true
+  },
+  "state_checks": [
+    {
+      "dataset": "Baron Human",
+      "metric": "I_d",
+      "mean_matches_phase": true,
+      "state_matches_seed_rule": true,
+      "seed_set_complete": true
+    },
+    {
+      "dataset": "Baron Human",
+      "metric": "S_d",
+      "mean_matches_phase": true,
+      "state_matches_seed_rule": true,
+      "seed_set_complete": true
+    },
+    {
+      "dataset": "Campbell",
+      "metric": "I_d",
+      "mean_matches_phase": true,
+      "state_matches_seed_rule": true,
+      "seed_set_complete": true
+    },
+    {
+      "dataset": "Campbell",
+      "metric": "S_d",
+      "mean_matches_phase": true,
+      "state_matches_seed_rule": true,
+      "seed_set_complete": true
+    },
+    {
+      "dataset": "hate_speech",
+      "metric": "I_d",
+      "mean_matches_phase": true,
+      "state_matches_seed_rule": true,
+      "seed_set_complete": true
+    },
+    {
+      "dataset": "hate_speech",
+      "metric": "S_d",
+      "mean_matches_phase": true,
+      "state_matches_seed_rule": true,
+      "seed_set_complete": true
+    }
+  ],
+  "draft_audit": {
+    "path": null,
+    "checked": false,
+    "missing_anchors": [],
+    "forbidden_direct_phrases": []
+  },
+  "claim_rows": [
+    {
+      "claim_id": "C1",
+      "claim": "V1-V22 form an observational atlas of heterogeneous structural-intervention outcomes.",
+      "status": "supported_with_observational_scope",
+      "evidence": "PaperEvidence/paper_evidence_summary.json",
+      "statistical_unit": "dataset/protocol/readout; seeds and variants are repeated records",
+      "causal_status": "observational",
+      "numeric_anchor": "2209 registry rows; 1637 paired rows; 431 units; 194 positive, 680 negative, 763 observed-small",
+      "allowed_wording": "observational atlas of heterogeneous outcomes",
+      "forbidden_wording": "structural quality causes harm; universal structural failure; pooled causal effect"
+    },
+    {
+      "claim_id": "C2",
+      "claim": "Topology-dependent selection has a conditional incremental effect in the audited V21 case study.",
+      "status": "supported_with_case_study_scope",
+      "evidence": "PaperEvidence/e1_dataset_effects.csv",
+      "statistical_unit": "dataset; three seeds are repeated measurements",
+      "causal_status": "matched prospective case study",
+      "numeric_anchor": "Baron Human: S_d=0.04461680986715221 (Positive); Campbell: S_d=-0.065331748172776 (Negative); hate_speech: S_d=-0.03340972612927077 (Negative)",
+      "allowed_wording": "dataset-conditional effect in the audited V21 case study",
+      "forbidden_wording": "universal topology superiority; population effect; independent replication"
+    },
+    {
+      "claim_id": "C3",
+      "claim": "E2/E3 provide localization diagnostics, not a universal causal explanation.",
+      "status": "diagnostic_only",
+      "evidence": "PaperEvidence/paper_evidence_summary.json",
+      "statistical_unit": "dataset x seed for E2; isolated boundary rows for E3",
+      "causal_status": "diagnostic/post-hoc",
+      "numeric_anchor": "E2 coordinate distributions are descriptive; post-hoc label-aware metrics are not fit inputs",
+      "allowed_wording": "diagnostic/localization evidence",
+      "forbidden_wording": "proven objective-conflict law; proven local-to-global theorem"
+    },
+    {
+      "claim_id": "C4",
+      "claim": "Independent holdout replication was not established.",
+      "status": "inconclusive_not_completed",
+      "evidence": "PhaseE/closure.json",
+      "statistical_unit": "six predeclared holdout panels; zero evaluable panels",
+      "causal_status": "incomplete_compute",
+      "numeric_anchor": "expected=6; completed=0; status=inconclusive_not_completed",
+      "allowed_wording": "independent replication not established; holdout inconclusive_not_completed",
+      "forbidden_wording": "holdout negative result; replicated on held-out datasets"
+    }
+  ],
+  "sources": {
+    "result/V25_systematic_mechanism_study/A0/registry_summary.json": {
+      "sha256": "d005a28407497306db1734d6e9a75c863ed55dc4de5e5f9cf24c9e5a45584f67",
+      "exists": true
+    },
+    "result/V25_systematic_mechanism_study/A1/a1_summary.json": {
+      "sha256": "2c3d71d8b54bc7c268fb38a85913908e523d6e356f4f1bfab5f3a2ef6a72d633",
+      "exists": true
+    },
+    "result/V25_systematic_mechanism_study/A2/A2_decision.json": {
+      "sha256": "5e2ca827ca87f9c8f2b583fac9c86b1296b8c7edfd87d24795eccb6152435245",
+      "exists": true
+    },
+    "result/V25_systematic_mechanism_study/PhaseC/FROZEN_PAPER_CLAIM.json": {
+      "sha256": "42e1489f30d410219093f2198854476420bc4151eff290cd4dad66d42e63fd02",
+      "exists": true
+    },
+    "result/V25_systematic_mechanism_study/E1/confirmation/Audit/phase_summary.json": {
+      "sha256": "c5dce7c0c0b2c178dc23d1198fe874d9ab62746f58ea44cdb4d7fb4da441545b",
+      "exists": true
+    },
+    "result/V25_systematic_mechanism_study/PaperEvidence/e1_dataset_effects.csv": {
+      "sha256": "7a14201985f58cf6dcc4a8bf18a1809ceaa32c16c8b432bb41551610106d65bf",
+      "exists": true
+    },
+    "result/V25_systematic_mechanism_study/PaperEvidence/paper_evidence_summary.json": {
+      "sha256": "d4199e773f84a37af490b8b05d167ab05ee55d56cc578905a452c31b314f66fc",
+      "exists": true
+    },
+    "result/V25_systematic_mechanism_study/PaperEvidence/claim_scope_audit.json": {
+      "sha256": "fe4c7388d3c10269f384bbd4909eb864369be6e20d94f2e75a485bf14e524a3c",
+      "exists": true
+    },
+    "result/V25_systematic_mechanism_study/PhaseE/closure.json": {
+      "sha256": "062ca3bc4b2002457113cc3365410738035d27b21d563f943e7ad83dcc6bf798",
+      "exists": true
+    }
+  },
+  "scope_firewall": {
+    "allowed": [
+      "observational V1-V22 failure atlas",
+      "predeclared selection claim with claim-dependent activation subset"
+    ],
+    "forbidden": [
+      "universal topology superiority",
+      "independent holdout replication",
+      "pooled causal effect across historical protocols",
+      "coordinate-level inferential p-values",
+      "holdout CUDA OOM as a model performance result"
+    ],
+    "holdout_status": "inconclusive_not_completed",
+    "known_k_boundary": "E1 is a real-ground-truth, benchmark-known-K evaluation; not fully label-free fitting."
+  }
+}

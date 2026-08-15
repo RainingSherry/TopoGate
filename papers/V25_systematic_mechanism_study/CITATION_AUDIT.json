@@ -1,0 +1,69 @@
+{
+  "protocol_id": "v25_formal_latex_citation_audit_v1",
+  "status": "audit_ok",
+  "manuscript": "papers/V25_systematic_mechanism_study/paper/main.tex",
+  "bib": "/home/luolie/ToPoGate/papers/V25_systematic_mechanism_study/references.bib",
+  "index": "/home/luolie/ToPoGate/papers/references/INDEX.md",
+  "cited_keys": [
+    "li2025dcboost",
+    "li2025lfss",
+    "xu2024sccdcg",
+    "yan2026scmib"
+  ],
+  "checks": {
+    "manuscript_exists": true,
+    "nonempty_citation_set": true,
+    "all_citations_known_local": true,
+    "all_citations_have_bib_keys": true,
+    "all_citations_have_verified_pdf": true,
+    "all_citations_have_index_entries": true,
+    "scmae_missing_pdf_boundary_declared": true
+  },
+  "references": [
+    {
+      "bib_key": "li2025dcboost",
+      "known_local_reference": true,
+      "bib_key_present": true,
+      "pdf": "papers/references/pdf/clustering_sota_2026/NeurIPS-2025-DCBoost.pdf",
+      "pdf_exists": true,
+      "pdf_size_bytes": 6393502,
+      "pdf_size_ok": true,
+      "index_marker": "### 37 | DCBoost",
+      "index_present": true
+    },
+    {
+      "bib_key": "li2025lfss",
+      "known_local_reference": true,
+      "bib_key_present": true,
+      "pdf": "papers/references/pdf/clustering_sota_2026/ICML-2025-LFSS.pdf",
+      "pdf_exists": true,
+      "pdf_size_bytes": 2067830,
+      "pdf_size_ok": true,
+      "index_marker": "### 57 | LFSS",
+      "index_present": true
+    },
+    {
+      "bib_key": "xu2024sccdcg",
+      "known_local_reference": true,
+      "bib_key_present": true,
+      "pdf": "papers/references/pdf/13_sccdcg_arxiv2024.pdf",
+      "pdf_exists": true,
+      "pdf_size_bytes": 4950458,
+      "pdf_size_ok": true,
+      "index_marker": "### 12 | scCDCG",
+      "index_present": true
+    },
+    {
+      "bib_key": "yan2026scmib",
+      "known_local_reference": true,
+      "bib_key_present": true,
+      "pdf": "papers/references/pdf/29_scdebcl_2026.pdf",
+      "pdf_exists": true,
+      "pdf_size_bytes": 11616064,
+      "pdf_size_ok": true,
+      "index_marker": "### 19 | scMIB",
+      "index_present": true
+    }
+  ],
+  "excluded_boundary": "scMAE local PDF unavailable; excluded from formal citation"
+}

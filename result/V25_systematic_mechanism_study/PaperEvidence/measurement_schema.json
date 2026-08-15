@@ -1,0 +1,38 @@
+{
+  "schema_id": "v25_measurement_schema_v1",
+  "delta_threshold": 0.03,
+  "threshold_sensitivity": [
+    0.02,
+    0.03,
+    0.05
+  ],
+  "primary_readout": "clean_embedding_known_k_kmeans",
+  "secondary_readout": "student_t_training_head",
+  "claim_activation": {
+    "selection": [
+      "E1_NRT"
+    ],
+    "generic_intervention": [
+      "E1_NRT"
+    ],
+    "feature_semantics": [
+      "E1_NRT",
+      "E2_A"
+    ],
+    "objective_compatibility": [
+      "E1_NRT",
+      "E2_B",
+      "E2_C"
+    ],
+    "local_global": [
+      "E3_frozen_matched_pair"
+    ]
+  },
+  "post_treatment_metrics": [
+    "effective_corruption",
+    "embedding_drift",
+    "final_neighborhood"
+  ],
+  "coordinate_inference_unit": "dataset_seed_summary",
+  "equivalence_claim_allowed": false
+}

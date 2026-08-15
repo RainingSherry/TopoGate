@@ -1,0 +1,24 @@
+{
+  "dataset": "Campbell",
+  "data_path": "/data/luolie/ToPoGate/datasets/Campbell.npz",
+  "input_protocol": "clubench_bridge",
+  "seed": 123,
+  "n_clusters": 14,
+  "K_source": "benchmark_oracle_from_y",
+  "labels_loaded_by_outer_runner": true,
+  "labels_used_during_fit": false,
+  "preprocess_profile": {
+    "dataset_name": "Campbell",
+    "input_protocol": "clubench_bridge",
+    "n_samples": 9993,
+    "n_features_original": 26774,
+    "n_features_selected": 26774,
+    "graph_view_storage": "csr",
+    "graph_view_scaler": "StandardScaler_with_mean_false",
+    "model_view_scaler": "StandardScaler_with_mean_true",
+    "labels_used": false,
+    "K_used": false,
+    "full_pairwise_matrix_materialized": false
+  },
+  "selected_feature_indices": 26774
+}

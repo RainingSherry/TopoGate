@@ -1,0 +1,19 @@
+dataset,metric,seed_index,effect,statistical_unit
+Baron Human,I_d,0,0.01980225117099435,seed repeated measurement nested in dataset
+Baron Human,I_d,1,0.02110374750103966,seed repeated measurement nested in dataset
+Baron Human,I_d,2,-0.07529428341242217,seed repeated measurement nested in dataset
+Baron Human,S_d,0,0.03056034885474085,seed repeated measurement nested in dataset
+Baron Human,S_d,1,0.017532602931774638,seed repeated measurement nested in dataset
+Baron Human,S_d,2,0.08575747781494114,seed repeated measurement nested in dataset
+Campbell,I_d,0,-0.011480739531167627,seed repeated measurement nested in dataset
+Campbell,I_d,1,0.12562733200580123,seed repeated measurement nested in dataset
+Campbell,I_d,2,0.28437758069146646,seed repeated measurement nested in dataset
+Campbell,S_d,0,0.0317998924674992,seed repeated measurement nested in dataset
+Campbell,S_d,1,-0.09164831221361266,seed repeated measurement nested in dataset
+Campbell,S_d,2,-0.13614682477221451,seed repeated measurement nested in dataset
+hate_speech,I_d,0,0.0037466197251364575,seed repeated measurement nested in dataset
+hate_speech,I_d,1,-0.005810408866118416,seed repeated measurement nested in dataset
+hate_speech,I_d,2,-0.00594858462922266,seed repeated measurement nested in dataset
+hate_speech,S_d,0,-0.03932170753623912,seed repeated measurement nested in dataset
+hate_speech,S_d,1,-0.024615670683843544,seed repeated measurement nested in dataset
+hate_speech,S_d,2,-0.03629180016772965,seed repeated measurement nested in dataset

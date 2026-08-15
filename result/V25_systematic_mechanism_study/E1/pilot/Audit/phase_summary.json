@@ -1,0 +1,182 @@
+{
+  "protocol_id": "v25_e1_phase_audit_v1",
+  "e1_protocol_id": "v25_e1_v21_matched_nrt_v1",
+  "phase_root": "/data/luolie/ToPoGate/result/V25_systematic_mechanism_study/E1/pilot",
+  "manifest_id": "v25_e1_gated_manifest_v1",
+  "manifest_path": "/data/luolie/ToPoGate/result/V25_systematic_mechanism_study/E1/pilot/manifest_snapshot.json",
+  "phase": "pilot",
+  "manifest_valid": true,
+  "manifest_errors": [],
+  "expected_panel_count": 9,
+  "expected_arm_count": 27,
+  "expected_panel_keys": [
+    "v25_e1_pilot::Mouse_retina::123",
+    "v25_e1_pilot::Mouse_retina::42",
+    "v25_e1_pilot::Mouse_retina::7",
+    "v25_e1_pilot::cnae9::123",
+    "v25_e1_pilot::cnae9::42",
+    "v25_e1_pilot::cnae9::7",
+    "v25_e1_pilot::sms_spam_collection::123",
+    "v25_e1_pilot::sms_spam_collection::42",
+    "v25_e1_pilot::sms_spam_collection::7"
+  ],
+  "expected_datasets": [
+    "Mouse_retina",
+    "cnae9",
+    "sms_spam_collection"
+  ],
+  "expected_seeds": [
+    7,
+    42,
+    123
+  ],
+  "observed_panel_count": 9,
+  "observed_panel_keys": [
+    "v25_e1_pilot::Mouse_retina::123",
+    "v25_e1_pilot::Mouse_retina::42",
+    "v25_e1_pilot::Mouse_retina::7",
+    "v25_e1_pilot::cnae9::123",
+    "v25_e1_pilot::cnae9::42",
+    "v25_e1_pilot::cnae9::7",
+    "v25_e1_pilot::sms_spam_collection::123",
+    "v25_e1_pilot::sms_spam_collection::42",
+    "v25_e1_pilot::sms_spam_collection::7"
+  ],
+  "missing_expected_panel_keys": [],
+  "unexpected_panel_keys": [],
+  "duplicate_panel_keys": [],
+  "coverage_complete": true,
+  "panel_count": 9,
+  "audit_ok_count": 9,
+  "datasets": {
+    "Mouse_retina": {
+      "I_d": {
+        "state": "Inconclusive",
+        "mean": 0.02788916703749415,
+        "n_seeds": 3,
+        "same_sign_count": 3,
+        "seed_values": [
+          0.030826981470286063,
+          0.0017799236502324955,
+          0.051060595991963886
+        ]
+      },
+      "S_d": {
+        "state": "Negative",
+        "mean": -0.06703295730764018,
+        "n_seeds": 3,
+        "same_sign_count": 3,
+        "seed_values": [
+          -0.01414569216754924,
+          -0.08900645492728687,
+          -0.09794672482808442
+        ]
+      },
+      "seeds": [
+        7,
+        42,
+        123
+      ],
+      "required_seeds": [
+        7,
+        42,
+        123
+      ],
+      "inference_status": "complete_valid_seed_set",
+      "statistical_unit": "dataset; seeds are repeated measurements"
+    },
+    "cnae9": {
+      "I_d": {
+        "state": "Observed-Small",
+        "mean": 0.00205664039534272,
+        "n_seeds": 3,
+        "same_sign_count": 2,
+        "seed_values": [
+          0.005479090284350341,
+          -0.0009266128509257676,
+          0.0016174437526035867
+        ]
+      },
+      "S_d": {
+        "state": "Observed-Small",
+        "mean": 0.006010419987643678,
+        "n_seeds": 3,
+        "same_sign_count": 3,
+        "seed_values": [
+          0.00213281373104679,
+          0.008599489989632836,
+          0.007298956242251409
+        ]
+      },
+      "seeds": [
+        7,
+        42,
+        123
+      ],
+      "required_seeds": [
+        7,
+        42,
+        123
+      ],
+      "inference_status": "complete_valid_seed_set",
+      "statistical_unit": "dataset; seeds are repeated measurements"
+    },
+    "sms_spam_collection": {
+      "I_d": {
+        "state": "Positive",
+        "mean": 0.06925100719348613,
+        "n_seeds": 3,
+        "same_sign_count": 3,
+        "seed_values": [
+          0.06661471954669321,
+          0.08134217324356854,
+          0.059796128790196634
+        ]
+      },
+      "S_d": {
+        "state": "Inconclusive",
+        "mean": 0.0005530605842996583,
+        "n_seeds": 3,
+        "same_sign_count": 2,
+        "seed_values": [
+          -0.05682946981511161,
+          0.06596123562584277,
+          -0.007472584057832188
+        ]
+      },
+      "seeds": [
+        7,
+        42,
+        123
+      ],
+      "required_seeds": [
+        7,
+        42,
+        123
+      ],
+      "inference_status": "complete_valid_seed_set",
+      "statistical_unit": "dataset; seeds are repeated measurements"
+    }
+  },
+  "phase_gate": {
+    "passes": true,
+    "material_dataset_count": 2,
+    "required_dataset_count": 2,
+    "expected_dataset_count": 3,
+    "expected_datasets": [
+      "Mouse_retina",
+      "cnae9",
+      "sms_spam_collection"
+    ],
+    "material_datasets": [
+      "Mouse_retina",
+      "sms_spam_collection"
+    ],
+    "same_sign_across_datasets_not_required": true,
+    "rule": "at least 2/3 datasets have a seed-stable material I or S effect; signs may differ"
+  },
+  "invalid_or_incomplete_panel_count": 0,
+  "statistical_unit": "dataset; seeds are repeated measurements",
+  "equivalence_claim": false,
+  "effect_state_rule": "Positive/Negative/Observed-Small/Inconclusive at delta=0.03; no bootstrap equivalence inference"
+}

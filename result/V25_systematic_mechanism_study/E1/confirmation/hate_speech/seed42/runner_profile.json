@@ -1,0 +1,24 @@
+{
+  "dataset": "hate_speech",
+  "data_path": "/data/luolie/ToPoGate/datasets/hate_speech.npz",
+  "input_protocol": "shared_text",
+  "seed": 42,
+  "n_clusters": 3,
+  "K_source": "benchmark_oracle_from_y",
+  "labels_loaded_by_outer_runner": true,
+  "labels_used_during_fit": false,
+  "preprocess_profile": {
+    "dataset_name": "hate_speech",
+    "input_protocol": "shared_text",
+    "n_samples": 3221,
+    "n_features_original": 100,
+    "n_features_selected": 100,
+    "graph_view_storage": "csr",
+    "graph_view_scaler": "StandardScaler_with_mean_false",
+    "model_view_scaler": "StandardScaler_with_mean_true",
+    "labels_used": false,
+    "K_used": false,
+    "full_pairwise_matrix_materialized": false
+  },
+  "selected_feature_indices": 100
+}

@@ -1,0 +1,24 @@
+{
+  "dataset": "micro-mass",
+  "data_path": "/data/luolie/ToPoGate/datasets/micro-mass.npz",
+  "input_protocol": "clubench_bridge",
+  "seed": 42,
+  "n_clusters": 10,
+  "K_source": "benchmark_oracle_from_y",
+  "labels_loaded_by_outer_runner": true,
+  "labels_used_during_fit": false,
+  "preprocess_profile": {
+    "dataset_name": "micro-mass",
+    "input_protocol": "clubench_bridge",
+    "n_samples": 360,
+    "n_features_original": 1300,
+    "n_features_selected": 1300,
+    "graph_view_storage": "csr",
+    "graph_view_scaler": "StandardScaler_with_mean_false",
+    "model_view_scaler": "StandardScaler_with_mean_true",
+    "labels_used": false,
+    "K_used": false,
+    "full_pairwise_matrix_materialized": false
+  },
+  "selected_feature_indices": 1300
+}

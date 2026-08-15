@@ -1,0 +1,7 @@
+dataset,metric,state,mean,n_seeds,same_sign_count,statistical_unit,causal_status
+Baron Human,I_d,Inconclusive,-0.011462761580129386,3,2,dataset; seeds are repeated measurements,matched prospective case study
+Baron Human,S_d,Positive,0.04461680986715221,3,3,dataset; seeds are repeated measurements,matched prospective case study
+Campbell,I_d,Positive,0.1328413910553667,3,2,dataset; seeds are repeated measurements,matched prospective case study
+Campbell,S_d,Negative,-0.065331748172776,3,2,dataset; seeds are repeated measurements,matched prospective case study
+hate_speech,I_d,Observed-Small,-0.002670791256734873,3,1,dataset; seeds are repeated measurements,matched prospective case study
+hate_speech,S_d,Negative,-0.03340972612927077,3,3,dataset; seeds are repeated measurements,matched prospective case study

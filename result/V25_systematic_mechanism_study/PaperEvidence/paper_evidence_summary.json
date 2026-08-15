@@ -1,0 +1,99 @@
+{
+  "protocol_id": "v25_paper_evidence_bundle_v1",
+  "generated_at": "2026-08-15T02:30:03.914322+00:00",
+  "statistical_unit": "dataset/protocol/readout for atlas; dataset x seed for E1/E2 summaries",
+  "retrospective": {
+    "a0": {
+      "v1_v22_rows": 2209,
+      "v1_v22_paired_rows": 1637,
+      "v1_v22_units": 431,
+      "v1_v22_unique_datasets": 342,
+      "v23_v24_boundary_records": 2
+    },
+    "a1": {
+      "paired_rows": 1637,
+      "unit_count": 239,
+      "unique_datasets": 207,
+      "positive_rows": 194,
+      "negative_rows": 680,
+      "small_rows": 763
+    },
+    "causal_status": "observational"
+  },
+  "governance": {
+    "a2_decision": "retain_e1",
+    "a2_no_new_e4": true,
+    "claim_family": "selection",
+    "primary_endpoint": "S_full_ARI = ARI_T - ARI_R",
+    "activation_subset": [
+      "E1_NRT"
+    ]
+  },
+  "confirmation": {
+    "protocol_id": "v25_e1_v21_matched_nrt_v1",
+    "panel_count": 9,
+    "audit_ok_count": 9,
+    "dataset_effect_rows": 6,
+    "seed_effect_rows": 18,
+    "primary_metric": "S_full_ARI",
+    "interpretation": "conditional heterogeneous V21 case study"
+  },
+  "e2": {
+    "dataset_seed_rows": 90,
+    "dataset_summary_rows": 30,
+    "expected_dataset_count": 3,
+    "expected_seed_count": 3,
+    "expected_panel_count": 9,
+    "coverage_complete": true,
+    "coordinate_distributions_descriptive_only": true,
+    "posthoc_label_metrics_not_fit_inputs": true,
+    "gradient_rows": 27
+  },
+  "boundary": {
+    "local_global_rows": 6
+  },
+  "holdout": {
+    "status": "inconclusive_not_completed",
+    "expected_panel_count": 6,
+    "completed_panel_count": 0,
+    "primary_endpoint_evaluable": false
+  },
+  "claim_scope_audit": {
+    "protocol_id": "v25_paper_claim_scope_audit_v1",
+    "checks": {
+      "a0_counts_match_frozen_registry": true,
+      "a0_boundary_isolated": true,
+      "a1_counts_match_frozen_atlas": true,
+      "a1_no_causal_claim": true,
+      "a2_veto_and_no_e4_recorded": true,
+      "claim_freeze_primary_endpoint_is_frozen": true,
+      "confirmation_audit_complete": true,
+      "e2_coordinate_unit_declared": true,
+      "e2_all_panel_audits_pass": true,
+      "holdout_not_used_as_negative_result": true
+    },
+    "audit_ok": true,
+    "allowed_claim_scope": [
+      "observational V1-V22 failure atlas",
+      "predeclared selection claim with claim-dependent activation subset"
+    ],
+    "forbidden_claim_scope": [
+      "universal topology superiority",
+      "independent holdout replication",
+      "pooled causal effect across historical protocols",
+      "coordinate-level inferential p-values",
+      "holdout CUDA OOM as a model performance result"
+    ]
+  },
+  "export_counts": {
+    "atlas_version_family_rows": 21,
+    "atlas_rows": 1637,
+    "pair_rows": 9,
+    "boundary_rows": 6,
+    "structural_opportunity_summary_rows": 9,
+    "magnitude_gain_summary_rows": 10,
+    "failure_localization_taxonomy_rows": 1643,
+    "e3_replay_summary_present": true
+  },
+  "missing_source_files": []
+}

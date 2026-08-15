@@ -1,0 +1,9 @@
+{
+  "hashes": {
+    "batch_permutation_hash": "8098f3ac154a5178e8e9529ff659830586efda6951356517e1a82765c3d97528",
+    "donor_schedule_hash": "e8c3848c699549103349ca24da7a5ad6d3f745af59941a6c2e66f1e310e47064",
+    "selection_noise_seed_hash": "4ea2e66cdb44340406fbfa0cb0eb2e10a9750cb852668780e5f7dfe7a6ea486e"
+  },
+  "warmup_entries": 200,
+  "post_branch_entries": 200
+}

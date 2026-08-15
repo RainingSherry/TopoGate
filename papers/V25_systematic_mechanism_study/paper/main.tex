@@ -1,0 +1,69 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+
+\graphicspath{{figures/}}
+\setlist{nosep}
+
+\title{When Structure Is Not Utility: Localizing Failure Modes of Structural Interventions in Unsupervised Clustering}
+\author{Anonymous Authors}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Structural signals are widely used to shape unsupervised representations, but a
+useful relation is not necessarily a useful intervention. We study this gap as
+a mechanism-localization problem rather than as a search for another
+architecture. The audited V1--V22 history contains 2,209 registry rows, 1,637
+paired Delta ARI records, and 431 dataset/protocol/readout units; its 194
+material-positive, 680 material-negative, and 763 observed-small rows form an
+observational Failure Atlas. We then analyze a predeclared V21 case study with a
+shared warmup branchpoint and budget-, donor-, eligible-set-, batch-, and
+selection-noise-matched None, Random, and Topology policies. The primary
+per-seed endpoint is
+$S_{\mathrm{full\_ARI}}=\operatorname{ARI}_T-\operatorname{ARI}_R$; the reported
+$S_d$ values are the dataset means of those three seed-level endpoints. The
+confirmation means are $+0.044617$ for Baron Human and $-0.065332$ and
+$-0.033410$ for Campbell and \texttt{hate\_speech}, respectively. Thus
+topology-dependent selection has a conditional, sign-heterogeneous effect in
+this audited case study, not universal superiority. Feature, gradient, and
+local/global records remain diagnostics, not universal causal explanations. A
+predeclared holdout produced zero of six evaluable panels; independent
+validation is not established, and the status is recorded as
+\texttt{inconclusive\_not\_completed}, not as a negative model result.
+\end{abstract}
+
+\input{sections/introduction}
+\input{sections/study_design}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/limitations}
+
+\appendix
+\section{Evidence and audit boundary}
+The paper-facing bundle is an analysis-only export from frozen V25 artifacts.
+It does not retrain a model or treat rows, seeds, or coordinates as independent
+population units. The exact source files and SHA256 values used to generate the
+tables are recorded in
+\texttt{tables/latex\_assets\_manifest.json}. The full per-job contract,
+branchpoint, schedule, label-isolation, and incomplete-compute records remain in
+\texttt{result/V25\_systematic\_mechanism\_study/}.
+
+The scMAE source is not cited because its local PDF has not passed the repository
+citation lifecycle. This is an explicit provenance boundary, not a substituted
+reference. The paper also does not report any independent holdout result: the
+frozen holdout status is \texttt{inconclusive\_not\_completed}.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

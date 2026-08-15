@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-08-14T17:18:56.282490+00:00",
+  "protocol_id": "v25_a0_evidence_registry_v1",
+  "source_long_csv": "reports/v1_v22_unified_failure_diagnostic_long_20260814.csv",
+  "source_long_csv_sha256": "39dfb6d9f25be389bf4b377a88c0c4a4bc2d8dbfe1a6d25486ab40ee7f84dfaf",
+  "source_coverage_csv_sha256": "a150b9f5edf42d9fc738aa0a5e6b2ff3475d9ee5cd00563dbd5ff2b5785261ab",
+  "source_v23_sha256": "213dff99ffdf13494cc4b5822fc7efb6425d2d31520fc692c007f2363d6c3c1f",
+  "source_v24_sha256": "ff64e84088fd3f467e412648963322b7aacc2198024d9a0905271d6f7ef2618d",
+  "v1_v22_rows": 2209,
+  "v1_v22_completed": 2175,
+  "v1_v22_reported": 32,
+  "v1_v22_incomplete": 2,
+  "v1_v22_paired_rows": 1637,
+  "v1_v22_units": 431,
+  "v1_v22_unique_datasets": 342,
+  "v23_v24_boundary_records": 2,
+  "replay_eligible_rows": 0,
+  "labels_used_for_registry": false,
+  "notes": "V23/V24 are boundary evidence; no rows are pooled with V1-V22 quantitative intervention records."
+}

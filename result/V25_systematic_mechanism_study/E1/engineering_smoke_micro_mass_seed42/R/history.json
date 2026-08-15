@@ -1,0 +1,134 @@
+[
+  {
+    "step": 0,
+    "epoch": 1,
+    "loss": 0.5817005038261414,
+    "base_loss": 0.5838470458984375,
+    "infomax_loss": -0.05634617805480957,
+    "assignment_js": 0.0067080785520374775,
+    "eligible_rate": 0.1819951981306076,
+    "selected_rate": 0.07308894395828247,
+    "effective_budget": 6081
+  },
+  {
+    "step": 1,
+    "epoch": 1,
+    "loss": 0.5906471014022827,
+    "base_loss": 0.5926507711410522,
+    "infomax_loss": -0.054918527603149414,
+    "assignment_js": 0.007422612980008125,
+    "eligible_rate": 0.1791706681251526,
+    "selected_rate": 0.0719471126794815,
+    "effective_budget": 5986
+  },
+  {
+    "step": 2,
+    "epoch": 1,
+    "loss": 0.5847715735435486,
+    "base_loss": 0.5867515206336975,
+    "infomax_loss": -0.051636695861816406,
+    "assignment_js": 0.006018581800162792,
+    "eligible_rate": 0.1870793253183365,
+    "selected_rate": 0.0751802921295166,
+    "effective_budget": 6255
+  },
+  {
+    "step": 3,
+    "epoch": 1,
+    "loss": 0.5910263657569885,
+    "base_loss": 0.5932233929634094,
+    "infomax_loss": -0.05612540245056152,
+    "assignment_js": 0.006092354189604521,
+    "eligible_rate": 0.18338942527770996,
+    "selected_rate": 0.07361778616905212,
+    "effective_budget": 6125
+  },
+  {
+    "step": 4,
+    "epoch": 1,
+    "loss": 0.5871586203575134,
+    "base_loss": 0.5892069339752197,
+    "infomax_loss": -0.05375480651855469,
+    "assignment_js": 0.006394323892891407,
+    "eligible_rate": 0.18658654391765594,
+    "selected_rate": 0.07492788136005402,
+    "effective_budget": 6234
+  },
+  {
+    "step": 5,
+    "epoch": 1,
+    "loss": 0.5825244784355164,
+    "base_loss": 0.5842448472976685,
+    "infomax_loss": -0.04855036735534668,
+    "assignment_js": 0.0070716277696192265,
+    "eligible_rate": 0.17463462054729462,
+    "selected_rate": 0.0701538473367691,
+    "effective_budget": 3648
+  },
+  {
+    "step": 6,
+    "epoch": 2,
+    "loss": 0.5839827060699463,
+    "base_loss": 0.5862357020378113,
+    "infomax_loss": -0.05771470069885254,
+    "assignment_js": 0.0063273366540670395,
+    "eligible_rate": 0.18512019515037537,
+    "selected_rate": 0.07435096055269241,
+    "effective_budget": 6186
+  },
+  {
+    "step": 7,
+    "epoch": 2,
+    "loss": 0.5671926736831665,
+    "base_loss": 0.5691927671432495,
+    "infomax_loss": -0.05187273025512695,
+    "assignment_js": 0.005935370922088623,
+    "eligible_rate": 0.18530048429965973,
+    "selected_rate": 0.07444711774587631,
+    "effective_budget": 6194
+  },
+  {
+    "step": 8,
+    "epoch": 2,
+    "loss": 0.5856713652610779,
+    "base_loss": 0.5878300070762634,
+    "infomax_loss": -0.056944847106933594,
+    "assignment_js": 0.006886146031320095,
+    "eligible_rate": 0.18683893978595734,
+    "selected_rate": 0.0750841349363327,
+    "effective_budget": 6247
+  },
+  {
+    "step": 9,
+    "epoch": 2,
+    "loss": 0.5907529592514038,
+    "base_loss": 0.59271639585495,
+    "infomax_loss": -0.05367159843444824,
+    "assignment_js": 0.007201202213764191,
+    "eligible_rate": 0.17971153557300568,
+    "selected_rate": 0.07221154123544693,
+    "effective_budget": 6008
+  },
+  {
+    "step": 10,
+    "epoch": 2,
+    "loss": 0.5606652498245239,
+    "base_loss": 0.5629785656929016,
+    "infomax_loss": -0.05756974220275879,
+    "assignment_js": 0.00565200624987483,
+    "eligible_rate": 0.18106971681118011,
+    "selected_rate": 0.07275240123271942,
+    "effective_budget": 6053
+  },
+  {
+    "step": 11,
+    "epoch": 2,
+    "loss": 0.5527552962303162,
+    "base_loss": 0.5548166036605835,
+    "infomax_loss": -0.059325456619262695,
+    "assignment_js": 0.00904956553131342,
+    "eligible_rate": 0.17771153151988983,
+    "selected_rate": 0.07142307609319687,
+    "effective_budget": 3714
+  }
+]

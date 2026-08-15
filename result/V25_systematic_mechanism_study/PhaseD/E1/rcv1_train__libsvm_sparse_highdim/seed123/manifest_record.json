@@ -1,0 +1,25 @@
+{
+  "panel_run_key": "v25_e1_holdout::rcv1_train__libsvm_sparse_highdim::123",
+  "phase": "holdout",
+  "dataset": "rcv1_train__libsvm_sparse_highdim",
+  "input_protocol": "shared_text",
+  "source_path": "/data/luolie/ToPoGate/datasets/external/v22_dataset_extension_round2_20260812/processed/rcv1_train.npz",
+  "source_sha256": "085d6bc9713e985670c588250a5e524bb36920c32e4471e20dcd41291d96644e",
+  "seed": 123,
+  "arms": [
+    "N",
+    "R",
+    "T"
+  ],
+  "primary_readout": "clean_embedding_known_k_kmeans",
+  "K_source": "benchmark_oracle_from_y",
+  "output_dir": "result/V25_systematic_mechanism_study/PhaseD/E1/rcv1_train__libsvm_sparse_highdim/seed123",
+  "status": "queued",
+  "attempts": 0,
+  "gpu": null,
+  "pid": null,
+  "started_at": null,
+  "finished_at": null,
+  "returncode": null,
+  "error": null
+}

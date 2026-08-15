@@ -1,0 +1,23 @@
+{
+  "panel_run_key": "v25_e1_confirmation::Campbell::42",
+  "gpu": 2,
+  "command": [
+    "/data/luolie/conda/base/bin/python",
+    "/home/luolie/ToPoGate/scripts/V25/run_e1_matched_protocol.py",
+    "--data",
+    "/data/luolie/ToPoGate/datasets/Campbell.npz",
+    "--dataset-name",
+    "Campbell",
+    "--input-protocol",
+    "clubench_bridge",
+    "--output-dir",
+    "/home/luolie/ToPoGate/result/V25_systematic_mechanism_study/E1/confirmation/Campbell/seed42",
+    "--seed",
+    "42",
+    "--device",
+    "cuda",
+    "--gpu",
+    "2"
+  ],
+  "started_at": "2026-08-14T19:43:22.206624+00:00"
+}

@@ -1,0 +1,30 @@
+{
+  "protocol_id": "v25_a1_failure_atlas_v1",
+  "a0_protocol_id": "v25_a0_evidence_registry_v1",
+  "paired_rows": 1637,
+  "unit_count": 239,
+  "unique_datasets": 207,
+  "positive_rows": 194,
+  "negative_rows": 680,
+  "small_rows": 763,
+  "unavailable_rows": 0,
+  "local_global_boundary_rows": 6,
+  "artifact_complete_replay_candidate_rows": 0,
+  "structural_opportunity_groups": 9,
+  "magnitude_descriptor_groups": 10,
+  "labels_reloaded_for_atlas": false,
+  "metric_provenance": "paired_delta_ari_and_ari_mean_imported_from_audited_historical_table; labels may have been used by the original benchmark",
+  "label_free_evaluation": false,
+  "primary_statistical_unit": "dataset/protocol/readout; seeds and variants repeated",
+  "post_treatment_fields": [
+    "measurement_timing",
+    "gate_usage_raw",
+    "magnitude_proxy_json",
+    "positive_headroom",
+    "negative_headroom",
+    "post_treatment_descriptor"
+  ],
+  "local_metric_label_use": "posthoc_supervised_only_for_V23_boundary_rows",
+  "replay_gate": "artifact_complete_only",
+  "no_causal_claim": true
+}

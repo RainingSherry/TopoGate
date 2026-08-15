@@ -1,0 +1,124 @@
+{
+  "protocol_id": "v25_contract_audit_v1",
+  "status": "audit_ok",
+  "checks": {
+    "a0_row_unit_audit": true,
+    "a0_boundary_isolated": true,
+    "a0_registry_schema_complete": true,
+    "a1_seed_aware_atlas": true,
+    "a1_metric_provenance_declared": true,
+    "a2_veto_capable": true,
+    "holdout_pre_outcome": true,
+    "holdout_shortfall_explicit": true,
+    "holdout_adapter_contract_complete": true,
+    "e1_manifest_gated": true,
+    "e1_manifest_three_arm_counts": true,
+    "e1_allowed_by_a2": true,
+    "e1_tr_shared_donor": true,
+    "e1_tr_shared_eligible": true,
+    "e1_tr_shared_budget": true,
+    "e1_tr_shared_noise": true,
+    "e1_none_no_assignment_forward": true,
+    "e1_none_no_js_forward": true,
+    "e1_branchpoint_before_assignment": true,
+    "e1_labels_isolated": true,
+    "e1_known_k_boundary_declared": true,
+    "e1_explicit_or_outer_k": true,
+    "e1_pairs_complete_after_evaluation": true,
+    "e1_metrics_mark_post_fit_labels": true,
+    "e1_independent_panel_audit": true,
+    "e1_primary_pairs_recomputed": true,
+    "e1_primary_pairs_match_recomputed": true
+  },
+  "a2_decision": "retain_e1",
+  "e1": {
+    "path": "result/V25_systematic_mechanism_study/E1/confirmation/Baron_Human/seed42",
+    "audit": {
+      "protocol_id": "v25_e1_v21_matched_nrt_v1",
+      "labels_used_during_fit": false,
+      "K_used_during_fit": true,
+      "K_source": "caller_outer_evaluation",
+      "arm_names": [
+        "N",
+        "R",
+        "T"
+      ],
+      "donor_schedule_hash": "a739f4016a51ca205244d86b55bc684cd0d7a481468c163a9185ad338d90eb69",
+      "eligible_schedule_hash": "ab8725dc7587dc747307c0de819772c8eb5e10637166646df97f248abdc6b43b",
+      "budget_schedule_hash": "9ee2d82842aa4c1a4f428929653b4d9a8c70fd6fa47765ce85da7b7615ad5037",
+      "selection_noise_hash": "3cc599bd2d89b6b7c6fd92f91fce46954005cd8d43ca06433a8c90441dee9207",
+      "topology_statistics_hash": "b696d3a9f65a21cd9d77b23dbcad631437ff5354db8bbfdefe0450c592630b4c",
+      "TR_shared_schedule_hashes": {
+        "donor": true,
+        "eligible": true,
+        "budget": true,
+        "selection_noise": true
+      },
+      "none_contract": {
+        "assignment_forward_calls": 0,
+        "js_forward_calls": 0,
+        "shadow_assignment_calls": 1360
+      },
+      "branchpoint": {
+        "epoch": 40,
+        "head_initialised": true,
+        "warmup_branchpoint_before_first_assignment": true
+      }
+    },
+    "runner_profile": {
+      "dataset": "Baron Human",
+      "data_path": "/data/luolie/ToPoGate/datasets/Baron Human.npz",
+      "input_protocol": "clubench_bridge",
+      "seed": 42,
+      "n_clusters": 9,
+      "K_source": "benchmark_oracle_from_y",
+      "labels_loaded_by_outer_runner": true,
+      "labels_used_during_fit": false,
+      "preprocess_profile": {
+        "dataset_name": "Baron Human",
+        "input_protocol": "clubench_bridge",
+        "n_samples": 8451,
+        "n_features_original": 20125,
+        "n_features_selected": 20125,
+        "graph_view_storage": "csr",
+        "graph_view_scaler": "StandardScaler_with_mean_false",
+        "model_view_scaler": "StandardScaler_with_mean_true",
+        "labels_used": false,
+        "K_used": false,
+        "full_pairwise_matrix_materialized": false
+      },
+      "selected_feature_indices": 20125
+    },
+    "independent_panel_audit": {
+      "dataset": "Baron Human",
+      "seed": 42,
+      "panel_run_key": "v25_e1_confirmation::Baron Human::42",
+      "panel_path": "/data/luolie/ToPoGate/result/V25_systematic_mechanism_study/E1/confirmation/Baron_Human/seed42",
+      "audit_ok": true,
+      "summary_completed": true,
+      "protocol_match": true,
+      "seed_match": true,
+      "seed_declared": true,
+      "source_exists": true,
+      "source_hash_match": true,
+      "labels_used_during_fit_false": true,
+      "tr_shared_schedule": true,
+      "none_no_assignment_or_js": true,
+      "pairs_complete": true,
+      "arms_complete": true,
+      "arm_metrics_finite": true,
+      "primary_ari_recomputed_from_saved_predictions": true,
+      "stored_primary_pairs_match_recomputed": true,
+      "stored_one_step_pairs_match_recomputed": true,
+      "labels_after_fit_only": true,
+      "branchpoint_contract": true,
+      "one_step_present": true
+    },
+    "recomputed_pairs": {
+      "I_full_ARI": 0.02110374750103966,
+      "S_full_ARI": 0.017532602931774638,
+      "I_1step_ARI": -0.00013182376997100675,
+      "S_1step_ARI": -8.073077330206235e-05
+    }
+  }
+}

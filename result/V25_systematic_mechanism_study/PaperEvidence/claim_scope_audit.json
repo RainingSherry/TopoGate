@@ -1,0 +1,27 @@
+{
+  "protocol_id": "v25_paper_claim_scope_audit_v1",
+  "checks": {
+    "a0_counts_match_frozen_registry": true,
+    "a0_boundary_isolated": true,
+    "a1_counts_match_frozen_atlas": true,
+    "a1_no_causal_claim": true,
+    "a2_veto_and_no_e4_recorded": true,
+    "claim_freeze_primary_endpoint_is_frozen": true,
+    "confirmation_audit_complete": true,
+    "e2_coordinate_unit_declared": true,
+    "e2_all_panel_audits_pass": true,
+    "holdout_not_used_as_negative_result": true
+  },
+  "audit_ok": true,
+  "allowed_claim_scope": [
+    "observational V1-V22 failure atlas",
+    "predeclared selection claim with claim-dependent activation subset"
+  ],
+  "forbidden_claim_scope": [
+    "universal topology superiority",
+    "independent holdout replication",
+    "pooled causal effect across historical protocols",
+    "coordinate-level inferential p-values",
+    "holdout CUDA OOM as a model performance result"
+  ]
+}

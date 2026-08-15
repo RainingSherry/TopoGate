@@ -1,0 +1,18 @@
+{
+  "protocol_id": "v25_e1_v21_matched_nrt_v1",
+  "phase": "pilot",
+  "gpu_pool": [
+    2
+  ],
+  "forbidden_gpus": [
+    0,
+    7
+  ],
+  "min_free_mib": 30000,
+  "max_parallel_per_gpu": 1,
+  "runner_sha256": "e8b729e6cae8e144d4c626210636900158778f40c1ad2d98f36c708914719c44",
+  "core_sha256": "dd8d9fad2d88f4f03321f9bb8b1fe56057b7b0b142eb7f6960cab8f35e6592e7",
+  "source_manifest": "/data/luolie/ToPoGate/result/V25_systematic_mechanism_study/E1/e1_manifest.json",
+  "source_manifest_sha256": "edf2d57bba15cc1a56b18d12dd72efd320e0cbc4a730875a513b79814c577339",
+  "created_at": "2026-08-14T18:13:21.762340+00:00"
+}

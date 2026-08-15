@@ -1,0 +1,42 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Li et~al.(2025{\natexlab{a}})Li, Jia, Liu, and Hou]{li2025dcboost}
+Hanyang Li, Yuheng Jia, Hui Liu, and Junhui Hou.
+\newblock You can trust your clustering model: A parameter-free self-boosting
+  plug-in for deep clustering.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  2025{\natexlab{a}}.
+\newblock Local PDF:
+  papers/references/pdf/clustering\_sota\_2026/NeurIPS-2025-DCBoost.pdf.
+
+\bibitem[Li et~al.(2025{\natexlab{b}})Li, Jia, Liu, and Hou]{li2025lfss}
+Zhixin Li, Yuheng Jia, Hui Liu, and Junhui Hou.
+\newblock Learning from sample stability for deep clustering.
+\newblock In \emph{Proceedings of the 42nd International Conference on Machine
+  Learning}, volume 267 of \emph{PMLR}, pages 34904--34919, 2025{\natexlab{b}}.
+\newblock Local PDF:
+  papers/references/pdf/clustering\_sota\_2026/ICML-2025-LFSS.pdf.
+
+\bibitem[Xu et~al.(2024)Xu, Ning, Xiao, Feng, Li, Zhou, and Wang]{xu2024sccdcg}
+Ping Xu, Zhiyuan Ning, Meng Xiao, Guihai Feng, Xin Li, Yuanchun Zhou, and
+  Pengfei Wang.
+\newblock sccdcg: Efficient deep structural clustering for single-cell rna-seq
+  via deep cut-informed graph embedding.
+\newblock In \emph{Database Systems for Advanced Applications}, 2024.
+\newblock \doi{10.1007/978-981-97-5575-2\_11}.
+\newblock Local PDF: papers/references/pdf/13\_sccdcg\_arxiv2024.pdf.
+
+\bibitem[Yan et~al.(2026)Yan, Han, Wu, and Tian]{yan2026scmib}
+Xiaoqiang Yan, Fengshou Han, Yunpeng Wu, and Zhen Tian.
+\newblock Compact and informative representation learning for scrna-seq data
+  clustering with masked information bottleneck.
+\newblock \emph{BMC Biology}, 24:\penalty0 115, 2026.
+\newblock \doi{10.1186/s12915-026-02590-y}.
+\newblock Local PDF: papers/references/pdf/29\_scdebcl\_2026.pdf.
+
+\end{thebibliography}

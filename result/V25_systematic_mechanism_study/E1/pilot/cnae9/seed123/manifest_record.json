@@ -1,0 +1,25 @@
+{
+  "panel_run_key": "v25_e1_pilot::cnae9::123",
+  "phase": "pilot",
+  "dataset": "cnae9",
+  "input_protocol": "shared_text",
+  "source_path": "/data/luolie/ToPoGate/datasets/cnae9.npz",
+  "source_sha256": "e3a22bcfa761a837b8881a3a1966f6008d911b77948b76a4e4a8ca2aae65a71e",
+  "seed": 123,
+  "arms": [
+    "N",
+    "R",
+    "T"
+  ],
+  "primary_readout": "clean_embedding_known_k_kmeans",
+  "K_source": "benchmark_oracle_from_y",
+  "output_dir": "result/V25_systematic_mechanism_study/E1/pilot/cnae9/seed123",
+  "status": "queued",
+  "attempts": 0,
+  "gpu": null,
+  "pid": null,
+  "started_at": null,
+  "finished_at": null,
+  "returncode": null,
+  "error": null
+}

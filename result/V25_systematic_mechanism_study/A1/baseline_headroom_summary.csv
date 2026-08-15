@@ -1,0 +1,7 @@
+baseline_bin,baseline_mean,dataset_count,delta_mean,delta_std,harm_below_minus_delta,interpretation,positive_above_delta,row_count
+0.2-0.4,0.3136113690139822,41,-0.06237567078379133,0.11873446041034087,123,descriptive headroom-stratified association; not a causal effect of baseline strength,43,274
+0.4-0.6,0.5188008983738338,27,-0.09012802654052687,0.17069487802593145,108,descriptive headroom-stratified association; not a causal effect of baseline strength,29,198
+0.6-0.8,0.7028346417689915,29,-0.24258769433487598,0.2237816637226504,192,descriptive headroom-stratified association; not a causal effect of baseline strength,13,225
+<0.2,0.05631618252428615,93,0.0012736425336224387,0.056813389954354934,113,descriptive headroom-stratified association; not a causal effect of baseline strength,105,726
+>=0.8,0.8999666671819617,27,-0.31238645071280724,0.2860367407722983,144,descriptive headroom-stratified association; not a causal effect of baseline strength,0,198
+unavailable,,4,0.01016842373442294,0.019733887189263305,0,descriptive headroom-stratified association; not a causal effect of baseline strength,4,16

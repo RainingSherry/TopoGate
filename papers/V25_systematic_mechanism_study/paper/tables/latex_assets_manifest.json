@@ -1,0 +1,42 @@
+{
+  "protocol_id": "v25_latex_assets_v1",
+  "generated_at": "2026-08-15T02:30:07.185625+00:00",
+  "generator": "scripts/V25/build_latex_assets.py",
+  "evidence_dir": "/data/luolie/ToPoGate/result/V25_systematic_mechanism_study/PaperEvidence",
+  "paper_dir": "/data/luolie/ToPoGate/papers/V25_systematic_mechanism_study/paper",
+  "statistical_unit": "dataset/protocol/readout for atlas; dataset x seed for E1 summaries",
+  "sources": {
+    "e1_dataset_effects.csv": {
+      "path": "/data/luolie/ToPoGate/result/V25_systematic_mechanism_study/PaperEvidence/e1_dataset_effects.csv",
+      "sha256": "7a14201985f58cf6dcc4a8bf18a1809ceaa32c16c8b432bb41551610106d65bf"
+    },
+    "paper_evidence_summary.json": {
+      "path": "/data/luolie/ToPoGate/result/V25_systematic_mechanism_study/PaperEvidence/paper_evidence_summary.json",
+      "sha256": "d4199e773f84a37af490b8b05d167ab05ee55d56cc578905a452c31b314f66fc"
+    },
+    "source_manifest.json": {
+      "path": "/data/luolie/ToPoGate/result/V25_systematic_mechanism_study/PaperEvidence/source_manifest.json",
+      "sha256": "4bc9d258ce04ed80fb302e62fc483857febb828b63b57acbc7472e6dd9ca0c5c"
+    },
+    "references.bib": {
+      "path": "/data/luolie/ToPoGate/papers/V25_systematic_mechanism_study/references.bib",
+      "sha256": "ece02e5b9c14df3fab46dabda0ba2a8b61f2da4df2581eac6d716fb6ebee82ed"
+    },
+    "figure_manifest.json": {
+      "path": "/data/luolie/ToPoGate/result/V25_systematic_mechanism_study/PaperEvidence/figure_manifest.json",
+      "sha256": "5d2dec47a1abe62cd3832a22bdd7a9b6257de8232422614da24dad4592cf009c"
+    }
+  },
+  "outputs": [
+    "tables/e1_effects.tex",
+    "tables/atlas_summary.tex",
+    "tables/evidence_layers.tex",
+    "references.bib",
+    "figures/figure_manifest.json"
+  ],
+  "claim_scope": {
+    "atlas": "observational V1-V22",
+    "e1": "conditional heterogeneous audited V21 case study",
+    "holdout": "inconclusive_not_completed; not a negative result"
+  }
+}

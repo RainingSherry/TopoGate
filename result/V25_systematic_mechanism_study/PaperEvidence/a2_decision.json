@@ -1,0 +1,33 @@
+{
+  "protocol_id": "v25_a2_mechanism_triage_v1",
+  "generated_at": "2026-08-14T17:42:11.831256+00:00",
+  "decision": "retain_e1",
+  "a0_protocol_id": "v25_a0_evidence_registry_v1",
+  "a1_protocol_id": "v25_a1_failure_atlas_v1",
+  "v21_source_sha256": "d654938cb065da13d275551bff27feeeea000e2e60f2f3261c5927cb0df8717e",
+  "holdout_manifest_id": "v25_holdout_candidate_manifest_v1",
+  "no_new_e4": true,
+  "labels_used_for_triage": false,
+  "details": {
+    "checks": {
+      "a0_rows_present": true,
+      "a1_paired_rows_present": true,
+      "v21_heterogeneity": true,
+      "matched_counterfactual_missing": true,
+      "historical_artifact_audit_ok": true,
+      "historical_v21_artifact_complete": true
+    },
+    "reason": "V21 has auditable sign heterogeneity and the missing matched N/R/T counterfactual is identifiable; preserve the historical label-selected status as a limitation.",
+    "v21_evidence": {
+      "dataset_count": 6,
+      "positive_material_count": 1,
+      "negative_material_count": 3,
+      "delta_mean": -0.0758951892735577,
+      "heterogeneous_signs": true,
+      "historical_selection_bias": true,
+      "formal_random_counterfactual_present": false,
+      "formal_none_arm_present": false,
+      "source_protocol_id": "v21_ari_confirm_v1"
+    }
+  }
+}

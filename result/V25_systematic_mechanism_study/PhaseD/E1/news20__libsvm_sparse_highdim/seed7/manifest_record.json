@@ -1,0 +1,25 @@
+{
+  "panel_run_key": "v25_e1_holdout::news20__libsvm_sparse_highdim::7",
+  "phase": "holdout",
+  "dataset": "news20__libsvm_sparse_highdim",
+  "input_protocol": "shared_text",
+  "source_path": "/data/luolie/ToPoGate/datasets/external/v22_dataset_extension_round2_20260812/processed/news20.npz",
+  "source_sha256": "b71e5008a4ed74981c72d79aecdd78e566ee5c0d246920bb2127bf3e375ecb5c",
+  "seed": 7,
+  "arms": [
+    "N",
+    "R",
+    "T"
+  ],
+  "primary_readout": "clean_embedding_known_k_kmeans",
+  "K_source": "benchmark_oracle_from_y",
+  "output_dir": "result/V25_systematic_mechanism_study/PhaseD/E1/news20__libsvm_sparse_highdim/seed7",
+  "status": "queued",
+  "attempts": 0,
+  "gpu": null,
+  "pid": null,
+  "started_at": null,
+  "finished_at": null,
+  "returncode": null,
+  "error": null
+}

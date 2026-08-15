@@ -388,6 +388,7 @@ forbidden universal/holdout claims = absent
 - `scripts/V25/preflight_holdout.py`
 - `scripts/V25/build_paper_evidence.py`
 - `scripts/V25/build_paper_figures.py`
+- `scripts/V25/build_closure_artifacts.py`
 - `scripts/V25/audit_v25_contract.py`
 - `scripts/V25/audit_paper_claims.py`
 - `scripts/V25/audit_final_paper.py`
@@ -403,7 +404,27 @@ forbidden universal/holdout claims = absent
   Adam one-step、coordinate aggregation、label isolation、explicit-K、holdout preflight 和三臂 CPU
   engineering smoke 均已覆盖。
 
-## 9. GitHub 发布范围
+## 10. 闭环差距图与后续决策产物
+
+由 `scripts/V25/build_closure_artifacts.py` 从上述冻结 CSV/JSON 自动生成的非权重闭环产物为：
+
+- `result/V25_systematic_mechanism_study/V25_GAP_MAP.md`
+- `result/V25_systematic_mechanism_study/V25_GAP_MAP.csv`
+- `result/V25_systematic_mechanism_study/failure_localization_taxonomy.csv`
+- `result/V25_systematic_mechanism_study/E1_MECHANISM_SUMMARY.csv`
+- `result/V25_systematic_mechanism_study/V25_NEXT_SERIES_DECISION.md`
+- `result/V25_systematic_mechanism_study/V25_CLOSURE_ARTIFACTS.json`
+
+其中 Gap Map 按 `Opportunity -> Selection -> Intervention -> Representation -> Readout` 逐项区分
+已解决、部分解决、未解决、No-Go 和未完成验证；taxonomy 覆盖 V1--V24，但没有为缺失审计行的
+V1--V8、V15、V16、V17 强行指定机制。`E1_MECHANISM_SUMMARY.csv` 恰好包含六个 E1 数据集，
+pilot 的 E2-A 缺失明确写为 `deferred`，confirmation 的 E2 只以 dataset x seed 为统计单位。
+Holdout `0/6` 明确写为 `inconclusive_not_completed`，绝不写成负结果。
+
+这些文件不包含 checkpoint、branchpoint、原始数据或缓存；可提交的发布副本位于
+`papers/V25_systematic_mechanism_study/results/`，并保留源工件 SHA256 和 closure audit。
+
+## 11. GitHub 发布范围
 
 将以下相对路径原样发布到 GitHub `origin/main`：
 
@@ -431,7 +452,7 @@ branchpoint.pt
 纳入文件均小于 100 MB。GitHub 发布摘要必须明确：缺少权重不代表结果缺失；可审计的配置、指标、
 预测、embedding、history、hash、audit 和论文证据均按原路径发布，权重仍由本地结果盘保存。
 
-## 10. 最终状态
+## 12. 最终状态
 
 V25 已完成从历史证据登记、Failure Atlas、A2 否决式 triage、matched N/R/T case study、E2
 localization、claim freeze、independent holdout boundary 到 closure 的完整闭环。最强且可防守的

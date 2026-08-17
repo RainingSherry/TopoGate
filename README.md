@@ -2,7 +2,8 @@
 
 Repository for the TopoGate research implementations and their reversible
 variant configurations. The current public snapshot includes the core V9-V22
-code paths, the independent post-V25 ACCG route, curated auditable result
+code paths, the independent post-V25 ACCG route, the independent
+`representation_consumer_probe` S0-S2 terminal study, curated auditable result
 tables, and concise evidence summaries; it
 does not publish papers or dataset binaries.
 
@@ -30,6 +31,10 @@ caller to provide input data and an output directory.
   boundaries.
 - `reports/ACCG/`: ACCG protocol, synthetic contract, and weight-free real-panel
   audit. The current real clustering promotion decision is No-Go.
+- `reports/representation_consumer_probe/` and
+  `result/representation_consumer_probe/`: the frozen S0-S2 protocol, terminal
+  decision, and weight-free opportunity diagnostics. The study does not
+  promote a selector or new backbone.
 
 The public release is code-first. Result files are metadata-only summaries;
 raw arrays, checkpoints, worker logs, and smoke/debug directories remain

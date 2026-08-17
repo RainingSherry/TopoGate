@@ -1,0 +1,107 @@
+{
+  "config": {
+    "batch_mode": "full_graph",
+    "budget_cap": 8,
+    "budget_sensitivity": [
+      4,
+      8,
+      12
+    ],
+    "consumer_contracts": {
+      "F": {
+        "K_used_in_readout": true,
+        "K_used_in_representation": false,
+        "labels_vector_used_in_fit": false
+      },
+      "SimpleCut": {
+        "K_used_in_readout": true,
+        "K_used_in_representation": false,
+        "labels_vector_used_in_fit": false
+      },
+      "Spectral": {
+        "K_used_in_readout": true,
+        "K_used_in_representation": true,
+        "labels_vector_used_in_fit": false
+      }
+    },
+    "d0": 128,
+    "decoder_dims": [
+      64
+    ],
+    "edge_weight_rule": "positive_cosine",
+    "encoder_dims": [
+      64,
+      32
+    ],
+    "epochs": 80,
+    "forbidden_gpu_ids": [
+      0,
+      7
+    ],
+    "gview_alpha": 1.0,
+    "gview_eps": 1e-08,
+    "holdout_seeds": [
+      42,
+      123,
+      7,
+      3032,
+      3033
+    ],
+    "k_source": "benchmark_oracle_from_y",
+    "labels_used_during_fit": false,
+    "labels_vector_used_in_fit": false,
+    "lambda_orth": 1.0,
+    "lambda_var": 0.1,
+    "laplacian": "L=D-W",
+    "learning_rate": 0.001,
+    "legal_gpu_pool": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "loss_eps": 1e-08,
+    "loss_reduction": "full_graph_sparse_sum_normalized",
+    "neighbor_k": 20,
+    "normalized_laplacian": "L_sym=I-D^-1/2 W D^-1/2",
+    "optimizer": "Adam",
+    "oracle_non_tuning": true,
+    "pilot_seeds": [
+      42,
+      123,
+      7
+    ],
+    "positive_cosine_rule": "cosine_gt_0",
+    "post_symmetrization": "(W+W.T)/2_then_remove_self_loops",
+    "pre_symmetrization": "remove_self_loops",
+    "primary_readout": "clean_embedding_known_k_kmeans",
+    "project_id": "representation_consumer_probe",
+    "protocol_id": "representation_consumer_probe_s0_v1",
+    "rec_target": "H0",
+    "retention_ratio": 0.4,
+    "semantic_fidelity_required": true,
+    "spectral_drop_first": false,
+    "spectral_solver": "scipy.sparse.linalg.eigsh",
+    "spectral_tol": 1e-06,
+    "spectral_which": "SM",
+    "spectral_zero_eigenvalue_tolerance": 1e-08,
+    "stress_datasets": [
+      "cnae9",
+      "Mouse_retina",
+      "sms_spam_collection",
+      "Baron Human",
+      "Campbell",
+      "hate_speech"
+    ],
+    "svd_random_state": 0,
+    "v_min": 0.0001,
+    "weight_decay": 0.0,
+    "weight_dtype": "float32",
+    "zero_degree_inverse": "zero"
+  },
+  "env": {
+    "CUDA_VISIBLE_DEVICES": ""
+  }
+}

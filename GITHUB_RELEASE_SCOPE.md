@@ -16,6 +16,11 @@ audit summaries. It does not publish the paper or any paper source bundle.
 - `reports/ACCG/`: frozen synthetic contract, method protocol, and sanitized
   weight-free real-panel audit. The real clustering-improvement claim is
   retained as an auditable No-Go result rather than omitted.
+- `reports/representation_consumer_probe/` and
+  `result/representation_consumer_probe/`: frozen S0-S2 protocol, reports,
+  terminal decision, and weight-free opportunity diagnostics. The study's
+  selector and new-backbone routes remain locked and are not presented as
+  performance claims.
 - `result/final_results/`: one curated final result table or summary set for
   each audited version with non-smoke evidence, including V09-V14, V16.1, and
   V18-V22. The directory README records versions with no promotable result.

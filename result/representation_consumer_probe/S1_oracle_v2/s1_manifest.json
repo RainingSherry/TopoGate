@@ -1,0 +1,902 @@
+[
+  {
+    "arm": "F",
+    "dataset": "cnae9",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/cnae9/seed42/F",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::cnae9::F::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "U",
+    "dataset": "cnae9",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/cnae9/seed42/U",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::cnae9::U::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "cnae9",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/cnae9/seed42/R",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::cnae9::R::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "cnae9",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/cnae9/seed42/O_pool",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::cnae9::O_pool::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "cnae9",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/cnae9/seed42/O_full",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::cnae9::O_full::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "F",
+    "dataset": "cnae9",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/cnae9/seed123/F",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::cnae9::F::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "U",
+    "dataset": "cnae9",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/cnae9/seed123/U",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::cnae9::U::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "cnae9",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/cnae9/seed123/R",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::cnae9::R::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "cnae9",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/cnae9/seed123/O_pool",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::cnae9::O_pool::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "cnae9",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/cnae9/seed123/O_full",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::cnae9::O_full::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "F",
+    "dataset": "cnae9",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/cnae9/seed7/F",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::cnae9::F::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "U",
+    "dataset": "cnae9",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/cnae9/seed7/U",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::cnae9::U::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "cnae9",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/cnae9/seed7/R",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::cnae9::R::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "cnae9",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/cnae9/seed7/O_pool",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::cnae9::O_pool::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "cnae9",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/cnae9/seed7/O_full",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::cnae9::O_full::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "F",
+    "dataset": "Mouse_retina",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Mouse_retina/seed42/F",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Mouse_retina::F::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "U",
+    "dataset": "Mouse_retina",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Mouse_retina/seed42/U",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Mouse_retina::U::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "Mouse_retina",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Mouse_retina/seed42/R",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Mouse_retina::R::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "Mouse_retina",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Mouse_retina/seed42/O_pool",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Mouse_retina::O_pool::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "Mouse_retina",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Mouse_retina/seed42/O_full",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Mouse_retina::O_full::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "F",
+    "dataset": "Mouse_retina",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Mouse_retina/seed123/F",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Mouse_retina::F::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "U",
+    "dataset": "Mouse_retina",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Mouse_retina/seed123/U",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Mouse_retina::U::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "Mouse_retina",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Mouse_retina/seed123/R",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Mouse_retina::R::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "Mouse_retina",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Mouse_retina/seed123/O_pool",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Mouse_retina::O_pool::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "Mouse_retina",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Mouse_retina/seed123/O_full",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Mouse_retina::O_full::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "F",
+    "dataset": "Mouse_retina",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Mouse_retina/seed7/F",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Mouse_retina::F::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "U",
+    "dataset": "Mouse_retina",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Mouse_retina/seed7/U",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Mouse_retina::U::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "Mouse_retina",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Mouse_retina/seed7/R",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Mouse_retina::R::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "Mouse_retina",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Mouse_retina/seed7/O_pool",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Mouse_retina::O_pool::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "Mouse_retina",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Mouse_retina/seed7/O_full",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Mouse_retina::O_full::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "F",
+    "dataset": "sms_spam_collection",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/sms_spam_collection/seed42/F",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::sms_spam_collection::F::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "U",
+    "dataset": "sms_spam_collection",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/sms_spam_collection/seed42/U",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::sms_spam_collection::U::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "sms_spam_collection",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/sms_spam_collection/seed42/R",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::sms_spam_collection::R::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "sms_spam_collection",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/sms_spam_collection/seed42/O_pool",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::sms_spam_collection::O_pool::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "sms_spam_collection",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/sms_spam_collection/seed42/O_full",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::sms_spam_collection::O_full::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "F",
+    "dataset": "sms_spam_collection",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/sms_spam_collection/seed123/F",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::sms_spam_collection::F::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "U",
+    "dataset": "sms_spam_collection",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/sms_spam_collection/seed123/U",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::sms_spam_collection::U::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "sms_spam_collection",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/sms_spam_collection/seed123/R",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::sms_spam_collection::R::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "sms_spam_collection",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/sms_spam_collection/seed123/O_pool",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::sms_spam_collection::O_pool::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "sms_spam_collection",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/sms_spam_collection/seed123/O_full",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::sms_spam_collection::O_full::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "F",
+    "dataset": "sms_spam_collection",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/sms_spam_collection/seed7/F",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::sms_spam_collection::F::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "U",
+    "dataset": "sms_spam_collection",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/sms_spam_collection/seed7/U",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::sms_spam_collection::U::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "sms_spam_collection",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/sms_spam_collection/seed7/R",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::sms_spam_collection::R::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "sms_spam_collection",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/sms_spam_collection/seed7/O_pool",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::sms_spam_collection::O_pool::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "sms_spam_collection",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/sms_spam_collection/seed7/O_full",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::sms_spam_collection::O_full::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "F",
+    "dataset": "Baron Human",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Baron Human/seed42/F",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Baron Human::F::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "U",
+    "dataset": "Baron Human",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Baron Human/seed42/U",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Baron Human::U::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "Baron Human",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Baron Human/seed42/R",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Baron Human::R::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "Baron Human",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Baron Human/seed42/O_pool",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Baron Human::O_pool::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "Baron Human",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Baron Human/seed42/O_full",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Baron Human::O_full::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "F",
+    "dataset": "Baron Human",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Baron Human/seed123/F",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Baron Human::F::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "U",
+    "dataset": "Baron Human",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Baron Human/seed123/U",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Baron Human::U::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "Baron Human",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Baron Human/seed123/R",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Baron Human::R::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "Baron Human",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Baron Human/seed123/O_pool",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Baron Human::O_pool::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "Baron Human",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Baron Human/seed123/O_full",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Baron Human::O_full::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "F",
+    "dataset": "Baron Human",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Baron Human/seed7/F",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Baron Human::F::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "U",
+    "dataset": "Baron Human",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Baron Human/seed7/U",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Baron Human::U::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "Baron Human",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Baron Human/seed7/R",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Baron Human::R::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "Baron Human",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Baron Human/seed7/O_pool",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Baron Human::O_pool::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "Baron Human",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Baron Human/seed7/O_full",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Baron Human::O_full::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "F",
+    "dataset": "Campbell",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Campbell/seed42/F",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Campbell::F::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "U",
+    "dataset": "Campbell",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Campbell/seed42/U",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Campbell::U::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "Campbell",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Campbell/seed42/R",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Campbell::R::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "Campbell",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Campbell/seed42/O_pool",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Campbell::O_pool::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "Campbell",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Campbell/seed42/O_full",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Campbell::O_full::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "F",
+    "dataset": "Campbell",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Campbell/seed123/F",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Campbell::F::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "U",
+    "dataset": "Campbell",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Campbell/seed123/U",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Campbell::U::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "Campbell",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Campbell/seed123/R",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Campbell::R::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "Campbell",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Campbell/seed123/O_pool",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Campbell::O_pool::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "Campbell",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Campbell/seed123/O_full",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Campbell::O_full::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "F",
+    "dataset": "Campbell",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Campbell/seed7/F",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Campbell::F::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "U",
+    "dataset": "Campbell",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Campbell/seed7/U",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Campbell::U::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "Campbell",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Campbell/seed7/R",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Campbell::R::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "Campbell",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Campbell/seed7/O_pool",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Campbell::O_pool::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "Campbell",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/Campbell/seed7/O_full",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::Campbell::O_full::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "F",
+    "dataset": "hate_speech",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/hate_speech/seed42/F",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::hate_speech::F::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "U",
+    "dataset": "hate_speech",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/hate_speech/seed42/U",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::hate_speech::U::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "hate_speech",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/hate_speech/seed42/R",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::hate_speech::R::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "hate_speech",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/hate_speech/seed42/O_pool",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::hate_speech::O_pool::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "hate_speech",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/hate_speech/seed42/O_full",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::hate_speech::O_full::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "F",
+    "dataset": "hate_speech",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/hate_speech/seed123/F",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::hate_speech::F::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "U",
+    "dataset": "hate_speech",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/hate_speech/seed123/U",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::hate_speech::U::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "hate_speech",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/hate_speech/seed123/R",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::hate_speech::R::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "hate_speech",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/hate_speech/seed123/O_pool",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::hate_speech::O_pool::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "hate_speech",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/hate_speech/seed123/O_full",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::hate_speech::O_full::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "F",
+    "dataset": "hate_speech",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/hate_speech/seed7/F",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::hate_speech::F::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "U",
+    "dataset": "hate_speech",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/hate_speech/seed7/U",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::hate_speech::U::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "hate_speech",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/hate_speech/seed7/R",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::hate_speech::R::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "hate_speech",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/hate_speech/seed7/O_pool",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::hate_speech::O_pool::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "hate_speech",
+    "execution_status": "completed",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S1_oracle_v2/hate_speech/seed7/O_full",
+    "run_key": "representation_consumer_probe_s1_opportunity_spectral_v2::hate_speech::O_full::7",
+    "seed": 7,
+    "status": "completed_valid"
+  }
+]

@@ -1,5 +1,16 @@
 # 论文写作变更日志
 
+## 2026-08-17 Independent representation-consumer probe S2 closure
+
+发布独立 `representation_consumer_probe` 的 canonical protocol、实现、测试和 weight-free
+S0/S1-v2/S2 summaries。S2 完成 `18/18`：Baron Human 的 SimpleCut `H_pool=+0.033242`、
+Mouse_retina 的 `H_pool=+0.008880`。前者只说明 Spectral 阴性可能是 relaxation miss，后者
+仍为 observed-small；不支持 selector、TopoGate gain、new backbone 或 generalization claim。
+
+S0 的 `adapter_not_estimable` 仍是本项目 T-related terminal state，因此 S3–S6、TopoCut、
+新 selector 和 holdout 继续锁定。当前 integrity audit 为 WARN，原因仅是 training-history
+pre-step/post-step loss metadata timing gap；没有修改或发布 raw training outputs。
+
 ## 2026-08-07 V16.1 补齐候选的固定判定
 
 `PRJNA895163`、`Bone_Marrow` 和 `Young` 已在冻结的 V16.1 协议下完成三 seed、

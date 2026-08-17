@@ -1,5 +1,24 @@
 # TopoGate 实验结果汇总（事实表）
 
+## 2026-08-17 Representation-consumer probe S2 SimpleCut terminal result
+
+独立项目 `representation_consumer_probe` 完成冻结的 S2：Baron Human、Mouse_retina ×
+`R/O_pool/O_full` × seeds `[42,123,7]`，共 `18/18` completed-valid。完整 raw arrays/graphs
+留在本地结果盘；GitHub 仅发布本项目的 weight-free summaries/manifests。
+
+- SimpleCut fit 不接收标签或 K；K 仅用于 known-K 外层 KMeans/readout。O_pool/O_full 是
+  label-derived diagnostic oracle，不是可部署方法性能。
+- Baron Human：`H_pool=+0.033242`、`H_full=+0.033367`、`C=+0.000125`；仅支持
+  Spectral near-threshold negative 可能是 relaxation miss，不能写成 selector 或 TopoGate gain。
+- Mouse_retina：`H_pool=+0.008880`、`H_full=+0.009622`、`C=+0.000742`；为
+  observed-small，不作 topology 全局 No-Go。两者均无 material candidate gap。
+- Fresh audit 检查了 labels/source/H0、metrics、S1 graph reuse、hash 和 scope；总体 `WARN`
+  仅因 training history 最后一行是 pre-step loss，而 `fit_metadata.final_loss` 是 post-step
+  loss。该 metadata limitation 不改变 primary opportunity metrics。
+
+S2 是本项目 terminal decision：`heterogeneous_with_spectral_relaxation_caveat`；
+`S_graph`、selector、S3–S6、TopoCut 和 holdout 均未解锁。
+
 **最后更新**：2026-08-07 (V17-reference implemented without performance evidence; V16.1 search closed)
 **目的**：消除 static_gate/learnable_gate、K 错误、MAE freeze 概念混淆，便于后续 multi-seed 验证对照
 

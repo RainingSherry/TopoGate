@@ -1,0 +1,93 @@
+{
+  "audit": {
+    "H0_snapshot_count": 6,
+    "adapter_status": "adapter_not_estimable",
+    "budget_cap": 8,
+    "e1_manifest_match": true,
+    "effective_budget_profiles": {
+      "Baron Human": {
+        "budget_cap": 8,
+        "effective_budget_hash": "7fc6f0f1a7731632361aa5db474ca64280d00bd6f1ee2444109ee60389e56f37",
+        "effective_budget_max": 8,
+        "effective_budget_mean": 8.0,
+        "effective_budget_min": 8,
+        "fraction_budget_below_cap": 0.0,
+        "fraction_budget_zero": 0.0,
+        "zero_budget_nodes": 0
+      },
+      "Campbell": {
+        "budget_cap": 8,
+        "effective_budget_hash": "81c2989af8676f3690ee607b7cc3a7324bbd56d45b680fb963662d58bed022ef",
+        "effective_budget_max": 8,
+        "effective_budget_mean": 8.0,
+        "effective_budget_min": 8,
+        "fraction_budget_below_cap": 0.0,
+        "fraction_budget_zero": 0.0,
+        "zero_budget_nodes": 0
+      },
+      "Mouse_retina": {
+        "budget_cap": 8,
+        "effective_budget_hash": "a1d5328d4635ff58b7901fb2a83ce0501ebee6131fbf46b2b2f9d9b4f7166ecb",
+        "effective_budget_max": 8,
+        "effective_budget_mean": 8.0,
+        "effective_budget_min": 8,
+        "fraction_budget_below_cap": 0.0,
+        "fraction_budget_zero": 0.0,
+        "zero_budget_nodes": 0
+      },
+      "cnae9": {
+        "budget_cap": 8,
+        "effective_budget_hash": "93d9ad6d95b7f05cccb949c6959407a9a177294786a2a22fde027586a25b7ec0",
+        "effective_budget_max": 8,
+        "effective_budget_mean": 7.992592592592593,
+        "effective_budget_min": 0,
+        "fraction_budget_below_cap": 0.000925925925925926,
+        "fraction_budget_zero": 0.000925925925925926,
+        "zero_budget_nodes": 1
+      },
+      "hate_speech": {
+        "budget_cap": 8,
+        "effective_budget_hash": "44be4fd2e35f826c687a9f35edb0bcd5cfded3be5d50f6c56e8132443c7cc5a7",
+        "effective_budget_max": 8,
+        "effective_budget_mean": 7.664700403601366,
+        "effective_budget_min": 0,
+        "fraction_budget_below_cap": 0.04191244954982925,
+        "fraction_budget_zero": 0.04191244954982925,
+        "zero_budget_nodes": 135
+      },
+      "sms_spam_collection": {
+        "budget_cap": 8,
+        "effective_budget_hash": "80f0142bcdeae7c87911f90a2b83dd80a974614365c21be6244d5283c9cd1032",
+        "effective_budget_max": 8,
+        "effective_budget_mean": 7.616766467065868,
+        "effective_budget_min": 0,
+        "fraction_budget_below_cap": 0.04790419161676647,
+        "fraction_budget_zero": 0.04790419161676647,
+        "zero_budget_nodes": 40
+      }
+    },
+    "graph_numerical_sanity_passes": true,
+    "labels_used_during_fit": false,
+    "oracle_non_tuning": true,
+    "row_specific_budget_datasets": [
+      "cnae9",
+      "Mouse_retina",
+      "sms_spam_collection",
+      "Baron Human",
+      "Campbell",
+      "hate_speech"
+    ],
+    "source_preflight_complete": true,
+    "spectral_recovery_sanity_passes": true,
+    "synthetic_sanity_passes": true
+  },
+  "project_id": "representation_consumer_probe",
+  "protocol_id": "representation_consumer_probe_s0_v1",
+  "reason": "S0 contract audit only; current project stops at opportunity-only S1/S2/Decision",
+  "s1_opportunity_only_allowed": true,
+  "s2_opportunity_confirmation_allowed": true,
+  "s3_unlocked": false,
+  "s4_unlocked": false,
+  "s5_unlocked": false,
+  "status": "adapter_not_estimable"
+}

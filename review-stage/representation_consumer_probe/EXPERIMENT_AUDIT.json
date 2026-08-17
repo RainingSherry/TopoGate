@@ -1,0 +1,42 @@
+{
+  "audit_skill": "experiment-audit",
+  "project": "representation_consumer_probe",
+  "stage": "S2_simple_cut",
+  "verdict": "WARN",
+  "overall_verdict": "warn",
+  "integrity_status": "warn",
+  "reason_code": "training_history_pre_step_vs_final_post_step",
+  "summary": "All 18 S2 runs, metrics, hashes, labels, and S1 graph reuse pass; one training-log timing mismatch is preserved as a metadata warning.",
+  "audited_input": "result/representation_consumer_probe/S2_simple_cut",
+  "expected_runs": 18,
+  "completed_valid_runs": 18,
+  "incomplete_runs": 0,
+  "reviewer_model": "gpt-5.6-sol",
+  "reviewer_reasoning": "ultra",
+  "reviewer_family": "openai",
+  "executor_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "trace_path": ".aris/traces/experiment-audit/2026-08-17_s2_simplecut_run01/",
+  "generated_at": "2026-08-17T17:24:46+08:00",
+  "checks": {
+    "gt_provenance": {"status": "pass", "details": "Dataset y is source-derived; fit excludes y/K; O arms are explicitly label-derived diagnostics; known-K qualification applies."},
+    "score_normalization": {"status": "pass", "details": "ARI/NMI/optimal-mapping ACC recomputed for all 18 runs with max absolute difference <= 1e-12."},
+    "result_existence_hashes_graph_reuse": {"status": "pass", "details": "S2 exact-tree root has 197 entries; all 18 runs and per-run hashes pass; S1 selected and directed graph reuse is exact."},
+    "contract_training": {"status": "warn", "details": "GPU/label boundary and finite noncollapsed embeddings pass; CSV last loss is pre-step while fit_metadata.final_loss is post-step."},
+    "scope": {"status": "pass", "details": "2 datasets x 3 arms x 3 paired seeds; conditional diagnostic only; no generalization or TopoGate claim."},
+    "eval_type": {"status": "pass", "details": "R is known-K real-GT post-fit benchmark; O_pool/O_full are label-derived diagnostic oracles."}
+  },
+  "claims": [
+    {"id": "S2_completion", "impact": "supported"},
+    {"id": "Baron_H_pool", "impact": "supported_with_seed_volatility_qualification"},
+    {"id": "Mouse_H_pool", "impact": "observed_small_only"},
+    {"id": "TopoGate_selector_or_S_graph", "impact": "unsupported"},
+    {"id": "generalization", "impact": "unsupported"}
+  ],
+  "post_audit_hardening": {
+    "focused_test": "Added explicit nonconstant-embedding assertions to test_s2_contract.py after the fresh audit; no performance artifacts were regenerated.",
+    "test_command": "python -m pytest -q tests/representation_consumer_probe/test_s2_contract.py",
+    "test_result": "2 passed"
+  }
+}

@@ -1,5 +1,20 @@
 # 数据追溯日志
 
+## 2026-08-17 representation-consumer probe S2 publication boundary
+
+S2 使用 S0 H0、S1-v2 selected graphs、SimpleCut `128→64→32`、80 epochs、paired seeds
+`[42,123,7]`，固定 Baron Human 与 Mouse_retina，共 `18/18` completed-valid。训练使用物理
+GPU 3；GPU 0/7 禁用。
+
+标签只用于 O oracle graph construction、known-K readout 和 post-fit metrics；SimpleCut fit
+不接收 labels/K。GitHub release 只包含 JSON summaries、manifests、configs、reports、code 和
+tests；embedding/prediction/label arrays、sparse graphs、checkpoints、raw data 与 logs 均留在
+本地结果盘。
+
+审计复核了 source/H0 SHA、ARI/NMI/optimal-mapping ACC、S1 graph reuse 和 exact-tree hashes。
+Baron `H_pool=+0.033242`、Mouse `H_pool=+0.008880`；这些是 frozen relation family 下的
+diagnostic quantities，不是 TopoGate performance。
+
 ### 2026-08-07 V16.1 完成补齐的候选
 
 在不改变 V16.1 固定协议的情况下，`PRJNA895163`、`Bone_Marrow` 和 `Young` 已完成

@@ -1,0 +1,164 @@
+[
+  {
+    "arm": "R",
+    "dataset": "Baron Human",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S2_simple_cut/Baron Human/seed42/R",
+    "run_key": "representation_consumer_probe_s2_opportunity_simplecut_v1::Baron Human::R::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "Baron Human",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S2_simple_cut/Baron Human/seed42/O_pool",
+    "run_key": "representation_consumer_probe_s2_opportunity_simplecut_v1::Baron Human::O_pool::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "Baron Human",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S2_simple_cut/Baron Human/seed42/O_full",
+    "run_key": "representation_consumer_probe_s2_opportunity_simplecut_v1::Baron Human::O_full::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "Baron Human",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S2_simple_cut/Baron Human/seed123/R",
+    "run_key": "representation_consumer_probe_s2_opportunity_simplecut_v1::Baron Human::R::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "Baron Human",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S2_simple_cut/Baron Human/seed123/O_pool",
+    "run_key": "representation_consumer_probe_s2_opportunity_simplecut_v1::Baron Human::O_pool::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "Baron Human",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S2_simple_cut/Baron Human/seed123/O_full",
+    "run_key": "representation_consumer_probe_s2_opportunity_simplecut_v1::Baron Human::O_full::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "Baron Human",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S2_simple_cut/Baron Human/seed7/R",
+    "run_key": "representation_consumer_probe_s2_opportunity_simplecut_v1::Baron Human::R::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "Baron Human",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S2_simple_cut/Baron Human/seed7/O_pool",
+    "run_key": "representation_consumer_probe_s2_opportunity_simplecut_v1::Baron Human::O_pool::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "Baron Human",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S2_simple_cut/Baron Human/seed7/O_full",
+    "run_key": "representation_consumer_probe_s2_opportunity_simplecut_v1::Baron Human::O_full::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "Mouse_retina",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S2_simple_cut/Mouse_retina/seed42/R",
+    "run_key": "representation_consumer_probe_s2_opportunity_simplecut_v1::Mouse_retina::R::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "Mouse_retina",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S2_simple_cut/Mouse_retina/seed42/O_pool",
+    "run_key": "representation_consumer_probe_s2_opportunity_simplecut_v1::Mouse_retina::O_pool::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "Mouse_retina",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S2_simple_cut/Mouse_retina/seed42/O_full",
+    "run_key": "representation_consumer_probe_s2_opportunity_simplecut_v1::Mouse_retina::O_full::42",
+    "seed": 42,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "Mouse_retina",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S2_simple_cut/Mouse_retina/seed123/R",
+    "run_key": "representation_consumer_probe_s2_opportunity_simplecut_v1::Mouse_retina::R::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "Mouse_retina",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S2_simple_cut/Mouse_retina/seed123/O_pool",
+    "run_key": "representation_consumer_probe_s2_opportunity_simplecut_v1::Mouse_retina::O_pool::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "Mouse_retina",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S2_simple_cut/Mouse_retina/seed123/O_full",
+    "run_key": "representation_consumer_probe_s2_opportunity_simplecut_v1::Mouse_retina::O_full::123",
+    "seed": 123,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "R",
+    "dataset": "Mouse_retina",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S2_simple_cut/Mouse_retina/seed7/R",
+    "run_key": "representation_consumer_probe_s2_opportunity_simplecut_v1::Mouse_retina::R::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_pool",
+    "dataset": "Mouse_retina",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S2_simple_cut/Mouse_retina/seed7/O_pool",
+    "run_key": "representation_consumer_probe_s2_opportunity_simplecut_v1::Mouse_retina::O_pool::7",
+    "seed": 7,
+    "status": "completed_valid"
+  },
+  {
+    "arm": "O_full",
+    "dataset": "Mouse_retina",
+    "labels_used_during_fit": false,
+    "output_dir": "<local_result_root>/representation_consumer_probe/S2_simple_cut/Mouse_retina/seed7/O_full",
+    "run_key": "representation_consumer_probe_s2_opportunity_simplecut_v1::Mouse_retina::O_full::7",
+    "seed": 7,
+    "status": "completed_valid"
+  }
+]

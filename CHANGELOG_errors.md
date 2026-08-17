@@ -1564,3 +1564,10 @@ contract audit `16/16` checks 为 `true`。以上事件均未改变 legacy V21 �
 | 错误/风险 | 原因 | 纠正与当前状态 |
 |---|---|---|
 | 从普通沙箱直接运行 `scripts/V25/audit_final_paper.py` 时无法写入 `papers/V25_systematic_mechanism_study/paper/FINAL_PAPER_AUDIT.json` | 论文目录是指向共享 `/data` 结果盘的软链接，当前沙箱对该挂载目标只读；审计计算本身没有失败 | 保留既有 `FINAL_PAPER_AUDIT.json/.md` 的 `audit_ok` 工件；本次发布前使用可写 review/staging 路径完成同一确定性检查，不重编论文、不改写证据哈希 |
+### [2026-08-17 representation-consumer probe S2 publication audit boundary]
+
+S2 fresh integrity audit 对 18 个 run 的标签来源、known-K/oracle 边界、指标、hash、S1 graph
+复用和 scope 检查通过；总体 WARN 仅来自 `training_metrics.csv` 最后一行记录 optimizer step
+前 loss，而 `fit_metadata.final_loss` 为 step 后重算值。该 metadata timing gap 不影响保存的
+embedding、predictions 或 H_pool/H_full/C；GitHub 发布只包含 weight-free summaries 和审计报告，
+不包含 raw arrays、graphs、checkpoints、logs 或 review traces。

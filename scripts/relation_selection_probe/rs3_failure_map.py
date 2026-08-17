@@ -172,6 +172,10 @@ def run(output_dir: Path = DEFAULT_OUTPUT) -> dict[str, Any]:
     rs1_information_passes = bool(rs1.get("information_passes", False))
     mouse_triggered = any(row["mouse_contradiction_trigger"] for row in dataset_rows)
     hate_triggered = any(row["hate_candidate_family_trigger"] for row in dataset_rows)
+    candidate_gap_datasets = [
+        row["dataset"] for row in dataset_rows if row["candidate_gap_material"]
+    ]
+    candidate_gap_isolated_to_hate = candidate_gap_datasets == ["hate_speech"]
 
     if not rs1_information_passes:
         next_decision = "current_relation_evidence_not_sufficient"
@@ -209,6 +213,8 @@ def run(output_dir: Path = DEFAULT_OUTPUT) -> dict[str, Any]:
         ),
         "mouse_contradiction_trigger": mouse_triggered,
         "hate_candidate_family_trigger": hate_triggered,
+        "candidate_gap_material_datasets": candidate_gap_datasets,
+        "candidate_gap_isolated_to_hate": candidate_gap_isolated_to_hate,
         "baron_consumer_boundary_present": any(row["baron_consumer_boundary"] for row in dataset_rows),
         "candidate_family_problem": hate_triggered,
         "learned_decision_rule_justified": bool(rs1_information_passes and not simple_sufficient),
@@ -227,8 +233,9 @@ def run(output_dir: Path = DEFAULT_OUTPUT) -> dict[str, Any]:
                 "evidence for a learned selector without a separately frozen protocol."
             ),
             "candidate": (
-                "hate_speech has a material expanded-minus-pool reference gap, so candidate-family "
-                "construction is a confound/boundary and is not rescued by RS2."
+                "sms_spam_collection and hate_speech have material expanded-minus-pool reference "
+                "gaps; hate_speech is the extreme sentinel, so the gap is not isolated to hate and "
+                "the candidate-family issue is not rescued by RS2."
             ),
             "sentinel": (
                 "Mouse_retina does not trigger the pre-registered material contradiction sentinel; "

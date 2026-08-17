@@ -36,7 +36,8 @@ metrics. They never enter feature construction or selector fitting.
 RS0–RS3 are complete. The result is heterogeneous and terminal under this
 project scope: pool-reference information is detectable, but no fixed simple
 selector captures a material share of the primary opportunity, and hate_speech
-exposes a candidate-family boundary. RS4 is only a possible future proposal;
+exposes an extreme candidate-family boundary (sms_spam_collection also has a
+material expanded-reference gap). RS4 is only a possible future proposal;
 it was not run. The three primary datasets are report-only evidence and are
 burned for any future learned-selector confirmation; a new protocol must freeze
 a separate holdout before evaluating such a rule.

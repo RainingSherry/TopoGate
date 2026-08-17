@@ -18,7 +18,8 @@ holdout manifest SHA256 为 `6d9afa1f6d90f77d8836e9f877f6567ebb7c7621ba3d022622e
   `-0.0298`、sms 为 `-0.3080`。
 - RS3：cnae9/Campbell/sms 的 `H_pool` 分别为 `+0.215720/+0.191444/+0.367108`，
   但没有固定 selector 产生 material positive capture。hate_speech 的
-  `H_full-H_pool=+0.634319` 触发 candidate-family sentinel；Mouse_retina 的最佳
+  `H_full-H_pool=+0.634319` 触发 extreme candidate-family sentinel，且 sms 的
+  `H_full-H_pool=+0.175197` 也为 material gap；Mouse_retina 的最佳
   selector `+0.0193`（约为其低机会 `H_pool` 的 70%）未触发 material contradiction；Baron
   Human 保留为低机会 consumer boundary。Mouse/Baron 不进入 primary denominator。
 

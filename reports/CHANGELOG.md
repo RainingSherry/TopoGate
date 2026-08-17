@@ -13,7 +13,8 @@ RS1 的 frozen relation features 在三个 primary datasets 上可预测
 完成，五个固定 selector 均未达到两个 primary datasets 上 `Delta_S >= 0.03` 且
 median capture `>=0.25` 的 gate。RS3 保留了 Mouse_retina 的低机会 sentinel、Baron
 Human 的 consumer boundary，并在 hate_speech 记录 material expanded-reference gap
-(`+0.634319`) 为 candidate-family boundary。
+(`+0.634319`) 为 extreme candidate-family sentinel；sms 的 gap
+(`+0.175197`) 也 material，因此 gap 并非只发生在 hate_speech。
 
 终态为 `candidate_family_problem_and_learned_rule_only_proposal`：未来若要研究
 learned selector，只能另起一份冻结协议；本项目不执行 RS4。完整运行树留在结果盘，

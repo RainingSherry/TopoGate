@@ -8,9 +8,10 @@ decision is `candidate_family_problem_and_learned_rule_only_proposal`.
   pass the full two-threshold gate.
 - RS2 completed 90/90 valid selector rows. No fixed selector reached the
   primary material capture rule.
-- RS3 identified a material expanded-reference gap on the frozen hate_speech
-  candidate-family sentinel. This is a candidate-construction boundary, not a
-  reason to rescue the selector route.
+- RS3 identified material expanded-reference gaps on sms_spam_collection and
+  hate_speech, with hate_speech as the extreme candidate-family sentinel. The
+  gap is not isolated to hate_speech; it is a candidate-construction boundary,
+  not a reason to rescue the selector route.
 
 The current project is terminal under its authorized scope. A learned selector,
 new backbone, reconstruction objective, holdout, or V-series continuation is

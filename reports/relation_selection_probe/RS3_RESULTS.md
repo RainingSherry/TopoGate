@@ -11,10 +11,10 @@ dataset; seeds are paired repeats.
 |---|---|---:|---:|---:|---:|---|
 | cnae9 | primary opportunity | +0.2157 | +0.1062 | -0.1095 | +0.0144 (B4) | opportunity present, fixed selectors miss material capture |
 | Campbell | primary opportunity | +0.1914 | +0.0390 | -0.1525 | -0.0298 (B4) | opportunity present, selectors harmful on this consumer |
-| sms_spam_collection | primary + candidate boundary | +0.3671 | +0.5423 | +0.1752 | -0.3002 (B0/B1) | opportunity present; selector failure plus candidate-family boundary |
+| sms_spam_collection | primary + candidate boundary | +0.3671 | +0.5423 | +0.1752 | -0.3002 (B0/B1) | opportunity present; selector failure plus material candidate-family gap |
 | Baron Human | consumer-sensitive boundary | +0.0143 | -0.1695 | -0.1838 | +0.0042 (B4) | low observed opportunity; not a primary gate row |
 | Mouse_retina | low-opportunity sentinel | +0.0274 | -0.0064 | -0.0338 | +0.0193 (B4) | no material contradiction sentinel |
-| hate_speech | candidate-family sentinel | +0.0022 | +0.6365 | +0.6343 | +0.0163 (B0/B1/B3) | expanded-reference gap; candidate construction boundary |
+| hate_speech | candidate-family sentinel | +0.0022 | +0.6365 | +0.6343 | +0.0163 (B0/B1/B3) | extreme expanded-reference gap; candidate construction sentinel |
 
 `H_full-H_pool` is retained as a candidate-family diagnostic, not as a
 monotone upper-bound claim. Negative values on cnae9, Campbell, Baron, and
@@ -34,8 +34,10 @@ successes or failures.
 1. RS1 passes only for pool-reference membership; semantic same-class
    information does not pass the complete diagnostic gate.
 2. RS2 has zero fixed selectors satisfying the primary material capture rule.
-3. hate_speech triggers the pre-registered candidate-family sentinel, so the
-   current selector route is not rescued by a learned rule.
+3. hate_speech triggers the pre-registered candidate-family sentinel, and
+   sms_spam_collection also has a material expanded-reference gap. The gap is
+   therefore not isolated to hate_speech; the current selector route is not
+   rescued by a learned rule.
 4. Mouse_retina does not trigger a material contradiction audit, and Baron
    Human remains a consumer-sensitive low-opportunity boundary.
 

@@ -940,12 +940,17 @@
     "summary": {
       "baron_consumer_boundary_present": true,
       "candidate_family_problem": true,
+      "candidate_gap_isolated_to_hate": false,
+      "candidate_gap_material_datasets": [
+        "sms_spam_collection",
+        "hate_speech"
+      ],
       "decision": "candidate_family_problem_and_learned_rule_only_proposal",
       "future_learned_selector_requires_separate_holdout": true,
       "hate_candidate_family_trigger": true,
       "holdout_execution_authorized": false,
       "interpretation": {
-        "candidate": "hate_speech has a material expanded-minus-pool reference gap, so candidate-family construction is a confound/boundary and is not rescued by RS2.",
+        "candidate": "sms_spam_collection and hate_speech have material expanded-minus-pool reference gaps; hate_speech is the extreme sentinel, so the gap is not isolated to hate and the candidate-family issue is not rescued by RS2.",
         "information": "Frozen relation features predict pool-reference membership on the primary set; the semantic same-class target does not pass the full two-threshold gate.",
         "selection": "Every fixed selector fails the material primary capture rule; the failure is not evidence for a learned selector without a separately frozen protocol.",
         "sentinel": "Mouse_retina does not trigger the pre-registered material contradiction sentinel; Baron Human remains a low-opportunity consumer boundary."

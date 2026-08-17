@@ -1,34 +1,758 @@
 # TopoGate 实验结果汇总（事实表）
 
-## 2026-08-17 Representation-consumer probe S2 SimpleCut terminal result
+## 2026-08-17 Relation-selection probe RS0–RS3 terminal result
 
-独立项目 `representation_consumer_probe` 完成冻结的 S2：Baron Human、Mouse_retina ×
-`R/O_pool/O_full` × seeds `[42,123,7]`，共 `18/18` completed-valid。完整 raw arrays/graphs
-留在本地结果盘；GitHub 仅发布本项目的 weight-free summaries/manifests。
+独立项目 `relation_selection_probe` 在关闭 `representation_consumer_probe` 后按冻结范围
+完成 RS0、RS1、RS2、RS3；不属于 V 系列，也没有启动 learned selector、new backbone、
+holdout 或新 reconstruction objective。旧项目 S0/S1/S2 仅作为只读输入，RS0 继承的
+holdout manifest SHA256 为 `6d9afa1f6d90f77d8836e9f877f6567ebb7c7621ba3d022622e2488c9fb8b2cb`。
 
-- SimpleCut fit 不接收标签或 K；K 仅用于 known-K 外层 KMeans/readout。O_pool/O_full 是
+- RS1：17 个 label-free relation features、5-fold GroupKFold by anchor。对
+  `pool_reference_membership`，7/7 families 在固定的三个 primary datasets 均通过
+  `Delta AP >= 0.10` 与 `Lift@b >= 1.5`；对 `same_class`，0/7 families 通过完整双阈值。
+  这只证明 reference-selection solvability，不证明 semantic same-class utility。
+- RS2：B0 cosine、B1 mutual-first、B2 SNN/Jaccard、B3 stability、B4 equal-rank fusion
+  共 `90/90` completed-valid，selector、graph、Spectral fit 均未使用标签。五个 selector
+  中没有一个在至少两个 primary datasets 同时达到 `Delta_S >= 0.03` 且 median
+  `Capture_S >= 0.25`；B4 在 cnae9 的最佳描述性均值为 `+0.0144`，但 Campbell 为
+  `-0.0298`、sms 为 `-0.3080`。
+- RS3：cnae9/Campbell/sms 的 `H_pool` 分别为 `+0.215720/+0.191444/+0.367108`，
+  但没有固定 selector 产生 material positive capture。hate_speech 的
+  `H_full-H_pool=+0.634319` 触发 candidate-family sentinel；Mouse_retina 的最佳
+  selector `+0.0193`（约为其低机会 `H_pool` 的 70%）未触发 material contradiction；Baron
+  Human 保留为低机会 consumer boundary。Mouse/Baron 不进入 primary denominator。
+
+终态为 `candidate_family_problem_and_learned_rule_only_proposal`。后续若研究 learned
+selector，必须另起新协议并重新预注册；当前项目不执行 RS4。发布层仅包含
+`reports/relation_selection_probe/`、relation-selection code/tests 和
+`result/relation_selection_probe/FINAL/` 的 weight-free compact summaries，raw arrays、
+graphs、embeddings、predictions、weights 和输入数据不发布。
+
+## 2026-08-17 Representation-consumer probe S2 SimpleCut conditional confirmation
+
+独立项目 `representation_consumer_probe` 在 S1 需要排除 Spectral relaxation 假阴性的两个
+数据集上完成冻结的 S2：`Baron Human`、`Mouse_retina` × `R/O_pool/O_full` × seeds
+`[42,123,7]`，共 `18/18` completed-valid。原始工件位于
+`result/representation_consumer_probe/S2_simple_cut/`，报告位于
+`reports/representation_consumer_probe/S2_RESULTS.md`。
+
+- SimpleCut fit 只接收固定 H0、selected graph W、seed/device/epochs；标签不进入 encoder、
+  loss 或 optimizer。K 仅用于 benchmark-known-K 的外层 KMeans/readout；O_pool/O_full 是
   label-derived diagnostic oracle，不是可部署方法性能。
-- Baron Human：`H_pool=+0.033242`、`H_full=+0.033367`、`C=+0.000125`；仅支持
-  Spectral near-threshold negative 可能是 relaxation miss，不能写成 selector 或 TopoGate gain。
-- Mouse_retina：`H_pool=+0.008880`、`H_full=+0.009622`、`C=+0.000742`；为
-  observed-small，不作 topology 全局 No-Go。两者均无 material candidate gap。
-- Fresh audit 检查了 labels/source/H0、metrics、S1 graph reuse、hash 和 scope；总体 `WARN`
-  仅因 training history 最后一行是 pre-step loss，而 `fit_metadata.final_loss` 是 post-step
-  loss。该 metadata limitation 不改变 primary opportunity metrics。
+- Dataset-level primary diagnostics：Baron Human `H_pool=+0.033242`、
+  `H_full=+0.033367`、`C=+0.000125`；Mouse_retina `H_pool=+0.008880`、
+  `H_full=+0.009622`、`C=+0.000742`。Baron 达到冻结的 descriptive `delta=0.03`，但
+  seed 波动大，只支持“Spectral 阴性可能是 relaxation miss”；Mouse 仍是
+  `observed-small`，不能写成 topology 全局 No-Go。两者均无 material candidate gap。
+- 18/18 的 labels/source SHA、ARI/NMI/optimal-mapping ACC、S1 selected/direct graph reuse 和
+  exact-tree hashes 均通过 fresh integrity audit；embedding finite，未见明显 collapse。
+- 审计总体为 `WARN` 而非失败：`training_metrics.csv` 最后一行记录 optimizer step 前的
+  loss，`fit_metadata.final_loss` 为 step 后重算值。该 metadata timing gap 不影响 primary
+  opportunity metrics，但不应把两者写成同一个训练点。
+- S2 是该项目 terminal decision。`S_graph` 仍不可估计；S3/S4/S5/S6、TopoCut、新 selector
+  和 holdout 均继续锁定。终局为 `heterogeneous_with_spectral_relaxation_caveat`，不是
+  representation-consumer promotion。
 
-S2 是本项目 terminal decision：`heterogeneous_with_spectral_relaxation_caveat`；
-`S_graph`、selector、S3–S6、TopoCut 和 holdout 均未解锁。
+## 2026-08-17 Representation-consumer probe S1 formal opportunity-only matrix
 
-**最后更新**：2026-08-07 (V17-reference implemented without performance evidence; V16.1 search closed)
+S0 PASS 后，按冻结协议 `representation_consumer_probe_s1_opportunity_spectral_v2` 完成正式
+S1：6 datasets × 5 arms (`F/U/R/O_pool/O_full`) × 3 paired seeds，共 `90/90` completed-valid
+jobs。结果工件位于 `result/representation_consumer_probe/S1_oracle_v2/`，每个 job 保存
+resolved config、graph/embedding/predictions、metrics、audit 和 artifact hash。
+
+- 训练/graph consumer fit 未使用标签；标签只用于 O_pool/O_full diagnostic graph 与外层 ARI/NMI/ACC。
+- Primary quantities 仅为 `H_pool=ARI(O_pool)-ARI(R)`、`H_full=ARI(O_full)-ARI(R)`、
+  `C=H_full-H_pool`；`S_graph` 仍不可估计。统计单位为 dataset，seed 是 paired repeat。
+- Material `H_pool`：`3/6` datasets（cnae9 `+0.215720`、Campbell `+0.191444`、sms
+  `+0.367108`）。`H_full` material：`4/6`（另含 hate_speech `+0.636495`）。
+- Matched-budget candidate gap `C` material-positive：`2/6`（sms `+0.175197`、hate_speech
+  `+0.634319`）；其余数据集没有正向 candidate gap，不能据此宣称 total candidate-recall loss。
+- Mouse_retina (`H_pool=+0.027426`) 与 Baron Human (`+0.014306`) 未达到 `delta=0.03`，按预注册
+  规则仅要求 conditional S2 才能排除 Spectral relaxation 假阴性；不作 topology No-Go。
+- `F` descriptive arm 的首版 row-L2 运行保留于 `S1_oracle/`，并标记 `invalid_design`；正式
+  证据只使用 `S1_oracle_v2/` 的 raw-H0 F arm。S3/S4/S5/S6、TopoCut、新 selector 仍锁定。
+- 独立 `experiment-audit` 对 90 个 run 的 ARI/NMI、labels、hash、scope 和 claim boundary
+  复核为 `PASS`；根目录 hash manifest 采用排除当前 root manifest、纳入 README 与嵌套 run
+  manifests 的 exact-tree policy（`827` entries）。F/U/R 必须继续标为 known-K real-GT benchmark，
+  O_pool/O_full 必须继续标为 pre-fit label-derived diagnostic oracle，不是可部署方法。
+
+## 2026-08-17 Representation-consumer probe S0 formal contract replay
+
+独立项目 `representation_consumer_probe` 的正式 S0 replay 已写入
+`result/representation_consumer_probe/S0_freeze/`，并生成 `artifact_hashes.json`。本次没有训练、没有 S1/S2 性能计算，也没有
+GPU job；因此不产生 ARI/NMI 或 backbone 结果。
+
+- source/hash/shape preflight：`6/6` completed_valid；E1 manifest SHA match；H0/SVD 合同通过。
+- adapter audit：`adapter_not_estimable`。这是当前项目 T-related causal chain 的 terminal state，
+  只允许不含 T 的 opportunity-only S1，必要时再做 S2 confirmation。
+- graph/loss numerical sanity：PASS；Spectral recovery sanity：PASS（clean block ARI=`1.0`、
+  contaminated ARI=`0.8136842105`，isolate rows zero）。这些是 apparatus contract，不是数据集性能。
+- budget contract：`budget_cap=8`、逐行 `b_i=min(8,positive_count_i)`；六个 stress datasets 全部
+  保留。`cnae9`/`sms_spam_collection`/`hate_speech` 分别有 `1`/`40`/`135` 个 zero-budget rows，
+  没有通过异类边补齐或整集删除。
+- S3/S4/S5/S6、TopoCut 和新 selector 在本项目内永久锁定；holdout manifest 状态为
+  `dormant_due_to_adapter_not_estimable`。
+
+该条目只记录可复核的 S0 contract 工件，不把 `adapter_not_estimable` 扩展成 topology 全局
+No-Go，也不把临时审查或单元测试当作性能证据。
+
+## 2026-08-17 ACCG real panel (clustering promotion No-Go)
+
+v3 synthetic contract 通过后，冻结的 v2 real manifest 完成主矩阵 `30/30`：9 个有标签
+数据集 × 3 seed 的 `27` 个 confirmatory panels，加无标签 PBMC3k、显式 `K=8` 的 `3` 个
+operational panels。开发集消融 `48/48`，四个 ablation variant 复用 canonical `N/R/T_s`
+controls；因此 confirmatory artifact 总数为 `75/75`。完整 weight-free 摘要和来源/协议哈希
+位于 `review-stage/ACCG_real_panel_v2_audit/`，raw checkpoints、predictions 和输入数据不
+进入 GitHub。
+
+- 所有训练、graph、Gate、loss 和 readout 均未使用真值标签；9 个有标签数据集的 `K` 为
+  `benchmark_oracle_from_y`，PBMC3k 的 `K_source=explicit_n_clusters`。PBMC3k 不计算
+  ARI/NMI，不进入 confirmatory aggregate。
+- 主 endpoint `ARI(T_c)-ARI(T_s)` 的 dataset-level mean=`+0.007492`、median=`+0.000363`，
+  dataset bootstrap 95% CI=`[-0.000879,+0.018889]`，仅 `4/9` 数据集三 seed 全部为正。
+- 开发集 joint mean effect=`+0.010751`，coordinate=`+0.015689`，joint-coordinate
+  `-0.004938`；joint 仅 `1/12` 个 paired seed 胜出。
+
+结构审计、matched schedule、source/config/branchpoint identity 和 label isolation 均通过，
+因此这不是 incomplete compute 或资源失败，而是当前证据不支持“joint structural constraint
+带来稳定聚类提升”的 Q1 方法主张。按停止规则没有启动 external baseline 或 outcome-driven
+rescue。
+
+## 2026-08-16 ACCG Stage 1 synthetic contract (historical pre-compute gate)
+
+ACCG Stage 1 generated the frozen W0-W5 synthetic panel: `60` records from two
+generator families, five seeds, and six worlds. This stage performed no model
+training, real-data fitting, queue launch, or GPU execution. Artifacts are under
+`result/ACCG_action_constrained_gate/synthetic_contract_v1/`.
+
+- Shortcut audit: `10/10 valid`; support is exactly matched within each
+  family-seed and support/marginal classifier AUC stays below `0.60`.
+- Grouped action probe: `40` records, but the frozen promotion decision is
+  **No-Go** (`9/30` required records pass; pooled family-holdout joint
+  AUC=`0.634351`, below `0.65`).
+- W5 exact-selector audit: `32/32` exact-feasible rows, greedy-feasible rate
+  `1.0`, labels unavailable to the selector.
+- A W5-only family-holdout diagnostic gives AUC=`0.664208`; this is a
+  post-audit interpretation and does not override the frozen promotion gate.
+
+At that historical stage no ACCG synthetic end-to-end, real `N/R/T_s/T_c`,
+ablation, or baseline result was yet available. The subsequent v3 promotion and
+real-panel result are recorded in the section above.
+
+## 2026-08-15 V25 Systematic Failure Atlas and Mechanism Localization
+
+V25 是 V1--V24 的系统机制研究，不是新的 TopoGate architecture。正式工件位于
+`result/V25_systematic_mechanism_study/`。
+
+- A0 registry：V1--V22 共 `2209` rows、`2175` completed、`1637` paired Delta ARI rows、
+  `431` dataset/protocol/readout units；V23/V24 为 `2` 条 boundary evidence，不进入定量
+  intervention atlas；历史 summary table 的 replay eligibility 为 `0`。
+- A1 atlas：`1637` paired rows，`194` material positive、`680` material negative、`763`
+  observed-small；统计单位是 dataset/protocol/readout，seed 是重复测量，结果仅为
+  observational description。
+- A2 triage：`retain_e1`。依据是历史 V21 的可审计异号实质效应与缺失但可识别的
+  matched random/none counterfactual；A2 保留否决权，未授权任何 E4 或 V26 路线。
+  Holdout adapter contract 记录了当前 scRNA pool shortfall，未事后按 outcome 补选数据。
+- E1 pilot 已完成 `9/9` dataset-seed panels（cnae9、Mouse_retina、sms_spam_collection，
+  seeds `[42,123,7]`），`audit_ok=9/9`，无 `incomplete_compute`。统计单位是 dataset，
+  seed 是重复测量：cnae9 的 `I_d=+0.002057`、`S_d=+0.006010` 均
+  `Observed-Small`；Mouse_retina 的 `S_d=-0.067033` 为 `Negative`；sms 的
+  `I_d=+0.069251` 为 `Positive`。pilot gate `passes=true`（2/3 datasets material，异号允许）。
+  完整 panel/paired/gradient/one-step 审计位于 `E1/pilot/Audit/`；不使用 3-seed bootstrap
+  宣称 equivalence。
+- E2-A 的 dataset×seed 聚合器与 confirmation-time feature counts 已实现并通过测试；旧 pilot
+  没有保存 feature-selection counts，因此其 E2-A replay 不改写历史结果，标记为 deferred。
+  confirmation 已在训练过程中保存 exact T-policy selected/eligible counts，coordinate 分布只作
+  descriptive，post-hoc Fisher/MI/support enrichment 不进入 fit。
+- E1 confirmation 已完成 `9/9` panel，`audit_ok=9/9`；`S_d` 为 Baron Human `+0.044617`
+  (Positive)、Campbell `-0.065332` (Negative)、hate_speech `-0.033410` (Negative)。这支持
+  conditional/heterogeneous V21 case-study evidence，不支持 universal population claim。
+  E1 使用真实数据集标签进行外层评估，并以 benchmark-known `K`（`K_source=benchmark_oracle_from_y`）
+  进入 cluster head/readout；完整 `y` 向量不进入 preprocessing、graph、Gate 或 loss，因此应称
+  为 `real-GT, known-K benchmark`，不能称为完全 label-free fitting。
+  E2-B/C 保存了 gradient geometry 与真实 Adam one-step，但未单独升级为 objective 主张。
+- Phase C 已冻结 primary endpoint `S_full_ARI = ARI_T - ARI_R`。Phase D 的 outcome-independent
+  holdout manifest 通过 source/adapter/K preflight，但冻结预算在 news20 的三个 seed 均于
+  Adam state 初始化阶段 CUDA OOM；其余面板按同一资源边界收口。结果是 `0/6` completed panels、
+  `audit_ok=0`，primary endpoint 不可评估，记为 `inconclusive_not_completed`，不是负性能结果。
+  详情见 `result/V25_systematic_mechanism_study/PhaseE/CLOSURE.md`。
+- 随后对 E1 runner 做了资源等价修复审计：CUDA 使用 host-backed batch/statistics streaming，
+  极高维输入使用同一 Adam 算法的 `foreach=false, fused=true`，并将 branchpoint/arm snapshots
+  保持在 CPU。`news20` bounded engineering smoke 仍未在时间窗内完成，未生成任何性能工件；
+  该实现验证不改变上述 `0/6` holdout 事实，也不把资源边界写成模型负结果。
+- 已从冻结工件生成 analysis-only `PaperEvidence/` bundle，包含 A0/A1 atlas、E1 `(I_d,S_d)`、
+  E2 dataset×seed summaries、E3 boundary rows、source SHA256 manifest 和 claim-scope audit。
+  `claim_scope_audit.json` 为 `audit_ok=true`；该导出不新增训练、不把坐标或 seed 当作独立
+  population units，也不把 `0/6` holdout completion 当作性能结果。
+- 当前 `V25_CONTRACT_AUDIT.json` 还对一个 confirmation panel 独立重算 N/R/T ARI 与 primary
+  `I/S` pair，并验证所有 T/R matching、None contract、branchpoint、labels-after-fit-only
+  检查均通过；phase auditor 对无效 panel 和不完整 seed 集合不会汇总。pilot queue 是
+  attempt-local ledger（6 个本次启动 panel，3 个 cnae9 panel 由外部已完成工件覆盖），不能
+  单独作为 pilot 的 9-panel denominator；正式 denominator 取 phase audit 的 9/9。
+- `PaperEvidence/figures/` 已生成五张可复核诊断图：V1--V22 Failure Atlas、机制链、E1 matched
+  N/R/T `(I_d,S_d)` 分解、E2 diagnostic geometry，以及 V23 local/global boundary；每张图均有
+  PNG/PDF/SVG 三种格式。`figure_manifest.json` 绑定五份输入 CSV 的 SHA256、15 个图资产和
+  observational/conditional/boundary evidence scope。
+- 最终 integrity audit 位于 `review-stage/V25_EXPERIMENT_AUDIT.md/.json`，总体为 `WARN`：
+  完成工件通过完整性核对，但 E1 是 known-K benchmark，且独立 holdout 为
+  `inconclusive_not_completed`，因此不支持 universal 或 independent-replication claim。
+
+
+## 2026-08-14 V24-Q1 v2 frozen calibration No-Go
+
+v2 的 pre-fit panel 已重新完成：五个固定 seed、六个 world 共 `30/30` contract
+均有效，且所有 key 均绑定 `v24_conditional_incremental_response_q1_v2`。W0 panel
+support/marginal macro-OVR AUC 均值分别为 `0.50048448`、`0.49512566`，均在
+`0.5 +/- 0.01` 的预注册居中范围内。V23 read-only P0 同时已完成 `12/12`；
+它没有重新训练 V23，四个历史 world 的平均 conditional delta AUC 均接近零。
+
+matched estimator calibration 已完成 `200` 个 replicate（8 个确定性 CPU worker）。
+null false-positive rate=`0.0`、null mean delta AUC=`-0.00004875`，但 weak-alternative
+power at `delta AUC >= 0.02`=`0.0`，alternative mean delta AUC=`0.00109075`。
+因此 `calibration_passes=false`，正式 P1 `6 worlds x 5 seeds` 没有启动，Q2/DCBoost
+也没有调用。这个 calibration No-Go 表示冻结的估计器/弱替代组合未达到预注册检出力，
+不是 C_cycle 无效、聚类退化或 DCBoost 无效的证据；不得在 V24 内事后放宽门槛或重定义替代。
+
+## 2026-08-14 V24-Q1 calibration-failed exploratory override（非正式）
+
+应用户明确授权，在 calibration gate failed 的前提下启动隔离 exploratory 矩阵。输出根为
+`result/V24_conditional_response/q1_synthetic_v2_exploratory_override/`，复用已通过合约审计的
+v2 合成面板，覆盖六个 world、五个 primary seed，共 `30/30` unique jobs。fit/profile 使用
+物理 GPU `[1,2,3]`，analysis 使用四进程 bootstrap worker；每个 job 完成完整 `200/200`
+Poisson weighted bootstrap。fit/profile 的 labels/K 均不可访问，标签只在外层 analysis 使用。
+
+该批严格标记 `execution_class=exploratory_override`、`calibration_override=true`、
+`formal_q1_eligible=false`、`promotion_to_q2=false`，原因是
+`calibration_gate_failed_by_explicit_user_override`。未生成 exploratory 或 formal
+`q1_decision.json`，正式根仍没有 `run_summary.json`；本批不得进入正式 Q1 决策、Q2/DCBoost
+证据或论文性能表。
+
+仅作诊断的 delta-AUC 描述性均值为：W0 `+0.000968`、W1 `+0.001352`、W2 `-0.004270`、
+W3 `+0.000383`、W4 `+0.000337`、W5 `-0.000057`；30-job 总均值 `-0.000214`。这些数值
+不是校准通过或方法有效性的证据，完整逐 seed CI 与产物见 exploratory `exploratory_summary.json`。
+
+## 2026-08-14 V24-Q1 reviewer-driven verification update
+
+当前源码上的 corrected synthetic contract audit 已覆盖 W0--W5、seed42，结果为 `6/6=true`，工件位于
+`result/V24_conditional_response/contract_audit_seed42_20260814/`。W0 的 support/marginal probes
+回到 chance；W2 的 support signal、W3 的 marginal-dispersion signal 均按控制世界语义记录；W4
+保持 exact support、逐特征非零边缘和 block dependency separation。该目录中的数值是 generator
+contract，不是模型效果。
+
+R2 CPU engineering smoke 位于
+`result/V24_conditional_response/engineering_smoke_q1_20260814_r2/`，完成 V23 fit/profile 到
+V24 outer analysis，`conditional_pair_utility.delta_auc=0.044444`，bootstrap CI
+`[-0.005722, 0.047847]`；它只有 3 个 bootstrap replicates、120×40、2 个 epoch，且
+`formal_q1_eligible=false`，不能作为 utility、聚类或 P1 证据。V23 M0 No-Go、正式 calibration、
+P0 和 6 worlds × 5 seeds P1 的边界均未改变。
+
+## 2026-08-14 V24-Q1 conditional-response engineering verification
+
+新增独立实现 methods/TopoGate/V24_conditional_response/ 与分阶段 runner
+scripts/V24/run_q1.py。V24 只检验 State、effective Support 和 N × T × 9
+Marginal 后的条件增量 Response utility，明确不使用 independence、causality 或
+functional redundancy 的叙事。V23 M0 的 No-Go 仍然有效，未被覆盖。
+
+production-scale 的 W0/W4、seed42 合成 contract 均通过：W0 的 support/marginal
+probe 接近 chance；W4 保持 exact support 与逐特征非零边缘、block dependency
+separation 合格，并用 support-template grouped CV 和 featurewise scalar marginal
+probe 防止把联合依赖重新计入 marginal。该检查是 generator contract，不是模型效果。
+
+CPU engineering smoke 位于
+result/V24_conditional_response/engineering_smoke_q1_20260814/，使用 120 × 40
+合成 W4、V23 两 epoch 与 V24 三次 bootstrap，完整走通 fit/profile/outer analysis。
+工件明确标记 engineering_smoke_only、formal_q1_eligible=false；其数值不得用于
+效能、utility 或聚类性能结论。正式 calibration、P0 postmortem 和 6 worlds × 5 seeds
+P1 矩阵均尚未启动。
+
+## 2026-08-14 V23 Cycle-Response Protocol A M0（No-Go）
+
+固定 M0 位于 `result/V23_cycle_response/m0_synthetic_protocol_a_v1/`，覆盖四个合成
+world、seeds `[42,123,7]`，共 `12/12` jobs、`36/36` fit/profile/evaluate stages 完成，
+`0` failed queues。正式运行使用物理 GPU 2--6；GPU 0、7 未使用。fit/profile 进程不接收
+labels 或 K，外层 evaluate 才读取合成真值。平均 effective mask ratio=`0.018697`，
+`C_cycle` 的 `64/64` fingerprint columns 有效。
+
+依赖正例中，`C_cycle - A_pre` 的 ARI、pair AUC、kNN purity@10 平均增量分别为
+`+0.011661`、`+0.025346`、`+0.130611`，三项均为 `3/3` seed 正向；这支持一个有限的
+局部关系信号。但相对 support control，ARI=`-0.003671`（`0/3` 正向）、pair
+AUC=`-0.000251`（`1/3` 正向），只有 kNN purity=`+0.092322`（`3/3` 正向）。
+`G_gain - A_pre` 的 pair AUC 与 kNN purity 分别为 `-0.002032` 和 `-0.002756`，均为
+`0/3` 正向，未显示额外可恢复性信息。
+
+dependency-destroyed conditional null 仍保留 `C_cycle - A_pre` 增量：ARI=`+0.007428`、
+pair AUC=`+0.008559`、kNN purity=`+0.043600`，三项均为 `3/3` seed 正向；global null
+则基本回到 chance。latent-linear decoder 与 canonical decoder 相似或更强，说明信号并非
+canonical decoder 独占捷径，但不能消除 support-only 与 conditional-null 解释。
+
+严格按预注册门槛，Protocol A M0 判定为 **No-Go**，不进入 M1，不实施 Protocol B，也不
+在本协议上追加机制救场。机器判定与逐项证据见 `m0_decision.json`，人类可读说明见
+`m0_decision.md`；这是一项机制否证结果，不是 V23 聚类性能提升证据。
+
+## 2026-08-12 V22 cooperative Keep-Gate scaffold and second dataset panel
+
+V22 现保留两个语义不同的 topology Gate：原
+`v22_topology_discriminator_hard_gate` 是主动追逐判别器困难坐标的
+adversarial-hard-negative control；新增
+`v22_topology_discriminator_cooperative_keep_gate` 选择 exact-budget keep 集合，
+保留 keep 坐标并重建其 changed complement，Gate 在冻结 scMAE 与判别器时最小化匹配
+坐标重建误差与 generator adversarial loss。两者均使用 coordinate-matched real/fake
+判别器，判别器不接收 Mask 或 Hint。新增 `scmae_always_visible` 作为零随机遮挡 control。
+训练历史还记录 D 的 real/fake 值幅度、非零率和幅度分箱准确率，用于检查稀疏数据 shortcut。
+
+| Variant | Dataset/seed | Epochs/device | ARI/NMI | Status |
+|---|---|---:|---:|---|
+| `v22_topology_discriminator_cooperative_keep_gate` | micro-mass / 42 | 2 / CPU | 0.507440 / 0.728076 | engineering smoke |
+| `v22_topology_discriminator_cooperative_keep_gate` | pbmc_1k_v3 / 42 | 1 / CPU | n/a (unlabelled) | engineering smoke |
+
+该 smoke 的 Gate 非零更新率为 `1.0`，keep 与 complementary mask profile 均非空；数值只
+证明新分支的梯度、语义和产物契约可运行，不支持相对 scMAE 或 hard-gate 的性能结论。
+新增 PBMC 1k v3 smoke 位于 `result/V22/engineering_smoke_pbmc1k_v3_cooperative_20260812/`：
+原始 `1222 x 33538` 稀疏 count 经 label-free top-variance cap 为 `1222 x 2000`，显式
+`K=8`、`K_source=explicit_n_clusters`，Gate 更新 `10` 次；该无标签运行没有 ARI/NMI，
+也不进入任何宏平均。
+最新诊断 smoke 位于 `result/V22/engineering_smoke_cooperative_keep_diag2_20260812/`：
+末 epoch Gate 重建梯度范数 `0.378357`、D 梯度范数 `0.000523`，幅度匹配后的 D accuracy
+`0.492153`；这只是一个数据集、两个 epoch 的机制诊断，不能外推到正式训练。
+
+第二批固定数据清单位于
+`datasets/external/v22_dataset_extension_round2_20260812/manifest.json`，在本批性能读取
+前登记并下载：`news20`、`rcv1_train` 两个高维稀疏文本集，`mnist` 非高维控制集，以及
+无标签 `pbmc_1k_v3` scRNA count。来源、稀疏形状、原始/处理后 SHA、标签隔离和传输边界
+见 `CHANGELOG_data.md`；该批尚未启动正式多种子矩阵，新增的 PBMC 1k v3 仅为一 epoch
+CPU engineering smoke，不能并入宏平均。
+
+## 2026-08-12 V22 scaffold and engineering smoke
+
+V22 独立实现位于 `methods/TopoGate/V22_topology_discriminator_hard_mask/`，数据扩展
+manifest 位于 `datasets/external/v22_dataset_extension_20260812/manifest.json`。新增
+四个固定候选：`sector`、`real-sim`、`covtype` dense control 和无标签 `PBMC3k`；来源、
+SHA、稀疏形状与标签隔离见 `CHANGELOG_data.md`。V22 采用 coordinate-matched
+real/fake discriminator、四维 topology statistics、exact-budget ST-TopK Gate，主读出
+为 clean embedding + known-K KMeans；判别器不接收 Mask/Hint。
+
+| Smoke | Variant | Epochs/seed/device | Shape (original -> model) | ARI/NMI | Status |
+|---|---|---|---:|---:|---|
+| micro-mass | `v22_topology_discriminator_hard_gate` | 2 / 42 / CPU | 1300 -> 1300 | 0.471830 / 0.673989 | engineering smoke |
+| sector | `v22_topology_discriminator_hard_gate` | 1 / 42 / CPU | 55197 -> 2000 | 0.041635 / 0.321119 | engineering smoke |
+| PBMC3k | `v22_topology_discriminator_hard_gate` | 1 / 42 / CPU | 32738 -> 2000 | n/a (unlabelled) | engineering smoke |
+
+三次 smoke 均完成，判别器/Gate 更新率有限且非零；这些单 seed/短 epoch 数值只证明输入、
+梯度、产物和无标签边界可运行，不支持 V22 相对 scMAE 或任何 baseline 的性能结论。随后
+启动的 Full 单 seed 结果见下节。Round-1 审阅后补充的
+`result/V22/engineering_smoke_micro_mass_20260812_auditfix/` 还记录了 Gate/有效掩码的
+unique-feature、top-10 mass 和 coverage entropy 分布，用于工程诊断，不改变协议或性能结论。
+Round-2 诊断产物 `result/V22/engineering_smoke_micro_mass_20260812_round2/` 进一步记录了
+`D(real)`、`D(fake_gate)`、`D(fake_scmae)` 的逐 epoch 分类率和同预算 random/Gate mask
+profile；两 epoch smoke 的 D 分类率仍接近 chance，不能据此推断正式训练稳定。
+矩阵 runner 的协议测试现为 `13 passed`（模型 11 + 矩阵 2）；无标签 PBMC3k 的真实矩阵
+运行必须显式传入 `--n-clusters pbmc3k__10x_unlabelled_count=K`，默认 dry-run 只标注该
+要求，并为相应 15 个键写出 `requires_explicit_n_clusters=true`，不猜测 K。
+
+随后完成一个固定的 micro-mass 双 seed sanity panel，输出位于
+`result/V22/engineering_smoke_micro_mass_sanity_20260812/`，覆盖三路控制、seeds
+`[42,123]`、CPU、2 epochs，共 `6/6` completed。该 panel 只用于观察 D/Gate 是否有有限
+更新和检查产物契约，不用于选择配置或宣称聚类收益；拓扑 Gate 在两 seed 的非零更新率均
+为 `1.0`，但短预算下没有显示相对控制的稳定优势。
+
+| Variant | seed42 ARI | seed123 ARI | Gate updates | Status |
+|---|---:|---:|---:|---|
+| `scmae_only` | 0.503408 | 0.470464 | 0 | engineering sanity |
+| `scmae_plus_discriminator_random_mask` | 0.511445 | 0.497167 | 0 | engineering sanity |
+| `v22_topology_discriminator_hard_gate` | 0.424565 | 0.459438 | 12 / 12 | engineering sanity |
+
+## 2026-08-12 V22 full-component single-seed run (resource-bounded)
+
+固定 manifest `datasets/external/v22_full_single_seed_20260812/manifest.json`，只运行
+`v22_topology_discriminator_hard_gate`、seed=`42`、80 epochs。队列终态为
+`10/12 completed`、`2/12 incomplete_compute`，严格审计通过 `10/10`；未启动任何消融或
+超参数搜索。所有已完成任务的拟合、图、Gate、判别器和 loss 均记录
+`labels_used_during_fit=false`、`K_used_during_fit=false`。PBMC3k 使用显式
+`K_source=explicit_n_clusters`，没有 ARI/NMI。
+
+| Dataset | Stratum | Status | ARI | NMI | Gate updates | Gate nonzero | Last effective mask |
+|---|---|---|---:|---:|---:|---:|---:|
+| cnae9 | original8_shared_text | completed | 0.634714 | 0.692388 | 720 | 1.0 | 0.00221 |
+| Mouse_retina | original8_clubench_bridge | completed | 0.290121 | 0.503017 | 5280 | 1.0 | 0.04143 |
+| Baron Human | original8_clubench_bridge | completed | 0.230553 | 0.420961 | 5360 | 1.0 | 0.11046 |
+| Campbell | original8_clubench_bridge | completed | 0.172945 | 0.319401 | 6320 | 1.0 | 0.11397 |
+| sms_spam_collection | original8_shared_text | completed | 0.386262 | 0.286795 | 560 | 1.0 | 0.00052 |
+| hate_speech | original8_shared_text | completed | 0.043501 | 0.024730 | 2080 | 1.0 | 0.01384 |
+| imdb | original8_shared_text | completed | -0.000247 | 0.000003 | 2080 | 1.0 | 0.01841 |
+| sentiment_labeld_sentences | original8_shared_text | completed | 0.002478 | 0.004765 | 1760 | 1.0 | 0.00624 |
+| sector | new_sparse_highdim | completed | 0.066370 | 0.389133 | 4080 | 1.0 | 0.00711 |
+| PBMC3k | new_scRNA_unlabelled | completed | n/a | n/a | 1760 | 1.0 | 0.04547 |
+| real-sim | new_sparse_highdim | incomplete_compute | n/a | n/a | n/a | n/a | n/a |
+| covtype | new_dense_control | incomplete_compute | n/a | n/a | n/a | n/a | n/a |
+
+已完成且有标签的 9 个数据集单 seed 宏平均 ARI=`0.202966`（仅描述性统计，不是
+跨 seed 或 baseline 结论）；其中 8/9 为正。real-sim 与 covtype 在精确 cosine-kNN /
+拓扑统计和长训练阶段超过预设约两小时资源窗口后被本次 launcher 终止，分别保留
+`incomplete_compute.json`、启动记录、日志和已生成的 memmap，不能写入性能表。机器可复核
+汇总见 `result/V22/v22_full_single_seed_20260812/aggregate_summary.json` 与
+`aggregate_report.md`。
+
+本结果只证明 V22 Full 在 10 个任务上可完成并产生完整产物；没有 scMAE-only、随机
+Mask、重建困难 Gate 或非拓扑 Gate 的匹配对照，因此不能判断 V22 的增益、Gate 必要性或
+判别器贡献。由于 Full 阶段并未在 12 个任务上完整结束，本轮不启动消融；也不进行基于
+ARI 的超参数选择。
+
+## 2026-08-11 V19 ARI-selected sparse/high-dimensional extension（终态）
+
+扩展矩阵位于 `result/V19/v19_rg_extended_sparse_ari_v1/`，固定 ARI 选择后的 RG
+配置迁移到 13 个预注册稀疏/高维数据集；`rg_full` 与匹配的 `scmae_only` 各运行
+seeds `[42,123,7]`，共 `78/78`，`audit_ok=true`，拟合/建图未读取标签。按数据集
+平均 ARI，RG 胜出 `6/13`，其中三 seed 全部为正的只有 `2/13`；13 集宏平均 ARI
+为 RG=`0.175345`、scMAE-only=`0.182150`，配对差=`-0.006805`。
+
+| 数据集 | RG ARI | scMAE ARI | ΔARI | 正向 seed 数 |
+|---|---:|---:|---:|---:|
+| Internet Advertisements | -0.060292 | -0.072549 | +0.012257 | 2/3 |
+| gina_prior2 | 0.361992 | 0.354692 | +0.007300 | 1/3 |
+| tr45.wc | 0.009203 | 0.004462 | +0.004741 | 3/3 |
+| Dexter | 0.004957 | 0.000876 | +0.004080 | 2/3 |
+| Madelon | 0.028291 | 0.025753 | +0.002537 | 3/3 |
+| Dorothea | -0.083545 | -0.084407 | +0.000862 | 2/3 |
+| Arcene | 0.097713 | 0.097713 | 0.000000 | 0/3 |
+| micro-mass | 0.494370 | 0.501711 | -0.007341 | 0/3 |
+| Quake Smart-seq2 Lung | 0.169644 | 0.179120 | -0.009476 | 1/3 |
+| SMS Spam full TF-IDF500 | 0.861438 | 0.875675 | -0.014238 | 0/3 |
+| fbis.wc | 0.290645 | 0.309347 | -0.018702 | 0/3 |
+| Gisette | 0.072307 | 0.096792 | -0.024485 | 1/3 |
+| Fabert | 0.032766 | 0.078762 | -0.045997 | 0/3 |
+
+对 6 个 RG 胜 scMAE 的数据集，固定参数运行 AHDPC、DPC-GFNN 和 GCC，全部 `18/18`
+个外部基线完成。RG 超过最佳外部方法的有 `gina_prior2`（RG `0.361992` vs GCC
+`0.250800`）和 `Madelon`（RG `0.028291` vs GCC `0.028005`），共 `2/6`；
+Dexter、Dorothea、Internet Advertisements、tr45.wc 均未超过最佳外部方法。完整机器审计
+见 `result/V19/v19_rg_sparse_goal_audit_20260811/goal_audit.json`，其预注册门槛
+“至少 5 个 RG 胜 scMAE”已满足，但不能据此宣称 RG 普遍优于 scMAE 或 SOTA。
+
+本批外部基线使用了已冻结的 benchmark known-K 作为外层协议元数据，方法拟合仍记录
+`labels_used_during_fit=false`。Dexter/Dorothea 的 CSR NPZ 适配修复及原始 launcher
+汇总缺失均保留在 `CHANGELOG_errors.md`；不改变模型或外部方法参数。
+
+## 2026-08-11 V21 readout audit and v3 extension status
+
+对 `result/V21/v21_formal6_full_20260811_graphfix/` 的 18 个 Full 产物做离线同 embedding
+读出复算；没有重训、没有使用标签选择 readout 或 KMeans 初始化：
+
+| Readout / embedding | 六数据集宏 ARI | 说明 |
+|---|---:|---|
+| v2 Full Student-t head | 0.207693 | 历史正式 primary readout |
+| v2 Full clean embedding + KMeans | 0.384094 | 同 18 个 embedding 的读出审计 |
+| matched scMAE-only clean embedding + KMeans | 0.418579 | 历史 matched control |
+| ARI-selected Full clean embedding + KMeans | 0.383253 | 开发/确认层，仅诊断 |
+
+v2 Full head 每 run 平均空簇 `2.722`；Baron Human/Campbell 分别平均空 `7.667/8.667`
+个簇。读出问题真实且幅度很大，但统一 KMeans 后 Full 仍比 scMAE-only 低 `0.034485`，所以
+不能把 V21 失败完全归因于 head。v3 将 Student-t 距离从 128 维均值改为平方距离和，并以
+clean embedding KMeans 作为 primary readout；这是新协议，尚无正式 80-epoch 扩展结果。
+
+13 数据集扩展 manifest 为
+`result/V21/v21_extended13_readoutfix_manifest_20260811.json`，固定 78 runs。当前只有
+`result/V21/engineering_smoke_extended_readoutfix_20260811/` 的 micro-mass、seed42、
+2 epochs、两路 CPU smoke：`2/2` completed、`audit_ok=true`；Full/scMAE ARI 为
+`0.449937/0.427035`。该 Delta `+0.022902` 是单 seed 短 epoch 工程值，不是性能证据，正式
+矩阵状态仍为 **not started**。
+
+## 2026-08-11 V21 formal six-dataset matrix（graph-fix，已完成）
+
+初始输出根 `result/V21/v21_formal6_full_20260811/` 已因 kNN 自邻居过滤缺陷降级为审计记录，
+不纳入正式结论。修复后的唯一正式矩阵位于
+`result/V21/v21_formal6_full_20260811_graphfix/`，协议为
+`v21_assignment_adversarial_full6_graphfix_v1`，由 `scripts/V21/run_formal_matrix.py`
+按六个数据集 × 两个 variant × 三个 seed 管理。终态为 `36/36` completed、`0` queued、
+`0` incomplete；`matrix_audit.json` 与 `aggregate_summary.json` 均为 `audit_ok=true`，
+`provenance_ok=true`。模型拟合、图、Gate 和损失没有读取标签；cluster head 的 K 由外层
+benchmark 协议提供并单独记录。
+
+| Dataset | Full ARI | scMAE-only ARI | Delta (Full-scMAE) |
+|---|---:|---:|---:|
+| cnae9 | 0.5083 | 0.3600 | +0.1483 |
+| Mouse_retina | 0.4416 | 0.9363 | -0.4947 |
+| Baron Human | -0.0077 | 0.2058 | -0.2135 |
+| Campbell | 0.0547 | 0.1994 | -0.1447 |
+| sms_spam_collection | 0.3244 | 0.8258 | -0.5014 |
+| hate_speech | -0.0752 | -0.0160 | -0.0592 |
+| **六数据集宏平均** | **0.2077** | **0.4186** | **-0.2109** |
+
+该矩阵只有 `cnae9` 的 Full 平均 ARI 高于 scMAE-only；因此固定 V21 不能宣称普遍优于
+scMAE-only。这里的对比是“完整 V21 vs scMAE-only”，不是只隔离 Gate 的纯消融：Full
+还包含 Student-t cluster head、InfoMax 和 known-K 拟合路径。
+
+## 2026-08-11 V21 ARI grid and confirmation
+
+ARI 网格输出位于 `result/V21/v21_ari_grid_seed42_20260811/`，共 `72/72` 个任务并通过严格
+审计。网格固定 seed=`42`，使用六数据集宏平均 ARI 选择配置，因此属于
+`ARI-selected development evidence`，不是无标签泛化证据。选中配置为
+`assignment_weight=0.1`、`gate_lr=2.5e-4`、`infomax_weight=0.05`、`epochs=80`、
+`warmup_epochs=40`，seed42 网格宏平均 ARI=`0.3956`。
+
+三 seed 确认输出位于 `result/V21/v21_ari_confirm_aw0.1_glr0.00025_ep80_20260811/`，
+共 `18/18` 个任务，`confirm_audit.json` 为 `audit_ok=true`。确认宏平均 ARI=`0.3427`，
+相对正式固定 Full=`+0.1350`，但相对正式 scMAE-only=`-0.0759`。分数据集只有
+`cnae9`、`hate_speech` 的确认平均 ARI 高于 scMAE-only；确认结果仍属于使用 ARI 选择后的
+开发/确认层，不能当作独立无标签测试。
+
+## 2026-08-11 V21 assignment-adversarial implementation smoke
+
+V21 独立实现位于 `methods/TopoGate/V21_assignment_adversarial_gate/`，三路真实数据工程
+smoke 位于 `result/V21/engineering_smoke_20260811/cnae9__shared_text/`。三路均为
+`cnae9`、seed42、CPU、2 epochs、1 epoch warmup；该预算只能验证端到端契约，不能用于
+性能比较、调参或版本晋级。
+
+| Variant | Primary readout | K used during fit | Graph/Gate | ARI | Status |
+|---|---|---:|---:|---:|---|
+| `scmae_only` | known-K KMeans | no | no/no | 0.060563 | engineering smoke |
+| `random_assignment_control` | Student-t head | yes | no/no | 0.033569 | engineering smoke |
+| `topology_assignment_adversarial` | Student-t head | yes | yes/yes | 0.033670 | engineering smoke |
+
+三路拟合均未接收标签；本次聚类头 K=`9` 由外层 benchmark 标签唯一值提供，记录为
+`K_source=benchmark_oracle_from_y`。random/full 最后一个 epoch 的 donor-different eligible
+rate 分别约 `0.01408/0.01426`，全特征 selected/effective rate 约
+`0.00608/0.00619`，而 selected 中 actual value change 与预算填充率均为 `1.0`。Full
+执行 5 次 Gate update，non-zero gradient rate=`1.0`。这证明 V21 没有再把局部 40%
+错误报告成全特征 40%，但不证明如此稀疏的全局扰动量足以提高正式 ARI。
+
+## 2026-08-10 V20 Full first-round single-seed evidence
+
+V20 独立实现位于 `methods/TopoGate/V20_topology_conditioned_adv_mask/`。首轮只运行
+`topology_adversarial_full`，cnae9/shared_text、seed42、GPU2、80 epochs；输出根为
+`result/V20/full_first_round_20260810/cnae9__shared_text/seed42/`。训练使用稀疏
+`X_graph` 的 TruncatedSVD/cosine-kNN（实际 SVD dim 397，累计解释方差 0.950233，k=20），
+`X_model` 上的分块 topology statistics，以及 40 epoch warmup + 40 epoch 半对抗 Gate。
+
+| Variant | ARI | NMI | ACC | Status |
+|---|---:|---:|---:|---|
+| V20 `topology_adversarial_full` | 0.181408 | 0.467400 | 0.472222 | single-seed first-round |
+
+本次 fit 未使用标签；K=`9` 仅用于外层 KMeans readout 和后验指标。requested mask rate
+为 `0.399533`，effective value-change mask rate 约 `0.00678`，Gate update 为 `50` 次且
+non-zero gradient rate=`1.0`。该结果不能作为 V20 优于 scMAE 的结论，也不与 V19 的历史
+`scmae_only` 直接合并为 matched comparison：V20 使用 ST-TopK/requested-mask 训练目标，
+V19 reference 使用原生 Bernoulli/effective-mask 语义。
+
+首轮 X-only tuning 位于 `result/V20/tuning_first_round_20260810/cnae9_seed42/`，4 个候选
+全部完成，选择 `gate_lr=5e-4`、`tau_ste=0.5`；`labels_accessed=false`、`y_key_read=false`、
+`n_clusters_used=null`。该段记录建立时尚未启动 8 数据集矩阵；后续粗筛结果见下一节。
+
+**最后更新**：2026-08-10 (V20 Full first-round single-seed evidence added; V19 v2 matrix retained)
 **目的**：消除 static_gate/learnable_gate、K 错误、MAE freeze 概念混淆，便于后续 multi-seed 验证对照
 
+## 2026-08-10 V20 Full eight-dataset coarse screen, seed42
+
+在固定 V20 Full 配置下完成 8 个 bridge/shared-text 数据集的单 seed 粗筛。cnae9
+复用首轮产物，其余 7 个数据集输出位于
+`result/V20/full8_seed42_20260810/`。所有 run 使用 80 epochs、40 epoch warmup、
+`gate_lr=5e-4`、`tau_ste=0.5`；由于 GPU 2--4 被外部任务占用，补充任务最终在 GPU1
+串行完成，无 `incomplete_compute`。本批不是三 seed 正式矩阵，也没有运行 matched
+scMAE-only。
+
+| Dataset | Protocol | ARI | NMI | ACC | Effective mask (last epoch) |
+|---|---|---:|---:|---:|---:|
+| cnae9 | shared_text | 0.181408 | 0.467400 | 0.472222 | 0.0068 |
+| Mouse_retina | clubench_bridge | 0.341889 | 0.432861 | 0.585967 | 0.0564 |
+| Baron Human | clubench_bridge | 0.204016 | 0.346117 | 0.393563 | 0.0864 |
+| Campbell | clubench_bridge | 0.099994 | 0.254213 | 0.195237 | 0.0732 |
+| sms_spam_collection | shared_text | 0.167792 | 0.125527 | 0.881437 | 0.0114 |
+| hate_speech | shared_text | -0.029183 | 0.007179 | 0.524061 | 0.0365 |
+| imdb | shared_text | 0.000888 | 0.001051 | 0.516923 | 0.0688 |
+| sentiment_labeld_sentences | shared_text | -0.000074 | 0.000020 | 0.503275 | 0.0150 |
+| **Macro mean** | — | **0.120841** | **0.204296** | **0.509086** | — |
+
+模型拟合、建图、stats、Gate 和 loss 均未读取标签；K 仅用于外层 known-K KMeans
+和后验指标。该粗筛显示结果具有明显数据集依赖性，不能据此宣称 V20 优于 scMAE。
+完整逐 run 产物中的 `summary.json`、`metrics.json`、`resolved_config.json` 和
+`training_history.json` 是本表的事实来源。
+
 > **存储与证据声明（2026-08-03）**：本文件位于项目结果软链接
-> `source-repository/result`，实际目标为 `external-storage/result`。
+> `/home/luolie/ToPoGate/result`，实际目标为 `/data/luolie/ToPoGate/result`。
 > 本事实表中的项目根路径统一写作 `result/...`；同一结果盘内的相对路径可省略
 > `result/`。本轮已清理 `learnable_gate_smoke`、V6/V7/HVF smoke、AHDPC
-> verified smoke、V10/V11 iris smoke 以及 `unpublished-temp` 中明确的 V11 semantic
+> verified smoke、V10/V11 iris smoke 以及 `/tmp` 中明确的 V11 semantic
 > 临时产物。旧条目若仍保留这些路径，只代表历史工程记录，不再是当前可复核的
 > 权威产物；正式结论只能引用仍存在的 `summary.json`、CSV、数组和配置。
+
+## 2026-08-10 PlantNet-ARI fixed RG transfer with PCA200
+
+将 PlantNet full-16 ARI 搜索选出的 RG 参数固定迁移到 V19，并把图构建
+`knn_pca_dim` 从 50 改为 200；在 8 个 comparable 数据集
+(`mouse_retina`、`campbell`、`baron_human`、`sms_spam_collection`、`cnae9`、`imdb`、
+`hate_speech`、`sentiment_labeld_sentences`) 上运行 `rg_full` 与相同骨干的 matched
+`scmae_only`，seeds `[42,123,7]`，共 `48/48`，无 `incomplete_compute`，终态审计通过。
+
+结果根目录为 `result/V19/v19_rg_plantnet_ari_pca200_20260810/`，固定配置为
+`methods/TopoGate/V19_rg_adapter/configs/v19_rg_plantnet_ari_pca200.yaml`。模型拟合和
+预处理均未使用标签；标签仅用于 benchmark K 与后验指标。需要明确：该配置在 PlantNet
+阶段按 ARI 选择，因此这里是跨数据域的 benchmark-transfer，不是无标签调参结果。
+
+| Variant | ARI | NMI | ACC |
+|---|---:|---:|---:|
+| PlantNet-RG-PCA200 | 0.325049 | 0.359080 | 0.605638 |
+| matched scMAE | 0.322975 | 0.360145 | 0.601605 |
+| 配对 RG-scMAE | +0.002074 | -0.001066 | +0.004032 |
+
+按底层 8 个数据集的平均 ARI，RG 胜出 `4/8`；相对已有 V19 `rel_both2` 的 8 数据集 RG 平均
+ARI `0.327970`，本次为 `0.325049`，下降 `0.002921`。RG 在 Campbell 和 Baron 有正向
+配对差，但在 Mouse retina、SMS、CNAE9、Hate speech 退化；归档 SOTA 只有 4/8 层有可连接
+记录，不能对缺失层填零或宣称完成 SOTA 比较。逐数据集结果见
+`result/V19/v19_rg_plantnet_ari_pca200_20260810/aggregate_report.md`。
+
+## 2026-08-10 V19 v2 mechanism refine and post-freeze final matrix
+
+V19 v2 的正式无监督 mechanism refine 已完成于
+`result/V19/v19_rg_mechanism_refine_v2_cached_20260809/`：12 个 mechanism candidates、
+11 个输入层、3 个 seeds `[42,123,7]`，共 `396/396`，launcher `audit_ok=true`。调参器
+只使用固定 20% held-out X-only proxy，未读取 `y`、未推导 K、未执行聚类或写入标签指标。
+选择结果为 `rel_both2`，覆盖 `gamma_mutual=2.0`、`gamma_snn=2.0`、
+`gamma_sim=0.0`、`gamma_distance=0.0`；`selection_status=proxy_supported`、
+`no_go=false`，但仅有 8 个底层数据集中的 2 个达到 proxy-win，不能解释为普适机制收益。
+
+冻结配置后的 final 矩阵位于
+`result/V19/v19_rg_final_postfreeze_rel_both2_20260810/`：11 个输入层 × 6 个 variant ×
+3 个 seeds，共 `198/198`，`audit_ok=true`，GPU 1--6 使用，GPU 0/7 未用于本批次。6 个
+variant 为 `rg_full`、`rg_default`、`scmae_only`、`rg_nomix`、`rg_reliability_off` 和
+`rg_constant_gate`；6 个 worker 返回码均为 0。模型拟合和变体选择均未使用标签；标签仅用于
+benchmark K 和拟合后的 ARI/NMI/ACC。
+
+最终 11 个输入层的宏平均（先按 seed 求每层均值，再对层等权）如下：
+
+| Variant | ARI | NMI | ACC |
+|---|---:|---:|---:|
+| `rg_full` | 0.421592 | 0.474223 | 0.646786 |
+| `scmae_only` | 0.421354 | 0.478420 | 0.652961 |
+| `rg_default` | 0.419628 | 0.472144 | 0.647900 |
+| `rg_nomix` | 0.421354 | 0.478420 | 0.652961 |
+| `rg_reliability_off` | 0.415937 | 0.468680 | 0.645054 |
+| `rg_constant_gate` | 0.427913 | 0.479126 | 0.646480 |
+
+`rg_full - scmae_only` 的配对宏平均为 `+0.000238 ARI`、`-0.004197 NMI`、
+`-0.006175 ACC`；按 11 个输入层计，ARI/NMI/ACC 的正向层数分别为 `6/11`、`4/11`、
+`4/11`。`rg_nomix` 与 `scmae_only` 的 33 个配对 run 在三项指标上逐项完全相同，说明本批
+数据中 NeighborMix 没有产生可测增益。`rg_full` 相对 `rg_reliability_off` 的宏平均差为
+`+0.005655/+0.005543/+0.001732`（ARI/NMI/ACC），但相对 constant-gate 的 ARI/NMI 差为
+`-0.006321/-0.004903`，门控细化收益仍具有明显数据集依赖性。
+
+与归档 SOTA 的比较只对有同名归档行的 4/8 个 bridge/shared-text 层成立：V19 `rg_full`
+在 `cnae9` 和 `Mouse_retina` 三项指标均高于该层最佳归档方法，在 `Campbell` 和
+`sms_spam_collection` 三项指标均低于最佳归档方法，严格胜出为 `2/4`。`Baron Human`、
+`hate_speech`、`imdb` 和 `sentiment_labeld_sentences` 没有可连接的归档 SOTA 行，不能填零
+或宣称比较完成。长表和报告见
+`result/V19/v19_rg_final_comparison_rel_both2_20260810/comparison.csv` 与
+`comparison.md`；归档 baseline 仍标记为 archived reference，不是 fresh matched rerun。
+
+## 2026-08-09 V19 v2 reference and formal tuning boundary
+
+固定的 X-only scMAE reference 已在
+`result/V19/v19_scmae_xonly_reference_v2_paired_20260809/` 完成 `33/33`：11 个
+固定输入层、seeds `[42,123,7]`，无 `incomplete_compute`。独立终态审计确认
+`labels_accessed=false`、`y_key_read=false`、`n_clusters_used=null`、无
+`labels_true.npy`/`predictions.npy`/`metrics.json`；该 reference 仅用于无监督
+proxy 配对，尚未产生 ARI/NMI/SOTA 结论。
+
+formal V19 v2 已在启动前发现并修正 RG held-out pseudo mixing 的索引域错误，且将
+候选评估的 mask ratio 与输入诊断图固定到 base reference。launcher 增加 root lock、
+资源占用检查、失败返回码和 expected-run/artifact 审计。经审查，backbone/joint
+候选会把训练预算与 topology mechanism 混淆，因此正式搜索冻结 scMAE backbone，
+只调 `rg_full` mechanism：`mechanism_screen` 为 48 候选 × 8 comparable layers ×
+seed42 = `384`，`mechanism_refine` 为 top12 × 11 layers × 3 seeds = `396`，总计
+`780` RG runs。mechanism_screen 已完成 `384/384` 且 `audit_ok=true`；mechanism_refine
+中间复核曾记录 `261 completed / 3 running`，另有 `10` 个历史
+`incomplete_compute` 记录（4 个原始 OOM、6 个因 GPU 重分配主动中断），这些记录不会进入
+选择汇总；该中间快照已由本节顶部的 `396/396` 终态取代。恢复阶段使用 `small_first` 队列，
+小数据集先运行，大数据集和长耗时 bridge 任务后置；GPU0/7 始终禁止使用。
+
+该 v2 选择协议明确为 `transductive_full_X_label_free_preprocessing`：模型/图只在
+fit rows 上训练，HVG/scaling 仍在全量 X 上拟合。后续 final config 必须在独立 fresh
+评估和 matched scMAE control 上再揭示标签计算 ARI/NMI，proxy 选择本身不能写成
+RG 优于 scMAE 或 SOTA 的性能证据。
+
+## 2026-08-08 V19 independent RG adapter and engineering smoke
+
+V19 已建立独立路径 `methods/TopoGate/V19_rg_adapter/` 与 `scripts/V19/`，只包含
+`scmae_only` 和完整原始 reliability-gated NeighborMix 的 `rg_full`。核心 fit 不接收
+标签；标签只在外层确定 benchmark K 并计算后验指标。原始 RG 的 graph、edge reliability、
+node gate、pseudo mixing 和 weighted scMAE loss 已通过数组/张量级回归，focused tests
+为 `11 passed`。固定 manifest 位于
+`result/V19/v19_rg_dataset_manifest_20260808.json`，11 个输入层全部 eligible，正式计划为
+11 strata × 2 variants × seeds `[42,123,7]` = 66 runs。当前正式矩阵已 `66/66 completed`
+且无 `incomplete_compute`。运行状态由 `result/V19/v19_rg_selected_advantage_v1/` 下的
+`run_record.json` 复核；不重复计算 SHA/hash。
+
+工程 smoke 位于 `result/V19/engineering_smoke_20260808/`，覆盖 `cnae9__shared_text` 与
+`baron_human__rg_native` 的两路 variant，均为 seed42、64 行、1 epoch、CPU。所有四条
+run 均 completed，paired variant 的预处理特征选择一致；`scmae_only` 的 graph/pseudo
+明确关闭，`rg_full` 的 graph/pseudo 明确启用。smoke 中出现的 ARI/NMI 差异不具备性能
+证据资格，不进入 SOTA、均值或晋级判断。运行与 manifest 均未重新计算 SHA/hash。
+
+### V19 formal matrix and X-only tuning handoff
+
+V19 三个 seed 已完成 `66/66`，无 `incomplete_compute`；GPU0/7 未用于 V19，V18 既有
+worker 未停止。新增 `scripts/V19/tune_unsupervised.py` 和
+`scripts/V19/summarize_unsupervised_tuning.py`，调参器只读取矩阵特征字段，固定
+`n_clusters=None`，不访问 `y`、不执行 KMeans、不写入 ARI/NMI 或 `labels_true`。24 个
+候选 × 11 输入层 × 3 seed 共 792 个 X-only tuning run 已完成，状态为
+`selection_completed`，且 `labels_accessed=false`、`y_key_read=false`。v1 选择
+`mask03`，但它只是 RG 候选间的绝对 X-only pilot，不是 RG 相对 scMAE 的配对优势证据，
+不作为 v2 或最终 SOTA 配置。
+
+### V19 v2 paired held-out tuning protocol (formal refine resumed)
+
+新增独立入口 `scripts/V19/tune_unsupervised_v2.py`、
+`scripts/V19/run_scmae_reference_v2.py`、`scripts/V19/summarize_unsupervised_tuning_v2.py`
+和 `scripts/V19/launch_unsupervised_v2.py`。v2 固定 20% 未见行作 X-only 诊断，先生成一次
+固定 `scmae_only` reference，再把 RG full 候选与其配对；选择单位是 8 个底层数据集，
+生物数据的 native/bridge 层先聚合。主选择目标是 proxy-win 数据集数量，阈值、collapse
+规则和 seeds 写入 `stage_spec.json`/`selected_config.json`；不读取标签、不推导 K、不执行
+KMeans、不写 ARI/NMI/SOTA 指标。正式 refine 输出根为
+`result/V19/v19_rg_mechanism_refine_v2_cached_20260809/`，已按同一协议完成；调度顺序记录在
+`schedule_spec.json`，仅影响队列顺序，不改变 run key 或算法协议，最终状态见本表顶部。
+
+预注册漏斗为：48 个 RG mechanism 候选在 8 个底层数据集/seed42 粗筛；top12 在 11
+层/3 seeds 细化；top4 mechanism × 8 个共享 backbone profile 做 8 底层数据集 screen；
+top6 joint 候选在 11 层/3 seeds 锁定。预计约 1,234 个 RG run 加 33 个固定 scMAE
+reference run。共享 backbone profile 会在最终另跑 matched scMAE control，不能把 proxy
+胜出直接写成拓扑机制收益。该中间计划状态已由顶部的 final 矩阵和比较报告更新；运行不重复
+计算 SHA/hash。
+
+旧路径 `result/V19/v19_rg_unsup_tuning_v2/` 和
+`result/V19/v19_scmae_xonly_reference_v2/` 只存在一份未完成的 2-candidate/seed42
+`stage_spec.json`，其 11 层/2 层选择协议与当前 `comparable_only` 版本不一致；未生成
+completed run，不并入 v2 结果。当前正式 v2 使用带日期后缀的新输出根，避免覆盖旧草稿。
+
+## 2026-08-08 V18 independent v2.2 matrix (running)
+
+v2.1 在运行中被前置协议审计停止：mask 有效位置语义和 FISTA latent 归一化与计划不
+一致。v2.1 的已完成产物保留在 `result/V18/v18_scmae_mainline_v2_1/`，其中 6 个
+未完成 key 已明确记录为 `incomplete_compute`，不与新协议合并。
+
+当前正式矩阵使用独立代码、manifest
+`result/V18/v18_dataset_manifest_v2_2_20260808.json` 和输出根
+`result/V18/v18_scmae_mainline_v2_2/`，149 条 eligible 数据、10 个 variant、3 个
+seed，共 4470 个 run key。提交时状态为 18 completed、6 running；早期状态不构成
+性能结论。v2.2 已通过 compileall、focused tests `8 passed`、CLI 和真实短 smoke；
+mask/归一化修正不改变预注册 variant、seed、K 或标签隔离协议。runner 不重复计算
+SHA/hash。
+
+## 2026-08-08 V18 independent implementation and engineering smoke
+
+V18 已建立独立代码路径：`methods/TopoGate/V18_scmae_latent_gate/`，入口为
+`scripts/V18/run.py`，矩阵入口为 `scripts/V18/run_matrix.py`。主线严格为
+scMAE masked reconstruction -> three deterministic latent mask views -> latent
+cosine/SNN candidate union -> HardConcrete edge gate plus candidate-restricted
+sparse relation -> `C=G*W` -> `abs(C)+abs(C.T)` -> normalized spectral readout。
+V9/V17/外部 baseline 源码未修改。
+
+一次性 manifest `result/V18/v18_dataset_manifest_20260808.json` 共登记 157 条记录，
+其中 149 条 `eligible`，8 条 `ineligible`；manifest 选择声明不使用标签或既有结果，
+实验 runner 不逐 run 重算 SHA/hash。
+
+真实登记数据 `2d_20c_no0` 的 3 路短配置结果（`epochs_mae=2`、gate/joint 各 1、
+单 seed、1500 行抽样）均完成：`scmae_only`、`latent_GW_frozen`、`v18_full`。
+产物位于 `result/V18/engineering_smoke_real_20260808/2d_20c_no0/`，仅证明
+输入、梯度、产物和标签隔离契约可运行；该 smoke 中 gate hard-open rate 为 1.0，
+不能作为稀疏门控收益或性能结论。正式多 seed、多 variant 矩阵尚未汇总。
 
 ## 2026-08-07 V17 topology-native reference implementation（无性能证据）
 
@@ -48,7 +772,7 @@ unrolling 尚未实现，当前版本固定标记为 `V17-reference`。
 
 ### 当前批次已完成补齐（截至 2026-08-07 04:40）
 
-以下数据集已完成 clean/compound、seeds `[42,123,7]` 和五路 paired readout，按同一预注册晋级规则判定；`PRJNA895163` 产物暂存于 `unpublished-temp/v16_1_stage1_parallel_20260806/`，其余两项位于结果盘：
+以下数据集已完成 clean/compound、seeds `[42,123,7]` 和五路 paired readout，按同一预注册晋级规则判定；`PRJNA895163` 产物暂存于 `/tmp/v16_1_stage1_parallel_20260806/`，其余两项位于结果盘：
 
 | 数据集 | 分层 | clean Delta ARI | compound Delta ARI | 状态 |
 |---|---|---:|---:|---|
@@ -61,7 +785,7 @@ unrolling 尚未实现，当前版本固定标记为 `V17-reference`。
 
 将旧的 33 条完整去重快照与新完成的 `PRJNA895163`、`hrvatin_geo_maintype_counts` 合并后，当前完整去重快照为
 35 个数据集，全部 `empirical_not_supported`，`candidate_positive=0`，文件为
-`unpublished-temp/v16_1_global_dedup_summary_current_20260807.json`。`Blood_BoneMarrow` 的完整
+`/tmp/v16_1_global_dedup_summary_current_20260807.json`。`Blood_BoneMarrow` 的完整
 证据来自旧结果根；当前结果盘中的同协议重复补跑已停止。
 
 新增完成的数据集：
@@ -77,7 +801,7 @@ PBMC3K 使用 H5AD `raw.X` 的可逆 `log1p(count)`，转换为 CSR 后通过 St
 compound 三 seed 与五路 readout 在 GPU5/6 并行完成。support 全负时
 `cluster_probabilities.npy` 精确回退 `q_self`，不调整固定协议。完整产物位于
 `result/V16_1/expanded_count_stage1_20260807/PBMC3K/`，固定汇总暂存于
-`unpublished-temp/v16_1_summary_pbmc3k_20260807.json`。
+`/tmp/v16_1_summary_pbmc3k_20260807.json`。
 
 本批次仍使用 seeds `[42,123,7]`、clean/compound 和五路 paired readout；每个 seed
 只训练一次 Stage A。已完整完成并按固定晋级规则汇总的数据集如下：
@@ -92,20 +816,20 @@ compound 三 seed 与五路 readout 在 GPU5/6 并行完成。support 全负时
 这些完整结果均没有触发 gate、support、temperature、thinning 或 K 调整。该段保留的是
 早期批次快照；`Shekhar`、`PRJNA895163` 和 `hrvatin_geo_maintype_counts` 后续已完成并在本节顶部补记；Norman Stage-0
 已按搜索上限停止。固定汇总暂存于
-`unpublished-temp/v16_1_stage1_parallel_20260807_promotion.json`。
+`/tmp/v16_1_stage1_parallel_20260807_promotion.json`。
 
 `subsample_2k` 的 Stage 0 已通过：`2000x53678`、high_sparse_bonus、candidate
 recurrence `0.5676`、稳定边比例 `0.7902`、support 非退化；其来源和 CSR bundle
 记录于 `CHANGELOG_data.md`。本批次仍未产生 `candidate_positive`。
 
 此前跨四个结果根目录的 33 个数据集去重快照保存在
-`unpublished-temp/v16_1_global_dedup_summary_20260807.json`；当前 35 条快照见
-`unpublished-temp/v16_1_global_dedup_summary_current_20260807.json`。Norman 未生成审计 JSON 或性能
+`/tmp/v16_1_global_dedup_summary_20260807.json`；当前 35 条快照见
+`/tmp/v16_1_global_dedup_summary_current_20260807.json`。Norman 未生成审计 JSON 或性能
 产物；当前不把中间状态写入正例表。
 
 ## 2026-08-06 V16.1 expanded-count Stage-1（固定协议，临时批次）
 
-输出根 `unpublished-temp/v16_1_stage1_parallel_20260806/` 使用固定 seeds `[42,123,7]`、clean/
+输出根 `/tmp/v16_1_stage1_parallel_20260806/` 使用固定 seeds `[42,123,7]`、clean/
 compound、五路 paired readout；每个 seed 只训练一次 Stage A，再从同一表征和 support
 导出五个 readout。已完成的五个数据集均未通过预注册晋级规则，当前 `candidate_positive=0`：
 
@@ -142,14 +866,14 @@ paired runner 默认 seeds 为 `[42,123,7]`，正式输出根目录为
 通过理论域证书。候选 recurrence 分别为 `0.4724`、`0.2667`、`0.5155`、`0.4685`、
 `0.4041`，support 正值率分别仅 `0.0034%`、`0.0054%`、`0.0253%`、`0.0169%`、
 `0.0856%`；这些数值只表示静态图/support 结构，不是性能结论。Campbell/Mouse_retina
-的延长窗口产物为 `unpublished-temp/v16_1_stage0_campbell_exchange.json` 和
-`unpublished-temp/v16_1_stage0_mouse_exchange.json`，其余候选记录在
-`unpublished-temp/v16_1_stage0_exchange.json` 与 `unpublished-temp/v16_1_stage0_priority_exchange.json`。
+的延长窗口产物为 `/tmp/v16_1_stage0_campbell_exchange.json` 和
+`/tmp/v16_1_stage0_mouse_exchange.json`，其余候选记录在
+`/tmp/v16_1_stage0_exchange.json` 与 `/tmp/v16_1_stage0_priority_exchange.json`。
 `Quake_Smart-seq2_Lung`、`hrvatin`、`hrvatin_filtered` 因 dense storage 或 count
 encoding 无法恢复标记 `theory_domain_not_supported`。以上 exploratory 输出没有
 写入正式结果盘；V16.1 Stage 1 尚未启动，也没有论文级性能结论。
 
-优先候选的追加 Stage 0 输出为 `unpublished-temp/v16_1_stage0_priority_exchange.json`：
+优先候选的追加 Stage 0 输出为 `/tmp/v16_1_stage0_priority_exchange.json`：
 `fbis.wc`（`2196×2000`）通过理论域证书，candidate recurrence `0.4041`、support
 正值率 `0.0856%`、median support `-6.581`，因此仍不进入 Stage 1；`hrvatin`
 （`65539×25187`）和 `hrvatin_filtered`（`48266×25187`）均因 dense storage
@@ -159,7 +883,7 @@ encoding 无法恢复标记 `theory_domain_not_supported`。以上 exploratory �
 
 扩展策略只把维度、零比例、行 nnz 和空行作为分层指标；count 语义、CSR/分块读取、
 held-out split 和行数一致性仍是硬条件。`scripts/V16_1/count_candidate_registry.json`
-登记本地 scCluBench scRNA H5 源，转换及静态审计暂存于 `unpublished-temp`。新增候选中
+登记本地 scCluBench scRNA H5 源，转换及静态审计暂存于 `/tmp`。新增候选中
 `Melanoma_5K`（recurrence `0.8439`，正支持行 `3.8777%`）和 `Guo`（`0.5195`，
 `1.2327%`）最值得进入后续固定 Stage-1；`Limb_Muscle` 与 `worm_neuron_cell`
 的 support 为负，仍不做性能判定。`Bach`、`Macosko`、`Shekhar`、`Tosches` 已完成
@@ -194,7 +918,7 @@ Stage 0 两个数据集均通过计数域证书，但 candidate recurrence 为 `
 `0.266699`，support 正值率为 `0.001531`/`0.000629`。
 
 Stage 1 的 60 个 summary 全部完成，产物暂存
-`unpublished-temp/v16_stage1_anchors_20260806_fixed/`，未写入正式 result 盘。clean mean ARI：
+`/tmp/v16_stage1_anchors_20260806_fixed/`，未写入正式 result 盘。clean mean ARI：
 Campbell self-only `0.158261`、fixed graph `0.217547`、V16 `0.157655`；
 Mouse_retina self-only `0.404180`、fixed graph `0.429160`、V16 `0.404147`。
 V16 clean paired delta 为 `-0.000607`、`-0.000033`；compound delta 为
@@ -210,12 +934,12 @@ count thinning、稀疏 cosine 候选图、held-out predictive support 和
 assignment-only abstaining sparsemax 串成固定闭环。
 
 最小验证：compileall 通过，V16 focused tests **7 passed**。fbis 单 seed、1
-epoch 五路 smoke 暂存 `unpublished-temp/v16_stage1_fbis`，仅为 engineering smoke；不形成
+epoch 五路 smoke 暂存 `/tmp/v16_stage1_fbis`，仅为 engineering smoke；不形成
 性能结论。Stage-0 已核对六个预注册数据的 count-domain certificate，并完成
 fbis/tr45 的无标签 exploratory support；Campbell/Mouse_retina/Baron/Quake
 大集 support 审计因稀疏 kNN 成本在本轮中止，未写入正式 benchmark 表。
 
-fbis 5-epoch、三 seed `[42,123,7]` exploratory（`unpublished-temp/v16_stage1_fbis_5ep_3seed`）为：
+fbis 5-epoch、三 seed `[42,123,7]` exploratory（`/tmp/v16_stage1_fbis_5ep_3seed`）为：
 `self_only ARI=0.3314`、`V16 ARI=0.3295`、`fixed_predictive_graph ARI=0.3985`、
 `shuffled_support ARI=0.3240`。按预注册晋级规则，fbis 当前为
 `empirical_not_supported`；该 smoke 不构成论文级性能证据。
@@ -231,7 +955,7 @@ EMA cluster-frequency correction 和 sampled-zero reconstruction。
 当前源码工程验证：`compileall` 通过；
 V15 focused 回归测试 → **48 passed**（后续只保留与 readout/utility 语义直接
 相关的测试）。
-cnae9 真实 NPZ smoke 和 Stage-1 engineering panel 产物暂存 `unpublished-temp`，未作为正式
+cnae9 真实 NPZ smoke 和 Stage-1 engineering panel 产物暂存 `/tmp`，未作为正式
 benchmark 结果写入事实表：当前源码 v2 panel 为六个代表集加受控 2D/noisy 集、
 2 epochs、单 seed，7/7 完成；真实集 utility AUROC 达标 2/6，candidate
 recall 中位数约 0.70，受控边界/低密度/离群 null-AUROC 均为 0.5。
@@ -244,7 +968,7 @@ recall 中位数约 0.70，受控边界/低密度/离群 null-AUROC 均为 0.5�
 ### V15 Stage-1B 三证书审计（只读，2026-08-04）
 
 审计入口为 `scripts/V15/audit_stage1b_certificates.py`，输出暂存于
-`unpublished-temp/v15_stage1b_certificates.json`。它不修改训练产物；`labels_true.npy` 只
+`/tmp/v15_stage1b_certificates.json`。它不修改训练产物；`labels_true.npy` 只
 用于 graph 的后验指标，并逐 run 保留 `label_use=posthoc_only`。
 
 | 证书 | 当前可验证范围 | panel 结果 |
@@ -260,8 +984,8 @@ restricted no-go，正式多 seed benchmark 不启动。
 
 ### V15 修复后最小 paired exploratory（2026-08-05，非正式性能结果）
 
-当前 source hash 下的 clean 输出暂存 `unpublished-temp/v15_local_consensus_matrix_20260805/`，
-compound 输出暂存 `unpublished-temp/v15_compound_matrix_20260805/`，未写入正式 result 盘。
+当前 source hash 下的 clean 输出暂存 `/tmp/v15_local_consensus_matrix_20260805/`，
+compound 输出暂存 `/tmp/v15_compound_matrix_20260805/`，未写入正式 result 盘。
 clean 完成 sms/cnae9 各 5 个 variant 及 reuters self-only；compound 完成
 sms/cnae9 的 self-only、direct-local-consensus、counterfactual-learned 共 6
 个 run。`reuters direct_counterfactual` 因高维图/训练成本过高在无产物后终止，
@@ -482,7 +1206,7 @@ neighbour latent alignment；runner 不调用 `make_pseudo_batch`，并记录实
 
 工程对照（seed=42、CPU、single-seed、缩短或诊断性训练）曾得到：flame 8 epoch
 full/NoMix ARI=`0.377868/0.388210`，flame 80 epoch=`0.357486/0.206987`；
-enron 8 epoch=`0.885082/0.890737`。这些运行的数组和 summary 均写入 `unpublished-temp`
+enron 8 epoch=`0.885082/0.890737`。这些运行的数组和 summary 均写入 `/tmp`
 后清理，不能作为论文性能结论；正式判断仍需至少五个数据集、seeds
 `[42,123,7]` 和预注册配对控制。
 
@@ -553,7 +1277,7 @@ persistence，并将 bounded、detached prior 映射到 V11 当前候选边。�
 `h0_mst`、`fixed_filtration` 和 `random` 对照模式。
 
 工程验证：`compileall` 通过；V11 回归测试 `19 passed`；iris CPU 3-epoch
-TDA smoke 成功写入 graph/history 诊断后清理了 `unpublished-temp` 临时输出。该 smoke 只证明
+TDA smoke 成功写入 graph/history 诊断后清理了 `/tmp` 临时输出。该 smoke 只证明
 实现和产物契约，**没有**形成持久化性能 CSV，也不能支持 TDA 的 ARI/NMI 结论。
 完整数学说明和正式比较结果见
 `result/analysis/topogate_v11_tda_h0_pilot_2026-08-03.md`；下方正式五数据集条目
@@ -622,7 +1346,7 @@ gate 为 `0.0178`、V11 Full 为 `0.0160`，但平均 graph loss 为 `0.0508` �
 
 ### 旧 semantic_residual breast 对照（3 seeds，历史产物已清理）
 
-历史产物：`unpublished-temp/topogate_v11_semantic_breast__{full,nomix}__seed{42,123,7}`；已按 smoke 生命周期规则清理。K 均由 `len(unique(y))` 自动检测，训练不消费标签。下表只保留历史工程数值，不能作为当前可复核性能证据。
+历史产物：`/tmp/topogate_v11_semantic_breast__{full,nomix}__seed{42,123,7}`；已按 smoke 生命周期规则清理。K 均由 `len(unique(y))` 自动检测，训练不消费标签。下表只保留历史工程数值，不能作为当前可复核性能证据。
 
 | 指标 | Full | NoMix | Δ Full-NoMix |
 |---|---:|---:|---:|
@@ -634,7 +1358,7 @@ Full final gate（seed 42/123/7）为 0.0336/0.0363/0.0398，target gate 为 0.0
 
 ### V11.3 semantic_metric iris 工程 smoke（历史产物已清理）
 
-历史产物：`unpublished-temp/topogate_v11_semantic_metric_iris/`（已清理）；CPU、seed=42、4 epochs、缩小网络。head ARI=0.6051，KMeans embedding ARI=0.5961，最后 gate/target=0.311/0.021，edge alignment loss=1.7082。仅证明新几何项曾经可运行；由于产物已清理且属于缩短 smoke，禁止与正式 V11/V9/NoMix 性能比较。
+历史产物：`/tmp/topogate_v11_semantic_metric_iris/`（已清理）；CPU、seed=42、4 epochs、缩小网络。head ARI=0.6051，KMeans embedding ARI=0.5961，最后 gate/target=0.311/0.021，edge alignment loss=1.7082。仅证明新几何项曾经可运行；由于产物已清理且属于缩短 smoke，禁止与正式 V11/V9/NoMix 性能比较。
 
 ---
 
@@ -975,7 +1699,7 @@ v6 第二轮在 epoch 1 的 β 与 run_npz.py **完全一致**：
 - 历史单 run json：`result/learnable_gate_smoke/multiseed/<dataset>__<variant>__seed<seed>.json`（30 个，产物已清理）
 - 历史汇总 csv：`result/learnable_gate_smoke/multiseed/comparison.csv`（30 行，产物已清理）
 - 跑实验脚本：`scripts/learnable_gate/run_learnable_gate_sched_multiseed.py`
-- 日志：`unpublished-temp/multiseed_v2.log`
+- 日志：`/tmp/multiseed_v2.log`
 
 ### CHANGELOG 修订需求
 
@@ -1365,3 +2089,48 @@ self-expression backbone. Its sparse coefficient matrix should simultaneously de
 weights, exact zero gates, affinity, and final assignment readout. A contaminated probabilistic
 graph mixture is a higher-risk theoretical alternative; ordinary graph contrastive clustering
 requires an independent edge-rejection certificate before adoption.
+## 2026-08-14 V23 cycle-response implementation and M0 readiness
+
+V23 独立实现位于 `methods/TopoGate/V23_cycle_response/`，修订计划位于
+`refine-logs/EXPERIMENT_PLAN.md`。当前验证对象是冻结的
+perturb-repair-reencode response geometry：`C_cycle` 为主科学指纹，`G_gain` 为独立的
+次级可恢复性对象；功能性冗余和 recoverability-guided masking 仍为延期研究，不在 V23
+代码中。
+
+新增固定 M0 编排器 `scripts/V23/run_m0_synthetic.py`，覆盖四个合成世界 × seeds
+`[42,123,7]` 共 `12` 个 job，并将 fit/profile/evaluate 物理分进程。dry-run 审计确认标签
+只进入 `12/12` evaluate 命令，在 `0/12` fit/profile 命令中出现。编排器保存生成参数、输入
+出处、stage 级复用状态和 `incomplete_compute`，但不会自动给出 Go/No-Go。
+
+focused tests 为 `13 passed`，`compileall` 通过。tiny dependency-positive、seed42、CPU、
+2 epochs、32 features、4 masks 的 runner smoke `1/1` completed；相同命令重跑为
+`0` new stages、`3` reused stages。该 smoke 仅证明三进程链路、标签隔离、产物和 resume
+契约成立，不是 M0 性能结果，不支持 H1/H2/H3。正式四世界三 seed M0 状态为
+**not started**。Claude CLI cross-family 复审为 `9/10, ready to begin M0`，这也是工程就绪
+判断，不是效果认可。
+
+## 2026-08-15 V25 systematic mechanism study engineering verification
+
+V25 的 A0/A1/A2 事实、E1 manifest 与当前 contract audit 位于
+`result/V25_systematic_mechanism_study/`。A2 为 `retain_e1`；正式 pilot 与 confirmation
+均已完成（各 `9/9` dataset-seed panels，`audit_ok=9/9`），其 dataset-level 结果和范围边界
+见本节开头的 V25 事实记录。micro-mass、seed42、CPU、3 epochs、warmup1 的 N/R/T
+engineering smoke 仍单独保留，仅验证协议和产物契约，不进入性能或论文结果表。
+
+| Quantity | Value |
+|---|---:|
+| `I_full_ARI = ARI_R - ARI_N` | `-0.0728728369` |
+| `S_full_ARI = ARI_T - ARI_R` | `+0.0019881860` |
+| `I_1step_ARI` | `+0.0050899082` |
+| `S_1step_ARI` | `-0.0091248875` |
+
+当前 contract audit 为 `25/25=true`：T/R donor、eligible、budget、selection-noise hash
+一致；None assignment/JS forward 次数为 `0`；branchpoint 位于 warmup/head 初始化后；
+labels 只在 fit 和 one-step 完成后用于 ARI/NMI，pair effect 在该后验评估之后计算。
+
+V25 closure artifacts（由 `scripts/V25/build_closure_artifacts.py` 从冻结 CSV/JSON 生成）已写入
+`result/V25_systematic_mechanism_study/`，并同步至 `papers/V25_systematic_mechanism_study/results/`：
+`V25_GAP_MAP.md/.csv`、`failure_localization_taxonomy.csv`、`E1_MECHANISM_SUMMARY.csv`、
+`V25_NEXT_SERIES_DECISION.md` 和 `V25_CLOSURE_ARTIFACTS.json`。E1 汇总恰好六个数据集；V1--V24
+taxonomy 覆盖完整；holdout 为 `0/6 inconclusive_not_completed`，不是负结果；发布副本不含权重、
+branchpoint、原始数据、预测数组或缓存。

@@ -4,7 +4,70 @@
 
 > **2026-08-04 当前研究定位**：TopoGate 的原型和主要 backbone 是 `scMAE`，总目标是在高维、特征噪声强、同时具有天然稀疏性的单视图数据中获得可靠的聚类效果。V1--V 系列都是围绕同一原型的探索性改良、诊断和消融；版本号只用于追溯，不代表不同应用场景、永久模型边界或已确定的论文主方法。最终论文只从全部探索结果中选择一代作为对外的 TopoGate。数据集选择和 CLM 分层参考 `hj-n/labeled-datasets`、`hj-n/clm` 及 `papers/参考资料/Measuring_the_Validity_of_Clustering_Validation_Datasets.md`，未核验的外部 CLM 映射不得写成正式证据。
 
+### Relation-selection probe (2026-08-17, RS0–RS3 terminal)
+
+`relation_selection_probe` is an independent non-V-series study created after
+the representation-consumer project was closed. Its authorized scope was
+fixed as RS0 freeze → RS1 information/solvability → RS2 fixed simple selectors
+→ RS3 capture/failure map. RS1 found label-derived pool-reference information
+but did not establish the stricter same-class diagnostic. RS2 completed 90/90
+valid rows with no fixed-selector primary gate pass. RS3 recorded hate_speech as
+a candidate-family boundary, while Mouse_retina and Baron Human retained their
+frozen sentinel roles. The project is terminal with no RS4 execution, no new
+backbone, and no holdout claim.
+
+### Independent representation-consumer probe (2026-08-17, protocol only)
+
+V25 closure 后建立独立的 `representation_consumer_probe` 项目，不使用 V 系列编号，也不自动授权新的 Gate 或 backbone。研究问题限定为：在共同 `H0`、candidate relation pool、budget、weight、readout 和 paired seeds 下，机会是否存在、selection 是否丢失机会、以及 cut-aligned consumer 是否比 reconstruction consumer 更能转化同一关系选择。S0 先审计 V25 feature-coordinate `T/R` 与 sample-edge selector 之间是否存在可识别的 label-free adapter；不通过则保留 opportunity-only fallback，不允许写 TopoGate graph gain。
+
+当前状态为 `protocol_draft_not_authorized`。文档与数值冻结清单位于 `reports/representation_consumer_probe/`；S1 之前不创建 strong backbone、不排队 GPU、不更新结果事实表。
+
 ---
+
+### Post-V25 ACCG joint-action route (2026-08-17, real panel completed; clustering No-Go)
+
+ACCG is an independent post-V25 method route, not a relabeling of V21 or a
+performance conclusion. It asks whether V21's assignment-adversarial donor
+replacement can keep the same exact action budget while constraining the actual
+joint action under a declared cross-fitted feature-conditional energy.
+
+Implemented arms are `N/R/T_s/T_c`; all share the V25-E1 branchpoint, schedule,
+donor, eligibility, Gumbel, optimizer budget, K protocol, and clean KMeans
+readout. The primary difference is `T_c` joint action selection. Coordinate,
+shuffled-graph, marginal-only, and abstention variants are controls. Ablations
+reuse the canonical main branchpoint and do not rerun `N/R/T_s`.
+
+W0-W5 generators, shortcut audits, grouped incremental action probes, W5 pair
+counterexample, exact-selector audit, locked real manifest, dry-by-default
+parallel runners, source/config hashes, incomplete-compute records, and
+dataset-level metric recomputation are implemented. Frozen protocol documents
+are `methods/TopoGate/ACCG_action_constrained_gate/PROTOCOL.md` and
+`review-stage/ACCG_SYNTHETIC_CONTRACT.md`.
+
+The original v1 panel remains frozen as a No-Go (`9/30`, pooled joint AUC
+`0.634351`), and v2 remains a separate No-Go (`0.635--0.637` standalone W5 AUC).
+The final v3 contract was frozen before its fresh panel and passed: `15/15`
+shortcut records, `32/32` selector rows, W5 pooled joint AUC=`0.640836`, pooled
+delta AUC=`+0.136204`, delta PR=`+0.063677`, and positive grouped-bootstrap
+delta-AUC lower bounds for all three held-out generator families. W1 passed as a
+negative control; W2 is secondary and did not pass its optional increment gate.
+This is still a synthetic action-contract result, not an ACCG model or clustering
+result.
+
+The route passed its final synthetic contract and then completed the locked real
+panel. The real main matrix is `30/30`: 27 labeled confirmatory panels across
+9 datasets and 3 explicit-K PBMC3k operational panels. The development ablation
+matrix is `48/48`, reusing canonical main controls, for `75/75` confirmatory
+artifacts. All artifact, matched-schedule, and label-isolation audits passed.
+
+The labeled primary effect `ARI(T_c)-ARI(T_s)` is mean `+0.007492`, median
+`+0.000363`, dataset-bootstrap 95% CI `[-0.000879,+0.018889]`, with only `4/9`
+datasets positive for all three seeds. The development joint effect is
+`+0.010751`, below coordinate `+0.015689`; joint wins only `1/12` paired seeds.
+Therefore the real clustering promotion gate is **No-Go**. PBMC3k is retained as
+operational evidence only and has no ARI/NMI contribution. No external baseline
+or outcome-driven rescue was launched after this result. Weight-free audit
+summaries are under `review-stage/ACCG_real_panel_v2_audit/`.
 
 ### V16.1 expanded-count continuation（2026-08-07）
 
@@ -28,7 +91,7 @@ NormanWeissman 的 Stage-0 已按搜索上限停止。
 此前跨四个结果根目录去重后有 33 个完整 paired 数据集，全部为
 `empirical_not_supported`。合并后续完成的 `PRJNA895163` 与 `hrvatin_geo_maintype_counts`，
 当前临时快照为 35 个完整数据集，文件为
-`unpublished-temp/v16_1_global_dedup_summary_current_20260807.json`，`candidate_positive=0`；
+`/tmp/v16_1_global_dedup_summary_current_20260807.json`，`candidate_positive=0`；
 Norman 未完成任务不计入统计。
 
 继续执行固定三 seed paired 协议，不根据结果调节门控。`Norman_perturb_e_distance`
@@ -58,7 +121,7 @@ focused tests 所覆盖的输入契约；无训练的首轮状态不作为性能
 
 在已有 210 个 summaries 基础上，继续按同一固定协议并行测试两个未完成候选：
 `TabulaSapiens_Pancreas` 与 `CRA002977_1`。输出暂存于
-`unpublished-temp/v16_1_stage1_parallel_20260806/`，GPU 3/4、三 seed、clean/compound、五路
+`/tmp/v16_1_stage1_parallel_20260806/`，GPU 3/4、三 seed、clean/compound、五路
 readout 均不改变；当前仅部分 clean seed 已落盘，仍不能据此写入
 `candidate_positive`，待完整 paired 矩阵结束后统一运行 `summarize_stage1.py`。
 
@@ -66,7 +129,7 @@ readout 均不改变；当前仅部分 clean seed 已落盘，仍不能据此写
 `Arabidopsis_Stereo_seq_leaf` count 源。Shekhar/Paul15 support 全负；Tosches、HCA 和
 Arabidopsis support 非退化，已分别把 Tosches/HCA 放入 GPU4/GPU5 的固定 paired 测试，
 Arabidopsis 的三 seed clean/compound 已完成但为 `empirical_not_supported`。Tabula 的
-clean 三 seed已完成，compound 仍在运行；所有新输出仍暂存 `unpublished-temp`，未写入正例表。
+clean 三 seed已完成，compound 仍在运行；所有新输出仍暂存 `/tmp`，未写入正例表。
 
 扩展输入策略已登记 10 个本地 H5AD 原始 count 源并生成 CSR bundle。固定 Stage-0
 完成 9 个新增源的无标签审计；`Human_Pancreas_1`、`Bone_Marrow`、`Blood_BoneMarrow`
@@ -100,8 +163,8 @@ B→A，逐边 median；Stage 0 已完成 `Campbell`、`Mouse_retina`、`Baron H
 `hrvatin_filtered`：前五者通过理论域证书，但 support 正值率仅
 `0.0034%`/`0.0054%`/`0.0253%`/`0.0169%`/`0.0856%`；后三者因 dense member
 或 count encoding 无法恢复，记录为 `theory_domain_not_supported`。Campbell/Mouse_retina
-的延长窗口产物分别为 `unpublished-temp/v16_1_stage0_campbell_exchange.json` 和
-`unpublished-temp/v16_1_stage0_mouse_exchange.json`；初次 360 秒超时只作为计算成本事件保留。
+的延长窗口产物分别为 `/tmp/v16_1_stage0_campbell_exchange.json` 和
+`/tmp/v16_1_stage0_mouse_exchange.json`；初次 360 秒超时只作为计算成本事件保留。
 依据预注册边界，V16.1 Stage 1 训练尚未启动，也不为单个数据集调 gate 或 support。
 
 扩展输入域只放宽四项分层指标的硬门槛，真正的硬条件仍是可核验 count 语义、CSR/分块
@@ -129,7 +192,7 @@ condition 的目录，导致 clean/compound 覆盖；该错误已修复，错误
 Stage 0 对 `Campbell` 和 `Mouse_retina` 均通过计数域证书，但 candidate recurrence
 仅为 `0.472`/`0.267`，support 正值率仅为 `0.153%`/`0.063%`。修正后的 Stage 1
 按 `[42,123,7]`、五路 readout 和固定 compound stress 完成 60 个 run，产物暂存
-`unpublished-temp/v16_stage1_anchors_20260806_fixed/`。V16 clean paired delta 分别为
+`/tmp/v16_stage1_anchors_20260806_fixed/`。V16 clean paired delta 分别为
 `-0.000607` 和 `-0.000033`，compound delta 分别为 `0.000000` 和 `+0.000961`；
 fixed graph 虽高于 self-only，但 V16 的 support 几乎全部 abstain，且
 `shuffled_support` 没有被破坏出机制增益。两个锚点均标记
@@ -151,7 +214,7 @@ abstention。实现目录为
 |---|---|---|
 | sparse MAE、union graph、detached utility、null sparsemax | 已实现 | V15 focused tests 48 passed；cnae9 smoke 完整产物 |
 | self/uniform/exact/local-consensus/learned/forced-topk/shuffled/output-disabled 对照 | 已实现 | `scripts/V15/run_formal.py` dry-run 与小矩阵 |
-| Stage-0 固定数据 manifest | exploratory 已完成 | `unpublished-temp/v15_manifest_fixed16.json`，CLM 未核验时统一 `CLM-unranked` |
+| Stage-0 固定数据 manifest | exploratory 已完成 | `/tmp/v15_manifest_fixed16.json`，CLM 未核验时统一 `CLM-unranked` |
 | Stage-1 utility/candidate 门槛 | 未通过短 panel | 当前源码重跑 utility AUROC 达标 2/6；candidate recall 中位数约 0.70 |
 | 边界/低密度/离群拒绝 | 未证实 | 受控集 null-AUROC 均为 0.5 |
 | graph pollution abstention | 局部、非严格单调 | cnae9 0/0.5/1.0 的 null mass 为 0.885/0.884/1.000，端点上升但中间点略降 |
@@ -419,3 +482,104 @@ V17-reference。若 `C` 大面积全零、门控后图纯度不升或同一 affi
 
 当前未实现的 spectral feedback 与 learnable unfolded layers 是后续条件项，不属于已经
 完成的 V17，也没有任何 V17 性能结论。
+
+## 2026-08-08 用户选择的 V18 scMAE 主线执行计划
+
+上一节的 V17-first 顺序是风险控制建议；本节记录用户明确选择的执行主线，二者不再
+混用。V18 主方法固定为：
+
+```text
+scMAE -> latent views Z -> latent cosine/SNN E0
+      -> edge gate G + sparse relation W
+      -> C = G o W -> |C| + |C.T| -> spectral clustering
+```
+
+scMAE 是主表示学习器，拓扑门控发生在其隐编码关系图上；V17-reference 只作为
+`latent_C_exactzero` 对照，ZEUS 作为迁移对照。详细训练阶段、损失、变体、全量数据
+矩阵、完成状态和一次性 provenance 规则见 [`V18_TRAINING_PLAN.md`](V18_TRAINING_PLAN.md)。
+
+本执行计划不使用性能晋级作为停止条件：前置结果只影响最终论文解释，不影响已注册
+数据集、变体和 seed 的提交。OOM、超时、输入域外和只读挂载分别记录状态，不改写为
+性能结论；历史 V1--V17 代码和结果保持不变。
+
+### V18 code status (2026-08-08)
+
+上述主线已落地为独立代码和 launcher，并完成 compileall、5 个 focused tests、CLI
+帮助检查、一次 manifest dry-run，以及 `2d_20c_no0` 三路短 engineering smoke。
+目前没有把 smoke 计入正式性能表；正式矩阵仍由冻结 manifest 的 149 条 eligible 记录、
+10 个预注册 variant 和 3 个 seed 组成，运行状态需由 `scripts/V18/run_matrix.py`
+逐 run 记录。
+
+### V18 full matrix launch (2026-08-08)
+
+`scripts/V18/run_matrix.py` 已按 manifest id `v18_scmae_mainline_20260808` 提交
+4470 个 run key，GPU 1--6 各一个 worker。正式结果尚未完成汇总；本阶段以覆盖全部
+run key 和保存每个 `summary/status/run_record/launcher.log` 为目标，不根据早期指标
+停止、重选数据集或调节损失。
+
+### V18 independent-v2.2 replacement (2026-08-08)
+
+前置代码审计在 v2.1 运行中发现 mask 有效位置语义与原 scMAE 契约不一致，且 FISTA
+初始化与拓扑项使用了不同的 latent 归一化。v2.1 剩余 worker 已停止并按
+`incomplete_compute` 保存；已完成旧产物不与新 protocol 合并。v2.2 使用独立代码、
+新 manifest id 和新输出根，已通过 compileall、8 个 focused tests、CLI 和真实短 smoke；
+正式矩阵需按 v2.2 manifest 重新提交。
+
+### V18 running audit continuation (2026-08-08)
+
+重新审查 v2.2 源码与运行产物时发现 `v18_leiden` 旧完成项误记录了
+`benchmark_oracle_from_y`，但 Leiden 实际不使用 K。已修正独立 runner、core 和审计器；
+该修正只影响新运行的 K 元数据。当前矩阵不停止、不重跑，终态后由
+`scripts/V18/repair_leiden_metadata.py` 修复旧 JSON，并重新执行严格 audit/summarize。
+截至本记录快照，`1459/4470` run key 已完成、6 个运行中、0 个已记录模型错误；该快照
+不是最终性能结果。
+
+## 2026-08-15 V25 systematic mechanism study
+
+V25 固定为 `V25_systematic_mechanism_study`，不表示新的 TopoGate architecture。执行顺序
+冻结为 `A0 Evidence Registry -> A1 Failure Atlas/E3 replay -> A2 Mechanism Triage ->
+conditional E1 N/R/T -> E2/E3 -> Claim Freeze -> claim-dependent holdout`。A2 当前返回
+`retain_e1`，但保留取消 E1 或停止 prospective compute 的否决权；不允许临时增加 E4、
+V26、新 Gate/loss/selector、DCBoost 或 V18/V22/V24 救场。
+
+A0/A1/A2 工件和审计位于 `result/V25_systematic_mechanism_study/`。E1 pilot 已完成
+`9/9` dataset-seed panels（cnae9、Mouse_retina、sms_spam_collection；seeds `[42,123,7]`），
+panel audit `9/9` 通过，pilot gate 按预注册规则通过（2/3 datasets material，异号允许）。
+正式 pilot 的 pair/gradient/one-step 汇总位于 `E1/pilot/Audit/`；这些结果仍是 V21 case
+study，不支持 universal population claim。
+
+E2-A 已固定 dataset×seed 推断单位。新 E1 T arm 在训练过程中保存 exact feature-selection
+counts，coordinate rows 只作 descriptive；post-hoc Fisher/MI/support-enrichment 不进入
+fit。confirmation 已完成 `9/9` panel、`audit_ok=9/9`；Baron Human 的 `S_d=+0.044617`、
+Campbell 的 `S_d=-0.065332`、hate_speech 的 `S_d=-0.033410` 形成异号且可复核的
+conditional case-study evidence。E2-B/C 保存 gradient geometry 与真实 Adam one-step，
+但没有单独冻结 objective 主张。
+
+Phase C 冻结 selection primary endpoint `S_full_ARI = ARI_T - ARI_R`。Phase D 使用 A2 前
+冻结的 candidate/adapter manifest；六个 holdout panels 均没有形成可审计性能结果：news20
+三个 seed 在 Adam state 初始化处重复 CUDA OOM，RCV1 面板在同一资源边界下停止或未启动。
+队列最终为 `6 incomplete_compute / 0 completed`，Phase D audit 为 `panel_count=0`、
+`audit_ok_count=0`。这属于 `inconclusive_not_completed`，不写成负结果，也不替换 primary
+endpoint。V25 以 `PhaseE/CLOSURE.md` 关闭，不进入 V26 或新的救场实验。
+
+闭环后仅完成一次资源路径审计，不重新启动正式 holdout：E1 runner 增加 host-backed
+batch/statistics streaming、极高维 CUDA 的 Adam fused implementation path，以及 CPU-backed
+branchpoint/arm snapshots。`news20` bounded engineering smoke 仍未形成 summary 或性能结果，
+因此 Phase D 的 `0/6`, `inconclusive_not_completed` 状态保持不变；这些改动不构成新的模型、
+loss、Gate 或 V26 路线。
+
+闭环后的论文证据导出位于
+`result/V25_systematic_mechanism_study/PaperEvidence/`，由
+`scripts/V25/build_paper_evidence.py` 生成。它只消费冻结工件并保存 source hash、统计单位
+和 claim-scope audit；不产生新训练或新的 holdout 选择。
+同一 Evidence bundle 下的 `figures/` 由 `scripts/V25/build_paper_figures.py` 离线生成，
+生成 Failure Atlas、机制链、E1 `(I_d,S_d)`、E2 diagnostic geometry 和 V23 local/global
+boundary 五张图的 PNG/PDF/SVG 资产。`figure_manifest.json` 绑定五份输入 CSV 的输入哈希、
+15 个图资产与证据边界。
+
+最终闭环文件由 `scripts/V25/build_closure_artifacts.py` 从冻结工件自动生成：
+`V25_GAP_MAP.md/.csv`、`failure_localization_taxonomy.csv`、`E1_MECHANISM_SUMMARY.csv`、
+`V25_NEXT_SERIES_DECISION.md` 和 `V25_CLOSURE_ARTIFACTS.json`。它们位于
+`result/V25_systematic_mechanism_study/`，不包含权重、branchpoint、原始数据或缓存；可提交的
+同内容副本位于 `papers/V25_systematic_mechanism_study/results/`。taxonomy 覆盖 V1--V24，
+E1 汇总恰好六个数据集，holdout 保持 `0/6 inconclusive_not_completed`。

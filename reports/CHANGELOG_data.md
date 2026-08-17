@@ -1,25 +1,327 @@
 # 数据追溯日志
 
-## 2026-08-17 representation-consumer probe S2 publication boundary
+## 2026-08-17 relation-selection probe RS1–RS3 data/result audit
 
-S2 使用 S0 H0、S1-v2 selected graphs、SimpleCut `128→64→32`、80 epochs、paired seeds
-`[42,123,7]`，固定 Baron Human 与 Mouse_retina，共 `18/18` completed-valid。训练使用物理
-GPU 3；GPU 0/7 禁用。
+新项目复用已审计的 `representation_consumer_probe` S0 H0、candidate pool、row budget
+和 S1 `R/O_pool/O_full` summaries，不修改旧工件。RS0 继承 holdout manifest 的 SHA256
+为 `6d9afa1f6d90f77d8836e9f877f6567ebb7c7621ba3d022622e2488c9fb8b2cb`，并验证旧项目
+artifact tree 未修改。
 
-标签只用于 O oracle graph construction、known-K readout 和 post-fit metrics；SimpleCut fit
-不接收 labels/K。GitHub release 只包含 JSON summaries、manifests、configs、reports、code 和
-tests；embedding/prediction/label arrays、sparse graphs、checkpoints、raw data 与 logs 均留在
-本地结果盘。
+RS1 使用 17 个固定 label-free edge features、八个 view seeds `[17,31,47,61,73,89,101,113]`
+和 5-fold GroupKFold by anchor；RS2 使用 B0 cosine、B1 mutual-first、B2 SNN/Jaccard、
+B3 stability、B4 equal-rank fusion，均保持原始 cosine weight、`b_i=min(8,positive_count_i)`、
+symmetrization、Spectral 和 known-K KMeans。标签只用于 RS1 diagnostic targets 与外层
+metrics，RS3 只读取完成的 summaries。
 
-审计复核了 source/H0 SHA、ARI/NMI/optimal-mapping ACC、S1 graph reuse 和 exact-tree hashes。
-Baron `H_pool=+0.033242`、Mouse `H_pool=+0.008880`；这些是 frozen relation family 下的
-diagnostic quantities，不是 TopoGate performance。
+正式矩阵为 RS1 六数据集 diagnostic rows、RS2 `90/90` selector rows；raw features、graphs、
+embeddings、predictions 和 per-run logs 不进入发布层。可发布的重要结果位于
+`reports/relation_selection_probe/` 与 `result/relation_selection_probe/FINAL/`。
+
+## 2026-08-17 representation-consumer probe S2 SimpleCut data/result audit
+
+S1 条件确认阶段固定使用 `Baron Human` 与 `Mouse_retina` 的 S0 H0、S1 v2 selected graphs、
+`R/O_pool/O_full`、SimpleCut `128→64→32`、80 epochs 和 paired seeds `[42,123,7]`，共
+`18/18` completed-valid。物理 GPU 为 3；GPU 0、7 未使用。S2 没有重建 candidate pool、修改
+budget、选择新 consumer 或使用新数据集。
+
+- source archive `y` 只用于 O oracle graph construction、known-K readout 和 post-fit metrics；
+  SimpleCut fit 不接收 labels/K。O artifacts 明确标记 `diagnostic_only`/`method_claim=false`。
+- root artifact manifest exact-tree `197` entries；18 个 run 与 nested manifests 均通过。所有
+  S2 selected/direct graphs 与 S1 v2 source graph hash/structure 精确一致；labels_true、source
+  SHA、H0 SHA 和 ARI/NMI/optimal-mapping ACC 均独立复核一致。
+- dataset-level opportunity quantities：Baron `H_pool=+0.033242`、`H_full=+0.033367`、
+  `C=+0.000125`；Mouse `H_pool=+0.008880`、`H_full=+0.009622`、`C=+0.000742`。这些是
+  label-derived diagnostic upper bounds，不是 TopoGate 或新 backbone 性能。
+- integrity audit 为 `WARN`：training history 最后一行是 optimizer step 前 loss，而
+  `fit_metadata.final_loss` 是 step 后重算；不影响 primary metrics，但保留为 metadata timing
+  limitation。未据此重训或修改原始性能工件。
+
+## 2026-08-17 representation-consumer probe S0 input and budget audit
+
+独立 `representation_consumer_probe` 正式 S0 replay 使用既有 E1 manifest（SHA256
+`edf2d57bba15cc1a56b18d12dd72efd320e0cbc4a730875a513b79814c577339`）和六个冻结 stress inputs：
+`cnae9`、`Mouse_retina`、`sms_spam_collection`、`Baron Human`、`Campbell`、`hate_speech`。
+六个 source path、shape 和 source SHA 均与 manifest 匹配；每个 dataset 只生成一个
+`TruncatedSVD(d0=128, random_state=0)` H0 snapshot，并将 candidate pool、H0 SHA、archive keys、
+K source 和 labels-after-fit-only boundary 写入 `result/representation_consumer_probe/S0_freeze/`。
+
+本次冻结 `k=20` positive-cosine relation pool 与 `budget_cap=8`，实际 row budget 为
+`b_i=min(8,positive_count_i)`。R/O_pool/O_full 未来必须复用同一 effective-budget hash；
+zero-budget rows 保留为 graph diagnostics，不通过异类边补齐，也不整集删除。S0 没有读取标签
+进入 H0、candidate 或 numerical loss；标签计数只用于外层 K audit，oracle graph 尚未运行。
+
+## 2026-08-12 V22 dataset extension round 2 downloaded and audited
+
+在未读取本轮新增数据性能之前固定并下载第二批候选，输出目录为
+`datasets/external/v22_dataset_extension_round2_20260812/`，登记入口为
+`datasets/external/v22_dataset_extension_round2_20260812/manifest.json`。候选分层为：
+
+| dataset_id | source / shape | zero fraction | labels | status |
+|---|---:|---:|---:|---|
+| `news20__libsvm_sparse_highdim` | LIBSVM news20.scale, `15935 x 62061` | `0.998713` | 20 | eligible |
+| `rcv1_train__libsvm_sparse_highdim` | LIBSVM RCV1 train, `20242 x 47236` | `0.998432` | 2 | eligible |
+| `mnist__libsvm_dense_control` | LIBSVM MNIST scale, `60000 x 780` | `0.807817` | 10 | eligible control |
+| `pbmc_1k_v3__10x_unlabelled_count` | 10x PBMC 1k v3, `1222 x 33538` | `0.939043` | none | eligible_unlabelled |
+
+候选依据是公开来源可用、稀疏高维主层、一个非高维控制层和一个无标签 scRNA count
+部署层；选择不读取标签或 V22 结果。LIBSVM 标签只保留给外层 known-K 与后验指标，转换、
+预处理、graph、Gate、discriminator 和 loss 均不读标签。PBMC 1k v3 的 10x 归档不含独立
+细胞类型标签，只允许后续显式传入 `--n-clusters DATASET_ID=K` 的无标签探索，不进入
+ARI/NMI 汇总。原始归档与 CSR-NPZ 均通过 `file`、形状、有限值、稀疏重建和标签长度检查，
+manifest 记录 URL、传输边界、原始/处理后 SHA-256 与完整 profile；下载沿用本地代理的
+`verify=False`，不能把它当作独立传输证明。
+
+验证：`python scripts/V22/prepare_dataset_extension_round2.py --dry-run`；转换脚本编译通过；
+四个处理文件均通过矩阵审计；V22 focused tests 与矩阵 tests 共 `13 passed`。本批正式
+多种子矩阵尚未启动，不能与第一批 V22 Full 结果合并为性能结论。另完成
+`result/V22/engineering_smoke_pbmc1k_v3_cooperative_20260812/` 的一 epoch CPU 输入 smoke：
+原始 `1222x33538` 经 label-free top-variance cap 为 `1222x2000`，显式 `K=8`，
+`labels_used_during_fit=false`、`K_used_during_fit=false`，不计算 ARI/NMI。使用新 manifest
+的 cooperative Keep-Gate/always-visible dry-run 展开 `8` 个唯一键；PBMC 1k v3 的两个键均
+保留 `requires_explicit_n_clusters=true` 并显式传入 `K=8`，没有猜测 K。
+
+## 2026-08-12 V22 dataset extension and explicit-K boundary
+
+新增固定数据清单 `datasets/external/v22_dataset_extension_20260812/manifest.json`，候选在
+读取 V22 性能前登记，且 `selection_uses_labels_or_outcomes=false`。主分层包括 LIBSVM
+`sector`（`6412x55197`、105 类、约 99.7% 零）和 `real-sim`（`72309x20958`、二类、约
+99.8% 零）；`covtype`（`581012x54`、约 77.8% 零）作为大样本非高维控制；PBMC3k
+（`2700x32738`、约 97.4% 零）作为无独立标签的 10x scRNA count 部署控制。原始归档、
+处理后 CSR-NPZ、形状/稀疏度、来源 URL 和 SHA-256 均写入 manifest；下载时因本地代理
+证书链不可验证使用 `verify=false`，这一边界被显式记录，不能把它当作独立传输证明。
+
+LibSVM 标签仅保留给外层 benchmark 的 known-K 与后验指标，转换、预处理、graph、Gate、
+discriminator 和 loss 均不读标签。PBMC3k 没有标签，不能在 runner 中猜 K；V22 矩阵现在
+要求通过 `--n-clusters DATASET_ID=K` 显式传入，缺失时在启动任何任务前拒绝。默认 dry-run
+仍展开四个数据集、五个 variant、三 seed 的 60 个唯一键，并为 PBMC3k 的 15 个键标记
+`requires_explicit_n_clusters=true`。
+
+## 2026-08-11 V19 sparse/high-dimensional extension final audit
+
+第一批扩展 manifest `result/V19/v19_rg_extended_sparse_manifest_20260811.json` 固定 13 个
+候选、`rg_full/scmae_only`、seeds `[42,123,7]`，共 `78/78` 完成。RG 配置来自已完成的
+V19 ARI development selection；扩展本身不重新按标签选择配置或数据集，标签只用于外层
+known-K 与拟合后 ARI/NMI/ACC。13 集结果汇总为 RG 胜 scMAE `6/13`，宏平均 ARI
+`0.175345` vs `0.182150`；三 seed 全部正向 `2/13`。
+
+预注册的第一批胜出集全部进入外部方法控制。AHDPC、DPC-GFNN、GCC 固定参数和相同的
+V19 label-free input adapter 均完成，审计覆盖 `6 datasets x 3 methods = 18/18`。原始
+runner 因 Dexter CSR NPZ 加载异常未写出聚合 JSON；根据已存在的 12 个逐方法 summary
+生成 `baseline_summary_reconstructed.json`，并将修复 CSR loader 后的 Dexter/Dorothea
+6 条结果单独保存在 `v19_rg_extended_winner_baselines_missing_v1/`。最终审计输出为
+`result/V19/v19_rg_sparse_goal_audit_20260811/goal_audit.json`：`goal_met=true`、
+RG 胜最佳外部方法 `2/6`、获胜集基线缺失 `0`。
+
+第二批 7 个候选没有启动，因为第一批已达到预注册的至少 5 个 RG 胜 scMAE 条件；其
+条件 launcher 明确记录 `not_activated_primary_met`。本条结果不是全数据集普遍优势声明，
+且不把只完成开发/选择的指标和扩展泛化证据合并。
+
+## 2026-08-11 V21 readout-fix sparse/high-dimensional extension
+
+新增 `result/V21/v21_extended13_readoutfix_manifest_20260811.json`，从既有 V19 稀疏/高维
+输入清单冻结 13 个与 V21 六数据集开发层无重叠的候选：`fbis.wc`、`tr45.wc`、`fabert`、
+`micro-mass`、`gina_prior2`、Internet Advertisements、完整 SMS TF-IDF500、
+Quake Smart-seq2 Lung、Arcene、Dexter、Dorothea、Gisette 和 Madelon。manifest 固定
+`topology_assignment_adversarial/scmae_only`、seeds `[42,123,7]`，预期 78 runs；
+`extension_labels_used_for_selection=false`。UCI 数据沿用已有原始/派生 hash，local snapshot
+继续明确记录 unresolved source metadata，不重复计算 hash 或把本地来源冒充公开来源。
+
+新协议 `v21_assignment_adversarial_v3_readoutfix_v1` 的 primary output 是
+`kmeans_embedding_known_k`；K 仍只由 benchmark 外层作为协议元数据提供，readout 不读取
+标签。Student-t head 仅作训练代理，额外保存其预测、概率和 occupancy。当前工程 smoke 位于
+`result/V21/engineering_smoke_extended_readoutfix_20260811/`：只运行 micro-mass、seed42、
+两 variant、2 epochs，`2/2` completed 且严格审计通过。该目录不进入正式扩展结果表。
+
+## 2026-08-11 V19 second-panel conditional launcher
+
+扩展 runner 与汇总器现在同时接受已预注册的 `v19_rg_extended_sparse_v1` 和
+`v19_rg_extended_sparse_batch2_v1`，只根据各自 manifest 读取协议，不改变 RG/scMAE
+计算路径。新增 `scripts/V19/launch_batch2_after_primary.py`：等待第一批完整审计，只有
+第一批 `promotion_rg_win_by_mean_ari` 少于 5 个时才在空闲的允许 GPU 上运行第二批全部
+7 个候选（42 runs）；达到 5 个时明确记录 `not_activated_primary_met`。第二批仍使用
+第一批 ARI 选出的固定配置，不按第二批结果再次选数据集。
+两个条件 launcher 的请求 GPU 池已设为允许物理卡 `[1,2,3,4,5,6]`，启动时按至少
+30 GiB 空闲显存动态选取；GPU0/7 永不使用，已有外部任务的卡不会被抢占。
+
+新增 `scripts/V19/run_winner_baselines_after_panels.py`，在第一批不足 5 个胜出时，
+等待第二批终态并对两批中所有 `RG mean ARI > scMAE-only mean ARI` 的数据集分别运行
+已验证的 AHDPC、DPC-GFNN 和 GCC；若第一批已达到 5 个，则交给原单批启动器，避免重复
+SOTA 运行。
+
+新增 `scripts/V19/audit_rg_sparse_goal.py`，在两批扩展和对应 baseline summary 完成后，
+统一核验 RG 胜出数量、胜出集的 baseline 覆盖，以及 RG 是否高于三种外部方法中的最佳
+ARI；该审计不参与模型或数据集选择。
+新增 `scripts/V19/launch_goal_audit_after_baselines.py` 自动等待所需终态并调用该审计。
+
+## 2026-08-11 V19 sparse/high-dimensional extension batch 2 preregistration
+
+新增固定清单 `result/V19/v19_rg_extended_sparse_batch2_manifest_20260811.json`，包含
+20 Newsgroups、Reuters、Enron、WOS、ISOLET、SECOM 和 OpenML webdata_wXa 共 7 个
+候选，统一登记为 `rg_full/scmae_only`、seeds `[42,123,7]`，预期 42 个配对 run。
+候选名单在第一批扩展结果揭示前固定；标签只保留为外层 benchmark 元数据，未用于资格、
+预处理、图、RG 或 scMAE 设置。该批的激活规则是：第一批若未达到预注册的 5 个 RG
+胜出标准，则完整运行这 7 个候选，不按单个结果挑选数据集。
+
+输入来源为已有本地 NPZ 或已登记的 OpenML webdata_wXa 快照，`source_hash` 沿用现有
+登记策略记为 `unavailable`，不重复计算哈希。该批尚未启动模型运行。
+
+## 2026-08-11 V19 sparse/high-dimensional extension panel preregistration
+
+新增扩展 manifest `result/V19/v19_rg_extended_sparse_manifest_20260811.json`，固定
+13 个候选层、`rg_full/scmae_only` 两个 variant 与 seeds `[42,123,7]`，预期 78 个
+配对 run。候选在读取任何扩展性能前按“稀疏/高维输入与公开来源可用”登记；目标“至少
+5 个 RG 胜出”是事后成功标准，不是按结果筛选数据。现有本地候选包括 `fbis.wc`、
+`tr45.wc`、`fabert`、`micro-mass`、`gina_prior2`、Quake 单细胞，以及已审计的 UCI
+`internet_advertisements` 与完整 SMS TF-IDF；其来源状态分别保留为 local snapshot 或
+复用 V9 external manifest，不把未核验来源冒充 UCI。
+
+新增 UCI 数据包来自 Arcene (167)、Dexter (168)、Dorothea (169)、Gisette (170) 和
+Madelon (171)，原始 zip 位于
+`datasets/external/v19_extended_sparse_20260811/raw/uci/`，训练与 validation 行按官方
+文件合并；每个 zip 与派生 NPZ 均记录一次 SHA-256。Dorothea 源矩阵为 100,000 维，
+当前 scMAE 解码器无法直接承受二次维度参数量，因此在预注册转换阶段只执行一次无标签
+方差 Top-2000，保存 `dorothea.selected_feature_indices.npy`、源/派生维度和规则；RG
+与 scMAE 共用该派生输入。所有候选的 `X`、标准化和图构建不读取 `y`，标签只由外层
+benchmark 用于 known-K 与后验 ARI/NMI。
+
+## 2026-08-10 V20 Full eight-dataset coarse screen
+
+使用冻结配置 `methods/TopoGate/V20_topology_conditioned_adv_mask/configs/v20_full.yaml`
+并覆盖 X-only 选择的 `gate_lr=5e-4`、`tau_ste=0.5`，运行 8 个输入层：
+`Mouse_retina`、`Campbell`、`Baron Human` 的 `clubench_bridge`，以及
+`sms_spam_collection`、`cnae9`、`imdb`、`hate_speech`、
+`sentiment_labeld_sentences` 的 `shared_text`。每个数据集为 seed42、80 epochs、
+40 epoch warmup；cnae9 复用 `result/V20/full_first_round_20260810/`，其余输出在
+`result/V20/full8_seed42_20260810/`。
+
+V20 使用稀疏图视图的 TruncatedSVD/cosine-kNN（k=20，SVD 95% 目标、上限 500），
+dense 模型视图上的分块 deviation/dispersion 和共享 `2->64->1` Gate。训练过程、图、
+统计、Gate 和 loss 均未读取标签；K 仅用于 known-K KMeans readout 和后验指标。
+GPU2--4 在启动时被外部进程占用，因此补充任务改在 GPU1 串行完成；所有 8/8 run
+最终 `completed`，没有 OOM 或 `incomplete_compute`。本轮只做 Full 粗筛，未运行
+matched scMAE-only，不能作为正式对照矩阵。
+
+requested mask 约为 0.40，但 sparse donor 的 effective value-change rate 依数据集约
+为 0.0068--0.0864；该值作为诊断保存，不替代 requested-mask 训练语义。未重新计算
+SHA/hash，沿用既有数据清单和路径。
+
+## 2026-08-10 PlantNet-ARI fixed RG transfer with PCA200
+
+固定配置文件为 `methods/TopoGate/V19_rg_adapter/configs/v19_rg_plantnet_ari_pca200.yaml`：
+PlantNet full-16 ARI 选择的 `hidden_size=256`、`batch_size=512`、`lr=0.00139648`、
+`mask_ratio=0.368914`、`dropout=0.260665`、`masked_data_weight=0.814697`、
+`mask_loss_weight=0.636069`、`neighbor_k=5`、`mix_neighbors=4`、`tau=0.493971`、
+`pseudo_weight=0.564693`、`gate_max=0.064455`、`n_top_features=1500`；本轮将图 PCA
+请求值设为 `200`。输出根为
+`result/V19/v19_rg_plantnet_ari_pca200_20260810/`，覆盖 8 个 comparable 数据集、
+`rg_full/scmae_only`、seeds `[42,123,7]`，共 `48/48`。
+
+V19 的 `clubench_bridge/shared_text` 预处理协议不做 HVG，因此 PlantNet 的
+`n_top_genes=1500` 在本批输入上不改变特征数；`knn_pca_dim=200` 按
+`min(200,n_features,n_samples-1)` 实际化，`hate_speech` 实际为 100，其余 RG runs 为
+200。未重新计算 SHA/hash，复用了已登记的 manifest 与数据路径。
+
+## 2026-08-10 V19 v2 mechanism refine and final comparison
+
+正式 mechanism refine 输出根为
+`result/V19/v19_rg_mechanism_refine_v2_cached_20260809/`，固定
+`v19_rg_unsup_tuning_v2` 协议完成 `396/396`：12 个 mechanism candidates、11 个输入层、
+seeds `[42,123,7]`。该阶段只使用 held-out X-only proxy，launcher 审计为
+`labels_accessed=false`、`y_key_read=false`，没有聚类/K/标签指标。唯一选中配置为
+`rel_both2`：`gamma_mutual=2.0`、`gamma_snn=2.0`、`gamma_sim=0.0`、
+`gamma_distance=0.0`；proxy-win 为 2/8 个底层数据集，保留该限制作为结果解释边界。
+
+post-freeze final 输出根为
+`result/V19/v19_rg_final_postfreeze_rel_both2_20260810/`，11 个输入层 × 6 个 variant ×
+3 个 seed 完成 `198/198`，`audit_ok=true`，6 个 worker 返回码为 0，未使用 GPU 0/7。每个
+run 的正式 artifact contract 为 `status.json`、`run_record.json`、`resolved_config.json`、
+`metrics.json`、`predictions.npy`、`labels_true.npy` 和 `embedding_final.npy`，另保留
+`dataset_profile.json`、`preprocess_profile.json`、gate/edge diagnostics 和 training history。
+模型拟合与变体选择均未读取标签；`labels_true.npy` 只服务于 benchmark K/后验指标。
+
+comparison 输出为
+`result/V19/v19_rg_final_comparison_rel_both2_20260810/`。归档 baseline CSV 仅在 Campbell、
+Mouse_retina、cnae9 和 sms_spam_collection 四个层有可连接记录；不对缺失层做零填充，
+不把归档数值包装成 fresh matched SOTA 运行。实验过程没有重复计算 SHA/hash。
+
+## 2026-08-08 V19 X-only tuning handoff
+
+新增 `result/V19/v19_rg_unsup_tuning_v1/` 的无标签调参协议和等待衔接器。调参器从
+固定 V19 manifest 读取 11 个输入层的 NPZ 特征矩阵字段，不访问 `y`，不推导 K，不执行
+KMeans，也不保存标签指标。预注册候选为 24 个，完整搜索规模为 24 × 11 × 3 = 792
+个 run；选择指标是按数据集/seed 等权的 masked recovery、latent view stability 和
+input-neighbor preservation 排名均值。V19 正式矩阵已 `66/66 completed`，衔接器已启动
+调参 worker；不重新计算 SHA/hash。
+
+## 2026-08-08 V19 seed42 formal batch running
+
+已启动固定协议 `v19_rg_selected_advantage_v1` 的 seed42 批次，manifest 为
+`result/V19/v19_rg_dataset_manifest_20260808.json`，输出根为
+`result/V19/v19_rg_selected_advantage_v1/`。seed42 已 `22/22 completed` 且无
+`incomplete_compute`；seed123 与 seed7 随后由既存 launcher 启动，各自当前为 7 个
+run completed、1 个 run running，其余按 launcher 顺序等待。V19 使用允许的物理 GPU，
+GPU0/7 未用于 V19；V18 既有 worker 未停止或覆盖。当前不写入性能结论，不重新计算
+SHA/hash。
+
+## 2026-08-08 V19 fixed selected-dataset manifest and engineering smoke
+
+生成固定 manifest `result/V19/v19_rg_dataset_manifest_20260808.json`，manifest id 为
+`v19_rg_advantage_inputs_20260808_v1`。8 个真实 NPZ 数据展开为 11 个输入层：
+`Mouse_retina`、`Campbell`、`Baron Human` 各有 `rg_native` 与 `clubench_bridge`；
+`sms_spam_collection`、`cnae9`、`imdb`、`hate_speech`、
+`sentiment_labeld_sentences` 使用 native/bridge 等价的 `shared_text`，不重复运行。
+manifest 共 11/11 eligible，选择不使用标签或既有结果；按要求不重新计算 SHA/hash，
+`source_hash` 显式记为 `unavailable`。
+
+预处理固定为：Baron native 使用 `normalize_total(10000) -> log1p -> HVG1000 ->
+scanpy scale`；Mouse/Campbell native 使用已有 log1p 表达、`HVG1000 -> scanpy scale`，
+不重复 log1p；所有 bridge 与 shared text 使用原 NPZ `x -> StandardScaler`，不做 HVG、
+count normalization 或 log1p。生物 native 不与归档 SOTA 混合；bridge 与 bridge-equivalent
+shared text 可进入后续统一协议对照。
+
+真实 engineering smoke 位于 `result/V19/engineering_smoke_20260808/`，覆盖 `cnae9`
+shared text 和 `Baron Human` native 的 `scmae_only/rg_full`，均为 seed42、64 行、1 epoch、
+CPU。两个 paired variant 的 selected-feature 文件逐项一致；RG 输出 10-neighbor graph、
+非零 node gate 与 pseudo path，scMAE 输出空图和零 gate。该 smoke 只验证输入与产物契约，
+其 ARI/NMI 不进入正式结果表。
+
+## 2026-08-08 V18 v2.2 protocol replacement
+
+v2.1 在正式矩阵中途因前置代码审计发现 mask 语义和 FISTA latent 归一化偏差而停止；
+其 564 个已完成 run 保留为旧 protocol 产物，6 个运行中的 key 标记为
+`incomplete_compute`，不进入 v2.2 汇总。v2.2 复用已经冻结的 157 条数据登记，
+生成 `result/V18/v18_dataset_manifest_v2_2_20260808.json`，其中 149 条 eligible，
+10 个 variant、3 个 seed 仍为 4470 个预注册 run key。未重新扫描数据源或重算哈希。
+
+v2.2 engineering smoke 位于
+`result/V18/engineering_smoke_v2_2_20260808/2d_20c_no0/`，使用真实数据、seed42、
+96 行和短 epoch，仅验证代码路径与产物契约，不进入正式性能表。
+
+## 2026-08-08 V18 dataset manifest and engineering smoke
+
+基于现有 V9 registry 一次性生成 `result/V18/v18_dataset_manifest_20260808.json`，
+manifest id 为 `v18_scmae_mainline_20260808`，共 157 条记录，其中 149 条 eligible、
+8 条 ineligible。数据集选择声明 `selection_uses_labels_or_outcomes=false`；manifest
+和 runner 不在每个 seed 或汇总阶段重复计算 SHA-256/其他哈希。
+
+真实登记 `ahdpc_prepared__2d_20c_no0`（原始 `1517x2`、`K=20`）按 seed42、最大
+1500 行的 label-free 行抽样运行三路短 engineering smoke。输入预处理为
+`nan_to_num + column StandardScaler`，标签只用于外层 K/后验指标。产物位于
+`result/V18/engineering_smoke_real_20260808/2d_20c_no0/`；这不是正式性能证据，
+不与 V9/V17 或 baseline 汇总混合。
+
+### V18 formal matrix submission (2026-08-08)
+
+使用 `result/V18/v18_dataset_manifest_20260808.json` 中 149 条 eligible 数据，按
+10 个预注册 variant、seeds `[42,123,7]` 展开 4470 个 run key。六个 launcher worker
+分别绑定物理 GPU 1--6；每个子进程保存 `manifest_id`，不重复计算数据或源码哈希。
+当前记录为运行中，尚无正式 V18 汇总结果。
 
 ### 2026-08-07 V16.1 完成补齐的候选
 
 在不改变 V16.1 固定协议的情况下，`PRJNA895163`、`Bone_Marrow` 和 `Young` 已完成
 clean/compound、seeds `[42,123,7]` 与五路 paired readout。`PRJNA895163` 的产物位于
-`unpublished-temp/v16_1_stage1_parallel_20260806/`，另两项位于
+`/tmp/v16_1_stage1_parallel_20260806/`，另两项位于
 `result/V16_1/expanded_count_stage1_20260807/`。固定汇总均为
 `empirical_not_supported`：clean Delta ARI 分别为 `0.000000`、`-0.002388`、
 `+0.002589`；compound Delta ARI 分别为 `+0.000004`、`-0.000291`、`0.000000`。
@@ -31,10 +333,10 @@ Norman Stage-0；`hrvatin_geo_maintype_counts` 已完成并按固定规则记为
 ### 2026-08-07 V16.1 PBMC3K 新增计数候选
 
 新增本地公开 PBMC3K 候选：源文件为
-`external-data-source/test-datasets/test-datasets-modules/data/genomics/homo_sapiens/scrnaseq/h5ad/pbmc3k.h5ad`，使用
+`/data/luolie/biopipeline/test-datasets/test-datasets-modules/data/genomics/homo_sapiens/scrnaseq/h5ad/pbmc3k.h5ad`，使用
 `raw.X` 作为可逆 `log1p(count)` 视图，`obs.louvain` 作为 benchmark 标签。
 转换器新增 `raw.X` 读取和严格 `expm1` 恢复路径，生成 CSR bundle
-`unpublished-temp/v16_1_expanded_data/PBMC3K.npz`，矩阵 `2638×13714`，非零数 `2238732`，
+`/tmp/v16_1_expanded_data/PBMC3K.npz`，矩阵 `2638×13714`，非零数 `2238732`，
 `labels_used_during_fit=false`。没有计算或记录新的哈希。
 
 固定 V16.1 Stage-0（`k=20`、三次 split、A/B 交换）通过理论域证书：零比例
@@ -45,7 +347,7 @@ Norman Stage-0；`hrvatin_geo_maintype_counts` 已完成并按固定规则记为
 Stage-1 输出位于
 `result/V16_1/expanded_count_stage1_20260807/PBMC3K/`，clean 和 compound 均使用
 seeds `[42,123,7]`、五路 paired readout，分别在 GPU5/GPU6 并行完成。固定汇总
-`unpublished-temp/v16_1_summary_pbmc3k_20260807.json` 将其标记为
+`/tmp/v16_1_summary_pbmc3k_20260807.json` 将其标记为
 `empirical_not_supported`：clean mean Delta ARI `0.000000`，compound mean Delta
 ARI `0.000000`；V16.1 因全负 support 精确回退 self-only。该结果不进入正例表，
 也不触发 gate、support、temperature、thinning 或 K 调整。
@@ -63,16 +365,16 @@ readout。两者均按固定规则标记 `empirical_not_supported`：Bach clean 
 `empirical_not_supported`，clean 与 compound Delta ARI 均为 `0.000000`；fixed graph
 的改善没有被 predictive gate 复现。
 
-此前去重快照 `unpublished-temp/v16_1_global_dedup_summary_20260807.json` 包含 33 个完整数据集；
+此前去重快照 `/tmp/v16_1_global_dedup_summary_20260807.json` 包含 33 个完整数据集；
 合并已完成的 `PRJNA895163` 与 `hrvatin_geo_maintype_counts` 后，当前临时快照为 35 个完整数据集，文件为
-`unpublished-temp/v16_1_global_dedup_summary_current_20260807.json`，全部为
+`/tmp/v16_1_global_dedup_summary_current_20260807.json`，全部为
 `empirical_not_supported`。Norman Stage-0 已按搜索上限停止，未追加性能状态。
 
 ### 2026-08-07 V16.1 并行扩展候选
 
 hrvatin_geo_maintype_counts.h5ad 是新增的本地 raw-count 源：矩阵
 48266×25187，使用显式 layers/counts 和 obs.maintype，已分块转换为
-unpublished-temp/v16_1_expanded_data/hrvatin_geo_maintype_counts.npz，CSR 非零数为
+/tmp/v16_1_expanded_data/hrvatin_geo_maintype_counts.npz，CSR 非零数为
 70653489，labels_used_during_fit=false。当前固定 k=20、三次 split 的
 Stage-0 已完成并通过：candidate recurrence `0.2670`、support 非退化；随后按固定
 协议启动 GPU 2 Stage-1。Stage-0 数值只用于结构筛选，不是性能证据。
@@ -93,13 +395,13 @@ PRESCRIBE 的 Norman perturb-seq 子集 perturb_e_distance.h5ad 也通过了输�
 
 > **存储审计声明（2026-08-03）**：本文档保留了多代实验的历史追溯记录。
 > 文中出现的 `learnable_gate_smoke`、V6/V7/HVF smoke、AHDPC verified smoke、
-> V10/V11 iris smoke 和 `unpublished-temp/topogate_v11_semantic_*` 路径均指已经发生但已
+> V10/V11 iris smoke 和 `/tmp/topogate_v11_semantic_*` 路径均指已经发生但已
 > 清理的临时产物，不代表当前文件存在；当前正式产物统一以 `result/...` 路径
 > 为准，并需回到磁盘核对。
 
 ### 2026-08-06 V16.1 expanded-count Stage-1 当前批次
 
-固定输出根为 `unpublished-temp/v16_1_stage1_parallel_20260806/`。`Arabidopsis_Stereo_seq_leaf`、
+固定输出根为 `/tmp/v16_1_stage1_parallel_20260806/`。`Arabidopsis_Stereo_seq_leaf`、
 `CRA002977_1`、`HCA_subsampled_20k`、`TabulaSapiens_Pancreas` 与 `tr45.wc` 已完成
 三 seed、clean/compound 和五路 paired readout，完整 promotion JSON 均标为
 `empirical_not_supported`；当前没有 `candidate_positive`。各数据集的输入来源、计数
@@ -115,7 +417,7 @@ PRESCRIBE 的 Norman perturb-seq 子集 perturb_e_distance.h5ad 也通过了输�
 
 在首批 210 个正式 summaries 之外，已启动新的并行 Stage-1 候选确认，固定使用
 `TabulaSapiens_Pancreas.npz` 与 `CRA002977_1.npz`、seeds `[42,123,7]`、clean/compound
-和五路 paired readout；输出根为 `unpublished-temp/v16_1_stage1_parallel_20260806/`，分别占用物理
+和五路 paired readout；输出根为 `/tmp/v16_1_stage1_parallel_20260806/`，分别占用物理
 GPU 3、4。记录时已有 `CRA002977_1` clean 三 seed及 compound/seed42、
 `TabulaSapiens_Pancreas` clean seed42/123 的五路 summaries（共 30），任务仍在运行，
 未作晋级判定；不覆盖既有结果，也没有重新计算任何哈希。
@@ -124,7 +426,7 @@ GPU 3、4。记录时已有 `CRA002977_1` clean 三 seed及 compound/seed42、
 整数 count 源：`SRP182008`、`SRP224648`、`CRA002977_1`、`Mouse_Pancreas_1`、
 `Human_Pancreas_3`、`Human_Pancreas_1`、`Bone_Marrow`、`Blood_BoneMarrow`、
 `TabulaSapiens_Pancreas` 和 `PRJNA895163`。原始 H5AD 按分块读取转换为 CSR bundle，
-暂存于 `unpublished-temp/v16_1_expanded_data/`；每个 bundle 记录源路径、矩阵形状、标签字段和
+暂存于 `/tmp/v16_1_expanded_data/`；每个 bundle 记录源路径、矩阵形状、标签字段和
 `labels_used_during_fit=false`。分块非零值审计把 `SRP235541`、`SRP171040`、
 `SRP309176`、`SRP145013`、`CRA007122`、`Wang` 和 `Pollen` 的当前输入标为
 非整数/归一化，不强行恢复为 count。
@@ -132,9 +434,9 @@ GPU 3、4。记录时已有 `CRA002977_1` clean 三 seed及 compound/seed42、
 本轮又登记并转换三个本地可核验源：`HCA_subsampled_20k`（`20000×26662`，
 `cell_type` 13 类）、`Paul15`（`2730×3451`，`paul15_clusters`）和
 `Arabidopsis_Stereo_seq_leaf`（`721×18257`，`cell_type` 6 类）。三者的抽样非零值均为
-非负整数，转换 bundle 位于 `unpublished-temp/v16_1_expanded_data/`，不计算或保存新的哈希。
-固定 Stage-0 输出分别为 `unpublished-temp/v16_1_stage0_hca_long.json` 和
-`unpublished-temp/v16_1_stage0_small_external.json`：HCA 候选 recurrence `0.4210`、稳定边率
+非负整数，转换 bundle 位于 `/tmp/v16_1_expanded_data/`，不计算或保存新的哈希。
+固定 Stage-0 输出分别为 `/tmp/v16_1_stage0_hca_long.json` 和
+`/tmp/v16_1_stage0_small_external.json`：HCA 候选 recurrence `0.4210`、稳定边率
 `0.7062`、正支持行 `0.020%`；Arabidopsis recurrence `0.3252`、稳定边率 `0.6432`、
 正支持行 `0.139%`；Paul15 support 全负，保留为 Stage-0 候选而不进入模型测试。
 此前超时的 `Shekhar` 和 `Tosches` 也完成了延长 Stage-0：Shekhar support 全负；
@@ -142,11 +444,11 @@ Tosches recurrence `0.4117`、稳定边率 `0.7000`、正支持行 `0.016%`。�
 无标签候选筛选，不能当作性能证据。
 
 固定 Stage-0（expanded-count、三次 split、A/B 交换、`k=20`）输出位于：
-`unpublished-temp/v16_1_stage0_h5ad_small.json`、`unpublished-temp/v16_1_stage0_human_pancreas1.json`、
-`unpublished-temp/v16_1_stage0_bone_marrow.json`、`unpublished-temp/v16_1_stage0_human_pancreas3.json`、
-`unpublished-temp/v16_1_stage0_blood_bonemarrow.json`、`unpublished-temp/v16_1_stage0_srp182008.json`、
-`unpublished-temp/v16_1_stage0_srp224648.json`、`unpublished-temp/v16_1_stage0_cra002977_1.json` 和
-`unpublished-temp/v16_1_stage0_tabula_pancreas.json`。其中 `Human_Pancreas_1`、`Bone_Marrow`、
+`/tmp/v16_1_stage0_h5ad_small.json`、`/tmp/v16_1_stage0_human_pancreas1.json`、
+`/tmp/v16_1_stage0_bone_marrow.json`、`/tmp/v16_1_stage0_human_pancreas3.json`、
+`/tmp/v16_1_stage0_blood_bonemarrow.json`、`/tmp/v16_1_stage0_srp182008.json`、
+`/tmp/v16_1_stage0_srp224648.json`、`/tmp/v16_1_stage0_cra002977_1.json` 和
+`/tmp/v16_1_stage0_tabula_pancreas.json`。其中 `Human_Pancreas_1`、`Bone_Marrow`、
 `Blood_BoneMarrow`、`TabulaSapiens_Pancreas` 具有非零正支持行比例，但该指标只作
 结构候选筛选；`Mouse_Pancreas_1` 支持全负，仍保留为 Stage-0 candidate。
 
@@ -160,7 +462,7 @@ Tosches recurrence `0.4117`、稳定边率 `0.7000`、正支持行 `0.016%`。�
 ### 2026-08-06 V9 条件性拓扑收益协议与主矩阵
 
 新增 manifest 驱动工具链 `scripts/v9_regime/`。本地 manifest 暂存于
-`unpublished-temp/v9_regime_20260806/manifest.local.json`：157 条记录，其中 149 条满足
+`/tmp/v9_regime_20260806/manifest.local.json`：157 条记录，其中 149 条满足
 `n>=100, 2<=K<=50` 和 dense element 上限，8 条明确排除。所有 eligible 数据均
 使用同一 X-only `nan_to_num`+column StandardScaler；V9 runner 接收已标准化 X 并
 固定 `scale_input=false`。标签只用于 manifest 的
@@ -168,21 +470,21 @@ Tosches recurrence `0.4117`、稳定边率 `0.7000`、正支持行 `0.016%`。�
 `labels_used_during_fit=false`、source path/version、preprocessing、resolved config
 和 `predictions.npy`/`labels_true.npy`/`embedding_final.npy` 语义。
 
-Stage 0 特征表为 `unpublished-temp/v9_regime_20260806/features.local.csv`，固定
-70/30 X-only split 为 `unpublished-temp/v9_regime_20260806/split.local.json`（discovery 113、
+Stage 0 特征表为 `/tmp/v9_regime_20260806/features.local.csv`，固定
+70/30 X-only split 为 `/tmp/v9_regime_20260806/split.local.json`（discovery 113、
 confirmation 36）。预分层消融面板已锁定为
-`unpublished-temp/v9_regime_20260806/panel.local.json`，11 个数据集、6 类结构角色；由于主
+`/tmp/v9_regime_20260806/panel.local.json`，11 个数据集、6 类结构角色；由于主
 Full/NoMix confirmation 触发停机规则，Static/Random/Far 未启动。
 
 固定 V9 Full/NoMix 运行产物暂存于
-`unpublished-temp/v9_regime_20260806/runs_screen_standardized/`：Stage 1 screen
+`/tmp/v9_regime_20260806/runs_screen_standardized/`：Stage 1 screen
 298/298 completed，随后补齐 seed `[123,7]`，主矩阵共 894/894 completed、0 error。
-汇总为 `unpublished-temp/v9_regime_20260806/summary_main_standardized/summary.json`。当前正式
+汇总为 `/tmp/v9_regime_20260806/summary_main_standardized/summary.json`。当前正式
 `result/` 目标只读，因此这些路径是本轮可复核的临时证据，不冒充正式结果盘。
 
 OpenML 元数据发现登记 159 个数值候选；前 20 个显式 target/K fetch 全部
 `unresolved`（API 数据端点 SSL/网络失败），记录在
-`unpublished-temp/v9_regime_20260806/openml_registry.json`，未进入训练 manifest；没有使用
+`/tmp/v9_regime_20260806/openml_registry.json`，未进入训练 manifest；没有使用
 相似或模拟替代数据，也没有重复计算哈希。
 
 ### 2026-08-06 V9 Full/scMAE confirmation secondary comparison
@@ -194,9 +496,9 @@ OpenML 元数据发现登记 159 个数值候选；前 20 个显式 target/K fet
 `learned/reliability/0.3`，两路均为 80 epochs、mask ratio `0.3`、hidden size `128`、
 `scale_input=false`（输入已由协议统一 StandardScaler）。
 
-产物根为 `unpublished-temp/v9_regime_20260806_full_scmae_confirmation_v2/`，包括 36 datasets、
+产物根为 `/tmp/v9_regime_20260806_full_scmae_confirmation_v2/`，包括 36 datasets、
 3 seeds、216 条 `run_record.json`，均 `status=completed`；汇总为
-`unpublished-temp/v9_regime_20260806_scmae_confirmation_summary/`，其中
+`/tmp/v9_regime_20260806_scmae_confirmation_summary/`，其中
 `paired_deltas.csv` 保存同数据集同 seed 的配对差。运行记录固定保存
 `predictions.npy`、`labels_true.npy`、`embedding_final.npy`，并记录
 `k_source=manifest_labels_unique` 和 `labels_used_during_fit=false`。
@@ -253,8 +555,8 @@ CSR data 未通过当前 log1p-count 恢复检查，直接记录为理论域外�
 
 Campbell/Mouse_retina 的首次 V16.1 Stage-0 图审计超过 360 秒，是当前 block sparse
 cosine kNN 的计算成本事件；随后使用延长窗口完成了两份 exploratory 产物：
-`unpublished-temp/v16_1_stage0_campbell_exchange.json` 和
-`unpublished-temp/v16_1_stage0_mouse_exchange.json`。这四份 `unpublished-temp/v16_1_stage0_*_exchange.json`
+`/tmp/v16_1_stage0_campbell_exchange.json` 和
+`/tmp/v16_1_stage0_mouse_exchange.json`。这四份 `/tmp/v16_1_stage0_*_exchange.json`
 文件均不写入正式结果盘；V16.1 尚未运行 Stage 1。
 
 ### 2026-08-06 V16.1 expanded-count 本地候选扩展
@@ -262,7 +564,7 @@ cosine kNN 的计算成本事件；随后使用延长窗口完成了两份 explo
 新增 registry：`scripts/V16_1/count_candidate_registry.json`。来源为本地
 `scCluBench/data/scMAE/*.h5` 的 `X/Y` 字段；转换器对全部 CSR 非零值执行非负整数检查，
 不对非整数矩阵做四舍五入。转换 bundle 和 Stage-0 exploratory JSON 暂存于
-`unpublished-temp/v16_1_expanded_data/` 与 `unpublished-temp/v16_1_expanded_stage0_*.json`，未写入只读正式结果盘。
+`/tmp/v16_1_expanded_data/` 与 `/tmp/v16_1_expanded_stage0_*.json`，未写入只读正式结果盘。
 
 | 数据集 | 形状 | zero fraction | median nnz | 分层 | Stage-0 图/support 状态 |
 |---|---:|---:|---:|---|---|
@@ -297,14 +599,14 @@ clean/stress 配对，不参与模型或 variant 选择。
 ### 2026-08-06 V16 Campbell/Mouse_retina Stage-0/1 数据记录
 
 Stage 0 使用 `scripts/V16/run_stage0.py`，输出为
-`unpublished-temp/v16_stage0_anchors.json`。`Campbell`（`9993×26774`，zero fraction
+`/tmp/v16_stage0_anchors.json`。`Campbell`（`9993×26774`，zero fraction
 `0.930739`）和 `Mouse_retina`（`8352×6198`，zero fraction `0.948001`）均通过
 计数域证书，输入存储为 `sparse_npz_chunked`、计数语义识别为
 `log1p_integer`。三次 split 的候选图 recurrence 为 `0.472390` 和 `0.266699`；
 held-out predictive support 正值比例为 `0.001531` 和 `0.000629`。
 
 修正后的 Stage 1 使用 `scripts/V16/run_paired.py`，固定 seeds `[42,123,7]`，
-五路 paired readout，输出暂存于 `unpublished-temp/v16_stage1_anchors_20260806_fixed/`。
+五路 paired readout，输出暂存于 `/tmp/v16_stage1_anchors_20260806_fixed/`。
 clean 与 compound 共 60 个 summary，全部完成且所有 run 均记录
 `labels_used_during_fit=false`；该目录不属于正式 result 盘。
 
@@ -324,7 +626,7 @@ reuters、20newsgroups、cifar10、CIFAR10_CLIP、labeled_faces_in_the_wild、
 flickr_material_database、ISOLET、olivetti_faces、mnist64、seeds）已完成
 路径、SHA256、`n/d/K`、raw zero fraction、nnz 分位数、density 和 sampled
 distance concentration 扫描；当前 exploratory manifest 暂存于
-`unpublished-temp/v15_manifest_fixed16_v2.json`，未写入只读的正式 result 盘。带 raw/SVD
+`/tmp/v15_manifest_fixed16_v2.json`，未写入只读的正式 result 盘。带 raw/SVD
 proxy latent/union graph audit 的 union candidate recall 中位数约 0.787，低于
 Stage-1 的 0.80 预注册门槛；该 proxy 不能替代训练后的 EMA latent graph。
 
@@ -346,8 +648,8 @@ Stage-1 panel 的输入、K 和协议均可回到各 run 的 `summary.json`：K 
 
 ### 2026-08-04 V15 Stage-1B certificate audit record
 
-`scripts/V15/audit_stage1b_certificates.py` 对 `unpublished-temp/v15_stage1_panel_v2`
-进行只读审计并输出 `unpublished-temp/v15_stage1b_certificates.json`。它重新读取每个 run
+`scripts/V15/audit_stage1b_certificates.py` 对 `/tmp/v15_stage1_panel_v2`
+进行只读审计并输出 `/tmp/v15_stage1b_certificates.json`。它重新读取每个 run
 的 `candidate_indices`、`candidate_valid`、`candidate_features`、
 `utility_target`/`utility_hat`、`labels_true.npy` 和 `summary.json`。
 标签只用于 graph 的后验 edge purity、budget-normalized candidate recall 和
@@ -361,9 +663,9 @@ utility 仅 7/7 in-sample 可算，held-out 与 independent gain 均为 0/7。
 ### 2026-08-05 V15 repaired-code minimal paired data record
 
 当前 source hash 的 clean exploratory 输出位于
-`unpublished-temp/v15_local_consensus_matrix_20260805/`：sms/cnae9 各 5 个 variant，
+`/tmp/v15_local_consensus_matrix_20260805/`：sms/cnae9 各 5 个 variant，
 以及 reuters self-only；compound 输出位于
-`unpublished-temp/v15_compound_matrix_20260805/`，为 sms/cnae9 的 self-only、
+`/tmp/v15_compound_matrix_20260805/`，为 sms/cnae9 的 self-only、
 direct-local-consensus、counterfactual-learned 共 6 个 run。全部 run 使用
 `K=int(np.unique(y).size)` 作为 benchmark oracle，训练期间
 `labels_used_during_fit=false`；标签只用于 summary 的 ARI/NMI 和 graph 后验
@@ -375,7 +677,7 @@ clean 结果中 sms/cnae9 的 candidate recall/purity 分别约为 `0.89/0.89` �
 不支持跨 seed 性能结论。
 
 追加的 `candidate_scope=both_views` 交集消融暂存
-`unpublished-temp/v15_compound_both_views_20260805/`，仅 4 个 run。compound 下 cnae9
+`/tmp/v15_compound_both_views_20260805/`，仅 4 个 run。compound 下 cnae9
 recall/purity 约 `0.15/0.15`、sms 约 `0.78/0.78`，learned scorer 的 null mass
 仍为 `0`；该图范围控制因此不进入后续主路径。
 
@@ -438,7 +740,7 @@ lambda=0.01/0.03/0.1=0.6194/0.3372/0.1874。self mass 非零且 warmup
 **生成与验证**：
 
 - 运行入口：`methods/TopoGate/V12_latent_topology/run_npz.py`；短 smoke 的
-  `summary.json`、history 和数组写入 `unpublished-temp/topogate_v12_*`，未写入正式结果表。
+  `summary.json`、history 和数组写入 `/tmp/topogate_v12_*`，未写入正式结果表。
 - `compileall` 与 V12 三个单元/梯度测试通过；实际 runner 记录非零 gate
   gradient。flame 8/80 epoch 和 enron 8 epoch 的 ARI 只作为工程诊断，不能
   代替 `[42,123,7]` 多 seed、至少五个数据集的正式比较。
@@ -459,7 +761,7 @@ lambda=0.01/0.03/0.1=0.6194/0.3372/0.1874。self mass 非零且 warmup
 V12 Full 的最终边权熵为 1.6088，接近 `log(5)`，最大边权均值为 0.2088，
 说明 softmax gate 基本没有选择性。该诊断支持“decoder 接口改写是主要跌幅来源，
 强制均值对齐是 Full 的附加过平滑风险”，不能替代多 seed 正式实验。临时产物均
-写入 `unpublished-temp/topogate_v12_diag_*` 并在核验后清理。
+写入 `/tmp/topogate_v12_diag_*` 并在核验后清理。
 
 ### 2026-08-03 V12 当前源码四路隔离复核（单 seed，非正式结果）
 
@@ -515,7 +817,7 @@ decoder 接口回归和无 self/null 的邻居均值对齐是两个独立跌幅�
 - 同目录的 `run_diagnostics.csv`、`summary_by_dataset_variant.csv`、
   `paired_deltas.csv`、`protocol.json` 和 `report.md`。
 
-**核验与结论边界**：`PYTHONPATH=source-repository pytest -q
+**核验与结论边界**：`PYTHONPATH=/home/luolie/ToPoGate pytest -q
 methods/TopoGate/V11/tests/test_v11.py` 得到 `20 passed`；结果审计确认 30/30
 summary、五个数据集 hash 一致、标签隔离字段均为 false、输出文件无缺失。候选相对
 同批 Full 的 head/KMeans ARI、NMI、silhouette 差值为 `+0.000010/-0.001139/+
@@ -544,7 +846,7 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 正式审计一致。相关性只作小样本描述性结果，不用于配置选择或论文因果结论。
 
 **追溯代码与验证**：`scripts/analysis/analyze_topogate_cross_version_landscape.py`；
-运行前确认 `result -> external-result-storage/result`，脚本通过路径检查、Python
+运行前确认 `result -> /data/luolie/ToPoGate/result`，脚本通过路径检查、Python
 编译和结果数量断言后生成上述文件。
 
 ### 2026-08-03 V11 sparse H0 TDA pilot 工程验证
@@ -568,7 +870,7 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 - `methods/TopoGate/V11/tda.py`、`methods/TopoGate/V11/trainer.py`、
   `methods/TopoGate/V11/tests/test_v11.py`；
 - `python -m compileall -q methods/TopoGate/V11 scripts/V11`；
-- `PYTHONPATH=source-repository pytest -q methods/TopoGate/V11/tests/test_v11.py`：
+- `PYTHONPATH=/home/luolie/ToPoGate pytest -q methods/TopoGate/V11/tests/test_v11.py`：
   `19 passed`。
 
 **结论边界**：本条只记录当时的机制/工程验证阶段，不是性能实验；后续正式五组
@@ -606,7 +908,7 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
   均连通），非零 prior edge fraction 约为 `0.19--0.26`；这确认 prior 实际
   计算并参与 graph-prior score，但不等于它改善了簇分配。
 - 正式结论是该固定五数据集协议内的 TDA prior **no-go**。所有持久化输出均在
-  `source-repository/result` 对应的 `external-result-storage/result`，没有新增
+  `/home/luolie/ToPoGate/result` 对应的 `/data/luolie/ToPoGate/result`，没有新增
   根目录 smoke 结果；不写入论文主方法，也不推广到完整 H1/dense VR TDA。
 
 ### 2026-08-03 跨版本 evidence/provenance 统一审计
@@ -771,17 +1073,17 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 
 | 日期 | 操作 | 输入 | 输出 | 代码 |
 |------|------|------|------|------|
-| 2026-08-02 | V11 旧 `semantic_residual` breast 临时 3-seed 对照（历史产物已清理） | `datasets/breast_cancer_wisconsin_original.npz`，K 自动取 `len(unique(y))`，seeds 42/123/7 | `unpublished-temp/topogate_v11_semantic_breast__{full,nomix}__seed*`；Full head ARI 0.887228±0.003224，NoMix 0.885369±0.011102，KMeans Δ +0.00371；仅历史工程记录，非正式论文结果 | `methods/TopoGate/V11/run.py` + `topogate_v11_semantic_residual.yaml` |
-| 2026-08-02 | V11.3 `semantic_metric` 工程 smoke（历史产物已清理） | `datasets/iris.npz`，CPU，seed=42，4 epochs，缩小 hidden/latent | `unpublished-temp/topogate_v11_semantic_metric_iris/`；head ARI 0.6051，KMeans ARI 0.5961，最后 gate/target=0.311/0.021；仅链路验证 | `methods/TopoGate/V11/run.py` + `topogate_v11_semantic_metric.yaml` |
+| 2026-08-02 | V11 旧 `semantic_residual` breast 临时 3-seed 对照（历史产物已清理） | `datasets/breast_cancer_wisconsin_original.npz`，K 自动取 `len(unique(y))`，seeds 42/123/7 | `/tmp/topogate_v11_semantic_breast__{full,nomix}__seed*`；Full head ARI 0.887228±0.003224，NoMix 0.885369±0.011102，KMeans Δ +0.00371；仅历史工程记录，非正式论文结果 | `methods/TopoGate/V11/run.py` + `topogate_v11_semantic_residual.yaml` |
+| 2026-08-02 | V11.3 `semantic_metric` 工程 smoke（历史产物已清理） | `datasets/iris.npz`，CPU，seed=42，4 epochs，缩小 hidden/latent | `/tmp/topogate_v11_semantic_metric_iris/`；head ARI 0.6051，KMeans ARI 0.5961，最后 gate/target=0.311/0.021；仅链路验证 | `methods/TopoGate/V11/run.py` + `topogate_v11_semantic_metric.yaml` |
 | 2026-07-31 | ESWA-2026 AHDPC 论文数据归档与验证 | 公开 UCI / UEF / GitHub benchmark / OpenML / AT&T 原始数据 | `datasets/AHDPC/raw/`、24 个经形状/K 校验的 `processed/*.npz`、`datasets/AHDPC/MANIFEST.json` | `baseline/AHDPC/download_datasets.py` |
 | 2026-07-31 | AHDPC 真实数据 smoke（历史产物已清理） | `datasets/AHDPC/processed/{flame,aggregation,banknote}.npz` | `result/AHDPC/verified_smoke_2026-07-31/`（已清理） | `baseline/AHDPC/run_benchmark.py`、`run.py` |
 | 2026-07-31 | AHDPC 扩展 smoke（历史产物已清理） | `datasets/AHDPC/processed/{2d_20c_no0,dim064,image_segment,rice}.npz` | `result/AHDPC/verified_smoke_2026-07-31/extended/summary.csv`（已清理） | `baseline/AHDPC/run_benchmark.py` |
 | 2026-07-31 | AHDPC Olivetti t-SNE 图像分支 smoke（历史产物已清理） | `datasets/AHDPC/processed/olivetti_faces.npz`（400×4096） | `result/AHDPC/verified_smoke_2026-07-31/olivetti_faces_tsne_seed42/`（已清理） | `baseline/AHDPC/run_face.py` |
 | 2026-07-31 | AHDPC 扩展 smoke（历史产物已清理） | `datasets/AHDPC/processed/{2d_20c_no0,dim064,image_segment,rice}.npz` | `result/AHDPC/verified_smoke_2026-07-31/extended/summary.csv`（已清理） | `baseline/AHDPC/run_benchmark.py` |
-| 2026-07-23 | 移动数据集 | `source-repository/baseline/CLUBench/CLUBench/datasets/*.npz` (10 个文件) | `external-result-storage/datasets/` | N/A |
+| 2026-07-23 | 移动数据集 | `/home/luolie/ToPoGate/baseline/CLUBench/CLUBench/datasets/*.npz` (10 个文件) | `/data/luolie/ToPoGate/datasets/` | N/A |
 | 2026-07-24 | 导出 CLUBench 24 算法 baseline 表 | `baseline/CLUBench/performance_matrix/best_hpc/*.p` (24 个 pickle) | `result/baseline_clubench*.csv` (5 个 CSV) | `baseline/CLUBench/export_baseline_csv.py` |
-| 2026-07-24 | 复制 NeighborMix_scMAE 到项目内（基类本地化） | `external-data-source/dimension-reduction/plantnet/experimental_retired_models/NeighborMix_scMAE` | `source-repository/methods/NeighborMix_scMAE/` | `cp -r` + 验证 import |
-| 2026-07-24 | 下载完整 CLUBench 131 数据集（hfd 工具） | `https://hf-mirror.com/datasets/Feng-001/Clustering-Benchmark/.../CLUBench-Datasets.zip` | `external-result-storage/download/CLUBench-Datasets.zip` (689MB) + `external-result-storage/datasets/*.npz` (131 个) | `hfd.sh` (aria2c 多线程) |
+| 2026-07-24 | 复制 NeighborMix_scMAE 到项目内（基类本地化） | `/home/luolie/biopipeline/dimension-reduction/plantnet/experimental_retired_models/NeighborMix_scMAE` | `/home/luolie/ToPoGate/methods/NeighborMix_scMAE/` | `cp -r` + 验证 import |
+| 2026-07-24 | 下载完整 CLUBench 131 数据集（hfd 工具） | `https://hf-mirror.com/datasets/Feng-001/Clustering-Benchmark/.../CLUBench-Datasets.zip` | `/data/luolie/ToPoGate/download/CLUBench-Datasets.zip` (689MB) + `/data/luolie/ToPoGate/datasets/*.npz` (131 个) | `hfd.sh` (aria2c 多线程) |
 | 2026-07-24 | run_topogate() 支持 y=None（包装层改造） | `run_npz.py:main()` (强制要 y) | `run_npz.py:main()` (y 可选) | y=None 时跳过 metrics，不写 fake_y |
 | 2026-07-24 | 创建 benchmark 入口脚本 run_topogate_benchmark.py | N/A | `papers/codes/run_topogate_benchmark.py` | 131 数据集批量运行脚本 |
 | 2026-07-24 | 创建 CLUBench 包装器 ToPoGate.py（B2） | `run_npz.py:run_topogate()` | `baseline/CLUBench/CLUBench/algorithms/ToPoGate.py:TopoGate(BaseCluster)` | 继承 + 调 run_topogate |
@@ -789,13 +1091,13 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 | 2026-07-24 | 新增 SSEKMSupervised + 工厂 + ALGOS 注册 | `baseline/CLUBench/CLUBench/algorithms/SklearnEKMeans.py`（仅 EKMeans / SSEKM unsup） | `SSEKMSupervised` 类（KMeans 伪标签构造 prior_matrix）+ `_build_ssekm_sup` 工厂 + ALGOS `SSEKM_sup` 条目 | `baseline/CLUBench/CLUBench/__init__.py` 导出新类 |
 | 2026-07-24 | SSEKM_sup smoke test 通过：合成数据 233/300 标签改变（theta_super=1.0 确认 prior 被消费） | `np.random.default_rng(0)` 合成 (300,6) + sms_spam_collection.npz (835,500) | `theta_super=1.0` 触发半监督分支，与 EKMeans 数值不同 | 详见 CHANGELOG_errors.md「GBUSC/SSEKM_sup 在 Mouse_retina 上无限挂起」条目 |
 | 2026-07-24 | 清理两个僵尸 Python 进程（1051023 GBUSC、1270553 SSEKM_sup） | `Mouse_retina.npz` 跑 GBUSC 超过 2h、SSEKM_sup theta sweep 超过 55min 不落盘 | 全部 SIGKILL；luolie 用户 Python 进程清零 | `kill -9 PID` 多次触发后清除 |
-| 2026-07-25 | 汇总 NPZ 数据集元数据 | `external-result-storage/datasets/*.npz`（磁盘现状 133 个；CLUBench 配置 131 个，额外为 `hrvatin.npz`、`Quake_Smart-seq2_Lung.npz`） | `result/dataset_npz_info.md`（按类型分组完整表）+ `result/dataset_npz_info.csv`（133 行） | `papers/codes/summarize_npz_datasets.py` |
+| 2026-07-25 | 汇总 NPZ 数据集元数据 | `/data/luolie/ToPoGate/datasets/*.npz`（磁盘现状 133 个；CLUBench 配置 131 个，额外为 `hrvatin.npz`、`Quake_Smart-seq2_Lung.npz`） | `result/dataset_npz_info.md`（按类型分组完整表）+ `result/dataset_npz_info.csv`（133 行） | `papers/codes/summarize_npz_datasets.py` |
 | 2026-07-25 | 修复 hrvatin.npz:矩阵转置（基因×细胞 → 细胞×基因） | `hrvatin_geo/GSE102827_MATRIX.csv.gz`（25187 基因 × 65539 细胞） | `hrvatin.npz` (65539, 25187) | 读取后 `.T` 转置 |
 | 2026-07-25 | 过滤 hrvatin -1 标签（maintype 缺失） | `hrvatin.npz` (65539, 25187) 含 17273 个 -1 标签 | `hrvatin_filtered.npz` (48266, 25187) | 删除含 -1 行 |
 | 2026-07-25 | 创建 G-CEALS / IDC / TableDC / ZEUS CLUBench wrapper | 上游 4 个仓库（baseline/G-CEALS, baseline/IDC, baseline/TableDC, baseline/ZEUS）源代码**未修改** | `baseline/CLUBench/CLUBench/algorithms/GCEALS.py, IDC.py, TableDC.py, ZEUS.py` | sys.modules 注入 + 子模块 patch + 自写训练循环 |
 | 2026-07-25 | 创建 4 模型 hpc JSON 配置文件 | `baseline/IDC/cfg/cfg_run.yaml`, G-CEALS 默认超参, ZEUS GMMConfig, TableDC 默认超参 | `baseline/CLUBench/CLUBench/hpc/{gceals,idc,tabledc,zeus}.json` | 手动 JSON 化（完整保留原始配置） |
-| 2026-07-25 | 运行 4 baseline × 15 数据集基准 | `external-result-storage/datasets/*.npz` (15 个指定数据集) | `result/baseline_comparison/{GCEALS,IDC,TableDC,ZEUS,summary}.csv` (56 行结果) | `scripts/run_baseline_comparison.py` |
-| 2026-07-25 | 启动 TopoGate 15 数据集超参调优（Phase 0） | `external-result-storage/datasets/*.npz` (15 个数据集) | `result/tune_15datasets/<dataset>/<dataset>__ep<ep>_mr<mr>_k<k>.json` (目标 405 行) | `scripts/run_topogate_tune_15datasets.py` |
+| 2026-07-25 | 运行 4 baseline × 15 数据集基准 | `/data/luolie/ToPoGate/datasets/*.npz` (15 个指定数据集) | `result/baseline_comparison/{GCEALS,IDC,TableDC,ZEUS,summary}.csv` (56 行结果) | `scripts/run_baseline_comparison.py` |
+| 2026-07-25 | 启动 TopoGate 15 数据集超参调优（Phase 0） | `/data/luolie/ToPoGate/datasets/*.npz` (15 个数据集) | `result/tune_15datasets/<dataset>/<dataset>__ep<ep>_mr<mr>_k<k>.json` (目标 405 行) | `scripts/run_topogate_tune_15datasets.py` |
 | 2026-07-25 | 创建 TopoGate ablation 实验脚本 | `methods/TopoGate/configs/*.yaml` (8 variants) | `scripts/run_topogate_ablation.py` + `scripts/aggregate_ablation.py` + `scripts/plot_ablation.py` | 框架就位，等待 Phase 0 调优结果 |
 | 2026-07-25 | 修改 TopoGate wrapper 加 `neighbor_k` 字段 | `baseline/CLUBench/CLUBench/algorithms/ToPoGate.py` | 支持 `--neighbor_k` CLI 参数覆盖 | model-integrity 原则（包装层改动，算法 main() 不动） |
 | 2026-07-25 | 调优结果汇总（13/15 datasets） | `result/tune_15datasets/grid.csv` (351 行) + `best_per_dataset.csv` + `dominant_hparams.json` | 13/13 datasets 最佳超参与 131-dataset 不同，**epochs=150, mr=0.3, k=5** | `scripts/aggregate_tune_15datasets.py` |
@@ -803,7 +1105,7 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 | 2026-07-25 | Phase 1 消融核心层完成（40/40 runs） | 同上 | 40/40 json 完成，0 错误 | `scripts/run_topogate_ablation.py --layer core` |
 | 2026-07-25 | Phase 1 消融核心层完成（40/40 runs） | 同上 | 40/40 json 完成，0 错误 | `scripts/run_topogate_ablation.py --layer core` |
 | 2026-07-25 | Phase 1 核心层消融结果深度解读 | 40 jsons | 5 datasets × 8 variants 关键发现 + **v2 改造方向审计**（撤回若干建议） | 见下「Phase 1 核心层消融结果 + 解读」|
-| 2026-07-25 | LearnableGate LearnableGate 实现 + 5 数据集 smoke test | `external-result-storage/datasets/{Mouse_retina,enron,sms_spam_collection,har,breast_cancer_wisconsin_original}.npz` | `result/learnable_gate_smoke/*.json` (15 个) + `result/learnable_gate_smoke/comparison.csv` | `scripts/run_learnable_gate_sched_smoke.py` |
+| 2026-07-25 | LearnableGate LearnableGate 实现 + 5 数据集 smoke test | `/data/luolie/ToPoGate/datasets/{Mouse_retina,enron,sms_spam_collection,har,breast_cancer_wisconsin_original}.npz` | `result/learnable_gate_smoke/*.json` (15 个) + `result/learnable_gate_smoke/comparison.csv` | `scripts/run_learnable_gate_sched_smoke.py` |
 | 2026-07-25 | v2 网格扫描：learnable_gate@sched 5 datasets × 150 epochs | 同上 | 5 个 .json + β_perturb 模式差异显著（enron +4.10 vs Mouse_retina -1.56） | `scripts/run_learnable_gate_sched_smoke.py` ||
 | 2026-07-25 | **校正**：Mouse_retina v2_smoke K 错误（硬编码 K=7，实际 K=5） | `result/learnable_gate_smoke/Mouse_retina__*/embedding_final.npy`（已存 K=7 KMeans，但底层 embedding 是正确的） | K=5 重聚类后 Mouse_retina v1=0.9421, v2=0.9405（与 v1 ablation 完全一致）| 验证脚本：`python -c` 用 KMeans 重新聚类 |
 | 2026-07-25 | **multi-seed 验证**：5 ds × 2 variants × 3 seeds = 30 runs | 同上 + 扩展 seeds=[42,123,7] | `result/learnable_gate_smoke/multiseed/comparison.csv` (30 行) + 30 个 .json | `scripts/learnable_gate/run_learnable_gate_sched_multiseed.py` |
@@ -853,7 +1155,7 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 **定位**：真实 NPZ 的工程烟雾测试，验证 V11 的 Student-t responsibility、self/null edge mixture、EMA 动态候选图、输出数据溯源和严格 NoMix 单元回归；不是性能实验。
 
 **输入数据**：
-- 文件路径：`source-repository/datasets/iris.npz`（项目数据软链接目标）
+- 文件路径：`/home/luolie/ToPoGate/datasets/iris.npz`（项目数据软链接目标）
 - 数据描述：`x.shape=(150, 4)`，`y.shape=(150,)`；`K=len(unique(y))=3`
 - 来源验证：运行 summary 记录 `source_sha256=c31ba1e4f6d7a1dbeb7287dac646598d95986cf0d5a6b26705f684da53f33fd5`；训练器本身不读取 y，K 协议记录为 `benchmark_oracle_from_y`
 
@@ -877,7 +1179,7 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 **定位**：这是一项真实 NPZ 的工程冒烟测试，用于验证最终 V10 代码的训练、动态图、原型初始化与输出契约；它不是正式性能实验。
 
 **输入数据**：
-- 文件路径：`source-repository/datasets/iris.npz`（解析到 `external-result-storage/datasets/iris.npz`）
+- 文件路径：`/home/luolie/ToPoGate/datasets/iris.npz`（解析到 `/data/luolie/ToPoGate/datasets/iris.npz`）
 - 数据描述：`x.shape=(150, 4)`，`y.shape=(150,)`，`K=len(unique(y))=3`
 - 来源验证：NPZ 包含真实 `x`/`y` 字段；未使用合成或替代数据
 
@@ -899,24 +1201,24 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 
 **验证边界**：single-seed、仅 3 epochs、且专为快速工程 smoke 配置；不得据此声称 V10 优于 V9、NoMix 或任何 baseline。正式结论仍需至少 5 个核心数据集 × 3 seeds，并报告 mean ± std 与对应消融。
 
-**追溯代码**：`source-repository/methods/TopoGate/v10_reliable_graph/run.py`；权威参数与产物事实见输出目录中的 `config_resolved.json` 和 `summary.json`。
+**追溯代码**：`/home/luolie/ToPoGate/methods/TopoGate/v10_reliable_graph/run.py`；权威参数与产物事实见输出目录中的 `config_resolved.json` 和 `summary.json`。
 
 ---
 
 ### 2026-07-25 NPZ 数据集基本信息汇总
 
 **输入数据**：
-- 文件路径：`external-result-storage/datasets/*.npz`
+- 文件路径：`/data/luolie/ToPoGate/datasets/*.npz`
 - 数据描述：磁盘现状共 133 个 NPZ；均包含二维 `x` 特征矩阵与一维 `y` 标签数组
 - 来源验证：与 `CLUBench.configs.DATASETS` 比对后，131/131 配置数据集均存在，另有 `hrvatin.npz` 和 `Quake_Smart-seq2_Lung.npz`
 
 **生成数据**：
-- 输出文件：`external-result-storage/result/dataset_npz_info.md`
-- 机器可读文件：`external-result-storage/result/dataset_npz_info.csv`
+- 输出文件：`/data/luolie/ToPoGate/result/dataset_npz_info.md`
+- 机器可读文件：`/data/luolie/ToPoGate/result/dataset_npz_info.csv`
 - 类型统计：`scRNA-seq=5`、`image_embed=20`、`tabular=108`
 - 验证：133 个数据集名唯一，所有样本数、维度、类别数均大于 0
 
-**追溯代码**：`source-repository/papers/codes/summarize_npz_datasets.py`
+**追溯代码**：`/home/luolie/ToPoGate/papers/codes/summarize_npz_datasets.py`
 
 ---
 
@@ -929,12 +1231,12 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 **问题 1 修复**：
 
 **输入数据**：
-- 文件路径：`external-data-source/dimension-reduction/plantnet/data/hrvatin_geo/GSE102827_MATRIX.csv.gz`（380MB）
-- 文件路径：`external-data-source/dimension-reduction/plantnet/data/hrvatin_geo/GSE102827_cell_type_assignments.csv.gz`（275KB，6 列，65539 行）
+- 文件路径：`/data/luolie/biopipeline/dimension-reduction/plantnet/data/hrvatin_geo/GSE102827_MATRIX.csv.gz`（380MB）
+- 文件路径：`/data/luolie/biopipeline/dimension-reduction/plantnet/data/hrvatin_geo/GSE102827_cell_type_assignments.csv.gz`（275KB，6 列，65539 行）
 - 数据描述：原始矩阵为「基因 × 细胞」格式（25187 基因 × 65539 细胞），表头第一列是基因名，其余 65539 列是细胞 ID
 
 **生成数据**：
-- 输出文件：`source-repository/datasets/hrvatin.npz`（179 MB）
+- 输出文件：`/home/luolie/ToPoGate/datasets/hrvatin.npz`（179 MB）
 - 形状：`(65539, 25187)` 即 65539 细胞 × 25187 基因
 - 标签映射：
 
@@ -950,17 +1252,17 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 | 7 | Oligodendrocytes | 10,456 |
 | -1 | maintype 缺失 | 17,273 |
 
-**追溯代码**：转换脚本（详见状态追踪，当前在 `source-repository/datasets/hrvatin.npz`）
+**追溯代码**：转换脚本（详见状态追踪，当前在 `/home/luolie/ToPoGate/datasets/hrvatin.npz`）
 
 ---
 
 **问题 2 修复 - 过滤 -1**：
 
 **输入数据**：
-- 文件路径：`source-repository/datasets/hrvatin.npz`（含 17,273 个 -1 标签）
+- 文件路径：`/home/luolie/ToPoGate/datasets/hrvatin.npz`（含 17,273 个 -1 标签）
 
 **生成数据**：
-- 输出文件：`source-repository/datasets/hrvatin_filtered.npz`（137 MB）
+- 输出文件：`/home/luolie/ToPoGate/datasets/hrvatin_filtered.npz`（137 MB）
 - 形状：`(48266, 25187)` 即 48,266 细胞 × 25,187 基因
 - 标签：8 类（0-7），无 -1
 - 文件大小：179 MB → 137 MB（节省 41.9 MB）
@@ -969,7 +1271,7 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 - 用于 TopoGate 训练时**优先使用 `hrvatin_filtered.npz`**，避免 -1 干扰聚类结果
 - 原 `hrvatin.npz` 保留作为对照（需要看完整 65K 细胞分布时使用）
 
-**追溯代码**：filter 脚本（详见 `source-repository/datasets/hrvatin_filtered.npz`）
+**追溯代码**：filter 脚本（详见 `/home/luolie/ToPoGate/datasets/hrvatin_filtered.npz`）
 
 ---
 
@@ -985,7 +1287,7 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 ### 2026-07-24 B1 run_topogate() 包装器（argv 注入方案）
 
 **输入数据**：
-- 源文件：`source-repository/methods/TopoGate/run_npz.py`（含 4 个 variant YAML 配置）
+- 源文件：`/home/luolie/ToPoGate/methods/TopoGate/run_npz.py`（含 4 个 variant YAML 配置）
 - 现有算法：`main()` 函数（150 行，CLI 驱动）
 
 **生成数据**：
@@ -993,7 +1295,7 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 - 算法 `main()` 一行未动
 - Smoke test：weather 数据集 ACC/NMI/ARI = 1.0，5.4s
 
-**追溯代码**：`source-repository/methods/TopoGate/run_npz.py:run_topogate()`
+**追溯代码**：`/home/luolie/ToPoGate/methods/TopoGate/run_npz.py:run_topogate()`
 
 ---
 
@@ -1003,17 +1305,17 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 - 来源：`https://hf-mirror.com/datasets/Feng-001/Clustering-Benchmark`（HuggingFace mirror）
 - 原始文件：`CLUBench-Datasets.zip`（689.86 MB，5 个 parquet + 131 个 npz 打包）
 - 下载工具：`hfd.sh`（hf-mirror 官方提供，aria2c 内核，自动断点续传，8 线程）
-- 下载命令：`./hfd.sh Feng-001/Clustering-Benchmark --dataset --local-dir external-result-storage/download -x 8 --include "CLUBench-Datasets.zip"`
+- 下载命令：`./hfd.sh Feng-001/Clustering-Benchmark --dataset --local-dir /data/luolie/ToPoGate/download -x 8 --include "CLUBench-Datasets.zip"`
 - 速度：~26 MB/s，26s 完成
 - 完整性校验：`unzip -t` No errors detected
 
 **生成数据**：
-- 压缩包保留：`external-result-storage/download/CLUBench-Datasets.zip`（658M 实际大小，因 hfd 计数按 IB 二进制）
-- 解压后：`external-result-storage/datasets/*.npz`（131 个文件，平铺到根目录）
+- 压缩包保留：`/data/luolie/ToPoGate/download/CLUBench-Datasets.zip`（658M 实际大小，因 hfd 计数按 IB 二进制）
+- 解压后：`/data/luolie/ToPoGate/datasets/*.npz`（131 个文件，平铺到根目录）
 - 软链接有效性：
-  - `source-repository/datasets -> external-result-storage/datasets` ✓
-  - `source-repository/baseline/CLUBench/CLUBench/datasets -> external-result-storage/datasets` ✓
-- 备份：`external-result-storage/datasets_backup_20260724/`（保留旧 10 个 npz，保险用）
+  - `/home/luolie/ToPoGate/datasets -> /data/luolie/ToPoGate/datasets` ✓
+  - `/home/luolie/ToPoGate/baseline/CLUBench/CLUBench/datasets -> /data/luolie/ToPoGate/datasets` ✓
+- 备份：`/data/luolie/ToPoGate/datasets_backup_20260724/`（保留旧 10 个 npz，保险用）
 
 **完整性验证**：
 - ✅ 131/131 数据集名在 `CLUBench/configs.DATASETS` 中能匹配到 `.npz` 文件
@@ -1021,9 +1323,9 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 - ✅ 两类 `AutoEncoder`（TopoGate / NeighborMix_scMAE）独立加载，import 链通
 
 **追溯代码**：
-- 下载：`external-result-storage/download/hfd.sh`
-- 解压命令：`unzip -o external-result-storage/download/CLUBench-Datasets.zip -d external-result-storage/datasets/`
-- 验证：`python -c "import sys; sys.path.insert(0,'source-repository/baseline/CLUBench'); from CLUBench.configs import DATA_DIR, DATASETS; import os; data='source-repository/baseline/CLUBench/CLUBench/datasets'; files={f for f in os.listdir(data) if f.endswith('.npz')}; print(sum(1 for n in DATASETS if n in files), '/', len(DATASETS))"`
+- 下载：`/data/luolie/ToPoGate/download/hfd.sh`
+- 解压命令：`unzip -o /data/luolie/ToPoGate/download/CLUBench-Datasets.zip -d /data/luolie/ToPoGate/datasets/`
+- 验证：`python -c "import sys; sys.path.insert(0,'/home/luolie/ToPoGate/baseline/CLUBench'); from CLUBench.configs import DATA_DIR, DATASETS; import os; data='/home/luolie/ToPoGate/baseline/CLUBench/CLUBench/datasets'; files={f for f in os.listdir(data) if f.endswith('.npz')}; print(sum(1 for n in DATASETS if n in files), '/', len(DATASETS))"`
 
 **已知限制**：
 - 9 个 text 数据集需要对应 text embedding，目前未下载（阶段 A3 触发）
@@ -1047,17 +1349,17 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 ### 2026-07-24 导出 CLUBench 24 算法 baseline 性能表
 
 **输入数据**：
-- 文件路径：`source-repository/baseline/CLUBench/performance_matrix/best_hpc/*.p`（24 个 pickle）
+- 文件路径：`/home/luolie/ToPoGate/baseline/CLUBench/performance_matrix/best_hpc/*.p`（24 个 pickle）
 - 数据描述：作者已完成 178,815 次实验，每个 `.p` 是一个算法在 131 个数据集上的最佳超参结果，键为 `acc / nmi / ari / time`
 - 算法清单：`agglo, autosc, birch, cc, dbscan, dec, divc, dmicc, dscn, edesc, gmm, idec, kernel_kmeans, kfsc, kmeans, kpc, lfss, lrr, meanshift, p2ot, pica, s3comp, spectral_clustering, ssc`
 - 数据集顺序：与 `CLUBench/configs.py` 的 `DATASETS` 列表严格对齐（131 个）
 
 **生成数据**：
-- 输出文件 1：`source-repository/result/baseline_clubench.csv`（3144 × 8）—— 长格式，行为「算法 × 数据集」组合
-- 输出文件 2：`source-repository/result/baseline_clubench_wide.csv`（131 × 99）—— 宽格式，每数据集一行，列为 `acc_kmeans / nmi_kmeans / ...`
-- 输出文件 3：`source-repository/result/baseline_clubench_per_dataset.csv`（131 × 99）—— 与上同（保留两个名字方便脚本引用）
-- 输出文件 4：`source-repository/result/baseline_summary.csv`（24 × 22）—— 每个算法在 131 数据集上的均值/标准差/最小/最大/中位数
-- 输出文件 5：`source-repository/result/baseline_summary_by_type.csv`（96 × 6）—— 按 dataset_type（tabular/image/text/bioinfo）分组均值
+- 输出文件 1：`/home/luolie/ToPoGate/result/baseline_clubench.csv`（3144 × 8）—— 长格式，行为「算法 × 数据集」组合
+- 输出文件 2：`/home/luolie/ToPoGate/result/baseline_clubench_wide.csv`（131 × 99）—— 宽格式，每数据集一行，列为 `acc_kmeans / nmi_kmeans / ...`
+- 输出文件 3：`/home/luolie/ToPoGate/result/baseline_clubench_per_dataset.csv`（131 × 99）—— 与上同（保留两个名字方便脚本引用）
+- 输出文件 4：`/home/luolie/ToPoGate/result/baseline_summary.csv`（24 × 22）—— 每个算法在 131 数据集上的均值/标准差/最小/最大/中位数
+- 输出文件 5：`/home/luolie/ToPoGate/result/baseline_summary_by_type.csv`（96 × 6）—— 按 dataset_type（tabular/image/text/bioinfo）分组均值
 - 对应图表：暂未生成，作为 ToPoGate 论文「Baseline Comparison」表的原始数据
 
 **完整性验证**：
@@ -1066,7 +1368,7 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 - ✅ top-5 按 acc_mean 排名：spectral_clustering (0.689), kernel_kmeans (0.642), kmeans (0.636), agglo (0.631), gmm (0.626)
 - ✅ 全数据集 acc 均值 0.590，标准差 0.216（分布健康）
 
-**追溯代码**：`source-repository/baseline/CLUBench/export_baseline_csv.py`（可重复运行）
+**追溯代码**：`/home/luolie/ToPoGate/baseline/CLUBench/export_baseline_csv.py`（可重复运行）
 
 **已知限制**：
 - 时间字段是作者用其硬件 + 默认超参跑出来的，ToPoGate 对比耗时时应保持同硬件对照
@@ -1075,14 +1377,14 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 ### 2026-07-23 移动 CLUBench 样本数据集
 
 **输入数据**：
-- 文件路径：`source-repository/baseline/CLUBench/CLUBench/datasets/`
+- 文件路径：`/home/luolie/ToPoGate/baseline/CLUBench/CLUBench/datasets/`
 - 数据描述：CLUBench 仓库自带的 10 个样本数据集（`.npz` 格式），每个文件包含 `x`（特征）和 `y`（标签）字段
 - 来源验证：上游仓库 `https://github.com/xiaofeng-github/CLUBench`，commit hash 随 `baseline/CLUBench/.git/` 保留
 
 **生成数据**：
-- 输出文件：`external-result-storage/datasets/`（10 个 `.npz` 文件，共 3.7 MB）
-- 软链接：`source-repository/datasets` -> `external-result-storage/datasets`
-- 备份：`external-result-storage/datasets_backup_20260723_234557.tar.gz`（旧目录的 tar.gz 备份）
+- 输出文件：`/data/luolie/ToPoGate/datasets/`（10 个 `.npz` 文件，共 3.7 MB）
+- 软链接：`/home/luolie/ToPoGate/datasets` -> `/data/luolie/ToPoGate/datasets`
+- 备份：`/data/luolie/ToPoGate/datasets_backup_20260723_234557.tar.gz`（旧目录的 tar.gz 备份）
 - 对应图表：暂无（仅为数据准备）
 
 **数据集清单**：
@@ -1101,7 +1403,7 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 
 **追溯代码**：N/A（数据搬运操作，无脚本）
 
-**已知限制**：CLUBench 完整 131 个数据集未下载，目前仅含 10 个样本数据集。完整数据集需从 CLUBench-Datasets 单独下载并放入 `external-result-storage/datasets/`。
+**已知限制**：CLUBench 完整 131 个数据集未下载，目前仅含 10 个样本数据集。完整数据集需从 CLUBench-Datasets 单独下载并放入 `/data/luolie/ToPoGate/datasets/`。
 
 ---
 
@@ -1111,8 +1413,8 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 
 **输入**：
 - 数据集：131 个（CLUBench 完整清单，混合图像/文本/表格/单细胞）
-- 输出目录：`source-repository/result/topogate/`
-- 汇总 CSV：`source-repository/result/topogate_all.csv`
+- 输出目录：`/home/luolie/ToPoGate/result/topogate/`
+- 汇总 CSV：`/home/luolie/ToPoGate/result/topogate_all.csv`
 
 **输出**：
 - 131/131 json 完成，0 错误
@@ -1157,7 +1459,7 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
   - epochs: 40, 80, 150
   - mask_ratio: 0.3, 0.4, 0.5
   - 固定：neighbor_k=10, hidden_size=128（Round 1 最优）
-- 输出目录：`source-repository/result/tune_round2/`
+- 输出目录：`/home/luolie/ToPoGate/result/tune_round2/`
 - 总运行：117 runs（3 GPU worker 并行）
 
 **结果（9 configs 平均 ACC）**：
@@ -1188,8 +1490,8 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 
 **输入/输出**：
 - 数据集：131 个（CLUBench 完整）
-- 输出目录：`source-repository/result/topogate_opt/`
-- 汇总 CSV：`source-repository/result/topogate_opt_results.csv`
+- 输出目录：`/home/luolie/ToPoGate/result/topogate_opt/`
+- 汇总 CSV：`/home/luolie/ToPoGate/result/topogate_opt_results.csv`
 
 **结果**：
 - 131/131 完成，0 错误
@@ -1350,7 +1652,7 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 
 ### 关键实验
 - **5 模型 × 15 数据集 = 75 个完整结果**
-- **版式备份**：`source-repository/result/baseline_comparison/versioned/20260725_1215/`
+- **版式备份**：`/home/luolie/ToPoGate/result/baseline_comparison/versioned/20260725_1215/`
 
 ### TopoGate 排名（1=最好）
 - **NMI: 1.93**（最佳，平均排名）, ARI: 2.00（最佳）, ACC: 2.47（次 GCEALS 0.07）
@@ -1365,8 +1667,8 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
 | TopoGate (10k subsample) | 0.346 | 0.172 | 0.012 | 104 |
 
 ### 完整对比表
-- 位置：`source-repository/papers/tab_figs/comparison_table.md`
-- CSV 版本：`source-repository/papers/tab_figs/comparison_table.csv`
+- 位置：`/home/luolie/ToPoGate/papers/tab_figs/comparison_table.md`
+- CSV 版本：`/home/luolie/ToPoGate/papers/tab_figs/comparison_table.csv`
 
 ### 关键修复
 - **IDC 修复**：wrapper 层 post-training fallback + KMeans on KMeans on raw X
@@ -1429,7 +1731,7 @@ source SHA-256 一致时才合并；`vehicle` 的两个 hash 被明确标记为�
   - run.py 第 328-339 行：训练前调一次，全程不变
   - **修复 = 把 β_* 改成 torch.nn.Parameter，加入 optimizer**
 
-**追溯代码**：`source-repository/scripts/run_topogate_ablation.py` + `scripts/aggregate_ablation.py`
+**追溯代码**：`/home/luolie/ToPoGate/scripts/run_topogate_ablation.py` + `scripts/aggregate_ablation.py`
 
 
 ---
@@ -1783,7 +2085,7 @@ fbis/tr45 的无标签 Stage-0 exploratory 已完成：候选图 recurrence 约
 结果盘。
 
 fbis 五 epoch、三 seed `[42,123,7]` 的固定五路 exploratory 已保存于
-`unpublished-temp/v16_stage1_fbis_5ep_3seed`：V16 未超过 self-only 或 fixed graph，按固定规则
+`/tmp/v16_stage1_fbis_5ep_3seed`：V16 未超过 self-only 或 fixed graph，按固定规则
 标记为 `empirical_not_supported`，不通过修改 support 或门控公式挽救。
 ## 2026-08-06 V9 related public-data bundle
 
@@ -1876,9 +2178,9 @@ GCC 原生分区始终为一个簇，固定尺度结果通过本地 known-K spli
 
 ## 2026-08-07 V16.1 `subsample_2k` count candidate
 
-登记本地 scCluBench 的 `external-data-source/scCluBench/data/subsample_2k.h5ad`：
+登记本地 scCluBench 的 `/data/luolie/biopipeline/scCluBench/data/subsample_2k.h5ad`：
 `X` 为 CSR-backed 非负整数 count，`obs.cell_type` 提供 benchmark 类别；转换后的
-临时 bundle 为 `unpublished-temp/v16_1_expanded_data/subsample_2k.npz`，形状
+临时 bundle 为 `/tmp/v16_1_expanded_data/subsample_2k.npz`，形状
 `2000 x 53678`、`5664809` 个非零项。`scripts/V16_1/run_stage0.py` 已按固定
 `k=20`、三次 split 和 cross-fitted support 审计；Stage 0 通过，candidate recurrence
 `0.5676`、稳定边比例 `0.7902`、support 非退化，随后启动固定 Stage 1。标签只用于
@@ -1913,3 +2215,149 @@ support 的分离，以及 Campbell/Mouse_retina/hrvatin 等历史正例和边�
 `0.9971`，但 support 正边率仅 `0.000524`，故不能再按稀疏度或图质量反复筛选以挽救
 模型。后续数据选择必须先由生成假设划定理论域，再按固定协议记录
 `theory_domain_not_supported` 或 `empirical_not_supported`。
+# 2026-08-11 V21 formal six-dataset matrix submitted
+
+V21 formal matrix launcher 已启动，旧输出根
+`result/V21/v21_formal6_full_20260811/` 因图的自邻居过滤缺陷仅保留为审计记录；修复后的
+协议文件为 `result/V21/v21_formal6_full_20260811_graphfix/stage_spec.json`，唯一正式输出根为
+`result/V21/v21_formal6_full_20260811_graphfix/`。本批固定六个数据集：`cnae9`、`Mouse_retina`、
+`Baron Human`、`Campbell`、`sms_spam_collection`、`hate_speech`；固定两个 variant
+(`topology_assignment_adversarial`、`scmae_only`) 和 seeds `[42, 123, 7]`，共 36 个
+run key。配置、variant 和 seed 不按 ARI 选择。
+
+launcher 只允许物理 GPU 1--6，每卡最多一个子进程，GPU 0/7 禁用；启动前检查显存/利用率，
+不会停止或复用已有进程。当前状态由
+`result/V21/v21_formal6_full_20260811_graphfix/launcher_state.json` 记录；截至本条记录，
+24/36 已完成、12/36 排队，Baron Human/Campbell 的 4 个 Full key 在 CPU fallback 中运行。
+为避免 GPU/CPU 同 key 覆盖同一输出目录，主 launcher 已在无 GPU 子进程时暂停，
+`scripts/V21/resume_after_cpu_fallback.py` 等待 Mouse_retina、Baron Human、Campbell 三批 CPU
+状态全部终态后再恢复唯一 launcher。模型拟合和图/Gate/loss 不接收 `y`；cluster-head 变体的
+known K 由 runner 外层从 NPZ 标签唯一值推导并在每个 summary 记录，scMAE-only 的 K 只用于
+拟合后 KMeans readout。
+
+# 2026-08-11 V21 graph-fix formal matrix terminal audit
+
+上述矩阵已完成终态收尾。正式输出根为
+`result/V21/v21_formal6_full_20260811_graphfix/`，`matrix_audit.json` 显示
+`expected_jobs=36`、`completed_valid_jobs=36`、`audit_ok=true`、`provenance_ok=true`，没有
+`incomplete_compute`。六个数据集的 Full/scMAE-only ARI 宏平均分别为 `0.207693` 和
+`0.418579`，配对差为 `-0.210886`；结果只用于完整 V21 与 scMAE-only 的比较，不包装成
+纯 Gate 消融。
+
+GPU handoff 期间有少量迁移命令因错误的绝对配置路径（例如 `/methods/...`）在加载模型前
+退出；这些进程没有生成或覆盖模型产物，最终有效结果来自后续正确路径的重跑。终态时没有
+V21 worker；GPU5 基本空闲，但其它可见 GPU 仍有外部进程，GPU0/7 仍按项目规则禁用。
+
+# 2026-08-11 V21 ARI grid and three-seed confirmation
+
+`result/V21/v21_ari_grid_seed42_20260811/` 完成 `72/72` 个候选任务，固定 seed42、六数据集
+宏平均 ARI 选择配置：`assignment_weight=0.1`、`gate_lr=2.5e-4`、`epochs=80`、
+`warmup_epochs=40`、`infomax_weight=0.05`，选择分数 `0.395632`。确认根
+`result/V21/v21_ari_confirm_aw0.1_glr0.00025_ep80_20260811/` 完成 `18/18`，严格审计通过；
+三 seed 宏平均 ARI=`0.342684`，相对正式 Full=`+0.134991`，相对正式 scMAE-only=
+`-0.075895`。该选择使用 ARI，拟合函数不接收 `y`，因此记录为开发/确认层证据。
+## 2026-08-12 V22 dataset extension panel downloaded and audited
+
+在看到任何 V22 结果前固定并下载四个新增候选，输出目录为
+`datasets/external/v22_dataset_extension_20260812/`，登记入口为
+`datasets/external/v22_dataset_extension_20260812/manifest.json`。候选分层如下：
+
+| dataset_id | source / shape | zero fraction | labels | status |
+|---|---:|---:|---:|---|
+| `sector__libsvm_sparse_highdim` | LibSVM sector, `6412 x 55197` | `0.997046` | 105 | eligible |
+| `real_sim__libsvm_sparse_highdim` | LibSVM real-sim, `72309 x 20958` | `0.997552` | 2 | eligible |
+| `covtype__libsvm_dense_control` | LibSVM covtype, `581012 x 54` | `0.777778` | 7 | eligible control |
+| `pbmc3k__10x_unlabelled_count` | 10x PBMC3k, `2700 x 32738` | `0.974128` | none | eligible_unlabelled |
+
+LibSVM 与 PBMC 原始文件均保存于 `raw/`，处理文件保存于 `processed/`，manifest 记录
+来源 URL、source identity、原始/处理后 SHA-256、矩阵形状、非零数、存储格式和
+`labels_used_during_fit=false`。PBMC3k 原始 10x 归档没有独立细胞类型标签，因此只允许
+显式 `--n-clusters` 的无标签探索，不进入 ARI/NMI 汇总；四个 strata 不合并成统一普适性
+结论。当前下载使用本地代理的 `verify=False`，manifest 明确记录该传输边界，原始 SHA
+保留供独立环境复核。
+
+验证：`file` 确认四个原始文件分别为 bzip2/gzip，处理文件为 NPZ；四个 V22 输入均通过
+shape、有限值、稀疏重建和标签长度检查。V22 的 sector 与 PBMC3k 单 epoch CPU 运行只
+作为 `engineering_smoke`，不作为性能结论。
+
+## 2026-08-15 V25 closure artifact source and publication bundle
+
+新增 `scripts/V25/build_closure_artifacts.py`，只读取已冻结的 A0/A1/A2、E1 pilot/confirmation、
+E2-A、E2-B/C、A1 E3 gate 和 Phase E closure JSON/CSV，生成五个闭环表/决策文档及
+`V25_CLOSURE_ARTIFACTS.json`。E1 汇总使用六个 dataset-level rows；seed 是重复测量，E2-A
+coordinate distributions 仅作描述，pilot 缺失的 feature counts 标记为 `deferred`。新发布副本
+位于 `papers/V25_systematic_mechanism_study/results/`，不含 checkpoint、branchpoint、原始数据、
+预测数组或缓存；Holdout 仍为 `0/6 inconclusive_not_completed`，未新增计算。
+
+## 2026-08-15 V25 A2 holdout adapter contract
+
+V25 A2 在不读取任何 E1 outcome 的前提下，从既有 outcome-independent manifests 冻结
+`result/V25_systematic_mechanism_study/A2/holdout_candidate_manifest.json`。输入 adapter
+只允许当前 V21 已实现的 `clubench_bridge`/`shared_text` -> `prepare_dual_input` 路径，
+feature selection、normalization、graph input、model input 和 label/K 边界均固定；
+`scRNA_count` 的 PBMC 条目因 adapter 未冻结且无外部标签被排除，不在 Phase D 临时开发。
+
+当前候选审计记录 1 个 adapter-valid 的独立 scRNA（Quake Smart-seq2 Lung）和 9 个
+sparse-text/related candidates；目标为 4 scRNA + 2 text 的 pool shortfall 被显式写入 manifest，
+不是用 outcome 事后补齐。V25 暂不把这些候选当作 holdout 结果，只有 Claim Freeze 后按已冻结
+primary endpoint 激活。
+
+## 2026-08-15 V25 E1 pilot source and label boundary
+
+E1 pilot 使用已登记的 `datasets/cnae9.npz`、`datasets/Mouse_retina.npz` 和
+`datasets/sms_spam_collection.npz`，每个数据集 seeds `[42,123,7]`。每个 panel 的
+`manifest_record.json` 保存 source path/SHA256、input protocol、known-K 来源和输出契约；
+输入 adapter 继续使用冻结的 V21 `prepare_dual_input`，graph/model preprocessing 不读取
+labels。labels 只由 outer runner 在 N/R/T fit、actual Adam one-step 和 clean embedding
+KMeans 完成后计算 ARI/NMI；`K_source=benchmark_oracle_from_y` 仅表示外层 benchmark K
+元数据。
+
+E2-A 的 label-free feature counts 在 confirmation 的 T training path 保存；其 post-hoc
+feature semantics（Fisher、support-MI、class support enrichment）不会回流到 Gate、loss、
+preprocessing 或数据选择。旧 pilot 未保存 counts，不因补充诊断而重训或修改 source/protocol
+hash。
+
+## 2026-08-15 V25 paper evidence provenance export
+
+`result/V25_systematic_mechanism_study/PaperEvidence/` 是从已冻结 V25 工件复制/汇总的
+分析层输出。`source_manifest.json` 记录 A0/A1/E1/E2/PhaseD/PhaseE 输入文件的 SHA256；
+`claim_scope_audit.json` 明确允许范围为 observational V1--V22 atlas 与 conditional
+heterogeneous V21 case study，禁止 universal topology、independent holdout 或
+coordinate-level inferential claim。该步骤没有新增数据、预处理、模型训练或 holdout
+选择。
+
+PaperEvidence 的 `figures/` 由同一冻结 CSV 输入离线渲染；`figure_manifest.json` 保存输入
+文件 SHA256、行数和图表的 claim scope。PNG 只是论文展示资产，不是额外实验结果或新的
+endpoint。
+## 2026-08-15 V25 A0 registry schema synchronization
+
+重导出 `result/V25_systematic_mechanism_study/A0/mechanism_evidence_registry.csv`，使正式
+registry 与 `scripts/V25/build_a0_registry.py` 的冻结 schema 一致。每条记录现在显式保留
+`source_hash`、`preprocess_hash`、`k_source`/`k_hash`、labels/K isolation、
+`measurement_timing`、`causal_status`、`reused_from` 和 `alternative_explanation` 字段。
+使用的 V1--V22/V23/V24 输入及 2209/1637/431 计数未改变；没有重算模型或修改任何 primary
+endpoint。对应的 PaperEvidence source manifest 与 V25 contract audit 已刷新。
+### [2026-08-15 V25 holdout adapter metadata refresh]
+
+V25 PhaseD holdout preflight was rerun for the predeclared `news20__libsvm_sparse_highdim`
+and `rcv1_train__libsvm_sparse_highdim` candidates without reading any outcome. Each frozen
+dataset/job now records the input adapter, label-free feature-selection rule, normalization,
+max-feature rule, graph input, model input, source hash, and known-K source. The refresh only
+updates manifest provenance; it does not launch training or alter the existing `0/6`
+`inconclusive_not_completed` holdout boundary.
+### 2026-08-17 representation-consumer probe S1 data/provenance
+
+- Input snapshots: S0-frozen `H0` (`d0=128`, SVD random_state=0), positive-cosine `k=20` candidate
+  pool, `budget_cap=8`, row-specific `b_i=min(8,positive_count_i)`。
+- Arms: raw-H0 feature-only F、ungated candidate U、matched random R、diagnostic O_pool/O_full；
+  all graph consumers use active-subgraph Spectral with frozen eigsh/KMeans contract.
+- Seeds `[42,123,7]` are paired repeats; labels are outside fit and used only for O diagnostics and
+  outer metrics. Formal outputs and per-run hashes are under
+  `result/representation_consumer_probe/S1_oracle_v2/`.
+- Support deficiency is reported separately: cnae9 zero-budget rows=1, sms=40, hate_speech=135;
+  no row was filled with negative-cosine edges or removed at dataset level.
+- Fresh experiment-integrity audit completed after hardening: all 90 stored ARI/NMI values were
+  independently recomputed exactly; root artifact manifest verifies an exact 827-entry tree and
+  nested run manifests; reuse/aggregation now require `audit_ok=true` plus config identity. The
+  evidence remains known-K real-GT benchmark plus label-derived diagnostic oracle, not a deployable
+  selector or TopoGate gain.

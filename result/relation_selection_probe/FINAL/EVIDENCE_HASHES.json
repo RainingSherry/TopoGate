@@ -1,0 +1,14 @@
+{
+  "local_evidence_sha256": {
+    "RS0_freeze/rs0_manifest.json": "d1ac4c2286696221dafedebc28b57e264d1890dd6d0015da782831775c495bc7",
+    "RS1_information/rs1_manifest.json": "f0422bcfd7c8093ceb3629f70aba5c50ebc0d608e00d8225a9174ed8167469df",
+    "RS1_information/rs1_metrics.json": "91b1bd73a0601375b873c8879a13757c9c31bc9b807b84aa1dbf1c3f6c0ccf63",
+    "RS1_information/rs1_summary.json": "7db961c24a17861fb39591b358f07169958c21d04ba88b950139a4866794e982",
+    "RS2_simple_selectors/rs2_manifest.json": "8611c9d07aa50f9a9e3ef49f527ca0faad23b5685ca202fb24ec3d4467971a21",
+    "RS2_simple_selectors/rs2_summary.json": "2acde3245b0c0372411a9a252a1886484c737432c11c3744a69a4575bf29326a",
+    "RS3_decision/rs3_failure_map.csv": "ca6ae95987be67ba60d906b8889b61466b29717f40a00034acf76888c218ff35",
+    "RS3_decision/rs3_manifest.json": "48193786977f15aacad81b1cecbf6871751e6f843335d77d69408b3418f844e9",
+    "RS3_decision/rs3_selector_capture.csv": "d95288485c12ad5569c15ba73913e5b7bff7cda579b5fd7f7a5a3f48a5f8d1bc",
+    "RS3_decision/rs3_summary.json": "d270c967c54680163110ba5abff7098eeaf6c8dc6f6cd980c51a7c40e4d1b982"
+  }
+}

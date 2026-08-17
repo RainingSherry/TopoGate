@@ -1,15 +1,557 @@
 # 论文写作变更日志
 
-## 2026-08-17 Independent representation-consumer probe S2 closure
+## 2026-08-17 relation-selection probe RS0–RS3 terminal decision
 
-发布独立 `representation_consumer_probe` 的 canonical protocol、实现、测试和 weight-free
-S0/S1-v2/S2 summaries。S2 完成 `18/18`：Baron Human 的 SimpleCut `H_pool=+0.033242`、
-Mouse_retina 的 `H_pool=+0.008880`。前者只说明 Spectral 阴性可能是 relaxation miss，后者
-仍为 observed-small；不支持 selector、TopoGate gain、new backbone 或 generalization claim。
+在正式关闭 `representation_consumer_probe` 后建立独立的
+`relation_selection_probe`，不创建 V26。按预注册完成 RS0 freeze、RS1 relation
+information、RS2 fixed simple selectors 和 RS3 failure map；没有启动 RS4 learned
+selector、任何新 backbone、holdout 或 reconstruction objective。
 
-S0 的 `adapter_not_estimable` 仍是本项目 T-related terminal state，因此 S3–S6、TopoCut、
-新 selector 和 holdout 继续锁定。当前 integrity audit 为 WARN，原因仅是 training-history
-pre-step/post-step loss metadata timing gap；没有修改或发布 raw training outputs。
+RS1 的 frozen relation features 在三个 primary datasets 上可预测
+`pool_reference_membership`，但 `same_class` target 没有通过完整的
+`Delta AP >= 0.10` 与 `Lift@b >= 1.5` 双阈值。RS2 的 90/90 selector rows 全部
+完成，五个固定 selector 均未达到两个 primary datasets 上 `Delta_S >= 0.03` 且
+median capture `>=0.25` 的 gate。RS3 保留了 Mouse_retina 的低机会 sentinel、Baron
+Human 的 consumer boundary，并在 hate_speech 记录 material expanded-reference gap
+(`+0.634319`) 为 candidate-family boundary。
+
+终态为 `candidate_family_problem_and_learned_rule_only_proposal`：未来若要研究
+learned selector，只能另起一份冻结协议；本项目不执行 RS4。完整运行树留在结果盘，
+发布层只保留报告、代码和 compact weight-free summaries。
+
+按 `auto-review-loop` 对 publication-boundary protocol/result 摘要进行 cross-family
+审查，评分 `7/10`、`almost`。审查后只做了 claim/provenance 收紧：明确 RS1 gate 在
+正式评估前冻结、primary datasets 为 report-only、未来 learned-selector 必须另有 holdout、
+Mouse_retina 的低机会约 70% capture，以及 `O_pool` target/Lift base rate 是
+label-informed diagnostic 而非 label-free 输入。没有因此启动任何新实验。
+
+## 2026-08-17 Representation-consumer probe S0 implementation and formal replay
+
+将本轮研究独立命名为 `representation_consumer_probe`，不创建 V26。按最新审查把项目收缩为
+`S0 → S1 opportunity-only → S2 opportunity confirmation → Decision`；当前
+`adapter_not_estimable` 是 T-related causal chain 的 terminal state，S3/S4/S5/S6、TopoCut 和
+新 selector 永久锁定。
+
+实现 `budget_cap=8` 与逐行 `b_i=min(8,positive_count_i)`，新增共享 budget hash、R/O_pool/O_full
+graph builders、full-space same/other cosine oracle、active-subgraph Spectral eigsh/KMeans pipeline、
+consumer-level K semantics 和 clean/contaminated/isolate synthetic recovery contract。正式 S0 replay
+完成 `6/6` source preflight，adapter=`adapter_not_estimable`，graph/spectral sanity 通过；没有训练、
+GPU job 或性能指标。详细 artifact 位于 `result/representation_consumer_probe/S0_freeze/`。
+
+## 2026-08-17 Independent representation-consumer probe protocol (no V-series expansion)
+
+建立独立项目 `reports/representation_consumer_probe/`，目标是定位 candidate relation、selection、representation consumer 与 topology value 的剩余 gap；本轮只写协议和审查包，不启动训练或新 backbone。协议明确禁止把 V25/E1 的 feature-coordinate assignment `T/R` 直接称为 sample-edge selector，要求 S0 先完成 `selection_to_relation_adapter` 审计；若适配不可识别，只允许运行 `F/U/R/O_pool/O_full` 的 opportunity diagnostic。
+
+项目冻结 S0→S1 oracle/spectral→S2 SimpleCut→S3 matched Rec/Cut→S4 conditional TopoCut-v0→S5 holdout 的 gate 顺序，加入 graph-conditioned common view、zero-degree/spectral 数值合同、oracle non-tuning firewall、incomplete_compute 处理和 endpoint-shuffle negative control。项目不创建 V26，不重写 V25 结果，也不把 auto-review 的 `almost` 评分当成性能证据。
+
+## 2026-08-17 ACCG real panel completed; clustering promotion No-Go
+
+ACCG v3 synthetic contract 通过后，按冻结的 v2 real manifest 完成了真实面板：主矩阵
+`30/30`（9 个有标签数据集 × 3 seed，加无标签 PBMC3k operational panel × 3 seed），
+开发集消融 `48/48`。四个消融 arm 复用同一 canonical `N/R/T_s/T_c` branchpoint，未重复
+训练 controls；confirmatory artifact 总数为 `75/75`（27 个有标签主 panel + 48 个消融）。
+
+结果审计确认：训练、graph、Gate、loss 和 readout 没有读取真值标签；有标签数据的 `K` 是
+benchmark-known protocol，PBMC3k 使用显式 `K=8` 且不进入 ARI/NMI aggregate。9 个有标签
+数据集的 primary paired effect `ARI(T_c)-ARI(T_s)` mean=`+0.007492`、median=`+0.000363`，
+dataset bootstrap 95% CI=`[-0.000879,+0.018889]`，只有 `4/9` 个数据集三 seed 全部为正。
+开发集 coordinate 对照的均值 effect=`+0.015689`，joint=`+0.010751`，joint-coordinate
+差为 `-0.004938`；joint 仅在 `1/12` 个配对 seed 上更高。因此当前证据不支持“joint
+constraint 带来稳定聚类提升”的 Q1 主张，ACCG real clustering promotion 标记为 **No-Go**。
+
+该结论不是训练失败：结构审计、matched schedule、label isolation 和产物审计均通过；它是
+方法增量未被真实面板支持的科学结论。按预先约定，不继续 external baseline 或 outcome-driven
+rescue。weight-free 发布摘要位于 `review-stage/ACCG_real_panel_v2_audit/`；完整 raw results
+仍留在结果盘，不进入 GitHub。
+
+## 2026-08-16 ACCG v3 synthetic contract passed; real-data preflight admitted (intermediate state)
+
+在 v1、v2 的冻结失败边界之后，按最后一次预先冻结的 v3 contract 使用 fresh
+seeds `[3032,3033,3034,3035,3036]` 重跑三种 generator family。v3 没有修改
+generator、donor、selector、feature energy 或真实数据结果，只把主 estimand 从
+不相容的 standalone AUC 门槛修正为“相对于 matched sample-side baseline 的联合
+增量信息”，并要求 pooled 及每个 held-out family 的 grouped-bootstrap `delta_auc`
+95% CI 下界均为正。
+
+v3 shortcut audit 为 `15/15 valid`，W5 exact-selector 为 `32/32 feasible`。
+W5 pooled family-holdout joint AUC=`0.640836`、delta AUC=`+0.136204`、delta
+PR=`+0.063677`；count/gamma/lognormal 三个 held-out family 的 delta-AUC CI
+下界分别为 `+0.120327/+0.098476/+0.093794`。W1 negative control 通过；W2
+仅作 secondary，未通过其增量 CI，不是 promotion 必需条件。v3 promotion decision
+为 `passes=true`，因此准许进入 label-free real resource preflight，不等于 ACCG
+聚类性能已经成立。
+
+完整 v3 raw panel 仍在 `/tmp/accg_action_constrained_gate_v3_20260816b/`，正式仓库
+只保留 `review-stage/ACCG_synthetic_v3_audit/` 的小型审计摘要和源路径/哈希边界；
+在 raw 工件复制或生成正式 bundle 前，不把临时目录当作永久证据。当前仍未启动
+ACC​​G end-to-end、真实训练、ablation 或 GPU job。
+
+## 2026-08-16 ACCG Stage 1 synthetic contract execution (promotion blocked)
+
+按冻结的 ACCG synthetic contract 生成了 `60` 条 W0-W5 输入（2 个 generator
+families x 5 个 seeds x 6 个 worlds），全部保存 matrix/oracle/config/source hashes，未启动
+模型训练、真实数据、队列或 GPU job。shortcut audit 为 `10/10 valid`，support 在每个
+family-seed 内 exact match，support/marginal world-classifier AUC 均低于 `0.60`。
+
+grouped action probe 生成 `40` 条无训练 probe（W1/W2/W3/W5），但原冻结 promotion gate
+为 **No-Go**：required records `9/30` pass，pooled leave-one-generator-family-out 的
+joint AUC=`0.634351`（阈值 `0.65`），因此未生成 real manifest，也未启动 synthetic
+end-to-end 或 `N/R/T_s/T_c` 训练。W5 small exact-selector audit 的 `32/32` 行可行，
+greedy-feasible rate=`1.0`，未使用标签。
+
+对已保存 probe 的 W5-only 分层诊断显示 joint feature 的 family-holdout AUC=`0.664208`，
+但这只是解释当前 gate 失败的诊断，不改写冻结 gate，也不能作为 ACCG promotion 或方法
+性能证据。当前路线状态保持“原 contract blocked；待显式协议决定”。
+
+## 2026-08-16 Post-V25 ACCG implementation freeze (no experiment execution)
+
+新增独立方法目录 `methods/TopoGate/ACCG_action_constrained_gate/` 与编排目录
+`scripts/ACCG/`，实现 Action-Conditional Compatibility-Constrained Topology Gate。主方法保持
+V25-E1/V21 的 warmup branchpoint、donor、eligible set、exact effective budget、Gumbel、优化器预算
+和 clean KMeans readout，只把 `T_c` 的实际联合 donor action 限制在 cross-fitted feature-conditional
+structural energy 的冻结容差内。实现同时包含 coordinate、shuffled graph、marginal-only 和 abstention
+controls、W0-W5 matched generators、grouped action probes、small-instance exact solver、manifest/runner、
+source/config/branchpoint audit 与 dataset-level summarizer。
+
+W1 oracle 只标记真实观测非零坐标；W5 冻结为 coherent pair，避免把整模块高阶交互误写成当前
+pair-lookahead 能保证的合约。Action probe 的 baseline/full 使用完全相同的 grouped CV folds，并以 row
+为 bootstrap 单位。real/synthetic matrix runner 默认 dry-run，只有显式 `--execute` 才可启动；ablation
+在 canonical `N/R/T_s/T_c` panel 完整前被硬阻断。本轮只完成代码、协议和单元/静态验证，没有生成
+ACCG 性能结果、正式 synthetic probe、训练队列或 GPU job。
+
+验证：ACCG focused tests `22 passed`，共享 V21 tests `18 passed`，V25 tests `48 passed`；
+相关目录 `compileall` 与 ACCG 单任务/real matrix/synthetic matrix 三个 CLI `--help` 均通过。
+
+## 2026-08-16 Post-V25 ACCG scientific route correction
+
+完成新版 Post-V25 研究报告的第二轮本地 adversarial scientific review，并将路线收敛为
+`review-stage/POST_V25_Q1_RESEARCH_BLUEPRINT.md`。保留“sample-side intervention aliasing”
+问题，但不再把逐坐标 feature residual、稳定正负复现门槛或 `feature graph + MLP` 当作已成立
+机制；主方法改为以实际联合 donor action 后的 conditional structural energy 为约束的
+assignment-adversarial policy。该修订是研究蓝图和停止条件，不新增训练、不改变 V25 冻结结果，
+且明确 V25 holdout `0/6 inconclusive_not_completed` 与外部 Claude review privacy rejection。
+
+## 2026-08-15 V25 closure artifact publication bundle
+
+新增 `scripts/V25/build_closure_artifacts.py` 及 focused tests，从已审计的 A0/A1/A2、E1/E2/E3、
+Phase C/E 工件生成 `V25_GAP_MAP.md/.csv`、`failure_localization_taxonomy.csv`、
+`E1_MECHANISM_SUMMARY.csv`、`V25_NEXT_SERIES_DECISION.md` 和 source-hash manifest。产物明确区分
+observational atlas、matched prospective V21 case study、V23/V24 boundary evidence 与
+`inconclusive_not_completed` holdout；不上传权重、branchpoint、原始数据或缓存。验证：
+`pytest -q scripts/V25/tests` 为 `48 passed`，compileall 通过。
+
+## 2026-08-15 V25 frozen-manifest coverage audit correction
+
+修复 E1 phase audit、confirmation admission 与 PaperEvidence E2-A 导出的覆盖漏洞：所有 phase
+现在以冻结 `manifest_snapshot.json` 的 panel key、dataset 和 seed 集合作为固定分母；缺失、重复、
+额外或 dataset/seed 不匹配的 panel 会进入 `invalid/incomplete`，不能被现存目录数量掩盖。E2-A
+强制 confirmation 的完整 `3 datasets x 3 seeds` 覆盖且每个 key 恰好一次。该修订只刷新 phase
+audit、PaperEvidence、论文图表/表格 provenance 和审计输出，不重跑训练、不改变冻结结果、不新增
+V26。验证：`pytest -q scripts/V25/tests` 为 `44 passed`，pilot/confirmation 均 `9/9`
+`coverage_complete=true`，contract/claim/final-paper audits 均 `audit_ok`。
+
+## 2026-08-15 V25 E2-A pilot-gate enforcement
+
+`build_e2_feature_audit.py` 现在在入口处读取冻结的 pilot
+`Audit/phase_summary.json`，只有 `phase_gate.passes=true` 且至少两个 dataset 达到
+material effect 时才允许执行 E2-A；聚合产物同时记录 pilot audit 路径和 SHA256。新增回归测试
+覆盖不通过与通过两条路径。该修订只收紧实验准入，不重跑或修改任何 A0/A1/E1/E2/holdout
+结果；验证为 `pytest -q scripts/V25/tests`：`40 passed`，compileall 通过。
+
+## 2026-08-15 V25 final manuscript and publication-boundary audit
+
+完成 V25 formal manuscript 收口：把 per-seed `S_full_ARI` 与 dataset-mean `S_d` 分开，加入
+Figure 2 mechanism-chain，按冻结工件纠正 E3（`candidate_rows=0`，未运行 replay）和 Phase D
+holdout（`0/6 inconclusive_not_completed`，独立验证未建立）的措辞，并补充 A1 历史指标不可重算、
+pilot/confirmation 不合并、known-K/label-isolation、历史 V21 dataset-selection bias、候选池
+shortfall 和 A2 no-E4/V26 closure 边界。`build_latex_assets.py` 现在同时记录 JSON/CSV/static
+schema 与 figure manifest 源 hash。
+
+新增 `scripts/V25/audit_final_paper.py` 与 formal LaTeX citation mode；最终 PDF、五个 figure
+environment、15 个 PNG/PDF/SVG 资产、表格源 hash、BibTeX/INDEX 生命周期、数字锚点和 scope
+firewall 均通过，`paper/FINAL_PAPER_AUDIT.json` 为 `audit_ok`。验证：`pytest -q scripts/V25/tests`
+为 `39 passed`，`audit_paper_claims.py --draft paper/main.tex` 为 `audit_ok`；未新增训练、未改变
+任何冻结结果，也未进入 V26。
+
+## 2026-08-15 V25 holdout A2 veto hardening
+
+Phase D 的 holdout preflight、claim-dependent manifest 和 E1 holdout manifest 现在都显式读取
+`A2/A2_decision.json`，只有 `retain_e1` 才能继续；`cancel_e1`/`no_prospective_compute` 会在
+adapter 检查或 manifest 生成前停止。新增回归测试覆盖该 veto，未改变任何已完成 E1 结果、holdout
+的 `0/6 inconclusive_not_completed` 状态或 closure 决策。
+当前 V25 focused tests 为 `37 passed`，compileall、contract、claim 和 citation audits 均通过。
+
+## 2026-08-15 V25 paper foundation and local citation boundary
+
+新增 `methods/TopoGate/V25_systematic_mechanism_study/PROTOCOL.md`，把 A0/A1/A2、E1 N/R/T
+损失与 matching、known-K/labels 边界、E2/E3 诊断和 holdout closure 汇总为单页协议叙述。
+工作稿补入四篇已完成本地 PDF/INDEX 生命周期核验的结构聚类、masked representation、
+local/global 和 stability 参考，并把“rules out shortcut/conditional utility”等容易过强的
+措辞收紧为分解与 sign-heterogeneous effect。新增 `papers/V25_systematic_mechanism_study/`
+论文材料入口、`references.bib` 和 `CITATION_AUDIT.{md,json}`；scMAE 因本地 PDF 缺失仍明确
+排除正式引用。上述变更只涉及文档与引用边界，不新增训练、不改变冻结证据或 primary endpoint。
+新增 `scripts/V25/audit_paper_citations.py` 与回归测试，自动核验四篇引用的 PDF 大小、INDEX
+标记、bib key、工作稿引用标记及 scMAE 缺失 PDF 边界；当前结果为 `audit_ok`，V25 focused tests
+为 `36 passed`。
+
+## 2026-08-15 V25 paper claim audit and introduction evidence outline
+
+新增只读 `scripts/V25/audit_paper_claims.py`，从冻结的 A0/A1/A2、E1 phase summary、Phase C/E
+和 PaperEvidence 重新核对历史计数、E1 三 seed 状态、primary endpoint、known-K 边界与 holdout
+firewall，并生成 `review-stage/V25_PAPER_CLAIM_AUDIT.json/.md` 和
+`V25_PAPER_CLAIM_LEDGER.csv`。新增 `refine-logs/V25_INTRODUCTION_OUTLINE.md`，将引言每段、
+数字来源和允许/禁止措辞绑定到证据工件。该次分析不读取标签用于拟合、不重训、不改变任何结果。
+
+一次只读 Claude review 请求被隐私门拒绝，未传输仓库材料，也未产生科学评审结论；不将其记为
+通过或拒绝。新增测试后 V25 focused tests 为 `35 passed`，paper claim audit 为 `17/17`。
+
+新增 `refine-logs/V25_RESULTS_METHODS_LIMITATIONS.md`，把 Failure Atlas、E1 `(I_d,S_d)`、E2/E3
+诊断、方法边界和 holdout 限制整理为逐段写作骨架，并明确禁止的因果/泛化措辞。该文档只消费
+冻结 PaperEvidence，不新增计算或改变 claim freeze。
+
+新增 `refine-logs/V25_INTRODUCTION_DRAFT.md` 作为英文引言工作稿。数字、统计单位、known-K
+边界和 `0/6` holdout 状态均绑定到冻结工件；引用保留 TODO，待本地 PDF/INDEX 生命周期审计后
+再进入正式稿。
+
+新增 `refine-logs/V25_RELATED_WORK_EVIDENCE_MAP.md`，将结构聚类、masked representation、
+assignment-level robustness 与 local-to-global 工作映射到已归档 PDF，并显式保留 scMAE PDF
+缺失和 metadata-only 排除边界；没有把外部论文结果并入 V25 数值证据。
+
+新增 `refine-logs/V25_MANUSCRIPT_WORKING_DRAFT.md`，覆盖摘要、引言、方法、结果、讨论、限制和
+结论。`audit_paper_claims.py --draft` 现在同时核对 11 个冻结数字锚点和 5 类直接过强措辞；
+当前结果为 `19/19` checks pass。该稿仍不是 submission-ready，引用 TODO、LaTeX、图表排版和
+独立 paper-to-evidence 审查尚未完成。
+
+## 2026-08-15 V25 systematic mechanism study protocol closure
+
+V25 的项目身份已固定为 `V25_systematic_mechanism_study`：它整理 V1--V24 的 Failure Atlas，
+并在 A2 保留真实否决权的前提下执行有限的 V21 N/R/T 机制定位。新增/固定了 A0 provenance
+registry、A1 artifact-complete replay gate、A2 Claim--Evidence Matrix、claim-dependent holdout
+manifest、N/R/T relationship artifacts、包含 class-support enrichment 的 dataset x seed E2-A
+聚合和实际 Adam one-step counterfactual。V23/V24 只作为 boundary evidence，不与 V1--V22
+定量 Atlas 合并。
+
+本轮修复 PaperEvidence 对旧版 A1 结果盘的兼容性：新增汇总文件缺失时只写入 source manifest
+和 `missing_source_files`，不会生成伪造空结果或阻断已审计 bundle。新增 V25 计划、tracker 和
+实现 README。验证为 `pytest -q scripts/V25/tests`：`29 passed`。不新增训练、不改变已有 V21
+算法、不把 Phase D `0/6` `inconclusive_not_completed` holdout 当作性能负结果，且不进入 V26。
+正式 `result/V25_systematic_mechanism_study/PaperEvidence/` 已按当前 exporter 重生成，
+`dataset_seed_rows=90`、`claim_audit_ok=true`；四个旧版 A1 可选输入仍按 missing boundary 记录。
+
+## 2026-08-15 V25 audit assurance hardening
+
+V25 的 phase auditor 现在只允许完整且通过审计的 `[42,123,7]` seed panel 进入 dataset-level
+汇总，并从保存的 N/R/T predictions 与外层 labels 重新计算 primary ARI、`I_full_ARI` 和
+`S_full_ARI`，不再把 summary 中的 pair 数值作为唯一证据。PaperEvidence 导出要求所有
+E2-A panel `audit_ok=true`；contract audit 的脚本入口补充仓库根路径注入。新增回归测试后，
+V25 focused tests 为 `24 passed`，compileall 通过；正式 E1 与 holdout 的科学边界没有改变。
+
+## 2026-08-15 V25 high-dimensional resource-path implementation
+
+V25 的 E1 runner 现在在 CUDA 上对完整 `X_model` 与 topology statistics 使用 host-backed
+batch streaming，并把 topology statistics 以可审计 memmap 保存；模型、V21 decoder、loss、
+donor/eligible/budget/Gumbel schedule、N/R/T matching 和 clean KMeans readout 均未改变。
+对超过冻结 feature threshold 的 CUDA 输入，仍使用 Adam，但选择 `foreach=false, fused=true`
+以避免 decoder-sized temporary workspace；branchpoint 与 arm checkpoint 改为 CPU-backed
+recursive snapshots，并在 arm 间释放 CUDA cache。resolved config/audit 明确记录这些资源实现
+字段，且增加了对应的 contract test。
+
+`news20` 高维 engineering smoke 经授权尝试后仍在当前 bounded window 内未完成，未产生
+summary/metrics/primary endpoint；因此不改变 Phase D 的 `0/6`, `inconclusive_not_completed`
+边界，也不重开正式 holdout、V26 或任何新模型路线。
+
+## 2026-08-14 V24-Q1 calibration-failed exploratory override（非正式）
+
+按用户明确授权，在 v2 estimator calibration failed 后启动隔离的 `6 worlds x 5 seeds`
+矩阵。`scripts/V24/run_q1.py` 新增显式 `exploratory-override` 路径，并强制使用独立输出根、
+`execution_class=exploratory_override`、`formal_q1_eligible=false`、`promotion_to_q2=false`；
+该路径不调用 `_write_decision()`，正式 `run` 仍会拒绝 failed calibration。
+
+工程上将 exploratory 的 fit/profile 与 analysis 解耦：GPU 1/2/3 完成 30 个 fit/profile，
+analysis 通过独立 CPU worker 并行，但 bootstrap 仍为完整 200 次。进程级 bootstrap 只改变
+执行并发，固定每个 replicate 的 seed/Poisson 权重，串行与并行 focused test 逐元素一致。
+终态为 `30/30 completed`、`0 incomplete_compute`；描述性 delta-AUC 不进入正式 Q1/Q2 或论文主张。
+
+## 2026-08-14 V24-Q1 v2 calibration No-Go (P1 blocked)
+
+V24-Q1 v2 的五 seed、六 world pre-fit 合约已重跑并通过：30 个 job key 均绑定
+`v24_conditional_incremental_response_q1_v2`，W0 五 seed 的 support/marginal
+probe 均值分别为 `0.50048448` 和 `0.49512566`，符合固定 panel 的居中约束。V23
+只读 P0 也完成 12/12；四个 V23 world 的平均 conditional delta AUC 均在约
+`[-0.00342, 0.00060]` 内，未重训 V23。
+
+随后完成冻结的 200-replicate matched estimator calibration（8 个确定性 CPU worker）。
+null false-positive rate=`0.0`、null mean delta AUC=`-0.00004875`，所以 null
+校准与居中门槛通过；但弱替代在 `delta AUC >= 0.02` 的功效为 `0.0`，alternative
+mean delta AUC 仅 `0.00109075`。因此 `calibration_passes=false`：正式 30-job P1
+没有启动，Q2/DCBoost 不得接入。该结果只能说明冻结的 Q1 估计器/弱替代组合不满足预注册
+检出力门槛，不证明 C_cycle 在真实或其他设置中没有 utility，也不允许事后调阈值或替代
+强度来挽救 V24。
+
+## 2026-08-14 V24-Q1 contract audit, reviewer trace, and R2 smoke
+
+第一轮 Claude 评审的完整原文已恢复并归档到 `.aris/traces/auto-review-loop/2026-08-14_v24_run01/`；当前代码吸收了 W0/W2/W3/W4、缺失 `support_raw` 与 calibration gate 的修订。seed42 的六个 corrected synthetic world 合约均通过，R2 CPU smoke 完整跑通 V23 fit/profile 到 V24 conditional analysis，但仍严格标记为 engineering-only。正式 P0、calibration 和 P1 没有启动，DCBoost 不属于 Q1。
+
+## 2026-08-14 V24-Q1 conditional incremental response implementation
+
+在不修改冻结 V23 probe 的前提下，新增 methods/TopoGate/V24_conditional_response/。
+该版本把研究问题收缩为控制 observed State、effective Support 和 N × T × 9 Marginal 后，
+C_cycle 是否仍有条件增量的外层 pair utility，不声称 independence、causality 或
+functional redundancy。主 residualizer 固定为 intervention-wise cross-fitted Ridge，
+outer pair 只在 label-free sample KFold 分区内形成；Poisson weighted bootstrap 维持
+原始样本的 outer train/test 分离。
+
+新增 corrected synthetic W0--W5、W4 pre-fit contract、P0 read-only postmortem、
+matched estimator calibration、冻结 Q1 decision 与 dry-run/prepare/calibrate/p0/run/decide
+runner。正式 run 拒绝缩短 epoch、非冻结 world/seed、缺失 panel/contract 或未通过
+calibration；GPU0/7 被拒绝，每个 physical GPU 使用独立串行队列。DCBoost 仍冻结在 Q2：
+若 Q1 未 Go，不实现 adapter 或运行它；若 Q1 Go，必须先比较 fixed-Z、fixed-C、
+fixed-residual 与 native dynamic-Z controls。
+
+工程 smoke 与 production-scale generator contracts 已通过，但 formal Q1 30-job matrix、
+P0 和 calibration 尚未启动，因此本条不包含模型效能或论文主张。
+
+## 2026-08-12 V22 cooperative Full single-seed panel launched
+
+冻结并启动独立的 `v22_topology_discriminator_cooperative_keep_gate` Full 单 seed 面板，
+manifest 为 `datasets/external/v22_full_cooperative_single_seed_20260812/manifest.json`，
+覆盖原 8 个数据集、第一批 4 个新增数据集和第二批 4 个新增数据集，共 `16` 个唯一键；
+固定 seed=`42`、80 epochs、batch size=`4096`。无标签的 PBMC3k/PBMC1k 均显式传入
+`K=8`，fit/graph/Gate/discriminator/loss 不读取标签。资源感知 launcher 使用物理 GPU
+`1,3,4,5`，每卡一个 worker，GPU0/7 禁止，旧 hard-gate 资源恢复继续独立运行。
+
+该面板是 cooperative Keep-Gate 的能力探测，不是消融或超参数选择；完成后才评估是否需要
+独立、标签隔离的 X-only 超参数搜索。中途状态与逐任务产物保存在
+`result/V22/v22_full_cooperative_single_seed_20260812/`。
+
+## 2026-08-11 V21 v3 readout correction and 13-dataset extension
+
+V21 v2 的六数据集正式结果继续保留，未被覆盖。离线复算显示，同一 Full clean embedding
+使用 known-K KMeans 后宏平均 ARI 从 Student-t head 的 `0.207693` 提升到 `0.384094`，
+但仍低于 matched scMAE-only 的 `0.418579`。v2 Student-t head 还把 latent 维平方距离取
+`mean`；v3 配置改为标准 Student-t 的 `sum`，并新增显式 `readout_mode`：训练仍保留
+Student-t 代理，最终主读出统一为 clean embedding KMeans，同时保存
+`student_t_predictions.npy` 和 `readout_profile.json`。该修正解决读出契约，不宣称已解决
+Full embedding 的剩余退化。
+
+新增 outcome-independent 13 数据集扩展 manifest、runner 和严格汇总器，固定
+`13 datasets x 2 variants x 3 seeds = 78 runs`。候选来自已登记的稀疏文本、scRNA-seq、
+UCI 高维数据和一个 dense control，不与既有六数据集重叠；扩展标签未用于资格或配置选择。
+当前只完成 micro-mass 两路、seed42、2 epochs CPU engineering smoke，`2/2` 且
+`audit_ok=true`；正式 78-run 矩阵尚未启动，不能据 smoke 的 Delta ARI `+0.0229` 宣称收益。
+
+## 2026-08-11 V19 sparse/high-dimensional extension protocol
+
+预注册 13 个稀疏/高维候选的 matched `rg_full`/`scmae_only` 扩展实验，使用独立
+`scripts/V19/run_extended_matrix.py` 和
+`result/V19/v19_rg_extended_sparse_manifest_20260811.json`。该扩展不修改 V19
+RG/scMAE 核心算法；来源、输入范围、三 seed、标签隔离和 Dorothea 的无标签
+Top-2000 特征上限均写入 manifest。目标“至少 5 个 RG > scMAE”仅作为实验后的
+promotion criterion，不能通过读取 ARI 后反向挑选数据集。SOTA 对照尚未启动，需等
+matched 矩阵确认胜出层后再调用 `methods/` 中状态为 Ready/Conditional 的方法。
+
+## 2026-08-11 V21 assignment-adversarial Gate implemented
+
+新增独立 `methods/TopoGate/V21_assignment_adversarial_gate/`，不修改 V20 历史实现。
+V21 保留原始随机 donor scMAE 重建分支，并将 Gate 的目标从最大化 reconstruction MSE
+改为最大化干净输入与 Gate 扰动输入之间的 bounded Jensen--Shannon cluster-assignment
+divergence。模型端最小化同一 divergence，并加入 IMSAT-style InfoMax 防坍缩；第一版不加入
+EMA Teacher 或共识图刷新。
+
+V21 冻结三路可辨识变体：`scmae_only`、`random_assignment_control` 和
+`topology_assignment_adversarial`。后两路共享同一个 K-means 初始化的 Student-t head、
+InfoMax、assignment weight、donor 语义和有效遮挡预算，Full 仅额外启用 SVD-kNN、
+topology statistics 与 257 参数共享 FeatureGate。assignment mask 精确定义为每个样本
+`donor != anchor` 可变化位置中的固定比例；选中后值变化率为 100%，同时单独报告
+eligible/全特征 effective rate，不能把局部 40% 记为全局 40%。
+
+核心 `fit_v21` 不接收 `y`。聚类头变体需要协议参数 K；benchmark runner 可由外层 `y`
+推导 known K，但必须记录 `K_source=benchmark_oracle_from_y` 和
+`K_used_during_fit=true`。focused tests 为 `13 passed`，compileall 与 CLI help 通过；
+真实 cnae9 三路 2-epoch CPU smoke 完成，仅证明工程契约，不构成性能结论。
+
+## 2026-08-11 V21 graph-fix formal results and ARI-selected confirmation
+
+修复 kNN 自邻居过滤后，V21 正式矩阵在六个数据集、两个 variant、三个 seed 上完成
+`36/36`，严格审计与 provenance 审计均通过。完整 V21 相对 `scmae_only` 的六数据集
+宏平均 ARI 为 `0.207693` 对 `0.418579`，差值 `-0.210886`；仅 `cnae9` 为正向，
+因此不支持“V21 普遍优于 scMAE-only”的表述。
+
+随后进行的 ARI 网格共 `72/72`，在 seed42 六数据集宏平均 ARI 上选择
+`assignment_weight=0.1`、`gate_lr=2.5e-4`、`epochs=80`、`warmup_epochs=40`、
+`infomax_weight=0.05`。三 seed 确认共 `18/18`，宏平均 ARI=`0.342684`，相对正式
+scMAE-only 仍为 `-0.075895`。这些网格和确认结果明确标记为 ARI-selected development
+evidence；拟合路径仍不接收 `y`，但标签参与了候选选择，不能作为无标签泛化证据。
+
+## 2026-08-10 V20 Full eight-dataset coarse screen
+
+V20 Full 单 seed 粗筛完成 8/8 个 bridge/shared-text 数据集，宏平均 ARI/NMI/ACC 为
+`0.120841/0.204296/0.509086`。结果范围从 Mouse_retina 的 ARI `0.341889` 到
+hate_speech 的 `-0.029183`，表现出明显的数据集依赖性；当前只能作为完整 Full 的
+方向性工程证据，不能作为优于 scMAE 的结论。该轮没有 matched scMAE-only，也没有
+三 seed 统计。V20 训练 fit、graph、Gate 和 loss 均未使用标签，K 只用于 readout。
+
+## 2026-08-10 V20 Full first-round implementation and X-only tuning
+
+新增独立 `methods/TopoGate/V20_topology_conditioned_adv_mask/` 与
+`scripts/V20/tune_first_round.py`。V20 Full 使用稀疏 `X_graph` 的
+TruncatedSVD/cosine-kNN（95% 目标、上限 500、k=20）建固定图，回到 dense
+`X_model` 分块计算 deviation/dispersion，Gate 为共享 `2→64→1`（257 参数），40 epoch
+随机预热后每 4 个 batch 进行一次 Gate 对抗更新。标签不进入 fit、graph、stats、gate 或 loss。
+
+首轮 X-only 调参在 cnae9 的固定 80/20 行划分上完成 `4/4`，未访问 `y`、K 或聚类指标；
+选择 `gate_lr=5e-4`、`tau_ste=0.5`。首轮 Full 在 cnae9/shared_text、seed42、GPU2、80 epoch
+完成，产物位于 `result/V20/full_first_round_20260810/cnae9__shared_text/seed42/`。
+该单 seed 结果为 ARI=`0.181408`、NMI=`0.467400`、ACC=`0.472222`，仅属于 first-round
+engineering/performance evidence，不能代表 V20 优于 scMAE。requested mask rate=`0.399533`，
+effective value-change rate 约=`0.00678`，Gate 更新 `50/50` 非零梯度。
+
+首轮 smoke 暴露并修正了稀疏 donor 相等导致的 mask 语义问题：V20 训练损失使用 requested
+mask，effective mask 仅诊断；V19 原有 Bernoulli/effective 语义未修改。当前没有启动 8 数据集
+正式矩阵。
+
+## 2026-08-10 V19 ARI-selected biological plus sparse-text development protocol
+
+新增独立 `v19_rg_ari_dev_tuning_v1` 代码与配置，固定 scMAE backbone 为
+`hidden_size=128`、`epochs=80`、`batch_size=256`、`lr=1e-3`、`mask_ratio=0.4`、
+`masked_data_weight=0.75`、`mask_loss_weight=0.7`、`n_top_features=1000` 和
+`target_sum=10000`；调参只复用 48 个 RG mechanism candidates。正式目标是 8 个
+bridge/shared-text 数据集的全局 MacroARI，屏选 `384`、top12 refine `288`、固定
+scMAE reference `24`、冻结后 6 路比较 `144`。该协议明确标记为
+`ARI-selected development evidence`：标签不进入预处理、trainer、graph、reliability、
+gate、NeighborMix 或 loss，只用于 benchmark K、post-fit metrics 和参数选择。
+
+独立入口包括 `scripts/V19/tune_ari_dev.py`、`run_scmae_reference_ari_dev.py`、
+`launch_ari_dev.py`、`run_ari_final.py`、`summarize_ari_dev.py` 和
+`summarize_ari_final.py`；输出根为 `result/V19/v19_rg_ari_dev_tuning_v1/`，旧的
+无标签 V19 结果根保持不变。compileall、CLI help、新增/既有 V19 focused tests 共
+`9 passed`，真实 sms 文本固定 80 epoch GPU5 smoke 完成；正式 screen 已在空闲 GPU5/6
+按 small-first 启动，GPU0/7 未使用，也未重算 SHA/hash。
+
+## 2026-08-10 V19 v2 final evidence and promotion boundary
+
+V19 v2 的 X-only mechanism refine 完成 `396/396`，在固定 held-out proxy 下选择
+`rel_both2`（mutual/SNN reliability 权重均为 2.0）。随后按冻结配置完成 11 个输入层、6 个
+variant、3 个 seed 的 `198/198` post-freeze final matrix；所有 run 通过 artifact、shape、
+K-source 和标签隔离审计。final `rg_full` 相对 `scmae_only` 的宏平均 ARI 为 `+0.000238`，
+但 NMI 为 `-0.004197`、ACC 为 `-0.006175`；`rg_nomix` 与 `scmae_only` 完全一致。
+
+因此本轮支持的论文表述是：RG reliability mechanism 在部分输入层有条件性作用，不能宣称
+V19 在该批次上普遍优于 scMAE，也不能宣称已达到全局 SOTA。归档 SOTA 可比较的 4 个层中，
+V19 在 cnae9 与 Mouse_retina 三项指标胜出，在 Campbell 与 SMS 三项指标落后；其余 4 个层
+没有可核验的归档 baseline 行。该结果作为正式负面/条件性证据保留，不据此继续无界搜索。
+
+## 2026-08-08 V19 label-free RG tuning path implemented
+
+新增独立 `scripts/V19/tune_unsupervised.py` 与
+`scripts/V19/summarize_unsupervised_tuning.py`。调参器只读取 NPZ 特征矩阵，调用
+`fit_predict(..., n_clusters=None)`，不访问 `y`、不推导 K、不执行 KMeans、不生成
+标签指标。X-only 选择分数固定由遮挡恢复、隐视图稳定性和输入邻域保持组成；候选配置
+和输出根与正式 V19 矩阵隔离。真实 cnae9 64 行 CPU smoke 已完成，未生成
+`labels_true` 或 `metrics` 文件；正式矩阵已 `66/66 completed`，792 个 X-only 调参任务
+已启动。
+
+## 2026-08-08 V19 seed42 formal matrix submitted
+
+按冻结 manifest `v19_rg_advantage_inputs_20260808_v1` 启动 V19 seed42 正式批次：11 个
+输入层 × 2 个 variant，共 22 个 run key。launcher 显式绑定物理 GPU4；GPU0/7 未使用，
+V18 既有矩阵未停止或修改。由于 GPU4 同时存在 V18 调度 worker，V19 以显式共享方式运行，
+持续检查显存和 `incomplete_compute` 状态。seed42 已完成 `22/22`；seed123 和 seed7
+随后由既存 launcher 启动，各自当前为 7 个 completed、1 个 running。本节不包含性能结论。
+
+## 2026-08-08 V19 RG selected-dataset adapter implemented
+
+新增独立代码路径 `methods/TopoGate/V19_rg_adapter/` 与 `scripts/V19/`，用于把原始
+PlantNet `RG-NeighborMix-scMAE` 接入选定的 CLUBench NPZ 数据。V19 只预注册
+`scmae_only` 与 `rg_full`：前者完全关闭 graph/gate/mixing/pseudo loss，后者保持
+PCA-cosine kNN、similarity/mutual/SNN/distance edge reliability、解析 topology node
+gate、reliability NeighborMix，以及 `real_loss + 0.3 * pseudo_loss`。contrast 分支固定
+关闭；V9、V18、原始 RG 和外部 baseline 均未修改。
+
+核心接口 `fit_predict(X, *, n_clusters, config, seed, device)` 不接收标签，K 只进入最终
+known-K KMeans；标签由外层 runner 用于 benchmark K 和训练后的指标。固定 manifest
+包含 5 个去重文本协议和 3 个生物数据的 native/bridge 双协议，共 11 个输入层；矩阵
+launcher 强制一次提交一个 seed，顺序为 `[42,123,7]`，总计 66 个正式 run。实现阶段完成
+`9 passed` focused tests、CLI/compileall 和 2 数据集 × 2 variant 的 64 行/1 epoch CPU
+engineering smoke；seed42 正式批次已提交，当前只报告运行状态，不形成 V19 性能结论。
+
+## 2026-08-08 V18 Leiden K-contract correction
+
+代码审查发现 `v18_leiden` 的图读出不需要 K，但旧 runner 仍从 benchmark 标签推导并
+写入 K 元数据。独立 V18 core/runner 已改为允许 `n_clusters=None`，矩阵 launcher 对
+Leiden 写入 `K_source=not_applicable_leiden`；新增严格审计字段、metadata-only 修复脚本、
+终态 finalizer 收尾调用和无标签 runner 回归测试。该修正不改变 C、affinity、预测、配置或指标，也不停止正在运行
+的 v2.2 矩阵；旧完成产物在矩阵终态后统一修复。当前 focused tests 为 `10 passed`，未重算
+SHA/hash。
+
+## 2026-08-08 V18 audit and paired-summary enhancement
+
+在 v2.2 矩阵运行期间增强 `scripts/V18/summarize.py`，为每个 dataset/variant 汇总
+ARI/NMI/AMI、含 abstention 的指标、HardConcrete 开放率、C 边保留率、零出度率、
+abstention、连通分量和支持数，并固定生成三组相同 dataset/seed 的 paired delta：
+`latent_candidate_spectral -> latent_GW_frozen`、`latent_GW_frozen -> v18_full`、
+`latent_GW_frozen -> latent_C_exactzero`。该改动只影响汇总层，不改变 V18 训练参数、
+模型代码、variant、seed 或标签协议。
+
+## 2026-08-08 V18 independent-v2.2 pre-run correction
+
+运行 v2.1 前置审计的已完成产物和代码时发现两处协议实现偏差：scMAE mask 使用了
+“抽中位置”而不是原 scMAE 契约中的“实际数值变化位置”；FISTA 初始化使用未归一化
+latent，而拓扑损失使用行归一化 latent。已停止 v2.1 的剩余 worker，已完成的产物保留，
+6 个正在运行的 run key 标记为 `incomplete_compute`，没有混入新结果。
+
+V18 独立代码现固定为 protocol id `v18_scmae_mainline_v2_2`，修正上述两点，并为
+gate/relation 使用各自配置学习率。v2.2 使用复制的冻结 manifest、独立 manifest id 和
+独立输出根；未重复计算 SHA256/其他哈希。compileall、focused tests `8 passed`、CLI
+检查和三路真实 engineering smoke 均通过；smoke 不构成性能证据。
+
+## 2026-08-08 V18 independent-v2 pre-run correction
+
+运行前审计发现旧 V18 的 gate 初始化会使 HardConcrete 读出几乎全开，且
+`v18_shuffled_E0` 只打乱边槽位而没有重算新边特征。已停止旧矩阵并保留其产物，
+V18 独立实现切换到 protocol id `v18_scmae_mainline_v2`：显式设备 seed、按真实
+打乱边重算五项特征、新的 Gate 初始化和新的结果根目录。新旧结果不混合；本条不包含
+修正版性能结果。
+
+随后单 GPU 启动检查发现 `torch.device("cuda")` 未指定 logical index，v2 CUDA
+矩阵在训练前统一失败。已修正为隔离进程内的 `cuda:0`，v2 失败批次保留，新运行
+协议升级为 `v18_scmae_mainline_v2_1`；本条同样不包含性能结论。
+
+## 2026-08-08 V18 scMAE 主线全量执行计划
+
+根据用户明确的研究选择，V18 主线恢复为 `scMAE -> latent Z -> latent
+cosine/SNN candidate graph -> edge gate G and sparse W -> C -> same-C
+spectral readout`。V17-reference 保留为 exact-zero relation 对照，不再作为
+是否执行 V18 全量矩阵的前置开关。
+
+新增执行计划见 `V18_TRAINING_PLAN.md`。计划固定 scMAE、latent view、五项边特征、
+HardConcrete `G`、candidate-restricted `W`、联合损失、全量数据/变体/三 seed 矩阵、
+标签隔离、OOM/超时状态和一次性 provenance manifest。无论前置数据表现如何，所有
+预注册 run key 均提交并完成状态汇总；本节不包含任何 V18 性能结果。
+
+## 2026-08-08 V18 independent code path implemented
+
+新增独立 `methods/TopoGate/V18_scmae_latent_gate/` 与 `scripts/V18/`，包括：
+scMAE 前端、固定三视图 latent cosine/SNN 候选图、五项边特征、HardConcrete gate、
+candidate-restricted FISTA 初始化与 proximal relation、joint loss、same-C spectral/
+Leiden readout、标签隔离 runner、manifest builder 和全量矩阵 launcher。V18 不复用
+V9 runner，也不修改 V17 reference。
+
+验证已完成：compileall、V18 focused tests `5 passed`、CLI `--help`、真实登记
+`2d_20c_no0` 的 `scmae_only / latent_GW_frozen / v18_full` 三路 engineering smoke。
+该 smoke 使用短 epoch 和单 seed，只证明代码路径和输出契约；正式矩阵仍按冻结 manifest
+和 `[42,123,7]` 提交，不根据 smoke 指标提前停止或调参。
+
+## 2026-08-08 V18 full matrix submitted
+
+冻结 manifest `v18_scmae_mainline_20260808` 的 149 条 eligible 记录、10 个 variant
+和 3 个 seed，共 4470 个 run key，已按物理 GPU 1--6 分成 6 个 worker 提交。每个
+worker 745 个 run，线程上限固定为 `OPENBLAS/OMP/MKL/NUMEXPR=1`，GPU 0/7 未使用。
+当前只记录提交状态，不把中间结果写成性能结论；OOM、超时、输入域问题和代码错误将
+分别保留为对应状态并写入 `CHANGELOG_errors.md`。
+
+新增只读覆盖审计入口 `scripts/V18/audit_matrix.py`，按 manifest 期望 run key 检查
+缺失、running、completed、incomplete 状态及每个已完成 run 的产物/标签隔离契约。
 
 ## 2026-08-07 V16.1 补齐候选的固定判定
 
@@ -43,19 +585,19 @@ shuffled support 未形成预注册机制收益。因此状态固定为 `empiric
 记录论文的重大变动、思路演变、改动灵感，用于保持论文叙事统一性。
 
 > 存储说明（2026-08-03）：本文保留历史实验叙述。凡标注为 smoke、临时或
-> `unpublished-temp` 的旧路径，若未在当前 `result/` 目标中核验，不得视为当前产物；正式
+> `/tmp` 的旧路径，若未在当前 `result/` 目标中核验，不得视为当前产物；正式
 > 结果使用项目根路径 `result/...`，并遵守根目录不堆积结果的规则。
 
 ## 2026-08-07 V16.1 去重汇总更新
 
-旧的 33 数据集去重快照仍保留在 `unpublished-temp/v16_1_global_dedup_summary_20260807.json`；
+旧的 33 数据集去重快照仍保留在 `/tmp/v16_1_global_dedup_summary_20260807.json`；
 合并已完成的 `PRJNA895163` 与 `hrvatin_geo_maintype_counts` 后，当前 35 条完整快照位于
-`unpublished-temp/v16_1_global_dedup_summary_current_20260807.json`，全部为
+`/tmp/v16_1_global_dedup_summary_current_20260807.json`，全部为
 `empirical_not_supported`。Norman 未产出 Stage-0 JSON；不因零正例改变模型协议。
 
 ## 2026-08-06 V16.1 expanded-count Stage-1 事实更新
 
-`unpublished-temp/v16_1_stage1_parallel_20260806/` 中已有五个完整的固定 paired 矩阵：
+`/tmp/v16_1_stage1_parallel_20260806/` 中已有五个完整的固定 paired 矩阵：
 `Arabidopsis_Stereo_seq_leaf`、`CRA002977_1`、`HCA_subsampled_20k`、
 `TabulaSapiens_Pancreas`、`tr45.wc`。它们均按预注册晋级规则标为
 `empirical_not_supported`，没有形成 V16.1 正例，也不触发对 gate、support、temperature、
@@ -90,7 +632,7 @@ Delta ARI 为 `-0.000082`，固定 graph 虽高于 self-only，但 V16.1 predict
 
 在已有 210 个 V16.1 expanded-count summaries 后，按固定协议并行启动
 `TabulaSapiens_Pancreas` 与 `CRA002977_1` 的 Stage-1 clean/compound paired 运行；
-输出暂存 `unpublished-temp/v16_1_stage1_parallel_20260806/`，使用物理 GPU 3、4 和 seeds
+输出暂存 `/tmp/v16_1_stage1_parallel_20260806/`，使用物理 GPU 3、4 和 seeds
 `[42,123,7]`。当前任务仍在运行，仅部分 clean seed 已完成，未作正例或失败结论。
 
 延长 Stage-0 后，`HCA_subsampled_20k`、`Tosches` 和
@@ -127,7 +669,7 @@ confirmation 中机制差异最大的线索是 `ahdpc_prepared__2d_4c_no4`
 （mean DeltaARI=`+0.1313`，3 seeds 中 2 个为正），但不满足稳定正例门槛；任务表现
 最高的是 `ahdpc_prepared__dim512`（Full mean ARI=`1.0`，同时 NoMix 也为 `1.0`），
 因此两者都不能包装为普遍适用数据集。完整临时证据见
-`unpublished-temp/v9_regime_20260806/summary_main_standardized/`；正式 `result/` 目标只读，
+`/tmp/v9_regime_20260806/summary_main_standardized/`；正式 `result/` 目标只读，
 未伪造正式结果盘条目。
 
 ## 2026-08-06 V9 Full 对 vanilla scMAE secondary comparison
@@ -152,7 +694,7 @@ Wilcoxon `p=0.04936`。CI 跨 0，不能宣称总体增益，也不能把该比�
 不满足预注册的 5-seed confirmation 正例门槛。最大但不稳定的差值是
 `ahdpc_prepared__2d_4c_no4` (`+0.06573`，seed 42 为 `-0.20088`)。任务表现最高的
 数据集仍是 `ahdpc_prepared__dim512`（Full/scMAE mean ARI 均为 `1.0`，属于并列而非
-增益案例）。可复核临时汇总为 `unpublished-temp/v9_regime_20260806_scmae_confirmation_summary/`；
+增益案例）。可复核临时汇总为 `/tmp/v9_regime_20260806_scmae_confirmation_summary/`；
 正式 `result/` 目标只读，未伪造正式结果盘条目。
 
 ## 2026-08-04 研究目标与 V 系列语义统一
@@ -193,8 +735,8 @@ paired runner 默认使用预注册 seeds `[42,123,7]`，正式输出根目录�
 约 `0.0034%`、`0.0054%`、`0.0253%`、`0.0169%`、`0.0856%`，median support
 分别为 `-6.027`、`-5.575`、`-4.984`、`-7.743`、`-6.581`。每个 split 同时评分
 A→B 与 B→A，当前 profile 固定为 3 个 split、6 次方向 evaluation。Campbell、
-Mouse_retina 的延长窗口审计产物分别为 `unpublished-temp/v16_1_stage0_campbell_exchange.json`
-和 `unpublished-temp/v16_1_stage0_mouse_exchange.json`；两者的初次超时只保留为历史执行事件。
+Mouse_retina 的延长窗口审计产物分别为 `/tmp/v16_1_stage0_campbell_exchange.json`
+和 `/tmp/v16_1_stage0_mouse_exchange.json`；两者的初次超时只保留为历史执行事件。
 
 `Quake_Smart-seq2_Lung`、`hrvatin` 和 `hrvatin_filtered` 因 dense storage 或无法恢复
 count encoding 标记为 `theory_domain_not_supported`。依据计划，V16.1 Stage 1
@@ -210,7 +752,7 @@ sparsemax gate。已转换并完成部分静态审计的候选包括 `Bach`、`G
 `Young` Stage-1 clean/stress 仅有 clean `+0.00259` 且 stress 无保留；`Bach` 的固定三
 seed Stage-1 在 1800 秒窗口未完成。`Wang` 的非整数值检查失败，记录为理论域外；
 新增候选没有因单 seed 或固定图表现自动晋级。
-Stage-0 临时产物在 `unpublished-temp`，正式 Stage-1 仍等待可用 GPU，未使用 CPU 代替。
+Stage-0 临时产物在 `/tmp`，正式 Stage-1 仍等待可用 GPU，未使用 CPU 代替。
 
 ## 2026-08-06 V16 Stage-0/1：锚点机制未通过晋级条件
 
@@ -221,7 +763,7 @@ contamination）执行 Stage 1。Stage 0 两个数据集都通过计数域证书
 只有 `0.472`/`0.267`，held-out support 的正值比例只有 `0.153%`/`0.063%`。
 
 Stage 1 的 60 个 run 全部完成，输出暂存于
-`unpublished-temp/v16_stage1_anchors_20260806_fixed/`，未写入只读的正式 result 盘。clean
+`/tmp/v16_stage1_anchors_20260806_fixed/`，未写入只读的正式 result 盘。clean
 平均 ARI 为：Campbell self-only `0.15826`、V16 `0.15765`、fixed graph
 `0.21755`；Mouse_retina self-only `0.40418`、V16 `0.40415`、fixed graph
 `0.42916`。相对 self-only 的 V16 clean paired delta 分别为
@@ -269,19 +811,19 @@ manifest 的 CLM 字段保持 `CLM-unranked`，不能形成 CLM-aware 正式结�
 
 新增 `scripts/V15/audit_stage1b_certificates.py`，对现有 run 产物独立审计
 teacher、candidate graph 和 utility 三个证书。审计只在 graph 的后验 recall/
-purity 中读取 `labels_true.npy`，不改变训练边界。`unpublished-temp/v15_stage1_panel_v2`
+purity 中读取 `labels_true.npy`，不改变训练边界。`/tmp/v15_stage1_panel_v2`
 的 7 个 run 结果为：teacher assignment/embedding 证书 **0/7 可证**；graph
 后验证书 **7/7 可重算**（candidate recall、edge purity、同标签覆盖率）；
 utility 的 in-sample scorer 指标 **7/7 可算**，但 held-out utility prediction
 和 independent downstream cluster gain 均 **0/7 可用**。因此现有 utility AUROC
 只能叫 in-sample diagnostic，不能支持“utility 对应聚类收益”的结论。审计结果
-暂存 `unpublished-temp/v15_stage1b_certificates.json`，不进入正式结果盘。
+暂存 `/tmp/v15_stage1b_certificates.json`，不进入正式结果盘。
 
 ## 2026-08-05 V15 修复后最小配对矩阵：target 与 scorer 仍需分开
 
 在当前 source hash 下只运行了小型单 seed exploratory 矩阵，输出位于
-`unpublished-temp/v15_local_consensus_matrix_20260805/` 和
-`unpublished-temp/v15_compound_matrix_20260805/`，未写入正式 result 盘。clean 条件完成
+`/tmp/v15_local_consensus_matrix_20260805/` 和
+`/tmp/v15_compound_matrix_20260805/`，未写入正式 result 盘。clean 条件完成
 `sms_spam_collection`、`cnae9` 各 5 个变体，另完成 `reuters self_only`；
 `reuters direct_counterfactual` 因高维图/训练成本过高在无产物后终止。compound
 条件完成 sms/cnae9 的 self-only、direct-local-consensus 和 learned scorer 共
@@ -377,7 +919,7 @@ reliability；只对 (i, j) 对中 reliability 更高的边施加
   `run_stage1.py`/`summarize_stage1.py` 保持不动以兼容 stage-1 历史证据。
 
 验证：`compileall` 通过；`pytest -q` 10 passed（原 7 + 新 3）；baseline
-/ 改动后 source SHA-256="(see unpublished-temp/v12_baseline_hashes.txt &
+/ 改动后 source SHA-256="(see /tmp/v12_baseline_hashes.txt &
 summary.json:runner_source_sha256)"；labels_used_during_fit=False 全 36
 run 验证。
 
@@ -620,9 +1162,9 @@ V9 的论文匹配协议结果显示，相对 AHDPC 的正差值仅出现在 `sp
 
 ### 当前验证边界
 
-- 工程验证：`PYTHONPATH=source-repository pytest -q methods/TopoGate/V11/tests/test_v11.py` 为 **14 passed**；`compileall` 通过 V11 目录与 V11 multi-seed runner。
-- 新候选 smoke：`datasets/iris.npz`、CPU、seed=42、4 epochs、缩小网络，历史输出 `unpublished-temp/topogate_v11_semantic_metric_iris/` 已清理；head ARI=0.6051，KMeans ARI=0.5961，最后 gate/target=0.311/0.021。该 smoke 只证明训练链路和新几何项曾经可运行，不构成性能结论。
-- 旧 `semantic_residual` 临时 breast 3-seed 对照（子任务，历史目录 `unpublished-temp/topogate_v11_semantic_breast__*` 已清理）：Full head ARI `0.887228±0.003224`，NoMix `0.885369±0.011102`，Δ `+0.00186`；KMeans Δ `+0.00371`。该结果只保留为历史探索记录，不足以宣布投稿级有效。
+- 工程验证：`PYTHONPATH=/home/luolie/ToPoGate pytest -q methods/TopoGate/V11/tests/test_v11.py` 为 **14 passed**；`compileall` 通过 V11 目录与 V11 multi-seed runner。
+- 新候选 smoke：`datasets/iris.npz`、CPU、seed=42、4 epochs、缩小网络，历史输出 `/tmp/topogate_v11_semantic_metric_iris/` 已清理；head ARI=0.6051，KMeans ARI=0.5961，最后 gate/target=0.311/0.021。该 smoke 只证明训练链路和新几何项曾经可运行，不构成性能结论。
+- 旧 `semantic_residual` 临时 breast 3-seed 对照（子任务，历史目录 `/tmp/topogate_v11_semantic_breast__*` 已清理）：Full head ARI `0.887228±0.003224`，NoMix `0.885369±0.011102`，Δ `+0.00186`；KMeans Δ `+0.00371`。该结果只保留为历史探索记录，不足以宣布投稿级有效。
 
 **下一步**：对 `topogate_v11_semantic_metric.yaml` 做 5 数据集 × 3 seeds 的 Full/NoMix/旧 semantic_residual 对照，并同时报告 head ARI、KMeans embedding ARI、silhouette、gate mean/target gate 与 temporal recurrence。
 
@@ -682,7 +1224,7 @@ V9 的论文匹配协议结果显示，相对 AHDPC 的正差值仅出现在 `sp
 
 - `pytest -q methods/TopoGate/V11/tests/test_v11.py`：**6 passed**。覆盖 edge/null/cluster 非零有限梯度、EMA 数值更新与 stop-gradient、概率归一化、动态图不读标签、duplicate/tie kNN 按 node id 去 self、V9 freeze manifest、真实 iris NPZ CPU smoke，以及严格 NoMix 不构图且 gate 恒为 0。
 - 历史 V11 smoke：`result/V11/smoke/iris__V11__seed42/` 已清理；真实 iris、CPU、seed=42、3 epochs 的历史记录显示动态图刷新 2 次，最终 gate/target gate=0.214/0.142，head ARI=0.6129。该数值只验证链路，禁止作性能结论。
-- 探索性 iris 80-epoch 3-seed 诊断（产物位于 `unpublished-temp`）显示 V11 full head ARI `0.6738 ± 0.0165`，V11 NoMix `0.6840 ± 0.0244`；full 暂低 `0.0102`。这不是跨数据集结论，但明确说明当前 V11 尚未达到投稿 go 条件，必须先完成预注册的多数据集消融并继续调查 topology 对 iris 的净负贡献。
+- 探索性 iris 80-epoch 3-seed 诊断（产物位于 `/tmp`）显示 V11 full head ARI `0.6738 ± 0.0165`，V11 NoMix `0.6840 ± 0.0244`；full 暂低 `0.0102`。这不是跨数据集结论，但明确说明当前 V11 尚未达到投稿 go 条件，必须先完成预注册的多数据集消融并继续调查 topology 对 iris 的净负贡献。
 
 ## 2026-07-30 TopoGate V10 Reliable-Graph 核心重构（已实现）
 
@@ -775,18 +1317,18 @@ knn_pca_dim: 200      # adaptive 模式上限
 
 ## 2026-07-28 环境配置
 
-- **LaTeX 编译器路径**: `external-texlive`
+- **LaTeX 编译器路径**: `/data/luolie/texlive`
 - **用途**: 论文编译
 - **后续 Agent 须知**: 此路径用于 `pdflatex`、`xelatex` 等编译命令
 
 ## 2026-07-27 Stage 1 sweep 恢复（134-dataset learnable_gate_sched 粗扫）
 
 **背景**：LearnableGate 在 134 个数据集上的 Stage 1 sweep（mr∈{0.3,0.4}, k∈{5,10}, gate_max=0.15, ep=80, seed=42）原计划 3 worker 并行执行。前两轮启动均因以下原因中断：
-- 第一轮：磁盘满（`/` 100%）—— `unpublished-temp` 累积 13GB × 多个 npz 临时文件（`tempfile.NamedTemporaryFile` 默认路径）
+- 第一轮：磁盘满（`/` 100%）—— `/tmp` 累积 13GB × 多个 npz 临时文件（`tempfile.NamedTemporaryFile` 默认路径）
 - 第二轮：CUDA OOM —— 多 worker 共用同一 GPU 导致抢资源（worker 0/1/2 各自指定 `[0,1,2]`, `[1,3,6]`, `[2,7,3]`，但实际每 worker 通过 `args.gpu_ids[worker_id % len(...)]` 只取一个 GPU——经排查，单 worker 也无法独占）
 
 **修复方案**：
-1. **磁盘**：设置 `TMPDIR=external-storageunpublished-temp`（/data 1.6TB 空间），让 `tempfile.NamedTemporaryFile` 写到 /data
+1. **磁盘**：设置 `TMPDIR=/data/luolie/ToPoGate/tmp`（/data 1.6TB 空间），让 `tempfile.NamedTemporaryFile` 写到 /data
 2. **GPU 隔离**：每个 worker 指定单一 GPU（`--gpu_ids 1` / `--gpu_ids 7` / `--gpu_ids 0`），`--num_workers 3` 让 3 个 worker shard job list
 3. **任务分阶段**：先跑 small（<5000 samples, 95 个数据集 × 4 configs = 380 任务），再分批跑 medium/large
 4. **代码改动**：在 `run_learnable_gate_134_sweep.py` 增加 `DATASET_CSV` 环境变量支持，让 `run_small_only.py` 用 filtered CSV 启动 worker
@@ -856,9 +1398,9 @@ knn_pca_dim: 200      # adaptive 模式上限
 | `result/learnable_gate_smoke/har__*` 3 个 single-seed 目录 | 删除 | 已被 multiseed/ 90-run 替代 |
 | `result/learnable_gate_smoke/multiseed/comparison_ext.csv` | 删除 | 3 个 worker 并行写入时被覆盖的 partial CSV（仅 20 行）；权威 CSV 是 `comparison.csv` (90 行) |
 | `baseline_comparison/bak/`、`versioned/` | 删除 | 不被任何脚本引用 |
-| `unpublished-temp/topogate_*`、`unpublished-temp/ablation_ext_*`、`unpublished-temp/ext_ms_*`、`unpublished-temp/multiseed_v2.log` | 删除 | 实验已结束 |
+| `/tmp/topogate_*`、`/tmp/ablation_ext_*`、`/tmp/ext_ms_*`、`/tmp/multiseed_v2.log` | 删除 | 实验已结束 |
 
-**保留**：所有 `result/` 主目录、`unpublished-temp/topogate_pre_v1v2_split_20260725_194442.tar.gz` 备份。
+**保留**：所有 `result/` 主目录、`/tmp/topogate_pre_v1v2_split_20260725_194442.tar.gz` 备份。
 
 ### 2. 90-run 深度分析结果
 
@@ -1167,7 +1709,7 @@ class LearnableGate(nn.Module):
 
 **背景**：基于消融数据真实信号（StaticGate 的 4 个 β 完全不参与梯度），实施 v2 LearnableGate 改造：将 4 个 β 从 argparse 默认值改为 `torch.nn.Parameter`，并加入 warmup+ramp 调度防止训练初期拓扑干扰。
 
-**v2 改造设计**（参考 plan `external-home/.cursor/plans/learnable_gate_sched_learnable_gate_feec891b.plan.md`）：
+**v2 改造设计**（参考 plan `/home/luolie/.cursor/plans/learnable_gate_sched_learnable_gate_feec891b.plan.md`）：
 
 | 关键决策 | 选择 | 理由 |
 |----------|------|------|
@@ -1372,9 +1914,9 @@ class LearnableGate(nn.Module):
 **背景**：首次将 CLUBench 项目的 10 个样本数据集纳入 ToPoGate 项目统一管理，并规范项目目录结构。
 
 **变更内容**：
-- 将 `source-repository/baseline/CLUBench/CLUBench/datasets/` 下 10 个 `.npz` 样本数据集移动到 `external-storage/datasets/`
-- 创建软链接 `source-repository/datasets` -> `external-storage/datasets`
-- 删除 `external-storage/datasets` 旧内容（无关 git 仓库，已备份为 `datasets_backup_20260723_234557.tar.gz`）
+- 将 `/home/luolie/ToPoGate/baseline/CLUBench/CLUBench/datasets/` 下 10 个 `.npz` 样本数据集移动到 `/data/luolie/ToPoGate/datasets/`
+- 创建软链接 `/home/luolie/ToPoGate/datasets` -> `/data/luolie/ToPoGate/datasets`
+- 删除 `/data/luolie/ToPoGate/datasets` 旧内容（无关 git 仓库，已备份为 `datasets_backup_20260723_234557.tar.gz`）
 - 创建三个维护文档：`CHANGELOG.md`、`CHANGELOG_data.md`、`CHANGELOG_errors.md`
 
 **灵感来源**：遵循 `.cursor/rules/project-structure.mdc` 关于输入数据软链接规范。
@@ -1401,7 +1943,7 @@ class LearnableGate(nn.Module):
 **变更内容**：
 - 弃用 `huggingface_hub` 库（mirror redirect 失败）和 `curl`（2MB/s 太慢）
 - 改用 hf-mirror 官方 `hfd.sh` 工具（aria2c 内核，~26MB/s，**自动断点续传**）
-- 解压后 131 npz 全部平铺到 `external-storage/datasets/`
+- 解压后 131 npz 全部平铺到 `/data/luolie/ToPoGate/datasets/`
 - 软链接 `baseline/CLUBench/CLUBench/datasets` 自动可见（已验证 OK 131/131）
 
 **灵感来源**：
@@ -2065,7 +2607,7 @@ mask_ratio = 0.300 (1 个值) 在所有 seeds 上没动。
   - ❌ Topo Contrastive — 2026-07-25 审计已撤回（MAE 已捕获邻居关系）
   - ⭐ 唯一未撤回且仍有空间：架构扩展（hidden_size）、Graph cut 目标、诚实接受现状写论文
 
-**详细数据**: `unpublished-temp/v5_per_sample_*` 和 `unpublished-temp/v5_per_sample_full`
+**详细数据**: `/tmp/v5_per_sample_*` 和 `/tmp/v5_per_sample_full`
 **追溯代码**: `methods/TopoGate/learnable_gate/v5_components/per_sample_mask_v5.py`
 
 
@@ -2344,7 +2886,7 @@ readout。污染图概率混合模型列为理论备选，普通图对比聚类�
 
 V1--V16.1 的综合结果不支持继续在 scMAE / V15 / V16 上堆叠 utility、teacher、可靠性系数或 gate 形式。V16.1 固定 expanded-count 协议约 35 个候选没有形成 `candidate_positive`；特别是 `hrvatin_geo_maintype_counts` 的高 candidate purity/recall、fixed-graph 强增益和 predictive support 全负同时出现，否定了“单 donor predictive support 可代理 topology 聚类收益”的核心假设。
 
-下一阶段不创建 V16.2。拟议 V17 的唯一统一对象是稀疏关系矩阵 `C`：`C` 的精确零支持为 edge gate，`A=|C|+|C^T|` 为 affinity，最终 partition 直接读取该 `A`。scMAE 从默认主干降为历史对照/可选初始化；ZEUS 保持 frozen external baseline 或 controlled representation diagnostic，不作为默认前置 encoder。详细理论、文献和最小实施顺序见 `analysis/V17_design_and_ZEUS_assessment_2026-08-07.md`。
+下一阶段不创建 V16.2。拟议 V17 的唯一统一对象是稀疏关系矩阵 `C`：`C` 的精确零支持为 edge gate，`A=|C|+|C^T|` 为 affinity，最终 partition 直接读取该 `A`。scMAE 从默认主干降为历史对照/可选初始化；ZEUS 保持 frozen external baseline 或 controlled representation diagnostic，不作为默认前置 encoder。详细理论、文献和最小实施顺序见 `papers/参考资料/TopoGate_V17_统一目标与ZEUS评估_2026-08-07.md`。
 
 这是一项研究定位更新，不是算法实现或性能结论；未修改 V1--V16.1、外部 baseline 或既有结果。
 
@@ -2370,3 +2912,200 @@ reference solver 证明 candidate recall、非退化 `C`、门控纯度和 same-
 均有信号后才进入下一阶段。静态验证为 compileall 通过、focused tests `11 passed`，
 两个 CLI 入口 `--help` 均通过。本轮未运行任何真实数据实验，没有 V17 性能结论，
 也未重复计算 SHA256 或其他哈希。
+## 2026-08-12 V22 topology-discriminator hard-mask scMAE scaffold
+
+新增隔离目录 `methods/TopoGate/V22_topology_discriminator_hard_mask/` 与
+`scripts/V22/`，未修改 V20、V21 或外部 baseline。V22 保留 scMAE 编码器/解码器，新增
+四维 topology statistics、精确预算 ST-TopK hard mask、coordinate-matched discriminator
+以及 frozen-model Gate 更新。判别器输入是同一 sample/feature/context 的 real/fake
+候选对，不接收 Mask 或 Hint；最终主读出固定为 clean embedding + known-K KMeans。
+
+保留五路可比较 variant：`scmae_only`、随机 mask 判别器、旧式 reconstruction-hard
+Gate 控制、非拓扑 learned Gate 控制和 `v22_topology_discriminator_hard_gate`。所有 fit
+函数不接收标签，K 只由外层 runner 用于 readout/benchmark。feature cap 为 label-free
+top-variance，并保存选中特征索引。
+
+工程验证：V22 模型 focused tests 与矩阵协议测试共 `13 passed`；micro-mass、sector、PBMC3k
+以及新增 PBMC 1k v3 的 CPU smoke 均 completed，判别器/Gate 更新率为有限且非零；这些单
+seed/短 epoch 产物不用于论文性能结论。新增数据集及来源边界见 `CHANGELOG_data.md`。
+
+矩阵 runner 对无标签 PBMC3k 增加显式 K 边界：dry-run 保留其唯一键但记录
+`requires_explicit_n_clusters=true`，真实运行必须传入
+`--n-clusters pbmc3k__10x_unlabelled_count=K`，否则在启动任务前失败；不从数据或历史结果
+猜测簇数。该修正不改变 V22 的模型或损失。
+
+Round-1/2 Claude 辅助审阅记录在 `review-stage/AUTO_REVIEW.md` 和
+`.aris/traces/auto-review-loop/2026-08-12_run01/`。审阅确认 ST residual 路径的 Gate
+梯度与 per-coordinate reward 在结构上可用；随后新增 D(real/Gate-fake/scMAE-fake) confusion
+诊断、budget-matched random mask profile、unique-feature/entropy 分布和全路径梯度断言。
+这些修正只增强诊断，不改变 V22 训练目标；D-before-Gate 的长期稳定性仍需正式多种子矩阵
+验证，当前不写入性能或论文结论。
+
+审阅停止后按固定协议补做 micro-mass sanity：`scmae_only`、budget-matched random
+discriminator、`v22_topology_discriminator_hard_gate` 三路，seeds `[42,123]`、CPU、2
+epochs，共 `6/6` completed。拓扑 Gate 两个 seed 的非零更新率均为 `1.0`，但短预算结果
+没有显示相对控制的稳定优势，因此只保留为工程诊断，不晋级为性能证据。
+
+## 2026-08-12 V22 Full 单 seed 资源边界
+
+按冻结 manifest 在原 8 个输入加 4 个新增输入上启动 V22 Full，固定
+`v22_topology_discriminator_hard_gate`、seed=`42`、80 epochs。队列完成 10/12 个任务并
+通过 10/10 产物审计；real-sim 与 covtype 在精确 cosine-kNN/拓扑统计和长训练阶段超过
+约两小时资源窗口，已核对为本 launcher 的子进程后发送 `SIGTERM`，写入
+`incomplete_compute.json`，未触碰外部任务。相关 memmap、日志和启动记录保留在
+`result/V22/v22_full_single_seed_20260812/`。
+
+该批 9 个有标签完成集的单 seed 宏平均 ARI 为 `0.202966`，仅作能力探测；PBMC3k
+完成但无独立标签，未计算 ARI。由于 Full 尚未覆盖 12/12，未启动消融或超参数搜索，
+也不把单 seed 数值写成 V22 相对 scMAE/baseline 的性能结论。严格汇总为
+`aggregate_summary.json`/`aggregate_report.md`。
+
+## 2026-08-15 V25 systematic failure study: A0--A2 and E1 contract scaffold
+
+V25 固定为 `V25_systematic_mechanism_study`，研究 V1--V24 的失败机制，不是新的
+TopoGate architecture；本轮不进入 V26，也不增加新的 Gate、loss、selector、DCBoost、
+V18/V22/V24 rescue 路线。
+
+Phase A 已完成并写入 `result/V25_systematic_mechanism_study/`：A0 登记 V1--V24 但把
+V23/V24 作为 boundary evidence，V1--V22 定量 atlas；A0 为 2209 rows、2175 completed、
+1637 paired rows、431 dataset/protocol/readout units，且 summary table 不被提升为
+artifact-complete replay。A1 保留 seed-aware pairing，输出 1637 paired rows，其中 194
+material positive、680 material negative、763 observed-small；该 atlas 是 observational，
+不作 pooled causal claim。
+
+A2 具有真实否决权，当前机器可复核决策为 `retain_e1`：历史 V21 six-dataset artifact
+有明确异号 material effects，而 formal random/none counterfactual 缺失且可由新 N/R/T
+协议识别。A2 同时冻结 `CLAIM_EVIDENCE_MATRIX.csv`、measurement schema 和 holdout
+candidate manifest；adapter 不兼容的无标签 PBMC 条目被排除并记录 shortfall，不临时开发
+preprocessing。
+
+仅实现 V25 专用 E1 runner（`methods/TopoGate/V25_systematic_mechanism_study/` 与
+`scripts/V25/run_e1_matched_protocol.py`），不修改 legacy V21。N/R/T 共用 warmup/head/Adam
+branchpoint、batch/donor/eligible/budget/Gumbel schedule；N 只 shadow/audit assignment，
+不进入 assignment forward 或 JS。E2 coordinate summaries 以 dataset×seed 为推断单位。
+
+已完成 micro-mass、seed42、CPU、3 epochs、warmup1 的三臂 engineering smoke，并通过
+20/20 contract audit、actual Adam one-step determinism、T/R schedule hash equality 和
+label/K isolation。一次 label-refactor 后的结果组装顺序错误已修复：评估标签现在在所有
+fit/one-step 完成后注入，并在 pair effect 计算前写入，因此 `I/S` 不再出现空值；该
+engineering smoke 仅证明实现与审计契约可运行，数值不进入性能或论文结果表；正式训练尚未启动。
+A2-gated `e1_manifest.json` 已冻结 pilot/confirmation 各 9 个
+dataset-seed panels、27 个逻辑 arm jobs；它只登记执行单位，不等于已运行结果。
+
+## 2026-08-15 V25 E1 pilot completion and E2-A audit contract
+
+V25 E1 pilot 已按冻结的 N/R/T protocol 完成 cnae9、Mouse_retina、sms_spam_collection
+三个数据集、seeds `[42,123,7]`，共 `9/9` panel，`audit_ok=9/9`，无
+`incomplete_compute`。dataset-level 结果为：cnae9 `I_d=+0.002057`、`S_d=+0.006010`
+均为 `Observed-Small`；Mouse_retina `S_d=-0.067033` 为 `Negative`；sms
+`I_d=+0.069251` 为 `Positive`。pilot gate 按预注册规则通过（2/3 datasets 达到
+seed-stable material effect，异号允许），因此 confirmation 被允许；该结果仍是 V21
+case study，不支持 universal population claim。
+
+新增 `scripts/V25/audit_e1_phase.py`，将 panel、full/one-step pair、gradient probe 和
+None/T-R contract 汇总为 dataset-level CSV/JSON；新增 `CoordinateMetricAccumulator`，
+明确 coordinate rows 只能 descriptive，推断单位是 dataset×seed。新增 E2-A feature
+audit contract：新 E1 训练在 T arm 保存 `feature_selection_counts.npz` 与 label-free
+summary，post-hoc Fisher/MI/support-enrichment 只在审计阶段计算，不进入 fit。旧 pilot
+没有保存这些 counts，故 E2-A replay 不重训或改写旧结果，保持 deferred 状态。
+
+E1 launcher 现支持 gated confirmation phase，但仅接受 A2=`retain_e1`、完整 pilot audit
+和 outcome-independent manifest；不新增 E4/V26/Gate/loss/selector/DCBoost 路线。
+
+## 2026-08-15 V25 claim-freeze and holdout governance tooling
+
+新增 `scripts/V25/freeze_claim.py`，要求在 Phase C 显式指定一个已在 A2
+`measurement_schema.json` 中预注册的 claim family，并写出
+`PhaseC/FROZEN_PAPER_CLAIM.{json,md}`。工具不会按结果自动挑选最有利主张，也不会
+把 secondary metric 替换为 primary endpoint。
+
+新增 `scripts/V25/preflight_holdout.py` 与 `build_holdout_e1_manifest.py`：只有在 claim
+freeze 后，才可对 A2 冻结候选显式指定数据集，检查 source hash、adapter/preprocessing、
+标签隔离和 K 来源，并生成 claim-bound 的 Phase D manifest。`launch_e1_pilot.py` 现在只
+接受该 manifest 的 `holdout` phase；它继续强制 N/R/T、固定 seeds、GPU 禁用列表和
+outcome-independent source contract。未通过 preflight 的候选不会被静默替换或进入训练。
+
+新增 V25 测试覆盖 claim freeze、holdout adapter/K preflight 与 claim-bound 三臂 manifest；
+当前 `pytest -q scripts/V25/tests` 为 `17 passed`，V25 compileall 通过。
+
+## 2026-08-15 V25 E1 confirmation and independent holdout closure
+
+E1 confirmation 在 A2=`retain_e1`、pilot gate 通过和 outcome-independent manifest 约束下完成
+冻结的 9 个 dataset-seed panels，`audit_ok=9/9`。primary selection effect `S_d` 为 Baron Human
+`+0.044617`、Campbell `-0.065332`、hate_speech `-0.033410`，因此只支持异号的 conditional
+V21 case-study evidence，不支持 universal population claim。E2-A 使用 dataset×seed 聚合，
+E2-B/C 的 gradient geometry 和真实 Adam one-step 已留存，但未单独升级为 objective 主张。
+
+Phase C 冻结 `S_full_ARI = ARI_T - ARI_R`。Phase D holdout 使用预先冻结的两个 sparse-text
+候选及其 adapter/source/K contract；news20 三个 seed 在 warmup 的 Adam state 初始化阶段均
+因可用显存不足返回 CUDA OOM，RCV1 面板随后在同一冻结预算下停止或未启动。没有生成任何
+holdout `summary.json`，最终 queue 为 `6 incomplete_compute / 0 completed`，Phase D audit
+为 `0` evaluable panels。该结果被记录为 `inconclusive_not_completed`，不计入性能结果，也
+不被改写为 claim falsifier。V25 由 `PhaseE/CLOSURE.md` 关闭，不启动 V26 或新的模型路线。
+
+## 2026-08-15 V25 paper evidence bundle
+
+新增 `scripts/V25/build_paper_evidence.py`，从冻结的 A0/A1/E1/E2/E3/PhaseE 工件生成
+`result/V25_systematic_mechanism_study/PaperEvidence/`。该脚本只做离线导出和 provenance
+校验，不重新训练、不读取标签进行拟合或选择数据集，并将 E2-A 的统计单位固定为
+dataset×seed；coordinate-level 分布只作 descriptive。输出包含 Failure Atlas、E1
+`(I_d,S_d)`、E2 semantic/gradient 表、V23 boundary rows、source SHA256 manifest 和
+claim-scope audit。当前 audit 为 `audit_ok=true`，holdout 仍明确为 `0/6`、
+`inconclusive_not_completed`。
+
+同一证据包新增 `scripts/V25/build_paper_figures.py`，生成三张确定性的 PNG 诊断图（Failure
+Atlas、E1 `(I_d,S_d)`、V23 local/global boundary）及 `figure_manifest.json`。图表只消费
+Evidence CSV，不新增统计推断；每张图的 observational/conditional/boundary scope 和输入
+SHA256 均被记录。
+
+## 2026-08-15 V25 paper package and vector figure closure
+
+补齐 V25 论文交付入口 `papers/V25_SYSTEMATIC_MECHANISM_STUDY_PLAN.md`，将 V25 的
+研究问题、A0--E 阶段、两层 claim firewall、known-K/holdout 边界和 no-V26 closure
+固定为可引用的项目计划。`build_paper_figures.py` 现在从同一冻结 Evidence CSV 生成
+五张诊断图：Failure Atlas、机制链、E1 `(I_d,S_d)`、E2 diagnostic geometry 和
+V23 local/global boundary；每张图同时写出 PNG/PDF/SVG，manifest 绑定 source SHA256
+与 observational/conditional/boundary scope。该变更不重新训练、不改变任何 primary
+endpoint 或 holdout 状态。
+
+验证：`pytest -q scripts/V25/tests` 返回 `37 passed`；V25 `compileall` 通过；带 E1
+panel 的完整 contract audit 为 `audit_ok`（27/27 checks）；paper claim audit 为
+`19/19`，citation lifecycle audit 为 `audit_ok`。正式 holdout 仍为 `0/6`,
+`inconclusive_not_completed`，不进入性能结论。
+### [2026-08-17] Independent representation-consumer probe S0 contract
+
+建立独立项目 `representation_consumer_probe`（不使用 V 系列编号），冻结 common H0/SVD、
+positive-cosine candidate pool、k=20/retention=0.4/budget=8、full-graph sparse loss、
+spectral zero-eigenspace、S5 holdout manifest 和 adapter semantic-fidelity gate。新增
+`scripts/representation_consumer_probe/protocol.py`、`s0_audit.py` 及 5 个 focused contract
+tests。当前只完成 CPU S0 contract 工程验证，不启动 S1/S2/S3 性能训练；临时六数据集
+审计中三个数据集有 `candidate_positive_budget_shortfall`，按协议保留为 contract limitation。
+### 2026-08-17 — representation-consumer probe S1 opportunity-only formal run
+
+在 S0 PASS 与用户明确授权后，新增独立 S1 Spectral runner，固定执行
+`F/U/R/O_pool/O_full × [42,123,7]`。首版运行发现 F descriptive arm 的 raw-H0 语义未被代码
+显式冻结，已标记首版目录 `invalid_design`，修正版 v2 使用 `feature_only_input=H0_raw`。
+修正版完成 6×5×3=`90/90` jobs，输出 dataset-level `H_pool/H_full/C`；该结果只支持 frozen
+relation family 的 opportunity diagnostic，不解锁 selector、backbone 或 S2 之外的后续阶段。
+### [2026-08-17] representation-consumer probe S2 terminal decision
+
+独立项目 `representation_consumer_probe` 完成预注册的 S2 SimpleCut 条件确认：Baron Human
+与 Mouse_retina × `R/O_pool/O_full` × `[42,123,7]`，`18/18` completed-valid。SimpleCut fit
+不接收标签或 K；K 仅用于 known-K 外层 readout，O arms 是 label-derived diagnostic oracle。
+
+- Baron Human：`H_pool=+0.033242`、`H_full=+0.033367`、`C=+0.000125`。该结果说明 S1
+  Spectral near-threshold negative 不能单独排除 frozen relation family 的 opportunity，但
+  seed volatile，不支持 selector 或 TopoGate gain。
+- Mouse_retina：`H_pool=+0.008880`、`H_full=+0.009622`、`C=+0.000742`，仍为
+  observed-small；不作 topology 全局 No-Go。两数据集均无 material candidate gap。
+- Fresh integrity audit：metrics、labels/source/H0 hashes、S1 graph reuse、root/per-run exact
+  hashes 均通过；embedding finite 且未见明显 collapse。总体 `WARN` 仅因 history 最后一行
+  是 pre-step loss，而 `fit_metadata.final_loss` 是 post-step loss。
+
+S2 后项目收口为 `heterogeneous_with_spectral_relaxation_caveat`；`S_graph` 仍
+`not_estimable`，representation-consumer promotion 未授权。S3/S4/S5/S6、TopoCut、新
+selector 与 holdout 继续锁定。报告与审计：`reports/representation_consumer_probe/S2_RESULTS.md`、
+`review-stage/representation_consumer_probe/EXPERIMENT_AUDIT.md`。
+
+随后补强 S2 focused contract test：除 finite 外，tiny-graph smoke 现在显式断言 embedding
+不是全维常数。该测试改动不重训、不改变任何已保存的 S2 性能工件。

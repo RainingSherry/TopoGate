@@ -1,0 +1,993 @@
+{
+  "all_frozen_datasets": [
+    "cnae9",
+    "Mouse_retina",
+    "sms_spam_collection",
+    "Baron Human",
+    "Campbell",
+    "hate_speech"
+  ],
+  "authorized_stages": [
+    "RS0",
+    "RS1",
+    "RS2",
+    "RS3"
+  ],
+  "decision": "candidate_family_problem_and_learned_rule_only_proposal",
+  "future_learned_selector_requires_separate_holdout": true,
+  "primary_datasets": [
+    "cnae9",
+    "Campbell",
+    "sms_spam_collection"
+  ],
+  "primary_datasets_report_only": true,
+  "project_id": "relation_selection_probe",
+  "publication_boundary": {
+    "excluded": [
+      "RS1 feature tables and OOF arrays",
+      "RS2 graph NPZ files",
+      "RS1/RS2 embeddings and predictions",
+      "per-run logs and caches",
+      "model weights and input data",
+      "__pycache__"
+    ],
+    "included": [
+      "reports/relation_selection_probe/*.md",
+      "result/relation_selection_probe/FINAL/*",
+      "scripts/relation_selection_probe/*.py",
+      "tests/relation_selection_probe/*.py"
+    ]
+  },
+  "rs1": {
+    "decision": "relation_information_present",
+    "family_gate": {
+      "pool_reference_membership": {
+        "G": {
+          "passes_information_gate": true,
+          "passing_primary_datasets": [
+            "cnae9",
+            "Campbell",
+            "sms_spam_collection"
+          ]
+        },
+        "G+S": {
+          "passes_information_gate": true,
+          "passing_primary_datasets": [
+            "cnae9",
+            "Campbell",
+            "sms_spam_collection"
+          ]
+        },
+        "G+T": {
+          "passes_information_gate": true,
+          "passing_primary_datasets": [
+            "cnae9",
+            "Campbell",
+            "sms_spam_collection"
+          ]
+        },
+        "G+T+S": {
+          "passes_information_gate": true,
+          "passing_primary_datasets": [
+            "cnae9",
+            "Campbell",
+            "sms_spam_collection"
+          ]
+        },
+        "S": {
+          "passes_information_gate": true,
+          "passing_primary_datasets": [
+            "cnae9",
+            "Campbell",
+            "sms_spam_collection"
+          ]
+        },
+        "T": {
+          "passes_information_gate": true,
+          "passing_primary_datasets": [
+            "cnae9",
+            "Campbell",
+            "sms_spam_collection"
+          ]
+        },
+        "T+S": {
+          "passes_information_gate": true,
+          "passing_primary_datasets": [
+            "cnae9",
+            "Campbell",
+            "sms_spam_collection"
+          ]
+        }
+      },
+      "same_class": {
+        "G": {
+          "passes_information_gate": false,
+          "passing_primary_datasets": []
+        },
+        "G+S": {
+          "passes_information_gate": false,
+          "passing_primary_datasets": []
+        },
+        "G+T": {
+          "passes_information_gate": false,
+          "passing_primary_datasets": []
+        },
+        "G+T+S": {
+          "passes_information_gate": false,
+          "passing_primary_datasets": []
+        },
+        "S": {
+          "passes_information_gate": false,
+          "passing_primary_datasets": []
+        },
+        "T": {
+          "passes_information_gate": false,
+          "passing_primary_datasets": []
+        },
+        "T+S": {
+          "passes_information_gate": false,
+          "passing_primary_datasets": []
+        }
+      }
+    },
+    "information_passes": true,
+    "labels_used_in_diagnostic_targets": true,
+    "labels_used_in_feature_extraction": false,
+    "primary_datasets": [
+      "cnae9",
+      "Campbell",
+      "sms_spam_collection"
+    ],
+    "primary_rows": [
+      {
+        "dataset": "cnae9",
+        "delta_ap": 0.07829315527350966,
+        "family": "G",
+        "lift_at_b": 1.0791685095090668,
+        "target": "same_class"
+      },
+      {
+        "dataset": "cnae9",
+        "delta_ap": 0.0974594763986224,
+        "family": "T",
+        "lift_at_b": 1.0616351803879447,
+        "target": "same_class"
+      },
+      {
+        "dataset": "cnae9",
+        "delta_ap": 0.04645603193702985,
+        "family": "S",
+        "lift_at_b": 1.0638465912680861,
+        "target": "same_class"
+      },
+      {
+        "dataset": "cnae9",
+        "delta_ap": 0.13016742592864616,
+        "family": "G+T",
+        "lift_at_b": 1.078220761989006,
+        "target": "same_class"
+      },
+      {
+        "dataset": "cnae9",
+        "delta_ap": 0.07841869253756617,
+        "family": "G+S",
+        "lift_at_b": 1.0796423832690971,
+        "target": "same_class"
+      },
+      {
+        "dataset": "cnae9",
+        "delta_ap": 0.10907505830176845,
+        "family": "T+S",
+        "lift_at_b": 1.066215960068238,
+        "target": "same_class"
+      },
+      {
+        "dataset": "cnae9",
+        "delta_ap": 0.1340825886980449,
+        "family": "G+T+S",
+        "lift_at_b": 1.075219561508814,
+        "target": "same_class"
+      },
+      {
+        "dataset": "cnae9",
+        "delta_ap": 0.49097654653973655,
+        "family": "G",
+        "lift_at_b": 2.155641797961075,
+        "target": "pool_reference_membership"
+      },
+      {
+        "dataset": "cnae9",
+        "delta_ap": 0.21042725538913298,
+        "family": "T",
+        "lift_at_b": 1.576112140871177,
+        "target": "pool_reference_membership"
+      },
+      {
+        "dataset": "cnae9",
+        "delta_ap": 0.32000538218012853,
+        "family": "S",
+        "lift_at_b": 1.8147590361445782,
+        "target": "pool_reference_membership"
+      },
+      {
+        "dataset": "cnae9",
+        "delta_ap": 0.4898147235553877,
+        "family": "G+T",
+        "lift_at_b": 2.1512974976830397,
+        "target": "pool_reference_membership"
+      },
+      {
+        "dataset": "cnae9",
+        "delta_ap": 0.4908040497020216,
+        "family": "G+S",
+        "lift_at_b": 2.152745597775718,
+        "target": "pool_reference_membership"
+      },
+      {
+        "dataset": "cnae9",
+        "delta_ap": 0.3214629467026211,
+        "family": "T+S",
+        "lift_at_b": 1.8402455977757182,
+        "target": "pool_reference_membership"
+      },
+      {
+        "dataset": "cnae9",
+        "delta_ap": 0.4900286801661885,
+        "family": "G+T+S",
+        "lift_at_b": 2.14927015755329,
+        "target": "pool_reference_membership"
+      },
+      {
+        "dataset": "sms_spam_collection",
+        "delta_ap": 0.054848080681869193,
+        "family": "G",
+        "lift_at_b": 1.0250399388761546,
+        "target": "same_class"
+      },
+      {
+        "dataset": "sms_spam_collection",
+        "delta_ap": 0.044818541715586635,
+        "family": "T",
+        "lift_at_b": 1.0307702993679237,
+        "target": "same_class"
+      },
+      {
+        "dataset": "sms_spam_collection",
+        "delta_ap": 0.028677618999993548,
+        "family": "S",
+        "lift_at_b": 1.0187886365214975,
+        "target": "same_class"
+      },
+      {
+        "dataset": "sms_spam_collection",
+        "delta_ap": 0.056637188835396146,
+        "family": "G+T",
+        "lift_at_b": 1.0257345280266723,
+        "target": "same_class"
+      },
+      {
+        "dataset": "sms_spam_collection",
+        "delta_ap": 0.0561344109782963,
+        "family": "G+S",
+        "lift_at_b": 1.0283392373411127,
+        "target": "same_class"
+      },
+      {
+        "dataset": "sms_spam_collection",
+        "delta_ap": 0.0461035076536096,
+        "family": "T+S",
+        "lift_at_b": 1.0311175939431825,
+        "target": "same_class"
+      },
+      {
+        "dataset": "sms_spam_collection",
+        "delta_ap": 0.05749077531331448,
+        "family": "G+T+S",
+        "lift_at_b": 1.0281655900534832,
+        "target": "same_class"
+      },
+      {
+        "dataset": "sms_spam_collection",
+        "delta_ap": 0.5495663594815924,
+        "family": "G",
+        "lift_at_b": 2.3541666666666665,
+        "target": "pool_reference_membership"
+      },
+      {
+        "dataset": "sms_spam_collection",
+        "delta_ap": 0.279190605075855,
+        "family": "T",
+        "lift_at_b": 1.6886792452830186,
+        "target": "pool_reference_membership"
+      },
+      {
+        "dataset": "sms_spam_collection",
+        "delta_ap": 0.20100695360537224,
+        "family": "S",
+        "lift_at_b": 1.5157232704402515,
+        "target": "pool_reference_membership"
+      },
+      {
+        "dataset": "sms_spam_collection",
+        "delta_ap": 0.5496159669844192,
+        "family": "G+T",
+        "lift_at_b": 2.3541666666666665,
+        "target": "pool_reference_membership"
+      },
+      {
+        "dataset": "sms_spam_collection",
+        "delta_ap": 0.5498177807896903,
+        "family": "G+S",
+        "lift_at_b": 2.3541666666666665,
+        "target": "pool_reference_membership"
+      },
+      {
+        "dataset": "sms_spam_collection",
+        "delta_ap": 0.38177625243359203,
+        "family": "T+S",
+        "lift_at_b": 1.9033018867924527,
+        "target": "pool_reference_membership"
+      },
+      {
+        "dataset": "sms_spam_collection",
+        "delta_ap": 0.5496552205262483,
+        "family": "G+T+S",
+        "lift_at_b": 2.352201257861635,
+        "target": "pool_reference_membership"
+      },
+      {
+        "dataset": "Campbell",
+        "delta_ap": 0.04097789063306023,
+        "family": "G",
+        "lift_at_b": 1.0233116913338918,
+        "target": "same_class"
+      },
+      {
+        "dataset": "Campbell",
+        "delta_ap": 0.06960898007554206,
+        "family": "T",
+        "lift_at_b": 1.0364888764777065,
+        "target": "same_class"
+      },
+      {
+        "dataset": "Campbell",
+        "delta_ap": 0.10526517965592785,
+        "family": "S",
+        "lift_at_b": 1.0171885181048124,
+        "target": "same_class"
+      },
+      {
+        "dataset": "Campbell",
+        "delta_ap": 0.07105769644628501,
+        "family": "G+T",
+        "lift_at_b": 1.0364306990598529,
+        "target": "same_class"
+      },
+      {
+        "dataset": "Campbell",
+        "delta_ap": 0.10760813906713385,
+        "family": "G+S",
+        "lift_at_b": 1.016155868937913,
+        "target": "same_class"
+      },
+      {
+        "dataset": "Campbell",
+        "delta_ap": 0.10844738066813142,
+        "family": "T+S",
+        "lift_at_b": 1.0341763241180304,
+        "target": "same_class"
+      },
+      {
+        "dataset": "Campbell",
+        "delta_ap": 0.11035500200863435,
+        "family": "G+T+S",
+        "lift_at_b": 1.0318492274038908,
+        "target": "same_class"
+      },
+      {
+        "dataset": "Campbell",
+        "delta_ap": 0.5200955940202162,
+        "family": "G",
+        "lift_at_b": 2.2876325928149703,
+        "target": "pool_reference_membership"
+      },
+      {
+        "dataset": "Campbell",
+        "delta_ap": 0.1809530493841599,
+        "family": "T",
+        "lift_at_b": 1.5260995196637646,
+        "target": "pool_reference_membership"
+      },
+      {
+        "dataset": "Campbell",
+        "delta_ap": 0.33955677250228467,
+        "family": "S",
+        "lift_at_b": 1.8417579805864104,
+        "target": "pool_reference_membership"
+      },
+      {
+        "dataset": "Campbell",
+        "delta_ap": 0.5209394804116457,
+        "family": "G+T",
+        "lift_at_b": 2.2876325928149703,
+        "target": "pool_reference_membership"
+      },
+      {
+        "dataset": "Campbell",
+        "delta_ap": 0.5180936563102065,
+        "family": "G+S",
+        "lift_at_b": 2.2876325928149703,
+        "target": "pool_reference_membership"
+      },
+      {
+        "dataset": "Campbell",
+        "delta_ap": 0.3481080604644923,
+        "family": "T+S",
+        "lift_at_b": 1.8930126088261783,
+        "target": "pool_reference_membership"
+      },
+      {
+        "dataset": "Campbell",
+        "delta_ap": 0.5195573650914992,
+        "family": "G+T+S",
+        "lift_at_b": 2.2872886020214147,
+        "target": "pool_reference_membership"
+      }
+    ]
+  },
+  "rs2": {
+    "aggregate_primary": {
+      "B0_cosine": {
+        "Campbell": {
+          "Capture_S_all_material_seeds": [
+            -0.2588873505948418,
+            -0.2608067922784975,
+            -0.2212359046600589
+          ],
+          "Capture_S_median": -0.2588873505948418,
+          "Delta_S_all_seeds": [
+            -0.049454526622340206,
+            -0.04974534483451937,
+            -0.04260322016133164
+          ],
+          "Delta_S_mean": -0.04726769720606374,
+          "Delta_S_median": -0.049454526622340206,
+          "H_pool": 0.19144426144998103,
+          "material_opportunity": true
+        },
+        "cnae9": {
+          "Capture_S_all_material_seeds": [
+            -0.20259944013648135,
+            -0.33586376301971077,
+            -0.2116245951613648
+          ],
+          "Capture_S_median": -0.2116245951613648,
+          "Delta_S_all_seeds": [
+            -0.04530764940427512,
+            -0.06765536968537272,
+            -0.04700016156766995
+          ],
+          "Delta_S_mean": -0.05332106021910593,
+          "Delta_S_median": -0.04700016156766995,
+          "H_pool": 0.21572025184857826,
+          "material_opportunity": true
+        },
+        "sms_spam_collection": {
+          "Capture_S_all_material_seeds": [
+            -2.1830368678838665,
+            -2.121808840842424,
+            0.015579996839256968
+          ],
+          "Capture_S_median": -2.121808840842424,
+          "Delta_S_all_seeds": [
+            -0.4576849299082087,
+            -0.45357296403519615,
+            0.01056170776578623
+          ],
+          "Delta_S_mean": -0.3002320620592062,
+          "Delta_S_median": -0.45357296403519615,
+          "H_pool": 0.36710802147536653,
+          "material_opportunity": true
+        }
+      },
+      "B1_mutual_first": {
+        "Campbell": {
+          "Capture_S_all_material_seeds": [
+            -0.16432324400294301,
+            -0.16143350049620456,
+            -0.15393278354051837
+          ],
+          "Capture_S_median": -0.16143350049620456,
+          "Delta_S_all_seeds": [
+            -0.03139020978251986,
+            -0.03079124235940897,
+            -0.029642712277196087
+          ],
+          "Delta_S_mean": -0.030608054806374973,
+          "Delta_S_median": -0.03079124235940897,
+          "H_pool": 0.19144426144998103,
+          "material_opportunity": true
+        },
+        "cnae9": {
+          "Capture_S_all_material_seeds": [
+            -0.032375111230809814,
+            -0.1273072386108777,
+            -0.02246442669934687
+          ],
+          "Capture_S_median": -0.032375111230809814,
+          "Delta_S_all_seeds": [
+            -0.00724009991380925,
+            -0.025644380966866664,
+            -0.004989172849163892
+          ],
+          "Delta_S_mean": -0.012624551243279936,
+          "Delta_S_median": -0.00724009991380925,
+          "H_pool": 0.21572025184857826,
+          "material_opportunity": true
+        },
+        "sms_spam_collection": {
+          "Capture_S_all_material_seeds": [
+            -2.1830368678838665,
+            -2.121808840842424,
+            0.015579996839256968
+          ],
+          "Capture_S_median": -2.121808840842424,
+          "Delta_S_all_seeds": [
+            -0.4576849299082087,
+            -0.45357296403519615,
+            0.01056170776578623
+          ],
+          "Delta_S_mean": -0.3002320620592062,
+          "Delta_S_median": -0.45357296403519615,
+          "H_pool": 0.36710802147536653,
+          "material_opportunity": true
+        }
+      },
+      "B2_snn": {
+        "Campbell": {
+          "Capture_S_all_material_seeds": [
+            -0.2860716055015451,
+            -0.2879474239847826,
+            -0.2750480758358145
+          ],
+          "Capture_S_median": -0.2860716055015451,
+          "Delta_S_all_seeds": [
+            -0.054647458818150724,
+            -0.05492205082235324,
+            -0.05296578666916246
+          ],
+          "Delta_S_mean": -0.054178432103222145,
+          "Delta_S_median": -0.054647458818150724,
+          "H_pool": 0.19144426144998103,
+          "material_opportunity": true
+        },
+        "cnae9": {
+          "Capture_S_all_material_seeds": [
+            -0.53336471731913,
+            -0.7023138567719387,
+            -0.5439937773942359
+          ],
+          "Capture_S_median": -0.5439937773942359,
+          "Delta_S_all_seeds": [
+            -0.11927723788686845,
+            -0.14147195633092724,
+            -0.12081674821322447
+          ],
+          "Delta_S_mean": -0.12718864747700673,
+          "Delta_S_median": -0.12081674821322447,
+          "H_pool": 0.21572025184857826,
+          "material_opportunity": true
+        },
+        "sms_spam_collection": {
+          "Capture_S_all_material_seeds": [
+            -2.247721136185498,
+            -2.1852488602417917,
+            -0.004424951343537725
+          ],
+          "Capture_S_median": -2.1852488602417917,
+          "Delta_S_all_seeds": [
+            -0.4712463201161961,
+            -0.46713435424318356,
+            -0.002999682442201154
+          ],
+          "Delta_S_mean": -0.31379345226719363,
+          "Delta_S_median": -0.46713435424318356,
+          "H_pool": 0.36710802147536653,
+          "material_opportunity": true
+        }
+      },
+      "B3_stability": {
+        "Campbell": {
+          "Capture_S_all_material_seeds": [
+            -0.2601440199732986,
+            -0.2619518738336652,
+            -0.10011986373167904
+          ],
+          "Capture_S_median": -0.2601440199732986,
+          "Delta_S_all_seeds": [
+            -0.049694584659511876,
+            -0.0499637535512856,
+            -0.019280001605694652
+          ],
+          "Delta_S_mean": -0.039646113272164045,
+          "Delta_S_median": -0.049694584659511876,
+          "H_pool": 0.19144426144998103,
+          "material_opportunity": true
+        },
+        "cnae9": {
+          "Capture_S_all_material_seeds": [
+            -0.14165818045448467,
+            -0.267448323502951,
+            -0.14371977687407728
+          ],
+          "Capture_S_median": -0.14371977687407728,
+          "Delta_S_all_seeds": [
+            -0.03167925425142193,
+            -0.05387397269548072,
+            -0.03191903440335231
+          ],
+          "Delta_S_mean": -0.03915742045008499,
+          "Delta_S_median": -0.03191903440335231,
+          "H_pool": 0.21572025184857826,
+          "material_opportunity": true
+        },
+        "sms_spam_collection": {
+          "Capture_S_all_material_seeds": [
+            -2.186707681550357,
+            -2.1254090437407185,
+            0.014444721769832044
+          ],
+          "Capture_S_median": -2.1254090437407185,
+          "Delta_S_all_seeds": [
+            -0.4584545349113905,
+            -0.45434256903837794,
+            0.009792102762604435
+          ],
+          "Delta_S_mean": -0.301001667062388,
+          "Delta_S_median": -0.45434256903837794,
+          "H_pool": 0.36710802147536653,
+          "material_opportunity": true
+        }
+      },
+      "B4_rank_fusion": {
+        "Campbell": {
+          "Capture_S_all_material_seeds": [
+            -0.15684080490433738,
+            -0.16081930184007323,
+            -0.14977100663474294
+          ],
+          "Capture_S_median": -0.15684080490433738,
+          "Delta_S_all_seeds": [
+            -0.02996086036567197,
+            -0.03067409232785026,
+            -0.02884128224687829
+          ],
+          "Delta_S_mean": -0.029825411646800176,
+          "Delta_S_median": -0.02996086036567197,
+          "H_pool": 0.19144426144998103,
+          "material_opportunity": true
+        },
+        "cnae9": {
+          "Capture_S_all_material_seeds": [
+            0.09981286407292057,
+            0.0006284754903601498,
+            0.09357289843491177
+          ],
+          "Capture_S_median": 0.09357289843491177,
+          "Delta_S_all_seeds": [
+            0.02232131662558401,
+            0.00012659818152521707,
+            0.02078180629922799
+          ],
+          "Delta_S_mean": 0.014409907035445738,
+          "Delta_S_median": 0.02078180629922799,
+          "H_pool": 0.21572025184857826,
+          "material_opportunity": true
+        },
+        "sms_spam_collection": {
+          "Capture_S_all_material_seeds": [
+            -2.2200421422181145,
+            -2.1581022918357373,
+            0.004135350173476267
+          ],
+          "Capture_S_median": -2.1581022918357373,
+          "Delta_S_all_seeds": [
+            -0.4654432763837411,
+            -0.46133131051072856,
+            0.0028033612902538113
+          ],
+          "Delta_S_mean": -0.30799040853473864,
+          "Delta_S_median": -0.46133131051072856,
+          "H_pool": 0.36710802147536653,
+          "material_opportunity": true
+        }
+      }
+    },
+    "decision": "fixed_simple_selectors_not_sufficient",
+    "expected_row_count": 90,
+    "labels_used_during_fit": false,
+    "labels_used_for_outer_metrics": true,
+    "primary_gate": {
+      "B0_cosine": {
+        "median_capture_over_qualifying": null,
+        "qualifying_count": 0,
+        "qualifying_primary_datasets": [],
+        "simple_rule_sufficient": false
+      },
+      "B1_mutual_first": {
+        "median_capture_over_qualifying": null,
+        "qualifying_count": 0,
+        "qualifying_primary_datasets": [],
+        "simple_rule_sufficient": false
+      },
+      "B2_snn": {
+        "median_capture_over_qualifying": null,
+        "qualifying_count": 0,
+        "qualifying_primary_datasets": [],
+        "simple_rule_sufficient": false
+      },
+      "B3_stability": {
+        "median_capture_over_qualifying": null,
+        "qualifying_count": 0,
+        "qualifying_primary_datasets": [],
+        "simple_rule_sufficient": false
+      },
+      "B4_rank_fusion": {
+        "median_capture_over_qualifying": null,
+        "qualifying_count": 0,
+        "qualifying_primary_datasets": [],
+        "simple_rule_sufficient": false
+      }
+    },
+    "row_count": 90,
+    "seeds": [
+      42,
+      123,
+      7
+    ],
+    "selectors": [
+      "B0_cosine",
+      "B1_mutual_first",
+      "B2_snn",
+      "B3_stability",
+      "B4_rank_fusion"
+    ],
+    "status": "completed_valid"
+  },
+  "rs3": {
+    "dataset_map": [
+      {
+        "C_candidate_gap": -0.1095325893971106,
+        "H_full": 0.10618766245146767,
+        "H_full_values": [
+          0.14114083372199254,
+          -0.08700648201520278,
+          0.26442863564761326
+        ],
+        "H_pool": 0.21572025184857826,
+        "H_pool_values": [
+          0.22363166143871654,
+          0.20143694299465775,
+          0.22209215111236053
+        ],
+        "baron_consumer_boundary": false,
+        "best_Delta_S_mean": 0.014409907035445738,
+        "best_Delta_S_median": 0.02078180629922799,
+        "best_material_Capture_S_median": 0.09357289843491177,
+        "best_material_Delta_S_mean": 0.014409907035445738,
+        "best_material_selector": "B4_rank_fusion",
+        "best_selector": "B4_rank_fusion",
+        "candidate_gap_material": false,
+        "dataset": "cnae9",
+        "hate_candidate_family_trigger": false,
+        "material_opportunity": true,
+        "mouse_contradiction_trigger": false,
+        "role": "primary_opportunity_development",
+        "selector_count": 5,
+        "simple_material_positive_selector_count": 0
+      },
+      {
+        "C_candidate_gap": -0.03378438464842892,
+        "H_full": -0.006357898208528241,
+        "H_full_values": [
+          -0.0011407306540388573,
+          -0.0074353517295155935,
+          -0.010497612242030274
+        ],
+        "H_pool": 0.027426486439900682,
+        "H_pool_values": [
+          0.032643653994390065,
+          0.02634903291891333,
+          0.023286772406398648
+        ],
+        "baron_consumer_boundary": false,
+        "best_Delta_S_mean": 0.01933033312168882,
+        "best_Delta_S_median": 0.018263810478534426,
+        "best_material_Capture_S_median": null,
+        "best_material_Delta_S_mean": null,
+        "best_material_selector": null,
+        "best_selector": "B4_rank_fusion",
+        "candidate_gap_material": false,
+        "dataset": "Mouse_retina",
+        "hate_candidate_family_trigger": false,
+        "material_opportunity": false,
+        "mouse_contradiction_trigger": false,
+        "role": "low_opportunity_contradiction_sentinel",
+        "selector_count": 5,
+        "simple_material_positive_selector_count": 0
+      },
+      {
+        "C_candidate_gap": 0.17519661663488578,
+        "H_full": 0.5423046381102523,
+        "H_full_values": [
+          0.3848517702612498,
+          0.38896373613426233,
+          0.8530984079352447
+        ],
+        "H_pool": 0.36710802147536653,
+        "H_pool_values": [
+          0.20965515362636405,
+          0.2137671194993766,
+          0.677901791300359
+        ],
+        "baron_consumer_boundary": false,
+        "best_Delta_S_mean": -0.3002320620592062,
+        "best_Delta_S_median": -0.45357296403519615,
+        "best_material_Capture_S_median": -2.121808840842424,
+        "best_material_Delta_S_mean": -0.3002320620592062,
+        "best_material_selector": "B0_cosine",
+        "best_selector": "B0_cosine",
+        "candidate_gap_material": true,
+        "dataset": "sms_spam_collection",
+        "hate_candidate_family_trigger": false,
+        "material_opportunity": true,
+        "mouse_contradiction_trigger": false,
+        "role": "primary_opportunity_and_candidate_boundary",
+        "selector_count": 5,
+        "simple_material_positive_selector_count": 0
+      },
+      {
+        "C_candidate_gap": -0.1838252378201281,
+        "H_full": -0.16951906140593412,
+        "H_full_values": [
+          -0.16865083752648047,
+          -0.16918077385531916,
+          -0.17072557283600276
+        ],
+        "H_pool": 0.014306176414193997,
+        "H_pool_values": [
+          0.014274316906664364,
+          0.015094505658300617,
+          0.013549706677617013
+        ],
+        "baron_consumer_boundary": true,
+        "best_Delta_S_mean": 0.004207919703606677,
+        "best_Delta_S_median": 0.004168424716269659,
+        "best_material_Capture_S_median": null,
+        "best_material_Delta_S_mean": null,
+        "best_material_selector": null,
+        "best_selector": "B4_rank_fusion",
+        "candidate_gap_material": false,
+        "dataset": "Baron Human",
+        "hate_candidate_family_trigger": false,
+        "material_opportunity": false,
+        "mouse_contradiction_trigger": false,
+        "role": "consumer_sensitive_boundary",
+        "selector_count": 5,
+        "simple_material_positive_selector_count": 0
+      },
+      {
+        "C_candidate_gap": -0.15246313847097048,
+        "H_full": 0.03898112297901054,
+        "H_full_values": [
+          0.038564065093472655,
+          0.03827324688129349,
+          0.04010605696226546
+        ],
+        "H_pool": 0.19144426144998103,
+        "H_pool_values": [
+          0.19102720356444314,
+          0.19073638535226398,
+          0.19256919543323595
+        ],
+        "baron_consumer_boundary": false,
+        "best_Delta_S_mean": -0.029825411646800176,
+        "best_Delta_S_median": -0.02996086036567197,
+        "best_material_Capture_S_median": -0.15684080490433738,
+        "best_material_Delta_S_mean": -0.029825411646800176,
+        "best_material_selector": "B4_rank_fusion",
+        "best_selector": "B4_rank_fusion",
+        "candidate_gap_material": false,
+        "dataset": "Campbell",
+        "hate_candidate_family_trigger": false,
+        "material_opportunity": true,
+        "mouse_contradiction_trigger": false,
+        "role": "primary_opportunity_development",
+        "selector_count": 5,
+        "simple_material_positive_selector_count": 0
+      },
+      {
+        "C_candidate_gap": 0.6343187134497226,
+        "H_full": 0.6364948896464151,
+        "H_full_values": [
+          0.6406100374702511,
+          0.6361534453607207,
+          0.6327211861082733
+        ],
+        "H_pool": 0.0021761761966924875,
+        "H_pool_values": [
+          0.006291324020528559,
+          0.0018347319109981294,
+          -0.0015975273414492266
+        ],
+        "baron_consumer_boundary": false,
+        "best_Delta_S_mean": 0.016335456739682258,
+        "best_Delta_S_median": 0.0159940124539879,
+        "best_material_Capture_S_median": null,
+        "best_material_Delta_S_mean": null,
+        "best_material_selector": null,
+        "best_selector": "B0_cosine",
+        "candidate_gap_material": true,
+        "dataset": "hate_speech",
+        "hate_candidate_family_trigger": true,
+        "material_opportunity": false,
+        "mouse_contradiction_trigger": false,
+        "role": "candidate_family_sentinel",
+        "selector_count": 5,
+        "simple_material_positive_selector_count": 0
+      }
+    ],
+    "summary": {
+      "baron_consumer_boundary_present": true,
+      "candidate_family_problem": true,
+      "decision": "candidate_family_problem_and_learned_rule_only_proposal",
+      "future_learned_selector_requires_separate_holdout": true,
+      "hate_candidate_family_trigger": true,
+      "holdout_execution_authorized": false,
+      "interpretation": {
+        "candidate": "hate_speech has a material expanded-minus-pool reference gap, so candidate-family construction is a confound/boundary and is not rescued by RS2.",
+        "information": "Frozen relation features predict pool-reference membership on the primary set; the semantic same-class target does not pass the full two-threshold gate.",
+        "selection": "Every fixed selector fails the material primary capture rule; the failure is not evidence for a learned selector without a separately frozen protocol.",
+        "sentinel": "Mouse_retina does not trigger the pre-registered material contradiction sentinel; Baron Human remains a low-opportunity consumer boundary."
+      },
+      "labels_used_in_rs3_fit": false,
+      "labels_used_only_in_inherited_metrics": true,
+      "learned_decision_rule_execution_authorized": false,
+      "learned_decision_rule_justified": true,
+      "learned_rule_only_is_scope_choice": true,
+      "mouse_contradiction_trigger": false,
+      "new_backbone_execution_authorized": false,
+      "primary_dataset_denominator": [
+        "cnae9",
+        "Campbell",
+        "sms_spam_collection"
+      ],
+      "primary_datasets_report_only": true,
+      "primary_material_opportunity_count": 3,
+      "primary_material_opportunity_datasets": [
+        "cnae9",
+        "sms_spam_collection",
+        "Campbell"
+      ],
+      "primary_positive_selector_rows": 0,
+      "project_id": "relation_selection_probe",
+      "protocol_id": "relation_selection_probe_rs3_v1",
+      "rs1_decision": "relation_information_present",
+      "rs1_information_passes": true,
+      "rs1_pool_reference_gate_passes": true,
+      "rs1_semantic_same_class_gate_passes": false,
+      "rs2_decision": "fixed_simple_selectors_not_sufficient",
+      "simple_rule_sufficient": false,
+      "stage": "RS3_decision",
+      "status": "completed_valid"
+    }
+  },
+  "status": "terminal_under_authorized_scope",
+  "unauthorized_executions": [
+    "RS4 learned selector",
+    "GNN/Transformer/TopoCut/DCGC transfer",
+    "new reconstruction objective",
+    "holdout",
+    "V-series continuation"
+  ]
+}

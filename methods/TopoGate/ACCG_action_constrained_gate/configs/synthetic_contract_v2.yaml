@@ -1,0 +1,16 @@
+protocol_id: accg_synthetic_contract_v2
+n_samples: 1200
+n_features: 200
+n_clusters: 4
+rare_cluster_fraction: 0.10
+zero_fraction: 0.80
+module_size: 10
+cluster_effect: 1.25
+isolated_effect: 3.0
+nuisance_effect: 1.5
+corruption_fraction: 0.04
+shortcut_auc_ceiling: 0.60
+families:
+  - lognormal_sparse
+  - count_sparse
+  - gamma_sparse

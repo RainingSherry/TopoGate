@@ -1,0 +1,307 @@
+{
+  "protocol_id": "accg_synthetic_contract_v3",
+  "status": "audit_only_no_training",
+  "valid": true,
+  "rows": [
+    {
+      "family": "count_sparse",
+      "seed": 3032,
+      "valid": true,
+      "worlds": [
+        "W0_matched_null",
+        "W1_isolated_corruption",
+        "W2_rare_coherent_signal",
+        "W3_coherent_nuisance",
+        "W4_observational_alias",
+        "W5_joint_interaction"
+      ],
+      "support_exactly_matched": true,
+      "support_macro_auc": 0.48410249999999994,
+      "marginal_macro_auc": 0.4854999074074074,
+      "auc_ceiling": 0.6,
+      "max_column_summary_gap": 4.0531158447265625e-06,
+      "labels_used_for_generator_audit_only": true,
+      "formal_method_result": false
+    },
+    {
+      "family": "count_sparse",
+      "seed": 3033,
+      "valid": true,
+      "worlds": [
+        "W0_matched_null",
+        "W1_isolated_corruption",
+        "W2_rare_coherent_signal",
+        "W3_coherent_nuisance",
+        "W4_observational_alias",
+        "W5_joint_interaction"
+      ],
+      "support_exactly_matched": true,
+      "support_macro_auc": 0.4844359490740741,
+      "marginal_macro_auc": 0.48750083333333327,
+      "auc_ceiling": 0.6,
+      "max_column_summary_gap": 3.814697265625e-06,
+      "labels_used_for_generator_audit_only": true,
+      "formal_method_result": false
+    },
+    {
+      "family": "count_sparse",
+      "seed": 3034,
+      "valid": true,
+      "worlds": [
+        "W0_matched_null",
+        "W1_isolated_corruption",
+        "W2_rare_coherent_signal",
+        "W3_coherent_nuisance",
+        "W4_observational_alias",
+        "W5_joint_interaction"
+      ],
+      "support_exactly_matched": true,
+      "support_macro_auc": 0.48676118055555556,
+      "marginal_macro_auc": 0.48046780092592584,
+      "auc_ceiling": 0.6,
+      "max_column_summary_gap": 2.86102294921875e-06,
+      "labels_used_for_generator_audit_only": true,
+      "formal_method_result": false
+    },
+    {
+      "family": "count_sparse",
+      "seed": 3035,
+      "valid": true,
+      "worlds": [
+        "W0_matched_null",
+        "W1_isolated_corruption",
+        "W2_rare_coherent_signal",
+        "W3_coherent_nuisance",
+        "W4_observational_alias",
+        "W5_joint_interaction"
+      ],
+      "support_exactly_matched": true,
+      "support_macro_auc": 0.4846908101851852,
+      "marginal_macro_auc": 0.48227870370370374,
+      "auc_ceiling": 0.6,
+      "max_column_summary_gap": 3.5762786865234375e-06,
+      "labels_used_for_generator_audit_only": true,
+      "formal_method_result": false
+    },
+    {
+      "family": "count_sparse",
+      "seed": 3036,
+      "valid": true,
+      "worlds": [
+        "W0_matched_null",
+        "W1_isolated_corruption",
+        "W2_rare_coherent_signal",
+        "W3_coherent_nuisance",
+        "W4_observational_alias",
+        "W5_joint_interaction"
+      ],
+      "support_exactly_matched": true,
+      "support_macro_auc": 0.4862590972222222,
+      "marginal_macro_auc": 0.4799951851851853,
+      "auc_ceiling": 0.6,
+      "max_column_summary_gap": 5.125999450683594e-06,
+      "labels_used_for_generator_audit_only": true,
+      "formal_method_result": false
+    },
+    {
+      "family": "gamma_sparse",
+      "seed": 3032,
+      "valid": true,
+      "worlds": [
+        "W0_matched_null",
+        "W1_isolated_corruption",
+        "W2_rare_coherent_signal",
+        "W3_coherent_nuisance",
+        "W4_observational_alias",
+        "W5_joint_interaction"
+      ],
+      "support_exactly_matched": true,
+      "support_macro_auc": 0.48410249999999994,
+      "marginal_macro_auc": 0.4886689120370371,
+      "auc_ceiling": 0.6,
+      "max_column_summary_gap": 3.6954879760742188e-06,
+      "labels_used_for_generator_audit_only": true,
+      "formal_method_result": false
+    },
+    {
+      "family": "gamma_sparse",
+      "seed": 3033,
+      "valid": true,
+      "worlds": [
+        "W0_matched_null",
+        "W1_isolated_corruption",
+        "W2_rare_coherent_signal",
+        "W3_coherent_nuisance",
+        "W4_observational_alias",
+        "W5_joint_interaction"
+      ],
+      "support_exactly_matched": true,
+      "support_macro_auc": 0.4844359490740741,
+      "marginal_macro_auc": 0.4864577314814815,
+      "auc_ceiling": 0.6,
+      "max_column_summary_gap": 7.62939453125e-06,
+      "labels_used_for_generator_audit_only": true,
+      "formal_method_result": false
+    },
+    {
+      "family": "gamma_sparse",
+      "seed": 3034,
+      "valid": true,
+      "worlds": [
+        "W0_matched_null",
+        "W1_isolated_corruption",
+        "W2_rare_coherent_signal",
+        "W3_coherent_nuisance",
+        "W4_observational_alias",
+        "W5_joint_interaction"
+      ],
+      "support_exactly_matched": true,
+      "support_macro_auc": 0.48676118055555556,
+      "marginal_macro_auc": 0.4911293055555555,
+      "auc_ceiling": 0.6,
+      "max_column_summary_gap": 3.814697265625e-06,
+      "labels_used_for_generator_audit_only": true,
+      "formal_method_result": false
+    },
+    {
+      "family": "gamma_sparse",
+      "seed": 3035,
+      "valid": true,
+      "worlds": [
+        "W0_matched_null",
+        "W1_isolated_corruption",
+        "W2_rare_coherent_signal",
+        "W3_coherent_nuisance",
+        "W4_observational_alias",
+        "W5_joint_interaction"
+      ],
+      "support_exactly_matched": true,
+      "support_macro_auc": 0.4846908101851852,
+      "marginal_macro_auc": 0.48212361111111113,
+      "auc_ceiling": 0.6,
+      "max_column_summary_gap": 4.0531158447265625e-06,
+      "labels_used_for_generator_audit_only": true,
+      "formal_method_result": false
+    },
+    {
+      "family": "gamma_sparse",
+      "seed": 3036,
+      "valid": true,
+      "worlds": [
+        "W0_matched_null",
+        "W1_isolated_corruption",
+        "W2_rare_coherent_signal",
+        "W3_coherent_nuisance",
+        "W4_observational_alias",
+        "W5_joint_interaction"
+      ],
+      "support_exactly_matched": true,
+      "support_macro_auc": 0.4862590972222222,
+      "marginal_macro_auc": 0.48022268518518524,
+      "auc_ceiling": 0.6,
+      "max_column_summary_gap": 3.337860107421875e-06,
+      "labels_used_for_generator_audit_only": true,
+      "formal_method_result": false
+    },
+    {
+      "family": "lognormal_sparse",
+      "seed": 3032,
+      "valid": true,
+      "worlds": [
+        "W0_matched_null",
+        "W1_isolated_corruption",
+        "W2_rare_coherent_signal",
+        "W3_coherent_nuisance",
+        "W4_observational_alias",
+        "W5_joint_interaction"
+      ],
+      "support_exactly_matched": true,
+      "support_macro_auc": 0.48410249999999994,
+      "marginal_macro_auc": 0.4876671296296296,
+      "auc_ceiling": 0.6,
+      "max_column_summary_gap": 2.9206275939941406e-06,
+      "labels_used_for_generator_audit_only": true,
+      "formal_method_result": false
+    },
+    {
+      "family": "lognormal_sparse",
+      "seed": 3033,
+      "valid": true,
+      "worlds": [
+        "W0_matched_null",
+        "W1_isolated_corruption",
+        "W2_rare_coherent_signal",
+        "W3_coherent_nuisance",
+        "W4_observational_alias",
+        "W5_joint_interaction"
+      ],
+      "support_exactly_matched": true,
+      "support_macro_auc": 0.4844359490740741,
+      "marginal_macro_auc": 0.4852501620370371,
+      "auc_ceiling": 0.6,
+      "max_column_summary_gap": 2.682209014892578e-06,
+      "labels_used_for_generator_audit_only": true,
+      "formal_method_result": false
+    },
+    {
+      "family": "lognormal_sparse",
+      "seed": 3034,
+      "valid": true,
+      "worlds": [
+        "W0_matched_null",
+        "W1_isolated_corruption",
+        "W2_rare_coherent_signal",
+        "W3_coherent_nuisance",
+        "W4_observational_alias",
+        "W5_joint_interaction"
+      ],
+      "support_exactly_matched": true,
+      "support_macro_auc": 0.48676118055555556,
+      "marginal_macro_auc": 0.48195439814814817,
+      "auc_ceiling": 0.6,
+      "max_column_summary_gap": 5.900859832763672e-06,
+      "labels_used_for_generator_audit_only": true,
+      "formal_method_result": false
+    },
+    {
+      "family": "lognormal_sparse",
+      "seed": 3035,
+      "valid": true,
+      "worlds": [
+        "W0_matched_null",
+        "W1_isolated_corruption",
+        "W2_rare_coherent_signal",
+        "W3_coherent_nuisance",
+        "W4_observational_alias",
+        "W5_joint_interaction"
+      ],
+      "support_exactly_matched": true,
+      "support_macro_auc": 0.4846908101851852,
+      "marginal_macro_auc": 0.4786205324074074,
+      "auc_ceiling": 0.6,
+      "max_column_summary_gap": 6.854534149169922e-06,
+      "labels_used_for_generator_audit_only": true,
+      "formal_method_result": false
+    },
+    {
+      "family": "lognormal_sparse",
+      "seed": 3036,
+      "valid": true,
+      "worlds": [
+        "W0_matched_null",
+        "W1_isolated_corruption",
+        "W2_rare_coherent_signal",
+        "W3_coherent_nuisance",
+        "W4_observational_alias",
+        "W5_joint_interaction"
+      ],
+      "support_exactly_matched": true,
+      "support_macro_auc": 0.4862590972222222,
+      "marginal_macro_auc": 0.4785012962962963,
+      "auc_ceiling": 0.6,
+      "max_column_summary_gap": 8.046627044677734e-06,
+      "labels_used_for_generator_audit_only": true,
+      "formal_method_result": false
+    }
+  ]
+}

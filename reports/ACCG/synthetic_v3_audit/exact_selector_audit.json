@@ -1,0 +1,299 @@
+{
+  "protocol": "accg_small_w5_exact_gap_audit_v1",
+  "seed": 3032,
+  "rows": [
+    {
+      "row": 0,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 29160834.716499593,
+      "exact_joint_delta": 29160834.716499593,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 1,
+      "budget": 1,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 26475777.286577594,
+      "exact_joint_delta": 26475777.286577594,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 2,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": -6824292.0841008285,
+      "exact_joint_delta": -6824292.084100828,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 3,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 27357425.79741674,
+      "exact_joint_delta": 27357425.797416735,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 4,
+      "budget": 1,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 31439549.257796485,
+      "exact_joint_delta": 31439549.257796485,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 5,
+      "budget": 1,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 24205031.63642415,
+      "exact_joint_delta": 24205031.63642415,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 6,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 27334466.87768927,
+      "exact_joint_delta": 27334466.87768927,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 7,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 24802390.66627023,
+      "exact_joint_delta": 24802390.66627023,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 8,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 29294972.45822421,
+      "exact_joint_delta": 29294972.45822421,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 9,
+      "budget": 3,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 17805481.072573557,
+      "exact_joint_delta": 17805481.072573557,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 10,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 29703616.87038281,
+      "exact_joint_delta": 29703616.87038281,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 11,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 31119771.7594499,
+      "exact_joint_delta": 31119771.7594499,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 12,
+      "budget": 3,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 30744951.594274234,
+      "exact_joint_delta": 30744951.594274234,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 13,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 29345172.804917928,
+      "exact_joint_delta": 29345172.804917928,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 14,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 27650032.14147324,
+      "exact_joint_delta": 27650032.14147324,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 15,
+      "budget": 3,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 35142138.04184865,
+      "exact_joint_delta": 35142138.04184865,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 16,
+      "budget": 1,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 27702544.508508462,
+      "exact_joint_delta": 27702544.508508462,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 17,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 29457393.828410298,
+      "exact_joint_delta": 29457393.828410298,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 18,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 30175067.139009167,
+      "exact_joint_delta": 30175067.139009167,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 19,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 26617271.54619468,
+      "exact_joint_delta": 26617271.54619468,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 20,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 31189156.449160498,
+      "exact_joint_delta": 31189156.449160498,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 21,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 29771897.403047044,
+      "exact_joint_delta": 29771897.403047044,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 22,
+      "budget": 1,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 27149930.444153063,
+      "exact_joint_delta": 27149930.444153063,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 23,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 29491595.34900789,
+      "exact_joint_delta": 3850104.845434914,
+      "hardness_gap_exact_minus_greedy": 0.38986674489377293
+    },
+    {
+      "row": 24,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 27493878.184935402,
+      "exact_joint_delta": 27493878.184935402,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 25,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 29262601.600919973,
+      "exact_joint_delta": 29262601.60091997,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 26,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 29142636.49615998,
+      "exact_joint_delta": 29142636.49615998,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 27,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 26639043.972327337,
+      "exact_joint_delta": 26639043.972327337,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 28,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 27550923.339333665,
+      "exact_joint_delta": 27550923.339333665,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 29,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 4107169.063302139,
+      "exact_joint_delta": 4107169.0633021374,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 30,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 31140112.94492209,
+      "exact_joint_delta": 31140112.94492209,
+      "hardness_gap_exact_minus_greedy": 0.0
+    },
+    {
+      "row": 31,
+      "budget": 2,
+      "exact_feasible": true,
+      "greedy_infeasible": false,
+      "greedy_joint_delta": 25652709.998502754,
+      "exact_joint_delta": 25652709.998502754,
+      "hardness_gap_exact_minus_greedy": 0.0
+    }
+  ],
+  "exact_feasible_rows": 32,
+  "greedy_feasible_given_exact_rate": 1.0,
+  "mean_hardness_gap": 0.012183335777930404,
+  "labels_used": false,
+  "formal_training_started": false
+}

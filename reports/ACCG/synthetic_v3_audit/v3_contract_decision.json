@@ -1,0 +1,535 @@
+{
+  "protocol_id": "accg_synthetic_contract_v3",
+  "status": "contract_audit_only_no_training",
+  "source_manifest": "<synthetic-v3-raw-root>/inputs/manifest.json",
+  "source_shortcut_audit": "<synthetic-v3-raw-root>/shortcut_audit.json",
+  "source_selector_audit": "<synthetic-v3-raw-root>/exact_selector_audit.json",
+  "source_probe_root": "<synthetic-v3-raw-root>/action_probes",
+  "seed_values": [
+    3032,
+    3033,
+    3034,
+    3035,
+    3036
+  ],
+  "world_estimands": {
+    "W5_joint_interaction": {
+      "world": "W5_joint_interaction",
+      "records": 15351,
+      "positive_rate": 0.14950166112956811,
+      "families": [
+        "count_sparse",
+        "gamma_sparse",
+        "lognormal_sparse"
+      ],
+      "source_records": [
+        {
+          "family": "count_sparse",
+          "seed": 3032,
+          "path": "<synthetic-v3-raw-root>/action_probes/count_sparse/W5_joint_interaction/seed3032/action_probe.npz",
+          "records": 1022
+        },
+        {
+          "family": "count_sparse",
+          "seed": 3033,
+          "path": "<synthetic-v3-raw-root>/action_probes/count_sparse/W5_joint_interaction/seed3033/action_probe.npz",
+          "records": 1024
+        },
+        {
+          "family": "count_sparse",
+          "seed": 3034,
+          "path": "<synthetic-v3-raw-root>/action_probes/count_sparse/W5_joint_interaction/seed3034/action_probe.npz",
+          "records": 1024
+        },
+        {
+          "family": "count_sparse",
+          "seed": 3035,
+          "path": "<synthetic-v3-raw-root>/action_probes/count_sparse/W5_joint_interaction/seed3035/action_probe.npz",
+          "records": 1024
+        },
+        {
+          "family": "count_sparse",
+          "seed": 3036,
+          "path": "<synthetic-v3-raw-root>/action_probes/count_sparse/W5_joint_interaction/seed3036/action_probe.npz",
+          "records": 1023
+        },
+        {
+          "family": "gamma_sparse",
+          "seed": 3032,
+          "path": "<synthetic-v3-raw-root>/action_probes/gamma_sparse/W5_joint_interaction/seed3032/action_probe.npz",
+          "records": 1022
+        },
+        {
+          "family": "gamma_sparse",
+          "seed": 3033,
+          "path": "<synthetic-v3-raw-root>/action_probes/gamma_sparse/W5_joint_interaction/seed3033/action_probe.npz",
+          "records": 1024
+        },
+        {
+          "family": "gamma_sparse",
+          "seed": 3034,
+          "path": "<synthetic-v3-raw-root>/action_probes/gamma_sparse/W5_joint_interaction/seed3034/action_probe.npz",
+          "records": 1024
+        },
+        {
+          "family": "gamma_sparse",
+          "seed": 3035,
+          "path": "<synthetic-v3-raw-root>/action_probes/gamma_sparse/W5_joint_interaction/seed3035/action_probe.npz",
+          "records": 1024
+        },
+        {
+          "family": "gamma_sparse",
+          "seed": 3036,
+          "path": "<synthetic-v3-raw-root>/action_probes/gamma_sparse/W5_joint_interaction/seed3036/action_probe.npz",
+          "records": 1023
+        },
+        {
+          "family": "lognormal_sparse",
+          "seed": 3032,
+          "path": "<synthetic-v3-raw-root>/action_probes/lognormal_sparse/W5_joint_interaction/seed3032/action_probe.npz",
+          "records": 1022
+        },
+        {
+          "family": "lognormal_sparse",
+          "seed": 3033,
+          "path": "<synthetic-v3-raw-root>/action_probes/lognormal_sparse/W5_joint_interaction/seed3033/action_probe.npz",
+          "records": 1024
+        },
+        {
+          "family": "lognormal_sparse",
+          "seed": 3034,
+          "path": "<synthetic-v3-raw-root>/action_probes/lognormal_sparse/W5_joint_interaction/seed3034/action_probe.npz",
+          "records": 1024
+        },
+        {
+          "family": "lognormal_sparse",
+          "seed": 3035,
+          "path": "<synthetic-v3-raw-root>/action_probes/lognormal_sparse/W5_joint_interaction/seed3035/action_probe.npz",
+          "records": 1024
+        },
+        {
+          "family": "lognormal_sparse",
+          "seed": 3036,
+          "path": "<synthetic-v3-raw-root>/action_probes/lognormal_sparse/W5_joint_interaction/seed3036/action_probe.npz",
+          "records": 1023
+        }
+      ],
+      "family_holdout": {
+        "valid": true,
+        "auc_baseline": 0.5046315986906745,
+        "auc_joint": 0.640835455914392,
+        "delta_auc": 0.13620385722371742,
+        "pr_baseline": 0.1563491128992267,
+        "pr_joint": 0.22002654441210973,
+        "delta_pr": 0.06367743151288302
+      },
+      "held_out_family_metrics": {
+        "count_sparse": {
+          "valid": true,
+          "records": 5117,
+          "sample_groups": 1280,
+          "auc_baseline": 0.4886690215301807,
+          "auc_joint": 0.6380169285851596,
+          "delta_auc": 0.14934790705497886,
+          "pr_baseline": 0.15297692503479846,
+          "pr_joint": 0.21895393219746165,
+          "delta_pr": 0.06597700716266319,
+          "delta_auc_ci_low": 0.12032724841702103,
+          "delta_auc_ci_high": 0.17845976337145109,
+          "bootstrap_replicates_valid": 1000
+        },
+        "gamma_sparse": {
+          "valid": true,
+          "records": 5117,
+          "sample_groups": 1280,
+          "auc_baseline": 0.5125336409073433,
+          "auc_joint": 0.6414239715494041,
+          "delta_auc": 0.1288903306420608,
+          "pr_baseline": 0.16506660238301962,
+          "pr_joint": 0.22065314912444664,
+          "delta_pr": 0.05558654674142702,
+          "delta_auc_ci_low": 0.09847639416728989,
+          "delta_auc_ci_high": 0.1598588664754807,
+          "bootstrap_replicates_valid": 1000
+        },
+        "lognormal_sparse": {
+          "valid": true,
+          "records": 5117,
+          "sample_groups": 1280,
+          "auc_baseline": 0.5191915369088812,
+          "auc_joint": 0.6431880166282199,
+          "delta_auc": 0.12399647971933869,
+          "pr_baseline": 0.1612100125693926,
+          "pr_joint": 0.2229812420270667,
+          "delta_pr": 0.061771229457674104,
+          "delta_auc_ci_low": 0.09379439249186013,
+          "delta_auc_ci_high": 0.15446679355249962,
+          "bootstrap_replicates_valid": 1000
+        }
+      },
+      "labels_used_by_method": false,
+      "decision": {
+        "passes": true,
+        "pooled_pass": true,
+        "each_held_out_family_pass": true,
+        "criteria": {
+          "pooled_and_each_held_out_family_auc_at_least": 0.6,
+          "delta_auc_positive": true,
+          "held_out_family_delta_auc_ci_low_positive": true,
+          "delta_pr_positive": true
+        }
+      }
+    },
+    "W2_rare_coherent_signal": {
+      "world": "W2_rare_coherent_signal",
+      "records": 1404,
+      "positive_rate": 0.6025641025641025,
+      "families": [
+        "count_sparse",
+        "gamma_sparse",
+        "lognormal_sparse"
+      ],
+      "source_records": [
+        {
+          "family": "count_sparse",
+          "seed": 3032,
+          "path": "<synthetic-v3-raw-root>/action_probes/count_sparse/W2_rare_coherent_signal/seed3032/action_probe.npz",
+          "records": 116
+        },
+        {
+          "family": "count_sparse",
+          "seed": 3033,
+          "path": "<synthetic-v3-raw-root>/action_probes/count_sparse/W2_rare_coherent_signal/seed3033/action_probe.npz",
+          "records": 76
+        },
+        {
+          "family": "count_sparse",
+          "seed": 3034,
+          "path": "<synthetic-v3-raw-root>/action_probes/count_sparse/W2_rare_coherent_signal/seed3034/action_probe.npz",
+          "records": 84
+        },
+        {
+          "family": "count_sparse",
+          "seed": 3035,
+          "path": "<synthetic-v3-raw-root>/action_probes/count_sparse/W2_rare_coherent_signal/seed3035/action_probe.npz",
+          "records": 104
+        },
+        {
+          "family": "count_sparse",
+          "seed": 3036,
+          "path": "<synthetic-v3-raw-root>/action_probes/count_sparse/W2_rare_coherent_signal/seed3036/action_probe.npz",
+          "records": 88
+        },
+        {
+          "family": "gamma_sparse",
+          "seed": 3032,
+          "path": "<synthetic-v3-raw-root>/action_probes/gamma_sparse/W2_rare_coherent_signal/seed3032/action_probe.npz",
+          "records": 116
+        },
+        {
+          "family": "gamma_sparse",
+          "seed": 3033,
+          "path": "<synthetic-v3-raw-root>/action_probes/gamma_sparse/W2_rare_coherent_signal/seed3033/action_probe.npz",
+          "records": 76
+        },
+        {
+          "family": "gamma_sparse",
+          "seed": 3034,
+          "path": "<synthetic-v3-raw-root>/action_probes/gamma_sparse/W2_rare_coherent_signal/seed3034/action_probe.npz",
+          "records": 84
+        },
+        {
+          "family": "gamma_sparse",
+          "seed": 3035,
+          "path": "<synthetic-v3-raw-root>/action_probes/gamma_sparse/W2_rare_coherent_signal/seed3035/action_probe.npz",
+          "records": 104
+        },
+        {
+          "family": "gamma_sparse",
+          "seed": 3036,
+          "path": "<synthetic-v3-raw-root>/action_probes/gamma_sparse/W2_rare_coherent_signal/seed3036/action_probe.npz",
+          "records": 88
+        },
+        {
+          "family": "lognormal_sparse",
+          "seed": 3032,
+          "path": "<synthetic-v3-raw-root>/action_probes/lognormal_sparse/W2_rare_coherent_signal/seed3032/action_probe.npz",
+          "records": 116
+        },
+        {
+          "family": "lognormal_sparse",
+          "seed": 3033,
+          "path": "<synthetic-v3-raw-root>/action_probes/lognormal_sparse/W2_rare_coherent_signal/seed3033/action_probe.npz",
+          "records": 76
+        },
+        {
+          "family": "lognormal_sparse",
+          "seed": 3034,
+          "path": "<synthetic-v3-raw-root>/action_probes/lognormal_sparse/W2_rare_coherent_signal/seed3034/action_probe.npz",
+          "records": 84
+        },
+        {
+          "family": "lognormal_sparse",
+          "seed": 3035,
+          "path": "<synthetic-v3-raw-root>/action_probes/lognormal_sparse/W2_rare_coherent_signal/seed3035/action_probe.npz",
+          "records": 104
+        },
+        {
+          "family": "lognormal_sparse",
+          "seed": 3036,
+          "path": "<synthetic-v3-raw-root>/action_probes/lognormal_sparse/W2_rare_coherent_signal/seed3036/action_probe.npz",
+          "records": 88
+        }
+      ],
+      "family_holdout": {
+        "valid": true,
+        "auc_baseline": 0.692080378250591,
+        "auc_joint": 0.6944656278332784,
+        "delta_auc": 0.0023852495826873765,
+        "pr_baseline": 0.7787446741722408,
+        "pr_joint": 0.7811155272113544,
+        "delta_pr": 0.002370853039113552
+      },
+      "held_out_family_metrics": {
+        "count_sparse": {
+          "valid": true,
+          "records": 468,
+          "sample_groups": 117,
+          "auc_baseline": 0.6761229314420805,
+          "auc_joint": 0.6804697628307786,
+          "delta_auc": 0.00434683138869818,
+          "pr_baseline": 0.7719404838667356,
+          "pr_joint": 0.776217563526405,
+          "delta_pr": 0.004277079659669392,
+          "delta_auc_ci_low": -0.005286785890279163,
+          "delta_auc_ci_high": 0.014077342703280982,
+          "bootstrap_replicates_valid": 1000
+        },
+        "gamma_sparse": {
+          "valid": true,
+          "records": 468,
+          "sample_groups": 117,
+          "auc_baseline": 0.6950163959429574,
+          "auc_joint": 0.6909746053534661,
+          "delta_auc": -0.004041790589491279,
+          "pr_baseline": 0.7916579135942129,
+          "pr_joint": 0.7842992601997787,
+          "delta_pr": -0.0073586533944342,
+          "delta_auc_ci_low": -0.01747682597115267,
+          "delta_auc_ci_high": 0.010523545187571617,
+          "bootstrap_replicates_valid": 1000
+        },
+        "lognormal_sparse": {
+          "valid": true,
+          "records": 468,
+          "sample_groups": 117,
+          "auc_baseline": 0.7099252650041943,
+          "auc_joint": 0.7135094943948752,
+          "delta_auc": 0.0035842293906809264,
+          "pr_baseline": 0.7760571155606775,
+          "pr_joint": 0.7841807176168436,
+          "delta_pr": 0.008123602056166135,
+          "delta_auc_ci_low": -0.009442763247380675,
+          "delta_auc_ci_high": 0.015941170554780924,
+          "bootstrap_replicates_valid": 1000
+        }
+      },
+      "labels_used_by_method": false,
+      "decision": {
+        "passes": false,
+        "pooled_pass": true,
+        "each_held_out_family_pass": false,
+        "criteria": {
+          "pooled_and_each_held_out_family_auc_at_least": 0.6,
+          "delta_auc_positive": true,
+          "held_out_family_delta_auc_ci_low_positive": true,
+          "delta_pr_positive": true
+        }
+      }
+    },
+    "W1_isolated_corruption": {
+      "world": "W1_isolated_corruption",
+      "records": 15354,
+      "positive_rate": 0.19675654552559593,
+      "families": [
+        "count_sparse",
+        "gamma_sparse",
+        "lognormal_sparse"
+      ],
+      "source_records": [
+        {
+          "family": "count_sparse",
+          "seed": 3032,
+          "path": "<synthetic-v3-raw-root>/action_probes/count_sparse/W1_isolated_corruption/seed3032/action_probe.npz",
+          "records": 1023
+        },
+        {
+          "family": "count_sparse",
+          "seed": 3033,
+          "path": "<synthetic-v3-raw-root>/action_probes/count_sparse/W1_isolated_corruption/seed3033/action_probe.npz",
+          "records": 1024
+        },
+        {
+          "family": "count_sparse",
+          "seed": 3034,
+          "path": "<synthetic-v3-raw-root>/action_probes/count_sparse/W1_isolated_corruption/seed3034/action_probe.npz",
+          "records": 1024
+        },
+        {
+          "family": "count_sparse",
+          "seed": 3035,
+          "path": "<synthetic-v3-raw-root>/action_probes/count_sparse/W1_isolated_corruption/seed3035/action_probe.npz",
+          "records": 1024
+        },
+        {
+          "family": "count_sparse",
+          "seed": 3036,
+          "path": "<synthetic-v3-raw-root>/action_probes/count_sparse/W1_isolated_corruption/seed3036/action_probe.npz",
+          "records": 1023
+        },
+        {
+          "family": "gamma_sparse",
+          "seed": 3032,
+          "path": "<synthetic-v3-raw-root>/action_probes/gamma_sparse/W1_isolated_corruption/seed3032/action_probe.npz",
+          "records": 1023
+        },
+        {
+          "family": "gamma_sparse",
+          "seed": 3033,
+          "path": "<synthetic-v3-raw-root>/action_probes/gamma_sparse/W1_isolated_corruption/seed3033/action_probe.npz",
+          "records": 1024
+        },
+        {
+          "family": "gamma_sparse",
+          "seed": 3034,
+          "path": "<synthetic-v3-raw-root>/action_probes/gamma_sparse/W1_isolated_corruption/seed3034/action_probe.npz",
+          "records": 1024
+        },
+        {
+          "family": "gamma_sparse",
+          "seed": 3035,
+          "path": "<synthetic-v3-raw-root>/action_probes/gamma_sparse/W1_isolated_corruption/seed3035/action_probe.npz",
+          "records": 1024
+        },
+        {
+          "family": "gamma_sparse",
+          "seed": 3036,
+          "path": "<synthetic-v3-raw-root>/action_probes/gamma_sparse/W1_isolated_corruption/seed3036/action_probe.npz",
+          "records": 1023
+        },
+        {
+          "family": "lognormal_sparse",
+          "seed": 3032,
+          "path": "<synthetic-v3-raw-root>/action_probes/lognormal_sparse/W1_isolated_corruption/seed3032/action_probe.npz",
+          "records": 1023
+        },
+        {
+          "family": "lognormal_sparse",
+          "seed": 3033,
+          "path": "<synthetic-v3-raw-root>/action_probes/lognormal_sparse/W1_isolated_corruption/seed3033/action_probe.npz",
+          "records": 1024
+        },
+        {
+          "family": "lognormal_sparse",
+          "seed": 3034,
+          "path": "<synthetic-v3-raw-root>/action_probes/lognormal_sparse/W1_isolated_corruption/seed3034/action_probe.npz",
+          "records": 1024
+        },
+        {
+          "family": "lognormal_sparse",
+          "seed": 3035,
+          "path": "<synthetic-v3-raw-root>/action_probes/lognormal_sparse/W1_isolated_corruption/seed3035/action_probe.npz",
+          "records": 1024
+        },
+        {
+          "family": "lognormal_sparse",
+          "seed": 3036,
+          "path": "<synthetic-v3-raw-root>/action_probes/lognormal_sparse/W1_isolated_corruption/seed3036/action_probe.npz",
+          "records": 1023
+        }
+      ],
+      "family_holdout": {
+        "valid": true,
+        "auc_baseline": 0.768448504459164,
+        "auc_joint": 0.768413317378636,
+        "delta_auc": -3.5187080527965264e-05,
+        "pr_baseline": 0.3983575688874519,
+        "pr_joint": 0.3980653091434922,
+        "delta_pr": -0.00029225974395968857
+      },
+      "held_out_family_metrics": {
+        "count_sparse": {
+          "valid": true,
+          "records": 5118,
+          "sample_groups": 1280,
+          "auc_baseline": 0.7518293072215202,
+          "auc_joint": 0.7517359328897303,
+          "delta_auc": -9.337433178990828e-05,
+          "pr_baseline": 0.32310709568106427,
+          "pr_joint": 0.32312952429080816,
+          "delta_pr": 2.2428609743885275e-05,
+          "delta_auc_ci_low": -0.0008711305838927652,
+          "delta_auc_ci_high": 0.0007194812062457892,
+          "bootstrap_replicates_valid": 1000
+        },
+        "gamma_sparse": {
+          "valid": true,
+          "records": 5118,
+          "sample_groups": 1280,
+          "auc_baseline": 0.7755022038059101,
+          "auc_joint": 0.7753323076552274,
+          "delta_auc": -0.00016989615068263575,
+          "pr_baseline": 0.4279072181345146,
+          "pr_joint": 0.427669861696211,
+          "delta_pr": -0.000237356438303582,
+          "delta_auc_ci_low": -0.000804785175046277,
+          "delta_auc_ci_high": 0.0004564243372332577,
+          "bootstrap_replicates_valid": 1000
+        },
+        "lognormal_sparse": {
+          "valid": true,
+          "records": 5118,
+          "sample_groups": 1280,
+          "auc_baseline": 0.7972656160392724,
+          "auc_joint": 0.7973479796341265,
+          "delta_auc": 8.236359485414013e-05,
+          "pr_baseline": 0.49369953873320405,
+          "pr_joint": 0.4935330444648216,
+          "delta_pr": -0.0001664942683824444,
+          "delta_auc_ci_low": -0.0003944200700591316,
+          "delta_auc_ci_high": 0.0005105225015535757,
+          "bootstrap_replicates_valid": 1000
+        }
+      },
+      "labels_used_by_method": false,
+      "decision": {
+        "passes": true,
+        "role": "negative_control_marginal_repair",
+        "joint_increment_required": false,
+        "criteria": {
+          "baseline_family_holdout_auc_at_least": 0.6
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "shortcut_pass": true,
+    "selector_pass": true,
+    "w5_primary_pass": true,
+    "w2_secondary_pass": false,
+    "w1_negative_control_pass": true
+  },
+  "promotion_decision": {
+    "passes": true,
+    "primary_requires": [
+      "shortcut_pass",
+      "selector_pass",
+      "w5_primary_pass"
+    ],
+    "w2_is_secondary_not_required": true,
+    "w1_is_negative_control_not_joint_positive": true,
+    "labels_used_by_method": false,
+    "formal_training_started": false
+  },
+  "protocol_rationale": "The paper claim is incremental joint-action information over a matched sample-side baseline. A standalone AUC of 0.65 is not the estimand; v3 retains a 0.60 floor and requires positive held-out-family grouped-bootstrap delta AUC and delta PR."
+}

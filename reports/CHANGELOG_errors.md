@@ -1770,7 +1770,8 @@ The requested `auto-review-loop` round was submitted to the local
 `claude-review` bridge with the compact B1 evidence paths. The reviewer process
 completed without reading any file because its CodeGraph tools were rejected in
 plan mode and no general file-reading tool was exposed. It returned no score or
-scientific verdict. The raw response is preserved in
-`review-stage/adaptive_corruption_probe/AUTO_REVIEW.md`; this operational
-failure is not an experiment result or an acquittal. Release readiness was
-therefore decided only by the local deterministic B1 audit.
+scientific verdict. The raw response is preserved locally in
+`review-stage/adaptive_corruption_probe/AUTO_REVIEW.md` (not a GitHub release
+artifact); this operational failure is not an experiment result or an
+acquittal. Release readiness was therefore decided only by the local
+deterministic B1 audit.

@@ -1,0 +1,20 @@
+{
+  "base_commit": "c80877cf904e41950315d37b95374825c33a7362",
+  "development_overlap_allowed_but_audited": true,
+  "files": {
+    "reports/adaptive_corruption_probe/PRE_REGISTRATION.md": "8ab72f2e1dc5f1c1fcbd48c27cd43304fbb43e6bc23656f521f7e8e785e44451",
+    "reports/adaptive_corruption_probe/PROTOCOL.md": "9266610c9b101e0b9b09f7e4e25cc456c64d7e816ad9e4259cd83bc6b373f068",
+    "reports/adaptive_corruption_probe/PUBLISH_MANIFEST.md": "1ff48c3f4347295ea93bb1bfc30e7304349b1f008f94452651a183d637e80c4e",
+    "reports/adaptive_corruption_probe/README.md": "c96866f84de24d159a7c4856d0e1f2a2843b23f913321a9463e6a95dab0916e7",
+    "reports/adaptive_corruption_probe/RESULTS.md": "b77ba369197f3faf5df22ba6baf240b10791bf10e4afbd2e579bf3c53ddf9a18",
+    "reports/adaptive_corruption_probe/S0_FREEZE.md": "fdf8fb6c792e0e88e2ef8f1bff28279e2ca7d4aad77ec3d120091612688fc4c8",
+    "scripts/adaptive_corruption_probe/protocol.py": "3d3c4becf467a1b87dae37d240c1b78dfcea5fe0ba403b75df52070da53b39b2",
+    "scripts/adaptive_corruption_probe/s0_freeze.py": "58c7b5733c0fa2e81823e1c1bbc54a692d799fc2b17f9ead7f676d4989094fb3"
+  },
+  "final_holdout_overlap_forbidden": true,
+  "git_head_at_audit": "c80877cf904e41950315d37b95374825c33a7362",
+  "git_head_status": "verified",
+  "holdout_selection_frozen": false,
+  "holdout_selection_rule_frozen": "label_free_dataset_characteristics_only_before_B5",
+  "old_projects_read_only": true
+}

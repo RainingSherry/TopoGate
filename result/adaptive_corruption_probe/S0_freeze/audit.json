@@ -1,0 +1,23 @@
+{
+  "base_commit": "c80877cf904e41950315d37b95374825c33a7362",
+  "corruption_semantics_frozen": true,
+  "cross_track_holdout_disjointness_required": true,
+  "forbidden_gpu_ids": [
+    0,
+    7
+  ],
+  "formal_performance_run_started": false,
+  "gpu_pool_valid": true,
+  "hardness_utility_decoupled": true,
+  "holdout_selection_frozen": false,
+  "issues": [],
+  "labels_used_during_fit": false,
+  "matching_fields_frozen": true,
+  "old_projects_terminal_read_only": true,
+  "positive_control_required_before_null": true,
+  "project_id": "adaptive_corruption_probe",
+  "raw_artifacts_published": false,
+  "roles_frozen_before_outcomes": true,
+  "stage": "S0",
+  "status": "completed_valid"
+}

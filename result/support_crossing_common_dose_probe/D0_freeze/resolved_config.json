@@ -1,0 +1,108 @@
+{
+  "arms": {
+    "Cross": {
+      "operation": "active_to_inactive value swap",
+      "support_change": "strictly positive on every positive-budget row",
+      "value_multiset": "preserved by swap"
+    },
+    "Preserve": {
+      "operation": "active_to_active unequal-value swap",
+      "support_change": "zero",
+      "value_multiset": "preserved by swap"
+    }
+  },
+  "budget": {
+    "changed_coordinates": "2 * pair_count",
+    "corruption_rate": 0.25,
+    "source": "C2 row_budgets"
+  },
+  "d0_protocol_id": "support_crossing_common_dose_probe_d0_v1",
+  "d1_gate": {
+    "cross_support_change_positive": true,
+    "dataset_total_relative_mismatch": 0.05,
+    "exact_changed_count": true,
+    "median_row_relative_mismatch": 0.1,
+    "minimum_common_positive_budget_row_fraction": 0.95,
+    "preserve_support_change_zero": true,
+    "row_value_multiset_preserved": true
+  },
+  "d1_protocol_id": "support_crossing_common_dose_probe_d1_v1",
+  "d2_gpu_runs_started": 0,
+  "development_panel": [
+    "Mouse_retina",
+    "Baron Human",
+    "Campbell"
+  ],
+  "dose": {
+    "definition": "row_total_L1 = sum(abs(corrupted-clean))",
+    "range": "constructive_min_max_witnesses; not exhaustive attainable set",
+    "target": "midpoint of Cross/Preserve interval intersection",
+    "target_matching": "deterministic nearest-per-pair greedy matching"
+  },
+  "estimand": "D2 Delta_cross = ARI(Cross)-ARI(Preserve) at matched common dose",
+  "forbidden_gpu_ids": [
+    0,
+    7
+  ],
+  "label_firewall": {
+    "fit_inputs": [
+      "clean_H0",
+      "row_budget",
+      "seed",
+      "dose_target"
+    ],
+    "forbidden_inputs": [
+      "y",
+      "ARI",
+      "NMI",
+      "ACC",
+      "cluster_purity"
+    ],
+    "labels_loaded": false,
+    "purpose": "CPU feasibility only; no clustering consumer"
+  },
+  "legal_gpu_pool": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "locked_stages": [
+    "D2_gpu_matrix",
+    "raw_x_bridge",
+    "holdout",
+    "adaptive_policy",
+    "GAN"
+  ],
+  "primary_seeds": [
+    42,
+    123,
+    7
+  ],
+  "project_id": "support_crossing_common_dose_probe",
+  "protocol_id": "support_crossing_common_dose_probe_d0_d1_v1",
+  "publication_exclusions": [
+    "raw_data",
+    "labels_true",
+    "arrays",
+    "pair_indices",
+    "embeddings",
+    "predictions",
+    "weights",
+    "checkpoints",
+    "logs",
+    "caches"
+  ],
+  "read_only_projects": [
+    "sparse_corruption_principle_probe",
+    "support_target_validation_probe",
+    "representation_consumer_probe"
+  ],
+  "support_definition": {
+    "kind": "fixed_clean_row_threshold_on_dense_H0",
+    "ratio": 0.05,
+    "threshold": "max(1e-6,0.05*max(abs(clean_H0_row)))"
+  }
+}

@@ -1,5 +1,20 @@
 # TopoGate 实验阶段记录（2026-07-27 更新）
 
+### Independent support-crossing common-dose probe (2026-08-18, D0–D1 terminal)
+
+M1 的 active-active magnitude match 在 Baron Human 不可估计后，建立独立项目
+`support_crossing_common_dose_probe`。D0 只读继承 C2/M1；D1 只做 CPU constructive feasible-range
+audit，不训练模型。Cross 是 active↔inactive swap，Preserve 是 unequal active↔active swap，
+两者固定 exact changed-count、row multiset 和 clean-H0 threshold support 合同。9/9 dataset×seed
+rows 完成且 `audit_ok=true`，但 D1 gate 失败：Mouse 通过，Baron common-row coverage=`93.098%`
+且 total mismatch=`8.981%`，Campbell total mismatch=`8.492%`。终态为
+`common_dose_not_estimable`，这是该 constructive witness/tolerance contract 的 feasibility
+No-Go，不是 C2 的 ARI 阴性结果或 universal impossibility。D2 GPU、raw-X bridge、holdout、adaptive
+policy 和 GAN 继续锁定。
+
+> 三个 seed 仅改变 deterministic tie-break，不是独立统计样本；support 仍是 dense H0 的固定
+> threshold-defined support，不是 raw-X zero/nonzero support。
+
 ### Independent sparse-corruption principle probe (2026-08-18, C0–C2 terminal)
 
 在 Relation-selection 与 adaptive-corruption B1 终止后建立独立项目

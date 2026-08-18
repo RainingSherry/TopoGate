@@ -1,0 +1,15 @@
+{
+  "adaptive_locked": true,
+  "audit_ok": true,
+  "d1_gate_pass": false,
+  "d2_authorized": false,
+  "d2_gpu_runs_started": 0,
+  "gan_locked": true,
+  "holdout_locked": true,
+  "interpretation": "The D1 contract is not constructively estimable under the frozen witness/tolerance rules; stop before D2.",
+  "project_id": "support_crossing_common_dose_probe",
+  "protocol_id": "support_crossing_common_dose_probe_d0_d1_v1",
+  "raw_x_bridge_locked": true,
+  "status": "common_dose_not_estimable",
+  "status_definition": "This status is sufficient-for-this-contract, not a universal infeasibility theorem."
+}

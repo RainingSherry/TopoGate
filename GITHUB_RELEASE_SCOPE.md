@@ -30,6 +30,12 @@ audit summaries. It does not publish the paper or any paper source bundle.
   magnitude-estimability preflight, and terminal decision. The M1 GPU matrix
   was not authorized after the frozen control failed estimability; M2-M4 and
   adaptive routes remain locked.
+- `reports/support_crossing_common_dose_probe/` and
+  `result/support_crossing_common_dose_probe/`: compact D0/D1 protocol,
+  constructive common-dose feasibility summaries, and terminal
+  `common_dose_not_estimable` decision. D2 GPU, raw-X bridge, holdout,
+  adaptive policy, and GAN remain locked. Per-row matching records and raw
+  H0/labels are excluded.
 - `result/final_results/`: one curated final result table or summary set for
   each audited version with non-smoke evidence, including V09-V14, V16.1, and
   V18-V22. The directory README records versions with no promotable result.

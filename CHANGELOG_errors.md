@@ -1,5 +1,25 @@
 ### [2026-08-18 sparse-corruption C2 prelaunch aggregation and reuse audit fixes]
 
+### [2026-08-18 support-crossing common-dose D0/D1 review and terminal gate]
+
+新项目 `support_crossing_common_dose_probe` 首次 D1 实现将 `audit_ok` 与 scientific gate 绑定，
+使合法的 `common_dose_not_estimable` 结果被错误标成 audit failure；同时 active-active greedy
+matching 的两侧端点没有共享 used mask，可能重复使用同一 active endpoint，导致 changed-count
+不足。修复为 `audit_ok` 表示计算完整、`d1_gate_pass` 独立表示科学门；same-set matching 共享端点
+mask，并新增 degenerate active-value、exact-budget/support/multiset tests。修复后 focused tests
+为 `5 passed`，D0 audit=`true`，D1 `9/9` CPU rows、`audit_ok=true`、`d1_gate_pass=false`、
+`d2_gpu_runs_started=0`。
+
+按 auto-review-loop 的只读跨模型审查（`8/10`, `ready`），补充了 greedy matching 失败的显式
+记录、value-change EPS 注释、constructive-range/non-universal status wording，以及 deterministic
+seed 语义说明。Baron 的 `93.098%` common-row coverage/`0.089810` total mismatch 和 Campbell
+的 `0.084924` total mismatch 使 D2 继续锁定；没有放宽 5% 门槛或启动 GPU。
+
+发布 staging clone 的 focused test 首次因 `test_d0_freeze...` 直接读取未发布的 H0/M1
+输入而失败；这是测试可移植性问题，不是 D0 结果失败。将测试改为临时 fixture 并 monkeypatch
+输入根目录，只验证 D0 的 inheritance/lock contract；源工作区和公开 staging clone 均重新通过
+`5 passed`，没有加入任何原始输入或新性能工件。
+
 C2 正式矩阵启动前的 `auto-review-loop` 复核发现两个真实的实现风险：首版 aggregate 在某个
 dataset×principle 缺少一个 seed 时仍可能按不完整集合计算 `mean(P)-mean(P0)`，从而把非完整
 paired cell 计入 winner/material 汇总；首版 `_existing_run_valid` 只检查已有 summary 的协议

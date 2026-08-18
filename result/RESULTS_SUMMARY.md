@@ -2268,3 +2268,27 @@ active-source/inactive-destination action identity、values、masks 和 post-epo
 threshold support 与 raw-X zero/nonzero support 的解释防火墙保持有效。权威 compact audit：
 `result/support_target_validation_probe/M0_freeze/audit.json`、
 `result/support_target_validation_probe/M1_preflight/audit.json`。
+
+## 2026-08-18 support_crossing_common_dose_probe
+
+独立项目 `support_crossing_common_dose_probe` 在 M1 终止后只执行 D0/D1，不修改 C2/M1，也不
+放宽 magnitude 门槛。D0 继承审计 `audit_ok=true`；D1 完成 `3 datasets × 3 deterministic
+tie-break seeds = 9/9` CPU/no-training rows，计算审计 `audit_ok=true`，但
+`d1_gate_pass=false`，终态为 `common_dose_not_estimable`。
+
+| Dataset | Common positive-budget rows | Dataset-total mismatch | Median row mismatch | Gate |
+|---|---:|---:|---:|---|
+| Mouse_retina | 100.000% | 3.134% | 0.420% | pass |
+| Baron Human | 93.098% | 8.981% | 12.188% | fail |
+| Campbell | 100.000% | 8.492% | 9.643% | fail |
+
+Cross 是 active↔inactive swap，Preserve 是 unequal active↔active swap；两者保持 exact changed
+coordinate budget、row value multiset，分别要求 support change >0 与 =0。D1 只使用 constructive
+min/max witnesses，不宣称 exhaustive feasible range；三 seed 是 deterministic tie-break
+reproductions。Baron 有 579 个正预算行无共同区间，Campbell 虽全行有区间但总剂量仍超 5% 门槛。
+
+该终态是冻结可行性合同的 No-Go，不是 ARI/NMI/ACC 负结果、不是 C2 推翻，也不是 raw-X support
+因果证据。D2 common-dose GPU、raw-X bridge、holdout、adaptive policy 和 GAN 均未启动；权威
+compact artifacts 位于 `result/support_crossing_common_dose_probe/D0_freeze/` 与
+`result/support_crossing_common_dose_probe/D1_feasibility/`，其中 per-row `records.json` 不属于
+发布层。

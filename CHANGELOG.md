@@ -1,5 +1,18 @@
 # 论文写作变更日志
 
+## 2026-08-18 support_crossing_common_dose_probe D0/D1 terminal result
+
+在 `support_target_validation_probe` M1 的 magnitude-matched control 不可估计后，建立独立的
+`support_crossing_common_dose_probe`，不修改 C2/M1，也不放宽 5% 门槛。D0 继承审计通过；D1
+完成 `3 datasets × 3 deterministic tie-break seeds = 9/9` CPU/no-training rows。Mouse_retina
+通过，Baron Human 共同区间覆盖仅 `93.098%` 且 dataset-total mismatch=`8.981%`，Campbell
+共同区间覆盖 `100%` 但 mismatch=`8.492%`，因此终态为 `common_dose_not_estimable`。
+
+该状态是冻结的 constructive matching witness/tolerance contract 的可行性 No-Go，不是 ARI
+负结果，不推翻 C2，也不证明 raw-X/support 的因果解释。D2 common-dose GPU matrix、raw-X
+bridge、holdout、adaptive policy 和 GAN 均未启动并继续锁定；发布层只保留协议、compact audit
+和汇总，不保留 per-row pair records、H0、labels 或任何模型工件。
+
 ## 2026-08-18 sparse_corruption_principle_probe C2 terminal result
 
 按已冻结的 `sparse_corruption_principle_probe_c2_v1` 完成 `3 datasets × 6 principles × 3

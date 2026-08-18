@@ -46,6 +46,11 @@ caller to provide input data and an output directory.
   `result/support_target_validation_probe/`: the M0 replay freeze, M1
   magnitude-estimability preflight, and terminal decision. No M1 GPU
   performance matrix was authorized; M2-M4 and adaptive routes remain locked.
+- `reports/support_crossing_common_dose_probe/` and
+  `result/support_crossing_common_dose_probe/`: the independent D0/D1
+  common-dose feasibility protocol, compact audit, and terminal
+  `common_dose_not_estimable` decision. D2 GPU, raw-X bridge, holdout,
+  adaptive policy, and GAN remain locked.
 
 The public release is code-first. Result files are metadata-only summaries;
 raw arrays, checkpoints, worker logs, and smoke/debug directories remain

@@ -1,5 +1,18 @@
 # 数据追溯日志
 
+## 2026-08-18 support_crossing_common_dose_probe D0/D1 provenance
+
+D0/D1 只读取已审计的 dense SVD/H0 sources：Mouse_retina `(8352,128)`、Baron Human
+`(8451,128)`、Campbell `(9993,128)`；H0 SHA256 与 inherited M1 audit 一致。D1 使用固定
+clean-row threshold support ratio `0.05`、C2 row budget rate `0.25`，Cross 为
+active↔inactive swap，Preserve 为 unequal active↔active swap，均保持 row value multiset 和
+exact `2*m_i` changed-coordinate budget。全程 `labels_not_loaded=true`、`gpu_runs_started=0`。
+
+D1 的 constructive range audit 为 `9/9` completed-valid，`d1_gate_pass=false`：Mouse 总剂量
+relative mismatch `0.031342`；Baron `0.089810` 且 579 个正预算行无共同区间；Campbell `0.084924`。
+三 seed 是确定性 tie-break reproductions，不是独立统计样本。per-row `records.json` 仅留在本地
+结果盘，不进入 GitHub；D2、raw-X bridge、holdout、adaptive policy、GAN 均未授权。
+
 ## 2026-08-18 sparse_corruption_principle_probe C2 provenance
 
 C2 使用预注册的 Mouse_retina、Baron Human、Campbell development panel、六个静态 corruption

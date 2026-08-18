@@ -1,0 +1,57 @@
+{
+  "audit_ok": true,
+  "checks": {
+    "adaptive_locked": true,
+    "d2_locked": true,
+    "gan_locked": true,
+    "holdout_locked": true,
+    "labels_not_loaded": true,
+    "m1_audit_ok": true,
+    "m1_gpu_runs_zero": true,
+    "m1_model_training_false": true,
+    "m1_status_is_estimability_terminal": true,
+    "raw_x_bridge_locked": true,
+    "three_h0_sources_present": true
+  },
+  "d2_gpu_runs_started": 0,
+  "h0_sources": [
+    {
+      "H0_sha256": "4684924e0e63ca08396b07842486e5521c53f1f3655fdee3c9e5be2808ff1c79",
+      "dataset": "Mouse_retina",
+      "shape": [
+        8352,
+        128
+      ],
+      "source": "representation_consumer_probe/S0_freeze/datasets/Mouse_retina/H0.npy"
+    },
+    {
+      "H0_sha256": "cd730ef48e9f61ed77f532b124e3d1a23452117bf4ac515b9ce66cc2ccc155d6",
+      "dataset": "Baron Human",
+      "shape": [
+        8451,
+        128
+      ],
+      "source": "representation_consumer_probe/S0_freeze/datasets/Baron Human/H0.npy"
+    },
+    {
+      "H0_sha256": "dae79805c827694841eabf57cbe35ede442900b995a41040cacac9287ec714c4",
+      "dataset": "Campbell",
+      "shape": [
+        9993,
+        128
+      ],
+      "source": "representation_consumer_probe/S0_freeze/datasets/Campbell/H0.npy"
+    }
+  ],
+  "inherited_m1": {
+    "audit_sha256": "c0a8a81622586c921f490e669dc6d2f4b2db772eaad6af4d90966b037c6687b5",
+    "decision_sha256": "3eb148a56b10a2392c62316840bcc7e8c83962295bc2e4490e414b3388761e9a",
+    "gpu_runs_started": 0,
+    "status": "magnitude_match_not_estimable"
+  },
+  "labels_not_loaded": true,
+  "project_id": "support_crossing_common_dose_probe",
+  "protocol_id": "support_crossing_common_dose_probe_d0_v1",
+  "publication_scope": "D0/D1 protocol, compact feasibility summaries and source hashes only",
+  "stage": "D0_common_dose_freeze"
+}

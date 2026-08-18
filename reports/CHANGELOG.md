@@ -1,5 +1,17 @@
 # 论文写作变更日志
 
+## 2026-08-18 sparse_corruption_principle_probe C2 terminal result
+
+按冻结的 `sparse_corruption_principle_probe_c2_v1` 完成 `3 datasets × 6 principles × 3
+paired seeds = 54/54` 个 GPU runs。独立执行完整性审计为 `audit_ok=true`（17/17 checks），
+所有 cell 均满足 exact changed-coordinate budget、labels-after-fit-only 和当前
+H0/budget/label hash 一致性；实际使用物理 GPU `[2,3,4,5,6]`，GPU `0/7` 未使用。主终点
+`Delta_P = ARI(P) - ARI(P0_Random)`：P2_SupportTarget 在 Mouse_retina、Baron Human、
+Campbell 三个 development datasets 上分别为 `+0.394898/+0.126069/+0.146883`，均超过
+描述性 `0.03` margin；P3/P4 各在两个数据集上达到该 margin。终态标签为
+`simple_static_principle_sufficient`，不支持 raw-X sparse-support 语义、泛化或 oracle
+上界。C3 holdout、adaptive policy、GAN 和 learned generator 继续锁定。
+
 ## 2026-08-18 Independent parallel probes A1/B1 terminal results
 
 The two independent non-V-series studies completed only their authorized first

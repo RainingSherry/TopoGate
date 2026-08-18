@@ -1,0 +1,42 @@
+{
+  "adaptive_policy_unlocked": false,
+  "c3_holdout_runs_unlocked": false,
+  "completed_valid_runs": 54,
+  "dataset_best_principle": {
+    "Baron Human": {
+      "delta_ARI_vs_P0": 0.12606882071727035,
+      "material": true,
+      "principle": "P2_SupportTarget"
+    },
+    "Campbell": {
+      "delta_ARI_vs_P0": 0.14688252130143517,
+      "material": true,
+      "principle": "P2_SupportTarget"
+    },
+    "Mouse_retina": {
+      "delta_ARI_vs_P0": 0.39489814411354435,
+      "material": true,
+      "principle": "P2_SupportTarget"
+    }
+  },
+  "distinct_material_winner_principles": [
+    "P2_SupportTarget"
+  ],
+  "expected_runs": 54,
+  "material_count_by_principle": {
+    "P1_SupportPreserve": 1,
+    "P2_SupportTarget": 3,
+    "P3_FrequencyAware": 2,
+    "P4_ResidualHard": 2,
+    "P5_GeometryHard": 1
+  },
+  "simple_principles": [
+    "P2_SupportTarget",
+    "P3_FrequencyAware",
+    "P4_ResidualHard"
+  ],
+  "stage": "C2_static_matrix",
+  "status": "simple_static_principle_sufficient",
+  "support_interpretation_firewall": "Support in C2 denotes the frozen threshold-defined support of dense H0, not raw-X zero/nonzero support; raw sparse-support claims require a separate validation.",
+  "tested_static_library_opportunity_is_not_oracle": true
+}

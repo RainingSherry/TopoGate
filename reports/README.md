@@ -1,7 +1,7 @@
 # Results and Reports
 
 This directory is a curated documentation snapshot of the TopoGate research
-repository, updated on 2026-08-07. It contains the current fact table,
+repository, updated on 2026-08-18. It contains the current fact table,
 aggregate result tables, and selected experiment/provenance reports.
 
 ## Contents
@@ -18,6 +18,8 @@ aggregate result tables, and selected experiment/provenance reports.
 - `EXPERIMENT_PHASES.md`: experiment-stage history and protocol boundaries.
 - `CHANGELOG.md`, `CHANGELOG_data.md`, and `CHANGELOG_errors.md`: method,
   data-provenance, and error-audit records.
+- `sparse_corruption_principle_probe/`: independent C0-C2 static corruption
+  principle study; the C2 development-panel result is terminal and compact.
 - `ESWA_BASELINES.md`: baseline eligibility and fairness registry.
 
 ## Evidence boundary

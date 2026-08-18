@@ -1,5 +1,21 @@
 # 数据追溯日志
 
+## 2026-08-18 sparse_corruption_principle_probe C2 provenance
+
+C2 使用预注册的 Mouse_retina、Baron Human、Campbell development panel、六个静态 corruption
+principles 和 paired seeds `[42,123,7]`，以固定 dense SVD/H0 proxy 作为共同输入。每个 run
+复用相同的 30-epoch reconstruction probe、optimizer、readout 和 exact changed-coordinate
+budget；标签只在 fit 后用于 benchmark-known-K 的外层 ARI/NMI/ACC。54/54 runs completed-valid，
+当前 H0、budget manifest 和 labels SHA256 全部匹配；独立 C2 integrity audit 为 `audit_ok=true`。
+协议允许 GPU `[1,2,3,4,5,6]`、禁止 `[0,7]`；实际运行使用 `[2,3,4,5,6]`，GPU1 本轮因
+外部占用未使用。
+
+P4 residual score 是 standardized clean-H0、dataset×seed 冻结的 proxy；P5 geometry score 是
+raw clean-H0、dataset-level 冻结的 label-free proxy。C2 support 始终表示
+`threshold-defined support of dense H0`，不是原始 count matrix 的 zero/nonzero support。
+原始矩阵、标签、corruption/score arrays、embeddings、predictions、weights、checkpoints 和
+logs 不进入发布副本。
+
 ## 2026-08-18 adaptive-corruption probe B1 formal rerun provenance
 
 The publication-facing B1 matrix uses the audited S0 `H0` stem with per-dataset

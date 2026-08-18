@@ -1,5 +1,19 @@
 # TopoGate 实验阶段记录（2026-07-27 更新）
 
+### Independent sparse-corruption principle probe (2026-08-18, C0-C2 terminal)
+
+在 Relation-selection 与 adaptive-corruption B1 终止后建立独立项目
+`sparse_corruption_principle_probe`，不使用 V 系列。C0 冻结三项 development roles、六个
+primary principles、exact budget、labels-after-fit-only firewall 和 GPU deny list；C1 完成
+54 个 zero-fit H0 structural replays；C2 随后完成 `54/54` 个正式 GPU runs，并通过独立
+`audit_ok=true` 审计。C2 终态标签为 `simple_static_principle_sufficient`：P2_SupportTarget
+在三个 development datasets 上均达到 `Delta_ARI >= 0.03`，P3/P4 各在两个数据集上达到该
+描述性阈值。C3 holdout、adaptive policy、GAN 与 learned generator 仍锁定；这是 bounded
+development-panel evidence，不是泛化证据。
+
+> C2 support 仅指 frozen threshold-defined support of dense H0，不是 raw-X zero/nonzero
+> support；raw sparse-support claim 仍需单独验证。
+
 > **2026-07-27 重要澄清**：这些实验探索是为了寻找一个合理的机制和搭配来解决 mix 分支消融效果不稳定的问题。**最终只有一份机制会进入论文**，其余全部删除。此文档是过程记录，不是论文叙事。
 
 > **2026-08-04 当前研究定位**：TopoGate 的原型和主要 backbone 是 `scMAE`，总目标是在高维、特征噪声强、同时具有天然稀疏性的单视图数据中获得可靠的聚类效果。V1--V 系列都是围绕同一原型的探索性改良、诊断和消融；版本号只用于追溯，不代表不同应用场景、永久模型边界或已确定的论文主方法。最终论文只从全部探索结果中选择一代作为对外的 TopoGate。数据集选择和 CLM 分层参考 `hj-n/labeled-datasets`、`hj-n/clm` 及 `papers/参考资料/Measuring_the_Validity_of_Clustering_Validation_Datasets.md`，未核验的外部 CLM 映射不得写成正式证据。

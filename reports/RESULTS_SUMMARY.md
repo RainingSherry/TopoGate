@@ -1,5 +1,30 @@
 # TopoGate 实验结果汇总（事实表）
 
+## 2026-08-18 sparse_corruption_principle_probe C2 terminal result
+
+独立项目 `sparse_corruption_principle_probe` 按冻结协议
+`sparse_corruption_principle_probe_c2_v1` 完成正式 `3 datasets × 6 principles × 3 paired
+seeds = 54/54` GPU runs。C2 使用共同 dense SVD/H0 proxy、相同 reconstruction probe、exact
+changed-coordinate budget 和 labels-after-fit-only firewall；标签只用于 fit 后的
+benchmark-known-K 外层 readout。独立 C2 integrity audit 为 `audit_ok=true`，17/17 checks 通过；
+实际物理 GPU 为 `[2,3,4,5,6]`，GPU `0/7` 禁用，GPU1 本轮因外部占用未使用。
+
+Primary `Delta_P = ARI(P)-ARI(P0_Random)`（dataset 是统计单位，seed 是 paired repeat）：
+
+| Dataset | P1 | P2 | P3 | P4 | P5 | Best |
+|---|---:|---:|---:|---:|---:|---|
+| Mouse_retina | +0.319044 | **+0.394898** | +0.388034 | +0.384727 | +0.116976 | P2 |
+| Baron Human | −0.126288 | **+0.126069** | −0.108278 | −0.102735 | −0.116420 | P2 |
+| Campbell | +0.029888 | **+0.146883** | +0.046116 | +0.082621 | +0.014387 | P2 |
+
+Material descriptive margin 为 `0.03 ARI`。P2 在 `3/3` development datasets 达到该 margin，
+P3/P4 各为 `2/3`，因此 C2 终态标签为 `simple_static_principle_sufficient`。这只是测试过的
+static library 在 development panel 上的 bounded finding，不是 oracle 上界、raw-X
+zero/nonzero support 结论或 generalization claim。C3 holdout、adaptive policy、GAN 和
+learned generator 仍锁定。完整报告与审计位于
+`reports/sparse_corruption_principle_probe/C2_RESULTS.md` 与
+`reports/sparse_corruption_principle_probe/C2_INTEGRITY_AUDIT.md`。
+
 ## 2026-08-18 Independent parallel probes — A1/B1 completion
 
 `learned_relation_rule_probe` and `adaptive_corruption_probe` are independent,

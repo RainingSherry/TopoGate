@@ -1,0 +1,26 @@
+{
+  "all_jobs_completed_valid": true,
+  "audit_ok": true,
+  "completed_valid_run_count": 54,
+  "expected_run_count": 54,
+  "forbidden_gpu_ids": [
+    0,
+    7
+  ],
+  "gpu_pool": [
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "labels_used_during_fit": false,
+  "labels_used_for_outer_metrics": true,
+  "positive_control_passed": true,
+  "project_id": "sparse_corruption_principle_probe",
+  "protocol_id": "sparse_corruption_principle_probe_c2_v1",
+  "raw_arrays_persisted": false,
+  "score_artifacts_local_only": true,
+  "stage": "C2_static_matrix",
+  "support_interpretation_firewall": "Support in C2 denotes the frozen threshold-defined support of dense H0, not raw-X zero/nonzero support; raw sparse-support claims require a separate validation."
+}

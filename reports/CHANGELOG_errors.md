@@ -81,6 +81,25 @@ AUC=`0.664208`，但该诊断属于 post-audit interpretation，不能把原冻�
 |---|---|---|
 | 按用户允许的 `auto-review-loop` 尝试把新版 Post-V25 报告、私有结果和源码路径交给 `claude-review` 时，服务拒绝接收 | 当前授权被隐私门解释为允许采用审查方法，但未明确授权向外部服务披露这些具体私有研究材料 | 未重试、未通过间接命令或匿名化绕过；不把该调用当作科学审阅结论。改用本地 adversarial review，保留失败 trace 与“外部评分未获得”的边界 |
 
+### [2026-08-18 sparse-corruption C2 prelaunch aggregation and reuse audit fixes]
+
+C2 正式矩阵启动前的 `auto-review-loop` 复核发现两个真实的实现风险：首版 aggregate 在某个
+dataset×principle 缺少一个 seed 时仍可能按不完整集合计算 `mean(P)-mean(P0)`，从而把非完整
+paired cell 计入 winner/material 汇总；首版 `_existing_run_valid` 只检查已有 summary 的协议
+字段，没有重新加载当前 H0、budget manifest 和 post-fit label source 的 SHA256，存在 stale
+artifact 被错误复用的风险。两者都在正式 GPU launch 前修复：aggregate 现在要求 P0 与 principle
+两侧均有完整 `[42,123,7]` 且交集精确匹配，否则输出 `incomplete_compute`；reuse 现在重新读取
+当前 source artifacts 并拒绝 hash mismatch。新增 partial-seed aggregation 与 hash-mismatch
+regression tests，未启动或改变任何 C2 性能 run；修复后的 54/54 矩阵和独立 audit 均通过。
+
+### [2026-08-18 sparse-corruption release staging data-path fixture]
+
+在临时 GitHub release clone 中运行新项目 focused tests 时，reuse regression test 直接依赖本地
+结果盘的 S0 `H0.npy`，而公开 clone 按发布边界不包含该输入，导致 `FileNotFoundError`；这不是
+C2 结果失败。测试改为 monkeypatch 合成 source/label hash，仅验证 current-hash rejection
+contract，不改变 runner 或性能工件。随后本地与 release staging clone 的 focused tests 均为
+`21 passed`，compileall 与 staged `git diff --check` 通过；没有加入任何原始输入。
+
 ### [2026-08-15 V25 frozen-manifest coverage audit correction]
 
 | 错误/风险 | 原因 | 纠正与当前状态 |

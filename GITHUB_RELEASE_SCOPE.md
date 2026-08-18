@@ -21,6 +21,10 @@ audit summaries. It does not publish the paper or any paper source bundle.
   terminal decision, and weight-free opportunity diagnostics. The study's
   selector and new-backbone routes remain locked and are not presented as
   performance claims.
+- `reports/sparse_corruption_principle_probe/` and
+  `result/sparse_corruption_principle_probe/`: compact C0-C2 protocol,
+  static corruption-principle result tables, and independent integrity audit.
+  C3 holdout, adaptive policy, GAN, and learned generator remain locked.
 - `result/final_results/`: one curated final result table or summary set for
   each audited version with non-smoke evidence, including V09-V14, V16.1, and
   V18-V22. The directory README records versions with no promotable result.

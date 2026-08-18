@@ -1,5 +1,16 @@
 # 论文写作变更日志
 
+## 2026-08-18 Independent parallel probes A1/B1 terminal results
+
+The two independent non-V-series studies completed only their authorized first
+stages. Track A A1 is a diagnostic supervised ceiling and ended with
+`predictable_reference_not_actionable_for_selection`; A2–A5 remain locked.
+Track B B1 completed a fresh pair-feasible `108/108` matrix and ended with
+`simple_corruption_principle_sufficient`; B2–B5, adaptive generator work and
+holdout remain locked. The earlier B1 support-budget-mismatch matrix is
+quarantined and is not part of the paper-facing evidence. Raw arrays, labels,
+embeddings, predictions, weights and logs remain local.
+
 ## 2026-08-17 relation-selection probe RS0–RS3 terminal decision
 
 在正式关闭 `representation_consumer_probe` 后建立独立的
@@ -3110,3 +3121,19 @@ selector 与 holdout 继续锁定。报告与审计：`reports/representation_co
 
 随后补强 S2 focused contract test：除 finite 外，tiny-graph smoke 现在显式断言 embedding
 不是全维常数。该测试改动不重训、不改变任何已保存的 S2 性能工件。
+# 2026-08-18 Independent parallel probes frozen (protocol-only)
+
+Created two independent, non-V-series mechanism studies from frozen commit
+`c80877cf904e41950315d37b95374825c33a7362`:
+`learned_relation_rule_probe` (A1 actionable relation ceiling first) and
+`adaptive_corruption_probe` (B1 matched corruption opportunity first).  Their
+protocols, pre-registrations, S0 audits, GPU allow/deny lists, label firewalls
+and stage gates are separate; no formal performance run or cross-track model
+has been started.  Both S0 audits are `completed_valid` and authorize only A1
+or B1 respectively.
+
+The three-round compact cross-family review then accepted the A4 label-free
+gate/reference and the B uncorrupted floor, sensitivity control, C_clean
+pairing, noise-floor and development-overlap clauses.  Final scores were A
+8.8/10, B 8.5/10 and combined 8.7/10 (`ready`); no performance run was
+authorized beyond A1/B1.

@@ -1,15 +1,14 @@
 # Adaptive-corruption probe — current decision
 
-`S0_FREEZE` is complete as a protocol artifact only.  B1 is authorized to be
-implemented/run after the contract tests pass.  No corruption opportunity,
-adaptive-policy or GAN result exists yet.
+B0/S0 and the formal B1 matrix are complete. The positive-control sensitivity fixture passed, and all 108 pre-registered runs are `completed_valid`.
 
 ```yaml
-stage: S0
-status: completed_valid
-primary_gate_pass: null
-next_stage_authorized: true
-authorized_next_stage: B1
-terminal_reason: null
-formal_performance_run_started: false
+stage: B1
+status: simple_corruption_principle_sufficient
+primary_gate_pass: true
+next_stage_authorized: false
+authorized_next_stage: None
+terminal_reason: B1 hierarchy does not justify adaptive location/generator work
 ```
+
+Level 1 shows corruption-sensitive opportunity on part of the development panel. Level 2 shows fixed C2/C3 gains on two registered-scRNA datasets, but Level 3 does not show distinct material winners across at least two coarse role classes. The frozen conclusion is therefore a simple-corruption principle result; adaptive location, generator/GAN, B2--B5 and holdout remain locked.

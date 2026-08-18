@@ -43,6 +43,42 @@ HOLDOUT_SEEDS = (42, 123, 7, 3032, 3033)
 LEGAL_GPU_POOL = (1, 2, 3, 4, 5, 6)
 FORBIDDEN_GPU_IDS = (0, 7)
 MATERIAL_DELTA_ARI = 0.03
+SIMPLE_MIN_DATASET_COUNT = 2
+H0_SUPPORT_THRESHOLD_RATIO = 0.05
+CORRUPTION_RATE = 0.25
+BACKBONE_CONFIG = {
+    "input": "audited_S0_H0",
+    "standardization": "clean_H0_column_mean_std_fit_once_per_dataset",
+    "encoder_dims": ["d_eff", 64, 32],
+    "decoder_dims": [32, 64, "d_eff"],
+    "activation": "ReLU",
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "epochs": 30,
+    "batch_size": 512,
+    "corruption_rate": CORRUPTION_RATE,
+    "pair_budget_rule": "m_i=min(ceil(rate*active_i), floor(active_i/2), inactive_i); all arms change 2*m_i coordinates",
+    "support_definition": "abs(H0_ij)>=max(1e-6,0.05*row_max_abs)",
+    "readout": "clean_embedding_known_K_KMeans",
+}
+STRUCTURED_ARMS = (
+    "C1_ValueOnly",
+    "C2_SupportOnly",
+    "C3_MixedMatched",
+    "C4_StaticHard",
+)
+TERMINAL_LABELS = (
+    "completed_valid",
+    "protocol_insensitive",
+    "corruption_not_current_bottleneck",
+    "random_corruption_sufficient",
+    "simple_corruption_principle_sufficient",
+    "adaptive_corruption_opportunity_present",
+    "adaptive_model_not_necessary",
+    "generator_not_necessary",
+    "incomplete_compute",
+    "protocol_mismatch",
+)
 
 
 def resolved_config() -> dict[str, Any]:
@@ -62,6 +98,28 @@ def resolved_config() -> dict[str, Any]:
         "legal_gpu_pool": list(LEGAL_GPU_POOL),
         "forbidden_gpu_ids": list(FORBIDDEN_GPU_IDS),
         "material_delta_ari": MATERIAL_DELTA_ARI,
+        "h0_support_threshold_ratio": H0_SUPPORT_THRESHOLD_RATIO,
+        "corruption_rate": CORRUPTION_RATE,
+        "backbone": dict(BACKBONE_CONFIG),
+        "structured_arms": list(STRUCTURED_ARMS),
+        "decision_hierarchy": {
+            "level_1_corruption_matters": {
+                "primary_contrast": "ARI(C0_MatchedRandom)-ARI(C_clean_no_corruption)",
+                "library_contrast": "max_C Delta_clean(C)",
+            },
+            "level_2_structured_beats_random": {
+                "contrast": "Delta_random(C)=ARI(C)-ARI(C0_MatchedRandom)",
+                "arms": list(STRUCTURED_ARMS),
+            },
+            "level_3_adaptation_necessary": {
+                "minimum_material_delta_random": MATERIAL_DELTA_ARI,
+                "minimum_distinct_role_winners": 2,
+                "terminal_if_not_met": "random_corruption_sufficient",
+            },
+            "simple_principle": {
+                "minimum_material_datasets_for_same_arm": SIMPLE_MIN_DATASET_COUNT,
+            },
+        },
         "labels_used_during_fit": False,
         "k_source": "benchmark_oracle_from_y_outer_readout_only",
         "initial_stage": "B1",
@@ -102,5 +160,9 @@ def validate_contract() -> None:
         raise ValueError("B0 development roles must cover six fixed datasets")
     if len(CORRUPTION_ARMS) != 6 or CORRUPTION_ARMS[0] != "C_clean_no_corruption":
         raise ValueError("B0 corruption arm library drifted")
+    if tuple(CORRUPTION_ARMS[2:]) != STRUCTURED_ARMS:
+        raise ValueError("B0 structured corruption arm library drifted")
+    if not 0.0 < H0_SUPPORT_THRESHOLD_RATIO < 1.0 or not 0.0 < CORRUPTION_RATE < 1.0:
+        raise ValueError("B0 support threshold and corruption rate must be in (0,1)")
     if BASE_COMMIT != "c80877cf904e41950315d37b95374825c33a7362":
         raise ValueError("B0 base commit drifted")

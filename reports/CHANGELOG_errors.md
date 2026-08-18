@@ -1711,3 +1711,66 @@ root `artifact_hashes.json` 在 README 写入后仍少列 1 个非 hash 文件�
 regression test；root manifest 已重生成为 `737/737` exact tree。该修复不改变任何模型、图、指标或协议值。
 验证：`pytest -q tests/representation_consumer_probe`（15 passed）、`python -m compileall -q
 scripts/representation_consumer_probe`，并重新核对 root manifest exact-tree。
+### [2026-08-18 parallel probe contract-test collection boundary]
+
+首次并行运行两个新测试目录时，pytest 将同名的 `test_protocol.py` 和
+`test_s0_freeze.py` 当成顶层模块，导致第二个目录出现 `import file mismatch`；没有启动实验或写入性能工件。
+根因是新测试目录缺少 package marker。为两个目录加入 `__init__.py` 后固定使用
+`python -m pytest -q tests/learned_relation_rule_probe tests/adaptive_corruption_probe`，结果为
+`6 passed`；两条 S0 audit 和 `compileall` 随后通过。
+### [2026-08-18 independent probes A1/B1 execution boundaries]
+
+Track A A1 completed its pre-registered three-dataset diagnostic ceiling with
+100% five-fold anchor-disjoint OOF coverage; the frozen 2-of-3 material gate
+failed, so A2--A5 were not launched.  This is a scientific terminal decision,
+not an incomplete compute status.
+
+The first Track B B1 launch exposed a real input-width mismatch before the
+formal matrix was complete: the frozen `hate_speech` S0 H0 has `d_eff=99`,
+whereas the initial runner assumed 128 input columns.  The launch was stopped;
+its partial summaries/failures were preserved under
+`result/adaptive_corruption_probe/B1_corruption_library_attempts/aborted_input_width_protocol_mismatch_20260818/`
+and excluded from all aggregates.  The contract was corrected to use the
+frozen per-dataset `d_eff` with shared hidden widths `64->32`, S0 was replayed
+as `completed_valid`, and a fresh formal matrix then completed `108/108`.
+
+The B1 hierarchy was clarified before final interpretation: `Delta_clean`
+answers whether corruption matters, `Delta_random` compares structured arms to
+C0, and a simple principle requires the same structured arm to be material on
+at least two development datasets.  The resulting terminal label is
+`simple_corruption_principle_sufficient`; no adaptive/generator stage was
+started.
+
+### [2026-08-18 B1 support-budget mismatch quarantine]
+
+The first post-width-correction B1 matrix completed all 108 jobs but was not a
+valid matched comparison. The support-changing arms used fewer effective
+coordinate changes than C0 on rows without enough feasible support pairs (for
+example, `cnae9` C0=`0.33864294` versus C2/C3=`0.31196470`; similar gaps
+appeared for Baron Human, Mouse_retina, hate_speech and sms_spam_collection).
+The run therefore could not support `Delta_random` interpretation even though
+its summaries were technically complete.
+
+Root cause: the nominal rate was recorded per arm, but the common feasible
+pair budget was not enforced before comparing arms. The complete attempt is
+preserved at
+`result/adaptive_corruption_probe/B1_corruption_library_attempts/aborted_support_budget_mismatch_20260818/`
+and is excluded from every aggregate, report and publication bundle.
+
+Fix: freeze
+`m_i=min(ceil(rate*active_i), floor(active_i/2), inactive_i)` and make every
+non-clean arm change exactly `2*m_i` coordinates. The fresh formal rerun then
+completed `108/108`, `0` failures, and its exact effective-rate audit passed for
+all 18 dataset×seed groups. This was a protocol correction, not a performance
+No-Go; the quarantined metrics are not scientific evidence.
+
+### [2026-08-18 adaptive-corruption B1 external review unavailable]
+
+The requested `auto-review-loop` round was submitted to the local
+`claude-review` bridge with the compact B1 evidence paths. The reviewer process
+completed without reading any file because its CodeGraph tools were rejected in
+plan mode and no general file-reading tool was exposed. It returned no score or
+scientific verdict. The raw response is preserved in
+`review-stage/adaptive_corruption_probe/AUTO_REVIEW.md`; this operational
+failure is not an experiment result or an acquittal. Release readiness was
+therefore decided only by the local deterministic B1 audit.

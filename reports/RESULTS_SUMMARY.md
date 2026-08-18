@@ -1,5 +1,44 @@
 # TopoGate 实验结果汇总（事实表）
 
+## 2026-08-18 Independent parallel probes — A1/B1 completion
+
+`learned_relation_rule_probe` and `adaptive_corruption_probe` are independent,
+non-V-series projects.  Track A A1 used only the three burned development
+datasets (`cnae9`, `Campbell`, `sms_spam_collection`) and the inherited
+candidate pool/R/O_pool artifacts.  The 2 scorers × 3 views × 5 anchor-group
+fold contract had 100% OOF coverage and no anchor leakage.  Its diagnostic
+supervised ceiling did not reach the frozen 2-of-3 material gate:
+
+| dataset | best diagnostic scorer/view | `Delta_sup` mean | `H_pool` mean |
+|---|---|---:|---:|
+| cnae9 | TinyMLP / No-rank | `-0.015740` | `+0.215720` |
+| Campbell | Logistic / No-geometry | `+0.024503` | `+0.191444` |
+| sms_spam_collection | Logistic / Full | `-0.300232` | `+0.367108` |
+
+The terminal A1 decision is
+`predictable_reference_not_actionable_for_selection`; A2–A5 remain locked.
+This is a diagnostic supervised ceiling, not label-free utility.
+
+Track B B1 passed the unlabeled synthetic sensitivity fixture and completed
+`108/108` runs: six fixed datasets × six arms × three paired seeds, with GPU
+workers restricted to physical GPUs `[1,2,3,4,5,6]`.  In the fresh
+pair-feasible rerun, the primary C0-vs-clean contrast was material on
+Mouse_retina (`+0.074182`) and Campbell (`+0.041038`); the best structured
+corruption was also material on Baron Human.  Level 2 found material
+structured-vs-random effects for C2/C3/C4 on two registered-scRNA development
+datasets.  The Level-3 role
+heterogeneity gate was not met (only one coarse role class had a material
+winner), so the terminal decision is
+`simple_corruption_principle_sufficient`; B2–B5 and holdout are locked.
+These are bounded mechanism-panel results, not generalization evidence.
+
+Compact reports and audit artifacts are under
+`reports/learned_relation_rule_probe/A1_RESULTS.md`,
+`reports/adaptive_corruption_probe/B1_RESULTS.md`, and the corresponding
+`result/*/A1_supervised_ceiling` / `B1_corruption_library` directories.  Raw
+inputs, labels, scores, embeddings, predictions, checkpoints and logs remain
+local and are excluded from publication.
+
 ## 2026-08-17 Relation-selection probe RS0–RS3 terminal result
 
 独立项目 `relation_selection_probe` 在关闭 `representation_consumer_probe` 后按冻结范围
@@ -2135,3 +2174,29 @@ V25 closure artifacts（由 `scripts/V25/build_closure_artifacts.py` 从冻结 C
 `V25_NEXT_SERIES_DECISION.md` 和 `V25_CLOSURE_ARTIFACTS.json`。E1 汇总恰好六个数据集；V1--V24
 taxonomy 覆盖完整；holdout 为 `0/6 inconclusive_not_completed`，不是负结果；发布副本不含权重、
 branchpoint、原始数据、预测数组或缓存。
+# 2026-08-18 Independent parallel probes S0 freeze (protocol-only)
+
+两个完全独立的新项目从冻结起点
+`c80877cf904e41950315d37b95374825c33a7362` 建立：
+`learned_relation_rule_probe` 与 `adaptive_corruption_probe`。本条只记录协议冻结，
+不记录性能结果。
+
+- Track A S0：`completed_valid`，A1 actionable supervised ceiling 是唯一授权的下一阶段；
+  RS 三个 primary dataset 仅作 development evidence，A5 复用的 dormant 12-dataset manifest
+  只保存 source hash，未被本项目使用或改写。
+- Track B S0：`completed_valid`，B1 matched corruption library 是唯一授权的下一阶段；
+  adaptive location、generator/GAN 和 B5 holdout membership 仍锁定。当前 six-dataset panel
+  的结构角色按已核验 registry 记录为两类 text-like sparse、三类 registered scRNA count 和
+  一个 generic non-expression sparse control，不虚构 dense control。
+- 两条线均 `labels_used_during_fit=false`，GPU 合法池为 `[1,2,3,4,5,6]`，物理 GPU `0/7`
+  禁用；S0 没有模型、ARI/NMI/ACC、checkpoint、embedding、prediction 或 raw artifact。
+
+验证：`python -m pytest -q tests/learned_relation_rule_probe tests/adaptive_corruption_probe`
+（`8 passed`）；对应脚本 `compileall` 通过；两个 `S0_freeze/audit.json` 均为
+`status=completed_valid`。
+
+三轮 compact `auto-review-loop` 后，Track A A4 label-free gate 明确以继承的 matched-random
+`R` 为 reference，并要求无 material opposing-sign development row；Track B 增加
+`C_clean_no_corruption` floor、synthetic sensitivity failure=`protocol_insensitive`、C1--C4
+对 C_clean 的 primary pairing、C0 secondary contrast，以及 ARI/L_rec 分离。外部 reviewer
+最终评分 A=`8.8`、B=`8.5`、combined=`8.7`，verdict=`ready`；这只是协议审查，不是性能证据。

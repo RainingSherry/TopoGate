@@ -1,5 +1,23 @@
 # 数据追溯日志
 
+## 2026-08-18 adaptive-corruption probe B1 formal rerun provenance
+
+The publication-facing B1 matrix uses the audited S0 `H0` stem with per-dataset
+`d_eff`, clean-H0 column standardization, backbone `d_eff→64→32→64→d_eff`,
+30 epochs, batch size 512, corruption rate `0.25`, and paired seeds
+`[42,123,7]`. The pair-feasible rule is frozen as
+`m_i=min(ceil(rate*active_i), floor(active_i/2), inactive_i)`; every non-clean
+arm changes `2*m_i` coordinates. The fresh matrix has `108/108`
+completed-valid runs, all effective-rate matches pass, and workers used only
+physical GPUs `[1,2,3,4,5,6]` (0 and 7 forbidden).
+
+The earlier support-budget-mismatch matrix remains local under
+`result/adaptive_corruption_probe/B1_corruption_library_attempts/` and is
+explicitly excluded from the compact CSV/JSON, reports and GitHub release.
+Labels are loaded only after fitting for benchmark-known-K KMeans and outer
+ARI/NMI; raw H0-derived arrays, embeddings, predictions, checkpoints and logs
+are not publication artifacts.
+
 ## 2026-08-17 relation-selection probe RS1–RS3 data/result audit
 
 新项目复用已审计的 `representation_consumer_probe` S0 H0、candidate pool、row budget
@@ -2361,3 +2379,32 @@ updates manifest provenance; it does not launch training or alter the existing `
   nested run manifests; reuse/aggregation now require `audit_ok=true` plus config identity. The
   evidence remains known-K real-GT benchmark plus label-derived diagnostic oracle, not a deployable
   selector or TopoGate gain.
+# 2026-08-18 Parallel mechanism probes — S0 freeze only
+
+No dataset was loaded for fitting and no GPU job was launched.  Compact S0
+artifacts were generated under
+`result/learned_relation_rule_probe/S0_freeze/` and
+`result/adaptive_corruption_probe/S0_freeze/`.  Track A records the dormant,
+outcome-independent twelve-dataset holdout by source hash without copying raw
+data; Track B freezes its holdout selection rule but defers membership until
+before B5.  No ARI/NMI/ACC or corruption performance number is produced.
+The review also fixed the protocol semantics of Track A `R` (inherited
+matched-random reference) and Track B `C_clean_no_corruption` (primary floor);
+these are definitions, not computed results.
+### [2026-08-18 independent representation-consumer follow-up probes]
+
+Track A A1 reuses the audited RS1 edge feature tables and S1 v2 R/O_pool
+graphs.  It uses Logistic and `p->32->1` TinyMLP diagnostic scorers over Full,
+No-geometry and No-rank views with five GroupKFold-by-anchor folds; labels are
+available only to the diagnostic O_pool target builder and post-fit metrics.
+The compact source/config/OOF audit and A1 summary are in
+`result/learned_relation_rule_probe/A1_supervised_ceiling/`.
+
+Track B B1 uses the audited S0 H0 stem, clean-H0 column standardization, a
+fixed `d_eff->64->32->64->d_eff` reconstruction probe, row support threshold
+`0.05`, corruption rate `0.25`, 30 epochs and batch size 512.  The six arms
+record requested/effective coordinate, support/value and absolute-change
+statistics.  The formal 108-run compact matrix is in
+`result/adaptive_corruption_probe/B1_corruption_library/`; the aborted width
+attempt is explicitly quarantined under the corresponding `*_attempts/`
+directory.  No raw arrays or model weights are publication artifacts.

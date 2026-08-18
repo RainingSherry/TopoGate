@@ -1,0 +1,20 @@
+{
+  "audit": "deterministic_local_contract",
+  "project": "adaptive_corruption_probe",
+  "stage": "B1",
+  "overall_verdict": "PASS_WITH_BOUNDED_SCOPE",
+  "expected_runs": 108,
+  "completed_valid_runs": 108,
+  "positive_control": "completed_valid",
+  "labels_used_during_fit": false,
+  "known_k_outer_readout": true,
+  "raw_artifacts_in_publication_tree": false,
+  "terminal_decision": "simple_corruption_principle_sufficient",
+  "next_stage_authorized": false,
+  "scope_qualification": "six-dataset development/mechanism panel; no holdout/generalization claim",
+  "matched_budget_rate_audit": "C0/C1/C2/C3/C4 exact effective_changed_coordinate_rate_mean match for all 18 dataset-seed groups",
+  "quarantined_attempts": [
+    "result/adaptive_corruption_probe/B1_corruption_library_attempts/aborted_input_width_protocol_mismatch_20260818",
+    "result/adaptive_corruption_probe/B1_corruption_library_attempts/aborted_support_budget_mismatch_20260818"
+  ]
+}

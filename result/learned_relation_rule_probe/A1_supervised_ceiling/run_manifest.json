@@ -1,0 +1,11 @@
+{
+  "dataset_count": 3,
+  "fold_count": 5,
+  "job_count": 90,
+  "project_id": "learned_relation_rule_probe",
+  "raw_artifacts_published": false,
+  "scorer_count": 2,
+  "stage": "A1",
+  "status": "completed_valid",
+  "view_count": 3
+}

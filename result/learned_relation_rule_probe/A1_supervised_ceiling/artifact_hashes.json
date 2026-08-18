@@ -1,0 +1,15 @@
+{
+  "files": {
+    "a1_dataset_summary.csv": "03395e7c38f90e2ceec92d8a4ca29ea531ec2b6b842f00245c45da28203c0e32",
+    "a1_fold_metrics.csv": "755f3de88deea718fc3c45446f7b000363d71bf76b0cd50a7c39bf41e3ee307c",
+    "a1_shortcut_audit.csv": "5e39c02791475494ed3ecae3ae77c725511e4f498b204b81794f896a806e5662",
+    "audit.json": "6116716dd1fdf23c8e8c8712936e152ccd127360c7f5966593d4364762a773d1",
+    "decision.json": "2e1f6d86b166eccd4c52d407af05eb1c37d9c81aee9e789f9d740fa5e1b5a892",
+    "preflight.json": "769e78c79dbed60a1e06b0d4ea11f2dd3542c5ce4033732549f8a2684eedd648",
+    "resolved_config.json": "06363214450c8f6485099de62b40efdabedab80f86d4e99fa1277a5671074c7d",
+    "run_manifest.json": "4274e8a8a42e8464bc2e2303cff6e5e6b2520ec96a5c18b67eaeb39519f6c6f1",
+    "source_manifest.json": "bef06386a939fdd5b66ef1a53945144f733ba73be7a852003187b2501422daa3"
+  },
+  "raw_artifacts_included": false,
+  "stage": "A1"
+}

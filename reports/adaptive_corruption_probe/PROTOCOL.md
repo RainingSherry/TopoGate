@@ -17,6 +17,29 @@ The exact implementation must reuse the current audited input/preprocessing
 adapter and record its source/config hash.  B1 may not introduce a new
 preprocessing choice to make a corruption arm favorable.
 
+### Frozen small reconstruction probe
+
+Before B1, the common input is the audited S0 `H0` (the frozen per-dataset
+`d_eff`, at most 128 dimensions),
+standardized once per dataset using clean-H0 column means and standard
+deviations.  Every arm uses the same
+`d_eff -> 64 -> 32 -> 64 -> d_eff` ReLU autoencoder, Adam (`lr=1e-3`), 30
+epochs, batch size 512, and corruption rate
+`0.25`.  The benchmark embedding is the clean-H0 encoder output after fitting;
+known-K KMeans is an outer readout only.  No labels enter standardization,
+corruption, optimization or encoder evaluation.
+
+Because the S0 stem is a dense SVD representation, support is defined once and
+without labels as
+`abs(H0_ij) >= max(1e-6, 0.05 * max_j abs(H0_ij))` within each row.  This
+threshold and the requested corruption rate are frozen constants, not tuned
+per dataset or arm.  The run audit reports the effective changed-coordinate,
+support-change and value-change rates; a requested rate alone is not accepted
+as a match.  To enforce matched budgets, each row uses
+`m_i=min(ceil(0.25*active_i), floor(active_i/2), inactive_i)` pairs and every
+arm changes the same `2*m_i` coordinate budget.  Rows without a feasible pair
+have zero requested changes in every arm.
+
 ## 2. Development panel
 
 B1 uses six pre-declared structural roles selected from the frozen evidence
@@ -63,39 +86,50 @@ result.
 
 ## 4. Stage contracts
 
-### B1 — opportunity test
+### B1 — opportunity and random-reference test
 
 **Question.** Does corruption itself change downstream clustering relative to
 the uncorrupted floor, and is the best principle dataset-dependent?
 
-Primary quantities are `Delta_clean(C) = ARI(C) - ARI(C_clean)` and the
-secondary structured-vs-random contrast `Delta_random(C) = ARI(C) -
-ARI(C0)`.  The tested-library envelope
+The decision is deliberately hierarchical. Level 1 asks whether corruption
+matters at all, using `Delta_clean(C) = ARI(C) - ARI(C_clean)` and the explicit
+random-vs-clean contrast `ARI(C0)-ARI(C_clean)`. The tested-library envelope
 `H_corr=max_C ARI(C)-ARI(C_clean)` is not a universal oracle.  Reconstruction
 loss, effective change counts and support/value audit fields are secondary
 mechanism diagnostics.
 
 For every structured arm C1--C4, `Delta_clean` is paired against the same
-uncorrupted C_clean run; C0 is used only for the secondary structured-vs-random
-contrast.  `Delta_clean` is the ARI clustering endpoint.  `L_rec` is a
-degradation monitor only: an arm cannot claim a useful corruption principle
-by breaking reconstruction while its ARI changes.
+uncorrupted C_clean run, and `Delta_random(C)=ARI(C)-ARI(C0)` is paired against
+the same matched-random reference. `Delta_clean` is the Level-1 clustering
+endpoint; `Delta_random` is the Level-2 endpoint. `L_rec` is a degradation
+monitor only: an arm cannot claim a useful corruption principle by breaking
+reconstruction while its ARI changes.
 
 Decision:
 
 1. first require the pre-registered positive-control sensitivity check; if it
    fails, classify the stage as `protocol_insensitive` rather than a null;
-2. all valid `|Delta_clean(C)| < 0.03`: `corruption_not_current_bottleneck`;
-3. one fixed family is consistently material relative to C_clean:
+2. Level 1: if the valid library has no material `Delta_clean` and the
+   random-vs-clean contrast is also below `0.03`, classify
+   `corruption_not_current_bottleneck`;
+3. Level 2: compare each structured arm against C0 using
+   `Delta_random(C)`. If one fixed structured principle is material on at
+   least two development datasets, it is the consistently material simple
+   principle; stop before adaptation with
    `simple_corruption_principle_sufficient`;
-4. material best arms differ across the pre-declared role classes under the
-   role-heterogeneity rule below: authorize B2 with
-   `adaptive_corruption_opportunity_present`.
+4. Level 3: authorize B2 only when at least two pre-declared role classes each
+   have a valid winner with mean `Delta_random >= 0.03` and the winning
+   structured arm differs between those classes;
+5. if corruption matters relative to C_clean but no structured arm is
+   consistently material on two datasets and the Level-3 contrast is absent,
+   terminate with `random_corruption_sufficient`.
 
-The B2 unlock is frozen before B1: at least two role classes must each have a
-valid dataset with mean `Delta_clean >= 0.03`, and the argmax arm must differ
-between at least two of those classes.  A singleton generic-control class
-cannot trigger B2 by itself.
+The B2 unlock is frozen before B1. A singleton generic-control class cannot
+trigger B2 by itself. `Delta_clean` therefore answers “does corruption
+matter?”, while `Delta_random` answers the separate question “does a
+domain-aware principle add value beyond random corruption?”. If both the simple
+and Level-3 conditions hold, the Level-3 adaptive authorization takes
+precedence.
 
 ### B2 — adaptive location necessity
 
@@ -125,6 +159,8 @@ cannot change after holdout results.
 ## 5. Explicit no-go rules
 
 - B1 has no material opportunity: stop all adaptive/GAN work.
+- B1 shows corruption impact but no structured arm exceeds C0 materially:
+  `random_corruption_sufficient` and stop all adaptive/GAN work.
 - A fixed support/value principle is sufficient: do not add a learner.
 - Learned location does not beat static-hard: stop before a generator.
 - A generator does not beat learned location: `generator_not_necessary`.

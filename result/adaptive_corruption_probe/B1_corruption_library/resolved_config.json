@@ -70,9 +70,6 @@
     0,
     7
   ],
-  "formal_performance_run_started": false,
-  "git_head_at_audit": null,
-  "git_head_status": "git_metadata_unavailable_or_non_git_source_tree",
   "h0_support_threshold_ratio": 0.05,
   "holdout_seeds": [
     42,
@@ -117,6 +114,7 @@
     "labels_used": false,
     "must_pass_before_real_null_decision": true
   },
+  "positive_control_status": "completed_valid",
   "primary_seeds": [
     42,
     123,
@@ -133,6 +131,7 @@
     "logs",
     "caches"
   ],
+  "raw_artifacts_published": false,
   "role_by_dataset": {
     "Baron Human": "registered_scrna_count_2",
     "Campbell": "registered_scrna_count_3_boundary_control",
@@ -141,6 +140,7 @@
     "hate_speech": "sparse_text_2",
     "sms_spam_collection": "sparse_text_1"
   },
+  "stage": "B1",
   "structured_arms": [
     "C1_ValueOnly",
     "C2_SupportOnly",

@@ -1,0 +1,16 @@
+{
+  "audit": "deterministic_local_contract",
+  "project": "learned_relation_rule_probe",
+  "stage": "A1",
+  "overall_verdict": "PASS_WITH_DIAGNOSTIC_QUALIFICATION",
+  "scorer_view_rows": 18,
+  "fold_rows": 90,
+  "oof_coverage": 1.0,
+  "anchor_disjoint": true,
+  "labels_used_in_feature_extraction": false,
+  "diagnostic_supervision": true,
+  "deployable_label_free_rule": false,
+  "terminal_decision": "predictable_reference_not_actionable_for_selection",
+  "next_stage_authorized": false,
+  "scope_qualification": "three burned development datasets; diagnostic ceiling only"
+}

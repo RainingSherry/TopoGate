@@ -27,8 +27,8 @@
     7
   ],
   "formal_performance_run_started": false,
-  "git_head_at_audit": "c80877cf904e41950315d37b95374825c33a7362",
-  "git_head_status": "verified",
+  "git_head_at_audit": null,
+  "git_head_status": "git_metadata_unavailable_or_non_git_source_tree",
   "holdout": {
     "disjoint_from_current_panel": true,
     "future_track_b_disjointness_required": true,
@@ -50,7 +50,7 @@
       "sector__libsvm_sparse_highdim"
     ],
     "source_relpath": "reports/representation_consumer_probe/STAGE5_HOLDOUT_MANIFEST.json",
-    "source_sha256": "044d3b6078bf5985414e718cd117a8772e9d278d4239c66ed0c0c4e74140560d",
+    "source_sha256": "6d9afa1f6d90f77d8836e9f877f6567ebb7c7621ba3d022622e2488c9fb8b2cb",
     "status": "dormant_due_to_adapter_not_estimable",
     "used_by_this_project": false
   },

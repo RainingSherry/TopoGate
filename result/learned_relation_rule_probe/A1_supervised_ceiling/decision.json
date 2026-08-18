@@ -1,0 +1,13 @@
+{
+  "authorized_next_stage": null,
+  "deployable_label_free_rule": false,
+  "diagnostic_supervision": true,
+  "material_dataset_count": 0,
+  "material_datasets": [],
+  "median_capture_sup_material": null,
+  "next_stage_authorized": false,
+  "primary_gate_pass": false,
+  "stage": "A1",
+  "status": "predictable_reference_not_actionable_for_selection",
+  "terminal_reason": "A1 supervised actionable ceiling did not meet frozen 2-of-3 and median-capture gate"
+}

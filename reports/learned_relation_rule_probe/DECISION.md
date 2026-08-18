@@ -1,15 +1,17 @@
 # Learned-relation-rule probe — current decision
 
-`S0_FREEZE` is complete as a protocol artifact only.  A1 is authorized to be
-implemented/run after the contract tests pass.  No A1 performance result,
-learned selector, transfer claim or holdout claim exists yet.
+The formal A1 diagnostic ceiling is complete.  Its five-fold anchor-disjoint
+OOF contract passed, but none of the three burned development datasets reached
+the frozen `Delta_sup >= 0.03` material gate.  A1 therefore terminates without
+authorizing A2--A5.
 
 ```yaml
-stage: S0
-status: completed_valid
-primary_gate_pass: null
-next_stage_authorized: true
-authorized_next_stage: A1
-terminal_reason: null
-formal_performance_run_started: false
+stage: A1
+status: predictable_reference_not_actionable_for_selection
+primary_gate_pass: false
+next_stage_authorized: false
+authorized_next_stage: null
+terminal_reason: frozen 2-of-3 material Delta_sup and median-capture gate failed
+diagnostic_supervision: true
+deployable_label_free_rule: false
 ```

@@ -1,0 +1,4 @@
+dataset,H_pool_mean,best_scorer,best_view,Delta_sup_mean,Capture_sup,material_delta_pass,capture_gate_pass,seed_spread
+cnae9,0.21572025184857826,TinyMLP,No-rank,-0.015739624493222932,-0.07296312867403444,False,False,0.022194718444058792
+Campbell,0.19144426144998103,Logistic,No-geometry,0.024502702428774132,0.12798870147996572,False,False,0.1300010763872087
+sms_spam_collection,0.36710802147536653,Logistic,Full,-0.3002320620592062,-0.8178302965230964,False,False,0.46824663767399494

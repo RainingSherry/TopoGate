@@ -1,0 +1,30 @@
+{
+  "capture_threshold": 0.25,
+  "datasets": [
+    "cnae9",
+    "Campbell",
+    "sms_spam_collection"
+  ],
+  "diagnostic_target": "pool_reference_membership_from_inherited_O_pool",
+  "folds": 5,
+  "labels_used_during_fit": false,
+  "material_delta_ari": 0.03,
+  "project_id": "learned_relation_rule_probe",
+  "protocol_id": "learned_relation_rule_probe_a0_v1",
+  "reference": "R_inherited_matched_random_read_only",
+  "scorers": [
+    "Logistic",
+    "TinyMLP"
+  ],
+  "seeds": [
+    42,
+    123,
+    7
+  ],
+  "stage": "A1",
+  "views": [
+    "Full",
+    "No-geometry",
+    "No-rank"
+  ]
+}

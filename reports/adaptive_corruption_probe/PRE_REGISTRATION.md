@@ -39,6 +39,10 @@ before B1.
 Support/value matching is audited per run.  Requested mask ratio alone is not
 accepted as proof of matching; effective changed coordinates and magnitude
 must be recorded.
+The common pair-feasible budget is frozen as
+`m_i=min(ceil(0.25*active_i), floor(active_i/2), inactive_i)` and every arm
+changes `2*m_i` coordinates.  If an arm cannot meet this exact budget it is
+`protocol_mismatch`/`incomplete_compute`, never a negative result.
 
 ## Estimands and gates
 
@@ -48,11 +52,29 @@ Delta_random(C) = ARI(C) - ARI(C0_MatchedRandom)
 H_corr          = max_C Delta_clean(C)   (tested-library diagnostic only)
 ```
 
+The three-level decision hierarchy is frozen before any B1 result is
+inspected:
+
+1. **Corruption matters (Level 1).** Report
+   `ARI(C0_MatchedRandom)-ARI(C_clean_no_corruption)` and the full-library
+   `Delta_clean` values.
+2. **A structured principle beats random (Level 2).** For each structured arm
+   `C1--C4`, report `Delta_random(C)=ARI(C)-ARI(C0_MatchedRandom)`.
+3. **Adaptation is necessary (Level 3).** Only if at least two role classes
+   each have a valid winner with mean `Delta_random >= 0.03`, and those winners
+   are different structured principles, may B2 start.
+
+If Level 1 is positive but Level 2/3 does not establish a structured advantage,
+the terminal label is `random_corruption_sufficient`: corruption has an
+observable effect, but the evidence does not justify a domain-aware/adaptive
+corruption model.
+
 ```yaml
 B1_sensitivity: a pre-registered unlabeled synthetic support/value fixture must detect its known perturbation; otherwise protocol_insensitive
-B1_no_go: after sensitivity passes, abs(Delta_clean(C)) < 0.03 for every valid arm/dataset role
-B1_simple: one fixed principle is consistently material relative to C_clean; stop before B2
-B1_adaptive: at least two predeclared role classes each have a material valid winner and their winning arms differ
+B1_no_go: after sensitivity passes, abs(Delta_clean(C)) < 0.03 for every valid arm/dataset role and random-vs-clean is < 0.03
+B1_random_sufficient: corruption is material relative to C_clean but no structured C1--C4 has mean Delta_random >= 0.03 on the required role comparison
+B1_simple: one fixed structured principle has mean Delta_random >= 0.03 on >=2 development datasets; stop before B2
+B1_adaptive: at least two predeclared role classes each have a material valid Delta_random winner and their winning structured arms differ
 B2_gate: LearnedHard beats StaticHard by >= 0.03 on pre-registered primary comparison
 B3_gate: Generator beats LearnedMasker by >= 0.03; otherwise generator_not_necessary
 ```
@@ -70,7 +92,7 @@ Track A's final holdout and from this B1 development panel; overlap is
 `protocol_mismatch`.
 
 For every C1--C4 arm, `Delta_clean` is paired against the same C_clean
-no-corruption run; C0 is secondary only.  ARI is the clustering endpoint and
+no-corruption run and `Delta_random` against the same C0 run.  ARI is the clustering endpoint and
 `L_rec` is a degradation-monitor diagnostic, not a promotion criterion.  The
 per-dataset three-seed standard deviation and range are reported as the
 descriptive noise floor around `0.03`, not as inferential intervals.
@@ -102,6 +124,7 @@ protocol_insensitive
 corruption_not_current_bottleneck
 simple_corruption_principle_sufficient
 adaptive_corruption_opportunity_present
+random_corruption_sufficient
 adaptive_model_not_necessary
 generator_not_necessary
 incomplete_compute

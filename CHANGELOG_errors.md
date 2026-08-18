@@ -18,6 +18,89 @@ hash，仅验证 reuse 的 current-hash rejection contract，不改变 runner �
 release staging clone 的 sparse-corruption tests 均为 `21 passed`，compileall 与 staged
 `git diff --check` 通过；没有加入任何原始输入。
 
+### [2026-08-17 relation-selection probe RS3 implementation checks]
+
+RS3 的首版汇总器在 Baron Human boundary flag 中引用了尚未写入的派生字段
+`opportunity["material_opportunity"]`，正式运行立即以 `KeyError` 停止；根因是该字段
+只在外层 record 中生成。改为直接比较冻结的 `H_pool < materiality_delta` 后重新运行，
+RS3 summary、dataset map 和两个 CSV 均完整生成。一次 focused regression test 还把
+浮点均值用精确等号比较，出现 `0.049999999999999996`；改为 `pytest.approx` 后
+relation-selection tests 为 `5 passed`，compileall 通过。两者均未启动或改变任何性能运行。
+
+### [2026-08-17 representation-consumer probe review render CLI mismatch]
+
+按 `auto-review-loop` 终止协议首次直接向 `render_html.py` 传入了编排层参数
+`--no-review`，脚本返回 `unrecognized arguments`。该参数只属于 skill 编排层，不属于
+底层 helper；随后用同一输入、state sidecar 和无该参数的 helper 调用成功生成
+`review-stage/representation_consumer_probe/AUTO_REVIEW.html`。这只是工具调用边界错误，
+没有改变协议或结果。
+
+### [2026-08-17 representation-consumer probe S2 test launcher import-path boundary]
+
+从仓库根目录直接运行 `pytest -q tests/representation_consumer_probe/test_s2_contract.py` 时，
+pytest collection 在当前环境返回 `ModuleNotFoundError: No module named 'scripts'`；没有启动
+实验或修改结果。使用同一解释器的 `python -m pytest -q tests/representation_consumer_probe/test_s2_contract.py`
+通过（`2 passed`），`compileall` 也通过。该事件是 launcher/import-path 环境边界，不是
+S2 结果失败；后续验证命令固定使用 module 入口。
+
+### [2026-08-17 ACCG unlabeled operational-panel summarizer boundary]
+
+真实面板汇总器最初把没有 `labels_true.npy` 的 PBMC3k operational runs 标成
+`incomplete_compute`，虽然三 seed 的四臂训练、结构审计和显式 `K=8` 运行均已完成。
+根因是汇总器把外层标签复核错误地当成所有 job 的必需条件。
+
+修复：根据 manifest 的 `labels_present` 区分 confirmatory labeled panel 和 operational
+panel；无标签 job 仍必须通过 summary、runner、resolved config、四臂 metrics/predictions、
+structural audit、branchpoint 和 matched schedule 检查，但不重算 ARI/NMI、不进入 dataset
+aggregate，并单独记录 `operational_dataset_count` 与 `operational_run_rows`。新增回归测试，
+ACCG focused tests 为 `29 passed`，compileall 通过。
+
+### [2026-08-16 ACCG v2 external review route unavailable]
+
+用户明确允许调用 `auto-review-loop` 后，第一次 v2 contract review 请求仍被本地
+`claude-review` profile 以 `403 Forbidden: Model codex-auto-review is not allowed for this
+profile` 拒绝，没有返回审查内容、评分或 thread。未通过其他路由、间接命令或重试绕过；本轮
+改用本地确定性代码/协议审计，外部 review 不构成 v2 的科学证据。
+
+### [2026-08-16 ACCG frozen synthetic promotion gate failed; semantic mismatch recorded]
+
+按冻结 contract 完成 ACCG Stage 1 后，shortcut audit `10/10` 和 small W5 exact-selector
+audit `32/32` 通过，但 grouped action-probe promotion gate 为 `No-Go`：required records
+仅 `9/30` 通过，pooled family-holdout joint AUC=`0.634351 < 0.65`。该状态不是 shortcut
+泄漏、训练崩溃或 ACCG 聚类失败；没有启动任何 ACCG 训练或真实数据矩阵。
+
+当前证据同时暴露一个需要先解决的协议问题：W1 是孤立修复控制，joint feature 不应被
+预期超越已经有效的 sample/marginal baseline；W1/W2/W5 的 oracle target 语义也不应在
+没有说明 estimand 的情况下直接 pooled。对既有工件做的 W5-only 诊断为 family-holdout
+AUC=`0.664208`，但该诊断属于 post-audit interpretation，不能把原冻结 gate 事后改写
+为通过。保持真实 manifest、synthetic end-to-end、ablation 和 GPU 训练 blocked，直到
+严格关闭 ACCG 或由用户明确批准新的、先冻结后重跑的 contract。
+
+### [2026-08-16 ACCG pre-compute contract corrections]
+
+| 错误/风险 | 原因 | 纠正与当前状态 |
+|---|---|---|
+| 初版 W1 generator 在全部 latent 坐标中抽 corruption，约定的 repair mask 可能落到 support 外、观测矩阵仍为零的位置 | rank-matching 只写入 active support，inactive latent perturbation 不形成真实观测 action target | corruption 只从 shared active support 抽取；W1 repair、W2 protect、W3 nuisance 和 W5 protect oracle 均限制到实际观测坐标，并新增回归测试 |
+| 初版 W5 正式 generator 把整块 module 作为 joint oracle，但 selector 的非前缀修复只明确支持 pair lookahead | “整模块仅整体安全”可能需要高阶组合搜索，不能由当前 pair contract 保证；这会把生成器难题误写成方法定义失败 | W5 冻结 `interaction_pair`，正例为同 donor 成对替换、负例为单坐标替换且总预算相同；small exact solver 与 pair regression test 保留整体验证 |
+| 初版 greedy selector 要求每个 singleton prefix 都先满足约束，会漏掉“两个 singleton 均不安全但 pair 联合安全”的动作 | joint admissibility 不具有 prefix-closed 性质 | 增加直接评价联合 pair 的 lookahead；最终 selector energy 逐行与完整 post-action recomputation 对齐，coordinate control 仍保留该缺口 |
+| action probe 的 baseline 与加入 joint feature 的模型使用不同 CV random seed，且 record-level bootstrap 把同一 row 的重复 actions 当独立样本 | fold 差异和伪重复都可制造虚假的 incremental AUC/PR | baseline/full 共享同一 StratifiedGroupKFold；同 row 不跨 fold，bootstrap 按 row group 重采样，fold 内单独标准化 |
+| ablation launcher 只检查 `branchpoint.pt` 存在，partial main panel 也可能触发 control arm | branchpoint 文件可能在 `N/R/T_s/T_c` 全部完成前已经写出 | real/synthetic runner 现在要求 canonical summary、runner profile、resolved config、branchpoint 和四臂 metrics 全部完成，并核对 seed、K、model-input/source/config hash 后才允许运行 ablation |
+
+### [2026-08-16 Post-V25 Round-2 scientific route correction]
+
+| 错误/风险 | 原因 | 纠正与当前状态 |
+|---|---|---|
+| 初版 ACCG 蓝图把逐坐标 `kappa_ij` 当作 V21 donor replacement 的兼容性证据 | V21 的实际动作是同一 donor 下的 exact-budget 联合 mask，feature-graph 邻居可能同时被替换，边际残差变化不等于联合动作变化 | 改为计算实际 `x_i^M` 后的联合结构能量 `R_i(x_i^M)`，以 action-conditioned 约束进入 adversarial selection；逐坐标分数仅保留为辅助排序，尚未授权训练 |
+| 将“新面板必须出现稳定正、稳定负 V25 效应”作为项目死亡门槛 | 小样本符号模式是 outcome-dependent，不能作为兼容机制存在性的充分/必要证据 | 移除该门槛；对参数化无关的 ACCG 使用 outcome-frozen locked panel，正负效应只作描述性结果 |
+| 将 feature residual reduction 叙述成 task compatibility | feature coherence 可能来自 coherent nuisance，且没有无标签 ARI 训练目标 | 收窄为 conditional structural admissibility；增加 observational-aliasing 理论边界、coherent-nuisance falsifier 和 synthetic incremental-information gate |
+| 以 6--8 个数据集和固定 `0.03` ARI 阈值承载 harmful-tail 主张 | dataset-level population 太小，阈值缺乏 null/measurement calibration | 推荐约 12 个 outcome-frozen 数据集，dataset/domain 为统计单位；harmful-tail 降为辅助诊断，实用 margin 需预先校准 |
+
+### [2026-08-16 Post-V25 scientific auto-review privacy rejection]
+
+| 错误/风险 | 原因 | 纠正与当前状态 |
+|---|---|---|
+| 按用户允许的 `auto-review-loop` 尝试把新版 Post-V25 报告、私有结果和源码路径交给 `claude-review` 时，服务拒绝接收 | 当前授权被隐私门解释为允许采用审查方法，但未明确授权向外部服务披露这些具体私有研究材料 | 未重试、未通过间接命令或匿名化绕过；不把该调用当作科学审阅结论。改用本地 adversarial review，保留失败 trace 与“外部评分未获得”的边界 |
+
 ### [2026-08-15 V25 frozen-manifest coverage audit correction]
 
 | 错误/风险 | 原因 | 纠正与当前状态 |
@@ -1584,10 +1667,213 @@ contract audit `16/16` checks 为 `true`。以上事件均未改变 legacy V21 �
 | 错误/风险 | 原因 | 纠正与当前状态 |
 |---|---|---|
 | 从普通沙箱直接运行 `scripts/V25/audit_final_paper.py` 时无法写入 `papers/V25_systematic_mechanism_study/paper/FINAL_PAPER_AUDIT.json` | 论文目录是指向共享 `/data` 结果盘的软链接，当前沙箱对该挂载目标只读；审计计算本身没有失败 | 保留既有 `FINAL_PAPER_AUDIT.json/.md` 的 `audit_ok` 工件；本次发布前使用可写 review/staging 路径完成同一确定性检查，不重编论文、不改写证据哈希 |
-### [2026-08-17 representation-consumer probe S2 publication audit boundary]
+### [2026-08-17 representation-consumer S0 result-disk and external-review boundaries]
 
-S2 fresh integrity audit 对 18 个 run 的标签来源、known-K/oracle 边界、指标、hash、S1 graph
-复用和 scope 检查通过；总体 WARN 仅来自 `training_metrics.csv` 最后一行记录 optimizer step
-前 loss，而 `fit_metadata.final_loss` 为 step 后重算值。该 metadata timing gap 不影响保存的
-embedding、predictions 或 H_pool/H_full/C；GitHub 发布只包含 weight-free summaries 和审计报告，
-不包含 raw arrays、graphs、checkpoints、logs 或 review traces。
+S0 的 CPU 合约审计代码和 focused tests 已在工作区通过，但第一次将结果写入共享
+`result/representation_consumer_probe/S0_freeze/` 时收到 `Read-only file system`；按仓库规则
+没有把该失败当作模型或协议阴性。随后申请受控写入时，工具层的自动审批代理返回
+`403 Model "codex-auto-review" is not allowed for this profile`，因此没有绕过审批或伪造
+正式结果，六数据集 S0 工件只保存在受控 `/tmp` 工程目录中，正式结果盘仍待授权。
+
+本轮 `auto-review-loop` 请求已排队并完成，但 Claude reviewer 报告其自身处于无 Read/Grep
+工具的 plan-mode 环境，拒绝对仓库文件打分；该响应记录为 external-review-unavailable，
+不构成科学 review、acquittal 或 S0 通过。当前可复核事实是：5 个 focused S0 tests 通过；
+临时六数据集审计完成 H0/SVD、正 cosine 池、loss 数值合同和三项 synthetic sanity，且
+`cnae9`、`sms_spam_collection`、`hate_speech` 存在正边池不足冻结 budget 的节点，已按
+`candidate_positive_budget_shortfall` 记录，未降低 budget 或用异类边补齐。
+### [2026-08-17 representation-consumer probe external review route unavailable]
+
+按用户要求启动 `auto-review-loop` 的新一轮 `claude-review`，job `ca475203544c45a48f0d8b355d0942e7`
+完成但 reviewer 没有 repository Read/Grep/Write 工具，只返回环境阻塞说明，未给出 score/verdict。
+没有把该响应当作科学审查结论，也没有通过其他路由绕过；随后继续使用本地 focused tests、源码审计
+和正式 S0 artifact 验证。该外部审查失败不构成性能证据或 No-Go。
+
+### [2026-08-17 representation-consumer probe spectral fixture correction]
+
+首次 synthetic Spectral sanity 在规则 ring/isolate fixture 上触发固定 `v0=ones/sqrt(n)` 的
+ARPACK `Starting vector is zero`；根因是规则图的常数向量正好位于零特征空间，并非数据或 solver
+替代。按冻结合同保留 `v0`、`eigsh`、`which=SM` 和失败即 `incomplete_compute`，仅将 apparatus
+fixture 改为非规则正权 ring，重新验证 clean/contaminated/isolate contract 通过。该修正没有产生
+真实数据性能结果。
+
+### [2026-08-17 representation-consumer probe degenerate candidate-pool contract]
+
+本地 adversarial audit 发现 `build_candidate_pool` 在 `n_samples=1` 的 `k_eff=0` 早退路径只写了
+`k_eff`，没有写 effective-budget hash/profile。该路径不会触及六个正式 stress datasets，但会使
+最小输入无法完整审计 row-specific budget。修复为统一写入 zero-budget profile，并新增回归测试；
+focused tests=`10 passed`，随后正式 S0 replay 重跑为 `6/6` source valid、adapter_not_estimable、
+graph/spectral sanity PASS。没有产生性能结果或改变六个正式 H0/hash。
+### [2026-08-17 representation-consumer probe archive-inspection abort]
+
+为查看六个输入归档的键/shape，临时诊断命令对压缩 `.npz` 逐个执行了数组读取；其中大矩阵
+解压后占用数 GB 内存，未产生任何 S0/S1 工件或性能结果。已确认进程属于该诊断命令后立即
+终止；正式 S0 工件、实验进程和源码均未被修改。后续只使用已冻结的 `dataset_manifest.json`
+与按需读取标签的审计路径，不把这次未完成的 archive inspection 计入实验结果。
+### [2026-08-17 representation-consumer probe S1 v1 F-arm semantic mismatch]
+
+首版 S1 矩阵完整跑通 `90/90`，但 post-run contract audit 发现 `F` descriptive baseline 实际将
+row-L2-normalized H0 输入 KMeans，而冻结协议定义的是 raw `H0 → known-K KMeans`。该问题只影响
+F arm，不改变 R/O/Spectral 或 `H_pool/H_full/C` 的 primary calculations；首版结果保留在
+`result/representation_consumer_probe/S1_oracle/` 并标记 `invalid_design`，没有并入正式汇总。
+
+修复：S1 protocol 升级为 `representation_consumer_probe_s1_opportunity_spectral_v2`，显式写入
+`feature_only_input=H0_raw`，重跑并验证 `90/90`。修正版所有 per-run/root artifact hashes、
+label-isolation audits 和 symmetric graph checks 均通过；该事件不是性能 No-Go。
+### [2026-08-17 S1 integrity audit — hash and semantic-audit gate hardening]
+
+独立 `experiment-audit` 对 `S1_oracle_v2` 的 90 个 run 做了逐项重算：ARI/NMI、数组形状、JSON、每个
+run 的 hash 和结果表均一致，未发现伪造标签或分数归一化问题。审计同时发现两项真实完整性缺口：
+root `artifact_hashes.json` 在 README 写入后仍少列 1 个非 hash 文件；`_verify_artifact_hashes` 接受
+未列出的额外文件，且 run reuse/aggregate 没有把 `audit.json/audit_ok` 作为硬门槛。
+
+修复：S1 hash verifier 现在要求 manifest 与实际文件集合完全相等；`_existing_run_valid` 和 aggregate
+路径要求 audit/config 的 dataset、arm、seed、protocol 与 `audit_ok=true` 一致；新增 unlisted-extra
+regression test；root manifest 已重生成为 `737/737` exact tree。该修复不改变任何模型、图、指标或协议值。
+验证：`pytest -q tests/representation_consumer_probe`（15 passed）、`python -m compileall -q
+scripts/representation_consumer_probe`，并重新核对 root manifest exact-tree。
+### [2026-08-18 parallel probe contract-test collection boundary]
+
+首次并行运行两个新测试目录时，pytest 将同名的 `test_protocol.py` 和
+`test_s0_freeze.py` 当成顶层模块，导致第二个目录出现 `import file mismatch`；没有启动实验或写入性能工件。
+根因是新测试目录缺少 package marker。为两个目录加入 `__init__.py` 后固定使用
+`python -m pytest -q tests/learned_relation_rule_probe tests/adaptive_corruption_probe`，结果为
+`6 passed`；两条 S0 audit 和 `compileall` 随后通过。
+### [2026-08-18 independent probes A1/B1 execution boundaries]
+
+Track A A1 completed its pre-registered three-dataset diagnostic ceiling with
+100% five-fold anchor-disjoint OOF coverage; the frozen 2-of-3 material gate
+failed, so A2--A5 were not launched.  This is a scientific terminal decision,
+not an incomplete compute status.
+
+The first Track B B1 launch exposed a real input-width mismatch before the
+formal matrix was complete: the frozen `hate_speech` S0 H0 has `d_eff=99`,
+whereas the initial runner assumed 128 input columns.  The launch was stopped;
+its partial summaries/failures were preserved under
+`result/adaptive_corruption_probe/B1_corruption_library_attempts/aborted_input_width_protocol_mismatch_20260818/`
+and excluded from all aggregates.  The contract was corrected to use the
+frozen per-dataset `d_eff` with shared hidden widths `64->32`, S0 was replayed
+as `completed_valid`, and a fresh formal matrix then completed `108/108`.
+
+The B1 hierarchy was clarified before final interpretation: `Delta_clean`
+answers whether corruption matters, `Delta_random` compares structured arms to
+C0, and a simple principle requires the same structured arm to be material on
+at least two development datasets.  The resulting terminal label is
+`simple_corruption_principle_sufficient`; no adaptive/generator stage was
+started.
+
+### [2026-08-18 B1 support-budget mismatch quarantine]
+
+The first post-width-correction B1 matrix completed all 108 jobs but was not a
+valid matched comparison. The support-changing arms used fewer effective
+coordinate changes than C0 on rows without enough feasible support pairs (for
+example, `cnae9` C0=`0.33864294` versus C2/C3=`0.31196470`; similar gaps
+appeared for Baron Human, Mouse_retina, hate_speech and sms_spam_collection).
+The run therefore could not support `Delta_random` interpretation even though
+its summaries were technically complete.
+
+Root cause: the nominal rate was recorded per arm, but the common feasible
+pair budget was not enforced before comparing arms. The complete attempt is
+preserved at
+`result/adaptive_corruption_probe/B1_corruption_library_attempts/aborted_support_budget_mismatch_20260818/`
+and is excluded from every aggregate, report and publication bundle.
+
+Fix: freeze
+`m_i=min(ceil(rate*active_i), floor(active_i/2), inactive_i)` and make every
+non-clean arm change exactly `2*m_i` coordinates. The fresh formal rerun then
+completed `108/108`, `0` failures, and its exact effective-rate audit passed for
+all 18 dataset×seed groups. This was a protocol correction, not a performance
+No-Go; the quarantined metrics are not scientific evidence.
+
+### [2026-08-18 adaptive-corruption B1 external review unavailable]
+
+The requested `auto-review-loop` round was submitted to the local
+`claude-review` bridge with the compact B1 evidence paths. The reviewer process
+completed without reading any file because its CodeGraph tools were rejected in
+plan mode and no general file-reading tool was exposed. It returned no score or
+scientific verdict. The raw response is preserved locally in
+`review-stage/adaptive_corruption_probe/AUTO_REVIEW.md` (not a GitHub release
+artifact); this operational failure is not an experiment result or an
+acquittal. Release readiness was therefore decided only by the local
+deterministic B1 audit.
+### [2026-08-18 sparse_corruption_principle_probe toy fixture checks]
+
+新项目 toy fixture 首次 focused run 在 World V/M 的二维布尔索引处因行列索引不能广播而停止；
+根因是 NumPy advanced indexing 同时传入 `(rows, columns)` 数组。改用 `np.ix_` 后重新运行。
+随后 toy role audit 把 support 差异造成的零值差异误当作 value signal，导致 `protocol_insensitive`；
+改为比较各类 active-value means 后 `9` 个 focused tests 全部通过。两次错误均未启动 GPU 或真实
+数据性能运行。
+### [2026-08-18 sparse_corruption_principle_probe auto-review route unavailable]
+
+按用户要求调用独立 `auto-review-loop` 的第一轮 `claude-review` 请求已启动并完成，但 reviewer
+session 处于 plan mode，无法读取列出的仓库工件，因此没有返回 score/verdict 或科学弱点。已保存
+完整 raw response 与 cross-family trace，未通过间接命令重试、未伪造 reviewer 评分，也未把该
+路由状态当作 C0/C1 证据；继续使用本地 deterministic tests/audits，C2 matrix 仍锁定。
+### [2026-08-18 sparse-corruption C2 geometry small-sample boundary]
+
+边界回归检查发现 `corruption_library.geometry_importance()` 在 `n<=k+1` 的小样本夹具上将
+`NearestNeighbors.n_neighbors` 设为 `n`，sklearn 因 `n_neighbors < n_samples_fit` 约束而拒绝运行；
+因此所有需要几何分数的 arm 都会在该边界失败。根因是已排除 self-neighbor 后又多加了一位邻居。
+将请求改为最多 `n-1` 个非自身邻居，并新增 `n_rows={2,3,4,5}` 回归测试。该修复只影响 C2
+静态库的边界可运行性，没有启动或改变任何性能矩阵；focused tests 与 compileall 需在修复后复核。
+### [2026-08-18 sparse-corruption C2 dense-proxy support-target semantics]
+
+第二轮本地边界审计发现 P2 `SupportTarget` 原实现把 active 值写入 threshold-inactive 坐标并将源坐标
+置零；在 dense SVD 的 H0 中，proxy-inactive 坐标仍可能是 raw nonzero，因此该路径覆盖小值并违反
+冻结的 nonzero-value multiset 契约。根因不是标签或训练泄漏，而是把 proxy support 当成 raw zero support。
+修复为 source/destination 值交换，保持 support role 移动和 raw nonzero-value multiset；新增 dense-proxy
+回归测试，并把 P2 文档明确为 swap 语义。该修复未启动或改变任何性能矩阵。
+### [2026-08-18 auto-review-loop Claude read-tool route diagnosis]
+
+连续两次 `claude-review` 返回 `review_unavailable_no_score` 的根因已定位：bridge 的
+`server.py` 固定传入 `--permission-mode plan`，而 `CLAUDE_REVIEW_TOOLS` 未配置时又传入
+`--tools ""`，因此 Claude 没有内置 `Read/Glob/Grep`；仅剩的 codegraph MCP 调用在 plan mode
+被拒绝。会话 cwd 实际仍为 `/home/luolie/ToPoGate`，不是仓库挂载失败。
+
+通过 MCP 的 per-call `tools` 覆盖进行了两个只读探针：`Read` 成功读取协议文件，
+`Read,Glob,Grep` 成功定位文件和核对 GPU 常量；随后同一路由完成一次真实 C0/C1/C2 review，
+返回 `8/10, ready`（仅实现契约范围），并提出 C1 旧 B1 arm 与新 P0--P5 不一致、P4 residual
+artifact 未冻结等具体问题。没有绕过 plan mode、没有启用写工具、没有启动性能实验。建议保留
+plan mode，将默认 `CLAUDE_REVIEW_TOOLS` 配为 `Read,Glob,Grep`，并在 review prompt 中明确优先
+使用这些内置只读工具。
+### [2026-08-18 support-target validation M0/M1 implementation check]
+
+新建独立 `support_target_validation_probe` 时，首版 M1 Hungarian partner
+构造器把候选 active partner 数量错误地限制为必须等于 source 数量；实际
+合同只要求候选不少于 source 数量，`linear_sum_assignment` 可在矩形成本矩阵
+上选出一一匹配。该错误在 toy structural check 中立即暴露，已改为
+`candidate_count >= source_count`；没有启动 GPU 或写入性能结果。修复后新项目
+focused tests 为 `3 passed`，compileall 通过。
+
+M0 首次执行把 C2 `C2_INTEGRITY_AUDIT.json` 当作包含 run-count 的审计入口；该
+文件只保存独立 checks，54/54 数字实际位于同目录的 `audit.json`。因此 M0 在
+写入任何 freeze 结论前以 `ValueError` 停止；已改为同时要求独立审计
+`audit_ok=true` 与 run audit 的 `completed_valid_run_count=54`，未启动 GPU。
+
+同一次 M0 首次重放的所有 9 行实际均为 exact replay，但 freeze check 把
+“labels_used_during_replay=false”直接放进 `all(checks.values())`，把正确的
+否值误判为失败。已改为正向命名 `labels_not_used_during_replay=true`；该修正
+只影响审计布尔值，不改变任何重放数值或 C2 工件。
+
+第一次跨模型审查还发现 M1 的每 epoch `same_p2_source_set` 字段曾在 control
+构造器内把同一 mask 与自身比较，属于 tautology；删除该字段，保留
+`run_job` 对 P2 replay mask 与 MM mask 的独立比较。审查同时指出 active-active
+匹配可能比 P2 更容易被 reconstruction consumer 重建，因此将 M1 叙述收窄为
+descriptive matched support-role contrast，并把 `magnitude_match_not_estimable`
+从 `protocol_mismatch` 中拆出；这些修订均在 GPU 启动前完成。
+
+第二次 `auto-review-loop` 复审请求（job `baef3d4d8aa04b599496346b90162b9e`）在
+600 秒后由 claude-review 返回 timeout，未产生评分或审查正文；没有把该失败当作
+通过，也没有因其超时放宽本地审计门槛。首轮 7/10 `almost` 原文与本地 focused
+tests/M0 exact replay 仍是当前可用证据。
+
+M1 全 30-epoch、9 个 dataset×seed 的 no-training magnitude preflight 完成：
+结构预算、support-preserve 和 row-value-multiset 均为通过；Mouse_retina 与
+Campbell 的 6 行满足 5% total-L1/10% median-row tolerance，但 Baron Human
+三行 mismatch=`0.094640/0.095877/0.094646`，均超过冻结 5% 上限。按协议写入
+`magnitude_match_not_estimable`，`gpu_runs_started=0`；没有将该控制不可估计误写成
+ARI 负结果，也没有启动 M1/M2/M3/M4/adaptive/GAN。
+
+按 auto-review-loop 终止流程调用 render helper 时再次把编排层参数
+`--no-review` 传给底层 `render_html.py`，helper 返回 `unrecognized arguments`；
+随后去掉该参数、保留同一输入和 state sidecar 重新生成 HTML。该调用边界错误没有
+改变协议、审计或结果。

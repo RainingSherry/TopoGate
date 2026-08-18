@@ -4,7 +4,8 @@ Repository for the TopoGate research implementations and their reversible
 variant configurations. The current public snapshot includes the core V9-V22
 code paths, the independent post-V25 ACCG route, the independent
 `representation_consumer_probe` S0-S2 terminal study, the independent
-`sparse_corruption_principle_probe` C0-C2 terminal study, curated auditable
+`sparse_corruption_principle_probe` C0-C2 terminal study, the independent
+`support_target_validation_probe` M0-M1 preflight decision, curated auditable
 result tables, and concise evidence summaries; it
 does not publish papers or dataset binaries.
 
@@ -41,6 +42,10 @@ caller to provide input data and an output directory.
   corruption-principle result, compact aggregate tables, and independent
   integrity audit. C3 holdout, adaptive policy, GAN, and learned generator
   remain locked.
+- `reports/support_target_validation_probe/` and
+  `result/support_target_validation_probe/`: the M0 replay freeze, M1
+  magnitude-estimability preflight, and terminal decision. No M1 GPU
+  performance matrix was authorized; M2-M4 and adaptive routes remain locked.
 
 The public release is code-first. Result files are metadata-only summaries;
 raw arrays, checkpoints, worker logs, and smoke/debug directories remain

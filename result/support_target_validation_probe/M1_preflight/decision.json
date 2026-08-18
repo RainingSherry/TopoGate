@@ -1,0 +1,32 @@
+{
+  "completed_rows": 9,
+  "estimable_rows": 6,
+  "expected_rows": 9,
+  "formal_m1_gpu_runs_authorized": false,
+  "gpu_runs_started": 0,
+  "labels_used": false,
+  "later_stages_locked": true,
+  "non_estimable": [
+    {
+      "dataset": "Baron Human",
+      "dataset_total_relative_mismatch": 0.09464025169522806,
+      "median_row_relative_mismatch": 0.08418304771510743,
+      "seed": 42
+    },
+    {
+      "dataset": "Baron Human",
+      "dataset_total_relative_mismatch": 0.09587673013879222,
+      "median_row_relative_mismatch": 0.08382468743746259,
+      "seed": 123
+    },
+    {
+      "dataset": "Baron Human",
+      "dataset_total_relative_mismatch": 0.09464595447910634,
+      "median_row_relative_mismatch": 0.08372923965550834,
+      "seed": 7
+    }
+  ],
+  "non_estimable_rows": 3,
+  "status": "magnitude_match_not_estimable",
+  "structural_contract_passed": true
+}

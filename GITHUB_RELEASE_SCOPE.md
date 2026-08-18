@@ -25,6 +25,11 @@ audit summaries. It does not publish the paper or any paper source bundle.
   `result/sparse_corruption_principle_probe/`: compact C0-C2 protocol,
   static corruption-principle result tables, and independent integrity audit.
   C3 holdout, adaptive policy, GAN, and learned generator remain locked.
+- `reports/support_target_validation_probe/` and
+  `result/support_target_validation_probe/`: compact M0 replay audit, M1
+  magnitude-estimability preflight, and terminal decision. The M1 GPU matrix
+  was not authorized after the frozen control failed estimability; M2-M4 and
+  adaptive routes remain locked.
 - `result/final_results/`: one curated final result table or summary set for
   each audited version with non-smoke evidence, including V09-V14, V16.1, and
   V18-V22. The directory README records versions with no promotable result.

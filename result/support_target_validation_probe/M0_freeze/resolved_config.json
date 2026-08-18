@@ -1,0 +1,100 @@
+{
+  "corruption_rate": 0.25,
+  "development_panel": [
+    "Mouse_retina",
+    "Baron Human",
+    "Campbell"
+  ],
+  "directional_caveat": "MM swaps active values with active values and may be easier for reconstruction; therefore Delta_cross can be conservative/downward-biased for a support-crossing interpretation.",
+  "epochs": 30,
+  "estimand_scope": "descriptive_matched_support_role_contrast; not strict causal isolation",
+  "forbidden_gpu_ids": [
+    0,
+    7
+  ],
+  "gate": {
+    "material_delta_ari": 0.03,
+    "maximum_strong_negative_dataset_count": 0,
+    "minimum_passing_datasets": 2,
+    "minimum_positive_seed_signs_per_passing_dataset": 2,
+    "strong_negative_threshold": -0.03
+  },
+  "labels": {
+    "K_source": "benchmark_oracle_from_y_outer_readout_only",
+    "fit_inputs": [
+      "clean_H0",
+      "seed",
+      "replayed_P2_actions",
+      "matched_partner_actions"
+    ],
+    "forbidden_fit_inputs": [
+      "y",
+      "ARI",
+      "NMI",
+      "ACC",
+      "cluster_purity"
+    ],
+    "labels_allowed": "post_fit_outer_metrics_only"
+  },
+  "legal_gpu_pool": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "locked_stages": [
+    "M2_raw_x_bridge",
+    "M3_holdout",
+    "M4_full_backbone",
+    "adaptive_policy",
+    "GAN"
+  ],
+  "m0_protocol_id": "support_target_validation_probe_m0_v1",
+  "m1_control": "P2_MM_SupportPreserve",
+  "m1_protocol_id": "support_target_validation_probe_m1_v1",
+  "matching": {
+    "assignment": "deterministic_scipy_linear_sum_assignment",
+    "candidate_pair_l1": "2*abs(H0[source]-H0[active_partner])",
+    "objective": "absolute_pair_l1_difference",
+    "one_to_one": true,
+    "partner_positions": "active_only_excluding_all_P2_sources",
+    "source_positions": "exactly_replayed_P2_active_sources",
+    "target_pair_l1": "2*abs(H0[source]-H0[P2_inactive_destination])",
+    "uses_labels": false
+  },
+  "old_c2_protocol_id": "sparse_corruption_principle_probe_c2_v1",
+  "old_project_read_only": "sparse_corruption_principle_probe",
+  "p2_principle": "P2_SupportTarget",
+  "primary_endpoint": "Delta_cross=ARI(P2_reused)-ARI(P2_MM_SupportPreserve)",
+  "primary_seeds": [
+    42,
+    123,
+    7
+  ],
+  "project_id": "support_target_validation_probe",
+  "protocol_id": "support_target_validation_probe_m0_m1_v1",
+  "publication_exclusions": [
+    "raw_data",
+    "labels_true",
+    "arrays",
+    "embeddings",
+    "predictions",
+    "weights",
+    "checkpoints",
+    "logs",
+    "caches"
+  ],
+  "support_definition": {
+    "kind": "fixed_clean_row_threshold_on_dense_H0",
+    "ratio": 0.05,
+    "threshold": "max(1e-6,0.05*max(abs(clean_H0_row)))"
+  },
+  "support_interpretation_firewall": "Support in C2/M1 denotes threshold-defined support of dense H0, not raw-X zero/nonzero support; raw sparse-support claims require a separate validation.",
+  "tolerances": {
+    "dataset_total_l1_relative": 0.05,
+    "median_row_relative": 0.1,
+    "row_relative_eps": 1e-07
+  }
+}

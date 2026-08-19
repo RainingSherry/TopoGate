@@ -30,6 +30,11 @@ audit summaries. It does not publish the paper or any paper source bundle.
   magnitude-estimability preflight, and terminal decision. The M1 GPU matrix
   was not authorized after the frozen control failed estimability; M2-M4 and
   adaptive routes remain locked.
+- `reports/corruption_objective_compatibility_probe/` and
+  `result/corruption_objective_compatibility_probe/FINAL/`: frozen E0–E4 protocol,
+  compact E1/E1b cross-domain tables, integrity audits, and terminal
+  `STOP_GENERAL_CORRUPTION` decision. E2 objective work was not authorized;
+  raw-X E3 is descriptive only.
 - `reports/support_crossing_common_dose_probe/` and
   `result/support_crossing_common_dose_probe/`: compact D0/D1 protocol,
   constructive common-dose feasibility summaries, and terminal

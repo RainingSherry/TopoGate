@@ -46,6 +46,10 @@ caller to provide input data and an output directory.
   `result/support_target_validation_probe/`: the M0 replay freeze, M1
   magnitude-estimability preflight, and terminal decision. No M1 GPU
   performance matrix was authorized; M2-M4 and adaptive routes remain locked.
+- `reports/corruption_objective_compatibility_probe/` and
+  `result/corruption_objective_compatibility_probe/FINAL/`: frozen E0–E4 protocol,
+  compact cross-domain E1/E1b result tables, integrity audits, and terminal
+  `STOP_GENERAL_CORRUPTION` decision. The E2 objective matrix was not authorized.
 - `reports/support_crossing_common_dose_probe/` and
   `result/support_crossing_common_dose_probe/`: the independent D0/D1
   common-dose feasibility protocol, compact audit, and terminal

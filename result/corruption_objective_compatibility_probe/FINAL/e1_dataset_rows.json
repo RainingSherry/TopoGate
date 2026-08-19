@@ -1,0 +1,230 @@
+[
+  {
+    "ARI_means": {
+      "Clean": 0.7544559119561672,
+      "P0_Random": 0.4398339430776321,
+      "P2_SupportTarget": 0.8347320871911764
+    },
+    "dataset": "Mouse_retina",
+    "delta_clean_mean": 0.08027617523500907,
+    "delta_clean_positive_seed_count": 3,
+    "delta_clean_values": [
+      0.039388796826605676,
+      0.14324597158481944,
+      0.0581937572936021
+    ],
+    "delta_random_mean": 0.39489814411354435,
+    "delta_random_positive_seed_count": 3,
+    "delta_random_values": [
+      0.3553522402921872,
+      0.41335014466962333,
+      0.4159920473788225
+    ],
+    "nofit_ARI_means": {
+      "Clean": 0.5503123168036604,
+      "P0_Random": 0.6149138133063771,
+      "P2_SupportTarget": 0.14078844235917345
+    },
+    "nofit_delta_random_mean": -0.4741253709472036,
+    "raw_delta_random_values": [
+      -0.6308402457929283,
+      -0.49785741202802436,
+      -0.2936784550206581
+    ],
+    "reused_entries": 6,
+    "role": "biological_scRNA_development",
+    "seed_count": 3,
+    "status": "completed_valid",
+    "training_amplification": 0.8690235150607479
+  },
+  {
+    "ARI_means": {
+      "Clean": 0.14444718448367763,
+      "P0_Random": 0.2147003849094745,
+      "P2_SupportTarget": 0.34076920562674484
+    },
+    "dataset": "Baron Human",
+    "delta_clean_mean": 0.1963220211430672,
+    "delta_clean_positive_seed_count": 3,
+    "delta_clean_values": [
+      0.18161858986461593,
+      0.2346398535432251,
+      0.17270762002136067
+    ],
+    "delta_random_mean": 0.1260688207172704,
+    "delta_random_positive_seed_count": 3,
+    "delta_random_values": [
+      0.09221862031035366,
+      0.13995393527554734,
+      0.14603390656591017
+    ],
+    "nofit_ARI_means": {
+      "Clean": 0.32500160400434686,
+      "P0_Random": 0.03794424826116343,
+      "P2_SupportTarget": -0.00020665909323957715
+    },
+    "nofit_delta_random_mean": -0.03815090735440301,
+    "raw_delta_random_values": [
+      -0.03584661731935585,
+      -0.037000915903878086,
+      -0.0416051888399751
+    ],
+    "reused_entries": 6,
+    "role": "biological_scRNA_development",
+    "seed_count": 3,
+    "status": "completed_valid",
+    "training_amplification": 0.16421972807167343
+  },
+  {
+    "ARI_means": {
+      "Clean": 0.04277547651396941,
+      "P0_Random": 0.023504483059118675,
+      "P2_SupportTarget": 0.17038700436055385
+    },
+    "dataset": "Campbell",
+    "delta_clean_mean": 0.12761152784658447,
+    "delta_clean_positive_seed_count": 3,
+    "delta_clean_values": [
+      0.1751554301036879,
+      0.1271593583978863,
+      0.08051979503817916
+    ],
+    "delta_random_mean": 0.14688252130143517,
+    "delta_random_positive_seed_count": 3,
+    "delta_random_values": [
+      0.19713954425500457,
+      0.1456520864358766,
+      0.09785593321342441
+    ],
+    "nofit_ARI_means": {
+      "Clean": 0.1902661978975356,
+      "P0_Random": 0.13657081545463876,
+      "P2_SupportTarget": 0.010516027871968238
+    },
+    "nofit_delta_random_mean": -0.12605478758267055,
+    "raw_delta_random_values": [
+      -0.1596878777899555,
+      -0.09601805805167807,
+      -0.12245842690637804
+    ],
+    "reused_entries": 6,
+    "role": "biological_scRNA_boundary_control",
+    "seed_count": 3,
+    "status": "completed_valid",
+    "training_amplification": 0.2729373088841057
+  },
+  {
+    "ARI_means": {
+      "Clean": 0.038604693773055324,
+      "P0_Random": 0.03570306412395626,
+      "P2_SupportTarget": 0.03814361581862733
+    },
+    "dataset": "cnae9",
+    "delta_clean_mean": -0.0004610779544279922,
+    "delta_clean_positive_seed_count": 1,
+    "delta_clean_values": [
+      0.00985713529615765,
+      -0.004313219829881518,
+      -0.006927149329560109
+    ],
+    "delta_random_mean": 0.0024405516946710685,
+    "delta_random_positive_seed_count": 2,
+    "delta_random_values": [
+      0.0070063103573071925,
+      -0.00032124030407961607,
+      0.0006365850307856295
+    ],
+    "nofit_ARI_means": {
+      "Clean": 0.06198916783402394,
+      "P0_Random": 0.05632074713881866,
+      "P2_SupportTarget": 0.02176767167148858
+    },
+    "nofit_delta_random_mean": -0.03455307546733009,
+    "raw_delta_random_values": [
+      -0.06864766144717127,
+      -0.008877222446782938,
+      -0.02613434250803605
+    ],
+    "reused_entries": 0,
+    "role": "nonbiological_sparse_textlike",
+    "seed_count": 3,
+    "status": "completed_valid",
+    "training_amplification": 0.03699362716200116
+  },
+  {
+    "ARI_means": {
+      "Clean": 0.0026923415334196357,
+      "P0_Random": 0.010202292392311364,
+      "P2_SupportTarget": 0.0029080713483108736
+    },
+    "dataset": "hate_speech",
+    "delta_clean_mean": 0.00021572981489123818,
+    "delta_clean_positive_seed_count": 2,
+    "delta_clean_values": [
+      -0.001333552491872914,
+      0.0013982981323245698,
+      0.0005824438042220587
+    ],
+    "delta_random_mean": -0.007294221044000491,
+    "delta_random_positive_seed_count": 0,
+    "delta_random_values": [
+      -0.011396018953769993,
+      -0.0022635037440641194,
+      -0.00822314043416736
+    ],
+    "nofit_ARI_means": {
+      "Clean": -0.053291108407486576,
+      "P0_Random": -0.035472808417798214,
+      "P2_SupportTarget": -0.003987355361111133
+    },
+    "nofit_delta_random_mean": 0.03148545305668709,
+    "raw_delta_random_values": [
+      0.08948925427247431,
+      -0.014390631384201717,
+      0.019357736281788655
+    ],
+    "reused_entries": 0,
+    "role": "nonbiological_sparse_textlike",
+    "seed_count": 3,
+    "status": "completed_valid",
+    "training_amplification": -0.03877967410068758
+  },
+  {
+    "ARI_means": {
+      "Clean": 0.16167723754076133,
+      "P0_Random": 0.17713886781744614,
+      "P2_SupportTarget": 0.15682776204162596
+    },
+    "dataset": "sms_spam_collection",
+    "delta_clean_mean": -0.004849475499135378,
+    "delta_clean_positive_seed_count": 1,
+    "delta_clean_values": [
+      -0.009716002605868024,
+      -0.01313767391905414,
+      0.008305250027516031
+    ],
+    "delta_random_mean": -0.020311105775820182,
+    "delta_random_positive_seed_count": 1,
+    "delta_random_values": [
+      -0.029563578039843275,
+      0.0018380643041618905,
+      -0.03320780359177916
+    ],
+    "nofit_ARI_means": {
+      "Clean": 0.017669439394336964,
+      "P0_Random": 0.0112061759528652,
+      "P2_SupportTarget": 0.004264432661096963
+    },
+    "nofit_delta_random_mean": -0.006941743291768236,
+    "raw_delta_random_values": [
+      0.03818773900026894,
+      -0.054400660195938935,
+      -0.0046123086796347156
+    ],
+    "reused_entries": 0,
+    "role": "nonbiological_sparse_textlike",
+    "seed_count": 3,
+    "status": "completed_valid",
+    "training_amplification": -0.013369362484051947
+  }
+]

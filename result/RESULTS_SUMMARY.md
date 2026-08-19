@@ -1,5 +1,11 @@
 # TopoGate 实验结果汇总（事实表）
 
+## 2026-08-18 corruption-objective compatibility probe E0–E4 terminal result
+
+The independent, non-V-series `corruption_objective_compatibility_probe` completed E0, E1, E1b, and E3 under the frozen six-dataset protocol. E1 and E1b are complete `54/54`; the three biological development datasets reproduce the bounded P2-vs-P0 observation, but none of the three non-biological sentinels passes the two model-margin and seed-positive requirements, and only cnae9 reaches the training-amplification margin. The preregistered gates therefore do not authorize E2; the terminal decision is `STOP_GENERAL_CORRUPTION`.
+
+The retained public artifacts are compact reports, protocol/pre-registration, a terminal decision, dataset-level summaries, and integrity audits only. Raw data, labels, arrays, embeddings, predictions, weights, checkpoints, logs, and per-run intermediates remain excluded. E3 is a descriptive raw-X audit and does not alter the dense-H0 fit, gate, or decision semantics.
+
 ## 2026-08-18 sparse_corruption_principle_probe C2 terminal result
 
 独立项目 `sparse_corruption_principle_probe` 按冻结协议

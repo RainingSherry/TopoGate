@@ -1,0 +1,12 @@
+{
+  "complete_matrix": true,
+  "g1_cross_domain_opportunity": false,
+  "g1_winner_count": 0,
+  "g1_winner_datasets": [],
+  "g2_training_amplification": false,
+  "g2_winner_count": 1,
+  "g2_winner_datasets": [
+    "cnae9"
+  ],
+  "material_delta_ari": 0.03
+}

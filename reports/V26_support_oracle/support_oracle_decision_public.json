@@ -1,0 +1,37 @@
+{
+  "project_id": "V26_support_oracle",
+  "protocol_id": "support_oracle_study_v1",
+  "formal_status": "completed_valid",
+  "formal_implementation_sha256": "8bb750e215d9b159aa0ee33319e4048880fabdc549adda9a720271cee5c9eb4b",
+  "formal_matrix": {
+    "datasets": 11,
+    "arms": 5,
+    "paired_seeds": [42, 123, 7],
+    "completed_cells": 165,
+    "primary_metric": "ARI"
+  },
+  "label_boundary": {
+    "P0_P1_P2_fit": "labels unavailable to corruption and model fit",
+    "O_LABEL_ORACLE": "diagnostic-only labels choose corruption coordinates; model fit receives no label vector",
+    "evaluation": "labels used after fit for known-K benchmark metrics"
+  },
+  "decision_rule": {
+    "support_strong": "support-only ARI >= 0.10 and support-only minus value-only ARI >= 0.03",
+    "material_oracle_gap_ari": 0.03,
+    "oracle_gap": "mean paired ARI(O_LABEL_ORACLE - P2_SUPPORT_TARGET)"
+  },
+  "dataset_results": [
+    {"dataset": "Mouse_retina", "domain": "scRNA", "case": "A", "support_ari": 0.8131, "value_ari": 0.2829, "p2_ari": 0.8055, "oracle_ari": 0.8054, "oracle_minus_p2_ari": -0.0001},
+    {"dataset": "Baron Human", "domain": "scRNA", "case": "INCONCLUSIVE", "support_ari": 0.4103, "value_ari": 0.0179, "p2_ari": 0.2267, "oracle_ari": 0.0295, "oracle_minus_p2_ari": -0.1972},
+    {"dataset": "Campbell", "domain": "scRNA", "case": "INCONCLUSIVE", "support_ari": 0.1887, "value_ari": -0.0133, "p2_ari": 0.1591, "oracle_ari": 0.0577, "oracle_minus_p2_ari": -0.1014},
+    {"dataset": "Macosko", "domain": "scRNA", "case": "INCONCLUSIVE", "support_ari": 0.2685, "value_ari": 0.1115, "p2_ari": 0.5558, "oracle_ari": 0.3952, "oracle_minus_p2_ari": -0.1606},
+    {"dataset": "Melanoma_5K", "domain": "scRNA", "case": "INCONCLUSIVE", "support_ari": 0.1955, "value_ari": 0.0738, "p2_ari": 0.3679, "oracle_ari": 0.0700, "oracle_minus_p2_ari": -0.2979},
+    {"dataset": "Quake_Smart-seq2_Lung", "domain": "scRNA", "case": "INCONCLUSIVE", "support_ari": 0.3922, "value_ari": 0.0229, "p2_ari": 0.1354, "oracle_ari": 0.0553, "oracle_minus_p2_ari": -0.0800},
+    {"dataset": "Wang", "domain": "scRNA", "case": "A_star", "support_ari": 0.3208, "value_ari": -0.0310, "p2_ari": -0.0510, "oracle_ari": -0.0504, "oracle_minus_p2_ari": 0.0006, "note": "rule-based A only; clean ARI is 0.0584"},
+    {"dataset": "news20", "domain": "nonbiological", "case": "C", "support_ari": 0.0325, "value_ari": 0.0055, "p2_ari": 0.0000, "oracle_ari": 0.0000, "oracle_minus_p2_ari": 0.0000},
+    {"dataset": "rcv1_train", "domain": "nonbiological", "case": "C", "support_ari": 0.0569, "value_ari": -0.0001, "p2_ari": 0.0000, "oracle_ari": -0.0003, "oracle_minus_p2_ari": -0.0002},
+    {"dataset": "arcene", "domain": "nonbiological", "case": "C", "support_ari": 0.0792, "value_ari": 0.0050, "p2_ari": 0.0727, "oracle_ari": 0.0255, "oracle_minus_p2_ari": -0.0472},
+    {"dataset": "sms_spam_collection", "domain": "nonbiological", "case": "C", "support_ari": -0.0574, "value_ari": -0.0332, "p2_ari": 0.6580, "oracle_ari": 0.5888, "oracle_minus_p2_ari": -0.0692}
+  ],
+  "terminal_interpretation": "No positive material label-oracle gap was observed over P2_SUPPORT_TARGET. The generic support-target route is frozen under the registered non-biological boundary; Mouse is the clear bounded positive case, while Wang is not robust confirmation."
+}

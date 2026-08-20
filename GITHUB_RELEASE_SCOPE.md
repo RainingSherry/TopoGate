@@ -44,6 +44,12 @@ audit summaries. It does not publish the paper or any paper source bundle.
 - `result/final_results/`: one curated final result table or summary set for
   each audited version with non-smoke evidence, including V09-V14, V16.1, and
   V18-V22. The directory README records versions with no promotable result.
+- `methods/TopoGate/V26_support_oracle/`, `scripts/V26/`,
+  `tests/V26_support_oracle/`, and `reports/V26_support_oracle/`: portable
+  support-oracle code, tests, formal-result report, and compact evidence for
+  the fixed eleven-dataset panel. The public source uses relative input paths;
+  the report preserves the original formal implementation digest. The label
+  oracle is diagnostic-only, never a deployable method.
 - Aggregate reports, manifests, protocol metadata, and incomplete-compute
   records needed to interpret the retained tables. No dataset binary is part
   of this release.

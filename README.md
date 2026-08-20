@@ -5,8 +5,8 @@ variant configurations. The current public snapshot includes the core V9-V22
 code paths, the independent post-V25 ACCG route, the independent
 `representation_consumer_probe` S0-S2 terminal study, the independent
 `sparse_corruption_principle_probe` C0-C2 terminal study, the independent
-`support_target_validation_probe` M0-M1 preflight decision, curated auditable
-result tables, and concise evidence summaries; it
+`support_target_validation_probe` M0-M1 preflight decision, the V26
+support-oracle study, curated auditable result tables, and concise evidence summaries; it
 does not publish papers or dataset binaries.
 
 This repository intentionally excludes raw datasets, model outputs,
@@ -55,6 +55,10 @@ caller to provide input data and an output directory.
   common-dose feasibility protocol, compact audit, and terminal
   `common_dose_not_estimable` decision. D2 GPU, raw-X bridge, holdout,
   adaptive policy, and GAN remain locked.
+- `methods/TopoGate/V26_support_oracle/`, `scripts/V26/`, and
+  `reports/V26_support_oracle/`: an eleven-dataset, five-arm support-oracle
+  study. Its label oracle is diagnostic-only; the final result freezes the
+  generic support-target route rather than claiming universal benefit.
 
 The public release is code-first. Result files are metadata-only summaries;
 raw arrays, checkpoints, worker logs, and smoke/debug directories remain

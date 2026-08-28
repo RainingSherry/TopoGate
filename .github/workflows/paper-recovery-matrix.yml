@@ -1,0 +1,45 @@
+name: Temporary per-paper recovery matrix
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.github/workflows/paper-recovery-matrix.yml'
+      - 'tools/paper_recovery/**'
+
+permissions:
+  contents: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      max-parallel: 10
+      matrix:
+        paper_id: [1, 18, 24, 46, 57, 60, 62, 70, 71, 72]
+    env:
+      RECOVER_ID: '${{ matrix.paper_id }}'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install base dependencies
+        run: python -m pip install -U requests beautifulsoup4 pymupdf pymupdf4llm
+      - name: Install browser only when needed
+        if: contains('46,60,62,72', format('{0}', matrix.paper_id))
+        run: |
+          python -m pip install -U playwright
+          python -m playwright install --with-deps chromium
+      - name: Recover paper
+        run: python tools/paper_recovery/recover.py
+      - name: Upload paper recovery
+        uses: actions/upload-artifact@v4
+        with:
+          name: recovery-${{ matrix.paper_id }}
+          path: recovery_output
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 1

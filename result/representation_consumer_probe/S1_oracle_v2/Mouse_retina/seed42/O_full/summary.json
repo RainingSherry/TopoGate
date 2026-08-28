@@ -1,0 +1,92 @@
+{
+  "H0_sha256": "35a4bd98c853b5e7fe46181fc48caaf98c7b398f24329b0861251fba6e480a97",
+  "K": 5,
+  "K_source": "benchmark_oracle_from_y",
+  "arm": "O_full",
+  "artifacts": {
+    "embedding": "/data/luolie/ToPoGate/result/representation_consumer_probe/S1_oracle_v2/Mouse_retina/seed42/O_full/embedding.npy",
+    "labels_true": "/data/luolie/ToPoGate/result/representation_consumer_probe/S1_oracle_v2/Mouse_retina/seed42/O_full/labels_true.npy",
+    "predictions": "/data/luolie/ToPoGate/result/representation_consumer_probe/S1_oracle_v2/Mouse_retina/seed42/O_full/predictions.npy"
+  },
+  "budget_profile": {
+    "budget_cap": 8,
+    "effective_budget_hash": "a1d5328d4635ff58b7901fb2a83ce0501ebee6131fbf46b2b2f9d9b4f7166ecb",
+    "effective_budget_max": 8,
+    "effective_budget_mean": 8.0,
+    "effective_budget_min": 8,
+    "fraction_budget_below_cap": 0.0,
+    "fraction_budget_zero": 0.0,
+    "zero_budget_nodes": 0
+  },
+  "consumer": "Spectral",
+  "consumer_metadata": {
+    "K_used_in_readout": true,
+    "K_used_in_representation": true,
+    "active_embedding_finite": true,
+    "active_nodes": 8352,
+    "consumer": "Spectral",
+    "drop_first": false,
+    "eigenvalues": [
+      -2.0072176578537013e-16,
+      2.8672748792080635e-16,
+      0.0016323452020310018,
+      0.006009010528856846,
+      0.007661897010423835
+    ],
+    "isolated_nodes": 0,
+    "isolated_rows_zero": true,
+    "kmeans_n_init": 20,
+    "kmeans_random_state": 42,
+    "labels_vector_used_in_fit": false,
+    "maxiter": 83520,
+    "n_clusters": 5,
+    "prediction_unique": 5,
+    "status": "completed",
+    "tol": 1e-06,
+    "which": "SM"
+  },
+  "dataset": "Mouse_retina",
+  "execution_status": "completed",
+  "feature_only_input": null,
+  "graph_diagnostics": {
+    "budget_audit": {
+      "budget_cap": 8,
+      "effective_budget_hash": "a1d5328d4635ff58b7901fb2a83ce0501ebee6131fbf46b2b2f9d9b4f7166ecb",
+      "graph_nnz": 66816,
+      "row_count_max": 8,
+      "row_count_min": 8,
+      "row_counts_match": true
+    },
+    "candidate_recall_at_b_mean": 0.9983686542145593,
+    "candidate_recall_at_b_rows": 8352,
+    "connected_components": 7,
+    "degree_cv": 1.2644262187745057,
+    "degree_mean": 6.396269234118562,
+    "degree_std": 8.087610521960237,
+    "directed_edge_count": 66816,
+    "edge_count": 125170,
+    "edge_purity": 1.0,
+    "giant_component_ratio": 0.8026819923371648,
+    "graph_condition": "O_full",
+    "ground_truth_ncut": 0.0,
+    "isolated_nodes": 0,
+    "labels_used_for_diagnostic": true,
+    "pool_oracle_same_class_recall_at_b_mean": 0.9983536877394636,
+    "pool_oracle_same_class_recall_at_b_rows": 8352
+  },
+  "graph_hash": "394c7fa824a174860cf6d49714ce0daba98a48bfef7f13628952fcd255c46384",
+  "labels_used_during_fit": false,
+  "labels_used_for_outer_metrics": true,
+  "labels_vector_used_in_fit": false,
+  "metrics": {
+    "ACC": 0.9370210727969349,
+    "ARI": 0.9362414981062803,
+    "NMI": 0.8747677800930111
+  },
+  "project_id": "representation_consumer_probe",
+  "protocol_id": "representation_consumer_probe_s1_opportunity_spectral_v2",
+  "seed": 42,
+  "source_path": "/data/luolie/ToPoGate/datasets/Mouse_retina.npz",
+  "source_sha256": "d3bc2eb08d95acd12d324f668c537ae4208de57c355862f8e5800d4ba1e727c1",
+  "status": "completed_valid"
+}

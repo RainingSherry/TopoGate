@@ -1,0 +1,21 @@
+method_name: TopoGate
+variant_name: binary_router
+mix_mode: reliability
+gate_mode: binary
+edge_reliability_mode: sim_mutual_snn_distance
+neighbor_k: 5
+mix_neighbors: 4
+pseudo_weight: 0.3
+# BinaryRouter specific
+router_init_temp: 5.0
+router_temp_min: 0.01
+router_warmup_epochs: 20
+router_ramp_epochs: 10
+# Use v1 default init so early epochs ≈ v1 behaviour
+init_beta_mutual: 0.0
+init_beta_snn: 0.0
+init_beta_perturb: 0.0
+init_beta_uncertainty: 0.0
+enhanced_stats: 4
+warmup_epochs: 20
+ramp_epochs: 10

@@ -1,0 +1,47 @@
+{
+  "file_count": 8,
+  "files": [
+    {
+      "path": "audit.json",
+      "sha256": "a01edc0f226bd1fc38e81a0a53c705d6c4f8575b8dd1ba926a50bfa268f7c195",
+      "size_bytes": 265
+    },
+    {
+      "path": "directed_graph.npz",
+      "sha256": "46e13f2855a3f4d4b169661a8e168e5317bb375aee9f07bc2b2a616cfea52e04",
+      "size_bytes": 45142
+    },
+    {
+      "path": "embedding.npy",
+      "sha256": "d0a6e92d893fb436ea306ce1384c7cac21487cabaeb2c54c19cdc90116bed1bc",
+      "size_bytes": 39008
+    },
+    {
+      "path": "labels_true.npy",
+      "sha256": "db8cc40c7326945ea14834a5233d237c32bddec24258087b8b64b050ade5acf5",
+      "size_bytes": 8768
+    },
+    {
+      "path": "predictions.npy",
+      "sha256": "54213fc7f0ea1c5c1530d428ac4c2d6fa9750c350419bc2fd49722ead0714f4c",
+      "size_bytes": 8768
+    },
+    {
+      "path": "resolved_config.json",
+      "sha256": "0b9066259431282c1b39c05a4901b0de8e7d2fee68e4c2d4fdec28c93a0491be",
+      "size_bytes": 467
+    },
+    {
+      "path": "selected_graph.npz",
+      "sha256": "e627eb45e06173616d2b6c07cf54b0f4695746b1b34bc24cfae831ae32f4ce01",
+      "size_bytes": 71184
+    },
+    {
+      "path": "summary.json",
+      "sha256": "d568d49b4a46047b2f34592294cbc91f713a9b93b3fb4e7f44ad89a499a1e83c",
+      "size_bytes": 3371
+    }
+  ],
+  "manifest_id": "representation_consumer_probe_s1_artifacts_v1",
+  "root": "/data/luolie/ToPoGate/result/representation_consumer_probe/S1_oracle_v2/cnae9/seed7/R"
+}

@@ -1,0 +1,45 @@
+{
+  "manifest_id": "v22_full_cooperative_recovery_20260812_v1",
+  "protocol_id": "v22_topology_discriminator_cooperative_keep_gate_v1",
+  "phase": "full_components_single_seed_cooperative_recovery",
+  "started_at": "2026-08-12T03:23:41.039880+00:00",
+  "updated_at": "2026-08-12T03:46:20.082881+00:00",
+  "status": "completed",
+  "jobs": [
+    {
+      "run_key": "real_sim__libsvm_sparse_highdim::v22_topology_discriminator_cooperative_keep_gate::seed42",
+      "dataset_id": "real_sim__libsvm_sparse_highdim",
+      "record": {
+        "dataset_id": "real_sim__libsvm_sparse_highdim",
+        "name": "real-sim",
+        "stratum": "new_sparse_highdim",
+        "input_protocol": "shared_text",
+        "source_path": "/data/luolie/ToPoGate/datasets/external/v22_dataset_extension_20260812/processed/real_sim.npz",
+        "source_sha256": "12a67087b54af44522b50480a0de417b022d4a5312db42e6a82da1a68eccf62d",
+        "source_archive_sha256": "7cd52374f55ce62e803ef33ca1c44689427c23d481eff64026f8ba9f53b8cc27",
+        "n_samples": 72309,
+        "n_features_original": 20958,
+        "labels_available_outer_only": true,
+        "expected_labels_unique": 2,
+        "k_source": "benchmark_oracle_from_y",
+        "source_manifest": "datasets/external/v22_dataset_extension_20260812/manifest.json"
+      },
+      "variant": "v22_topology_discriminator_cooperative_keep_gate",
+      "protocol_id": "v22_topology_discriminator_cooperative_keep_gate_v1",
+      "seed": 42,
+      "epochs": 80,
+      "config": "methods/TopoGate/V22_topology_discriminator_hard_mask/configs/v22_topology_discriminator_cooperative_keep_gate.yaml",
+      "output_dir": "result/V22/v22_full_cooperative_recovery_attempt2_real_sim_20260812/real_sim__libsvm_sparse_highdim/v22_topology_discriminator_cooperative_keep_gate/seed42",
+      "batch_size": 4096,
+      "topology_cache_dir": "result/V22/v22_full_cooperative_single_seed_20260812/real_sim__libsvm_sparse_highdim/v22_topology_discriminator_cooperative_keep_gate/seed42/cache",
+      "status": "completed",
+      "attempts": 1,
+      "gpu": 1,
+      "pid": null,
+      "started_at": "2026-08-12T03:23:41.218236+00:00",
+      "finished_at": "2026-08-12T03:46:19.823170+00:00",
+      "returncode": 0,
+      "error": null
+    }
+  ]
+}

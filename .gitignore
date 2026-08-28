@@ -1,0 +1,39 @@
+# Local/runtime state
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.codegraph/
+.aris/
+.claude/
+.codex/
+.agents/
+.storage/
+.venv*/
+.site_*/
+review-stage/
+refine-logs/
+logs/
+
+# Local data and generated training artifacts
+datasets/*
+!datasets/
+!datasets/iris.npz
+result/**/checkpoint.pt
+result/**/branchpoint.pt
+result/**/*.npy
+result/**/*.npz
+result/**/*.pt
+result/**/*.pkl
+result/**/*.h5
+result/**/cache/
+result/**/logs/
+result/**/*.moved.json
+
+# Generated LaTeX intermediates
+papers/**/main.aux
+papers/**/main.log
+papers/**/main.blg
+papers/**/main.out
+
+# Nested source repositories
+**/.git/

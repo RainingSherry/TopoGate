@@ -1,0 +1,18 @@
+{
+  "H0_sha256": "4684924e0e63ca08396b07842486e5521c53f1f3655fdee3c9e5be2808ff1c79",
+  "dataset": "Mouse_retina",
+  "labels_used": false,
+  "path": "/data/luolie/ToPoGate/result/sparse_corruption_principle_probe/C2_static_matrix/score_artifacts/residual/Mouse_retina/seed42/residual_scores.npy",
+  "physical_gpu": 2,
+  "raw_artifact_local_only": true,
+  "score_kind": "frozen_warmup_residual",
+  "seed": 42,
+  "sha256": "dcaa13006782e102c8838f126797f896f5235a06487e1a6eff40a281be7f9a79",
+  "shape": [
+    8352,
+    128
+  ],
+  "stage": "C2_score_preparation",
+  "warmup_epochs": 5,
+  "warmup_seed": 1033
+}

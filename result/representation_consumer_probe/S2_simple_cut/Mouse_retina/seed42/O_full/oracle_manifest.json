@@ -1,0 +1,9 @@
+{
+  "arm": "O_full",
+  "labels_used": true,
+  "method_claim": false,
+  "purpose": "diagnostic_only",
+  "s1_source_graph_hash": "394c7fa824a174860cf6d49714ce0daba98a48bfef7f13628952fcd255c46384",
+  "source_graph": "reused_from_S1_H0_positive_cosine",
+  "weights_changed_by_oracle": false
+}

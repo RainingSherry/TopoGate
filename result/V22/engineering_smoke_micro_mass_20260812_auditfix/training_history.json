@@ -1,0 +1,42 @@
+[
+  {
+    "loss": 3.927805542945862,
+    "reconstruction_loss": 0.11398516843716304,
+    "mask_loss": 0.49018015960852307,
+    "discriminator_loss": 0.687614917755127,
+    "generator_adversarial_loss": 0.7108562290668488,
+    "gate_reconstruction_loss": 6.505109230677287,
+    "gate_loss": -0.014199327367047468,
+    "gate_reward": 0.014235572423785925,
+    "gate_coverage": 0.003624486969783902,
+    "random_requested_mask_rate": 0.4000000059604645,
+    "random_effective_mask_rate": 0.07361298054456711,
+    "adversarial_selected_rate": 0.04603806138038635,
+    "adversarial_effective_rate": 0.0349967951575915,
+    "discriminator_pair_count": 1920.0,
+    "gate_grad_norm": 0.001446078610206158,
+    "epoch": 1.0,
+    "discriminator_steps_epoch": 6.0,
+    "gate_updates_epoch": 6.0
+  },
+  {
+    "loss": 2.4852991898854575,
+    "reconstruction_loss": 0.14084439476331076,
+    "mask_loss": 0.48877279957135517,
+    "discriminator_loss": 0.6953561504681905,
+    "generator_adversarial_loss": 0.711732010046641,
+    "gate_reconstruction_loss": 3.5690175692240396,
+    "gate_loss": -0.017740458870927494,
+    "gate_reward": 0.017776380603512127,
+    "gate_coverage": 0.003592193010263145,
+    "random_requested_mask_rate": 0.4000000059604645,
+    "random_effective_mask_rate": 0.07298237085342407,
+    "adversarial_selected_rate": 0.045886218547821045,
+    "adversarial_effective_rate": 0.03458413481712341,
+    "discriminator_pair_count": 1920.0,
+    "gate_grad_norm": 0.0030863288734351273,
+    "epoch": 2.0,
+    "discriminator_steps_epoch": 6.0,
+    "gate_updates_epoch": 6.0
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "budget_profile": {
+    "budget_cap": 8,
+    "effective_budget_hash": "80f0142bcdeae7c87911f90a2b83dd80a974614365c21be6244d5283c9cd1032",
+    "effective_budget_max": 8,
+    "effective_budget_mean": 7.616766467065868,
+    "effective_budget_min": 0,
+    "fraction_budget_below_cap": 0.04790419161676647,
+    "fraction_budget_zero": 0.04790419161676647,
+    "zero_budget_nodes": 40
+  },
+  "candidate_pool_graph": {
+    "candidate_recall_at_b_mean": 0.9864779874213836,
+    "candidate_recall_at_b_rows": 795,
+    "connected_components": 41,
+    "degree_cv": 0.36661662242864435,
+    "degree_mean": 8.274306323285588,
+    "degree_std": 3.0334982371829367,
+    "edge_count": 19044,
+    "edge_purity": 0.9000210039907582,
+    "giant_component_ratio": 0.9520958083832335,
+    "ground_truth_ncut": 0.3837587444982588,
+    "isolated_nodes": 40,
+    "labels_used_for_diagnostic": true,
+    "pool_oracle_same_class_recall_at_b_mean": 0.9794025157232704,
+    "pool_oracle_same_class_recall_at_b_rows": 795
+  },
+  "candidate_pool_profile": {
+    "budget_cap": 8,
+    "effective_budget_hash": "80f0142bcdeae7c87911f90a2b83dd80a974614365c21be6244d5283c9cd1032",
+    "effective_budget_max": 8,
+    "effective_budget_mean": 7.616766467065868,
+    "effective_budget_min": 0,
+    "fraction_budget_below_cap": 0.04790419161676647,
+    "fraction_budget_zero": 0.04790419161676647,
+    "zero_budget_nodes": 40
+  },
+  "dataset": "sms_spam_collection",
+  "labels_used": true,
+  "oracle_full_directed_graph_hash": "1c63926d43bbc9c93c49c0fb9d5af0d2083647e5a87137ca416789074b15e359",
+  "oracle_pool_directed_graph_hash": "31065dafb94fd3a86d034bbadde4372bb25e8c2729206e271498add9a083d421",
+  "purpose": "diagnostic_only"
+}

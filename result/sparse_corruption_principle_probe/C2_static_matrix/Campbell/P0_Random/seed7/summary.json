@@ -1,0 +1,85 @@
+{
+  "K": 14,
+  "K_source": "benchmark_oracle_from_y_outer_readout_only",
+  "backbone": {
+    "activation": "ReLU",
+    "batch_size": 512,
+    "decoder_dims": [
+      32,
+      64,
+      "d_eff"
+    ],
+    "encoder": "small_matched_reconstruction_probe",
+    "encoder_dims": [
+      "d_eff",
+      64,
+      32
+    ],
+    "epochs": 30,
+    "input": "audited_S0_H0",
+    "labels_used_during_fit": false,
+    "learning_rate": 0.001,
+    "optimizer": "Adam",
+    "readout": "clean_embedding_known_K_KMeans_outer_benchmark_only",
+    "standardization": "clean_H0_column_mean_std_fit_once_per_dataset",
+    "warmup_epochs": 5
+  },
+  "base_protocol_id": "sparse_corruption_principle_probe_c0_v1",
+  "corruption_audit": {
+    "effective_changed_coordinate_rate_mean": 0.09043517962573805,
+    "epochs_audited": 30,
+    "exact_budget_all_epochs": true,
+    "support_change_rate_mean": 0.07183346050568733,
+    "total_absolute_change_mean": 173948.36279999663,
+    "value_change_rate_mean": 0.018601719120050705
+  },
+  "dataset": "Campbell",
+  "device": "cuda:0",
+  "gpu_visible": "5",
+  "input_dim": 128,
+  "labels_used_during_fit": false,
+  "labels_used_for_outer_metrics": true,
+  "metrics": {
+    "ACC": 0.19693785649954967,
+    "ARI": 0.030621800132568863,
+    "L_rec": 0.7735539674758911,
+    "NMI": 0.0927813973506215,
+    "effective_rank": 8.639070756620907,
+    "last_epoch_train_loss_before_step": 0.7978976154415669,
+    "low_variance_dimension_ratio": 0.0,
+    "variance_floor": 0.8850602155136232,
+    "variance_median": 1.0419949709718317
+  },
+  "physical_gpu": 5,
+  "principle": "P0_Random",
+  "project_id": "sparse_corruption_principle_probe",
+  "protocol_id": "sparse_corruption_principle_probe_c2_v1",
+  "raw_arrays_persisted": false,
+  "role": "difficulty_sensitive_case",
+  "score_artifacts": {},
+  "seed": 7,
+  "source": {
+    "H0_path": "/data/luolie/ToPoGate/result/representation_consumer_probe/S0_freeze/datasets/Campbell/H0.npy",
+    "H0_sha256": "dae79805c827694841eabf57cbe35ede442900b995a41040cacac9287ec714c4",
+    "budget_manifest_path": "/data/luolie/ToPoGate/result/representation_consumer_probe/S0_freeze/datasets/Campbell/budget_manifest.json",
+    "budget_manifest_sha256": "a0b196d9e9eb4ce88f2988d35ddeffe87ec344d1261884afe15c1d1ef207bb4a",
+    "labels_loaded_after_fit": true,
+    "labels_path": "/data/luolie/ToPoGate/result/representation_consumer_probe/S1_oracle_v2/Campbell/seed42/R/labels_true.npy",
+    "labels_sha256": "4c3c80e1b10a4cb9ce826bd4c33b7b19754f2e0e1f7cd9f0f135464c5aff1b6e",
+    "labels_used": false,
+    "mean_std_fit_on_clean_H0_only": true,
+    "shape": [
+      9993,
+      128
+    ],
+    "source": "representation_consumer_probe/S0_freeze"
+  },
+  "stage": "C2_static_matrix",
+  "status": "completed_valid",
+  "support_definition": {
+    "kind": "fixed_clean_row_threshold",
+    "ratio": 0.05,
+    "threshold": "max(1e-6,0.05*max(abs(clean_row)))"
+  },
+  "support_interpretation_firewall": "Support in C2 denotes the frozen threshold-defined support of dense H0, not raw-X zero/nonzero support; raw sparse-support claims require a separate validation."
+}

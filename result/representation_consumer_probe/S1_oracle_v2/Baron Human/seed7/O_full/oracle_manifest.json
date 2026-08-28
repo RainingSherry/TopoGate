@@ -1,0 +1,9 @@
+{
+  "arm": "O_full",
+  "budget_hash": "7fc6f0f1a7731632361aa5db474ca64280d00bd6f1ee2444109ee60389e56f37",
+  "labels_used": true,
+  "method_claim": false,
+  "purpose": "diagnostic_only",
+  "source_graph": "H0_positive_cosine",
+  "weights_changed_by_oracle": false
+}

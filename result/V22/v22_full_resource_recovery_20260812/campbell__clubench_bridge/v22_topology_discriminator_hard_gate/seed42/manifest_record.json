@@ -1,0 +1,16 @@
+{
+  "dataset_id": "campbell__clubench_bridge",
+  "name": "Campbell",
+  "stratum": "original8_clubench_bridge",
+  "input_protocol": "clubench_bridge",
+  "source_path": "/data/luolie/ToPoGate/datasets/Campbell.npz",
+  "source_sha256": "f26c9568baf8e8fade7a61e6fed80f16ceb3980afe38b7c9ccbe9aaad2b96e04",
+  "n_samples": 9993,
+  "n_features_original": 26774,
+  "labels_available_outer_only": true,
+  "expected_labels_unique": 14,
+  "k_source": "benchmark_oracle_from_y",
+  "run_key": "campbell__clubench_bridge::v22_topology_discriminator_hard_gate::seed42",
+  "batch_size": 4096,
+  "topology_cache_source": "result/V22/v22_full_single_seed_20260812/campbell__clubench_bridge/v22_topology_discriminator_hard_gate/seed42/cache"
+}

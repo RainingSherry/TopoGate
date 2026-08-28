@@ -1,0 +1,43 @@
+{
+  "budget_profile": {
+    "budget_cap": 8,
+    "effective_budget_hash": "81c2989af8676f3690ee607b7cc3a7324bbd56d45b680fb963662d58bed022ef",
+    "effective_budget_max": 8,
+    "effective_budget_mean": 8.0,
+    "effective_budget_min": 8,
+    "fraction_budget_below_cap": 0.0,
+    "fraction_budget_zero": 0.0,
+    "zero_budget_nodes": 0
+  },
+  "candidate_pool_graph": {
+    "candidate_recall_at_b_mean": 0.965425798058641,
+    "candidate_recall_at_b_rows": 9993,
+    "connected_components": 1,
+    "degree_cv": 0.4294953286255318,
+    "degree_mean": 18.93778203011609,
+    "degree_std": 8.1336889164634,
+    "edge_count": 308466,
+    "edge_purity": 0.8480351157015684,
+    "giant_component_ratio": 1.0,
+    "ground_truth_ncut": 3.583994750871717,
+    "isolated_nodes": 0,
+    "labels_used_for_diagnostic": true,
+    "pool_oracle_same_class_recall_at_b_mean": 0.9654132893025118,
+    "pool_oracle_same_class_recall_at_b_rows": 9993
+  },
+  "candidate_pool_profile": {
+    "budget_cap": 8,
+    "effective_budget_hash": "81c2989af8676f3690ee607b7cc3a7324bbd56d45b680fb963662d58bed022ef",
+    "effective_budget_max": 8,
+    "effective_budget_mean": 8.0,
+    "effective_budget_min": 8,
+    "fraction_budget_below_cap": 0.0,
+    "fraction_budget_zero": 0.0,
+    "zero_budget_nodes": 0
+  },
+  "dataset": "Campbell",
+  "labels_used": true,
+  "oracle_full_directed_graph_hash": "5183b6e923e5f36c911fca1988afd62a9e78606364bbfcde7d81641e06bf5e7a",
+  "oracle_pool_directed_graph_hash": "ce0a42c864e9806e95a17cf413b7f3510bf9b9b3ee5dad9e8587393d8e7ccdf4",
+  "purpose": "diagnostic_only"
+}

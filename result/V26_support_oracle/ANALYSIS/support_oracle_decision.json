@@ -1,0 +1,2084 @@
+{
+  "analysis_script_sha256": "f95a0d8ec5ed3e6064c6f0e7f818998d08c6dcd91a5f4dc2ea2c3f45c2591c55",
+  "coverage": [
+    {
+      "complete": true,
+      "completed_cells": 15,
+      "dataset": "mouse",
+      "expected_cells": 15
+    },
+    {
+      "complete": true,
+      "completed_cells": 15,
+      "dataset": "baron",
+      "expected_cells": 15
+    },
+    {
+      "complete": true,
+      "completed_cells": 15,
+      "dataset": "campbell",
+      "expected_cells": 15
+    },
+    {
+      "complete": true,
+      "completed_cells": 15,
+      "dataset": "macosko",
+      "expected_cells": 15
+    },
+    {
+      "complete": true,
+      "completed_cells": 15,
+      "dataset": "melanoma",
+      "expected_cells": 15
+    },
+    {
+      "complete": true,
+      "completed_cells": 15,
+      "dataset": "quake",
+      "expected_cells": 15
+    },
+    {
+      "complete": true,
+      "completed_cells": 15,
+      "dataset": "wang",
+      "expected_cells": 15
+    },
+    {
+      "complete": true,
+      "completed_cells": 15,
+      "dataset": "news20",
+      "expected_cells": 15
+    },
+    {
+      "complete": true,
+      "completed_cells": 15,
+      "dataset": "rcv1",
+      "expected_cells": 15
+    },
+    {
+      "complete": true,
+      "completed_cells": 15,
+      "dataset": "arcene",
+      "expected_cells": 15
+    },
+    {
+      "complete": true,
+      "completed_cells": 15,
+      "dataset": "sms_spam",
+      "expected_cells": 15
+    }
+  ],
+  "decision_rule": {
+    "case_a": "support strong and absolute oracle gap < material threshold",
+    "case_b": "support strong and positive oracle gap >= material threshold",
+    "case_c": "support weak and oracle gap < material threshold",
+    "material_gap_ari": 0.03,
+    "oracle_gap": "mean paired ARI(O_LABEL_ORACLE - P2_SUPPORT_TARGET)",
+    "otherwise": "inconclusive; do not force a three-case conclusion",
+    "primary_metric": "ARI",
+    "support_strong": "support-only ARI >= 0.1 and support-only minus value-only ARI >= 0.03"
+  },
+  "domain_summary": {
+    "nonbiological": {
+      "case_counts": {
+        "A": 0,
+        "B": 0,
+        "C": 4,
+        "INCOMPLETE": 0,
+        "INCONCLUSIVE": 0
+      },
+      "datasets": [
+        "news20",
+        "rcv1",
+        "arcene",
+        "sms_spam"
+      ],
+      "median_oracle_gap_ARI": -0.023707420367876583,
+      "median_support_advantage_ARI": 0.0419692896301138
+    },
+    "scRNA": {
+      "case_counts": {
+        "A": 2,
+        "B": 0,
+        "C": 0,
+        "INCOMPLETE": 0,
+        "INCONCLUSIVE": 5
+      },
+      "datasets": [
+        "mouse",
+        "baron",
+        "campbell",
+        "macosko",
+        "melanoma",
+        "quake",
+        "wang"
+      ],
+      "median_oracle_gap_ARI": -0.10144518554814382,
+      "median_support_advantage_ARI": 0.3518495363296549
+    }
+  },
+  "formal_result_source_sha256": "8bb750e215d9b159aa0ee33319e4048880fabdc549adda9a720271cee5c9eb4b",
+  "freeze_manifest": "/home/luolie/ToPoGate/result/V26_support_oracle/FREEZE/manifest.json",
+  "freeze_manifest_implementation_sha256": "8bb750e215d9b159aa0ee33319e4048880fabdc549adda9a720271cee5c9eb4b",
+  "freeze_manifest_sha256": "b597e2f5ff2d15bbe4aeea8a081e38a52115a0a75beb66f7a81386a9fdae7b55",
+  "generated_at": "2026-08-20T05:39:33.765609+00:00",
+  "implementation_revision": "r1_prelaunch_review",
+  "per_dataset": [
+    {
+      "corrected_diagnostics": {
+        "dataset": "mouse",
+        "diagnostic_representation": {
+          "support_only": "binary sparse coordinate support -> TruncatedSVD",
+          "value_only": "nonzero-value quantile profile with no coordinates or active-count padding",
+          "value_profile_quantiles": 128
+        },
+        "implementation": {
+          "numpy": "2.4.6",
+          "revision": "r1_prelaunch_review",
+          "scipy": "1.17.1",
+          "sklearn": "1.8.0",
+          "source_sha256": "8bb750e215d9b159aa0ee33319e4048880fabdc549adda9a720271cee5c9eb4b"
+        },
+        "labels_used_after_transform_for_metrics": true,
+        "project_id": "V26_support_oracle",
+        "protocol_id": "support_oracle_study_v1",
+        "source": {
+          "labels_encoded_locally": true,
+          "min_class_size": 362,
+          "n_classes": 5,
+          "nnz": 2691783,
+          "shape": [
+            8352,
+            6198
+          ],
+          "source_mtime_ns": 1757404962000000000,
+          "source_path": "/data/luolie/ToPoGate/datasets/Mouse_retina.npz",
+          "source_sha256": "d3bc2eb08d95acd12d324f668c537ae4208de57c355862f8e5800d4ba1e727c1",
+          "source_size_bytes": 207130090,
+          "sparsity": 0.9480006411968266,
+          "zero_pattern_preserved": true
+        },
+        "stage": "diagnostics",
+        "status": "completed_valid",
+        "support_feasibility": {
+          "fraction_rows_with_pair_budget": 1.0,
+          "mean_active": 322.29202586206895,
+          "mean_pair_budget": 80.94612068965517,
+          "rows_with_pair_budget": 8352
+        },
+        "support_only": {
+          "ACC": 0.9336685823754789,
+          "ARI": 0.8131282709033052,
+          "NMI": 0.7342568580247205,
+          "n_clusters": 5
+        },
+        "value_only": {
+          "ACC": 0.6057231800766284,
+          "ARI": 0.28290452968258695,
+          "NMI": 0.16790158396187968,
+          "n_clusters": 5
+        }
+      },
+      "dataset": "mouse",
+      "decision": {
+        "action": "support already appears utilized; continue with adaptive selection",
+        "case": "A",
+        "material_delta_ARI": 0.03,
+        "oracle_gap_ARI_O_LABEL_ORACLE_minus_P2": -8.300049959971319e-05,
+        "support_advantage_ARI": 0.5302237412207182,
+        "support_only_ARI": 0.8131282709033052,
+        "support_strong": true,
+        "value_only_ARI": 0.28290452968258695
+      },
+      "display_name": "Mouse_retina",
+      "domain": "scRNA",
+      "effects": {
+        "P1_minus_P0": {
+          "left": "P1_SUPPORT_PRESERVE",
+          "mean": -0.02487643796729444,
+          "median": -0.010276778975654155,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            0.05824357497496058,
+            -0.12259610990118974,
+            -0.010276778975654155
+          ],
+          "right": "P0_RANDOM"
+        },
+        "P2_minus_P1": {
+          "left": "P2_SUPPORT_TARGET",
+          "mean": -0.005103708505902656,
+          "median": -0.015960557800938746,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            -0.015960557800938746,
+            0.1264043813667003,
+            -0.1257549490834695
+          ],
+          "right": "P1_SUPPORT_PRESERVE"
+        },
+        "oracle_gap": {
+          "left": "O_LABEL_ORACLE",
+          "mean": -8.300049959971319e-05,
+          "median": -0.043971960561265955,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            -0.05291434574124376,
+            -0.043971960561265955,
+            0.09663730480371058
+          ],
+          "right": "P2_SUPPORT_TARGET"
+        }
+      },
+      "formal_arm_means": {
+        "CLEAN": {
+          "ACC": 0.9048132183908045,
+          "ARI": 0.8284901360953033,
+          "NMI": 0.6710629578704305
+        },
+        "O_LABEL_ORACLE": {
+          "ACC": 0.8769157088122604,
+          "ARI": 0.8054281508847346,
+          "NMI": 0.5776919840106434
+        },
+        "P0_RANDOM": {
+          "ACC": 0.9050127713920818,
+          "ARI": 0.8354912978575314,
+          "NMI": 0.6740251748975349
+        },
+        "P1_SUPPORT_PRESERVE": {
+          "ACC": 0.9018997445721584,
+          "ARI": 0.8106148598902371,
+          "NMI": 0.66787033912845
+        },
+        "P2_SUPPORT_TARGET": {
+          "ACC": 0.9060105363984675,
+          "ARI": 0.8055111513843345,
+          "NMI": 0.6729972557123071
+        }
+      },
+      "frozen_source": {
+        "dataset": "mouse",
+        "label_field": "y",
+        "labels_encoded_locally": true,
+        "min_class_size": 362,
+        "n_classes": 5,
+        "nnz": 2691783,
+        "shape": [
+          8352,
+          6198
+        ],
+        "source_mtime_ns": 1757404962000000000,
+        "source_path": "/data/luolie/ToPoGate/datasets/Mouse_retina.npz",
+        "source_sha256": "d3bc2eb08d95acd12d324f668c537ae4208de57c355862f8e5800d4ba1e727c1",
+        "source_size_bytes": 207130090,
+        "source_type": "npz",
+        "sparsity": 0.9480006411968266,
+        "zero_pattern_preserved": true
+      }
+    },
+    {
+      "corrected_diagnostics": {
+        "dataset": "baron",
+        "diagnostic_representation": {
+          "support_only": "binary sparse coordinate support -> TruncatedSVD",
+          "value_only": "nonzero-value quantile profile with no coordinates or active-count padding",
+          "value_profile_quantiles": 128
+        },
+        "implementation": {
+          "numpy": "2.4.6",
+          "revision": "r1_prelaunch_review",
+          "scipy": "1.17.1",
+          "sklearn": "1.8.0",
+          "source_sha256": "8bb750e215d9b159aa0ee33319e4048880fabdc549adda9a720271cee5c9eb4b"
+        },
+        "labels_used_after_transform_for_metrics": true,
+        "project_id": "V26_support_oracle",
+        "protocol_id": "support_oracle_study_v1",
+        "source": {
+          "labels_encoded_locally": true,
+          "min_class_size": 173,
+          "n_classes": 9,
+          "nnz": 15980431,
+          "shape": [
+            8451,
+            20125
+          ],
+          "source_mtime_ns": 1757404960000000000,
+          "source_path": "/data/luolie/ToPoGate/datasets/Baron Human.npz",
+          "source_sha256": "99c5bb7a272f5b22d64949179c6d49b4b52220670f3a7cef38e9e405902249d8",
+          "source_size_bytes": 680373598,
+          "sparsity": 0.906039677762417,
+          "zero_pattern_preserved": true
+        },
+        "stage": "diagnostics",
+        "status": "completed_valid",
+        "support_feasibility": {
+          "fraction_rows_with_pair_budget": 1.0,
+          "mean_active": 1890.9514850313572,
+          "mean_pair_budget": 473.1146609868655,
+          "rows_with_pair_budget": 8451
+        },
+        "support_only": {
+          "ACC": 0.5479824872796119,
+          "ARI": 0.4102501942755812,
+          "NMI": 0.5529424974015624,
+          "n_clusters": 9
+        },
+        "value_only": {
+          "ACC": 0.18258194296532954,
+          "ARI": 0.01785913694727907,
+          "NMI": 0.03088923188116855,
+          "n_clusters": 9
+        }
+      },
+      "dataset": "baron",
+      "decision": {
+        "action": "weak support diagnostic with material oracle gain; audit data/protocol before forcing A/B/C",
+        "case": "INCONCLUSIVE",
+        "material_delta_ARI": 0.03,
+        "oracle_gap_ARI_O_LABEL_ORACLE_minus_P2": -0.19719940936297845,
+        "support_advantage_ARI": 0.3923910573283021,
+        "support_only_ARI": 0.4102501942755812,
+        "support_strong": true,
+        "value_only_ARI": 0.01785913694727907
+      },
+      "display_name": "Baron Human",
+      "domain": "scRNA",
+      "effects": {
+        "P1_minus_P0": {
+          "left": "P1_SUPPORT_PRESERVE",
+          "mean": 0.0026103954048330804,
+          "median": 0.00813620174095478,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            0.03594035476004839,
+            -0.03624537028650393,
+            0.00813620174095478
+          ],
+          "right": "P0_RANDOM"
+        },
+        "P2_minus_P1": {
+          "left": "P2_SUPPORT_TARGET",
+          "mean": 0.029302588572124894,
+          "median": -0.01780994484468243,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            -0.01780994484468243,
+            -0.019709334641182852,
+            0.12542704520223996
+          ],
+          "right": "P1_SUPPORT_PRESERVE"
+        },
+        "oracle_gap": {
+          "left": "O_LABEL_ORACLE",
+          "mean": -0.19719940936297845,
+          "median": -0.16535423762349025,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            -0.15520828320259364,
+            -0.16535423762349025,
+            -0.27103570726285153
+          ],
+          "right": "P2_SUPPORT_TARGET"
+        }
+      },
+      "formal_arm_means": {
+        "CLEAN": {
+          "ACC": 0.45438409655662054,
+          "ARI": 0.22748645108809015,
+          "NMI": 0.3875933751817829
+        },
+        "O_LABEL_ORACLE": {
+          "ACC": 0.2660040231925216,
+          "ARI": 0.029506076930448877,
+          "NMI": 0.0749279166042445
+        },
+        "P0_RANDOM": {
+          "ACC": 0.4048041651875518,
+          "ARI": 0.19479250231646938,
+          "NMI": 0.36949997398266277
+        },
+        "P1_SUPPORT_PRESERVE": {
+          "ACC": 0.4155326785784719,
+          "ARI": 0.19740289772130246,
+          "NMI": 0.35762754082369935
+        },
+        "P2_SUPPORT_TARGET": {
+          "ACC": 0.45757898473553427,
+          "ARI": 0.22670548629342735,
+          "NMI": 0.405614445318216
+        }
+      },
+      "frozen_source": {
+        "dataset": "baron",
+        "label_field": "y",
+        "labels_encoded_locally": true,
+        "min_class_size": 173,
+        "n_classes": 9,
+        "nnz": 15980431,
+        "shape": [
+          8451,
+          20125
+        ],
+        "source_mtime_ns": 1757404960000000000,
+        "source_path": "/data/luolie/ToPoGate/datasets/Baron Human.npz",
+        "source_sha256": "99c5bb7a272f5b22d64949179c6d49b4b52220670f3a7cef38e9e405902249d8",
+        "source_size_bytes": 680373598,
+        "source_type": "npz",
+        "sparsity": 0.906039677762417,
+        "zero_pattern_preserved": true
+      }
+    },
+    {
+      "corrected_diagnostics": {
+        "dataset": "campbell",
+        "diagnostic_representation": {
+          "support_only": "binary sparse coordinate support -> TruncatedSVD",
+          "value_only": "nonzero-value quantile profile with no coordinates or active-count padding",
+          "value_profile_quantiles": 128
+        },
+        "implementation": {
+          "numpy": "2.4.6",
+          "revision": "r1_prelaunch_review",
+          "scipy": "1.17.1",
+          "sklearn": "1.8.0",
+          "source_sha256": "8bb750e215d9b159aa0ee33319e4048880fabdc549adda9a720271cee5c9eb4b"
+        },
+        "labels_used_after_transform_for_metrics": true,
+        "project_id": "V26_support_oracle",
+        "protocol_id": "support_oracle_study_v1",
+        "source": {
+          "labels_encoded_locally": true,
+          "min_class_size": 244,
+          "n_classes": 14,
+          "nnz": 18530892,
+          "shape": [
+            9993,
+            26774
+          ],
+          "source_mtime_ns": 1757404960000000000,
+          "source_path": "/data/luolie/ToPoGate/datasets/Campbell.npz",
+          "source_sha256": "f26c9568baf8e8fade7a61e6fed80f16ceb3980afe38b7c9ccbe9aaad2b96e04",
+          "source_size_bytes": 1070290762,
+          "sparsity": 0.9307392518454559,
+          "zero_pattern_preserved": true
+        },
+        "stage": "diagnostics",
+        "status": "completed_valid",
+        "support_feasibility": {
+          "fraction_rows_with_pair_budget": 1.0,
+          "mean_active": 1854.3872710897629,
+          "mean_pair_budget": 463.97738416891826,
+          "rows_with_pair_budget": 9993
+        },
+        "support_only": {
+          "ACC": 0.26778745121585107,
+          "ARI": 0.18873474517433358,
+          "NMI": 0.30967572862355636,
+          "n_clusters": 14
+        },
+        "value_only": {
+          "ACC": 0.12058440908636045,
+          "ARI": -0.013337710198511135,
+          "NMI": 0.03219983426263811,
+          "n_clusters": 14
+        }
+      },
+      "dataset": "campbell",
+      "decision": {
+        "action": "weak support diagnostic with material oracle gain; audit data/protocol before forcing A/B/C",
+        "case": "INCONCLUSIVE",
+        "material_delta_ARI": 0.03,
+        "oracle_gap_ARI_O_LABEL_ORACLE_minus_P2": -0.10144518554814382,
+        "support_advantage_ARI": 0.2020724553728447,
+        "support_only_ARI": 0.18873474517433358,
+        "support_strong": true,
+        "value_only_ARI": -0.013337710198511135
+      },
+      "display_name": "Campbell",
+      "domain": "scRNA",
+      "effects": {
+        "P1_minus_P0": {
+          "left": "P1_SUPPORT_PRESERVE",
+          "mean": -0.005284275830353555,
+          "median": 0.011041839757182731,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            0.07244332028287472,
+            0.011041839757182731,
+            -0.09933798753111811
+          ],
+          "right": "P0_RANDOM"
+        },
+        "P2_minus_P1": {
+          "left": "P2_SUPPORT_TARGET",
+          "mean": -0.02362940623756542,
+          "median": -0.05068518753257978,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            -0.05068518753257978,
+            0.03160801230368551,
+            -0.051811043483802
+          ],
+          "right": "P1_SUPPORT_PRESERVE"
+        },
+        "oracle_gap": {
+          "left": "O_LABEL_ORACLE",
+          "mean": -0.10144518554814382,
+          "median": -0.07475445752564405,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            -0.07475445752564405,
+            -0.18601376558123656,
+            -0.04356733353755084
+          ],
+          "right": "P2_SUPPORT_TARGET"
+        }
+      },
+      "formal_arm_means": {
+        "CLEAN": {
+          "ACC": 0.33303312318623035,
+          "ARI": 0.20564767941520204,
+          "NMI": 0.3197761968007837
+        },
+        "O_LABEL_ORACLE": {
+          "ACC": 0.2586143633877047,
+          "ARI": 0.057675915669410445,
+          "NMI": 0.08670316533711285
+        },
+        "P0_RANDOM": {
+          "ACC": 0.3258947930217819,
+          "ARI": 0.18803478328547327,
+          "NMI": 0.3245159932464492
+        },
+        "P1_SUPPORT_PRESERVE": {
+          "ACC": 0.3346008872877681,
+          "ARI": 0.18275050745511967,
+          "NMI": 0.3177621078964915
+        },
+        "P2_SUPPORT_TARGET": {
+          "ACC": 0.31035057873845023,
+          "ARI": 0.15912110121755427,
+          "NMI": 0.2744550310552244
+        }
+      },
+      "frozen_source": {
+        "dataset": "campbell",
+        "label_field": "y",
+        "labels_encoded_locally": true,
+        "min_class_size": 244,
+        "n_classes": 14,
+        "nnz": 18530892,
+        "shape": [
+          9993,
+          26774
+        ],
+        "source_mtime_ns": 1757404960000000000,
+        "source_path": "/data/luolie/ToPoGate/datasets/Campbell.npz",
+        "source_sha256": "f26c9568baf8e8fade7a61e6fed80f16ceb3980afe38b7c9ccbe9aaad2b96e04",
+        "source_size_bytes": 1070290762,
+        "source_type": "npz",
+        "sparsity": 0.9307392518454559,
+        "zero_pattern_preserved": true
+      }
+    },
+    {
+      "corrected_diagnostics": {
+        "dataset": "macosko",
+        "diagnostic_representation": {
+          "support_only": "binary sparse coordinate support -> TruncatedSVD",
+          "value_only": "nonzero-value quantile profile with no coordinates or active-count padding",
+          "value_profile_quantiles": 128
+        },
+        "implementation": {
+          "numpy": "2.4.6",
+          "revision": "r1_prelaunch_review",
+          "scipy": "1.17.1",
+          "sklearn": "1.8.0",
+          "source_sha256": "8bb750e215d9b159aa0ee33319e4048880fabdc549adda9a720271cee5c9eb4b"
+        },
+        "labels_used_after_transform_for_metrics": true,
+        "project_id": "V26_support_oracle",
+        "protocol_id": "support_oracle_study_v1",
+        "source": {
+          "labels_encoded_locally": true,
+          "min_class_size": 54,
+          "n_classes": 12,
+          "nnz": 31849893,
+          "shape": [
+            44808,
+            23288
+          ],
+          "source_mtime_ns": 1781030632413135173,
+          "source_path": "/data/luolie/biopipeline/scCluBench/data/processed_scmae/Macosko.h5ad",
+          "source_sha256": "cc5d0864a49a8b01a5d8a3ca1596ae42c94ce73f6b1f7973e8d9f07687d5a6d0",
+          "source_size_bytes": 258162904,
+          "sparsity": 0.9694774913442666,
+          "zero_pattern_preserved": true
+        },
+        "stage": "diagnostics",
+        "status": "completed_valid",
+        "support_feasibility": {
+          "fraction_rows_with_pair_budget": 1.0,
+          "mean_active": 710.8081815747188,
+          "mean_pair_budget": 178.07788787716478,
+          "rows_with_pair_budget": 44808
+        },
+        "support_only": {
+          "ACC": 0.3930994465274058,
+          "ARI": 0.26854425616514116,
+          "NMI": 0.419768925021731,
+          "n_clusters": 12
+        },
+        "value_only": {
+          "ACC": 0.28997054097482594,
+          "ARI": 0.11151033479250166,
+          "NMI": 0.09297420747479304,
+          "n_clusters": 12
+        }
+      },
+      "dataset": "macosko",
+      "decision": {
+        "action": "weak support diagnostic with material oracle gain; audit data/protocol before forcing A/B/C",
+        "case": "INCONCLUSIVE",
+        "material_delta_ARI": 0.03,
+        "oracle_gap_ARI_O_LABEL_ORACLE_minus_P2": -0.16056960768162207,
+        "support_advantage_ARI": 0.1570339213726395,
+        "support_only_ARI": 0.26854425616514116,
+        "support_strong": true,
+        "value_only_ARI": 0.11151033479250166
+      },
+      "display_name": "Macosko",
+      "domain": "scRNA",
+      "effects": {
+        "P1_minus_P0": {
+          "left": "P1_SUPPORT_PRESERVE",
+          "mean": -0.025542371131851798,
+          "median": 0.003495835215339027,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            -0.08913271380968968,
+            0.003495835215339027,
+            0.009009765198795261
+          ],
+          "right": "P0_RANDOM"
+        },
+        "P2_minus_P1": {
+          "left": "P2_SUPPORT_TARGET",
+          "mean": 0.0057873408677193705,
+          "median": -0.026180022231414468,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            0.1367268118233511,
+            -0.09318476698877853,
+            -0.026180022231414468
+          ],
+          "right": "P1_SUPPORT_PRESERVE"
+        },
+        "oracle_gap": {
+          "left": "O_LABEL_ORACLE",
+          "mean": -0.16056960768162207,
+          "median": -0.1378147932826344,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            -0.2353397516138162,
+            -0.10855427814841556,
+            -0.1378147932826344
+          ],
+          "right": "P2_SUPPORT_TARGET"
+        }
+      },
+      "formal_arm_means": {
+        "CLEAN": {
+          "ACC": 0.7395108016425639,
+          "ARI": 0.5482115856186386,
+          "NMI": 0.35360831229766826
+        },
+        "O_LABEL_ORACLE": {
+          "ACC": 0.6045497827768851,
+          "ARI": 0.3952336413851578,
+          "NMI": 0.18825124761915055
+        },
+        "P0_RANDOM": {
+          "ACC": 0.7524251621734214,
+          "ARI": 0.5755582793309123,
+          "NMI": 0.3717877453131886
+        },
+        "P1_SUPPORT_PRESERVE": {
+          "ACC": 0.7445545438314588,
+          "ARI": 0.5500159081990604,
+          "NMI": 0.3489261317873466
+        },
+        "P2_SUPPORT_TARGET": {
+          "ACC": 0.7400538594298638,
+          "ARI": 0.5558032490667799,
+          "NMI": 0.3499586430137757
+        }
+      },
+      "frozen_source": {
+        "dataset": "macosko",
+        "label_field": "resolved_label",
+        "labels_encoded_locally": true,
+        "min_class_size": 54,
+        "n_classes": 12,
+        "nnz": 31849893,
+        "shape": [
+          44808,
+          23288
+        ],
+        "source_mtime_ns": 1781030632413135173,
+        "source_path": "/data/luolie/biopipeline/scCluBench/data/processed_scmae/Macosko.h5ad",
+        "source_sha256": "cc5d0864a49a8b01a5d8a3ca1596ae42c94ce73f6b1f7973e8d9f07687d5a6d0",
+        "source_size_bytes": 258162904,
+        "source_type": "h5ad",
+        "sparsity": 0.9694774913442666,
+        "zero_pattern_preserved": true
+      }
+    },
+    {
+      "corrected_diagnostics": {
+        "dataset": "melanoma",
+        "diagnostic_representation": {
+          "support_only": "binary sparse coordinate support -> TruncatedSVD",
+          "value_only": "nonzero-value quantile profile with no coordinates or active-count padding",
+          "value_profile_quantiles": 128
+        },
+        "implementation": {
+          "numpy": "2.4.6",
+          "revision": "r1_prelaunch_review",
+          "scipy": "1.17.1",
+          "sklearn": "1.8.0",
+          "source_sha256": "8bb750e215d9b159aa0ee33319e4048880fabdc549adda9a720271cee5c9eb4b"
+        },
+        "labels_used_after_transform_for_metrics": true,
+        "project_id": "V26_support_oracle",
+        "protocol_id": "support_oracle_study_v1",
+        "source": {
+          "labels_encoded_locally": true,
+          "min_class_size": 46,
+          "n_classes": 9,
+          "nnz": 13890435,
+          "shape": [
+            4513,
+            23684
+          ],
+          "source_mtime_ns": 1781030632549132885,
+          "source_path": "/data/luolie/biopipeline/scCluBench/data/processed_scmae/Melanoma_5K.h5ad",
+          "source_sha256": "cb2d0d8863bfeb04f05f39191a7f2fb32fa5bf04af936722aa2d689568708a95",
+          "source_size_bytes": 112416326,
+          "sparsity": 0.8700442617815268,
+          "zero_pattern_preserved": true
+        },
+        "stage": "diagnostics",
+        "status": "completed_valid",
+        "support_feasibility": {
+          "fraction_rows_with_pair_budget": 1.0,
+          "mean_active": 3077.8717039663197,
+          "mean_pair_budget": 769.8428982938178,
+          "rows_with_pair_budget": 4513
+        },
+        "support_only": {
+          "ACC": 0.34456015953910923,
+          "ARI": 0.1955481915761155,
+          "NMI": 0.36108715623149934,
+          "n_clusters": 9
+        },
+        "value_only": {
+          "ACC": 0.22246842455129626,
+          "ARI": 0.0738353883834583,
+          "NMI": 0.1003519655406516,
+          "n_clusters": 9
+        }
+      },
+      "dataset": "melanoma",
+      "decision": {
+        "action": "weak support diagnostic with material oracle gain; audit data/protocol before forcing A/B/C",
+        "case": "INCONCLUSIVE",
+        "material_delta_ARI": 0.03,
+        "oracle_gap_ARI_O_LABEL_ORACLE_minus_P2": -0.2979241218893747,
+        "support_advantage_ARI": 0.1217128031926572,
+        "support_only_ARI": 0.1955481915761155,
+        "support_strong": true,
+        "value_only_ARI": 0.0738353883834583
+      },
+      "display_name": "Melanoma_5K",
+      "domain": "scRNA",
+      "effects": {
+        "P1_minus_P0": {
+          "left": "P1_SUPPORT_PRESERVE",
+          "mean": 0.08287944162340866,
+          "median": 0.09049450132438608,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            0.09761188667378784,
+            0.06053193687205205,
+            0.09049450132438608
+          ],
+          "right": "P0_RANDOM"
+        },
+        "P2_minus_P1": {
+          "left": "P2_SUPPORT_TARGET",
+          "mean": -0.12738997810334524,
+          "median": -0.10396332386356871,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            -0.08817819551251221,
+            -0.10396332386356871,
+            -0.19002841493395478
+          ],
+          "right": "P1_SUPPORT_PRESERVE"
+        },
+        "oracle_gap": {
+          "left": "O_LABEL_ORACLE",
+          "mean": -0.2979241218893747,
+          "median": -0.270740736146697,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            -0.39314693781920806,
+            -0.270740736146697,
+            -0.2298846917022192
+          ],
+          "right": "P2_SUPPORT_TARGET"
+        }
+      },
+      "formal_arm_means": {
+        "CLEAN": {
+          "ACC": 0.516877169658025,
+          "ARI": 0.3979727064479433,
+          "NMI": 0.5150914482660934
+        },
+        "O_LABEL_ORACLE": {
+          "ACC": 0.35541768225127407,
+          "ARI": 0.07000749074716905,
+          "NMI": 0.14273404547890223
+        },
+        "P0_RANDOM": {
+          "ACC": 0.5428022749095206,
+          "ARI": 0.4124421491164804,
+          "NMI": 0.4873446044023692
+        },
+        "P1_SUPPORT_PRESERVE": {
+          "ACC": 0.6362360587931163,
+          "ARI": 0.4953215907398891,
+          "NMI": 0.5807475872195474
+        },
+        "P2_SUPPORT_TARGET": {
+          "ACC": 0.4882192185538075,
+          "ARI": 0.3679316126365438,
+          "NMI": 0.5172828972160814
+        }
+      },
+      "frozen_source": {
+        "dataset": "melanoma",
+        "label_field": "resolved_label",
+        "labels_encoded_locally": true,
+        "min_class_size": 46,
+        "n_classes": 9,
+        "nnz": 13890435,
+        "shape": [
+          4513,
+          23684
+        ],
+        "source_mtime_ns": 1781030632549132885,
+        "source_path": "/data/luolie/biopipeline/scCluBench/data/processed_scmae/Melanoma_5K.h5ad",
+        "source_sha256": "cb2d0d8863bfeb04f05f39191a7f2fb32fa5bf04af936722aa2d689568708a95",
+        "source_size_bytes": 112416326,
+        "source_type": "h5ad",
+        "sparsity": 0.8700442617815268,
+        "zero_pattern_preserved": true
+      }
+    },
+    {
+      "corrected_diagnostics": {
+        "dataset": "quake",
+        "diagnostic_representation": {
+          "support_only": "binary sparse coordinate support -> TruncatedSVD",
+          "value_only": "nonzero-value quantile profile with no coordinates or active-count padding",
+          "value_profile_quantiles": 128
+        },
+        "implementation": {
+          "numpy": "2.4.6",
+          "revision": "r1_prelaunch_review",
+          "scipy": "1.17.1",
+          "sklearn": "1.8.0",
+          "source_sha256": "8bb750e215d9b159aa0ee33319e4048880fabdc549adda9a720271cee5c9eb4b"
+        },
+        "labels_used_after_transform_for_metrics": true,
+        "project_id": "V26_support_oracle",
+        "protocol_id": "support_oracle_study_v1",
+        "source": {
+          "labels_encoded_locally": true,
+          "min_class_size": 25,
+          "n_classes": 11,
+          "nnz": 4271360,
+          "shape": [
+            1676,
+            23341
+          ],
+          "source_mtime_ns": 1780905183647081060,
+          "source_path": "/data/luolie/biopipeline/scCluBench/data/processed/Quake_Smart-seq2_Lung.h5ad",
+          "source_sha256": "24541fa7f0d2025509237b345597afdf97b10756ac8477cb048cc8be8828e134",
+          "source_size_bytes": 35313352,
+          "sparsity": 0.890812555042859,
+          "zero_pattern_preserved": true
+        },
+        "stage": "diagnostics",
+        "status": "completed_valid",
+        "support_feasibility": {
+          "fraction_rows_with_pair_budget": 1.0,
+          "mean_active": 2548.54415274463,
+          "mean_pair_budget": 637.5178997613365,
+          "rows_with_pair_budget": 1676
+        },
+        "support_only": {
+          "ACC": 0.42720763723150357,
+          "ARI": 0.3922170772329721,
+          "NMI": 0.6589686929331051,
+          "n_clusters": 11
+        },
+        "value_only": {
+          "ACC": 0.20107398568019094,
+          "ARI": 0.022908184491138538,
+          "NMI": 0.061372131485077586,
+          "n_clusters": 11
+        }
+      },
+      "dataset": "quake",
+      "decision": {
+        "action": "weak support diagnostic with material oracle gain; audit data/protocol before forcing A/B/C",
+        "case": "INCONCLUSIVE",
+        "material_delta_ARI": 0.03,
+        "oracle_gap_ARI_O_LABEL_ORACLE_minus_P2": -0.08002571423917428,
+        "support_advantage_ARI": 0.3693088927418336,
+        "support_only_ARI": 0.3922170772329721,
+        "support_strong": true,
+        "value_only_ARI": 0.022908184491138538
+      },
+      "display_name": "Quake_Smart-seq2_Lung",
+      "domain": "scRNA",
+      "effects": {
+        "P1_minus_P0": {
+          "left": "P1_SUPPORT_PRESERVE",
+          "mean": 0.008358748201975555,
+          "median": 0.005203334108459287,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            0.005203334108459287,
+            0.04690554772926217,
+            -0.02703263723179479
+          ],
+          "right": "P0_RANDOM"
+        },
+        "P2_minus_P1": {
+          "left": "P2_SUPPORT_TARGET",
+          "mean": 0.016392769122548764,
+          "median": -0.013585647460000586,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            -0.013585647460000586,
+            -0.017023314678818444,
+            0.07978726950646532
+          ],
+          "right": "P1_SUPPORT_PRESERVE"
+        },
+        "oracle_gap": {
+          "left": "O_LABEL_ORACLE",
+          "mean": -0.08002571423917428,
+          "median": -0.05686556802813021,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            -0.05686556802813021,
+            -0.027780227137908328,
+            -0.1554313475514843
+          ],
+          "right": "P2_SUPPORT_TARGET"
+        }
+      },
+      "formal_arm_means": {
+        "CLEAN": {
+          "ACC": 0.36376292760540974,
+          "ARI": 0.12181684757647264,
+          "NMI": 0.23407271848477715
+        },
+        "O_LABEL_ORACLE": {
+          "ACC": 0.28997613365155134,
+          "ARI": 0.05534362580271785,
+          "NMI": 0.10322995074895343
+        },
+        "P0_RANDOM": {
+          "ACC": 0.30409705648369134,
+          "ARI": 0.11061782271736781,
+          "NMI": 0.25574534474563754
+        },
+        "P1_SUPPORT_PRESERVE": {
+          "ACC": 0.3570007955449483,
+          "ARI": 0.11897657091934337,
+          "NMI": 0.2963292491510246
+        },
+        "P2_SUPPORT_TARGET": {
+          "ACC": 0.35401750198886234,
+          "ARI": 0.13536934004189213,
+          "NMI": 0.2909772315499351
+        }
+      },
+      "frozen_source": {
+        "dataset": "quake",
+        "label_field": "resolved_label",
+        "labels_encoded_locally": true,
+        "min_class_size": 25,
+        "n_classes": 11,
+        "nnz": 4271360,
+        "shape": [
+          1676,
+          23341
+        ],
+        "source_mtime_ns": 1780905183647081060,
+        "source_path": "/data/luolie/biopipeline/scCluBench/data/processed/Quake_Smart-seq2_Lung.h5ad",
+        "source_sha256": "24541fa7f0d2025509237b345597afdf97b10756ac8477cb048cc8be8828e134",
+        "source_size_bytes": 35313352,
+        "source_type": "h5ad",
+        "sparsity": 0.890812555042859,
+        "zero_pattern_preserved": true
+      }
+    },
+    {
+      "corrected_diagnostics": {
+        "dataset": "wang",
+        "diagnostic_representation": {
+          "support_only": "binary sparse coordinate support -> TruncatedSVD",
+          "value_only": "nonzero-value quantile profile with no coordinates or active-count padding",
+          "value_profile_quantiles": 128
+        },
+        "implementation": {
+          "numpy": "2.4.6",
+          "revision": "r1_prelaunch_review",
+          "scipy": "1.17.1",
+          "sklearn": "1.8.0",
+          "source_sha256": "8bb750e215d9b159aa0ee33319e4048880fabdc549adda9a720271cee5c9eb4b"
+        },
+        "labels_used_after_transform_for_metrics": true,
+        "project_id": "V26_support_oracle",
+        "protocol_id": "support_oracle_study_v1",
+        "source": {
+          "labels_encoded_locally": true,
+          "min_class_size": 2093,
+          "n_classes": 2,
+          "nnz": 20366900,
+          "shape": [
+            9519,
+            14561
+          ],
+          "source_mtime_ns": 1780905186042996981,
+          "source_path": "/data/luolie/biopipeline/scCluBench/data/processed/Wang.h5ad",
+          "source_sha256": "0a5247b2efd6709b662c91577dbd0ce3173c45eec6423c1d704983b398d90962",
+          "source_size_bytes": 164116890,
+          "sparsity": 0.8530591991947486,
+          "zero_pattern_preserved": true
+        },
+        "stage": "diagnostics",
+        "status": "completed_valid",
+        "support_feasibility": {
+          "fraction_rows_with_pair_budget": 1.0,
+          "mean_active": 2139.605000525265,
+          "mean_pair_budget": 535.2752389956928,
+          "rows_with_pair_budget": 9519
+        },
+        "support_only": {
+          "ACC": 0.7849564029835067,
+          "ARI": 0.3208314478989396,
+          "NMI": 0.35948377029440437,
+          "n_clusters": 2
+        },
+        "value_only": {
+          "ACC": 0.6178169975837798,
+          "ARI": -0.031018088430715324,
+          "NMI": 0.005636720087351122,
+          "n_clusters": 2
+        }
+      },
+      "dataset": "wang",
+      "decision": {
+        "action": "support already appears utilized; continue with adaptive selection",
+        "case": "A",
+        "material_delta_ARI": 0.03,
+        "oracle_gap_ARI_O_LABEL_ORACLE_minus_P2": 0.0005732063675453503,
+        "support_advantage_ARI": 0.3518495363296549,
+        "support_only_ARI": 0.3208314478989396,
+        "support_strong": true,
+        "value_only_ARI": -0.031018088430715324
+      },
+      "display_name": "Wang",
+      "domain": "scRNA",
+      "effects": {
+        "P1_minus_P0": {
+          "left": "P1_SUPPORT_PRESERVE",
+          "mean": -0.004591449508604094,
+          "median": -0.0007021768410775536,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            -0.0007021768410775536,
+            -0.014625215593828247,
+            0.0015530439090935197
+          ],
+          "right": "P0_RANDOM"
+        },
+        "P2_minus_P1": {
+          "left": "P2_SUPPORT_TARGET",
+          "mean": -0.0008746712651817682,
+          "median": 0.0014013299216795935,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            0.0017759574789511998,
+            -0.005801301196176098,
+            0.0014013299216795935
+          ],
+          "right": "P1_SUPPORT_PRESERVE"
+        },
+        "oracle_gap": {
+          "left": "O_LABEL_ORACLE",
+          "mean": 0.0005732063675453503,
+          "median": 0.004254977495033084,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            0.005798344283890956,
+            0.004254977495033084,
+            -0.00833370267628799
+          ],
+          "right": "P2_SUPPORT_TARGET"
+        }
+      },
+      "formal_arm_means": {
+        "CLEAN": {
+          "ACC": 0.7429351822670448,
+          "ARI": 0.05835794073384904,
+          "NMI": 0.12457926918124414
+        },
+        "O_LABEL_ORACLE": {
+          "ACC": 0.7351262387505691,
+          "ARI": -0.0504362950389537,
+          "NMI": 0.02649851504235494
+        },
+        "P0_RANDOM": {
+          "ACC": 0.7404489267079875,
+          "ARI": -0.04554338063271319,
+          "NMI": 0.025235463904106196
+        },
+        "P1_SUPPORT_PRESERVE": {
+          "ACC": 0.733305319186189,
+          "ARI": -0.05013483014131728,
+          "NMI": 0.023358020441958362
+        },
+        "P2_SUPPORT_TARGET": {
+          "ACC": 0.7361767692684805,
+          "ARI": -0.05100950140649905,
+          "NMI": 0.030160873838299573
+        }
+      },
+      "frozen_source": {
+        "dataset": "wang",
+        "label_field": "resolved_label",
+        "labels_encoded_locally": true,
+        "min_class_size": 2093,
+        "n_classes": 2,
+        "nnz": 20366900,
+        "shape": [
+          9519,
+          14561
+        ],
+        "source_mtime_ns": 1780905186042996981,
+        "source_path": "/data/luolie/biopipeline/scCluBench/data/processed/Wang.h5ad",
+        "source_sha256": "0a5247b2efd6709b662c91577dbd0ce3173c45eec6423c1d704983b398d90962",
+        "source_size_bytes": 164116890,
+        "source_type": "h5ad",
+        "sparsity": 0.8530591991947486,
+        "zero_pattern_preserved": true
+      }
+    },
+    {
+      "corrected_diagnostics": {
+        "dataset": "news20",
+        "diagnostic_representation": {
+          "support_only": "binary sparse coordinate support -> TruncatedSVD",
+          "value_only": "nonzero-value quantile profile with no coordinates or active-count padding",
+          "value_profile_quantiles": 128
+        },
+        "implementation": {
+          "numpy": "2.4.6",
+          "revision": "r1_prelaunch_review",
+          "scipy": "1.17.1",
+          "sklearn": "1.8.0",
+          "source_sha256": "8bb750e215d9b159aa0ee33319e4048880fabdc549adda9a720271cee5c9eb4b"
+        },
+        "labels_used_after_transform_for_metrics": true,
+        "project_id": "V26_support_oracle",
+        "protocol_id": "support_oracle_study_v1",
+        "source": {
+          "labels_encoded_locally": true,
+          "min_class_size": 780,
+          "n_classes": 20,
+          "nnz": 1272569,
+          "shape": [
+            15935,
+            62061
+          ],
+          "source_mtime_ns": 1786484184105222353,
+          "source_path": "/data/luolie/ToPoGate/datasets/external/v22_dataset_extension_round2_20260812/processed/news20.npz",
+          "source_sha256": "b71e5008a4ed74981c72d79aecdd78e566ee5c0d246920bb2127bf3e375ecb5c",
+          "source_size_bytes": 2966103,
+          "sparsity": 0.9987132016286475,
+          "zero_pattern_preserved": true
+        },
+        "stage": "diagnostics",
+        "status": "completed_valid",
+        "support_feasibility": {
+          "fraction_rows_with_pair_budget": 0.9986821462190147,
+          "mean_active": 79.8599937245058,
+          "mean_pair_budget": 20.343018512707875,
+          "rows_with_pair_budget": 15914
+        },
+        "support_only": {
+          "ACC": 0.16272356448070285,
+          "ARI": 0.032501766746496255,
+          "NMI": 0.17214793881165236,
+          "n_clusters": 20
+        },
+        "value_only": {
+          "ACC": 0.08095387511766551,
+          "ARI": 0.005549460779561333,
+          "NMI": 0.022627626012167074,
+          "n_clusters": 20
+        }
+      },
+      "dataset": "news20",
+      "decision": {
+        "action": "freeze the support route and prioritize value representation or a sparse encoder",
+        "case": "C",
+        "material_delta_ARI": 0.03,
+        "oracle_gap_ARI_O_LABEL_ORACLE_minus_P2": 1.4120432517165956e-05,
+        "support_advantage_ARI": 0.026952305966934924,
+        "support_only_ARI": 0.032501766746496255,
+        "support_strong": false,
+        "value_only_ARI": 0.005549460779561333
+      },
+      "display_name": "news20",
+      "domain": "nonbiological",
+      "effects": {
+        "P1_minus_P0": {
+          "left": "P1_SUPPORT_PRESERVE",
+          "mean": 0.0019325116794330242,
+          "median": -2.198889710259339e-06,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            0.005896392780341477,
+            -2.198889710259339e-06,
+            -9.665885233214469e-05
+          ],
+          "right": "P0_RANDOM"
+        },
+        "P2_minus_P1": {
+          "left": "P2_SUPPORT_TARGET",
+          "mean": -0.0020310329410611915,
+          "median": -1.7402831388851474e-05,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            -0.0060760575559861115,
+            3.615641913885429e-07,
+            -1.7402831388851474e-05
+          ],
+          "right": "P1_SUPPORT_PRESERVE"
+        },
+        "oracle_gap": {
+          "left": "O_LABEL_ORACLE",
+          "mean": 1.4120432517165956e-05,
+          "median": 1.6741807820005636e-05,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            1.6741807820005636e-05,
+            2.1283431923201823e-06,
+            2.3491146539172048e-05
+          ],
+          "right": "P2_SUPPORT_TARGET"
+        }
+      },
+      "formal_arm_means": {
+        "CLEAN": {
+          "ACC": 0.06306871666143708,
+          "ARI": 0.0035260708042994895,
+          "NMI": 0.040287977961574385
+        },
+        "O_LABEL_ORACLE": {
+          "ACC": 0.05219119338981278,
+          "ARI": 1.486439868846183e-05,
+          "NMI": 0.007191189735716789
+        },
+        "P0_RANDOM": {
+          "ACC": 0.053906495136492004,
+          "ARI": 9.926522779946318e-05,
+          "NMI": 0.0129203336586952
+        },
+        "P1_SUPPORT_PRESERVE": {
+          "ACC": 0.06032841752954712,
+          "ARI": 0.0020317769072324874,
+          "NMI": 0.03831374302398898
+        },
+        "P2_SUPPORT_TARGET": {
+          "ACC": 0.05074782972492417,
+          "ARI": 7.439661712958755e-07,
+          "NMI": 0.0023254766713564474
+        }
+      },
+      "frozen_source": {
+        "dataset": "news20",
+        "label_field": "y",
+        "labels_encoded_locally": true,
+        "min_class_size": 780,
+        "n_classes": 20,
+        "nnz": 1272569,
+        "shape": [
+          15935,
+          62061
+        ],
+        "source_mtime_ns": 1786484184105222353,
+        "source_path": "/data/luolie/ToPoGate/datasets/external/v22_dataset_extension_round2_20260812/processed/news20.npz",
+        "source_sha256": "b71e5008a4ed74981c72d79aecdd78e566ee5c0d246920bb2127bf3e375ecb5c",
+        "source_size_bytes": 2966103,
+        "source_type": "npz_csr",
+        "sparsity": 0.9987132016286475,
+        "zero_pattern_preserved": true
+      }
+    },
+    {
+      "corrected_diagnostics": {
+        "dataset": "rcv1",
+        "diagnostic_representation": {
+          "support_only": "binary sparse coordinate support -> TruncatedSVD",
+          "value_only": "nonzero-value quantile profile with no coordinates or active-count padding",
+          "value_profile_quantiles": 128
+        },
+        "implementation": {
+          "numpy": "2.4.6",
+          "revision": "r1_prelaunch_review",
+          "scipy": "1.17.1",
+          "sklearn": "1.8.0",
+          "source_sha256": "8bb750e215d9b159aa0ee33319e4048880fabdc549adda9a720271cee5c9eb4b"
+        },
+        "labels_used_after_transform_for_metrics": true,
+        "project_id": "V26_support_oracle",
+        "protocol_id": "support_oracle_study_v1",
+        "source": {
+          "labels_encoded_locally": true,
+          "min_class_size": 9751,
+          "n_classes": 2,
+          "nnz": 1498952,
+          "shape": [
+            20242,
+            47236
+          ],
+          "source_mtime_ns": 1786484190573066008,
+          "source_path": "/data/luolie/ToPoGate/datasets/external/v22_dataset_extension_round2_20260812/processed/rcv1_train.npz",
+          "source_sha256": "085d6bc9713e985670c588250a5e524bb36920c32e4471e20dcd41291d96644e",
+          "source_size_bytes": 8102157,
+          "sparsity": 0.9984323063779483,
+          "zero_pattern_preserved": true
+        },
+        "stage": "diagnostics",
+        "status": "completed_valid",
+        "support_feasibility": {
+          "fraction_rows_with_pair_budget": 1.0,
+          "mean_active": 74.0515759312321,
+          "mean_pair_budget": 18.88869676909396,
+          "rows_with_pair_budget": 20242
+        },
+        "support_only": {
+          "ACC": 0.6195534038138524,
+          "ARI": 0.05690139948323567,
+          "NMI": 0.04818700030122783,
+          "n_clusters": 2
+        },
+        "value_only": {
+          "ACC": 0.5085959885386819,
+          "ARI": -8.48738100570111e-05,
+          "NMI": 1.9605584777306463e-06,
+          "n_clusters": 2
+        }
+      },
+      "dataset": "rcv1",
+      "decision": {
+        "action": "freeze the support route and prioritize value representation or a sparse encoder",
+        "case": "C",
+        "material_delta_ARI": 0.03,
+        "oracle_gap_ARI_O_LABEL_ORACLE_minus_P2": -0.00023191125086341764,
+        "support_advantage_ARI": 0.056986273293292686,
+        "support_only_ARI": 0.05690139948323567,
+        "support_strong": false,
+        "value_only_ARI": -8.48738100570111e-05
+      },
+      "display_name": "rcv1_train",
+      "domain": "nonbiological",
+      "effects": {
+        "P1_minus_P0": {
+          "left": "P1_SUPPORT_PRESERVE",
+          "mean": 0.00016296866037393052,
+          "median": -6.499317582143002e-06,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            -8.755455683034494e-05,
+            -6.499317582143002e-06,
+            0.0005829598555342795
+          ],
+          "right": "P0_RANDOM"
+        },
+        "P2_minus_P1": {
+          "left": "P2_SUPPORT_TARGET",
+          "mean": -1.1694102285091833e-05,
+          "median": -5.0705086299834334e-05,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            -5.1721372069835914e-05,
+            6.734415151439475e-05,
+            -5.0705086299834334e-05
+          ],
+          "right": "P1_SUPPORT_PRESERVE"
+        },
+        "oracle_gap": {
+          "left": "O_LABEL_ORACLE",
+          "mean": -0.00023191125086341764,
+          "median": -3.817443406181836e-05,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            7.185018237152965e-06,
+            -3.817443406181836e-05,
+            -0.0006647443367655875
+          ],
+          "right": "P2_SUPPORT_TARGET"
+        }
+      },
+      "formal_arm_means": {
+        "CLEAN": {
+          "ACC": 0.5160886605407898,
+          "ARI": -0.00022592302610026122,
+          "NMI": 0.0029596472586409677
+        },
+        "O_LABEL_ORACLE": {
+          "ACC": 0.5158251819648916,
+          "ARI": -0.00027940154893352914,
+          "NMI": 0.003279216450183387
+        },
+        "P0_RANDOM": {
+          "ACC": 0.5164838784046372,
+          "ARI": -0.0001987648561589502,
+          "NMI": 0.0012762244101532233
+        },
+        "P1_SUPPORT_PRESERVE": {
+          "ACC": 0.5179988802160524,
+          "ARI": -3.57961957850197e-05,
+          "NMI": 0.00013411671961945386
+        },
+        "P2_SUPPORT_TARGET": {
+          "ACC": 0.5179165431610843,
+          "ARI": -4.749029807011153e-05,
+          "NMI": 0.0013370119347219428
+        }
+      },
+      "frozen_source": {
+        "dataset": "rcv1",
+        "label_field": "y",
+        "labels_encoded_locally": true,
+        "min_class_size": 9751,
+        "n_classes": 2,
+        "nnz": 1498952,
+        "shape": [
+          20242,
+          47236
+        ],
+        "source_mtime_ns": 1786484190573066008,
+        "source_path": "/data/luolie/ToPoGate/datasets/external/v22_dataset_extension_round2_20260812/processed/rcv1_train.npz",
+        "source_sha256": "085d6bc9713e985670c588250a5e524bb36920c32e4471e20dcd41291d96644e",
+        "source_size_bytes": 8102157,
+        "source_type": "npz_csr",
+        "sparsity": 0.9984323063779483,
+        "zero_pattern_preserved": true
+      }
+    },
+    {
+      "corrected_diagnostics": {
+        "dataset": "arcene",
+        "diagnostic_representation": {
+          "support_only": "binary sparse coordinate support -> TruncatedSVD",
+          "value_only": "nonzero-value quantile profile with no coordinates or active-count padding",
+          "value_profile_quantiles": 128
+        },
+        "implementation": {
+          "numpy": "2.4.6",
+          "revision": "r1_prelaunch_review",
+          "scipy": "1.17.1",
+          "sklearn": "1.8.0",
+          "source_sha256": "8bb750e215d9b159aa0ee33319e4048880fabdc549adda9a720271cee5c9eb4b"
+        },
+        "labels_used_after_transform_for_metrics": true,
+        "project_id": "V26_support_oracle",
+        "protocol_id": "support_oracle_study_v1",
+        "source": {
+          "labels_encoded_locally": true,
+          "min_class_size": 88,
+          "n_classes": 2,
+          "nnz": 1087539,
+          "shape": [
+            200,
+            10000
+          ],
+          "source_mtime_ns": 1786420687471726142,
+          "source_path": "/data/luolie/ToPoGate/datasets/external/v19_extended_sparse_20260811/processed/arcene.npz",
+          "source_sha256": "7249b341d0d50155a3f47c101042291d55db946695955fc98c6320e8a609ad2b",
+          "source_size_bytes": 2344620,
+          "sparsity": 0.4562305,
+          "zero_pattern_preserved": true
+        },
+        "stage": "diagnostics",
+        "status": "completed_valid",
+        "support_feasibility": {
+          "fraction_rows_with_pair_budget": 1.0,
+          "mean_active": 5437.695,
+          "mean_pair_budget": 1359.83,
+          "rows_with_pair_budget": 200
+        },
+        "support_only": {
+          "ACC": 0.645,
+          "ARI": 0.0792255961321919,
+          "NMI": 0.07823744551362179,
+          "n_clusters": 2
+        },
+        "value_only": {
+          "ACC": 0.55,
+          "ARI": 0.005038351249006402,
+          "NMI": 0.006371276856641138,
+          "n_clusters": 2
+        }
+      },
+      "dataset": "arcene",
+      "decision": {
+        "action": "freeze the support route and prioritize value representation or a sparse encoder",
+        "case": "C",
+        "material_delta_ARI": 0.03,
+        "oracle_gap_ARI_O_LABEL_ORACLE_minus_P2": -0.04718292948488975,
+        "support_advantage_ARI": 0.07418724488318551,
+        "support_only_ARI": 0.0792255961321919,
+        "support_strong": false,
+        "value_only_ARI": 0.005038351249006402
+      },
+      "display_name": "arcene",
+      "domain": "nonbiological",
+      "effects": {
+        "P1_minus_P0": {
+          "left": "P1_SUPPORT_PRESERVE",
+          "mean": 0.019517201771556792,
+          "median": 0.00013903110731622315,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            0.05855160531467038,
+            0.00013903110731622315,
+            -0.00013903110731622315
+          ],
+          "right": "P0_RANDOM"
+        },
+        "P2_minus_P1": {
+          "left": "P2_SUPPORT_TARGET",
+          "mean": -0.01247645194986799,
+          "median": 0.0,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            0.0,
+            0.0,
+            -0.03742935584960397
+          ],
+          "right": "P1_SUPPORT_PRESERVE"
+        },
+        "oracle_gap": {
+          "left": "O_LABEL_ORACLE",
+          "mean": -0.04718292948488975,
+          "median": -0.05855160531467038,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            -0.06201396478224869,
+            -0.05855160531467038,
+            -0.020983218357750185
+          ],
+          "right": "P2_SUPPORT_TARGET"
+        }
+      },
+      "formal_arm_means": {
+        "CLEAN": {
+          "ACC": 0.65,
+          "ARI": 0.08525544478702694,
+          "NMI": 0.08235895824143351
+        },
+        "O_LABEL_ORACLE": {
+          "ACC": 0.5883333333333333,
+          "ARI": 0.025483417880076353,
+          "NMI": 0.016305238862815926
+        },
+        "P0_RANDOM": {
+          "ACC": 0.63,
+          "ARI": 0.0656255975432773,
+          "NMI": 0.06220110572191374
+        },
+        "P1_SUPPORT_PRESERVE": {
+          "ACC": 0.65,
+          "ARI": 0.0851427993148341,
+          "NMI": 0.08396330564016401
+        },
+        "P2_SUPPORT_TARGET": {
+          "ACC": 0.6383333333333333,
+          "ARI": 0.07266634736496609,
+          "NMI": 0.07351779776152384
+        }
+      },
+      "frozen_source": {
+        "dataset": "arcene",
+        "label_field": "y",
+        "labels_encoded_locally": true,
+        "min_class_size": 88,
+        "n_classes": 2,
+        "nnz": 1087539,
+        "shape": [
+          200,
+          10000
+        ],
+        "source_mtime_ns": 1786420687471726142,
+        "source_path": "/data/luolie/ToPoGate/datasets/external/v19_extended_sparse_20260811/processed/arcene.npz",
+        "source_sha256": "7249b341d0d50155a3f47c101042291d55db946695955fc98c6320e8a609ad2b",
+        "source_size_bytes": 2344620,
+        "source_type": "npz",
+        "sparsity": 0.4562305,
+        "zero_pattern_preserved": true
+      }
+    },
+    {
+      "corrected_diagnostics": {
+        "dataset": "sms_spam",
+        "diagnostic_representation": {
+          "support_only": "binary sparse coordinate support -> TruncatedSVD",
+          "value_only": "nonzero-value quantile profile with no coordinates or active-count padding",
+          "value_profile_quantiles": 128
+        },
+        "implementation": {
+          "numpy": "2.4.6",
+          "revision": "r1_prelaunch_review",
+          "scipy": "1.17.1",
+          "sklearn": "1.8.0",
+          "source_sha256": "8bb750e215d9b159aa0ee33319e4048880fabdc549adda9a720271cee5c9eb4b"
+        },
+        "labels_used_after_transform_for_metrics": true,
+        "project_id": "V26_support_oracle",
+        "protocol_id": "support_oracle_study_v1",
+        "source": {
+          "labels_encoded_locally": true,
+          "min_class_size": 112,
+          "n_classes": 2,
+          "nnz": 3610,
+          "shape": [
+            835,
+            500
+          ],
+          "source_mtime_ns": 1757405092000000000,
+          "source_path": "/data/luolie/ToPoGate/datasets/sms_spam_collection.npz",
+          "source_sha256": "1d9c068c43dc4f58e759169906dae9dff0ac6a8def7315ce7e4989a3b28d7070",
+          "source_size_bytes": 3347170,
+          "sparsity": 0.9913532934131737,
+          "zero_pattern_preserved": true
+        },
+        "stage": "diagnostics",
+        "status": "completed_valid",
+        "support_feasibility": {
+          "fraction_rows_with_pair_budget": 0.8143712574850299,
+          "mean_active": 4.323353293413174,
+          "mean_pair_budget": 1.3461077844311378,
+          "rows_with_pair_budget": 680
+        },
+        "support_only": {
+          "ACC": 0.8203592814371258,
+          "ARI": -0.05736620128377634,
+          "NMI": 0.023203458276310124,
+          "n_clusters": 2
+        },
+        "value_only": {
+          "ACC": 0.6095808383233533,
+          "ARI": -0.033202387403255665,
+          "NMI": 0.009758570323730956,
+          "n_clusters": 2
+        }
+      },
+      "dataset": "sms_spam",
+      "decision": {
+        "action": "freeze the support route and prioritize value representation or a sparse encoder",
+        "case": "C",
+        "material_delta_ARI": 0.03,
+        "oracle_gap_ARI_O_LABEL_ORACLE_minus_P2": -0.06923899327466994,
+        "support_advantage_ARI": -0.024163813880520676,
+        "support_only_ARI": -0.05736620128377634,
+        "support_strong": false,
+        "value_only_ARI": -0.033202387403255665
+      },
+      "display_name": "sms_spam_collection",
+      "domain": "nonbiological",
+      "effects": {
+        "P1_minus_P0": {
+          "left": "P1_SUPPORT_PRESERVE",
+          "mean": -0.019043983582396933,
+          "median": -0.004158065376366427,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            -0.004158065376366427,
+            -0.06421793894306715,
+            0.011244053572242785
+          ],
+          "right": "P0_RANDOM"
+        },
+        "P2_minus_P1": {
+          "left": "P2_SUPPORT_TARGET",
+          "mean": 0.02001286538871468,
+          "median": 0.0400673624636948,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            0.058610446695878116,
+            0.0400673624636948,
+            -0.03863921299342887
+          ],
+          "right": "P1_SUPPORT_PRESERVE"
+        },
+        "oracle_gap": {
+          "left": "O_LABEL_ORACLE",
+          "mean": -0.06923899327466994,
+          "median": -0.10210114262751568,
+          "metric": "ARI",
+          "paired_seeds": [
+            7,
+            42,
+            123
+          ],
+          "per_seed": [
+            -0.11409646600623036,
+            0.008480628809736213,
+            -0.10210114262751568
+          ],
+          "right": "P2_SUPPORT_TARGET"
+        }
+      },
+      "formal_arm_means": {
+        "CLEAN": {
+          "ACC": 0.9357285429141716,
+          "ARI": 0.6399576449948351,
+          "NMI": 0.45408424637318895
+        },
+        "O_LABEL_ORACLE": {
+          "ACC": 0.9281437125748503,
+          "ARI": 0.5888019441542544,
+          "NMI": 0.40201745447141307
+        },
+        "P0_RANDOM": {
+          "ACC": 0.9389221556886227,
+          "ARI": 0.6570720556226064,
+          "NMI": 0.4750411360316789
+        },
+        "P1_SUPPORT_PRESERVE": {
+          "ACC": 0.9365269461077844,
+          "ARI": 0.6380280720402095,
+          "NMI": 0.4600546151431273
+        },
+        "P2_SUPPORT_TARGET": {
+          "ACC": 0.9417165668662674,
+          "ARI": 0.6580409374289243,
+          "NMI": 0.496474313782237
+        }
+      },
+      "frozen_source": {
+        "dataset": "sms_spam",
+        "label_field": "y",
+        "labels_encoded_locally": true,
+        "min_class_size": 112,
+        "n_classes": 2,
+        "nnz": 3610,
+        "shape": [
+          835,
+          500
+        ],
+        "source_mtime_ns": 1757405092000000000,
+        "source_path": "/data/luolie/ToPoGate/datasets/sms_spam_collection.npz",
+        "source_sha256": "1d9c068c43dc4f58e759169906dae9dff0ac6a8def7315ce7e4989a3b28d7070",
+        "source_size_bytes": 3347170,
+        "source_type": "npz",
+        "sparsity": 0.9913532934131737,
+        "zero_pattern_preserved": true
+      }
+    }
+  ],
+  "project_id": "V26_support_oracle",
+  "protocol_id": "support_oracle_study_v1",
+  "source_reconciliation": {
+    "cell_metadata_matches_frozen_manifest": true,
+    "dataset_id_join_is_unique_and_complete": true,
+    "records": [
+      {
+        "cell_source_sha256_policy": "joined_from_freeze_manifest; never recomputed per cell",
+        "cell_to_manifest_metadata_match": true,
+        "completed_cell_records": 15,
+        "dataset": "mouse",
+        "expected_cell_records": 15,
+        "frozen_source_sha256": "d3bc2eb08d95acd12d324f668c537ae4208de57c355862f8e5800d4ba1e727c1",
+        "manifest_record_present": true
+      },
+      {
+        "cell_source_sha256_policy": "joined_from_freeze_manifest; never recomputed per cell",
+        "cell_to_manifest_metadata_match": true,
+        "completed_cell_records": 15,
+        "dataset": "baron",
+        "expected_cell_records": 15,
+        "frozen_source_sha256": "99c5bb7a272f5b22d64949179c6d49b4b52220670f3a7cef38e9e405902249d8",
+        "manifest_record_present": true
+      },
+      {
+        "cell_source_sha256_policy": "joined_from_freeze_manifest; never recomputed per cell",
+        "cell_to_manifest_metadata_match": true,
+        "completed_cell_records": 15,
+        "dataset": "campbell",
+        "expected_cell_records": 15,
+        "frozen_source_sha256": "f26c9568baf8e8fade7a61e6fed80f16ceb3980afe38b7c9ccbe9aaad2b96e04",
+        "manifest_record_present": true
+      },
+      {
+        "cell_source_sha256_policy": "joined_from_freeze_manifest; never recomputed per cell",
+        "cell_to_manifest_metadata_match": true,
+        "completed_cell_records": 15,
+        "dataset": "macosko",
+        "expected_cell_records": 15,
+        "frozen_source_sha256": "cc5d0864a49a8b01a5d8a3ca1596ae42c94ce73f6b1f7973e8d9f07687d5a6d0",
+        "manifest_record_present": true
+      },
+      {
+        "cell_source_sha256_policy": "joined_from_freeze_manifest; never recomputed per cell",
+        "cell_to_manifest_metadata_match": true,
+        "completed_cell_records": 15,
+        "dataset": "melanoma",
+        "expected_cell_records": 15,
+        "frozen_source_sha256": "cb2d0d8863bfeb04f05f39191a7f2fb32fa5bf04af936722aa2d689568708a95",
+        "manifest_record_present": true
+      },
+      {
+        "cell_source_sha256_policy": "joined_from_freeze_manifest; never recomputed per cell",
+        "cell_to_manifest_metadata_match": true,
+        "completed_cell_records": 15,
+        "dataset": "quake",
+        "expected_cell_records": 15,
+        "frozen_source_sha256": "24541fa7f0d2025509237b345597afdf97b10756ac8477cb048cc8be8828e134",
+        "manifest_record_present": true
+      },
+      {
+        "cell_source_sha256_policy": "joined_from_freeze_manifest; never recomputed per cell",
+        "cell_to_manifest_metadata_match": true,
+        "completed_cell_records": 15,
+        "dataset": "wang",
+        "expected_cell_records": 15,
+        "frozen_source_sha256": "0a5247b2efd6709b662c91577dbd0ce3173c45eec6423c1d704983b398d90962",
+        "manifest_record_present": true
+      },
+      {
+        "cell_source_sha256_policy": "joined_from_freeze_manifest; never recomputed per cell",
+        "cell_to_manifest_metadata_match": true,
+        "completed_cell_records": 15,
+        "dataset": "news20",
+        "expected_cell_records": 15,
+        "frozen_source_sha256": "b71e5008a4ed74981c72d79aecdd78e566ee5c0d246920bb2127bf3e375ecb5c",
+        "manifest_record_present": true
+      },
+      {
+        "cell_source_sha256_policy": "joined_from_freeze_manifest; never recomputed per cell",
+        "cell_to_manifest_metadata_match": true,
+        "completed_cell_records": 15,
+        "dataset": "rcv1",
+        "expected_cell_records": 15,
+        "frozen_source_sha256": "085d6bc9713e985670c588250a5e524bb36920c32e4471e20dcd41291d96644e",
+        "manifest_record_present": true
+      },
+      {
+        "cell_source_sha256_policy": "joined_from_freeze_manifest; never recomputed per cell",
+        "cell_to_manifest_metadata_match": true,
+        "completed_cell_records": 15,
+        "dataset": "arcene",
+        "expected_cell_records": 15,
+        "frozen_source_sha256": "7249b341d0d50155a3f47c101042291d55db946695955fc98c6320e8a609ad2b",
+        "manifest_record_present": true
+      },
+      {
+        "cell_source_sha256_policy": "joined_from_freeze_manifest; never recomputed per cell",
+        "cell_to_manifest_metadata_match": true,
+        "completed_cell_records": 15,
+        "dataset": "sms_spam",
+        "expected_cell_records": 15,
+        "frozen_source_sha256": "1d9c068c43dc4f58e759169906dae9dff0ac6a8def7315ce7e4989a3b28d7070",
+        "manifest_record_present": true
+      }
+    ]
+  },
+  "status": "completed_valid"
+}

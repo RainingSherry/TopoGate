@@ -1,0 +1,99 @@
+\section{Results}
+
+\subsection{Historical Failure Atlas}
+
+The registry contains 2,209 V1--V22 rows, including 1,637 paired Delta ARI rows
+grouped into 431 dataset/protocol/readout units. The paired atlas contains 194
+material-positive, 680 material-negative, and 763 observed-small rows at
+$\delta=0.03$. The signs and magnitudes vary across intervention families and
+protocols, but the registry does not provide one common structural-opportunity
+endpoint. We therefore report these values as an observational atlas rather than
+as a pooled causal estimate.
+
+\begin{table}[t]
+\centering
+\caption{Counts in the frozen retrospective atlas. Rows are repeated records,
+not independent data sets.}
+\label{tab:atlas}
+\input{tables/atlas_summary.tex}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.98\linewidth]{V25_Figure1_failure_atlas}
+\caption{V1--V22 Failure Atlas. The display is observational and stratified by
+version/family; it is not a pooled causal estimate.}
+\label{fig:atlas}
+\end{figure}
+
+\subsection{Matched selection effects}
+
+The audited E1 panels pass the full matching and label-isolation contract. The
+per-seed primary endpoint is $S_{\mathrm{full\_ARI}}$; the confirmation dataset
+means $S_d=\operatorname{mean}_s(S_{\mathrm{full\_ARI}})$ are shown in
+Table~\ref{tab:e1} and Figure~\ref{fig:e1}.
+The primary selection effect changes sign across the three confirmation data
+sets. The generic intervention effect is also heterogeneous: it is positive for
+Campbell, observed-small for \texttt{hate\_speech}, and inconclusive for Baron
+Human. This decomposition separates generic intervention from the topology
+policy increment; it does not prove either component universal.
+
+\begin{table}[t]
+\centering
+\caption{Confirmation means for the matched V21 decomposition. Each row is a
+dataset mean over three repeated seeds.}
+\label{tab:e1}
+\input{tables/e1_effects.tex}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.78\linewidth]{V25_Figure3_e1_selectivity}
+\caption{Generic intervention effect $I_d$ versus topology selectivity effect
+$S_d$. The signs are conditional case-study evidence, not a population claim.}
+\label{fig:e1}
+\end{figure}
+
+The pilot gate passed because at least two of three pilot datasets showed a
+seed-stable material effect in either $I_d$ or $S_d$; signs were not required to
+agree. Pilot and confirmation are not pooled: the confirmation panel alone
+supplies the three case-study values above. The result is therefore evidence for
+conditional utility and heterogeneity, not a reason to search for a universally
+beneficial selector.
+
+\subsection{Localization diagnostics}
+
+E2 produces dataset-by-seed semantic summaries and gradient/one-step records
+under the frozen N/R/T protocol. These artifacts permit inspection of selected
+feature semantics and optimizer-direction changes, but they do not produce a
+stable cross-dataset objective-conflict rule. Figure~\ref{fig:diagnostics}
+shows the diagnostic geometry without fitting a cross-dataset causal model.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.98\linewidth]{V25_Figure4_diagnostics}
+\caption{E2 diagnostic geometry. Gradient cosines and one-step/full effects are
+descriptive records; they are not a universal objective-compatibility law.}
+\label{fig:diagnostics}
+\end{figure}
+
+The E3 replay gate found zero artifact-complete candidate rows, so no replay was
+run. The separate V23 boundary rows are retained only to show why local and
+global readouts must be measured separately; they do not support a universal
+conversion law.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.78\linewidth]{V25_Figure5_local_global_boundary}
+\caption{V23 local/global boundary evidence. These rows are kept outside the
+V1--V22 atlas and are not a universal theorem.}
+\label{fig:boundary}
+\end{figure}
+
+\subsection{Independent validation status}
+
+The holdout has no evaluable endpoint: zero of six panels completed under the
+frozen protocol, and the recorded cause is the dense decoder/Adam resource
+boundary. Independent validation is therefore not established. We do not use
+this incomplete compute to falsify the selection claim or report a negative
+performance result.

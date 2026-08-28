@@ -1,0 +1,86 @@
+{
+  "H0_sha256": "4b178a895c3398183e602072608d379825e69d384acefd5ee9b8c6bdbd9a599f",
+  "K": 9,
+  "K_source": "benchmark_oracle_from_y",
+  "K_used_in_readout": true,
+  "K_used_in_representation": false,
+  "arm": "O_pool",
+  "artifacts": {
+    "embedding": "/data/luolie/ToPoGate/result/representation_consumer_probe/S2_simple_cut/Baron Human/seed42/O_pool/embedding.npy",
+    "labels_true": "/data/luolie/ToPoGate/result/representation_consumer_probe/S2_simple_cut/Baron Human/seed42/O_pool/labels_true.npy",
+    "predictions": "/data/luolie/ToPoGate/result/representation_consumer_probe/S2_simple_cut/Baron Human/seed42/O_pool/predictions.npy",
+    "training_metrics": "/data/luolie/ToPoGate/result/representation_consumer_probe/S2_simple_cut/Baron Human/seed42/O_pool/training_metrics.csv"
+  },
+  "consumer": "SimpleCut",
+  "dataset": "Baron Human",
+  "elapsed_seconds": 0.3101148447021842,
+  "execution_device": "cuda",
+  "execution_status": "completed",
+  "fit_metadata": {
+    "K_used_in_representation": false,
+    "decoder": null,
+    "device": "cuda:0",
+    "encoder_dims": [
+      64,
+      32
+    ],
+    "epochs": 80,
+    "final_L_cut": 0.25001880526542664,
+    "final_L_orth": 94568.1875,
+    "final_L_var": 0.0,
+    "final_loss": 94568.4375,
+    "graph_input": "selected_graph_W",
+    "input": "H0",
+    "labels_vector_used_in_fit": false,
+    "learning_rate": 0.001,
+    "optimizer": "Adam",
+    "peak_memory_bytes": 90200576,
+    "weight_decay": 0.0
+  },
+  "graph_diagnostics": {
+    "connected_components": 1,
+    "degree_cv": 0.4160560201130537,
+    "degree_mean": 7.714141869655009,
+    "degree_std": 3.209515164876134,
+    "directed_edge_count": 67608,
+    "edge_count": 110250,
+    "edge_purity": 0.9737868480725623,
+    "giant_component_ratio": 1.0,
+    "graph_condition": "O_pool",
+    "ground_truth_ncut": 0.3456989842421982,
+    "isolated_nodes": 0,
+    "labels_used_for_diagnostic": true,
+    "s1_source_graph_hash": "f107d23d418fccbc5583a790b938553b411b4b6e212d76f01aa75eb0b5117393"
+  },
+  "graph_hash": "f107d23d418fccbc5583a790b938553b411b4b6e212d76f01aa75eb0b5117393",
+  "labels_used_during_fit": false,
+  "labels_used_for_outer_metrics": true,
+  "labels_vector_used_in_fit": false,
+  "metrics": {
+    "ACC": 0.5876227665365046,
+    "ARI": 0.3440100990112955,
+    "NMI": 0.5583055572760033
+  },
+  "physical_gpu": 3,
+  "project_id": "representation_consumer_probe",
+  "protocol_id": "representation_consumer_probe_s2_opportunity_simplecut_v1",
+  "representation_diagnostics": {
+    "dimension_std_median": 5.266395714005357,
+    "dimension_std_min": 3.4113362172976767,
+    "effective_rank": 17.237261122508304,
+    "finite": true,
+    "graph_energy": 2.036542198832419,
+    "low_variance_dimension_ratio": 0.0,
+    "mean_pairwise_distance_sample": 39.64634769979171,
+    "pairwise_distance_cv_sample": 0.573843619114525
+  },
+  "s1_source": {
+    "source_graph_hash": "f107d23d418fccbc5583a790b938553b411b4b6e212d76f01aa75eb0b5117393",
+    "source_protocol_id": "representation_consumer_probe_s1_opportunity_spectral_v2",
+    "source_run": "/data/luolie/ToPoGate/result/representation_consumer_probe/S1_oracle_v2/Baron Human/seed42/O_pool"
+  },
+  "seed": 42,
+  "source_path": "/data/luolie/ToPoGate/datasets/Baron Human.npz",
+  "source_sha256": "99c5bb7a272f5b22d64949179c6d49b4b52220670f3a7cef38e9e405902249d8",
+  "status": "completed_valid"
+}

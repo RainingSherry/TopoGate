@@ -1,0 +1,1802 @@
+{
+  "Baron Human": {
+    "C_matched_budget_candidate_gap": {
+      "classification": "material_negative",
+      "material_negative": true,
+      "material_positive": false,
+      "materiality_delta": 0.03,
+      "mean": -0.18382523782012813,
+      "negative_seed_count": 3,
+      "positive_seed_count": 0,
+      "std": 0.0007794950786518716,
+      "values": [
+        -0.18292515443314483,
+        -0.18427527951361977,
+        -0.18427527951361977
+      ]
+    },
+    "H_full": {
+      "classification": "material_negative",
+      "material_negative": true,
+      "material_positive": false,
+      "materiality_delta": 0.03,
+      "mean": -0.16951906140593412,
+      "negative_seed_count": 3,
+      "positive_seed_count": 0,
+      "std": 0.001077942717086788,
+      "values": [
+        -0.16865083752648047,
+        -0.16918077385531916,
+        -0.17072557283600276
+      ]
+    },
+    "H_pool": {
+      "classification": "observed_small",
+      "material_negative": false,
+      "material_positive": false,
+      "materiality_delta": 0.03,
+      "mean": 0.014306176414193997,
+      "negative_seed_count": 0,
+      "positive_seed_count": 3,
+      "std": 0.0007728921295014579,
+      "values": [
+        0.014274316906664364,
+        0.015094505658300617,
+        0.013549706677617013
+      ]
+    },
+    "arms": {
+      "F": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.5177296572397744,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.00013663478149089427,
+          "values": [
+            0.5175718849840255,
+            0.5178085433676488,
+            0.5178085433676488
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.27539489560278846,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.00021290930667832838,
+          "values": [
+            0.27514904911174104,
+            0.27551781884831217,
+            0.27551781884831217
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.5358270800987127,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 8.307967311125228e-05,
+          "values": [
+            0.5357311479554427,
+            0.5358750461703476,
+            0.5358750461703476
+          ]
+        }
+      },
+      "O_full": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.5880566402398139,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.00013663478149083017,
+          "values": [
+            0.5882144124955626,
+            0.5879777541119394,
+            0.5879777541119394
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.5029652266010564,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0007794950786518716,
+          "values": [
+            0.5038653099880397,
+            0.5025151849075647,
+            0.5025151849075647
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.7192045066014584,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0027244172618757336,
+          "values": [
+            0.722350392680516,
+            0.7176315635619296,
+            0.7176315635619296
+          ]
+        }
+      },
+      "O_pool": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.72168974085907,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 1.3597399555105182e-16,
+          "values": [
+            0.7216897408590699,
+            0.7216897408590699,
+            0.7216897408590699
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.6867904644211845,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.6867904644211845,
+            0.6867904644211845,
+            0.6867904644211845
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.8007854711996542,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 1.3597399555105182e-16,
+          "values": [
+            0.800785471199654,
+            0.800785471199654,
+            0.800785471199654
+          ]
+        }
+      },
+      "R": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.7108428982763381,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0011246461901458131,
+          "values": [
+            0.7108034552124008,
+            0.7097384924860963,
+            0.7119867471305171
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.6724842880069906,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0007728921295014579,
+          "values": [
+            0.6725161475145202,
+            0.6716959587628839,
+            0.6732407577435675
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.7835297345347048,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0010518838275144762,
+          "values": [
+            0.7827011928129228,
+            0.7847131598326476,
+            0.783174850958544
+          ]
+        }
+      },
+      "U": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.71123732891571,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 6.831739074538303e-05,
+          "values": [
+            0.7112767719796473,
+            0.7111584427878358,
+            0.7112767719796473
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.6736648011512587,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 3.3007964756946285e-05,
+          "values": [
+            0.6736987059072219,
+            0.6736327697686779,
+            0.6736629277778763
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.7845413796420827,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 8.806698658399273e-05,
+          "values": [
+            0.7846424895596112,
+            0.7844814234834467,
+            0.7845002258831905
+          ]
+        }
+      }
+    },
+    "candidate_gap": "absent",
+    "consumer": "Spectral",
+    "dataset": "Baron Human",
+    "full_opportunity": "absent",
+    "s2_required_before_negative_conclusion": true,
+    "seed_count": 3,
+    "support_deficiency": {
+      "budget_hash": "7fc6f0f1a7731632361aa5db474ca64280d00bd6f1ee2444109ee60389e56f37",
+      "effective_budget_mean": 8.0,
+      "effective_budget_min": 8,
+      "fraction_budget_below_cap": 0.0,
+      "fraction_budget_zero": 0.0,
+      "zero_budget_nodes": 0
+    },
+    "terminal_label_recommendation": "spectral_opportunity_not_observed_s2_conditional",
+    "within_pool_opportunity": "absent"
+  },
+  "Campbell": {
+    "C_matched_budget_candidate_gap": {
+      "classification": "material_negative",
+      "material_negative": true,
+      "material_positive": false,
+      "materiality_delta": 0.03,
+      "mean": -0.15246313847097048,
+      "negative_seed_count": 3,
+      "positive_seed_count": 0,
+      "std": 0.0,
+      "values": [
+        -0.15246313847097048,
+        -0.15246313847097048,
+        -0.15246313847097048
+      ]
+    },
+    "H_full": {
+      "classification": "material_positive",
+      "material_negative": false,
+      "material_positive": true,
+      "materiality_delta": 0.03,
+      "mean": 0.03898112297901054,
+      "negative_seed_count": 0,
+      "positive_seed_count": 3,
+      "std": 0.0009850132781567547,
+      "values": [
+        0.038564065093472655,
+        0.03827324688129349,
+        0.04010605696226546
+      ]
+    },
+    "H_pool": {
+      "classification": "material_positive",
+      "material_negative": false,
+      "material_positive": true,
+      "materiality_delta": 0.03,
+      "mean": 0.19144426144998103,
+      "negative_seed_count": 0,
+      "positive_seed_count": 3,
+      "std": 0.0009850132781567547,
+      "values": [
+        0.19102720356444314,
+        0.19073638535226398,
+        0.19256919543323595
+      ]
+    },
+    "arms": {
+      "F": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.2926381800593749,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.01839284597511214,
+          "values": [
+            0.3136195336735715,
+            0.27929550685479837,
+            0.28499949964975485
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.2006270922987431,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.037202205636887024,
+          "values": [
+            0.2433755632032401,
+            0.17558812210237493,
+            0.18291759159061424
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.3046975123745917,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.003501134175997414,
+          "values": [
+            0.30862575309745616,
+            0.3019059658014892,
+            0.30356081822482966
+          ]
+        }
+      },
+      "O_full": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.4319023316321425,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.4319023316321425,
+            0.4319023316321425,
+            0.4319023316321425
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.2770559776804147,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.2770559776804147,
+            0.2770559776804147,
+            0.2770559776804147
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.6388852070669002,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.6388852070669002,
+            0.6388852070669002,
+            0.6388852070669002
+          ]
+        }
+      },
+      "O_pool": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.5854097868507956,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.5854097868507956,
+            0.5854097868507956,
+            0.5854097868507956
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.42951911615138516,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.42951911615138516,
+            0.42951911615138516,
+            0.42951911615138516
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.6840752337063175,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 7.850462293418876e-17,
+          "values": [
+            0.6840752337063176,
+            0.6840752337063175,
+            0.6840752337063175
+          ]
+        }
+      },
+      "R": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.37869842222889355,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0021400333476560697,
+          "values": [
+            0.3811668167717402,
+            0.37756429500650457,
+            0.3773641549084359
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.23807485470140413,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0009850132781567547,
+          "values": [
+            0.23849191258694202,
+            0.23878273079912118,
+            0.23694992071814922
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.4890049858730808,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 9.633450118437506e-05,
+          "values": [
+            0.4891077570031385,
+            0.48891673694902926,
+            0.4889904636670745
+          ]
+        }
+      },
+      "U": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.37809800193468757,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 5.7775469747795134e-05,
+          "values": [
+            0.37806464525167616,
+            0.3781647153007105,
+            0.37806464525167616
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.23671407540851297,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.00014551022039525286,
+          "values": [
+            0.23673336211696827,
+            0.23655988364925368,
+            0.236848980459317
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.4905671270984943,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.00019881122832153962,
+          "values": [
+            0.4904451884989677,
+            0.4907965426447751,
+            0.49045965015174015
+          ]
+        }
+      }
+    },
+    "candidate_gap": "absent",
+    "consumer": "Spectral",
+    "dataset": "Campbell",
+    "full_opportunity": "present",
+    "s2_required_before_negative_conclusion": false,
+    "seed_count": 3,
+    "support_deficiency": {
+      "budget_hash": "81c2989af8676f3690ee607b7cc3a7324bbd56d45b680fb963662d58bed022ef",
+      "effective_budget_mean": 8.0,
+      "effective_budget_min": 8,
+      "fraction_budget_below_cap": 0.0,
+      "fraction_budget_zero": 0.0,
+      "zero_budget_nodes": 0
+    },
+    "terminal_label_recommendation": "opportunity_present_within_frozen_candidate_pool",
+    "within_pool_opportunity": "present"
+  },
+  "Mouse_retina": {
+    "C_matched_budget_candidate_gap": {
+      "classification": "material_negative",
+      "material_negative": true,
+      "material_positive": false,
+      "materiality_delta": 0.03,
+      "mean": -0.03378438464842892,
+      "negative_seed_count": 3,
+      "positive_seed_count": 0,
+      "std": 0.0,
+      "values": [
+        -0.03378438464842892,
+        -0.03378438464842892,
+        -0.03378438464842892
+      ]
+    },
+    "H_full": {
+      "classification": "observed_small",
+      "material_negative": false,
+      "material_positive": false,
+      "materiality_delta": 0.03,
+      "mean": -0.006357898208528241,
+      "negative_seed_count": 3,
+      "positive_seed_count": 0,
+      "std": 0.004770585690493278,
+      "values": [
+        -0.0011407306540388573,
+        -0.0074353517295155935,
+        -0.010497612242030274
+      ]
+    },
+    "H_pool": {
+      "classification": "observed_small",
+      "material_negative": false,
+      "material_positive": false,
+      "materiality_delta": 0.03,
+      "mean": 0.027426486439900682,
+      "negative_seed_count": 0,
+      "positive_seed_count": 3,
+      "std": 0.004770585690493278,
+      "values": [
+        0.032643653994390065,
+        0.02634903291891333,
+        0.023286772406398648
+      ]
+    },
+    "arms": {
+      "F": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.95522030651341,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0007477248561300627,
+          "values": [
+            0.954382183908046,
+            0.9554597701149425,
+            0.9558189655172413
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.8502028455130562,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.000516888314460804,
+          "values": [
+            0.8497349686427296,
+            0.8507577075454917,
+            0.8501158603509472
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.7688193848982462,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.002396208186817972,
+          "values": [
+            0.7661511023744684,
+            0.769519479667715,
+            0.770787572652555
+          ]
+        }
+      },
+      "O_full": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.9370210727969349,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.9370210727969349,
+            0.9370210727969349,
+            0.9370210727969349
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.9362414981062802,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 1.3597399555105182e-16,
+          "values": [
+            0.9362414981062803,
+            0.9362414981062803,
+            0.9362414981062803
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.8747677800930113,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 1.3597399555105182e-16,
+          "values": [
+            0.8747677800930111,
+            0.8747677800930111,
+            0.8747677800930111
+          ]
+        }
+      },
+      "O_pool": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.9905411877394638,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 1.3597399555105182e-16,
+          "values": [
+            0.9905411877394636,
+            0.9905411877394636,
+            0.9905411877394636
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.9700258827547094,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 1.3597399555105182e-16,
+          "values": [
+            0.9700258827547092,
+            0.9700258827547092,
+            0.9700258827547092
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.9386711645648022,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.9386711645648022,
+            0.9386711645648022,
+            0.9386711645648022
+          ]
+        }
+      },
+      "R": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.9839160280970626,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0011628992883408297,
+          "values": [
+            0.9826388888888888,
+            0.9841954022988506,
+            0.9849137931034483
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.9425993963148085,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.004770585690493278,
+          "values": [
+            0.9373822287603192,
+            0.9436768498357959,
+            0.9467391103483106
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.9035583798856907,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0005628784055317789,
+          "values": [
+            0.9030985078294947,
+            0.9041860851538783,
+            0.9033905466736986
+          ]
+        }
+      },
+      "U": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.9841954022988505,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 1.3597399555105182e-16,
+          "values": [
+            0.9841954022988506,
+            0.9841954022988506,
+            0.9841954022988506
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.9437299289754519,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 5.2381840782568864e-05,
+          "values": [
+            0.9437601716453284,
+            0.943669443635699,
+            0.9437601716453284
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.902219910522291,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.004516100277833963,
+          "values": [
+            0.8996125388111962,
+            0.9074346539444805,
+            0.8996125388111962
+          ]
+        }
+      }
+    },
+    "candidate_gap": "absent",
+    "consumer": "Spectral",
+    "dataset": "Mouse_retina",
+    "full_opportunity": "absent",
+    "s2_required_before_negative_conclusion": true,
+    "seed_count": 3,
+    "support_deficiency": {
+      "budget_hash": "a1d5328d4635ff58b7901fb2a83ce0501ebee6131fbf46b2b2f9d9b4f7166ecb",
+      "effective_budget_mean": 8.0,
+      "effective_budget_min": 8,
+      "fraction_budget_below_cap": 0.0,
+      "fraction_budget_zero": 0.0,
+      "zero_budget_nodes": 0
+    },
+    "terminal_label_recommendation": "spectral_opportunity_not_observed_s2_conditional",
+    "within_pool_opportunity": "absent"
+  },
+  "cnae9": {
+    "C_matched_budget_candidate_gap": {
+      "classification": "material_negative",
+      "material_negative": true,
+      "material_positive": false,
+      "materiality_delta": 0.03,
+      "mean": -0.1095325893971106,
+      "negative_seed_count": 2,
+      "positive_seed_count": 1,
+      "std": 0.1670397551355738,
+      "values": [
+        -0.082490827716724,
+        -0.28844342500986053,
+        0.04233648453525274
+      ]
+    },
+    "H_full": {
+      "classification": "material_positive",
+      "material_negative": false,
+      "material_positive": true,
+      "materiality_delta": 0.03,
+      "mean": 0.10618766245146767,
+      "negative_seed_count": 1,
+      "positive_seed_count": 2,
+      "std": 0.17830578683281517,
+      "values": [
+        0.14114083372199254,
+        -0.08700648201520278,
+        0.26442863564761326
+      ]
+    },
+    "H_pool": {
+      "classification": "material_positive",
+      "material_negative": false,
+      "material_positive": true,
+      "materiality_delta": 0.03,
+      "mean": 0.21572025184857826,
+      "negative_seed_count": 0,
+      "positive_seed_count": 3,
+      "std": 0.012393635740717996,
+      "values": [
+        0.22363166143871654,
+        0.20143694299465775,
+        0.22209215111236053
+      ]
+    },
+    "arms": {
+      "F": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.44259259259259265,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.04516203110465627,
+          "values": [
+            0.49166666666666664,
+            0.43333333333333335,
+            0.4027777777777778
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.20619934312797897,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.032438908609807776,
+          "values": [
+            0.24031840044217578,
+            0.2025263837770313,
+            0.17575324516472987
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.4419287868589335,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.02487907120614935,
+          "values": [
+            0.464484942616106,
+            0.4460579495565919,
+            0.4152434684041026
+          ]
+        }
+      },
+      "O_full": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.6432098765432098,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.1485651923212698,
+          "values": [
+            0.6833333333333333,
+            0.4787037037037037,
+            0.7675925925925926
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.5807129385803789,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.1670397551355738,
+          "values": [
+            0.6077547002607655,
+            0.40180210296762897,
+            0.7325820125127422
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.8037970275150562,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.060136940460743755,
+          "values": [
+            0.7967613624115473,
+            0.7474873900351229,
+            0.8671423300984983
+          ]
+        }
+      },
+      "O_pool": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.8342592592592593,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.8342592592592593,
+            0.8342592592592593,
+            0.8342592592592593
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.6902455279774896,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 1.3597399555105182e-16,
+          "values": [
+            0.6902455279774895,
+            0.6902455279774895,
+            0.6902455279774895
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.8137822666991199,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 1.3597399555105182e-16,
+          "values": [
+            0.81378226669912,
+            0.8137822666991198,
+            0.8137822666991198
+          ]
+        }
+      },
+      "R": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.6719135802469136,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.010731690525131902,
+          "values": [
+            0.6703703703703704,
+            0.6833333333333333,
+            0.6620370370370371
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.4745252761289112,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.012393635740717994,
+          "values": [
+            0.46661386653877296,
+            0.48880858498283175,
+            0.468153376865129
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.6387819050326758,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0024327643115591253,
+          "values": [
+            0.6359736963859908,
+            0.6402477778197206,
+            0.6401242408923161
+          ]
+        }
+      },
+      "U": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.6703703703703704,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.6703703703703704,
+            0.6703703703703704,
+            0.6703703703703704
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.4718753676138035,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.00032789852097314675,
+          "values": [
+            0.4714967430151021,
+            0.47206467991315426,
+            0.47206467991315426
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.6383587230159705,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.00014741732260408898,
+          "values": [
+            0.6385289458777479,
+            0.6382736115850819,
+            0.6382736115850818
+          ]
+        }
+      }
+    },
+    "candidate_gap": "absent",
+    "consumer": "Spectral",
+    "dataset": "cnae9",
+    "full_opportunity": "present",
+    "s2_required_before_negative_conclusion": false,
+    "seed_count": 3,
+    "support_deficiency": {
+      "budget_hash": "93d9ad6d95b7f05cccb949c6959407a9a177294786a2a22fde027586a25b7ec0",
+      "effective_budget_mean": 7.992592592592593,
+      "effective_budget_min": 0,
+      "fraction_budget_below_cap": 0.000925925925925926,
+      "fraction_budget_zero": 0.000925925925925926,
+      "zero_budget_nodes": 1
+    },
+    "terminal_label_recommendation": "opportunity_present_within_frozen_candidate_pool",
+    "within_pool_opportunity": "present"
+  },
+  "hate_speech": {
+    "C_matched_budget_candidate_gap": {
+      "classification": "material_positive",
+      "material_negative": false,
+      "material_positive": true,
+      "materiality_delta": 0.03,
+      "mean": 0.6343187134497226,
+      "negative_seed_count": 0,
+      "positive_seed_count": 3,
+      "std": 0.0,
+      "values": [
+        0.6343187134497226,
+        0.6343187134497226,
+        0.6343187134497226
+      ]
+    },
+    "H_full": {
+      "classification": "material_positive",
+      "material_negative": false,
+      "material_positive": true,
+      "materiality_delta": 0.03,
+      "mean": 0.6364948896464151,
+      "negative_seed_count": 0,
+      "positive_seed_count": 3,
+      "std": 0.0039554939139151485,
+      "values": [
+        0.6406100374702511,
+        0.6361534453607207,
+        0.6327211861082733
+      ]
+    },
+    "H_pool": {
+      "classification": "observed_small",
+      "material_negative": false,
+      "material_positive": false,
+      "materiality_delta": 0.03,
+      "mean": 0.0021761761966924875,
+      "negative_seed_count": 1,
+      "positive_seed_count": 2,
+      "std": 0.003955493913915137,
+      "values": [
+        0.006291324020528559,
+        0.0018347319109981294,
+        -0.0015975273414492266
+      ]
+    },
+    "arms": {
+      "F": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.5694918762289144,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.04424754530606849,
+          "values": [
+            0.5755976404843216,
+            0.610369450481217,
+            0.5225085377212046
+          ]
+        },
+        "ARI": {
+          "classification": "material_negative",
+          "material_negative": true,
+          "material_positive": false,
+          "materiality_delta": 0.03,
+          "mean": -0.09208545829016516,
+          "negative_seed_count": 3,
+          "positive_seed_count": 0,
+          "std": 0.0611294536644101,
+          "values": [
+            -0.10539594733305396,
+            -0.02539744549681269,
+            -0.14546298204062885
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.07705181319665262,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.017847796845533205,
+          "values": [
+            0.063997054234016,
+            0.06976891376840436,
+            0.0973894715875375
+          ]
+        }
+      },
+      "O_full": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.8401117665321328,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 1.3597399555105182e-16,
+          "values": [
+            0.8401117665321329,
+            0.8401117665321329,
+            0.8401117665321329
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.6294272327160645,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.6294272327160645,
+            0.6294272327160645,
+            0.6294272327160645
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.568738229341118,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 1.1102230246251565e-16,
+          "values": [
+            0.5687382293411181,
+            0.5687382293411181,
+            0.568738229341118
+          ]
+        }
+      },
+      "O_pool": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.6901583359205216,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.6901583359205216,
+            0.6901583359205216,
+            0.6901583359205216
+          ]
+        },
+        "ARI": {
+          "classification": "observed_small",
+          "material_negative": false,
+          "material_positive": false,
+          "materiality_delta": 0.03,
+          "mean": -0.004891480733658084,
+          "negative_seed_count": 3,
+          "positive_seed_count": 0,
+          "std": 0.0,
+          "values": [
+            -0.004891480733658084,
+            -0.004891480733658084,
+            -0.004891480733658084
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.031037583551950104,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 4.9065389333867974e-18,
+          "values": [
+            0.031037583551950104,
+            0.03103758355195011,
+            0.031037583551950104
+          ]
+        }
+      },
+      "R": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.6877781227362103,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.004872713387972081,
+          "values": [
+            0.6861223222601677,
+            0.6839490841353617,
+            0.6932629618131015
+          ]
+        },
+        "ARI": {
+          "classification": "observed_small",
+          "material_negative": false,
+          "material_positive": false,
+          "materiality_delta": 0.03,
+          "mean": -0.007067656930350572,
+          "negative_seed_count": 3,
+          "positive_seed_count": 0,
+          "std": 0.003955493913915137,
+          "values": [
+            -0.011182804754186643,
+            -0.0067262126446562135,
+            -0.0032939533922088575
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.03067040491758898,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0012329959174036933,
+          "values": [
+            0.0297384317018142,
+            0.03020427115978158,
+            0.03206851189117116
+          ]
+        }
+      },
+      "U": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.6932629618131015,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.6932629618131015,
+            0.6932629618131015,
+            0.6932629618131015
+          ]
+        },
+        "ARI": {
+          "classification": "observed_small",
+          "material_negative": false,
+          "material_positive": false,
+          "materiality_delta": 0.03,
+          "mean": -0.0060564514843409285,
+          "negative_seed_count": 3,
+          "positive_seed_count": 0,
+          "std": 0.0,
+          "values": [
+            -0.0060564514843409285,
+            -0.0060564514843409285,
+            -0.0060564514843409285
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.031033865496887733,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.031033865496887733,
+            0.031033865496887733,
+            0.031033865496887733
+          ]
+        }
+      }
+    },
+    "candidate_gap": "present",
+    "consumer": "Spectral",
+    "dataset": "hate_speech",
+    "full_opportunity": "present",
+    "s2_required_before_negative_conclusion": false,
+    "seed_count": 3,
+    "support_deficiency": {
+      "budget_hash": "44be4fd2e35f826c687a9f35edb0bcd5cfded3be5d50f6c56e8132443c7cc5a7",
+      "effective_budget_mean": 7.664700403601366,
+      "effective_budget_min": 0,
+      "fraction_budget_below_cap": 0.04191244954982925,
+      "fraction_budget_zero": 0.04191244954982925,
+      "zero_budget_nodes": 135
+    },
+    "terminal_label_recommendation": "candidate_family_requires_review",
+    "within_pool_opportunity": "absent"
+  },
+  "sms_spam_collection": {
+    "C_matched_budget_candidate_gap": {
+      "classification": "material_positive",
+      "material_negative": false,
+      "material_positive": true,
+      "materiality_delta": 0.03,
+      "mean": 0.17519661663488573,
+      "negative_seed_count": 0,
+      "positive_seed_count": 3,
+      "std": 0.0,
+      "values": [
+        0.17519661663488573,
+        0.17519661663488573,
+        0.17519661663488573
+      ]
+    },
+    "H_full": {
+      "classification": "material_positive",
+      "material_negative": false,
+      "material_positive": true,
+      "materiality_delta": 0.03,
+      "mean": 0.5423046381102523,
+      "negative_seed_count": 0,
+      "positive_seed_count": 3,
+      "std": 0.2691631523581153,
+      "values": [
+        0.3848517702612498,
+        0.38896373613426233,
+        0.8530984079352447
+      ]
+    },
+    "H_pool": {
+      "classification": "material_positive",
+      "material_negative": false,
+      "material_positive": true,
+      "materiality_delta": 0.03,
+      "mean": 0.36710802147536653,
+      "negative_seed_count": 0,
+      "positive_seed_count": 3,
+      "std": 0.2691631523581153,
+      "values": [
+        0.20965515362636405,
+        0.2137671194993766,
+        0.677901791300359
+      ]
+    },
+    "arms": {
+      "F": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.884630738522954,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.022125998340201236,
+          "values": [
+            0.8718562874251496,
+            0.8718562874251496,
+            0.9101796407185628
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.17945744250261608,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.20049386377420528,
+          "values": [
+            0.06370225628171049,
+            0.06370225628171049,
+            0.41096781494442725
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.14915428976315057,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.16066163872698808,
+          "values": [
+            0.05639624939567758,
+            0.05639624939567758,
+            0.3346703704980965
+          ]
+        }
+      },
+      "O_full": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.9532934131736527,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.9532934131736527,
+            0.9532934131736527,
+            0.9532934131736527
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.7721050902959795,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.7721050902959795,
+            0.7721050902959795,
+            0.7721050902959795
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.6710960987179679,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.6710960987179679,
+            0.6710960987179679,
+            0.6710960987179679
+          ]
+        }
+      },
+      "O_pool": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.9077844311377246,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.9077844311377246,
+            0.9077844311377246,
+            0.9077844311377246
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.5969084736610938,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.5969084736610938,
+            0.5969084736610938,
+            0.5969084736610938
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.4855790067729235,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.4855790067729235,
+            0.4855790067729235,
+            0.4855790067729235
+          ]
+        }
+      },
+      "R": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.8087824351297406,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.04288584684691969,
+          "values": [
+            0.8347305389221557,
+            0.8323353293413174,
+            0.7592814371257485
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.22980045218572723,
+          "negative_seed_count": 1,
+          "positive_seed_count": 2,
+          "std": 0.2691631523581153,
+          "values": [
+            0.38725332003472973,
+            0.3831413541617172,
+            -0.0809933176392652
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.22247255581311423,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.17012137954621695,
+          "values": [
+            0.3188083078071845,
+            0.32256408405240655,
+            0.026045275579751663
+          ]
+        }
+      },
+      "U": {
+        "ACC": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.8323353293413174,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.8323353293413174,
+            0.8323353293413174,
+            0.8323353293413174
+          ]
+        },
+        "ARI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.3816610138195493,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.3816610138195493,
+            0.3816610138195493,
+            0.3816610138195493
+          ]
+        },
+        "NMI": {
+          "classification": "material_positive",
+          "material_negative": false,
+          "material_positive": true,
+          "materiality_delta": 0.03,
+          "mean": 0.3153303585521061,
+          "negative_seed_count": 0,
+          "positive_seed_count": 3,
+          "std": 0.0,
+          "values": [
+            0.3153303585521061,
+            0.3153303585521061,
+            0.3153303585521061
+          ]
+        }
+      }
+    },
+    "candidate_gap": "present",
+    "consumer": "Spectral",
+    "dataset": "sms_spam_collection",
+    "full_opportunity": "present",
+    "s2_required_before_negative_conclusion": false,
+    "seed_count": 3,
+    "support_deficiency": {
+      "budget_hash": "80f0142bcdeae7c87911f90a2b83dd80a974614365c21be6244d5283c9cd1032",
+      "effective_budget_mean": 7.616766467065868,
+      "effective_budget_min": 0,
+      "fraction_budget_below_cap": 0.04790419161676647,
+      "fraction_budget_zero": 0.04790419161676647,
+      "zero_budget_nodes": 40
+    },
+    "terminal_label_recommendation": "candidate_family_requires_review",
+    "within_pool_opportunity": "present"
+  }
+}

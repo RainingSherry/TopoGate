@@ -1,0 +1,77 @@
+{
+  "K": 5,
+  "K_source": "benchmark_oracle_from_y",
+  "arm": "C2_SupportOnly",
+  "backbone": {
+    "activation": "ReLU",
+    "batch_size": 512,
+    "corruption_rate": 0.25,
+    "decoder_dims": [
+      32,
+      64,
+      "d_eff"
+    ],
+    "encoder_dims": [
+      "d_eff",
+      64,
+      32
+    ],
+    "epochs": 30,
+    "input": "audited_S0_H0",
+    "learning_rate": 0.001,
+    "optimizer": "Adam",
+    "readout": "clean_embedding_known_K_KMeans",
+    "standardization": "clean_H0_column_mean_std_fit_once_per_dataset",
+    "support_definition": "abs(H0_ij)>=max(1e-6,0.05*row_max_abs)"
+  },
+  "corruption_audit": {
+    "effective_changed_coordinate_rate_mean": 0.26934978148946354,
+    "epochs_audited": 30,
+    "requested_change_ratio_mean": 0.2693516522988506,
+    "support_change_ratio_mean": 0.26934978148946354,
+    "total_absolute_change_mean": 212464.552282671,
+    "value_change_ratio_mean": 0.0
+  },
+  "dataset": "Mouse_retina",
+  "device": "cuda",
+  "gpu_visible": "6",
+  "input_dim": 128,
+  "labels_used_during_fit": false,
+  "labels_used_for_outer_metrics": true,
+  "metrics": {
+    "ARI": 0.8576452108342856,
+    "L_rec": 0.88798128576571,
+    "NMI": 0.6912127061486869,
+    "clean_reconstruction_loss": 0.8120318651199341
+  },
+  "positive_control_required": true,
+  "project_id": "adaptive_corruption_probe",
+  "protocol_id": "adaptive_corruption_probe_b0_v1",
+  "raw_arrays_persisted": false,
+  "role": "registered_scrna_count_1",
+  "seed": 7,
+  "source": {
+    "H0_path": "/data/luolie/ToPoGate/result/representation_consumer_probe/S0_freeze/datasets/Mouse_retina/H0.npy",
+    "H0_sha256": "4684924e0e63ca08396b07842486e5521c53f1f3655fdee3c9e5be2808ff1c79",
+    "budget_manifest_sha256": "8156a38f2a1068787dc12c174506d137f442f698e95bb9d3d19c2485d5bed3ff",
+    "budget_profile": {
+      "budget_cap": 8,
+      "effective_budget_hash": "a1d5328d4635ff58b7901fb2a83ce0501ebee6131fbf46b2b2f9d9b4f7166ecb",
+      "effective_budget_max": 8,
+      "effective_budget_mean": 8.0,
+      "effective_budget_min": 8,
+      "fraction_budget_below_cap": 0.0,
+      "fraction_budget_zero": 0.0,
+      "zero_budget_nodes": 0
+    },
+    "labels_used": false,
+    "shape": [
+      8352,
+      128
+    ],
+    "source": "representation_consumer_probe/S0_freeze"
+  },
+  "stage": "B1",
+  "status": "completed_valid",
+  "support_definition": "abs(H0_ij)>=max(1e-6,0.05*row_max_abs)"
+}

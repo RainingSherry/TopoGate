@@ -1,0 +1,30 @@
+{
+  "run_key": "real_sim__libsvm_sparse_highdim::v22_topology_discriminator_hard_gate::seed42",
+  "gpu": 4,
+  "started_at": "2026-08-11T18:56:06.698217+00:00",
+  "command": [
+    "/data/luolie/conda/base/bin/python",
+    "-m",
+    "methods.TopoGate.V22_topology_discriminator_hard_mask.run",
+    "--data",
+    "/data/luolie/ToPoGate/datasets/external/v22_dataset_extension_20260812/processed/real_sim.npz",
+    "--dataset-name",
+    "real-sim",
+    "--input-protocol",
+    "shared_text",
+    "--config",
+    "methods/TopoGate/V22_topology_discriminator_hard_mask/configs/v22_topology_discriminator_hard_gate.yaml",
+    "--output-dir",
+    "result/V22/v22_full_single_seed_20260812/real_sim__libsvm_sparse_highdim/v22_topology_discriminator_hard_gate/seed42",
+    "--seed",
+    "42",
+    "--device",
+    "cuda",
+    "--gpu",
+    "4",
+    "--epochs",
+    "80",
+    "--source-sha256",
+    "12a67087b54af44522b50480a0de417b022d4a5312db42e6a82da1a68eccf62d"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "arm": "C3_MixedMatched",
+  "audit_ok": true,
+  "cuda_visible_is_legal": true,
+  "dataset": "Campbell",
+  "embedding_finite": true,
+  "forbidden_gpu_ids": [
+    0,
+    7
+  ],
+  "labels_used_during_fit": false,
+  "labels_used_for_outer_metrics": true,
+  "prediction_count": 14,
+  "raw_artifacts_published": false,
+  "seed": 42,
+  "support_value_budget_fields_present": true
+}

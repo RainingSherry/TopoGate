@@ -1,0 +1,43 @@
+{
+  "budget_profile": {
+    "budget_cap": 8,
+    "effective_budget_hash": "a1d5328d4635ff58b7901fb2a83ce0501ebee6131fbf46b2b2f9d9b4f7166ecb",
+    "effective_budget_max": 8,
+    "effective_budget_mean": 8.0,
+    "effective_budget_min": 8,
+    "fraction_budget_below_cap": 0.0,
+    "fraction_budget_zero": 0.0,
+    "zero_budget_nodes": 0
+  },
+  "candidate_pool_graph": {
+    "candidate_recall_at_b_mean": 0.9983686542145593,
+    "candidate_recall_at_b_rows": 8352,
+    "connected_components": 1,
+    "degree_cv": 1.226021795123368,
+    "degree_mean": 15.794500189323077,
+    "degree_std": 19.364401475190256,
+    "edge_count": 309892,
+    "edge_purity": 0.9934428768732333,
+    "giant_component_ratio": 1.0,
+    "ground_truth_ncut": 0.06544963923649694,
+    "isolated_nodes": 0,
+    "labels_used_for_diagnostic": true,
+    "pool_oracle_same_class_recall_at_b_mean": 0.9983536877394636,
+    "pool_oracle_same_class_recall_at_b_rows": 8352
+  },
+  "candidate_pool_profile": {
+    "budget_cap": 8,
+    "effective_budget_hash": "a1d5328d4635ff58b7901fb2a83ce0501ebee6131fbf46b2b2f9d9b4f7166ecb",
+    "effective_budget_max": 8,
+    "effective_budget_mean": 8.0,
+    "effective_budget_min": 8,
+    "fraction_budget_below_cap": 0.0,
+    "fraction_budget_zero": 0.0,
+    "zero_budget_nodes": 0
+  },
+  "dataset": "Mouse_retina",
+  "labels_used": true,
+  "oracle_full_directed_graph_hash": "dbc9e303180c2c023cc50a24e8276daa412d69364edf4ba63aa0671da600dcf4",
+  "oracle_pool_directed_graph_hash": "27f12e618e030b92cf1032980b4a9c3466a81e4b403c0afc6d91ed8da605f32d",
+  "purpose": "diagnostic_only"
+}

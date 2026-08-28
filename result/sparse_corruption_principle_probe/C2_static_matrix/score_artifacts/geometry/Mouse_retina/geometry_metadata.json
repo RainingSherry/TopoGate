@@ -1,0 +1,15 @@
+{
+  "H0_sha256": "4684924e0e63ca08396b07842486e5521c53f1f3655fdee3c9e5be2808ff1c79",
+  "dataset": "Mouse_retina",
+  "k": 15,
+  "labels_used": false,
+  "path": "/data/luolie/ToPoGate/result/sparse_corruption_principle_probe/C2_static_matrix/score_artifacts/geometry/Mouse_retina/geometry_scores.npy",
+  "raw_artifact_local_only": true,
+  "score_kind": "geometry_importance",
+  "sha256": "97b810fc456dd6c56eabef8fc4e5899236dad1d2670672e40d544fc43f518932",
+  "shape": [
+    8352,
+    128
+  ],
+  "stage": "C2_score_preparation"
+}

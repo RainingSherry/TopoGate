@@ -1,0 +1,15 @@
+{
+  "H0_sha256": "dae79805c827694841eabf57cbe35ede442900b995a41040cacac9287ec714c4",
+  "dataset": "Campbell",
+  "k": 15,
+  "labels_used": false,
+  "path": "/data/luolie/ToPoGate/result/sparse_corruption_principle_probe/C2_static_matrix/score_artifacts/geometry/Campbell/geometry_scores.npy",
+  "raw_artifact_local_only": true,
+  "score_kind": "geometry_importance",
+  "sha256": "273f8d89f6d9ddd4fd73d741f2425e2040405d49e18fcba8f04a0a367f1542a3",
+  "shape": [
+    9993,
+    128
+  ],
+  "stage": "C2_score_preparation"
+}

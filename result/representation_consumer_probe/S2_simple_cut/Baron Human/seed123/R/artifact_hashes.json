@@ -1,0 +1,52 @@
+{
+  "file_count": 9,
+  "files": [
+    {
+      "path": "audit.json",
+      "sha256": "832c4c884a6e71f1877f9c9964120dd505ce139ef2fc2ed00dfdff192055da85",
+      "size_bytes": 379
+    },
+    {
+      "path": "directed_graph.npz",
+      "sha256": "e0f645835e62aabbedaa252bd266deb65ebfb2fbbdfadfed1f51d75aa3a3aa53",
+      "size_bytes": 356132
+    },
+    {
+      "path": "embedding.npy",
+      "sha256": "cdff15d3542d7289a949802aaf6974090087b8bf09b4cc2c55ede398d6932f21",
+      "size_bytes": 1081856
+    },
+    {
+      "path": "labels_true.npy",
+      "sha256": "60634dd9a2dfdc579192e15d779c79cf8f91f1ed41d909a564de60af3cd66c28",
+      "size_bytes": 67736
+    },
+    {
+      "path": "predictions.npy",
+      "sha256": "97cf86b218009f55aee26d2131e59845b4a523be99abbdb54c2f09bb3ec188bd",
+      "size_bytes": 67736
+    },
+    {
+      "path": "resolved_config.json",
+      "sha256": "06f69dbf6fa9dc0ffd472201ae555348be5191d8771f7a98022f37139333fe95",
+      "size_bytes": 812
+    },
+    {
+      "path": "selected_graph.npz",
+      "sha256": "270540b9c3f16cdfce14ce97f3e75d39af365ffbca1ebd0a793e1cd56dc29fbb",
+      "size_bytes": 645559
+    },
+    {
+      "path": "summary.json",
+      "sha256": "ad1614703d5987bbc5cd915cd63d0106a1e8bc85b8166731819844be522ad8b3",
+      "size_bytes": 3347
+    },
+    {
+      "path": "training_metrics.csv",
+      "sha256": "d23e33cd31d2827bb2a2d3bf9a95d379effa468799834bbef93e9c69866c1f38",
+      "size_bytes": 5863
+    }
+  ],
+  "manifest_id": "representation_consumer_probe_s1_artifacts_v1",
+  "root": "/data/luolie/ToPoGate/result/representation_consumer_probe/S2_simple_cut/Baron Human/seed123/R"
+}

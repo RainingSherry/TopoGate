@@ -1,0 +1,89 @@
+{
+  "arms": {
+    "P0_Random": {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "mean_changed_count": 4.0,
+      "mean_requested_count": 4.0,
+      "principle": "P0_Random",
+      "support_change_rate": 0.14583333333333334,
+      "total_absolute_change": 22.869121685624123,
+      "value_change_rate": 0.10416666666666667
+    },
+    "P1_SupportPreserve": {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "mean_changed_count": 4.0,
+      "mean_requested_count": 4.0,
+      "principle": "P1_SupportPreserve",
+      "support_change_rate": 0.0,
+      "total_absolute_change": 51.071022003889084,
+      "value_change_rate": 0.25
+    },
+    "P2_SupportTarget": {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "mean_changed_count": 4.0,
+      "mean_requested_count": 4.0,
+      "principle": "P2_SupportTarget",
+      "support_change_rate": 0.25,
+      "total_absolute_change": 103.67334903776646,
+      "value_change_rate": 0.0
+    },
+    "P3_FrequencyAware": {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "mean_changed_count": 4.0,
+      "mean_requested_count": 4.0,
+      "principle": "P3_FrequencyAware",
+      "support_change_rate": 0.0,
+      "total_absolute_change": 59.13663362711668,
+      "value_change_rate": 0.25
+    },
+    "P4_ResidualHard": {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "mean_changed_count": 4.0,
+      "mean_requested_count": 4.0,
+      "principle": "P4_ResidualHard",
+      "support_change_rate": 0.0,
+      "total_absolute_change": 43.88240945339203,
+      "value_change_rate": 0.25
+    },
+    "P5_GeometryHard": {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "mean_changed_count": 4.0,
+      "mean_requested_count": 4.0,
+      "principle": "P5_GeometryHard",
+      "support_change_rate": 0.0,
+      "total_absolute_change": 41.85556426644325,
+      "value_change_rate": 0.25
+    }
+  },
+  "checks": {
+    "P0_Random_exact_budget": true,
+    "P0_Random_finite": true,
+    "P1_SupportPreserve_exact_budget": true,
+    "P1_SupportPreserve_finite": true,
+    "P1_support_preserved": true,
+    "P2_SupportTarget_exact_budget": true,
+    "P2_SupportTarget_finite": true,
+    "P2_support_target_changes_support": true,
+    "P3_FrequencyAware_exact_budget": true,
+    "P3_FrequencyAware_finite": true,
+    "P4_ResidualHard_exact_budget": true,
+    "P4_ResidualHard_finite": true,
+    "P5_GeometryHard_exact_budget": true,
+    "P5_GeometryHard_finite": true
+  },
+  "labels_used": false,
+  "stage": "C2_positive_control",
+  "status": "completed_valid"
+}

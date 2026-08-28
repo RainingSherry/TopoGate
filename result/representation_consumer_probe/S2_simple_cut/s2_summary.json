@@ -1,0 +1,403 @@
+{
+  "K_used_in_readout": true,
+  "K_used_in_representation": false,
+  "S_graph_estimable": false,
+  "arms": [
+    "R",
+    "O_pool",
+    "O_full"
+  ],
+  "completed_valid_run_count": 18,
+  "consumer": "SimpleCut",
+  "dataset_aggregates": {
+    "Baron Human": {
+      "C_matched_budget_candidate_gap": {
+        "classification": "observed_small",
+        "material_positive": false,
+        "materiality_delta": 0.03,
+        "mean": 0.00012483216041382175,
+        "negative_seed_count": 1,
+        "positive_seed_count": 2,
+        "std": 0.001227773661892383,
+        "values": [
+          -0.0012883996898330197,
+          0.0007339290211316185,
+          0.0009289671499428664
+        ]
+      },
+      "H_full": {
+        "classification": "material_positive",
+        "material_positive": true,
+        "materiality_delta": 0.03,
+        "mean": 0.03336666489347451,
+        "negative_seed_count": 1,
+        "positive_seed_count": 2,
+        "std": 0.057549543990565166,
+        "values": [
+          0.09980182403976626,
+          0.001463328611032877,
+          -0.0011651579703756132
+        ]
+      },
+      "H_pool": {
+        "classification": "material_positive",
+        "material_positive": true,
+        "materiality_delta": 0.03,
+        "mean": 0.03324183273306069,
+        "negative_seed_count": 1,
+        "positive_seed_count": 2,
+        "std": 0.05877538765130936,
+        "values": [
+          0.10109022372959928,
+          0.0007293995899012584,
+          -0.0020941251203184796
+        ]
+      },
+      "S_graph_estimable": false,
+      "arms": {
+        "O_full": {
+          "ACC": {
+            "classification": "material_positive",
+            "material_positive": true,
+            "materiality_delta": 0.03,
+            "mean": 0.5521634520569557,
+            "negative_seed_count": 0,
+            "positive_seed_count": 3,
+            "std": 0.06541435649185781,
+            "values": [
+              0.5862028162347651,
+              0.5935392261270855,
+              0.47674831380901667
+            ]
+          },
+          "ARI": {
+            "classification": "material_positive",
+            "material_positive": true,
+            "materiality_delta": 0.03,
+            "mean": 0.29460648673157197,
+            "negative_seed_count": 0,
+            "positive_seed_count": 3,
+            "std": 0.10415329645952177,
+            "values": [
+              0.34272169932146246,
+              0.36600360217136996,
+              0.17509415870188347
+            ]
+          },
+          "NMI": {
+            "classification": "material_positive",
+            "material_positive": true,
+            "materiality_delta": 0.03,
+            "mean": 0.5330303284326674,
+            "negative_seed_count": 0,
+            "positive_seed_count": 3,
+            "std": 0.05034831117036831,
+            "values": [
+              0.5584467431265691,
+              0.5656040914027087,
+              0.4750401507687246
+            ]
+          }
+        },
+        "O_pool": {
+          "ACC": {
+            "classification": "material_positive",
+            "material_positive": true,
+            "materiality_delta": 0.03,
+            "mean": 0.5528734272078255,
+            "negative_seed_count": 0,
+            "positive_seed_count": 3,
+            "std": 0.0647489221151599,
+            "values": [
+              0.5876227665365046,
+              0.5928292509762159,
+              0.47816826411075614
+            ]
+          },
+          "ARI": {
+            "classification": "material_positive",
+            "material_positive": true,
+            "materiality_delta": 0.03,
+            "mean": 0.29448165457115816,
+            "negative_seed_count": 0,
+            "positive_seed_count": 3,
+            "std": 0.10473791495076344,
+            "values": [
+              0.3440100990112955,
+              0.36526967315023834,
+              0.1741651915519406
+            ]
+          },
+          "NMI": {
+            "classification": "material_positive",
+            "material_positive": true,
+            "materiality_delta": 0.03,
+            "mean": 0.5329102046200819,
+            "negative_seed_count": 0,
+            "positive_seed_count": 3,
+            "std": 0.05050155231708064,
+            "values": [
+              0.5583055572760033,
+              0.5656736527177868,
+              0.4747514038664552
+            ]
+          }
+        },
+        "R": {
+          "ACC": {
+            "classification": "material_positive",
+            "material_positive": true,
+            "materiality_delta": 0.03,
+            "mean": 0.5423421291365913,
+            "negative_seed_count": 0,
+            "positive_seed_count": 3,
+            "std": 0.05698878511299994,
+            "values": [
+              0.5550822387883091,
+              0.5918826174417229,
+              0.48006153117974204
+            ]
+          },
+          "ARI": {
+            "classification": "material_positive",
+            "material_positive": true,
+            "materiality_delta": 0.03,
+            "mean": 0.2612398218380974,
+            "negative_seed_count": 0,
+            "positive_seed_count": 3,
+            "std": 0.09546803136675973,
+            "values": [
+              0.2429198752816962,
+              0.3645402735603371,
+              0.17625931667225908
+            ]
+          },
+          "NMI": {
+            "classification": "material_positive",
+            "material_positive": true,
+            "materiality_delta": 0.03,
+            "mean": 0.5178168421518691,
+            "negative_seed_count": 0,
+            "positive_seed_count": 3,
+            "std": 0.04519061884305778,
+            "values": [
+              0.5130667331735052,
+              0.5651948896519472,
+              0.47518890363015465
+            ]
+          }
+        }
+      },
+      "candidate_gap": "absent",
+      "consumer": "SimpleCut",
+      "dataset": "Baron Human",
+      "full_opportunity": "present",
+      "purpose": "conditional_confirmation_of_spectral_negative_or_near_threshold",
+      "seed_count": 3,
+      "within_pool_opportunity": "present"
+    },
+    "Mouse_retina": {
+      "C_matched_budget_candidate_gap": {
+        "classification": "observed_small",
+        "material_positive": false,
+        "materiality_delta": 0.03,
+        "mean": 0.0007418226633778557,
+        "negative_seed_count": 0,
+        "positive_seed_count": 2,
+        "std": 0.0012710138521081216,
+        "values": [
+          1.6034143546339585e-05,
+          0.0022094338465872276,
+          0.0
+        ]
+      },
+      "H_full": {
+        "classification": "observed_small",
+        "material_positive": false,
+        "materiality_delta": 0.03,
+        "mean": 0.009621977438583099,
+        "negative_seed_count": 1,
+        "positive_seed_count": 2,
+        "std": 0.019219889333030964,
+        "values": [
+          0.030359967294440904,
+          0.0060981252065891445,
+          -0.00759216018528075
+        ]
+      },
+      "H_pool": {
+        "classification": "observed_small",
+        "material_positive": false,
+        "materiality_delta": 0.03,
+        "mean": 0.008880154775205243,
+        "negative_seed_count": 1,
+        "positive_seed_count": 2,
+        "std": 0.01945437803353621,
+        "values": [
+          0.030343933150894564,
+          0.003888691360001917,
+          -0.00759216018528075
+        ]
+      },
+      "S_graph_estimable": false,
+      "arms": {
+        "O_full": {
+          "ACC": {
+            "classification": "material_positive",
+            "material_positive": true,
+            "materiality_delta": 0.03,
+            "mean": 0.9792863984674329,
+            "negative_seed_count": 0,
+            "positive_seed_count": 3,
+            "std": 0.0008381226053640254,
+            "values": [
+              0.9796455938697318,
+              0.9798850574712644,
+              0.9783285440613027
+            ]
+          },
+          "ARI": {
+            "classification": "material_positive",
+            "material_positive": true,
+            "materiality_delta": 0.03,
+            "mean": 0.9264699346987552,
+            "negative_seed_count": 0,
+            "positive_seed_count": 3,
+            "std": 0.0033193741125135895,
+            "values": [
+              0.9275680771682784,
+              0.9291010846569765,
+              0.9227406422710107
+            ]
+          },
+          "NMI": {
+            "classification": "material_positive",
+            "material_positive": true,
+            "materiality_delta": 0.03,
+            "mean": 0.874773262984703,
+            "negative_seed_count": 0,
+            "positive_seed_count": 3,
+            "std": 0.003976203332587404,
+            "values": [
+              0.8761675503811972,
+              0.8778645444122913,
+              0.8702876941606202
+            ]
+          }
+        },
+        "O_pool": {
+          "ACC": {
+            "classification": "material_positive",
+            "material_positive": true,
+            "materiality_delta": 0.03,
+            "mean": 0.9789272030651341,
+            "negative_seed_count": 0,
+            "positive_seed_count": 3,
+            "std": 0.0006666384534040008,
+            "values": [
+              0.9796455938697318,
+              0.9788074712643678,
+              0.9783285440613027
+            ]
+          },
+          "ARI": {
+            "classification": "material_positive",
+            "material_positive": true,
+            "materiality_delta": 0.03,
+            "mean": 0.9257281120353773,
+            "negative_seed_count": 0,
+            "positive_seed_count": 3,
+            "std": 0.0026082103373663585,
+            "values": [
+              0.927552043024732,
+              0.9268916508103893,
+              0.9227406422710107
+            ]
+          },
+          "NMI": {
+            "classification": "material_positive",
+            "material_positive": true,
+            "materiality_delta": 0.03,
+            "mean": 0.8719438191758062,
+            "negative_seed_count": 0,
+            "positive_seed_count": 3,
+            "std": 0.0033506507441179237,
+            "values": [
+              0.8758000490928425,
+              0.8697437142739559,
+              0.8702876941606202
+            ]
+          }
+        },
+        "R": {
+          "ACC": {
+            "classification": "material_positive",
+            "material_positive": true,
+            "materiality_delta": 0.03,
+            "mean": 0.973419540229885,
+            "negative_seed_count": 0,
+            "positive_seed_count": 3,
+            "std": 0.010218672554287277,
+            "values": [
+              0.9616858237547893,
+              0.9782088122605364,
+              0.9803639846743295
+            ]
+          },
+          "ARI": {
+            "classification": "material_positive",
+            "material_positive": true,
+            "materiality_delta": 0.03,
+            "mean": 0.9168479572601721,
+            "negative_seed_count": 0,
+            "positive_seed_count": 3,
+            "std": 0.017398975649206665,
+            "values": [
+              0.8972081098738375,
+              0.9230029594503874,
+              0.9303328024562915
+            ]
+          },
+          "NMI": {
+            "classification": "material_positive",
+            "material_positive": true,
+            "materiality_delta": 0.03,
+            "mean": 0.8564550583758829,
+            "negative_seed_count": 0,
+            "positive_seed_count": 3,
+            "std": 0.03109484634401835,
+            "values": [
+              0.8212541718652129,
+              0.8679266631763963,
+              0.8801843400860399
+            ]
+          }
+        }
+      },
+      "candidate_gap": "absent",
+      "consumer": "SimpleCut",
+      "dataset": "Mouse_retina",
+      "full_opportunity": "absent",
+      "purpose": "conditional_confirmation_of_spectral_negative_or_near_threshold",
+      "seed_count": 3,
+      "within_pool_opportunity": "absent"
+    }
+  },
+  "datasets": [
+    "Baron Human",
+    "Mouse_retina"
+  ],
+  "expected_run_count": 18,
+  "incomplete_run_count": 0,
+  "labels_used_during_fit": false,
+  "note": "S2 can distinguish a Spectral relaxation miss from absent opportunity; it does not estimate selector or TopoGate gain.",
+  "project_id": "representation_consumer_probe",
+  "protocol_id": "representation_consumer_probe_s2_opportunity_simplecut_v1",
+  "purpose": "conditional_opportunity_confirmation_only",
+  "seeds": [
+    42,
+    123,
+    7
+  ],
+  "status": "completed_valid"
+}

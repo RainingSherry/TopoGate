@@ -1,0 +1,136 @@
+{
+  "claim_boundary": "E1/E2 use dense standardized H0; raw-X support is descriptive E3 only; no support-specific causal claim is authorized.",
+  "cuda_preflight": {
+    "devices": [
+      {
+        "id": 0,
+        "memory_mib": 81559,
+        "memory_used_mib": 52085,
+        "name": "NVIDIA H100 80GB HBM3",
+        "utilization_pct": 0
+      },
+      {
+        "id": 1,
+        "memory_mib": 81559,
+        "memory_used_mib": 22535,
+        "name": "NVIDIA H100 80GB HBM3",
+        "utilization_pct": 0
+      },
+      {
+        "id": 2,
+        "memory_mib": 81559,
+        "memory_used_mib": 66515,
+        "name": "NVIDIA H100 80GB HBM3",
+        "utilization_pct": 100
+      },
+      {
+        "id": 3,
+        "memory_mib": 81559,
+        "memory_used_mib": 66429,
+        "name": "NVIDIA H100 80GB HBM3",
+        "utilization_pct": 100
+      },
+      {
+        "id": 4,
+        "memory_mib": 81559,
+        "memory_used_mib": 66627,
+        "name": "NVIDIA H100 80GB HBM3",
+        "utilization_pct": 100
+      },
+      {
+        "id": 5,
+        "memory_mib": 81559,
+        "memory_used_mib": 68099,
+        "name": "NVIDIA H100 80GB HBM3",
+        "utilization_pct": 100
+      },
+      {
+        "id": 6,
+        "memory_mib": 81559,
+        "memory_used_mib": 4,
+        "name": "NVIDIA H100 80GB HBM3",
+        "utilization_pct": 0
+      },
+      {
+        "id": 7,
+        "memory_mib": 81559,
+        "memory_used_mib": 41593,
+        "name": "NVIDIA H100 80GB HBM3",
+        "utilization_pct": 0
+      }
+    ],
+    "forbidden_ids": [
+      0,
+      7
+    ],
+    "forbidden_requested": [],
+    "forbidden_visible": [
+      0,
+      7
+    ],
+    "gpu_runs_started": 0,
+    "idle_legal_pool": [
+      6
+    ],
+    "legal_pool_visible": true,
+    "required_legal_pool": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "returncode": 0,
+    "status": "ready",
+    "stderr_tail": ""
+  },
+  "e0": {
+    "audit_ok": true,
+    "corrected_d1_gate_pass": false,
+    "d2_authorized": false,
+    "gpu_runs_started": 0
+  },
+  "e1": {
+    "complete_matrix": true,
+    "g1_cross_domain_opportunity": false,
+    "g1_winner_count": 0,
+    "g1_winner_datasets": [],
+    "g2_training_amplification": false,
+    "g2_winner_count": 1,
+    "g2_winner_datasets": [
+      "cnae9"
+    ],
+    "material_delta_ari": 0.03
+  },
+  "e2": null,
+  "e3": {
+    "audit_ok": true,
+    "does_not_change_fit_or_gates": true,
+    "gpu_runs_started": 0,
+    "labels_not_loaded": true,
+    "project_id": "corruption_objective_compatibility_probe",
+    "protocol_id": "corruption_objective_compatibility_probe_e0_e4_v1",
+    "rows": 6,
+    "stage": "E3_raw_audit",
+    "support_semantics": "raw_X_zero_nonzero_descriptive_only; H0_threshold_support remains separate"
+  },
+  "ended_at": "2026-08-18T14:31:20.887676+00:00",
+  "locked_routes": [
+    "support_d2",
+    "support_matcher_optimization",
+    "optimal_or_hungarian_matcher",
+    "adaptive_policy",
+    "GAN",
+    "learned_generator",
+    "transformer",
+    "new_gate",
+    "corruption_rate_sweep",
+    "mask_predictor"
+  ],
+  "next": "STOP_GENERAL_CORRUPTION",
+  "project_id": "corruption_objective_compatibility_probe",
+  "protocol_id": "corruption_objective_compatibility_probe_e0_e4_v1",
+  "started_at": "2026-08-18T14:23:08.657853+00:00",
+  "status": "completed_valid"
+}

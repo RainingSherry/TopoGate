@@ -1,0 +1,52 @@
+{
+  "file_count": 9,
+  "files": [
+    {
+      "path": "audit.json",
+      "sha256": "49502edb0cb0887c0ed8d984024083a4da69d0e60508f217bc4a2205e46b06f8",
+      "size_bytes": 277
+    },
+    {
+      "path": "directed_graph.npz",
+      "sha256": "4e92104845a76a51e4d6b97862592a89d79c8f62a7a209f409b74e834072971e",
+      "size_bytes": 360430
+    },
+    {
+      "path": "embedding.npy",
+      "sha256": "390e64dd6c8d1f40dcf28b26ae7d91fba3cdd0524a7f5f4c7614a222f0c77b05",
+      "size_bytes": 167168
+    },
+    {
+      "path": "labels_true.npy",
+      "sha256": "00f32c2d9f1173e6ba2ca19031d2ff0a115cf8bfe341d48ef4e6f5d85dd0e1f9",
+      "size_bytes": 66944
+    },
+    {
+      "path": "oracle_manifest.json",
+      "sha256": "3ca0ce4846f5542bd85181890e247e05acea62727938f665340d4e822a2780d2",
+      "size_bytes": 265
+    },
+    {
+      "path": "predictions.npy",
+      "sha256": "442577943011cac59a77b91b305a9109bbfe84f58392a86a58004cc658c1c07e",
+      "size_bytes": 66944
+    },
+    {
+      "path": "resolved_config.json",
+      "sha256": "a681d8b389059e81f52f29bbd7c9c3571283880120db1b27b13c8d43c16f3320",
+      "size_bytes": 480
+    },
+    {
+      "path": "selected_graph.npz",
+      "sha256": "ccb45656f315ce99a271e539d03578a0dac71d0bb857adc58f32070a1613f578",
+      "size_bytes": 695766
+    },
+    {
+      "path": "summary.json",
+      "sha256": "cd8306dfdac6c7718be78133ac72f910c2018588a593280c08fc38818f27b33b",
+      "size_bytes": 3261
+    }
+  ],
+  "manifest_id": "representation_consumer_probe_s1_artifacts_v1",
+  "root": "/data/luolie/ToPoGate/result/representation_consumer_probe/S1_oracle_v2/Mouse_retina/seed42/O_full"
+}

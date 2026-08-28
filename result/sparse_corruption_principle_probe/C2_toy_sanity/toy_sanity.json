@@ -1,0 +1,299 @@
+{
+  "fixture_audit": {
+    "checks": {
+      "M_support_signal": true,
+      "M_value_signal": true,
+      "S_support_signal": true,
+      "S_value_signal": true,
+      "V_support_signal": true,
+      "V_value_signal": true
+    },
+    "fit_labels_allowed": false,
+    "labels_used_for_fixture_audit_only": true,
+    "status": "completed_valid",
+    "worlds": {
+      "M": {
+        "description": "class information is encoded by both support blocks and values",
+        "shape": [
+          96,
+          24
+        ]
+      },
+      "S": {
+        "description": "class information is encoded by support blocks; value law is shared",
+        "shape": [
+          96,
+          24
+        ]
+      },
+      "V": {
+        "description": "class information is encoded by values on a shared support",
+        "shape": [
+          96,
+          24
+        ]
+      }
+    }
+  },
+  "labels_used_during_corruption": false,
+  "labels_used_for_fixture_definition_audit_only": true,
+  "performance_claim": false,
+  "project_id": "sparse_corruption_principle_probe",
+  "protocol_id": "sparse_corruption_principle_probe_c0_v1",
+  "rows": [
+    {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "labels_used_during_corruption": false,
+      "mean_changed_count": 6.0,
+      "mean_requested_count": 6.0,
+      "principle": "P0_Random",
+      "status": "completed_valid",
+      "support_change_rate": 0.12803819444444445,
+      "total_absolute_change": 178.8537846058607,
+      "value_change_rate": 0.12196180555555555,
+      "world": "S"
+    },
+    {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "labels_used_during_corruption": false,
+      "mean_changed_count": 6.0,
+      "mean_requested_count": 6.0,
+      "principle": "P1_SupportPreserve",
+      "status": "completed_valid",
+      "support_change_rate": 0.0,
+      "total_absolute_change": 49.857990741729736,
+      "value_change_rate": 0.25,
+      "world": "S"
+    },
+    {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "labels_used_during_corruption": false,
+      "mean_changed_count": 6.0,
+      "mean_requested_count": 6.0,
+      "principle": "P2_SupportTarget",
+      "status": "completed_valid",
+      "support_change_rate": 0.25,
+      "total_absolute_change": 577.7940624952316,
+      "value_change_rate": 0.0,
+      "world": "S"
+    },
+    {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "labels_used_during_corruption": false,
+      "mean_changed_count": 6.0,
+      "mean_requested_count": 6.0,
+      "principle": "P3_FrequencyAware",
+      "status": "completed_valid",
+      "support_change_rate": 0.0,
+      "total_absolute_change": 49.26187610626221,
+      "value_change_rate": 0.25,
+      "world": "S"
+    },
+    {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "labels_used_during_corruption": false,
+      "mean_changed_count": 6.0,
+      "mean_requested_count": 6.0,
+      "principle": "P4_ResidualHard",
+      "status": "completed_valid",
+      "support_change_rate": 0.0,
+      "total_absolute_change": 50.241193532943726,
+      "value_change_rate": 0.25,
+      "world": "S"
+    },
+    {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "labels_used_during_corruption": false,
+      "mean_changed_count": 6.0,
+      "mean_requested_count": 6.0,
+      "principle": "P5_GeometryHard",
+      "status": "completed_valid",
+      "support_change_rate": 0.0,
+      "total_absolute_change": 56.57194113731384,
+      "value_change_rate": 0.25,
+      "world": "S"
+    },
+    {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "labels_used_during_corruption": false,
+      "mean_changed_count": 6.0,
+      "mean_requested_count": 6.0,
+      "principle": "P0_Random",
+      "status": "completed_valid",
+      "support_change_rate": 0.1228298611111111,
+      "total_absolute_change": 205.86120246350765,
+      "value_change_rate": 0.1271701388888889,
+      "world": "V"
+    },
+    {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "labels_used_during_corruption": false,
+      "mean_changed_count": 6.0,
+      "mean_requested_count": 6.0,
+      "principle": "P1_SupportPreserve",
+      "status": "completed_valid",
+      "support_change_rate": 0.0,
+      "total_absolute_change": 344.0214797258377,
+      "value_change_rate": 0.25,
+      "world": "V"
+    },
+    {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "labels_used_during_corruption": false,
+      "mean_changed_count": 6.0,
+      "mean_requested_count": 6.0,
+      "principle": "P2_SupportTarget",
+      "status": "completed_valid",
+      "support_change_rate": 0.25,
+      "total_absolute_change": 752.7142903804779,
+      "value_change_rate": 0.0,
+      "world": "V"
+    },
+    {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "labels_used_during_corruption": false,
+      "mean_changed_count": 6.0,
+      "mean_requested_count": 6.0,
+      "principle": "P3_FrequencyAware",
+      "status": "completed_valid",
+      "support_change_rate": 0.0,
+      "total_absolute_change": 359.1623358130455,
+      "value_change_rate": 0.25,
+      "world": "V"
+    },
+    {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "labels_used_during_corruption": false,
+      "mean_changed_count": 6.0,
+      "mean_requested_count": 6.0,
+      "principle": "P4_ResidualHard",
+      "status": "completed_valid",
+      "support_change_rate": 0.0,
+      "total_absolute_change": 398.96329921483994,
+      "value_change_rate": 0.25,
+      "world": "V"
+    },
+    {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "labels_used_during_corruption": false,
+      "mean_changed_count": 6.0,
+      "mean_requested_count": 6.0,
+      "principle": "P5_GeometryHard",
+      "status": "completed_valid",
+      "support_change_rate": 0.0,
+      "total_absolute_change": 381.8160091638565,
+      "value_change_rate": 0.25,
+      "world": "V"
+    },
+    {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "labels_used_during_corruption": false,
+      "mean_changed_count": 6.0,
+      "mean_requested_count": 6.0,
+      "principle": "P0_Random",
+      "status": "completed_valid",
+      "support_change_rate": 0.12803819444444445,
+      "total_absolute_change": 161.78080159425735,
+      "value_change_rate": 0.12196180555555555,
+      "world": "M"
+    },
+    {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "labels_used_during_corruption": false,
+      "mean_changed_count": 6.0,
+      "mean_requested_count": 6.0,
+      "principle": "P1_SupportPreserve",
+      "status": "completed_valid",
+      "support_change_rate": 0.0,
+      "total_absolute_change": 44.86967819929123,
+      "value_change_rate": 0.25,
+      "world": "M"
+    },
+    {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "labels_used_during_corruption": false,
+      "mean_changed_count": 6.0,
+      "mean_requested_count": 6.0,
+      "principle": "P2_SupportTarget",
+      "status": "completed_valid",
+      "support_change_rate": 0.25,
+      "total_absolute_change": 520.3310639858246,
+      "value_change_rate": 0.0,
+      "world": "M"
+    },
+    {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "labels_used_during_corruption": false,
+      "mean_changed_count": 6.0,
+      "mean_requested_count": 6.0,
+      "principle": "P3_FrequencyAware",
+      "status": "completed_valid",
+      "support_change_rate": 0.0,
+      "total_absolute_change": 44.42427510023117,
+      "value_change_rate": 0.25,
+      "world": "M"
+    },
+    {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "labels_used_during_corruption": false,
+      "mean_changed_count": 6.0,
+      "mean_requested_count": 6.0,
+      "principle": "P4_ResidualHard",
+      "status": "completed_valid",
+      "support_change_rate": 0.0,
+      "total_absolute_change": 45.33482784032822,
+      "value_change_rate": 0.25,
+      "world": "M"
+    },
+    {
+      "effective_changed_coordinate_rate": 0.25,
+      "exact_budget": true,
+      "labels_used": false,
+      "labels_used_during_corruption": false,
+      "mean_changed_count": 6.0,
+      "mean_requested_count": 6.0,
+      "principle": "P5_GeometryHard",
+      "status": "completed_valid",
+      "support_change_rate": 0.0,
+      "total_absolute_change": 51.00454223155975,
+      "value_change_rate": 0.25,
+      "world": "M"
+    }
+  ],
+  "stage": "C2_toy_sanity",
+  "status": "completed_valid"
+}

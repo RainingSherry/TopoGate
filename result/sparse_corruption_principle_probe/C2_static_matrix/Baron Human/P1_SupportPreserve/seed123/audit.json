@@ -1,0 +1,21 @@
+{
+  "audit_ok": true,
+  "cuda_visible_is_legal": true,
+  "dataset": "Baron Human",
+  "embedding_finite": true,
+  "exact_budget_all_epochs": true,
+  "forbidden_gpu_ids": [
+    0,
+    7
+  ],
+  "labels_used_during_fit": false,
+  "labels_used_for_outer_metrics": true,
+  "prediction_count": 9,
+  "principle": "P1_SupportPreserve",
+  "project_id": "sparse_corruption_principle_probe",
+  "protocol_id": "sparse_corruption_principle_probe_c2_v1",
+  "raw_artifacts_persisted": false,
+  "score_artifacts_label_free": true,
+  "seed": 123,
+  "stage": "C2_static_matrix"
+}

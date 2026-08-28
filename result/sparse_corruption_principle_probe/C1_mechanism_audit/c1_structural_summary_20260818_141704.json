@@ -1,0 +1,34 @@
+{
+  "arms": [
+    "C_clean_no_corruption",
+    "C0_MatchedRandom",
+    "C1_ValueOnly",
+    "C2_SupportOnly",
+    "C3_MixedMatched",
+    "C4_StaticHard"
+  ],
+  "b1_metrics_are_post_fit": true,
+  "b1_metrics_reused": true,
+  "csv_latest": "result/sparse_corruption_principle_probe/C1_mechanism_audit/c1_structural_rows.csv",
+  "csv_timestamped": "result/sparse_corruption_principle_probe/C1_mechanism_audit/c1_structural_rows_20260818_141704.csv",
+  "datasets": [
+    "Mouse_retina",
+    "Baron Human",
+    "Campbell"
+  ],
+  "fit_runs": 0,
+  "labels_loaded": false,
+  "project_id": "sparse_corruption_principle_probe",
+  "protocol_id": "sparse_corruption_principle_probe_c0_v1",
+  "publication_scope": "compact_diagnostics_only; no arrays, labels, embeddings, predictions, weights or logs",
+  "rows": 54,
+  "seeds": [
+    42,
+    123,
+    7
+  ],
+  "stage": "C1_mechanism_localization",
+  "static_hard_score_source": "label_free_column_median_MAD_proxy_for_structural_audit_only",
+  "status": "completed_valid",
+  "structural_source": "S0_H0_replay_with_closed_B1_corruption_function"
+}

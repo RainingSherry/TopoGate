@@ -1,0 +1,35 @@
+{
+  "K_source": "benchmark_oracle_from_y_outer_readout_only",
+  "arm": "C0_MatchedRandom",
+  "backbone": {
+    "activation": "ReLU",
+    "batch_size": 512,
+    "corruption_rate": 0.25,
+    "decoder_dims": [
+      32,
+      64,
+      "d_eff"
+    ],
+    "encoder_dims": [
+      "d_eff",
+      64,
+      32
+    ],
+    "epochs": 30,
+    "input": "audited_S0_H0",
+    "learning_rate": 0.001,
+    "optimizer": "Adam",
+    "readout": "clean_embedding_known_K_KMeans",
+    "standardization": "clean_H0_column_mean_std_fit_once_per_dataset",
+    "support_definition": "abs(H0_ij)>=max(1e-6,0.05*row_max_abs)"
+  },
+  "cuda_visible_devices": "5",
+  "dataset": "Campbell",
+  "input_dim": 128,
+  "labels_used_during_fit": false,
+  "project_id": "adaptive_corruption_probe",
+  "protocol_id": "adaptive_corruption_probe_b0_v1",
+  "seed": 123,
+  "stage": "B1",
+  "support_definition": "abs(H0_ij)>=max(1e-6,0.05*row_max_abs)"
+}

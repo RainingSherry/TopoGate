@@ -1,0 +1,23 @@
+{
+  "base_commit": "c80877cf904e41950315d37b95374825c33a7362",
+  "datasets": {
+    "Campbell": {
+      "diagnostic_targets": "bb0ad216e5a1f52a096d42dd8e8bafbda287610a37052ebfdd711e2cc2289903",
+      "edge_features": "b06c76f96e2b00f21ab2c29270ce02918ab4ad72931087466266eb70ae7d3295",
+      "feature_metadata": "347460d18b691ef94cd1d7358d1e6514ef9e23a23394854376913a3d97fbb6e6",
+      "labels": "4c3c80e1b10a4cb9ce826bd4c33b7b19754f2e0e1f7cd9f0f135464c5aff1b6e"
+    },
+    "cnae9": {
+      "diagnostic_targets": "a10e962f2c606f2a7f32efb04a5a42fdd04e982ece26765e49bf236b135b3de7",
+      "edge_features": "e09d185394a74928cc54f1629942e4dd902f4f06bc594b0453db99b121cadedf",
+      "feature_metadata": "01aba150091d682f48a283effd80b10118c97b26d6ec261f9a199cae531116f9",
+      "labels": "db8cc40c7326945ea14834a5233d237c32bddec24258087b8b64b050ade5acf5"
+    },
+    "sms_spam_collection": {
+      "diagnostic_targets": "f317914b4875308133a7d41cc8c02a17ee6f5388a3ff2442db43457a73bc5df3",
+      "edge_features": "2e9115f1acc038bdfad2a35a26dd6eeee7501dcbf0e6bc9dc3c45f8929cf2caf",
+      "feature_metadata": "35f8e92e67f545ab3186639641fc01548a21cb90b3c3632eb376ec3e552f7ebe",
+      "labels": "8d880d9da03dd2db6352293820ccb74f4b34b7719aadc931fac96b6d6025e142"
+    }
+  }
+}

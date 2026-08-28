@@ -1,0 +1,16 @@
+{
+  "dataset_id": "hate_speech__shared_text",
+  "name": "hate_speech",
+  "stratum": "original8_shared_text",
+  "input_protocol": "shared_text",
+  "source_path": "/data/luolie/ToPoGate/datasets/hate_speech.npz",
+  "source_sha256": "c39fc08366c0423b8a2f4e3543df6d5b06f2e0b065813e120263b99e7d1e44bb",
+  "n_samples": 3221,
+  "n_features_original": 100,
+  "labels_available_outer_only": true,
+  "expected_labels_unique": 3,
+  "k_source": "benchmark_oracle_from_y",
+  "run_key": "hate_speech__shared_text::v22_topology_discriminator_cooperative_keep_gate::seed42",
+  "batch_size": 4096,
+  "topology_cache_source": null
+}

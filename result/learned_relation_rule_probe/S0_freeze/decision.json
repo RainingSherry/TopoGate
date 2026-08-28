@@ -1,0 +1,9 @@
+{
+  "authorized_next_stage": "A1",
+  "formal_performance_run_started": false,
+  "next_stage_authorized": true,
+  "primary_gate_pass": null,
+  "stage": "S0",
+  "status": "completed_valid",
+  "terminal_reason": null
+}

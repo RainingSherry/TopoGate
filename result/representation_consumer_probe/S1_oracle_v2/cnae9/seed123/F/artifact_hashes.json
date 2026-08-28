@@ -1,0 +1,37 @@
+{
+  "file_count": 6,
+  "files": [
+    {
+      "path": "audit.json",
+      "sha256": "cf610bb2aebe3045c6256638feb86d60d1094201de486f39b485a1aba14bf672",
+      "size_bytes": 267
+    },
+    {
+      "path": "embedding.npy",
+      "sha256": "4857c0c83736e9f85be74aab76105849bdf5824c6160e3c21e304618133b6b13",
+      "size_bytes": 553088
+    },
+    {
+      "path": "labels_true.npy",
+      "sha256": "db8cc40c7326945ea14834a5233d237c32bddec24258087b8b64b050ade5acf5",
+      "size_bytes": 8768
+    },
+    {
+      "path": "predictions.npy",
+      "sha256": "2091212ab068cb3c7a3067e7a416e37ee16d7e04015d2abfafadd2dc122c08e8",
+      "size_bytes": 8768
+    },
+    {
+      "path": "resolved_config.json",
+      "sha256": "4ead65aae1041fe2654f1d26cde6ae2561f220e90959fc0d2ab2b0ec7d9079b0",
+      "size_bytes": 473
+    },
+    {
+      "path": "summary.json",
+      "sha256": "1080a1de679e11e0610642107db9d7b09444038ac0963a4cacb2e602bbaef744",
+      "size_bytes": 1939
+    }
+  ],
+  "manifest_id": "representation_consumer_probe_s1_artifacts_v1",
+  "root": "/data/luolie/ToPoGate/result/representation_consumer_probe/S1_oracle_v2/cnae9/seed123/F"
+}

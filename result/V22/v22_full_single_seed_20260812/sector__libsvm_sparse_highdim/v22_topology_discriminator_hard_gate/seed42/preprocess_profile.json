@@ -1,0 +1,22 @@
+{
+  "dataset_name": "sector",
+  "input_protocol": "shared_text",
+  "n_samples": 6412,
+  "n_features_original": 55197,
+  "n_features_selected": 2000,
+  "feature_cap": 2000,
+  "feature_selection": "top_variance_label_free",
+  "selected_feature_indices_count": 2000,
+  "source_zero_fraction": 0.9970462176360969,
+  "selected_zero_fraction": 0.9594061915159077,
+  "graph_view_storage": "csr",
+  "graph_view_scaler": "StandardScaler_with_mean_false",
+  "model_view_scaler": "StandardScaler_with_mean_true",
+  "count_transform": "identity",
+  "labels_used": false,
+  "K_used": false,
+  "full_pairwise_matrix_materialized": false,
+  "labels_used_during_fit": false,
+  "K_used_during_fit": false,
+  "K_source": "benchmark_oracle_from_y"
+}

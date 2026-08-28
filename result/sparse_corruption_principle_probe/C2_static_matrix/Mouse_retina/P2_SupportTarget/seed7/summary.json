@@ -1,0 +1,85 @@
+{
+  "K": 5,
+  "K_source": "benchmark_oracle_from_y_outer_readout_only",
+  "backbone": {
+    "activation": "ReLU",
+    "batch_size": 512,
+    "decoder_dims": [
+      32,
+      64,
+      "d_eff"
+    ],
+    "encoder": "small_matched_reconstruction_probe",
+    "encoder_dims": [
+      "d_eff",
+      64,
+      32
+    ],
+    "epochs": 30,
+    "input": "audited_S0_H0",
+    "labels_used_during_fit": false,
+    "learning_rate": 0.001,
+    "optimizer": "Adam",
+    "readout": "clean_embedding_known_K_KMeans_outer_benchmark_only",
+    "standardization": "clean_H0_column_mean_std_fit_once_per_dataset",
+    "warmup_epochs": 5
+  },
+  "base_protocol_id": "sparse_corruption_principle_probe_c0_v1",
+  "corruption_audit": {
+    "effective_changed_coordinate_rate_mean": 0.26934978148946354,
+    "epochs_audited": 30,
+    "exact_budget_all_epochs": true,
+    "support_change_rate_mean": 0.26934978148946354,
+    "total_absolute_change_mean": 212622.95556185866,
+    "value_change_rate_mean": 0.0
+  },
+  "dataset": "Mouse_retina",
+  "device": "cuda:0",
+  "gpu_visible": "5",
+  "input_dim": 128,
+  "labels_used_during_fit": false,
+  "labels_used_for_outer_metrics": true,
+  "metrics": {
+    "ACC": 0.8985871647509579,
+    "ARI": 0.8486310014012804,
+    "L_rec": 0.8073419332504272,
+    "NMI": 0.6698226405093284,
+    "effective_rank": 10.32313803195184,
+    "last_epoch_train_loss_before_step": 0.8898387373178854,
+    "low_variance_dimension_ratio": 0.0,
+    "variance_floor": 0.6212863323149367,
+    "variance_median": 0.8671697983650947
+  },
+  "physical_gpu": 5,
+  "principle": "P2_SupportTarget",
+  "project_id": "sparse_corruption_principle_probe",
+  "protocol_id": "sparse_corruption_principle_probe_c2_v1",
+  "raw_arrays_persisted": false,
+  "role": "corruption_presence_case",
+  "score_artifacts": {},
+  "seed": 7,
+  "source": {
+    "H0_path": "/data/luolie/ToPoGate/result/representation_consumer_probe/S0_freeze/datasets/Mouse_retina/H0.npy",
+    "H0_sha256": "4684924e0e63ca08396b07842486e5521c53f1f3655fdee3c9e5be2808ff1c79",
+    "budget_manifest_path": "/data/luolie/ToPoGate/result/representation_consumer_probe/S0_freeze/datasets/Mouse_retina/budget_manifest.json",
+    "budget_manifest_sha256": "8156a38f2a1068787dc12c174506d137f442f698e95bb9d3d19c2485d5bed3ff",
+    "labels_loaded_after_fit": true,
+    "labels_path": "/data/luolie/ToPoGate/result/representation_consumer_probe/S1_oracle_v2/Mouse_retina/seed42/R/labels_true.npy",
+    "labels_sha256": "00f32c2d9f1173e6ba2ca19031d2ff0a115cf8bfe341d48ef4e6f5d85dd0e1f9",
+    "labels_used": false,
+    "mean_std_fit_on_clean_H0_only": true,
+    "shape": [
+      8352,
+      128
+    ],
+    "source": "representation_consumer_probe/S0_freeze"
+  },
+  "stage": "C2_static_matrix",
+  "status": "completed_valid",
+  "support_definition": {
+    "kind": "fixed_clean_row_threshold",
+    "ratio": 0.05,
+    "threshold": "max(1e-6,0.05*max(abs(clean_row)))"
+  },
+  "support_interpretation_firewall": "Support in C2 denotes the frozen threshold-defined support of dense H0, not raw-X zero/nonzero support; raw sparse-support claims require a separate validation."
+}

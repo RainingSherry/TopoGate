@@ -1,0 +1,191 @@
+{
+  "authorized_now": [
+    "C0_freeze",
+    "C1_structural_audit",
+    "C2_static_library_implementation",
+    "C2_54_run_matrix"
+  ],
+  "backbone": {
+    "activation": "ReLU",
+    "batch_size": 512,
+    "decoder_dims": [
+      32,
+      64,
+      "d_eff"
+    ],
+    "encoder": "small_matched_reconstruction_probe",
+    "encoder_dims": [
+      "d_eff",
+      64,
+      32
+    ],
+    "epochs": 30,
+    "input": "audited_S0_H0",
+    "labels_used_during_fit": false,
+    "learning_rate": 0.001,
+    "optimizer": "Adam",
+    "readout": "clean_embedding_known_K_KMeans_outer_benchmark_only",
+    "standardization": "clean_H0_column_mean_std_fit_once_per_dataset",
+    "warmup_epochs": 5
+  },
+  "base_evidence": {
+    "old_b1_compact_result": "result/adaptive_corruption_probe/B1_corruption_library",
+    "old_b1_protocol": "reports/adaptive_corruption_probe/PRE_REGISTRATION.md",
+    "s0_h0_root": "result/representation_consumer_probe/S0_freeze/datasets"
+  },
+  "c2_matrix_authorized": true,
+  "c2_protocol_id": "sparse_corruption_principle_probe_c2_v1",
+  "corruption_rate": 0.25,
+  "cuda_visible_devices": "3",
+  "dataset": "Baron Human",
+  "decision_rules": {
+    "C1": {
+      "labels_used": false,
+      "purpose": "localize support/value/geometry changes without new model training"
+    },
+    "C2_library": {
+      "material_delta_ari": 0.03,
+      "not_oracle_upper_bound": true,
+      "primary": "Delta_P(d)=ARI(P,d)-ARI(P0_Random,d)",
+      "tested_library_envelope_name": "tested_static_library_opportunity"
+    },
+    "adaptive_unlock": {
+      "locked_until_then": [
+        "adaptive_policy",
+        "MLP_selector",
+        "GAN",
+        "learned_generator"
+      ],
+      "requires": [
+        "C2_static_library_contract_pass",
+        "heterogeneous_material_winners_on_frozen_development_panel",
+        "outcome_independent_holdout_membership_frozen"
+      ]
+    }
+  },
+  "development_panel": [
+    "Mouse_retina",
+    "Baron Human",
+    "Campbell"
+  ],
+  "forbidden_gpu_ids": [
+    0,
+    7
+  ],
+  "formal_matrix": {
+    "datasets": 3,
+    "principles": 6,
+    "runs": 54,
+    "seeds": 3
+  },
+  "geometry_k": 15,
+  "holdout": {
+    "minimum": 8,
+    "outcome_features_forbidden": [
+      "ARI",
+      "B1_effect",
+      "historical_gain",
+      "labels"
+    ],
+    "selection_features": [
+      "log_sample_count",
+      "log_feature_count",
+      "estimated_sparsity",
+      "estimated_intrinsic_dimension_proxy",
+      "source_family"
+    ],
+    "status": "membership_must_be_frozen_before_C2_results",
+    "target": 12
+  },
+  "holdout_seeds": [
+    42,
+    123,
+    7,
+    3032,
+    3033
+  ],
+  "label_firewall": {
+    "K_source": "benchmark_oracle_from_y_outer_readout_only",
+    "fit_inputs": [
+      "X_or_H0",
+      "principle",
+      "seed",
+      "optional_frozen_residual"
+    ],
+    "forbidden_fit_inputs": [
+      "y",
+      "ARI",
+      "NMI",
+      "ACC",
+      "cluster_purity"
+    ],
+    "labels_allowed": "post_fit_outer_metrics_and_synthetic_fixture_audit_only"
+  },
+  "legal_gpu_pool": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "locked_now": [
+    "C3_holdout_runs",
+    "adaptive_policy",
+    "GAN",
+    "learned_generator"
+  ],
+  "material_delta_ari": 0.03,
+  "negative_control_fixtures": [
+    "P5_GeometrySafe"
+  ],
+  "old_projects_read_only": [
+    "adaptive_corruption_probe",
+    "learned_relation_rule_probe",
+    "representation_consumer_probe",
+    "relation_selection_probe"
+  ],
+  "physical_gpu": 3,
+  "primary_seeds": [
+    42,
+    123,
+    7
+  ],
+  "principle": "P2_SupportTarget",
+  "principles": [
+    "P0_Random",
+    "P1_SupportPreserve",
+    "P2_SupportTarget",
+    "P3_FrequencyAware",
+    "P4_ResidualHard",
+    "P5_GeometryHard"
+  ],
+  "project_id": "sparse_corruption_principle_probe",
+  "protocol_id": "sparse_corruption_principle_probe_c0_v1",
+  "publication_exclusions": [
+    "raw_data",
+    "labels_true",
+    "arrays",
+    "embeddings",
+    "predictions",
+    "weights",
+    "checkpoints",
+    "graphs",
+    "logs",
+    "caches"
+  ],
+  "role_by_dataset": {
+    "Baron Human": "support_sensitive_case",
+    "Campbell": "difficulty_sensitive_case",
+    "Mouse_retina": "corruption_presence_case"
+  },
+  "score_artifacts": {},
+  "seed": 7,
+  "stage": "C2_static_matrix",
+  "support_definition": {
+    "kind": "fixed_clean_row_threshold",
+    "ratio": 0.05,
+    "threshold": "max(1e-6,0.05*max(abs(clean_row)))"
+  },
+  "support_interpretation_firewall": "Support in C2 denotes the frozen threshold-defined support of dense H0, not raw-X zero/nonzero support; raw sparse-support claims require a separate validation."
+}

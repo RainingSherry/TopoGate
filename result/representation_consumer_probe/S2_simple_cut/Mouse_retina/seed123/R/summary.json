@@ -1,0 +1,86 @@
+{
+  "H0_sha256": "35a4bd98c853b5e7fe46181fc48caaf98c7b398f24329b0861251fba6e480a97",
+  "K": 5,
+  "K_source": "benchmark_oracle_from_y",
+  "K_used_in_readout": true,
+  "K_used_in_representation": false,
+  "arm": "R",
+  "artifacts": {
+    "embedding": "/data/luolie/ToPoGate/result/representation_consumer_probe/S2_simple_cut/Mouse_retina/seed123/R/embedding.npy",
+    "labels_true": "/data/luolie/ToPoGate/result/representation_consumer_probe/S2_simple_cut/Mouse_retina/seed123/R/labels_true.npy",
+    "predictions": "/data/luolie/ToPoGate/result/representation_consumer_probe/S2_simple_cut/Mouse_retina/seed123/R/predictions.npy",
+    "training_metrics": "/data/luolie/ToPoGate/result/representation_consumer_probe/S2_simple_cut/Mouse_retina/seed123/R/training_metrics.csv"
+  },
+  "consumer": "SimpleCut",
+  "dataset": "Mouse_retina",
+  "elapsed_seconds": 0.4394708899781108,
+  "execution_device": "cuda",
+  "execution_status": "completed",
+  "fit_metadata": {
+    "K_used_in_representation": false,
+    "decoder": null,
+    "device": "cuda:0",
+    "encoder_dims": [
+      64,
+      32
+    ],
+    "epochs": 80,
+    "final_L_cut": 0.5028479695320129,
+    "final_L_orth": 11.264192581176758,
+    "final_L_var": 0.0,
+    "final_loss": 11.767040252685547,
+    "graph_input": "selected_graph_W",
+    "input": "H0",
+    "labels_vector_used_in_fit": false,
+    "learning_rate": 0.001,
+    "optimizer": "Adam",
+    "peak_memory_bytes": 92911616,
+    "weight_decay": 0.0
+  },
+  "graph_diagnostics": {
+    "connected_components": 1,
+    "degree_cv": 1.2410802106329295,
+    "degree_mean": 6.317064663402422,
+    "degree_std": 7.839983943037313,
+    "directed_edge_count": 66816,
+    "edge_count": 129652,
+    "edge_purity": 0.9935673957979823,
+    "giant_component_ratio": 1.0,
+    "graph_condition": "R",
+    "ground_truth_ncut": 0.06424967528694399,
+    "isolated_nodes": 0,
+    "labels_used_for_diagnostic": true,
+    "s1_source_graph_hash": "7041ea1aba3a2f28b1c848d728882da8183466886cf3fd9684183a33939c0fb5"
+  },
+  "graph_hash": "7041ea1aba3a2f28b1c848d728882da8183466886cf3fd9684183a33939c0fb5",
+  "labels_used_during_fit": false,
+  "labels_used_for_outer_metrics": true,
+  "labels_vector_used_in_fit": false,
+  "metrics": {
+    "ACC": 0.9782088122605364,
+    "ARI": 0.9230029594503874,
+    "NMI": 0.8679266631763963
+  },
+  "physical_gpu": 3,
+  "project_id": "representation_consumer_probe",
+  "protocol_id": "representation_consumer_probe_s2_opportunity_simplecut_v1",
+  "representation_diagnostics": {
+    "dimension_std_median": 0.6713157347705057,
+    "dimension_std_min": 0.5203043234935399,
+    "effective_rank": 22.22792899687405,
+    "finite": true,
+    "graph_energy": 4.102263501831691,
+    "low_variance_dimension_ratio": 0.0,
+    "mean_pairwise_distance_sample": 4.442162907146029,
+    "pairwise_distance_cv_sample": 0.5949707037387651
+  },
+  "s1_source": {
+    "source_graph_hash": "7041ea1aba3a2f28b1c848d728882da8183466886cf3fd9684183a33939c0fb5",
+    "source_protocol_id": "representation_consumer_probe_s1_opportunity_spectral_v2",
+    "source_run": "/data/luolie/ToPoGate/result/representation_consumer_probe/S1_oracle_v2/Mouse_retina/seed123/R"
+  },
+  "seed": 123,
+  "source_path": "/data/luolie/ToPoGate/datasets/Mouse_retina.npz",
+  "source_sha256": "d3bc2eb08d95acd12d324f668c537ae4208de57c355862f8e5800d4ba1e727c1",
+  "status": "completed_valid"
+}

@@ -1,0 +1,9 @@
+{
+  "audit_ok": true,
+  "holdout_runs_authorized": false,
+  "labels_used_for_selection": false,
+  "minimum_count": 8,
+  "selected_count": 12,
+  "shortfall": 0,
+  "source_hashes_recorded": true
+}

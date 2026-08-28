@@ -1,0 +1,9 @@
+{
+  "completed_valid": 54,
+  "expected_jobs": 54,
+  "project_id": "sparse_corruption_principle_probe",
+  "protocol_id": "sparse_corruption_principle_probe_c2_v1",
+  "publication_scope": "compact summaries and audits only",
+  "stage": "C2_static_matrix",
+  "status": "simple_static_principle_sufficient"
+}

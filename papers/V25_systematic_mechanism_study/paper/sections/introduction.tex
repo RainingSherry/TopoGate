@@ -1,0 +1,62 @@
+\section{Introduction}
+
+Local neighborhoods, graphs, and related structural signals are established
+ways to shape unsupervised representations \citep{xu2024sccdcg,li2025dcboost}.
+They can provide useful inductive bias for sparse, high-dimensional observations,
+but a structural signal is not itself a clustering objective. The operation that
+selects a relation, applies a perturbation, updates a representation, and then
+produces a partition can preserve, distort, or discard the information available
+at the start.
+
+We study the gap between \emph{structural opportunity} and
+\emph{intervention utility}. A graph may contain a locally informative relation
+while a learned selector chooses the wrong coordinates. A fixed-budget
+intervention may damage cluster-defining features. An auxiliary objective may
+compete with representation learning \citep{yan2026scmib}. Or a local geometric
+improvement may fail to survive the global readout \citep{li2025dcboost}.
+These stages are often collapsed into one score difference between a structural
+variant and a baseline. Such a difference shows that a variant changed a score;
+it does not identify whether the change came from the structural policy, the
+generic intervention, the optimizer, or the readout.
+
+The problem becomes sharper when evidence accumulates across exploratory
+versions. Different versions may change preprocessing, intervention location,
+training target, effective budget, stochastic schedules, or final readout.
+Seeds and variants are then repeated measurements rather than independent data
+sets. A credible synthesis must preserve protocol and dataset boundaries while
+still exposing recurring patterns. It must also distinguish post-treatment
+descriptors from pre-intervention properties and must not turn incomplete
+computation into a negative result.
+
+Our question is therefore: \textbf{why does apparently useful structural
+information fail to translate reliably into unsupervised clustering utility?}
+We use the localization chain
+
+\begin{center}
+\textbf{Opportunity $\rightarrow$ Selection $\rightarrow$ Intervention
+$\rightarrow$ Representation $\rightarrow$ Readout}.
+\end{center}
+
+The chain asks whether an opportunity is measurable, whether topology changes
+what is selected, whether a matched intervention is helpful, whether the
+objective moves the representation compatibly, and whether local changes survive
+the global readout. This is a study protocol and claim firewall, not a new
+neural architecture.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.98\linewidth]{V25_Figure2_mechanism_chain}
+\caption{Frozen V25 mechanism-localization chain. The diagram is a protocol
+schema for separating opportunity, policy, intervention, representation, and
+readout; it is not a fitted architecture or a causal graph estimated from the
+historical rows.}
+\label{fig:chain}
+\end{figure}
+
+Our contributions are twofold. First, we provide an auditable observational
+Failure Atlas for the V1--V22 history, with repeated-measurement units,
+protocol/readout boundaries, and a separate V23/V24 boundary branch. Second, we
+provide a matched V21 selection-policy decomposition that separates generic
+intervention from topology-dependent selection and exposes conditional signs.
+Feature, gradient, and local/global analyses localize possible failure stages;
+they are not promoted to universal causal laws.

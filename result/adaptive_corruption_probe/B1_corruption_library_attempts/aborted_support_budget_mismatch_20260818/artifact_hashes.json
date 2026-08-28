@@ -1,0 +1,13 @@
+{
+  "files": {
+    "audit.json": "0e3748b5c66bdc3968d7d67df2595f422cc3f5977857e981f5e889898c7a53a8",
+    "b1_dataset_summary.csv": "3492cefcdc731972e7b7933500fa35dbf9ffbb12468e418c3c9ca847eb3270c0",
+    "b1_run_summary.csv": "219c15a0ee78f9218fb83c78b7d9a0974e23a6392c9adb7303acba62ac9709a9",
+    "decision.json": "618ad0f089fea9eb7f7b71d799c12f30a6d43139dca717ad5747aab53a0b337e",
+    "positive_control.json": "7f743ffb3f4e27244e69dc65476bd4775620e3bf9c0cb4755063be7719cd5521",
+    "resolved_config.json": "9ac2c50930868f8c24461a972a3af6ad45370af37cd6e8ef507cfe9cfe024e73",
+    "run_manifest.json": "0530d37a6891e8ff97e8385b4ac591d2643b78f419056de0db4232256938146b"
+  },
+  "raw_artifacts_included": false,
+  "stage": "B1"
+}

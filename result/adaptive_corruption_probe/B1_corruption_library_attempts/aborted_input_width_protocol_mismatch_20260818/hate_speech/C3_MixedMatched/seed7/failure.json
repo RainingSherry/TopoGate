@@ -1,0 +1,8 @@
+{
+  "arm": "C3_MixedMatched",
+  "dataset": "hate_speech",
+  "returncode": 1,
+  "seed": 7,
+  "status": "incomplete_compute",
+  "stderr_tail": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/home/luolie/ToPoGate/scripts/adaptive_corruption_probe/b1_corruption_library.py\", line 578, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"/home/luolie/ToPoGate/scripts/adaptive_corruption_probe/b1_corruption_library.py\", line 571, in main\n    print(json.dumps(run_job(args.dataset, args.arm, args.seed, args.output_dir), indent=2, sort_keys=True, default=_json_default))\n                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/luolie/ToPoGate/scripts/adaptive_corruption_probe/b1_corruption_library.py\", line 332, in run_job\n    h0_raw, source = _load_h0(dataset)\n                     ~~~~~~~~^^^^^^^^^\n  File \"/home/luolie/ToPoGate/scripts/adaptive_corruption_probe/b1_corruption_library.py\", line 109, in _load_h0\n    raise ValueError(f\"unexpected H0 shape for {dataset}: {h0.shape}\")\nValueError: unexpected H0 shape for hate_speech: (3221, 99)\n"
+}

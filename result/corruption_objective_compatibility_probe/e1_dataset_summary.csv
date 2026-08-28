@@ -1,0 +1,7 @@
+dataset,role,status,delta_random_mean,delta_clean_mean,nofit_delta_random_mean,training_amplification,delta_random_positive_seed_count,delta_clean_positive_seed_count
+Mouse_retina,biological_scRNA_development,completed_valid,0.39489814411354435,0.08027617523500907,-0.4741253709472036,0.8690235150607479,3,3
+Baron Human,biological_scRNA_development,completed_valid,0.1260688207172704,0.1963220211430672,-0.03815090735440301,0.16421972807167343,3,3
+Campbell,biological_scRNA_boundary_control,completed_valid,0.14688252130143517,0.12761152784658447,-0.12605478758267055,0.2729373088841057,3,3
+cnae9,nonbiological_sparse_textlike,completed_valid,0.0024405516946710685,-0.0004610779544279922,-0.03455307546733009,0.03699362716200116,2,1
+hate_speech,nonbiological_sparse_textlike,completed_valid,-0.007294221044000491,0.00021572981489123818,0.03148545305668709,-0.03877967410068758,0,2
+sms_spam_collection,nonbiological_sparse_textlike,completed_valid,-0.020311105775820182,-0.004849475499135378,-0.006941743291768236,-0.013369362484051947,1,1

@@ -1,0 +1,20 @@
+{
+  "project_id": "representation_consumer_probe",
+  "status": "CLOSED",
+  "closed_at": "2026-08-17",
+  "terminal_state": "heterogeneous_with_spectral_relaxation_caveat",
+  "selector_status": "not_estimable",
+  "representation_consumer_promotion": "not_authorized",
+  "adapter_status": "adapter_not_estimable",
+  "locked_stages": [
+    "S3_objective_isolation",
+    "S4_strong_backbone",
+    "S5_holdout",
+    "S6_paper_scale",
+    "TopoCut",
+    "new_selector"
+  ],
+  "evidence_source": "reports/representation_consumer_probe/S2_RESULTS.md",
+  "next_project": "relation_selection_probe",
+  "old_artifacts_modified": false
+}

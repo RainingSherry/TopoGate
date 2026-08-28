@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-08-12T03:17:06.994933+00:00",
+  "manifest_id": "v22_full_cooperative_recovery_20260812_v1",
+  "protocol_id": "v22_topology_discriminator_cooperative_keep_gate_v1",
+  "queue_status": "interrupted",
+  "job_count": 2,
+  "status_counts": {
+    "incomplete_compute": 2
+  },
+  "audit_ok_count": 0,
+  "strata": {},
+  "claim_boundary": "single-seed full-component evidence; no cross-dataset efficacy claim",
+  "rows": [
+    {
+      "run_key": "real_sim__libsvm_sparse_highdim::v22_topology_discriminator_cooperative_keep_gate::seed42",
+      "dataset_id": "real_sim__libsvm_sparse_highdim",
+      "stratum": "new_sparse_highdim",
+      "status": "incomplete_compute",
+      "artifact_ok": false,
+      "missing": [
+        "summary.json",
+        "resolved_config.json",
+        "metrics.json",
+        "training_history.json",
+        "embedding_final.npy",
+        "predictions.npy",
+        "checkpoint.pt"
+      ],
+      "labels_used_during_fit": null,
+      "ari": null,
+      "nmi": null
+    },
+    {
+      "run_key": "covtype__libsvm_dense_control::v22_topology_discriminator_cooperative_keep_gate::seed42",
+      "dataset_id": "covtype__libsvm_dense_control",
+      "stratum": "new_dense_control",
+      "status": "incomplete_compute",
+      "artifact_ok": false,
+      "missing": [
+        "summary.json",
+        "resolved_config.json",
+        "metrics.json",
+        "training_history.json",
+        "embedding_final.npy",
+        "predictions.npy",
+        "checkpoint.pt"
+      ],
+      "labels_used_during_fit": null,
+      "ari": null,
+      "nmi": null
+    }
+  ]
+}

@@ -1,0 +1,403 @@
+{
+  "created_at": "2026-08-20T04:36:40.521455+00:00",
+  "datasets": [
+    {
+      "dataset": "mouse",
+      "label_field": "y",
+      "labels_encoded_locally": true,
+      "min_class_size": 362,
+      "n_classes": 5,
+      "nnz": 2691783,
+      "shape": [
+        8352,
+        6198
+      ],
+      "source_mtime_ns": 1757404962000000000,
+      "source_path": "/data/luolie/ToPoGate/datasets/Mouse_retina.npz",
+      "source_sha256": "d3bc2eb08d95acd12d324f668c537ae4208de57c355862f8e5800d4ba1e727c1",
+      "source_size_bytes": 207130090,
+      "source_type": "npz",
+      "sparsity": 0.9480006411968266,
+      "zero_pattern_preserved": true
+    },
+    {
+      "dataset": "baron",
+      "label_field": "y",
+      "labels_encoded_locally": true,
+      "min_class_size": 173,
+      "n_classes": 9,
+      "nnz": 15980431,
+      "shape": [
+        8451,
+        20125
+      ],
+      "source_mtime_ns": 1757404960000000000,
+      "source_path": "/data/luolie/ToPoGate/datasets/Baron Human.npz",
+      "source_sha256": "99c5bb7a272f5b22d64949179c6d49b4b52220670f3a7cef38e9e405902249d8",
+      "source_size_bytes": 680373598,
+      "source_type": "npz",
+      "sparsity": 0.906039677762417,
+      "zero_pattern_preserved": true
+    },
+    {
+      "dataset": "campbell",
+      "label_field": "y",
+      "labels_encoded_locally": true,
+      "min_class_size": 244,
+      "n_classes": 14,
+      "nnz": 18530892,
+      "shape": [
+        9993,
+        26774
+      ],
+      "source_mtime_ns": 1757404960000000000,
+      "source_path": "/data/luolie/ToPoGate/datasets/Campbell.npz",
+      "source_sha256": "f26c9568baf8e8fade7a61e6fed80f16ceb3980afe38b7c9ccbe9aaad2b96e04",
+      "source_size_bytes": 1070290762,
+      "source_type": "npz",
+      "sparsity": 0.9307392518454559,
+      "zero_pattern_preserved": true
+    },
+    {
+      "dataset": "macosko",
+      "label_field": "resolved_label",
+      "labels_encoded_locally": true,
+      "min_class_size": 54,
+      "n_classes": 12,
+      "nnz": 31849893,
+      "shape": [
+        44808,
+        23288
+      ],
+      "source_mtime_ns": 1781030632413135173,
+      "source_path": "/data/luolie/biopipeline/scCluBench/data/processed_scmae/Macosko.h5ad",
+      "source_sha256": "cc5d0864a49a8b01a5d8a3ca1596ae42c94ce73f6b1f7973e8d9f07687d5a6d0",
+      "source_size_bytes": 258162904,
+      "source_type": "h5ad",
+      "sparsity": 0.9694774913442666,
+      "zero_pattern_preserved": true
+    },
+    {
+      "dataset": "melanoma",
+      "label_field": "resolved_label",
+      "labels_encoded_locally": true,
+      "min_class_size": 46,
+      "n_classes": 9,
+      "nnz": 13890435,
+      "shape": [
+        4513,
+        23684
+      ],
+      "source_mtime_ns": 1781030632549132885,
+      "source_path": "/data/luolie/biopipeline/scCluBench/data/processed_scmae/Melanoma_5K.h5ad",
+      "source_sha256": "cb2d0d8863bfeb04f05f39191a7f2fb32fa5bf04af936722aa2d689568708a95",
+      "source_size_bytes": 112416326,
+      "source_type": "h5ad",
+      "sparsity": 0.8700442617815268,
+      "zero_pattern_preserved": true
+    },
+    {
+      "dataset": "quake",
+      "label_field": "resolved_label",
+      "labels_encoded_locally": true,
+      "min_class_size": 25,
+      "n_classes": 11,
+      "nnz": 4271360,
+      "shape": [
+        1676,
+        23341
+      ],
+      "source_mtime_ns": 1780905183647081060,
+      "source_path": "/data/luolie/biopipeline/scCluBench/data/processed/Quake_Smart-seq2_Lung.h5ad",
+      "source_sha256": "24541fa7f0d2025509237b345597afdf97b10756ac8477cb048cc8be8828e134",
+      "source_size_bytes": 35313352,
+      "source_type": "h5ad",
+      "sparsity": 0.890812555042859,
+      "zero_pattern_preserved": true
+    },
+    {
+      "dataset": "wang",
+      "label_field": "resolved_label",
+      "labels_encoded_locally": true,
+      "min_class_size": 2093,
+      "n_classes": 2,
+      "nnz": 20366900,
+      "shape": [
+        9519,
+        14561
+      ],
+      "source_mtime_ns": 1780905186042996981,
+      "source_path": "/data/luolie/biopipeline/scCluBench/data/processed/Wang.h5ad",
+      "source_sha256": "0a5247b2efd6709b662c91577dbd0ce3173c45eec6423c1d704983b398d90962",
+      "source_size_bytes": 164116890,
+      "source_type": "h5ad",
+      "sparsity": 0.8530591991947486,
+      "zero_pattern_preserved": true
+    },
+    {
+      "dataset": "news20",
+      "label_field": "y",
+      "labels_encoded_locally": true,
+      "min_class_size": 780,
+      "n_classes": 20,
+      "nnz": 1272569,
+      "shape": [
+        15935,
+        62061
+      ],
+      "source_mtime_ns": 1786484184105222353,
+      "source_path": "/data/luolie/ToPoGate/datasets/external/v22_dataset_extension_round2_20260812/processed/news20.npz",
+      "source_sha256": "b71e5008a4ed74981c72d79aecdd78e566ee5c0d246920bb2127bf3e375ecb5c",
+      "source_size_bytes": 2966103,
+      "source_type": "npz_csr",
+      "sparsity": 0.9987132016286475,
+      "zero_pattern_preserved": true
+    },
+    {
+      "dataset": "rcv1",
+      "label_field": "y",
+      "labels_encoded_locally": true,
+      "min_class_size": 9751,
+      "n_classes": 2,
+      "nnz": 1498952,
+      "shape": [
+        20242,
+        47236
+      ],
+      "source_mtime_ns": 1786484190573066008,
+      "source_path": "/data/luolie/ToPoGate/datasets/external/v22_dataset_extension_round2_20260812/processed/rcv1_train.npz",
+      "source_sha256": "085d6bc9713e985670c588250a5e524bb36920c32e4471e20dcd41291d96644e",
+      "source_size_bytes": 8102157,
+      "source_type": "npz_csr",
+      "sparsity": 0.9984323063779483,
+      "zero_pattern_preserved": true
+    },
+    {
+      "dataset": "arcene",
+      "label_field": "y",
+      "labels_encoded_locally": true,
+      "min_class_size": 88,
+      "n_classes": 2,
+      "nnz": 1087539,
+      "shape": [
+        200,
+        10000
+      ],
+      "source_mtime_ns": 1786420687471726142,
+      "source_path": "/data/luolie/ToPoGate/datasets/external/v19_extended_sparse_20260811/processed/arcene.npz",
+      "source_sha256": "7249b341d0d50155a3f47c101042291d55db946695955fc98c6320e8a609ad2b",
+      "source_size_bytes": 2344620,
+      "source_type": "npz",
+      "sparsity": 0.4562305,
+      "zero_pattern_preserved": true
+    },
+    {
+      "dataset": "sms_spam",
+      "label_field": "y",
+      "labels_encoded_locally": true,
+      "min_class_size": 112,
+      "n_classes": 2,
+      "nnz": 3610,
+      "shape": [
+        835,
+        500
+      ],
+      "source_mtime_ns": 1757405092000000000,
+      "source_path": "/data/luolie/ToPoGate/datasets/sms_spam_collection.npz",
+      "source_sha256": "1d9c068c43dc4f58e759169906dae9dff0ac6a8def7315ce7e4989a3b28d7070",
+      "source_size_bytes": 3347170,
+      "source_type": "npz",
+      "sparsity": 0.9913532934131737,
+      "zero_pattern_preserved": true
+    }
+  ],
+  "implementation": {
+    "numpy": "2.4.6",
+    "revision": "r1_prelaunch_review",
+    "scipy": "1.17.1",
+    "sklearn": "1.8.0",
+    "source_sha256": "8bb750e215d9b159aa0ee33319e4048880fabdc549adda9a720271cee5c9eb4b"
+  },
+  "project_id": "V26_support_oracle",
+  "protocol_id": "support_oracle_study_v1",
+  "resolved_config": {
+    "arms": [
+      "CLEAN",
+      "P0_RANDOM",
+      "P1_SUPPORT_PRESERVE",
+      "P2_SUPPORT_TARGET",
+      "O_LABEL_ORACLE"
+    ],
+    "backbone": {
+      "batch_candidates": [
+        512,
+        256,
+        128,
+        64
+      ],
+      "decoder": [
+        32,
+        128,
+        "d"
+      ],
+      "encoder": [
+        "d",
+        128,
+        32
+      ],
+      "epochs": 30,
+      "learning_rate": 0.001,
+      "optimizer": "Adam",
+      "readout": "clean_embedding_known_K_KMeans_outer_benchmark"
+    },
+    "corruption": {
+      "P0": "uniform coordinate-pair value swap",
+      "P1": "active-active value swap; support preserving",
+      "P2": "active-inactive value swap; label free support target",
+      "oracle": "class-conditional support-profile swap; non-own profile is a class-size-weighted mean; labels only select corruption coordinates",
+      "rate": 0.25
+    },
+    "datasets": [
+      {
+        "display_name": "Mouse_retina",
+        "domain": "scRNA",
+        "identifier": "mouse",
+        "label_field": "y",
+        "matrix_field": "x",
+        "source_path": "datasets/Mouse_retina.npz",
+        "source_type": "npz"
+      },
+      {
+        "display_name": "Baron Human",
+        "domain": "scRNA",
+        "identifier": "baron",
+        "label_field": "y",
+        "matrix_field": "x",
+        "source_path": "datasets/Baron Human.npz",
+        "source_type": "npz"
+      },
+      {
+        "display_name": "Campbell",
+        "domain": "scRNA",
+        "identifier": "campbell",
+        "label_field": "y",
+        "matrix_field": "x",
+        "source_path": "datasets/Campbell.npz",
+        "source_type": "npz"
+      },
+      {
+        "display_name": "Macosko",
+        "domain": "scRNA",
+        "identifier": "macosko",
+        "label_field": "resolved_label",
+        "matrix_field": null,
+        "source_path": "/data/luolie/biopipeline/scCluBench/data/processed_scmae/Macosko.h5ad",
+        "source_type": "h5ad"
+      },
+      {
+        "display_name": "Melanoma_5K",
+        "domain": "scRNA",
+        "identifier": "melanoma",
+        "label_field": "resolved_label",
+        "matrix_field": null,
+        "source_path": "/data/luolie/biopipeline/scCluBench/data/processed_scmae/Melanoma_5K.h5ad",
+        "source_type": "h5ad"
+      },
+      {
+        "display_name": "Quake_Smart-seq2_Lung",
+        "domain": "scRNA",
+        "identifier": "quake",
+        "label_field": "resolved_label",
+        "matrix_field": null,
+        "source_path": "/data/luolie/biopipeline/scCluBench/data/processed/Quake_Smart-seq2_Lung.h5ad",
+        "source_type": "h5ad"
+      },
+      {
+        "display_name": "Wang",
+        "domain": "scRNA",
+        "identifier": "wang",
+        "label_field": "resolved_label",
+        "matrix_field": null,
+        "source_path": "/data/luolie/biopipeline/scCluBench/data/processed/Wang.h5ad",
+        "source_type": "h5ad"
+      },
+      {
+        "display_name": "news20",
+        "domain": "nonbiological",
+        "identifier": "news20",
+        "label_field": "y",
+        "matrix_field": null,
+        "source_path": "datasets/external/v22_dataset_extension_round2_20260812/processed/news20.npz",
+        "source_type": "npz_csr"
+      },
+      {
+        "display_name": "rcv1_train",
+        "domain": "nonbiological",
+        "identifier": "rcv1",
+        "label_field": "y",
+        "matrix_field": null,
+        "source_path": "datasets/external/v22_dataset_extension_round2_20260812/processed/rcv1_train.npz",
+        "source_type": "npz_csr"
+      },
+      {
+        "display_name": "arcene",
+        "domain": "nonbiological",
+        "identifier": "arcene",
+        "label_field": "y",
+        "matrix_field": "x",
+        "source_path": "datasets/external/v19_extended_sparse_20260811/processed/arcene.npz",
+        "source_type": "npz"
+      },
+      {
+        "display_name": "sms_spam_collection",
+        "domain": "nonbiological",
+        "identifier": "sms_spam",
+        "label_field": "y",
+        "matrix_field": "x",
+        "source_path": "datasets/sms_spam_collection.npz",
+        "source_type": "npz"
+      }
+    ],
+    "decision_rule": {
+      "case_a": "support strong and absolute oracle gap < material threshold",
+      "case_b": "support strong and positive oracle gap >= material threshold",
+      "case_c": "support weak and oracle gap < material threshold",
+      "material_gap_ari": 0.03,
+      "oracle_gap": "mean paired ARI(O_LABEL_ORACLE - P2_SUPPORT_TARGET)",
+      "otherwise": "inconclusive; do not force a three-case conclusion",
+      "primary_metric": "ARI",
+      "support_strong": "support-only ARI >= 0.1 and support-only minus value-only ARI >= 0.03"
+    },
+    "diagnostics": {
+      "support_only": "binary coordinate support -> TruncatedSVD -> known-K KMeans",
+      "value_only": "per-row nonzero-value quantile profile; no feature locations or active-count padding -> known-K KMeans",
+      "value_profile_quantiles": 128
+    },
+    "forbidden_gpu_ids": [
+      0,
+      7
+    ],
+    "implementation_revision": "r1_prelaunch_review",
+    "label_protocol": {
+      "O_LABEL_ORACLE": "labels used only to precompute per-row corruption scores; model fit receives no label vector",
+      "P0_P1_P2_training": "labels unavailable to corruption and model fit",
+      "evaluation": "labels used after fit for known-K and metrics"
+    },
+    "legal_gpu_pool": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "project_id": "V26_support_oracle",
+    "protocol_id": "support_oracle_study_v1",
+    "seeds": [
+      42,
+      123,
+      7
+    ]
+  },
+  "status": "completed_valid"
+}

@@ -1,0 +1,57 @@
+{
+  "file_count": 10,
+  "files": [
+    {
+      "path": "audit.json",
+      "sha256": "162dcca14a205b4bbc16664d35ced8928536bab5f04f78a84931028355e9fba5",
+      "size_bytes": 383
+    },
+    {
+      "path": "directed_graph.npz",
+      "sha256": "4e92104845a76a51e4d6b97862592a89d79c8f62a7a209f409b74e834072971e",
+      "size_bytes": 360430
+    },
+    {
+      "path": "embedding.npy",
+      "sha256": "8348419f967a2122d5a16a8c74c5cf9d16e5e4ed761d9fbed731fbe20b7d59f2",
+      "size_bytes": 1069184
+    },
+    {
+      "path": "labels_true.npy",
+      "sha256": "00f32c2d9f1173e6ba2ca19031d2ff0a115cf8bfe341d48ef4e6f5d85dd0e1f9",
+      "size_bytes": 66944
+    },
+    {
+      "path": "oracle_manifest.json",
+      "sha256": "f07ce7547434a9369311442a7c2abe702249745b666aeb1538d9200bc9f4d469",
+      "size_bytes": 289
+    },
+    {
+      "path": "predictions.npy",
+      "sha256": "fa5aa1c440e41da0bc8e0e1e3da7d60c438686934fb401d530e134b8c73aeb69",
+      "size_bytes": 66944
+    },
+    {
+      "path": "resolved_config.json",
+      "sha256": "b7e484fd122ba908ee5b6bbc7f6aafafb453e18b5aa5eedf79cc4bb39731f4d6",
+      "size_bytes": 817
+    },
+    {
+      "path": "selected_graph.npz",
+      "sha256": "ccb45656f315ce99a271e539d03578a0dac71d0bb857adc58f32070a1613f578",
+      "size_bytes": 695766
+    },
+    {
+      "path": "summary.json",
+      "sha256": "1d5f028ba086501b8cd16db3b9d0a23a4aa23e5c78b0db2465125c22d00e1191",
+      "size_bytes": 3382
+    },
+    {
+      "path": "training_metrics.csv",
+      "sha256": "8a25757c9f32646c6fe4b30963a114e25a20c7c749a4a791d78d1b4b749013d8",
+      "size_bytes": 6986
+    }
+  ],
+  "manifest_id": "representation_consumer_probe_s1_artifacts_v1",
+  "root": "/data/luolie/ToPoGate/result/representation_consumer_probe/S2_simple_cut/Mouse_retina/seed42/O_full"
+}

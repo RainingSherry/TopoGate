@@ -1,0 +1,24 @@
+version,coverage_status,dataset_count,row_count,completed_row_count,paired_row_count,description
+V01,none,0,0,0,0,No non-smoke final artifact in the audited snapshot.
+V02,none,0,0,0,0,No non-smoke final artifact in the audited snapshot.
+V03,none,0,0,0,0,No non-smoke final artifact in the audited snapshot.
+V04,none,0,0,0,0,No non-smoke final artifact in the audited snapshot.
+V05,none,0,0,0,0,No non-smoke final artifact in the audited snapshot.
+V06,none,0,0,0,0,No non-smoke final artifact in the audited snapshot.
+V07,none,0,0,0,0,No non-smoke final artifact in the audited snapshot.
+V08,none,0,0,0,0,No non-smoke final artifact in the audited snapshot.
+V09,available,154,291,291,66,"Advantage, legacy multiseed, CLUBench, and paper-preprocess artifacts."
+V10,available,4,21,21,9,Legacy nomix/nomix-init comparison only.
+V11,available,5,75,75,60,"Five-dataset, three-seed sparse H0 pilot."
+V12,available,4,48,48,16,Stage-3 topology grid with stage-2 paired CSV.
+V13,available,5,30,30,15,"Five-dataset, three-seed hard-gate batch."
+V14,available,5,30,30,15,"Five-dataset, three-seed advantage batch."
+V15,none,0,0,0,0,No promotable non-smoke final table.
+V16,none,0,0,0,0,No promotable final table; V16.1 is separate.
+V16.1,available,8,32,0,24,Promotion summaries only; all rows empirical_not_supported.
+V17,none,0,0,0,0,Reference implementation only; no performance evidence.
+V18,available,149,1490,1490,1338,"149-dataset, ten-variant, three-seed matrix."
+V19,available,24,108,108,76,"Post-freeze, PlantNet transfer, and sparse extension panels."
+V20,available,8,8,8,0,Eight-dataset single-seed coarse screen without matched control.
+V21,available,6,36,36,18,Six-dataset graph-fix assignment-adversarial matrix.
+V22,available,18,40,38,0,Hard-gate recovery plus cooperative Keep-Gate audit.

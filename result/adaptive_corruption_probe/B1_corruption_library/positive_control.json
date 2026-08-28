@@ -1,0 +1,83 @@
+{
+  "arms": {
+    "C0_MatchedRandom": {
+      "stats": {
+        "effective_changed_coordinate_rate": 0.25,
+        "requested_change_ratio": 0.25,
+        "support_change_ratio": 0.1328125,
+        "total_absolute_change": 78.09442606568336,
+        "value_change_ratio": 0.11979166666666667
+      },
+      "support_changed": 51,
+      "value_changed": 96
+    },
+    "C1_ValueOnly": {
+      "stats": {
+        "effective_changed_coordinate_rate": 0.25,
+        "requested_change_ratio": 0.25,
+        "support_change_ratio": 0.0,
+        "total_absolute_change": 68.970359146595,
+        "value_change_ratio": 0.25
+      },
+      "support_changed": 0,
+      "value_changed": 96
+    },
+    "C2_SupportOnly": {
+      "stats": {
+        "effective_changed_coordinate_rate": 0.25,
+        "requested_change_ratio": 0.25,
+        "support_change_ratio": 0.25,
+        "total_absolute_change": 103.6160322278738,
+        "value_change_ratio": 0.0
+      },
+      "support_changed": 96,
+      "value_changed": 96
+    },
+    "C3_MixedMatched": {
+      "stats": {
+        "effective_changed_coordinate_rate": 0.25,
+        "requested_change_ratio": 0.25,
+        "support_change_ratio": 0.25,
+        "total_absolute_change": 107.4904303252697,
+        "value_change_ratio": 0.0
+      },
+      "support_changed": 96,
+      "value_changed": 96
+    },
+    "C4_StaticHard": {
+      "stats": {
+        "effective_changed_coordinate_rate": 0.25,
+        "requested_change_ratio": 0.25,
+        "support_change_ratio": 0.14583333333333334,
+        "total_absolute_change": 78.94487996399403,
+        "value_change_ratio": 0.1015625
+      },
+      "support_changed": 56,
+      "value_changed": 96
+    },
+    "C_clean_no_corruption": {
+      "stats": {
+        "effective_changed_coordinate_rate": 0.0,
+        "requested_change_ratio": 0.0,
+        "support_change_ratio": 0.0,
+        "total_absolute_change": 0.0,
+        "value_change_ratio": 0.0
+      },
+      "support_changed": 0,
+      "value_changed": 0
+    }
+  },
+  "checks": {
+    "C0_MatchedRandom_changes": true,
+    "C1_ValueOnly_changes": true,
+    "C1_support_preserved": true,
+    "C2_SupportOnly_changes": true,
+    "C2_support_changed": true,
+    "C3_MixedMatched_changes": true,
+    "C3_support_and_values_changed": true,
+    "C4_StaticHard_changes": true,
+    "C_clean_no_corruption_changes": true
+  },
+  "labels_used": false,
+  "status": "completed_valid"
+}

@@ -1,0 +1,14 @@
+{
+  "dataset_id": "mouse_retina__clubench_bridge",
+  "name": "Mouse_retina",
+  "stratum": "original8_clubench_bridge",
+  "input_protocol": "clubench_bridge",
+  "source_path": "/data/luolie/ToPoGate/datasets/Mouse_retina.npz",
+  "source_sha256": "d3bc2eb08d95acd12d324f668c537ae4208de57c355862f8e5800d4ba1e727c1",
+  "n_samples": 8352,
+  "n_features_original": 6198,
+  "labels_available_outer_only": true,
+  "expected_labels_unique": 5,
+  "k_source": "benchmark_oracle_from_y",
+  "run_key": "mouse_retina__clubench_bridge::v22_topology_discriminator_hard_gate::seed42"
+}

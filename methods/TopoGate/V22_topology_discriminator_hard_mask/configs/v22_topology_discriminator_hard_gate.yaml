@@ -1,0 +1,14 @@
+protocol_id: v22_topology_discriminator_hard_mask_v1
+variant: v22_topology_discriminator_hard_gate
+epochs: 80
+batch_size: 128
+hidden_size: 128
+feature_cap: 2000
+random_mask_ratio: 0.4
+adversarial_mask_ratio: 0.25
+lambda_adversarial: 0.1
+lambda_gate_reconstruction: 0.5
+lambda_gate_coverage: 0.01
+neighbor_k: 20
+graph_svd_min_dim: 32
+graph_svd_max_dim: 128

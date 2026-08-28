@@ -1,0 +1,10 @@
+{
+  "arm": "F",
+  "audit_ok": true,
+  "dataset": "cnae9",
+  "labels_used_during_fit": false,
+  "labels_used_for_outer_metrics": true,
+  "labels_used_in_oracle_graph": false,
+  "protocol_id": "representation_consumer_probe_s1_opportunity_spectral_v2",
+  "seed": 123
+}

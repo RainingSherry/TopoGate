@@ -1,0 +1,22 @@
+{
+  "arms": [
+    "F",
+    "U",
+    "R",
+    "O_pool",
+    "O_full"
+  ],
+  "consumer": "Spectral",
+  "execution_device": "cpu_sparse",
+  "labels_used_during_fit": false,
+  "materiality_delta": 0.03,
+  "oracle_non_tuning": true,
+  "project_id": "representation_consumer_probe",
+  "protocol_id": "representation_consumer_probe_s1_opportunity_spectral_v2",
+  "s0_decision": "/data/luolie/ToPoGate/result/representation_consumer_probe/S0_freeze/s0_decision.json",
+  "seeds": [
+    42,
+    123,
+    7
+  ]
+}

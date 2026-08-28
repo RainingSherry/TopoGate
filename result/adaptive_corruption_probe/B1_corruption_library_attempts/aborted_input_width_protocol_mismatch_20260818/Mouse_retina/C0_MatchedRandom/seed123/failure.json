@@ -1,0 +1,8 @@
+{
+  "arm": "C0_MatchedRandom",
+  "dataset": "Mouse_retina",
+  "returncode": -2,
+  "seed": 123,
+  "status": "incomplete_compute",
+  "stderr_tail": ""
+}

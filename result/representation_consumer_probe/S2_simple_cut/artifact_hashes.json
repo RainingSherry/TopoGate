@@ -1,0 +1,992 @@
+{
+  "file_count": 197,
+  "files": [
+    {
+      "path": "Baron Human/seed123/O_full/artifact_hashes.json",
+      "sha256": "48e7144687cd0547ba6534e5fe2fa8ca47dd7a9ef8488f6886e93b77231879cc",
+      "size_bytes": 1786
+    },
+    {
+      "path": "Baron Human/seed123/O_full/audit.json",
+      "sha256": "3656a7a2664f64512d90ea6b7e9bdcddf7f15076852810acb0673504eba24cdb",
+      "size_bytes": 383
+    },
+    {
+      "path": "Baron Human/seed123/O_full/directed_graph.npz",
+      "sha256": "5e55110c793ae741da1fbb49bba54662a69753ea402229462b2b7f29a7e2f3a1",
+      "size_bytes": 342046
+    },
+    {
+      "path": "Baron Human/seed123/O_full/embedding.npy",
+      "sha256": "03e7e7dbbd634676d3b5fd4e37b7e61a33aef13d1c67657f0124eacbca7491ef",
+      "size_bytes": 1081856
+    },
+    {
+      "path": "Baron Human/seed123/O_full/labels_true.npy",
+      "sha256": "60634dd9a2dfdc579192e15d779c79cf8f91f1ed41d909a564de60af3cd66c28",
+      "size_bytes": 67736
+    },
+    {
+      "path": "Baron Human/seed123/O_full/oracle_manifest.json",
+      "sha256": "1a524fe8d49705c564e253329beafbab5c3b25c2e295325d27fa4e928407ad31",
+      "size_bytes": 289
+    },
+    {
+      "path": "Baron Human/seed123/O_full/predictions.npy",
+      "sha256": "0cc9f82bdcc9c7cdbceab721b0536a2cb75e503f98286f6e26275f81c6a928e2",
+      "size_bytes": 67736
+    },
+    {
+      "path": "Baron Human/seed123/O_full/resolved_config.json",
+      "sha256": "b8e3c9136edec70e94e2cf5f166fbe7956c33c2c40b87040a26531dcff543291",
+      "size_bytes": 817
+    },
+    {
+      "path": "Baron Human/seed123/O_full/selected_graph.npz",
+      "sha256": "922c85652dd34f76dc6eb4bc62f4d6fb69b2f1889456aff286de32de1c5eb350",
+      "size_bytes": 560699
+    },
+    {
+      "path": "Baron Human/seed123/O_full/summary.json",
+      "sha256": "703fd2de7e2df5f320a48df5a9f245a07e5b6dbe351642a3ccb6272d1636acb5",
+      "size_bytes": 3372
+    },
+    {
+      "path": "Baron Human/seed123/O_full/training_metrics.csv",
+      "sha256": "4be8cb5239687cbe27b574eb2406e0fdb6b02104f8f0ff4c5ed9841b854375d0",
+      "size_bytes": 5871
+    },
+    {
+      "path": "Baron Human/seed123/O_pool/artifact_hashes.json",
+      "sha256": "6c88f27ad69b915110f85cb3807b2f5df3185511ec078b202ebce5aec204e210",
+      "size_bytes": 1786
+    },
+    {
+      "path": "Baron Human/seed123/O_pool/audit.json",
+      "sha256": "6f83ae9b06bc959664476971b1cffc11a8bf9a2f6189972d9c76bf8eddfc5f6a",
+      "size_bytes": 383
+    },
+    {
+      "path": "Baron Human/seed123/O_pool/directed_graph.npz",
+      "sha256": "f6352cc3c1d3282dac4f1fb83d9248e82f1052f2f852b88cc44d2fcf03fe52c7",
+      "size_bytes": 342043
+    },
+    {
+      "path": "Baron Human/seed123/O_pool/embedding.npy",
+      "sha256": "887d9d5429f9c108706b3697a1db4a2970020d622cbaa5ff18ef65c8872a8066",
+      "size_bytes": 1081856
+    },
+    {
+      "path": "Baron Human/seed123/O_pool/labels_true.npy",
+      "sha256": "60634dd9a2dfdc579192e15d779c79cf8f91f1ed41d909a564de60af3cd66c28",
+      "size_bytes": 67736
+    },
+    {
+      "path": "Baron Human/seed123/O_pool/oracle_manifest.json",
+      "sha256": "cb3c4ffdff099ee0852ce381ad492963d5d26278f3e793389a4a5853e6afe993",
+      "size_bytes": 289
+    },
+    {
+      "path": "Baron Human/seed123/O_pool/predictions.npy",
+      "sha256": "971875fcb22e58f67083add494a56ba722b8e6ed048e287282ecf6ab7069a9d6",
+      "size_bytes": 67736
+    },
+    {
+      "path": "Baron Human/seed123/O_pool/resolved_config.json",
+      "sha256": "7b34c18867019f7083028757bff6bd62f30b22be65406bbf0dec5e4c9cff8cf2",
+      "size_bytes": 817
+    },
+    {
+      "path": "Baron Human/seed123/O_pool/selected_graph.npz",
+      "sha256": "c31fe5c3a32c5d81727f201b4c146b1bc2c24f4fffd82ba0003ab46d4f9d892e",
+      "size_bytes": 564746
+    },
+    {
+      "path": "Baron Human/seed123/O_pool/summary.json",
+      "sha256": "b3a6e5959af700cfac1900c544f73236f2f97a3b16fb36cba397e457948bb388",
+      "size_bytes": 3384
+    },
+    {
+      "path": "Baron Human/seed123/O_pool/training_metrics.csv",
+      "sha256": "6d460c8d73ebbaf6169de11b7727a8b970568a3880019c06255bcecd354263db",
+      "size_bytes": 5865
+    },
+    {
+      "path": "Baron Human/seed123/R/artifact_hashes.json",
+      "sha256": "26ab092c2594fe536d2a99128f6e41e4b8b16b3b914664cafa115ead85242be2",
+      "size_bytes": 1621
+    },
+    {
+      "path": "Baron Human/seed123/R/audit.json",
+      "sha256": "832c4c884a6e71f1877f9c9964120dd505ce139ef2fc2ed00dfdff192055da85",
+      "size_bytes": 379
+    },
+    {
+      "path": "Baron Human/seed123/R/directed_graph.npz",
+      "sha256": "e0f645835e62aabbedaa252bd266deb65ebfb2fbbdfadfed1f51d75aa3a3aa53",
+      "size_bytes": 356132
+    },
+    {
+      "path": "Baron Human/seed123/R/embedding.npy",
+      "sha256": "cdff15d3542d7289a949802aaf6974090087b8bf09b4cc2c55ede398d6932f21",
+      "size_bytes": 1081856
+    },
+    {
+      "path": "Baron Human/seed123/R/labels_true.npy",
+      "sha256": "60634dd9a2dfdc579192e15d779c79cf8f91f1ed41d909a564de60af3cd66c28",
+      "size_bytes": 67736
+    },
+    {
+      "path": "Baron Human/seed123/R/predictions.npy",
+      "sha256": "97cf86b218009f55aee26d2131e59845b4a523be99abbdb54c2f09bb3ec188bd",
+      "size_bytes": 67736
+    },
+    {
+      "path": "Baron Human/seed123/R/resolved_config.json",
+      "sha256": "06f69dbf6fa9dc0ffd472201ae555348be5191d8771f7a98022f37139333fe95",
+      "size_bytes": 812
+    },
+    {
+      "path": "Baron Human/seed123/R/selected_graph.npz",
+      "sha256": "270540b9c3f16cdfce14ce97f3e75d39af365ffbca1ebd0a793e1cd56dc29fbb",
+      "size_bytes": 645559
+    },
+    {
+      "path": "Baron Human/seed123/R/summary.json",
+      "sha256": "ad1614703d5987bbc5cd915cd63d0106a1e8bc85b8166731819844be522ad8b3",
+      "size_bytes": 3347
+    },
+    {
+      "path": "Baron Human/seed123/R/training_metrics.csv",
+      "sha256": "d23e33cd31d2827bb2a2d3bf9a95d379effa468799834bbef93e9c69866c1f38",
+      "size_bytes": 5863
+    },
+    {
+      "path": "Baron Human/seed42/O_full/artifact_hashes.json",
+      "sha256": "0d9cd72bd5954ae878f0c0ada28a79d3ec4b96161305ec5f695f38e79e1349c3",
+      "size_bytes": 1785
+    },
+    {
+      "path": "Baron Human/seed42/O_full/audit.json",
+      "sha256": "9e1ebaa4ed187f5afeb654cf5ce6227c3569c5fafe5a2e0eb644e51a4586ecda",
+      "size_bytes": 382
+    },
+    {
+      "path": "Baron Human/seed42/O_full/directed_graph.npz",
+      "sha256": "5e55110c793ae741da1fbb49bba54662a69753ea402229462b2b7f29a7e2f3a1",
+      "size_bytes": 342046
+    },
+    {
+      "path": "Baron Human/seed42/O_full/embedding.npy",
+      "sha256": "d60ee6ca4630390c343bab009e8dcb64816e88b1fce161fdd311ce01f28a6db7",
+      "size_bytes": 1081856
+    },
+    {
+      "path": "Baron Human/seed42/O_full/labels_true.npy",
+      "sha256": "60634dd9a2dfdc579192e15d779c79cf8f91f1ed41d909a564de60af3cd66c28",
+      "size_bytes": 67736
+    },
+    {
+      "path": "Baron Human/seed42/O_full/oracle_manifest.json",
+      "sha256": "1a524fe8d49705c564e253329beafbab5c3b25c2e295325d27fa4e928407ad31",
+      "size_bytes": 289
+    },
+    {
+      "path": "Baron Human/seed42/O_full/predictions.npy",
+      "sha256": "183bcab36b7b7967a54f3d2210710644e3d6b9862613b393108e34cc024f9ad0",
+      "size_bytes": 67736
+    },
+    {
+      "path": "Baron Human/seed42/O_full/resolved_config.json",
+      "sha256": "56ec893e6a617efa14746e2913f68de4bff350f227d62328091f3962b1638ece",
+      "size_bytes": 816
+    },
+    {
+      "path": "Baron Human/seed42/O_full/selected_graph.npz",
+      "sha256": "922c85652dd34f76dc6eb4bc62f4d6fb69b2f1889456aff286de32de1c5eb350",
+      "size_bytes": 560699
+    },
+    {
+      "path": "Baron Human/seed42/O_full/summary.json",
+      "sha256": "3689d45e9acbf87955d2d56dcb55764eac055b4d949dcc3adbb1f20ad672418c",
+      "size_bytes": 3363
+    },
+    {
+      "path": "Baron Human/seed42/O_full/training_metrics.csv",
+      "sha256": "199edb4dc7aaf22e75486f8d19301ad559a93f09e4334d933f2b9d044142a232",
+      "size_bytes": 5844
+    },
+    {
+      "path": "Baron Human/seed42/O_pool/artifact_hashes.json",
+      "sha256": "082b46fcf97808fc2b07b8978d1ca742bb8999046fd46edeef8aec796d8ea37c",
+      "size_bytes": 1785
+    },
+    {
+      "path": "Baron Human/seed42/O_pool/audit.json",
+      "sha256": "9e0e6e9f5de6904297b5c3de474a9c89bab505223f934cb3ab16ff2367e9140c",
+      "size_bytes": 382
+    },
+    {
+      "path": "Baron Human/seed42/O_pool/directed_graph.npz",
+      "sha256": "f6352cc3c1d3282dac4f1fb83d9248e82f1052f2f852b88cc44d2fcf03fe52c7",
+      "size_bytes": 342043
+    },
+    {
+      "path": "Baron Human/seed42/O_pool/embedding.npy",
+      "sha256": "57afb3aed8bb0bb25d1eb846727f669966ce0576886c44c7d665a4a45293e492",
+      "size_bytes": 1081856
+    },
+    {
+      "path": "Baron Human/seed42/O_pool/labels_true.npy",
+      "sha256": "60634dd9a2dfdc579192e15d779c79cf8f91f1ed41d909a564de60af3cd66c28",
+      "size_bytes": 67736
+    },
+    {
+      "path": "Baron Human/seed42/O_pool/oracle_manifest.json",
+      "sha256": "cb3c4ffdff099ee0852ce381ad492963d5d26278f3e793389a4a5853e6afe993",
+      "size_bytes": 289
+    },
+    {
+      "path": "Baron Human/seed42/O_pool/predictions.npy",
+      "sha256": "3c88205cf332043ae571330ff30af57f57a7d90968f8d65dcccbe1596491dc47",
+      "size_bytes": 67736
+    },
+    {
+      "path": "Baron Human/seed42/O_pool/resolved_config.json",
+      "sha256": "f82028fa4f7dcb6c7ea237360903d3a0ac8db10b7c7aa980dcd3443bc8044445",
+      "size_bytes": 816
+    },
+    {
+      "path": "Baron Human/seed42/O_pool/selected_graph.npz",
+      "sha256": "c31fe5c3a32c5d81727f201b4c146b1bc2c24f4fffd82ba0003ab46d4f9d892e",
+      "size_bytes": 564746
+    },
+    {
+      "path": "Baron Human/seed42/O_pool/summary.json",
+      "sha256": "4539443eddb86cd6d46138c5470a318bded60a871934d090605ec97aabf20955",
+      "size_bytes": 3371
+    },
+    {
+      "path": "Baron Human/seed42/O_pool/training_metrics.csv",
+      "sha256": "e2db761cade158a9b59158c26b4e556c8bcabe9b8d51c9c92925caaa54d9563a",
+      "size_bytes": 5829
+    },
+    {
+      "path": "Baron Human/seed42/R/artifact_hashes.json",
+      "sha256": "538275ec336808d3d924df7c3b1afadc09a771fac874bdd3e65806d4f27477e4",
+      "size_bytes": 1620
+    },
+    {
+      "path": "Baron Human/seed42/R/audit.json",
+      "sha256": "f88914649f355349af4fa18151987baa7a0c46373f293903eb64749c0e21f844",
+      "size_bytes": 378
+    },
+    {
+      "path": "Baron Human/seed42/R/directed_graph.npz",
+      "sha256": "9db56770ebeebd5eecf45707218ddb3bec08828cd2748f5eff049f2301631199",
+      "size_bytes": 356402
+    },
+    {
+      "path": "Baron Human/seed42/R/embedding.npy",
+      "sha256": "91a795bd9be177c68020c3bda5829e0ec2194da36ff947dfff1eda20824a016b",
+      "size_bytes": 1081856
+    },
+    {
+      "path": "Baron Human/seed42/R/labels_true.npy",
+      "sha256": "60634dd9a2dfdc579192e15d779c79cf8f91f1ed41d909a564de60af3cd66c28",
+      "size_bytes": 67736
+    },
+    {
+      "path": "Baron Human/seed42/R/predictions.npy",
+      "sha256": "3ec8482fb560a96196a554abf6e3012ed435a3395ff16a9e060684e1e75a4583",
+      "size_bytes": 67736
+    },
+    {
+      "path": "Baron Human/seed42/R/resolved_config.json",
+      "sha256": "5bf7da3f42abe7961b37dcf39c0a74616d9a7f5b26c194064aa9803209c3234b",
+      "size_bytes": 811
+    },
+    {
+      "path": "Baron Human/seed42/R/selected_graph.npz",
+      "sha256": "d34a2ce1887e927efb30adb89196d010b259efb1b1fdfee40f3640b25d3b293c",
+      "size_bytes": 645333
+    },
+    {
+      "path": "Baron Human/seed42/R/summary.json",
+      "sha256": "7f920ed6bafa08caae844a72703840a8961eb385202b6ae9aed6db6735a5d959",
+      "size_bytes": 3341
+    },
+    {
+      "path": "Baron Human/seed42/R/training_metrics.csv",
+      "sha256": "a9d77b24bb4167862b54df9705e2805802d8395d349dfdf9421f0f11d0ba4b2b",
+      "size_bytes": 5813
+    },
+    {
+      "path": "Baron Human/seed7/O_full/artifact_hashes.json",
+      "sha256": "89356570a7f56e5b97fe051bf10f42b64a031b2a81628df6bb6b3682b87eedf2",
+      "size_bytes": 1784
+    },
+    {
+      "path": "Baron Human/seed7/O_full/audit.json",
+      "sha256": "7b0efd8d45d66db96a0b3b0e66be87b080fb481f6f7205162285c0f379e6326e",
+      "size_bytes": 381
+    },
+    {
+      "path": "Baron Human/seed7/O_full/directed_graph.npz",
+      "sha256": "5e55110c793ae741da1fbb49bba54662a69753ea402229462b2b7f29a7e2f3a1",
+      "size_bytes": 342046
+    },
+    {
+      "path": "Baron Human/seed7/O_full/embedding.npy",
+      "sha256": "f61fdd881df1672ae97a28259b2063c008621cb053877903f8c9b24aa3c8ca4e",
+      "size_bytes": 1081856
+    },
+    {
+      "path": "Baron Human/seed7/O_full/labels_true.npy",
+      "sha256": "60634dd9a2dfdc579192e15d779c79cf8f91f1ed41d909a564de60af3cd66c28",
+      "size_bytes": 67736
+    },
+    {
+      "path": "Baron Human/seed7/O_full/oracle_manifest.json",
+      "sha256": "1a524fe8d49705c564e253329beafbab5c3b25c2e295325d27fa4e928407ad31",
+      "size_bytes": 289
+    },
+    {
+      "path": "Baron Human/seed7/O_full/predictions.npy",
+      "sha256": "39dbc4bf4c537d766216afbca6145ff546bd487d77c8dd49b53e78838adf46c5",
+      "size_bytes": 67736
+    },
+    {
+      "path": "Baron Human/seed7/O_full/resolved_config.json",
+      "sha256": "0108688cb7768ca838cafcbe3c4c0eb4da4107586a849c16c733608ad962618d",
+      "size_bytes": 815
+    },
+    {
+      "path": "Baron Human/seed7/O_full/selected_graph.npz",
+      "sha256": "922c85652dd34f76dc6eb4bc62f4d6fb69b2f1889456aff286de32de1c5eb350",
+      "size_bytes": 560699
+    },
+    {
+      "path": "Baron Human/seed7/O_full/summary.json",
+      "sha256": "1ddf360e4b00c8b2a18bce3459e138a5aef26e691212e453dea7d29602c561e8",
+      "size_bytes": 3363
+    },
+    {
+      "path": "Baron Human/seed7/O_full/training_metrics.csv",
+      "sha256": "4bd2d51c2260bc40a337e4717b47d8b955ce1213d05ea1f31c2cd8355602bd3f",
+      "size_bytes": 5750
+    },
+    {
+      "path": "Baron Human/seed7/O_pool/artifact_hashes.json",
+      "sha256": "183abc5287d4f36d124349abe8d591ad287bd673d60d6dbdea72fd917c24121f",
+      "size_bytes": 1784
+    },
+    {
+      "path": "Baron Human/seed7/O_pool/audit.json",
+      "sha256": "6977b39aef954854defd6c7e33a3a65a3f873ca13a67300f2c1482a212684196",
+      "size_bytes": 381
+    },
+    {
+      "path": "Baron Human/seed7/O_pool/directed_graph.npz",
+      "sha256": "f6352cc3c1d3282dac4f1fb83d9248e82f1052f2f852b88cc44d2fcf03fe52c7",
+      "size_bytes": 342043
+    },
+    {
+      "path": "Baron Human/seed7/O_pool/embedding.npy",
+      "sha256": "61f0d62ed1c5887df8787d1bf6b8d894ee4253852eb761107a19092987aa0baf",
+      "size_bytes": 1081856
+    },
+    {
+      "path": "Baron Human/seed7/O_pool/labels_true.npy",
+      "sha256": "60634dd9a2dfdc579192e15d779c79cf8f91f1ed41d909a564de60af3cd66c28",
+      "size_bytes": 67736
+    },
+    {
+      "path": "Baron Human/seed7/O_pool/oracle_manifest.json",
+      "sha256": "cb3c4ffdff099ee0852ce381ad492963d5d26278f3e793389a4a5853e6afe993",
+      "size_bytes": 289
+    },
+    {
+      "path": "Baron Human/seed7/O_pool/predictions.npy",
+      "sha256": "e3dfe0ad2e74c07bd1d31b3c0cf2d9dc4731f319f1ee3ae7e51f6984f97f071e",
+      "size_bytes": 67736
+    },
+    {
+      "path": "Baron Human/seed7/O_pool/resolved_config.json",
+      "sha256": "f5e18d4757fdd73204dcb7d57e0cb8dd4837924c682606abc05f3000e3e4a828",
+      "size_bytes": 815
+    },
+    {
+      "path": "Baron Human/seed7/O_pool/selected_graph.npz",
+      "sha256": "c31fe5c3a32c5d81727f201b4c146b1bc2c24f4fffd82ba0003ab46d4f9d892e",
+      "size_bytes": 564746
+    },
+    {
+      "path": "Baron Human/seed7/O_pool/summary.json",
+      "sha256": "29043e30df068d28d05d440e006181a92e6fef36f6fdb1098796f965fa56da66",
+      "size_bytes": 3370
+    },
+    {
+      "path": "Baron Human/seed7/O_pool/training_metrics.csv",
+      "sha256": "4335f1cadf14556d991357ee6d70d265ba57cc519c947f562655f6a4529e8e93",
+      "size_bytes": 5761
+    },
+    {
+      "path": "Baron Human/seed7/R/artifact_hashes.json",
+      "sha256": "62de9f3b95c4bfcd5d03609ec96390d1c8054560db69dc43982785a37eb1a1a8",
+      "size_bytes": 1619
+    },
+    {
+      "path": "Baron Human/seed7/R/audit.json",
+      "sha256": "c6d0982e25fd65ddd2771146b6eb59d6e9f85a9949e204035b7cf1b6701d94e6",
+      "size_bytes": 377
+    },
+    {
+      "path": "Baron Human/seed7/R/directed_graph.npz",
+      "sha256": "56b2d127cc2dedb84964a6ab50dd180269a4a0a247f88837f61e540ca1a889b1",
+      "size_bytes": 356269
+    },
+    {
+      "path": "Baron Human/seed7/R/embedding.npy",
+      "sha256": "42925f085414c2aa1ea0e7fe97dacfa4bba8880304bfbbdc34e04f714046296f",
+      "size_bytes": 1081856
+    },
+    {
+      "path": "Baron Human/seed7/R/labels_true.npy",
+      "sha256": "60634dd9a2dfdc579192e15d779c79cf8f91f1ed41d909a564de60af3cd66c28",
+      "size_bytes": 67736
+    },
+    {
+      "path": "Baron Human/seed7/R/predictions.npy",
+      "sha256": "a9e1d40deefcb98dd8c9e3ea06d02f3ac4c9d48430573b4f8700a633003907e1",
+      "size_bytes": 67736
+    },
+    {
+      "path": "Baron Human/seed7/R/resolved_config.json",
+      "sha256": "0123a940d2390fc85ee2137836f4c4e949bb8445347d373ccdbb20e49150e101",
+      "size_bytes": 810
+    },
+    {
+      "path": "Baron Human/seed7/R/selected_graph.npz",
+      "sha256": "e59c0fda9e75ba43a595f049145557c0644ca9ada048cab05915f5f90fa7ee3e",
+      "size_bytes": 645173
+    },
+    {
+      "path": "Baron Human/seed7/R/summary.json",
+      "sha256": "756596b924b408c888c37a4bc2fdb48b66de621ece0da9f24ff9abcb8b6a3553",
+      "size_bytes": 3339
+    },
+    {
+      "path": "Baron Human/seed7/R/training_metrics.csv",
+      "sha256": "163cdfd8de4660a0a1e9e36c01bd07d99113ba82179b65f239bc14d7df5a07a9",
+      "size_bytes": 5753
+    },
+    {
+      "path": "Mouse_retina/seed123/O_full/artifact_hashes.json",
+      "sha256": "b075018d521482d792923117bc99a962abdcd42a7a908d21dd03c9e6f5170252",
+      "size_bytes": 1787
+    },
+    {
+      "path": "Mouse_retina/seed123/O_full/audit.json",
+      "sha256": "094feb0cf69f90850c1f21f8002183abf9b33e9074f6aa380776cc1b3c06c6b9",
+      "size_bytes": 384
+    },
+    {
+      "path": "Mouse_retina/seed123/O_full/directed_graph.npz",
+      "sha256": "4e92104845a76a51e4d6b97862592a89d79c8f62a7a209f409b74e834072971e",
+      "size_bytes": 360430
+    },
+    {
+      "path": "Mouse_retina/seed123/O_full/embedding.npy",
+      "sha256": "9777076dc2adeb219aae7ecf6638011c91630eb9d9f6c821d16aae494f693d85",
+      "size_bytes": 1069184
+    },
+    {
+      "path": "Mouse_retina/seed123/O_full/labels_true.npy",
+      "sha256": "00f32c2d9f1173e6ba2ca19031d2ff0a115cf8bfe341d48ef4e6f5d85dd0e1f9",
+      "size_bytes": 66944
+    },
+    {
+      "path": "Mouse_retina/seed123/O_full/oracle_manifest.json",
+      "sha256": "f07ce7547434a9369311442a7c2abe702249745b666aeb1538d9200bc9f4d469",
+      "size_bytes": 289
+    },
+    {
+      "path": "Mouse_retina/seed123/O_full/predictions.npy",
+      "sha256": "30183679d53cba1fe6b438563cdd2170e911018b076940c63fc7670e4556adba",
+      "size_bytes": 66944
+    },
+    {
+      "path": "Mouse_retina/seed123/O_full/resolved_config.json",
+      "sha256": "b1902d4d8c48fbf8f7101acf7df3e2a211d8a30b6d28a1ff21453f561941dc88",
+      "size_bytes": 818
+    },
+    {
+      "path": "Mouse_retina/seed123/O_full/selected_graph.npz",
+      "sha256": "ccb45656f315ce99a271e539d03578a0dac71d0bb857adc58f32070a1613f578",
+      "size_bytes": 695766
+    },
+    {
+      "path": "Mouse_retina/seed123/O_full/summary.json",
+      "sha256": "44949f4d46c6c56669337495cc1365b33bc7b8f2cf2afd6dcec59525b2e442ec",
+      "size_bytes": 3385
+    },
+    {
+      "path": "Mouse_retina/seed123/O_full/training_metrics.csv",
+      "sha256": "0d10d3f8e3d5a819874ce9a8a9aacf26429dd71d09b9726ef5c0d2f752b8f178",
+      "size_bytes": 7003
+    },
+    {
+      "path": "Mouse_retina/seed123/O_pool/artifact_hashes.json",
+      "sha256": "704e490f7635937a1b3c08fbbde3be05ed1ecc4c6d83a459b71f57d355a595a7",
+      "size_bytes": 1787
+    },
+    {
+      "path": "Mouse_retina/seed123/O_pool/audit.json",
+      "sha256": "fe0fcb33d3b211daf130a0ee95262fc7d383c1521b27e7c81b213224c4f4210d",
+      "size_bytes": 384
+    },
+    {
+      "path": "Mouse_retina/seed123/O_pool/directed_graph.npz",
+      "sha256": "7bd95a7362a34af8586678069a37455eb7754b40605b32f762599cf50212b4cb",
+      "size_bytes": 360378
+    },
+    {
+      "path": "Mouse_retina/seed123/O_pool/embedding.npy",
+      "sha256": "f0258ae7070f55100a68afc19ca57d2025a8cb564c68e3ed0c8b91a1c9d8659d",
+      "size_bytes": 1069184
+    },
+    {
+      "path": "Mouse_retina/seed123/O_pool/labels_true.npy",
+      "sha256": "00f32c2d9f1173e6ba2ca19031d2ff0a115cf8bfe341d48ef4e6f5d85dd0e1f9",
+      "size_bytes": 66944
+    },
+    {
+      "path": "Mouse_retina/seed123/O_pool/oracle_manifest.json",
+      "sha256": "3b8fa87457eaa41585e7f86d9243c0c4443610f7ad900a820f85c306c3abcd73",
+      "size_bytes": 289
+    },
+    {
+      "path": "Mouse_retina/seed123/O_pool/predictions.npy",
+      "sha256": "213313afbd1d22a0e6dcbb42d7a8707b7a3fde24e49d9ecd7db41398db3cca38",
+      "size_bytes": 66944
+    },
+    {
+      "path": "Mouse_retina/seed123/O_pool/resolved_config.json",
+      "sha256": "3f0ee04539840a78337bc5f97d80a7e9803bd866425bf34c43ab5e7bb192e942",
+      "size_bytes": 818
+    },
+    {
+      "path": "Mouse_retina/seed123/O_pool/selected_graph.npz",
+      "sha256": "ebd2f53172c09267d449b880ac8aa99ce2f9a53686e895b4fb629bee0e506d36",
+      "size_bytes": 695836
+    },
+    {
+      "path": "Mouse_retina/seed123/O_pool/summary.json",
+      "sha256": "c56b0de2271b483da6bec4e73e24a41b98016b385c15f15283845775cf5a63df",
+      "size_bytes": 3421
+    },
+    {
+      "path": "Mouse_retina/seed123/O_pool/training_metrics.csv",
+      "sha256": "e8fb0b0eba00020c0247ec3f2ed3bac73012b7caf4c2618c0bedbe6fd2e8af37",
+      "size_bytes": 6987
+    },
+    {
+      "path": "Mouse_retina/seed123/R/artifact_hashes.json",
+      "sha256": "a3fcb37d9f5e6f8a5216d872e864a742a6d78f18db0eb851f11fe7d43cf65b53",
+      "size_bytes": 1622
+    },
+    {
+      "path": "Mouse_retina/seed123/R/audit.json",
+      "sha256": "9e3b85b9c1f540a33a4af12cd7f1d12e2f3e00f8e6b0c1d0cb5c4fef28bc3aea",
+      "size_bytes": 380
+    },
+    {
+      "path": "Mouse_retina/seed123/R/directed_graph.npz",
+      "sha256": "6848c48eeec50552d514cf7fb850e0b8a566759d486b3edb4079f08e78e69d06",
+      "size_bytes": 363232
+    },
+    {
+      "path": "Mouse_retina/seed123/R/embedding.npy",
+      "sha256": "ab96ec62a030245c049757276a68ca367d14f695e4f8b11a1d3dd946bde49cce",
+      "size_bytes": 1069184
+    },
+    {
+      "path": "Mouse_retina/seed123/R/labels_true.npy",
+      "sha256": "00f32c2d9f1173e6ba2ca19031d2ff0a115cf8bfe341d48ef4e6f5d85dd0e1f9",
+      "size_bytes": 66944
+    },
+    {
+      "path": "Mouse_retina/seed123/R/predictions.npy",
+      "sha256": "b635c33b49b4c2143c7c90a172eb314e403eada7a9007a2405faa960a7e12407",
+      "size_bytes": 66944
+    },
+    {
+      "path": "Mouse_retina/seed123/R/resolved_config.json",
+      "sha256": "dac21d7cf6cd4009dfac3efb13107a03dd845b32db84d7e88f1746e0db71b63a",
+      "size_bytes": 813
+    },
+    {
+      "path": "Mouse_retina/seed123/R/selected_graph.npz",
+      "sha256": "0b8a14c902f8286e2db918a65bb164b5c7819c1936317f461b5ef2c2275be6f5",
+      "size_bytes": 718893
+    },
+    {
+      "path": "Mouse_retina/seed123/R/summary.json",
+      "sha256": "9208423c19ff583c37add0b6d4e40c1260ca72fbbbe6c2ab1aac215b3352e37b",
+      "size_bytes": 3366
+    },
+    {
+      "path": "Mouse_retina/seed123/R/training_metrics.csv",
+      "sha256": "ea3cba2501f73e9882b462a7f0f45186a47a8744871ba20ce3a18b1d1348989a",
+      "size_bytes": 6968
+    },
+    {
+      "path": "Mouse_retina/seed42/O_full/artifact_hashes.json",
+      "sha256": "1add82f5f5d7876db4db980c3c629448e8754437350a25732442116be8cdba44",
+      "size_bytes": 1786
+    },
+    {
+      "path": "Mouse_retina/seed42/O_full/audit.json",
+      "sha256": "162dcca14a205b4bbc16664d35ced8928536bab5f04f78a84931028355e9fba5",
+      "size_bytes": 383
+    },
+    {
+      "path": "Mouse_retina/seed42/O_full/directed_graph.npz",
+      "sha256": "4e92104845a76a51e4d6b97862592a89d79c8f62a7a209f409b74e834072971e",
+      "size_bytes": 360430
+    },
+    {
+      "path": "Mouse_retina/seed42/O_full/embedding.npy",
+      "sha256": "8348419f967a2122d5a16a8c74c5cf9d16e5e4ed761d9fbed731fbe20b7d59f2",
+      "size_bytes": 1069184
+    },
+    {
+      "path": "Mouse_retina/seed42/O_full/labels_true.npy",
+      "sha256": "00f32c2d9f1173e6ba2ca19031d2ff0a115cf8bfe341d48ef4e6f5d85dd0e1f9",
+      "size_bytes": 66944
+    },
+    {
+      "path": "Mouse_retina/seed42/O_full/oracle_manifest.json",
+      "sha256": "f07ce7547434a9369311442a7c2abe702249745b666aeb1538d9200bc9f4d469",
+      "size_bytes": 289
+    },
+    {
+      "path": "Mouse_retina/seed42/O_full/predictions.npy",
+      "sha256": "fa5aa1c440e41da0bc8e0e1e3da7d60c438686934fb401d530e134b8c73aeb69",
+      "size_bytes": 66944
+    },
+    {
+      "path": "Mouse_retina/seed42/O_full/resolved_config.json",
+      "sha256": "b7e484fd122ba908ee5b6bbc7f6aafafb453e18b5aa5eedf79cc4bb39731f4d6",
+      "size_bytes": 817
+    },
+    {
+      "path": "Mouse_retina/seed42/O_full/selected_graph.npz",
+      "sha256": "ccb45656f315ce99a271e539d03578a0dac71d0bb857adc58f32070a1613f578",
+      "size_bytes": 695766
+    },
+    {
+      "path": "Mouse_retina/seed42/O_full/summary.json",
+      "sha256": "1d5f028ba086501b8cd16db3b9d0a23a4aa23e5c78b0db2465125c22d00e1191",
+      "size_bytes": 3382
+    },
+    {
+      "path": "Mouse_retina/seed42/O_full/training_metrics.csv",
+      "sha256": "8a25757c9f32646c6fe4b30963a114e25a20c7c749a4a791d78d1b4b749013d8",
+      "size_bytes": 6986
+    },
+    {
+      "path": "Mouse_retina/seed42/O_pool/artifact_hashes.json",
+      "sha256": "a63467ec491d7b0f68ca782346e7b6588170debcfe5dc7bb4a969e9b70a900d4",
+      "size_bytes": 1786
+    },
+    {
+      "path": "Mouse_retina/seed42/O_pool/audit.json",
+      "sha256": "a177ce16eb9515c41ce40bb612b8dee5e7b400eb7ecf6ddd2d1c647ce668d64e",
+      "size_bytes": 383
+    },
+    {
+      "path": "Mouse_retina/seed42/O_pool/directed_graph.npz",
+      "sha256": "7bd95a7362a34af8586678069a37455eb7754b40605b32f762599cf50212b4cb",
+      "size_bytes": 360378
+    },
+    {
+      "path": "Mouse_retina/seed42/O_pool/embedding.npy",
+      "sha256": "c969df98b26186d8f56c9c58646e01534579c903aae73f7fd04001a696471418",
+      "size_bytes": 1069184
+    },
+    {
+      "path": "Mouse_retina/seed42/O_pool/labels_true.npy",
+      "sha256": "00f32c2d9f1173e6ba2ca19031d2ff0a115cf8bfe341d48ef4e6f5d85dd0e1f9",
+      "size_bytes": 66944
+    },
+    {
+      "path": "Mouse_retina/seed42/O_pool/oracle_manifest.json",
+      "sha256": "3b8fa87457eaa41585e7f86d9243c0c4443610f7ad900a820f85c306c3abcd73",
+      "size_bytes": 289
+    },
+    {
+      "path": "Mouse_retina/seed42/O_pool/predictions.npy",
+      "sha256": "caa70d1791e8d10c4e067ca439a4e560fac41e8a37137ca13c54db12c257abe2",
+      "size_bytes": 66944
+    },
+    {
+      "path": "Mouse_retina/seed42/O_pool/resolved_config.json",
+      "sha256": "9fba086f7526ab2065120aa73dc51edb00f80e34d26080233f0971e32cf22cda",
+      "size_bytes": 817
+    },
+    {
+      "path": "Mouse_retina/seed42/O_pool/selected_graph.npz",
+      "sha256": "ebd2f53172c09267d449b880ac8aa99ce2f9a53686e895b4fb629bee0e506d36",
+      "size_bytes": 695836
+    },
+    {
+      "path": "Mouse_retina/seed42/O_pool/summary.json",
+      "sha256": "9a1e697749fa661cb501a09834ccafa07177844c1bdbb7eb98051e02ff140644",
+      "size_bytes": 3409
+    },
+    {
+      "path": "Mouse_retina/seed42/O_pool/training_metrics.csv",
+      "sha256": "5a821f07c8ce0503fddfe1c811ff4d239836f4c025e45126d39d79678c337495",
+      "size_bytes": 6983
+    },
+    {
+      "path": "Mouse_retina/seed42/R/artifact_hashes.json",
+      "sha256": "038c08efdcc91905044311ce856d43ba29f29688f596931e89a3dc0c2d018ea6",
+      "size_bytes": 1621
+    },
+    {
+      "path": "Mouse_retina/seed42/R/audit.json",
+      "sha256": "d5f24b884341f28420dbf06c24892d436cb02e854d3520c55bcd777cb5fbf341",
+      "size_bytes": 379
+    },
+    {
+      "path": "Mouse_retina/seed42/R/directed_graph.npz",
+      "sha256": "2b7c632b9a8c7cf10a31942cd72a5b6758dae6df372859272050e2a0cae4d802",
+      "size_bytes": 363258
+    },
+    {
+      "path": "Mouse_retina/seed42/R/embedding.npy",
+      "sha256": "4d19650a0b1c75cb110ab9bd81991f1eb01a9978f64bafad4328c0468b79d801",
+      "size_bytes": 1069184
+    },
+    {
+      "path": "Mouse_retina/seed42/R/labels_true.npy",
+      "sha256": "00f32c2d9f1173e6ba2ca19031d2ff0a115cf8bfe341d48ef4e6f5d85dd0e1f9",
+      "size_bytes": 66944
+    },
+    {
+      "path": "Mouse_retina/seed42/R/predictions.npy",
+      "sha256": "d63d988123ef3f956e2b522549a7eb7cb9c2c31007d0be9bc43febd5658d8c9f",
+      "size_bytes": 66944
+    },
+    {
+      "path": "Mouse_retina/seed42/R/resolved_config.json",
+      "sha256": "a766da78a3ce3e2b4e175ec73fb8a7db44a326aa3f1bdecbae4567d91b7f85b9",
+      "size_bytes": 812
+    },
+    {
+      "path": "Mouse_retina/seed42/R/selected_graph.npz",
+      "sha256": "2c944a815f6baf9263022909671db196075713003ef122e8539bfb32e9ccde12",
+      "size_bytes": 719806
+    },
+    {
+      "path": "Mouse_retina/seed42/R/summary.json",
+      "sha256": "87ba184834f0a1e52d6eecc7f4d218d15286d03d73bbc69f9637c048027a70e6",
+      "size_bytes": 3360
+    },
+    {
+      "path": "Mouse_retina/seed42/R/training_metrics.csv",
+      "sha256": "6b20ca9a2791d9a6862f3adc0865898882314762e621a2d8c29ffae5dbde3bdd",
+      "size_bytes": 6992
+    },
+    {
+      "path": "Mouse_retina/seed7/O_full/artifact_hashes.json",
+      "sha256": "9cd85a4995d3cdae2be9e7921673d1e96f21da8203b3788c8132da4735062277",
+      "size_bytes": 1785
+    },
+    {
+      "path": "Mouse_retina/seed7/O_full/audit.json",
+      "sha256": "8d86c370ab57f0cb95cf15297cf859e725abc798a8db9c75cfa5dcb08353a26f",
+      "size_bytes": 382
+    },
+    {
+      "path": "Mouse_retina/seed7/O_full/directed_graph.npz",
+      "sha256": "4e92104845a76a51e4d6b97862592a89d79c8f62a7a209f409b74e834072971e",
+      "size_bytes": 360430
+    },
+    {
+      "path": "Mouse_retina/seed7/O_full/embedding.npy",
+      "sha256": "31553fe7c3a70988c5b7ae8ba9461b5903e8e0fb64848a22469b8c34c797c798",
+      "size_bytes": 1069184
+    },
+    {
+      "path": "Mouse_retina/seed7/O_full/labels_true.npy",
+      "sha256": "00f32c2d9f1173e6ba2ca19031d2ff0a115cf8bfe341d48ef4e6f5d85dd0e1f9",
+      "size_bytes": 66944
+    },
+    {
+      "path": "Mouse_retina/seed7/O_full/oracle_manifest.json",
+      "sha256": "f07ce7547434a9369311442a7c2abe702249745b666aeb1538d9200bc9f4d469",
+      "size_bytes": 289
+    },
+    {
+      "path": "Mouse_retina/seed7/O_full/predictions.npy",
+      "sha256": "d96d9d5aeaaa13fd858507f6214e4986f262aa08e0ffbdc093ad2d397c299dfc",
+      "size_bytes": 66944
+    },
+    {
+      "path": "Mouse_retina/seed7/O_full/resolved_config.json",
+      "sha256": "fc48a571164a5806e5dcd865dac559f7c64780c45733aebffe462f3f983a908f",
+      "size_bytes": 816
+    },
+    {
+      "path": "Mouse_retina/seed7/O_full/selected_graph.npz",
+      "sha256": "ccb45656f315ce99a271e539d03578a0dac71d0bb857adc58f32070a1613f578",
+      "size_bytes": 695766
+    },
+    {
+      "path": "Mouse_retina/seed7/O_full/summary.json",
+      "sha256": "5903388192c229bb01952ac133123165a424b1153b4836e99e3b80e5ec8273f1",
+      "size_bytes": 3375
+    },
+    {
+      "path": "Mouse_retina/seed7/O_full/training_metrics.csv",
+      "sha256": "9306637bb088fd39f16e643618f5267a0780a3691ca2d15bb06ba3078973de9e",
+      "size_bytes": 6974
+    },
+    {
+      "path": "Mouse_retina/seed7/O_pool/artifact_hashes.json",
+      "sha256": "52cb5b5197917f18afc55ef1cebf1b0ae72ec0dca7c08c255bb3f52cdf58d2a2",
+      "size_bytes": 1785
+    },
+    {
+      "path": "Mouse_retina/seed7/O_pool/audit.json",
+      "sha256": "ac64f1ea65f9a1dd708c7fafe824b07208e8939cb50967957dd942495f263c50",
+      "size_bytes": 382
+    },
+    {
+      "path": "Mouse_retina/seed7/O_pool/directed_graph.npz",
+      "sha256": "7bd95a7362a34af8586678069a37455eb7754b40605b32f762599cf50212b4cb",
+      "size_bytes": 360378
+    },
+    {
+      "path": "Mouse_retina/seed7/O_pool/embedding.npy",
+      "sha256": "f575e672fd4e14606513dcc52149081d1fd6a3608157b253dedeffb55d7e95f2",
+      "size_bytes": 1069184
+    },
+    {
+      "path": "Mouse_retina/seed7/O_pool/labels_true.npy",
+      "sha256": "00f32c2d9f1173e6ba2ca19031d2ff0a115cf8bfe341d48ef4e6f5d85dd0e1f9",
+      "size_bytes": 66944
+    },
+    {
+      "path": "Mouse_retina/seed7/O_pool/oracle_manifest.json",
+      "sha256": "3b8fa87457eaa41585e7f86d9243c0c4443610f7ad900a820f85c306c3abcd73",
+      "size_bytes": 289
+    },
+    {
+      "path": "Mouse_retina/seed7/O_pool/predictions.npy",
+      "sha256": "44a194ea05b03494467bd07b0bd58a891944a1efaa8605285a3e3b1e31fcf51b",
+      "size_bytes": 66944
+    },
+    {
+      "path": "Mouse_retina/seed7/O_pool/resolved_config.json",
+      "sha256": "28c2ac761e90579347a9ccba8573af8c5bda65dd57eae8eae856a68efc771170",
+      "size_bytes": 816
+    },
+    {
+      "path": "Mouse_retina/seed7/O_pool/selected_graph.npz",
+      "sha256": "ebd2f53172c09267d449b880ac8aa99ce2f9a53686e895b4fb629bee0e506d36",
+      "size_bytes": 695836
+    },
+    {
+      "path": "Mouse_retina/seed7/O_pool/summary.json",
+      "sha256": "02892feba8173c6cb4400f08270d57fce8502d1eb168b097fb3b0f1790727343",
+      "size_bytes": 3407
+    },
+    {
+      "path": "Mouse_retina/seed7/O_pool/training_metrics.csv",
+      "sha256": "f25fd0fd1629f9925a3795458f89261ce93f4df7a333da6b2795625e61052484",
+      "size_bytes": 6989
+    },
+    {
+      "path": "Mouse_retina/seed7/R/artifact_hashes.json",
+      "sha256": "f041f4e6cc100d7e286cd3cf78a35016878feda8f3960281fc08e23c7b88f1fb",
+      "size_bytes": 1620
+    },
+    {
+      "path": "Mouse_retina/seed7/R/audit.json",
+      "sha256": "2ad81b618d5d5963e411adf7d5c050603a345b617f4e8746fe9f3f87373d653d",
+      "size_bytes": 378
+    },
+    {
+      "path": "Mouse_retina/seed7/R/directed_graph.npz",
+      "sha256": "a742755ca3392ce7bb43774e866d76eec47d812e31a87cfb83b490c65d383575",
+      "size_bytes": 363252
+    },
+    {
+      "path": "Mouse_retina/seed7/R/embedding.npy",
+      "sha256": "27da5df397f347cbe2f47659148feccc83073d91244751a48f346d1cbdffc761",
+      "size_bytes": 1069184
+    },
+    {
+      "path": "Mouse_retina/seed7/R/labels_true.npy",
+      "sha256": "00f32c2d9f1173e6ba2ca19031d2ff0a115cf8bfe341d48ef4e6f5d85dd0e1f9",
+      "size_bytes": 66944
+    },
+    {
+      "path": "Mouse_retina/seed7/R/predictions.npy",
+      "sha256": "2d9a8bc619f3b80af04fa24abab7916afb9d35dbc5deb9b028a96ce43a1da02d",
+      "size_bytes": 66944
+    },
+    {
+      "path": "Mouse_retina/seed7/R/resolved_config.json",
+      "sha256": "8f13df37f60974725b693a3bae71ff13632f4cac3e0ecdafb43830fee14d93b2",
+      "size_bytes": 811
+    },
+    {
+      "path": "Mouse_retina/seed7/R/selected_graph.npz",
+      "sha256": "ab63f8408d2d703832db2734a82dc621b86e77577427be03abbf3b431df1166c",
+      "size_bytes": 719101
+    },
+    {
+      "path": "Mouse_retina/seed7/R/summary.json",
+      "sha256": "874991b45aaec8bdac1619c26a7e101cdb50aecf4b21918da9a8176171f04c21",
+      "size_bytes": 3355
+    },
+    {
+      "path": "Mouse_retina/seed7/R/training_metrics.csv",
+      "sha256": "b2f43825314a75667c0506e1a03d87c26b98359238aec47b447c24f037083d9a",
+      "size_bytes": 6969
+    },
+    {
+      "path": "README.md",
+      "sha256": "dd24f64159cbbdadab2cf2af11a0f69f959f16a8f7a4fa4fa86287633dd18956",
+      "size_bytes": 181
+    },
+    {
+      "path": "resolved_config.json",
+      "sha256": "7f31fd3c1b4d615962e234466ab4809d9969f245d2ebbe99041a4ae098df66f3",
+      "size_bytes": 977
+    },
+    {
+      "path": "s2_dataset_aggregates.json",
+      "sha256": "35b5c0b04203d66502174b93998e87f23e7a9eab236099cd57501ed94db9abb9",
+      "size_bytes": 10901
+    },
+    {
+      "path": "s2_manifest.json",
+      "sha256": "e7a8d23b95195501543bedea3c95beb5476f11cebf797985f09d785bdfc0a431",
+      "size_bytes": 6528
+    },
+    {
+      "path": "s2_summary.json",
+      "sha256": "e64fa7b28b97faad977a47efa4f65599ea08f96d66dea63ea00e292bcd4cf7d0",
+      "size_bytes": 12426
+    }
+  ],
+  "manifest_id": "representation_consumer_probe_s1_artifacts_v1",
+  "root": "/data/luolie/ToPoGate/result/representation_consumer_probe/S2_simple_cut"
+}

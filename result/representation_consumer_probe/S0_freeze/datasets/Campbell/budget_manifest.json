@@ -1,0 +1,10 @@
+{
+  "budget_cap": 8,
+  "effective_budget_hash": "81c2989af8676f3690ee607b7cc3a7324bbd56d45b680fb963662d58bed022ef",
+  "effective_budget_max": 8,
+  "effective_budget_mean": 8.0,
+  "effective_budget_min": 8,
+  "fraction_budget_below_cap": 0.0,
+  "fraction_budget_zero": 0.0,
+  "zero_budget_nodes": 0
+}

@@ -1,0 +1,15 @@
+{
+  "full_evidence_hashes": "EVIDENCE_HASHES.json",
+  "input_data_published": false,
+  "project_id": "relation_selection_probe",
+  "raw_artifacts_published": false,
+  "source_result_roots": [
+    "result/relation_selection_probe/RS0_freeze",
+    "result/relation_selection_probe/RS1_information",
+    "result/relation_selection_probe/RS2_simple_selectors",
+    "result/relation_selection_probe/RS3_decision"
+  ],
+  "status": "weight_free_compact_bundle",
+  "summary": "RESULTS_SUMMARY.json",
+  "weights_published": false
+}

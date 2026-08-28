@@ -1,0 +1,18 @@
+{
+  "H0_sha256": "dae79805c827694841eabf57cbe35ede442900b995a41040cacac9287ec714c4",
+  "dataset": "Campbell",
+  "labels_used": false,
+  "path": "/data/luolie/ToPoGate/result/sparse_corruption_principle_probe/C2_static_matrix/score_artifacts/residual/Campbell/seed42/residual_scores.npy",
+  "physical_gpu": 2,
+  "raw_artifact_local_only": true,
+  "score_kind": "frozen_warmup_residual",
+  "seed": 42,
+  "sha256": "41729989c52ddd2a6a191cdf13dc39c28b8a1362fde8576e289f121d345195c7",
+  "shape": [
+    9993,
+    128
+  ],
+  "stage": "C2_score_preparation",
+  "warmup_epochs": 5,
+  "warmup_seed": 1033
+}

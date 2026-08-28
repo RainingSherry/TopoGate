@@ -1,0 +1,18 @@
+{
+  "source_root": "/tmp/topogate-release-ZvljIr/repo/result/final_results",
+  "source_recursive_sha256": "97e399f41fbe42faa4bf46432bc149da517a1c22b376f975d4e86ce37ed8700e",
+  "generated_at": "2026-08-14T01:12:19.088603+00:00",
+  "row_count_long": 2209,
+  "row_count_wide": 431,
+  "requested_families": [
+    "self",
+    "fixed",
+    "random",
+    "static",
+    "learned",
+    "hard",
+    "assignment-adversarial",
+    "discriminator"
+  ],
+  "pairing_rule": "exact same source batch/dataset/seed/readout/input protocol/budget where raw rows exist; source-reported aggregate pairs are retained only with an explicit paired_delta_scope; otherwise NA"
+}

@@ -1,0 +1,34 @@
+{
+  "audit_ok": true,
+  "audit_type": "local_deterministic_contract_audit",
+  "c2_matrix_authorized": false,
+  "checks": {
+    "c1_b1_metrics_are_post_fit": true,
+    "c1_completed_valid": true,
+    "c1_csv_finite": true,
+    "c1_expected_row_count": true,
+    "c1_no_labels": true,
+    "c1_zero_fit": true,
+    "holdout_audit_ok": true,
+    "holdout_count_minimum": true,
+    "holdout_no_development_overlap": true,
+    "holdout_outcome_features_empty": true,
+    "holdout_runs_locked": true,
+    "no_forbidden_performance_artifacts": true,
+    "toy_all_rows_valid": true,
+    "toy_completed_valid": true,
+    "toy_expected_row_count": true,
+    "toy_no_fit_labels": true
+  },
+  "details": {
+    "c1_nonfinite_fields": [],
+    "c1_rows": 54,
+    "forbidden_performance_artifacts": [],
+    "holdout_selected_count": 12,
+    "toy_rows": 18
+  },
+  "external_review_status": "review_unavailable_no_score",
+  "project_id": "sparse_corruption_principle_probe",
+  "protocol_id": "sparse_corruption_principle_probe_c0_v1",
+  "scientific_performance_claim": false
+}

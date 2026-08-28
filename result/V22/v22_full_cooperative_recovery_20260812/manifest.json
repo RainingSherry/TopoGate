@@ -1,0 +1,66 @@
+{
+  "manifest_id": "v22_full_cooperative_recovery_20260812_v1",
+  "protocol_id": "v22_topology_discriminator_cooperative_keep_gate_v1",
+  "phase": "full_components_single_seed_cooperative_recovery",
+  "description": "Same-protocol recovery of cooperative Full jobs that reached the resource boundary before writing a complete summary.",
+  "variants": [
+    "v22_topology_discriminator_cooperative_keep_gate"
+  ],
+  "seeds": [
+    42
+  ],
+  "epochs": 80,
+  "batch_size": 4096,
+  "selection_policy": {
+    "selection_uses_labels_or_outcomes": false,
+    "labels_used_during_fit": false,
+    "K_used_during_fit": false,
+    "unlabelled_records_excluded_from_ari_aggregate": true,
+    "panel_frozen_before_cooperative_full_results": true,
+    "recovery_selection_uses_labels_or_outcomes": false,
+    "recovery_preserves_variant_seed_epochs_batch_size": true,
+    "recovery_reuses_only_exact_same_dataset_topology_cache": true
+  },
+  "source_manifests": [
+    "datasets/external/v22_full_single_seed_20260812/manifest.json",
+    "datasets/external/v22_dataset_extension_round2_20260812/manifest.json"
+  ],
+  "records": [
+    {
+      "dataset_id": "real_sim__libsvm_sparse_highdim",
+      "name": "real-sim",
+      "stratum": "new_sparse_highdim",
+      "input_protocol": "shared_text",
+      "source_path": "/data/luolie/ToPoGate/datasets/external/v22_dataset_extension_20260812/processed/real_sim.npz",
+      "source_sha256": "12a67087b54af44522b50480a0de417b022d4a5312db42e6a82da1a68eccf62d",
+      "source_archive_sha256": "7cd52374f55ce62e803ef33ca1c44689427c23d481eff64026f8ba9f53b8cc27",
+      "n_samples": 72309,
+      "n_features_original": 20958,
+      "labels_available_outer_only": true,
+      "expected_labels_unique": 2,
+      "k_source": "benchmark_oracle_from_y",
+      "source_manifest": "datasets/external/v22_dataset_extension_20260812/manifest.json"
+    },
+    {
+      "dataset_id": "covtype__libsvm_dense_control",
+      "name": "covtype",
+      "stratum": "new_dense_control",
+      "input_protocol": "clubench_bridge",
+      "source_path": "/data/luolie/ToPoGate/datasets/external/v22_dataset_extension_20260812/processed/covtype.npz",
+      "source_sha256": "bb1eac10dca43a5e29b807f0e7d16c1cba9b49e42923650293c4d0cf80e8c979",
+      "source_archive_sha256": "c0a2544b2740b435d0d51934116c7d4762f4154fa0c032fe9f9b4180717c4acf",
+      "n_samples": 581012,
+      "n_features_original": 54,
+      "labels_available_outer_only": true,
+      "expected_labels_unique": 7,
+      "k_source": "benchmark_oracle_from_y",
+      "source_manifest": "datasets/external/v22_dataset_extension_20260812/manifest.json"
+    }
+  ],
+  "recovery_from_manifest": "/data/luolie/ToPoGate/datasets/external/v22_full_cooperative_single_seed_20260812/manifest.json",
+  "recovery_dataset_ids": [
+    "real_sim__libsvm_sparse_highdim",
+    "covtype__libsvm_dense_control"
+  ],
+  "topology_cache_reuse": "explicit_same_dataset_run_cache_only"
+}

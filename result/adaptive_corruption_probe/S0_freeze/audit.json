@@ -1,0 +1,64 @@
+{
+  "backbone": {
+    "activation": "ReLU",
+    "batch_size": 512,
+    "corruption_rate": 0.25,
+    "decoder_dims": [
+      32,
+      64,
+      "d_eff"
+    ],
+    "encoder_dims": [
+      "d_eff",
+      64,
+      32
+    ],
+    "epochs": 30,
+    "input": "audited_S0_H0",
+    "learning_rate": 0.001,
+    "optimizer": "Adam",
+    "pair_budget_rule": "m_i=min(ceil(rate*active_i), floor(active_i/2), inactive_i); all arms change 2*m_i coordinates",
+    "readout": "clean_embedding_known_K_KMeans",
+    "standardization": "clean_H0_column_mean_std_fit_once_per_dataset",
+    "support_definition": "abs(H0_ij)>=max(1e-6,0.05*row_max_abs)"
+  },
+  "backbone_frozen": true,
+  "base_commit": "c80877cf904e41950315d37b95374825c33a7362",
+  "corruption_rate": 0.25,
+  "corruption_semantics_frozen": true,
+  "cross_track_holdout_disjointness_required": true,
+  "decision_hierarchy_frozen": true,
+  "forbidden_gpu_ids": [
+    0,
+    7
+  ],
+  "formal_performance_run_started": false,
+  "gpu_pool_valid": true,
+  "h0_support_threshold_ratio": 0.05,
+  "hardness_utility_decoupled": true,
+  "holdout_selection_frozen": false,
+  "issues": [],
+  "labels_used_during_fit": false,
+  "level_1_contrast": "ARI(C0_MatchedRandom)-ARI(C_clean_no_corruption)",
+  "level_1_library_contrast": "max_C Delta_clean(C)",
+  "level_2_contrast": "Delta_random(C)=ARI(C)-ARI(C0_MatchedRandom)",
+  "level_2_structured_arms": [
+    "C1_ValueOnly",
+    "C2_SupportOnly",
+    "C3_MixedMatched",
+    "C4_StaticHard"
+  ],
+  "level_3_minimum_distinct_role_winners": 2,
+  "level_3_minimum_material_delta_random": 0.03,
+  "matching_fields_frozen": true,
+  "old_projects_terminal_read_only": true,
+  "pair_budget_rule": "m_i=min(ceil(rate*active_i), floor(active_i/2), inactive_i); all arms change 2*m_i coordinates",
+  "positive_control_required_before_null": true,
+  "project_id": "adaptive_corruption_probe",
+  "random_corruption_sufficient_label": "random_corruption_sufficient",
+  "raw_artifacts_published": false,
+  "roles_frozen_before_outcomes": true,
+  "simple_principle_minimum_material_datasets": 2,
+  "stage": "S0",
+  "status": "completed_valid"
+}

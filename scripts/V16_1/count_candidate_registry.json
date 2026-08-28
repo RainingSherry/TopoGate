@@ -1,0 +1,324 @@
+{
+  "Bach": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/scMAE/Bach.h5",
+    "matrix_key": "X",
+    "label_key": "Y",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench scMAE H5 source; X/Y fields",
+    "source_state": "available_local"
+  },
+  "Baron": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/scMAE/Baron.h5",
+    "matrix_key": "X",
+    "label_key": "Y",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench scMAE H5 source; X/Y fields",
+    "source_state": "available_local"
+  },
+  "Guo": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/scMAE/Guo.h5",
+    "matrix_key": "X",
+    "label_key": "Y",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench scMAE H5 source; X/Y fields",
+    "source_state": "available_local"
+  },
+  "hrvatin_geo_maintype_counts": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/hrvatin_geo_maintype_counts.h5ad",
+    "matrix_key": "layers/counts",
+    "label_key": "maintype",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench H5AD source; explicit integer layers.counts and obs.maintype benchmark labels",
+    "source_state": "available_local",
+    "input_format": "h5ad"
+  },
+  "Norman_perturb_e_distance": {
+    "source_path": "/data/luolie/biopipeline/PRESCRIBE/data/norman/perturb_e_distance.h5ad",
+    "matrix_key": "layers/counts",
+    "label_key": "condition",
+    "count_semantics": "raw_count",
+    "semantics_source": "local PRESCRIBE H5AD source; explicit integer layers.counts and obs.condition perturbation labels",
+    "source_state": "available_local",
+    "input_format": "h5ad"
+  },
+  "Limb_Muscle": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/scMAE/Limb_Muscle.h5",
+    "matrix_key": "X",
+    "label_key": "Y",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench scMAE H5 source; X/Y fields",
+    "source_state": "available_local"
+  },
+  "Macosko": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/scMAE/Macosko.h5",
+    "matrix_key": "X",
+    "label_key": "Y",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench scMAE H5 source; X/Y fields",
+    "source_state": "available_local"
+  },
+  "Melanoma_5K": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/scMAE/Melanoma_5K.h5",
+    "matrix_key": "X",
+    "label_key": "Y",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench scMAE H5 source; X/Y fields",
+    "source_state": "available_local"
+  },
+  "Quake_10x_Spleen": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/scMAE/Quake_10x_Spleen.h5",
+    "matrix_key": "X",
+    "label_key": "Y",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench scMAE H5 source; X/Y fields",
+    "source_state": "available_local"
+  },
+  "Quake_Smart-seq2_Lung": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/scMAE/Quake_Smart-seq2_Lung.h5",
+    "matrix_key": "X",
+    "label_key": "Y",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench scMAE H5 source; X/Y fields",
+    "source_state": "available_local"
+  },
+  "Shekhar": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/scMAE/Shekhar.h5",
+    "matrix_key": "X",
+    "label_key": "Y",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench scMAE H5 source; X/Y fields",
+    "source_state": "available_local"
+  },
+  "Tosches": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/scMAE/Tosches.h5",
+    "matrix_key": "X",
+    "label_key": "Y",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench scMAE H5 source; X/Y fields",
+    "source_state": "available_local"
+  },
+  "Wang": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/scMAE/Wang.h5",
+    "matrix_key": "X",
+    "label_key": "Y",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench scMAE H5 source; X/Y fields",
+    "source_state": "available_local"
+  },
+  "Young": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/scMAE/Young.h5",
+    "matrix_key": "X",
+    "label_key": "Y",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench scMAE H5 source; X/Y fields",
+    "source_state": "available_local"
+  },
+  "SRP182008": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/SRP182008.h5ad",
+    "matrix_key": "X",
+    "label_key": "Celltype",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench H5AD source; integer X and obs.Celltype",
+    "source_state": "available_local",
+    "input_format": "h5ad"
+  },
+  "SRP224648": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/SRP224648.h5ad",
+    "matrix_key": "X",
+    "label_key": "Celltype",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench H5AD source; integer X and obs.Celltype",
+    "source_state": "available_local",
+    "input_format": "h5ad"
+  },
+  "CRA002977_1": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/CRA002977_1.h5ad",
+    "matrix_key": "X",
+    "label_key": "Celltype",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench H5AD source; integer X and obs.Celltype",
+    "source_state": "available_local",
+    "input_format": "h5ad"
+  },
+  "Mouse_Pancreas_1": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/其他/Mouse_Pancreas_1.h5ad",
+    "matrix_key": "X",
+    "label_key": "cell_type",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench H5AD source; integer X and obs.cell_type",
+    "source_state": "available_local",
+    "input_format": "h5ad"
+  },
+  "Human_Pancreas_3": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/其他/Human_Pancreas_3.h5ad",
+    "matrix_key": "X",
+    "label_key": "cell_type",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench H5AD source; integer X and obs.cell_type",
+    "source_state": "available_local",
+    "input_format": "h5ad"
+  },
+  "Human_Pancreas_1": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/其他/Human_Pancreas_1.h5ad",
+    "matrix_key": "X",
+    "label_key": "cell_type",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench H5AD source; integer X and obs.cell_type",
+    "source_state": "available_local",
+    "input_format": "h5ad"
+  },
+  "Bone_Marrow": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/其他/Bone_Marrow.h5ad",
+    "matrix_key": "X",
+    "label_key": "cell_type",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench H5AD source; integer X and obs.cell_type",
+    "source_state": "available_local",
+    "input_format": "h5ad"
+  },
+  "Blood_BoneMarrow": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/其他/Blood_BoneMarrow.h5ad",
+    "matrix_key": "X",
+    "label_key": "cell_type",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench H5AD source; integer X and obs.cell_type",
+    "source_state": "available_local",
+    "input_format": "h5ad"
+  },
+  "TabulaSapiens_Pancreas": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/其他/TabulaSapiens_Pancreas.h5ad",
+    "matrix_key": "X",
+    "label_key": "cell_type",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench H5AD source; integer X and obs.cell_type",
+    "source_state": "available_local",
+    "input_format": "h5ad"
+  },
+  "PRJNA895163": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/其他/PRJNA895163.h5ad",
+    "matrix_key": "X",
+    "label_key": "seurat_clusters",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench H5AD source; integer X and obs.seurat_clusters",
+    "source_state": "available_local",
+    "input_format": "h5ad"
+  },
+  "Pollen": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/scMAE/Pollen.h5",
+    "matrix_key": "X",
+    "label_key": "Y",
+    "count_semantics": "normalized_noninteger",
+    "semantics_source": "local scCluBench source; non-integer normalized values observed",
+    "source_state": "available_local",
+    "input_format": "h5"
+  },
+  "PBMC_68K": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/excluded_data/PBMC_68K.h5ad",
+    "matrix_key": "X",
+    "label_key": "cell_type",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench excluded H5AD source; integer X and obs.cell_type",
+    "source_state": "available_local",
+    "input_format": "h5ad"
+  },
+  "Mouse_Pancreas_2": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/excluded_data/Mouse_Pancreas_2.h5ad",
+    "matrix_key": "X",
+    "label_key": "cell_type",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench excluded H5AD source; integer X and obs.cell_type",
+    "source_state": "available_local",
+    "input_format": "h5ad"
+  },
+  "Human_Pancreas_2": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/excluded_data/Human_Pancreas_2.h5ad",
+    "matrix_key": "X",
+    "label_key": "cell_type",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench excluded H5AD source; integer X and obs.cell_type",
+    "source_state": "available_local",
+    "input_format": "h5ad"
+  },
+  "Human_Pancreas_4": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/excluded_data/Human_Pancreas_4.h5ad",
+    "matrix_key": "X",
+    "label_key": "cell_type",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench excluded H5AD source; integer X and obs.cell_type",
+    "source_state": "available_local",
+    "input_format": "h5ad"
+  },
+  "PBMC_multimodal_RNA": {
+    "source_path": "/data/luolie/biopipeline/dimension-reduction/scSSL-Bench/data/PBMC_multimodal/adata_RNA_full.h5ad",
+    "matrix_key": "layers/counts",
+    "label_key": "cell_type_l1",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scSSL-Bench H5AD source; integer layers.counts and obs.cell_type_l1",
+    "source_state": "available_local",
+    "input_format": "h5ad"
+  },
+  "PBMC3K": {
+    "source_path": "/data/luolie/biopipeline/test-datasets/test-datasets-modules/data/genomics/homo_sapiens/scrnaseq/h5ad/pbmc3k.h5ad",
+    "matrix_key": "raw.X",
+    "label_key": "louvain",
+    "count_semantics": "log1p_count",
+    "semantics_source": "local scanpy PBMC3K H5AD; raw.X is recoverable log1p(count) and obs.louvain supplies the benchmark labels",
+    "source_state": "available_local",
+    "input_format": "h5ad",
+    "domain_note": "PBMC3K public louvain annotation; count view recovered from raw.X"
+  },
+  "HCA_subsampled_20k": {
+    "source_path": "/data/luolie/biopipeline/ScienceAgentBench/benchmark/datasets/hca/hca_subsampled_20k.h5ad",
+    "matrix_key": "X",
+    "label_key": "cell_type",
+    "count_semantics": "raw_count",
+    "semantics_source": "local HCA subset H5AD; sampled X nonzeros are non-negative integers and obs.cell_type has 13 categories",
+    "source_state": "available_local",
+    "input_format": "h5ad"
+  },
+  "Paul15": {
+    "source_path": "/data/luolie/biopipeline/dimension-reduction/scCluBench-main/DeepLearning/desc/desc/original/paul15_cluster.h5ad",
+    "matrix_key": "X",
+    "label_key": "paul15_clusters",
+    "count_semantics": "raw_count",
+    "semantics_source": "local Paul15 H5AD; sampled X values are non-negative integers and obs.paul15_clusters is the supplied benchmark label",
+    "source_state": "available_local",
+    "input_format": "h5ad"
+  },
+  "Arabidopsis_Stereo_seq_leaf": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/excluded_data/Arabidopsis_Stereo-seq_leaf.h5ad",
+    "matrix_key": "X",
+    "label_key": "cell_type",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench H5AD report identifies raw count structure; sampled X nonzeros are non-negative integers and obs.cell_type has 6 categories",
+    "source_state": "available_local",
+    "input_format": "h5ad"
+  },
+  "worm_neuron_cell": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/scMAE/worm_neuron_cell.h5",
+    "matrix_key": "X",
+    "label_key": "Y",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench scMAE H5 source; X/Y fields",
+    "source_state": "available_local"
+  },
+  "subsample_2k": {
+    "source_path": "/data/luolie/biopipeline/scCluBench/data/subsample_2k.h5ad",
+    "matrix_key": "X",
+    "label_key": "cell_type",
+    "count_semantics": "raw_count",
+    "semantics_source": "local scCluBench H5AD source; integer X and obs.cell_type",
+    "source_state": "available_local",
+    "input_format": "h5ad"
+  },
+  "NormanWeissman2019_perturbation": {
+    "source_path": "/data/luolie/biopipeline/PRESCRIBE/data/NormanWeissman2019_filtered.h5ad",
+    "matrix_key": "X",
+    "label_key": "perturbation",
+    "count_semantics": "raw_count",
+    "semantics_source": "local PRESCRIBE H5AD source; CSR X contains integer UMI counts and obs.perturbation has 237 perturbation conditions",
+    "source_state": "available_local",
+    "input_format": "h5ad",
+    "domain_note": "perturb-seq control; not a natural cell-type benchmark"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "K": 9,
+  "K_source": "benchmark_oracle_from_y",
+  "K_used_in_readout": true,
+  "K_used_in_representation": false,
+  "arm": "O_full",
+  "consumer": "SimpleCut",
+  "cuda_visible_devices": "3",
+  "dataset": "Baron Human",
+  "encoder_dims": [
+    64,
+    32
+  ],
+  "epochs": 80,
+  "execution_device": "cuda",
+  "forbidden_gpu_ids": [
+    0,
+    7
+  ],
+  "labels_used_during_fit": false,
+  "lambda_orth": 1.0,
+  "lambda_var": 0.1,
+  "learning_rate": 0.001,
+  "legal_gpu_pool": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "physical_gpu": 3,
+  "project_id": "representation_consumer_probe",
+  "protocol_id": "representation_consumer_probe_s2_opportunity_simplecut_v1",
+  "s1_graph_protocol_id": "representation_consumer_probe_s1_opportunity_spectral_v2",
+  "seed": 123,
+  "v_min": 0.0001,
+  "weight_decay": 0.0
+}

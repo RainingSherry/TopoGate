@@ -1,0 +1,44 @@
+{
+  "generated_at": "2026-08-12T03:46:41.541633+00:00",
+  "manifest_id": "v22_full_cooperative_recovery_20260812_v1",
+  "protocol_id": "v22_topology_discriminator_cooperative_keep_gate_v1",
+  "queue_status": "completed",
+  "job_count": 1,
+  "status_counts": {
+    "completed": 1
+  },
+  "audit_ok_count": 1,
+  "strata": {
+    "new_sparse_highdim": {
+      "completed_with_ari": 1,
+      "mean_ari": 0.022822483186601964
+    }
+  },
+  "claim_boundary": "single-seed full-component evidence; no cross-dataset efficacy claim",
+  "rows": [
+    {
+      "run_key": "real_sim__libsvm_sparse_highdim::v22_topology_discriminator_cooperative_keep_gate::seed42",
+      "dataset_id": "real_sim__libsvm_sparse_highdim",
+      "dataset": "real-sim",
+      "stratum": "new_sparse_highdim",
+      "status": "completed",
+      "artifact_ok": true,
+      "missing": [],
+      "labels_used_during_fit": false,
+      "K_used_during_fit": false,
+      "K_source": "benchmark_oracle_from_y",
+      "n_samples": 72309,
+      "n_features": 2000,
+      "ari": 0.022822483186601964,
+      "nmi": 0.0033859200196960162,
+      "acc": 0.6697506534456292,
+      "discriminator_steps": 1440,
+      "gate_updates": 1440,
+      "gate_nonzero_update_rate": 1.0,
+      "effective_mask_rate_last": 0.008005582003129853,
+      "d_real_accuracy_last": 0.6998345255851746,
+      "d_gate_fake_accuracy_last": 0.6986095541053348,
+      "d_scmae_fake_accuracy_last": 0.7624291810724471
+    }
+  ]
+}

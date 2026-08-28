@@ -1,0 +1,20 @@
+{
+  "existing_edge_membership_symbol": false,
+  "feature_gate_forward_present": true,
+  "feature_gate_semantics": "feature-coordinate scores; not sample-edge membership",
+  "forbidden_repairs": [
+    "new_aggregation",
+    "new_threshold",
+    "trainable_mapping",
+    "human_rule"
+  ],
+  "paths": {
+    "graph": "/home/luolie/ToPoGate/methods/TopoGate/V21_assignment_adversarial_gate/graph.py",
+    "model": "/home/luolie/ToPoGate/methods/TopoGate/V21_assignment_adversarial_gate/model.py",
+    "trainer": "/home/luolie/ToPoGate/methods/TopoGate/V21_assignment_adversarial_gate/trainer.py"
+  },
+  "reason": "no faithful feature-mask_to_sample-edge mapping exists in the current code boundary",
+  "semantic_fidelity_required": true,
+  "source_parse_ok": true,
+  "status": "adapter_not_estimable"
+}

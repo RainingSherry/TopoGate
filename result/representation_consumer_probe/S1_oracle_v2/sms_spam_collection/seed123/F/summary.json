@@ -1,0 +1,52 @@
+{
+  "H0_sha256": "0638e032615153739cf1af5b3c310d2015ff534b64c1dcdcd55fd01935c2b3a1",
+  "K": 2,
+  "K_source": "benchmark_oracle_from_y",
+  "arm": "F",
+  "artifacts": {
+    "embedding": "/data/luolie/ToPoGate/result/representation_consumer_probe/S1_oracle_v2/sms_spam_collection/seed123/F/embedding.npy",
+    "labels_true": "/data/luolie/ToPoGate/result/representation_consumer_probe/S1_oracle_v2/sms_spam_collection/seed123/F/labels_true.npy",
+    "predictions": "/data/luolie/ToPoGate/result/representation_consumer_probe/S1_oracle_v2/sms_spam_collection/seed123/F/predictions.npy"
+  },
+  "budget_profile": {
+    "budget_cap": 8,
+    "effective_budget_hash": "80f0142bcdeae7c87911f90a2b83dd80a974614365c21be6244d5283c9cd1032",
+    "effective_budget_max": 8,
+    "effective_budget_mean": 7.616766467065868,
+    "effective_budget_min": 0,
+    "fraction_budget_below_cap": 0.04790419161676647,
+    "fraction_budget_zero": 0.04790419161676647,
+    "zero_budget_nodes": 40
+  },
+  "consumer": "Spectral",
+  "consumer_metadata": {
+    "K_used_in_readout": true,
+    "K_used_in_representation": false,
+    "consumer": "FeatureOnlyKMeans",
+    "kmeans_n_init": 20,
+    "kmeans_random_state": 123,
+    "labels_vector_used_in_fit": false,
+    "status": "completed"
+  },
+  "dataset": "sms_spam_collection",
+  "execution_status": "completed",
+  "feature_only_input": "H0_raw",
+  "graph_diagnostics": {
+    "graph_condition": "none"
+  },
+  "graph_hash": null,
+  "labels_used_during_fit": false,
+  "labels_used_for_outer_metrics": true,
+  "labels_vector_used_in_fit": false,
+  "metrics": {
+    "ACC": 0.8718562874251496,
+    "ARI": 0.06370225628171049,
+    "NMI": 0.05639624939567758
+  },
+  "project_id": "representation_consumer_probe",
+  "protocol_id": "representation_consumer_probe_s1_opportunity_spectral_v2",
+  "seed": 123,
+  "source_path": "/data/luolie/ToPoGate/datasets/sms_spam_collection.npz",
+  "source_sha256": "1d9c068c43dc4f58e759169906dae9dff0ac6a8def7315ce7e4989a3b28d7070",
+  "status": "completed_valid"
+}

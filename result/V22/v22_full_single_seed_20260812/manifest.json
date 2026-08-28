@@ -1,0 +1,199 @@
+{
+  "manifest_id": "v22_full_single_seed_20260812_v1",
+  "protocol_id": "v22_topology_discriminator_hard_mask_v1",
+  "phase": "full_components_single_seed",
+  "description": "Frozen V22 full-component panel: original eight benchmark inputs plus the four downloaded extension inputs.",
+  "variants": [
+    "v22_topology_discriminator_hard_gate"
+  ],
+  "seeds": [
+    42
+  ],
+  "selection_uses_labels_or_outcomes": false,
+  "labels_used_during_fit": false,
+  "readout": "clean_embedding_kmeans",
+  "feature_cap": 2000,
+  "gpu_policy": {
+    "allowed_physical_gpus": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "forbidden_physical_gpus": [
+      0,
+      7
+    ],
+    "max_jobs_per_gpu": 1,
+    "minimum_free_mib": 12000
+  },
+  "records": [
+    {
+      "dataset_id": "cnae9__shared_text",
+      "name": "cnae9",
+      "stratum": "original8_shared_text",
+      "input_protocol": "shared_text",
+      "source_path": "/data/luolie/ToPoGate/datasets/cnae9.npz",
+      "source_sha256": "e3a22bcfa761a837b8881a3a1966f6008d911b77948b76a4e4a8ca2aae65a71e",
+      "n_samples": 1080,
+      "n_features_original": 856,
+      "labels_available_outer_only": true,
+      "expected_labels_unique": 9,
+      "k_source": "benchmark_oracle_from_y"
+    },
+    {
+      "dataset_id": "mouse_retina__clubench_bridge",
+      "name": "Mouse_retina",
+      "stratum": "original8_clubench_bridge",
+      "input_protocol": "clubench_bridge",
+      "source_path": "/data/luolie/ToPoGate/datasets/Mouse_retina.npz",
+      "source_sha256": "d3bc2eb08d95acd12d324f668c537ae4208de57c355862f8e5800d4ba1e727c1",
+      "n_samples": 8352,
+      "n_features_original": 6198,
+      "labels_available_outer_only": true,
+      "expected_labels_unique": 5,
+      "k_source": "benchmark_oracle_from_y"
+    },
+    {
+      "dataset_id": "baron_human__clubench_bridge",
+      "name": "Baron Human",
+      "stratum": "original8_clubench_bridge",
+      "input_protocol": "clubench_bridge",
+      "source_path": "/data/luolie/ToPoGate/datasets/Baron Human.npz",
+      "source_sha256": "99c5bb7a272f5b22d64949179c6d49b4b52220670f3a7cef38e9e405902249d8",
+      "n_samples": 8451,
+      "n_features_original": 20125,
+      "labels_available_outer_only": true,
+      "expected_labels_unique": 9,
+      "k_source": "benchmark_oracle_from_y"
+    },
+    {
+      "dataset_id": "campbell__clubench_bridge",
+      "name": "Campbell",
+      "stratum": "original8_clubench_bridge",
+      "input_protocol": "clubench_bridge",
+      "source_path": "/data/luolie/ToPoGate/datasets/Campbell.npz",
+      "source_sha256": "f26c9568baf8e8fade7a61e6fed80f16ceb3980afe38b7c9ccbe9aaad2b96e04",
+      "n_samples": 9993,
+      "n_features_original": 26774,
+      "labels_available_outer_only": true,
+      "expected_labels_unique": 14,
+      "k_source": "benchmark_oracle_from_y"
+    },
+    {
+      "dataset_id": "sms_spam_collection__shared_text",
+      "name": "sms_spam_collection",
+      "stratum": "original8_shared_text",
+      "input_protocol": "shared_text",
+      "source_path": "/data/luolie/ToPoGate/datasets/sms_spam_collection.npz",
+      "source_sha256": "1d9c068c43dc4f58e759169906dae9dff0ac6a8def7315ce7e4989a3b28d7070",
+      "n_samples": 835,
+      "n_features_original": 500,
+      "labels_available_outer_only": true,
+      "expected_labels_unique": 2,
+      "k_source": "benchmark_oracle_from_y"
+    },
+    {
+      "dataset_id": "hate_speech__shared_text",
+      "name": "hate_speech",
+      "stratum": "original8_shared_text",
+      "input_protocol": "shared_text",
+      "source_path": "/data/luolie/ToPoGate/datasets/hate_speech.npz",
+      "source_sha256": "c39fc08366c0423b8a2f4e3543df6d5b06f2e0b065813e120263b99e7d1e44bb",
+      "n_samples": 3221,
+      "n_features_original": 100,
+      "labels_available_outer_only": true,
+      "expected_labels_unique": 3,
+      "k_source": "benchmark_oracle_from_y"
+    },
+    {
+      "dataset_id": "imdb__shared_text",
+      "name": "imdb",
+      "stratum": "original8_shared_text",
+      "input_protocol": "shared_text",
+      "source_path": "/data/luolie/ToPoGate/datasets/imdb.npz",
+      "source_sha256": "2b4e1db921dbe16c094844ada1f02f36bcc6781886f8c3a07830776de84200cc",
+      "n_samples": 3250,
+      "n_features_original": 700,
+      "labels_available_outer_only": true,
+      "expected_labels_unique": 2,
+      "k_source": "benchmark_oracle_from_y"
+    },
+    {
+      "dataset_id": "sentiment_labeld_sentences__shared_text",
+      "name": "sentiment_labeld_sentences",
+      "stratum": "original8_shared_text",
+      "input_protocol": "shared_text",
+      "source_path": "/data/luolie/ToPoGate/datasets/sentiment_labeld_sentences.npz",
+      "source_sha256": "8f5363cdbad8dcd77cbcac71306c1ddcfbd71d386d37a096b4d765c316845051",
+      "n_samples": 2748,
+      "n_features_original": 200,
+      "labels_available_outer_only": true,
+      "expected_labels_unique": 2,
+      "k_source": "benchmark_oracle_from_y"
+    },
+    {
+      "dataset_id": "sector__libsvm_sparse_highdim",
+      "name": "sector",
+      "stratum": "new_sparse_highdim",
+      "input_protocol": "shared_text",
+      "source_path": "/data/luolie/ToPoGate/datasets/external/v22_dataset_extension_20260812/processed/sector.npz",
+      "source_sha256": "ad0142398c446988acd0e4a4f8337337ee7f7d3afe8215a5ec2811a1b1024912",
+      "source_archive_sha256": "cba3d66eed97803665eeb76379fe9d9955712ea0e5c61d7003f644713ed842b5",
+      "n_samples": 6412,
+      "n_features_original": 55197,
+      "labels_available_outer_only": true,
+      "expected_labels_unique": 105,
+      "k_source": "benchmark_oracle_from_y",
+      "source_manifest": "datasets/external/v22_dataset_extension_20260812/manifest.json"
+    },
+    {
+      "dataset_id": "real_sim__libsvm_sparse_highdim",
+      "name": "real-sim",
+      "stratum": "new_sparse_highdim",
+      "input_protocol": "shared_text",
+      "source_path": "/data/luolie/ToPoGate/datasets/external/v22_dataset_extension_20260812/processed/real_sim.npz",
+      "source_sha256": "12a67087b54af44522b50480a0de417b022d4a5312db42e6a82da1a68eccf62d",
+      "source_archive_sha256": "7cd52374f55ce62e803ef33ca1c44689427c23d481eff64026f8ba9f53b8cc27",
+      "n_samples": 72309,
+      "n_features_original": 20958,
+      "labels_available_outer_only": true,
+      "expected_labels_unique": 2,
+      "k_source": "benchmark_oracle_from_y",
+      "source_manifest": "datasets/external/v22_dataset_extension_20260812/manifest.json"
+    },
+    {
+      "dataset_id": "covtype__libsvm_dense_control",
+      "name": "covtype",
+      "stratum": "new_dense_control",
+      "input_protocol": "clubench_bridge",
+      "source_path": "/data/luolie/ToPoGate/datasets/external/v22_dataset_extension_20260812/processed/covtype.npz",
+      "source_sha256": "bb1eac10dca43a5e29b807f0e7d16c1cba9b49e42923650293c4d0cf80e8c979",
+      "source_archive_sha256": "c0a2544b2740b435d0d51934116c7d4762f4154fa0c032fe9f9b4180717c4acf",
+      "n_samples": 581012,
+      "n_features_original": 54,
+      "labels_available_outer_only": true,
+      "expected_labels_unique": 7,
+      "k_source": "benchmark_oracle_from_y",
+      "source_manifest": "datasets/external/v22_dataset_extension_20260812/manifest.json"
+    },
+    {
+      "dataset_id": "pbmc3k__10x_unlabelled_count",
+      "name": "PBMC3k",
+      "stratum": "new_scRNA_unlabelled",
+      "input_protocol": "scRNA_count",
+      "source_path": "/data/luolie/ToPoGate/datasets/external/v22_dataset_extension_20260812/processed/PBMC3k.npz",
+      "source_sha256": "b853edc29056d479302e15975e763bfd5a09323a89a0bc043dc2f9031cbc0617",
+      "source_archive_sha256": "847d6ebd9a1ec9a768f2be7e40ca42cbfe75ebeb6d76a4c24167041699dc28b5",
+      "n_samples": 2700,
+      "n_features_original": 32738,
+      "labels_available_outer_only": false,
+      "expected_labels_unique": null,
+      "n_clusters": 8,
+      "k_source": "explicit_n_clusters",
+      "source_manifest": "datasets/external/v22_dataset_extension_20260812/manifest.json"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "protocol_id": "v25_paper_figures_v1",
+  "generated_at": "2026-08-15T02:30:07.001070+00:00",
+  "evidence_dir": "/data/luolie/ToPoGate/result/V25_systematic_mechanism_study/PaperEvidence",
+  "sources": {
+    "atlas_version_family.csv": {
+      "sha256": "dede3b26808c7dc05bdec2def4a4a9250218cbd3d19ce3c342d60fd790e76aa0",
+      "rows": 21
+    },
+    "e1_dataset_effects.csv": {
+      "sha256": "7a14201985f58cf6dcc4a8bf18a1809ceaa32c16c8b432bb41551610106d65bf",
+      "rows": 6
+    },
+    "e1_pair_effects.csv": {
+      "sha256": "f70d817684fb6f4326221cbfa37a14f2e4042d0cef6c70b1d88aca0809f3f83c",
+      "rows": 9
+    },
+    "e2_gradient_geometry.csv": {
+      "sha256": "45b672e8dc2f8ca2414008164e9fef53eba8169a8aaacaf989e5c45e9877bbd3",
+      "rows": 27
+    },
+    "local_global_boundary.csv": {
+      "sha256": "d58c7bca881f2d04efdb45e80aa87f659258403b524c2f4a18c7acdafaa4014f",
+      "rows": 6
+    }
+  },
+  "figures": [
+    "figures/V25_Figure1_failure_atlas.png",
+    "figures/V25_Figure2_mechanism_chain.png",
+    "figures/V25_Figure3_e1_selectivity.png",
+    "figures/V25_Figure4_diagnostics.png",
+    "figures/V25_Figure5_local_global_boundary.png"
+  ],
+  "figure_assets": [
+    "figures/V25_Figure1_failure_atlas.png",
+    "figures/V25_Figure1_failure_atlas.pdf",
+    "figures/V25_Figure1_failure_atlas.svg",
+    "figures/V25_Figure2_mechanism_chain.png",
+    "figures/V25_Figure2_mechanism_chain.pdf",
+    "figures/V25_Figure2_mechanism_chain.svg",
+    "figures/V25_Figure3_e1_selectivity.png",
+    "figures/V25_Figure3_e1_selectivity.pdf",
+    "figures/V25_Figure3_e1_selectivity.svg",
+    "figures/V25_Figure4_diagnostics.png",
+    "figures/V25_Figure4_diagnostics.pdf",
+    "figures/V25_Figure4_diagnostics.svg",
+    "figures/V25_Figure5_local_global_boundary.png",
+    "figures/V25_Figure5_local_global_boundary.pdf",
+    "figures/V25_Figure5_local_global_boundary.svg"
+  ],
+  "figure_formats": [
+    "png",
+    "pdf",
+    "svg"
+  ],
+  "claim_scope": {
+    "atlas": "observational V1-V22; rows are repeated records within dataset/protocol/readout units",
+    "e1": "conditional heterogeneous audited V21 case study; dataset means over three seeds",
+    "local_global": "V23 boundary evidence; not pooled with the V1-V22 intervention atlas",
+    "holdout": "not represented; Phase D is inconclusive_not_completed"
+  }
+}

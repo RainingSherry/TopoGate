@@ -1,0 +1,8 @@
+protocol_id: v22_topology_discriminator_controls_v1
+variant: scmae_always_visible
+epochs: 80
+batch_size: 128
+hidden_size: 128
+feature_cap: 2000
+random_mask_ratio: 0.0
+adversarial_mask_ratio: 0.25

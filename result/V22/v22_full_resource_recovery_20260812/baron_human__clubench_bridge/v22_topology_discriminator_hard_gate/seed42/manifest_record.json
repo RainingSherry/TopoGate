@@ -1,0 +1,16 @@
+{
+  "dataset_id": "baron_human__clubench_bridge",
+  "name": "Baron Human",
+  "stratum": "original8_clubench_bridge",
+  "input_protocol": "clubench_bridge",
+  "source_path": "/data/luolie/ToPoGate/datasets/Baron Human.npz",
+  "source_sha256": "99c5bb7a272f5b22d64949179c6d49b4b52220670f3a7cef38e9e405902249d8",
+  "n_samples": 8451,
+  "n_features_original": 20125,
+  "labels_available_outer_only": true,
+  "expected_labels_unique": 9,
+  "k_source": "benchmark_oracle_from_y",
+  "run_key": "baron_human__clubench_bridge::v22_topology_discriminator_hard_gate::seed42",
+  "batch_size": 4096,
+  "topology_cache_source": "result/V22/v22_full_single_seed_20260812/baron_human__clubench_bridge/v22_topology_discriminator_hard_gate/seed42/cache"
+}

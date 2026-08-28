@@ -1,0 +1,94 @@
+{
+  "protocol_id": "v25_closure_artifacts_v1",
+  "study": "V25_systematic_mechanism_study",
+  "source_root": "result/V25_systematic_mechanism_study",
+  "output_root": "result/V25_systematic_mechanism_study",
+  "outputs": [
+    "V25_GAP_MAP.md",
+    "V25_GAP_MAP.csv",
+    "failure_localization_taxonomy.csv",
+    "E1_MECHANISM_SUMMARY.csv",
+    "V25_NEXT_SERIES_DECISION.md"
+  ],
+  "e1_dataset_count": 6,
+  "taxonomy_row_count": 25,
+  "gap_row_count": 10,
+  "holdout_status": "inconclusive_not_completed",
+  "closure_decision": "close_without_v26",
+  "a2_decision": "retain_e1",
+  "weight_free": true,
+  "source_manifest": {
+    "A0/registry_summary.json": {
+      "exists": true,
+      "sha256": "d005a28407497306db1734d6e9a75c863ed55dc4de5e5f9cf24c9e5a45584f67"
+    },
+    "A0/mechanism_evidence_registry.csv": {
+      "exists": true,
+      "sha256": "016e29d6d7058ac1abed84ce4ba088ece8307460d21114865b30e62fa717f28c"
+    },
+    "A0/V23_V24_boundary_evidence.csv": {
+      "exists": true,
+      "sha256": "0fa90e1eb008975c204b89cd9709a07afd766ee125cddf9898c86bb6285e2279"
+    },
+    "A1/a1_summary.json": {
+      "exists": true,
+      "sha256": "2c3d71d8b54bc7c268fb38a85913908e523d6e356f4f1bfab5f3a2ef6a72d633"
+    },
+    "A1/failure_atlas.csv": {
+      "exists": true,
+      "sha256": "ebf4a972a556b1e14975902f43322286b5abe1215310f8d834c6eb6e7891001c"
+    },
+    "A2/A2_decision.json": {
+      "exists": true,
+      "sha256": "5e2ca827ca87f9c8f2b583fac9c86b1296b8c7edfd87d24795eccb6152435245"
+    },
+    "E1/pilot/Audit/phase_summary.json": {
+      "exists": true,
+      "sha256": "a0c363c722c51b7af7fad9cdd18ddb810f097f8a5adfc01239a8b379b226ae83"
+    },
+    "E1/confirmation/Audit/phase_summary.json": {
+      "exists": true,
+      "sha256": "c5dce7c0c0b2c178dc23d1198fe874d9ab62746f58ea44cdb4d7fb4da441545b"
+    },
+    "E1/confirmation/Audit/e2_feature_audit.json": {
+      "exists": true,
+      "sha256": "83715c8ed845bcf372413d0743de3a11c3c96e63edf2936c8b4aee16b93ee86e"
+    },
+    "PhaseE/closure.json": {
+      "exists": true,
+      "sha256": "062ca3bc4b2002457113cc3365410738035d27b21d563f943e7ad83dcc6bf798"
+    }
+  },
+  "audit": {
+    "e1_exactly_six_datasets": true,
+    "taxonomy_covers_v1_v24": {
+      "V1": true,
+      "V2": true,
+      "V3": true,
+      "V4": true,
+      "V5": true,
+      "V6": true,
+      "V7": true,
+      "V8": true,
+      "V9": true,
+      "V10": true,
+      "V11": true,
+      "V12": true,
+      "V13": true,
+      "V14": true,
+      "V15": true,
+      "V16": true,
+      "V17": true,
+      "V18": true,
+      "V19": true,
+      "V20": true,
+      "V21": true,
+      "V22": true,
+      "V23": true,
+      "V24": true
+    },
+    "taxonomy_stages_allowed": true,
+    "holdout_not_negative": true,
+    "closure_without_v26": true
+  }
+}

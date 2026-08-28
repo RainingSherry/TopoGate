@@ -1,0 +1,43 @@
+{
+  "budget_profile": {
+    "budget_cap": 8,
+    "effective_budget_hash": "93d9ad6d95b7f05cccb949c6959407a9a177294786a2a22fde027586a25b7ec0",
+    "effective_budget_max": 8,
+    "effective_budget_mean": 7.992592592592593,
+    "effective_budget_min": 0,
+    "fraction_budget_below_cap": 0.000925925925925926,
+    "fraction_budget_zero": 0.000925925925925926,
+    "zero_budget_nodes": 1
+  },
+  "candidate_pool_graph": {
+    "candidate_recall_at_b_mean": 0.9292168674698795,
+    "candidate_recall_at_b_rows": 1079,
+    "connected_components": 2,
+    "degree_cv": 0.47335764826318416,
+    "degree_mean": 12.434281584289339,
+    "degree_std": 5.885862288581421,
+    "edge_count": 29544,
+    "edge_purity": 0.7047116165718927,
+    "giant_component_ratio": 0.9990740740740741,
+    "ground_truth_ncut": 2.200163427885502,
+    "isolated_nodes": 1,
+    "labels_used_for_diagnostic": true,
+    "pool_oracle_same_class_recall_at_b_mean": 0.9259731232622799,
+    "pool_oracle_same_class_recall_at_b_rows": 1079
+  },
+  "candidate_pool_profile": {
+    "budget_cap": 8,
+    "effective_budget_hash": "93d9ad6d95b7f05cccb949c6959407a9a177294786a2a22fde027586a25b7ec0",
+    "effective_budget_max": 8,
+    "effective_budget_mean": 7.992592592592593,
+    "effective_budget_min": 0,
+    "fraction_budget_below_cap": 0.000925925925925926,
+    "fraction_budget_zero": 0.000925925925925926,
+    "zero_budget_nodes": 1
+  },
+  "dataset": "cnae9",
+  "labels_used": true,
+  "oracle_full_directed_graph_hash": "42805f5a54ba0b2d2b1dc6b34bfc2b4e934626be8853ca9a70167480edbf9f47",
+  "oracle_pool_directed_graph_hash": "ec90da887d7f40946291f59ad67cf2df213be889b56445968bc2860bb9fce764",
+  "purpose": "diagnostic_only"
+}

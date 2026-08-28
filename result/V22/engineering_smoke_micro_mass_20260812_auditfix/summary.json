@@ -1,0 +1,157 @@
+{
+  "status": "completed",
+  "evidence_level": "engineering_smoke",
+  "protocol_id": "v22_topology_discriminator_hard_mask_v1",
+  "variant": "v22_topology_discriminator_hard_gate",
+  "seed": 42,
+  "dataset": "micro-mass",
+  "dataset_path": "/data/luolie/ToPoGate/datasets/micro-mass.npz",
+  "input_protocol": "clubench_bridge",
+  "n_samples": 360,
+  "n_features_original": 1300,
+  "n_features": 1300,
+  "labels_used_during_fit": false,
+  "K_used_during_fit": false,
+  "K_source": "benchmark_oracle_from_y",
+  "prediction_semantics": "kmeans_clean_embedding",
+  "mask_semantics": {
+    "reconstruction": "random_topk_donor_corruption; effective changed positions train scMAE",
+    "adversarial": "hard topk donor corruption; M=1 means coordinate is reconstructed",
+    "discriminator": "matched real/fake coordinate pairs; no mask or hint input"
+  },
+  "metrics": {
+    "labels_available": true,
+    "n_clusters": 10,
+    "cluster_method": "kmeans_clean_embedding",
+    "K_source": "benchmark_oracle_from_y",
+    "labels_used_during_fit": false,
+    "K_used_during_fit": false,
+    "ari": 0.47183047454876664,
+    "nmi": 0.6739887743880566,
+    "acc": 0.5944444444444444
+  },
+  "diagnostics": {
+    "graph_profile": {
+      "neighbor_k_requested": 20,
+      "neighbor_k_effective": 20,
+      "svd_target": 0.95,
+      "svd_min_dim": 32,
+      "svd_max_dim": 128,
+      "svd_dim": 128,
+      "variance_target_reached": false,
+      "explained_variance_ratio_sum": 0.8868806153768674,
+      "mean_neighbor_cosine_distance": 0.41344699263572693,
+      "self_edges": 0,
+      "label_leakage_diagnostic": false,
+      "enabled": true
+    },
+    "stats_profile": {
+      "storage": "memmap",
+      "path": "/data/luolie/ToPoGate/result/V22/engineering_smoke_micro_mass_20260812_auditfix/cache/topology_statistics.dat",
+      "dtype": "float32",
+      "shape": [
+        360,
+        1300,
+        4
+      ],
+      "block_size": 512,
+      "clip": 5.0,
+      "feature_names": [
+        "deviation_z",
+        "dispersion_z",
+        "neighbor_support",
+        "stability"
+      ],
+      "support_is_label_free": true
+    },
+    "history": [
+      {
+        "loss": 3.927805542945862,
+        "reconstruction_loss": 0.11398516843716304,
+        "mask_loss": 0.49018015960852307,
+        "discriminator_loss": 0.687614917755127,
+        "generator_adversarial_loss": 0.7108562290668488,
+        "gate_reconstruction_loss": 6.505109230677287,
+        "gate_loss": -0.014199327367047468,
+        "gate_reward": 0.014235572423785925,
+        "gate_coverage": 0.003624486969783902,
+        "random_requested_mask_rate": 0.4000000059604645,
+        "random_effective_mask_rate": 0.07361298054456711,
+        "adversarial_selected_rate": 0.04603806138038635,
+        "adversarial_effective_rate": 0.0349967951575915,
+        "discriminator_pair_count": 1920.0,
+        "gate_grad_norm": 0.001446078610206158,
+        "epoch": 1.0,
+        "discriminator_steps_epoch": 6.0,
+        "gate_updates_epoch": 6.0
+      },
+      {
+        "loss": 2.4852991898854575,
+        "reconstruction_loss": 0.14084439476331076,
+        "mask_loss": 0.48877279957135517,
+        "discriminator_loss": 0.6953561504681905,
+        "generator_adversarial_loss": 0.711732010046641,
+        "gate_reconstruction_loss": 3.5690175692240396,
+        "gate_loss": -0.017740458870927494,
+        "gate_reward": 0.017776380603512127,
+        "gate_coverage": 0.003592193010263145,
+        "random_requested_mask_rate": 0.4000000059604645,
+        "random_effective_mask_rate": 0.07298237085342407,
+        "adversarial_selected_rate": 0.045886218547821045,
+        "adversarial_effective_rate": 0.03458413481712341,
+        "discriminator_pair_count": 1920.0,
+        "gate_grad_norm": 0.0030863288734351273,
+        "epoch": 2.0,
+        "discriminator_steps_epoch": 6.0,
+        "gate_updates_epoch": 6.0
+      }
+    ],
+    "variant_contract": {
+      "scmae_backbone": true,
+      "discriminator": true,
+      "coordinate_matched_real_fake": true,
+      "mask_or_hint_passed_to_discriminator": false,
+      "gate": true,
+      "topology_gate": true,
+      "gate_reward_mode": "discriminator_difficulty",
+      "clean_embedding_kmeans_primary": true
+    },
+    "labels_used_during_fit": false,
+    "K_used_during_fit": false,
+    "discriminator_steps": 12,
+    "discriminator_finite_step_rate": 1.0,
+    "gate_updates": 12,
+    "gate_nonzero_update_rate": 1.0,
+    "adversarial_mask_profile": {
+      "selected_total": 43008,
+      "unique_feature_count": 608,
+      "unique_feature_fraction": 0.4676923076923077,
+      "top10_mass": 0.10067894345238095,
+      "coverage_entropy": 5.720833666104717
+    },
+    "adversarial_effective_mask_profile": {
+      "selected_total": 32540,
+      "unique_feature_count": 590,
+      "unique_feature_fraction": 0.45384615384615384,
+      "top10_mass": 0.10448678549477565,
+      "coverage_entropy": 5.716283568503079
+    },
+    "gate_mask_profile": {
+      "selected_total": 43134,
+      "unique_feature_count": 1067,
+      "unique_feature_fraction": 0.8207692307692308,
+      "top10_mass": 0.04089581304771178,
+      "coverage_entropy": 6.573352139379098
+    },
+    "gate_effective_mask_profile": {
+      "selected_total": 43134,
+      "unique_feature_count": 1067,
+      "unique_feature_fraction": 0.8207692307692308,
+      "top10_mass": 0.04089581304771178,
+      "coverage_entropy": 6.573352139379098
+    },
+    "model_parameter_count": 2408632,
+    "discriminator_parameter_count": 44801,
+    "gate_parameter_count": 22337
+  }
+}

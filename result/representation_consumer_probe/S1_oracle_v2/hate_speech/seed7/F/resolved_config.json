@@ -1,0 +1,25 @@
+{
+  "K": 3,
+  "K_source": "benchmark_oracle_from_y",
+  "arm": "F",
+  "consumer": "Spectral",
+  "dataset": "hate_speech",
+  "execution_device": "cpu_sparse",
+  "feature_only_input": "H0_raw",
+  "forbidden_gpu_ids": [
+    0,
+    7
+  ],
+  "labels_used_during_fit": false,
+  "legal_gpu_pool": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "project_id": "representation_consumer_probe",
+  "protocol_id": "representation_consumer_probe_s1_opportunity_spectral_v2",
+  "seed": 7
+}

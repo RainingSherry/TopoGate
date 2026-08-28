@@ -1,0 +1,43 @@
+{
+  "budget_profile": {
+    "budget_cap": 8,
+    "effective_budget_hash": "7fc6f0f1a7731632361aa5db474ca64280d00bd6f1ee2444109ee60389e56f37",
+    "effective_budget_max": 8,
+    "effective_budget_mean": 8.0,
+    "effective_budget_min": 8,
+    "fraction_budget_below_cap": 0.0,
+    "fraction_budget_zero": 0.0,
+    "zero_budget_nodes": 0
+  },
+  "candidate_pool_graph": {
+    "candidate_recall_at_b_mean": 0.9784345047923323,
+    "candidate_recall_at_b_rows": 8451,
+    "connected_components": 1,
+    "degree_cv": 0.38199056126814523,
+    "degree_mean": 19.16688736288269,
+    "degree_std": 7.3215700615108785,
+    "edge_count": 270130,
+    "edge_purity": 0.95254877281309,
+    "giant_component_ratio": 1.0,
+    "ground_truth_ncut": 0.7919592052930766,
+    "isolated_nodes": 0,
+    "labels_used_for_diagnostic": true,
+    "pool_oracle_same_class_recall_at_b_mean": 0.9782126375576855,
+    "pool_oracle_same_class_recall_at_b_rows": 8451
+  },
+  "candidate_pool_profile": {
+    "budget_cap": 8,
+    "effective_budget_hash": "7fc6f0f1a7731632361aa5db474ca64280d00bd6f1ee2444109ee60389e56f37",
+    "effective_budget_max": 8,
+    "effective_budget_mean": 8.0,
+    "effective_budget_min": 8,
+    "fraction_budget_below_cap": 0.0,
+    "fraction_budget_zero": 0.0,
+    "zero_budget_nodes": 0
+  },
+  "dataset": "Baron Human",
+  "labels_used": true,
+  "oracle_full_directed_graph_hash": "5df4857573e06084abe9730df8222dddf06f91373104799d8ed2d1cc7278dc0c",
+  "oracle_pool_directed_graph_hash": "5cb9d26ee095e8e257421ebca87d91a14070147c1062f47fbf9e25b16196db77",
+  "purpose": "diagnostic_only"
+}

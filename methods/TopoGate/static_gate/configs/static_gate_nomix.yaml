@@ -1,0 +1,9 @@
+method_name: TopoGate
+variant_name: static_gate_nomix
+mix_mode: none
+gate_mode: none
+edge_reliability_mode: none
+neighbor_k: 0
+mix_neighbors: 0
+gate_max: 0.0
+pseudo_weight: 0.0

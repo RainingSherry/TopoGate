@@ -1,0 +1,9 @@
+{
+  "arm": "O_pool",
+  "budget_hash": "93d9ad6d95b7f05cccb949c6959407a9a177294786a2a22fde027586a25b7ec0",
+  "labels_used": true,
+  "method_claim": false,
+  "purpose": "diagnostic_only",
+  "source_graph": "H0_positive_cosine",
+  "weights_changed_by_oracle": false
+}

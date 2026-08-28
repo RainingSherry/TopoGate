@@ -1,0 +1,91 @@
+{
+  "authorized_next_stage": null,
+  "level_1": {
+    "H_corr": {
+      "Baron Human": 0.28501755660303163,
+      "Campbell": 0.20174781432393796,
+      "Mouse_retina": 0.0934237277217076,
+      "cnae9": 0.00792180478331133,
+      "hate_speech": 0.02081139159544833,
+      "sms_spam_collection": 0.0001984035168060283
+    },
+    "delta_clean_C0": {
+      "Baron Human": 0.004163727781700488,
+      "Campbell": 0.04103824141587895,
+      "Mouse_retina": 0.07018997500034785,
+      "cnae9": 0.00792180478331133,
+      "hate_speech": 0.02081139159544833,
+      "sms_spam_collection": -0.007275876336136439
+    },
+    "material": true
+  },
+  "level_2": {
+    "delta_random": {
+      "Baron Human::C1_ValueOnly": -0.0029842511062211086,
+      "Baron Human::C2_SupportOnly": 0.28085382882133114,
+      "Baron Human::C3_MixedMatched": 0.2003088080150001,
+      "Baron Human::C4_StaticHard": 0.01835511232753939,
+      "Campbell::C1_ValueOnly": 0.0035210355466719634,
+      "Campbell::C2_SupportOnly": 0.06581569647689504,
+      "Campbell::C3_MixedMatched": 0.0848009156364168,
+      "Campbell::C4_StaticHard": 0.16070957290805898,
+      "Mouse_retina::C1_ValueOnly": -0.03857756350217101,
+      "Mouse_retina::C2_SupportOnly": 0.006114963906724391,
+      "Mouse_retina::C3_MixedMatched": 0.023233752721359746,
+      "Mouse_retina::C4_StaticHard": 0.015164523186237844,
+      "cnae9::C1_ValueOnly": -0.015286504778857225,
+      "cnae9::C2_SupportOnly": -0.00710917396619528,
+      "cnae9::C3_MixedMatched": -0.006531442236551055,
+      "cnae9::C4_StaticHard": -0.016446067209339395,
+      "hate_speech::C1_ValueOnly": -0.025218472373628658,
+      "hate_speech::C2_SupportOnly": -0.01981891773640405,
+      "hate_speech::C3_MixedMatched": -0.02005578744657096,
+      "hate_speech::C4_StaticHard": -0.017728409527083825,
+      "sms_spam_collection::C1_ValueOnly": -0.049732744511559526,
+      "sms_spam_collection::C2_SupportOnly": -0.014793134236174482,
+      "sms_spam_collection::C3_MixedMatched": 0.007474279852942467,
+      "sms_spam_collection::C4_StaticHard": -0.055374778759353385
+    },
+    "role_winners": {
+      "generic_sparse_high_dimensional": {
+        "arm": "C3_MixedMatched",
+        "dataset": "cnae9",
+        "delta_random": -0.006531442236551055,
+        "material": false
+      },
+      "registered_scrna_count": {
+        "arm": "C2_SupportOnly",
+        "dataset": "Baron Human",
+        "delta_random": 0.28085382882133114,
+        "material": true
+      },
+      "sparse_text": {
+        "arm": "C3_MixedMatched",
+        "dataset": "sms_spam_collection",
+        "delta_random": 0.007474279852942467,
+        "material": false
+      }
+    }
+  },
+  "level_3": {
+    "distinct_structured_winner_arms": [
+      "C2_SupportOnly"
+    ],
+    "material_dataset_count_by_arm": {
+      "C1_ValueOnly": 0,
+      "C2_SupportOnly": 2,
+      "C3_MixedMatched": 2,
+      "C4_StaticHard": 1
+    },
+    "material_role_winner_count": 1,
+    "simple_principle_arms": [
+      "C2_SupportOnly",
+      "C3_MixedMatched"
+    ]
+  },
+  "next_stage_authorized": false,
+  "primary_gate_pass": true,
+  "stage": "B1",
+  "status": "simple_corruption_principle_sufficient",
+  "terminal_reason": "B1 hierarchy does not justify adaptive location/generator work"
+}

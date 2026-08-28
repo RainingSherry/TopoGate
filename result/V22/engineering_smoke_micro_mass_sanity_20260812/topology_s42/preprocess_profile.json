@@ -1,0 +1,22 @@
+{
+  "dataset_name": "micro-mass",
+  "input_protocol": "clubench_bridge",
+  "n_samples": 360,
+  "n_features_original": 1300,
+  "n_features_selected": 1300,
+  "feature_cap": 2000,
+  "feature_selection": "none",
+  "selected_feature_indices_count": 1300,
+  "source_zero_fraction": 0.8959123931623931,
+  "selected_zero_fraction": 0.8959123931623931,
+  "graph_view_storage": "csr",
+  "graph_view_scaler": "StandardScaler_with_mean_false",
+  "model_view_scaler": "StandardScaler_with_mean_true",
+  "count_transform": "identity",
+  "labels_used": false,
+  "K_used": false,
+  "full_pairwise_matrix_materialized": false,
+  "labels_used_during_fit": false,
+  "K_used_during_fit": false,
+  "K_source": "benchmark_oracle_from_y"
+}

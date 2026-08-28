@@ -1,0 +1,8 @@
+protocol_id: v22_topology_discriminator_hard_mask_v1
+variant: scmae_plus_discriminator_random_mask
+epochs: 80
+batch_size: 128
+hidden_size: 128
+feature_cap: 2000
+random_mask_ratio: 0.4
+adversarial_mask_ratio: 0.25

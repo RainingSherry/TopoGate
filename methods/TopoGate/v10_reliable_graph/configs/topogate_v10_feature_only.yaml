@@ -1,0 +1,67 @@
+# Strict V10 feature-only / NoGraph control.
+# Architecture, corruption, optimizer, training budget, and readout are held
+# fixed; all graph and clustering-assignment objectives are disabled.
+method_name: TopoGate
+variant_name: topogate_v10_feature_only
+
+input_mode: raw
+scale_input: true
+n_top_features: 0
+graph_enabled: false
+dynamic_graph: false
+neighbor_k: 10
+knn_backend: auto
+knn_exact_max_nodes: 5000
+knn_hnsw_m: 32
+knn_hnsw_ef_search: 64
+knn_pca_variance: 0.95
+knn_pca_min_dim: 2
+knn_pca_max_dim: 200
+
+latent_dim: 64
+hidden_dim: 256
+decoder_rank: 64
+dropout: 0.1
+condition_on_mask: false
+reconstruction_kind: mse
+mask_ratio: 0.30
+mask_strategy: zero
+masked_weight: 1.0
+unmasked_weight: 0.2
+
+epochs: 100
+batch_size: 256
+edge_batch_size: 512
+eval_batch_size: 1024
+lr: 0.001
+cluster_lr: 0.001
+gate_lr: 0.001
+weight_decay: 0.00001
+gradient_clip: 5.0
+ema_decay: 0.99
+warmup_epochs: 20
+ramp_epochs: 10
+refresh_interval: 5
+
+lambda_view: 0.10
+lambda_edge: 0.0
+lambda_entropy: 0.0
+lambda_gate_budget: 0.0
+lambda_gate_temporal: 0.0
+cluster_temperature: 0.20
+cluster_prior_mode: warmup_kmeans
+cluster_prior_smoothing: 0.001
+gate_hidden_dim: 32
+gate_min: 0.0
+gate_max: 1.0
+gate_budget_target: 0.50
+gate_budget_mode: upper_bound
+gate_saturation_low: 0.05
+gate_saturation_high: 0.95
+confidence_fraction_start: 0.20
+confidence_fraction_end: 1.0
+confidence_ramp_epochs: 40
+
+seed: 42
+gpu: 1
+no_cuda: false

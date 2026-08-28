@@ -1,0 +1,78 @@
+{
+  "K": 2,
+  "K_source": "benchmark_oracle_from_y",
+  "arm": "C2_SupportOnly",
+  "backbone": {
+    "activation": "ReLU",
+    "batch_size": 512,
+    "corruption_rate": 0.25,
+    "decoder_dims": [
+      32,
+      64,
+      "d_eff"
+    ],
+    "encoder_dims": [
+      "d_eff",
+      64,
+      32
+    ],
+    "epochs": 30,
+    "input": "audited_S0_H0",
+    "learning_rate": 0.001,
+    "optimizer": "Adam",
+    "pair_budget_rule": "m_i=min(ceil(rate*active_i), floor(active_i/2), inactive_i); all arms change 2*m_i coordinates",
+    "readout": "clean_embedding_known_K_KMeans",
+    "standardization": "clean_H0_column_mean_std_fit_once_per_dataset",
+    "support_definition": "abs(H0_ij)>=max(1e-6,0.05*row_max_abs)"
+  },
+  "corruption_audit": {
+    "effective_changed_coordinate_rate_mean": 0.29084955089820347,
+    "epochs_audited": 30,
+    "requested_change_ratio_mean": 0.29084955089820347,
+    "support_change_ratio_mean": 0.29084955089820347,
+    "total_absolute_change_mean": 2617.8615311220697,
+    "value_change_ratio_mean": 0.0
+  },
+  "dataset": "sms_spam_collection",
+  "device": "cuda",
+  "gpu_visible": "4",
+  "input_dim": 128,
+  "labels_used_during_fit": false,
+  "labels_used_for_outer_metrics": true,
+  "metrics": {
+    "ARI": 0.13686964212886565,
+    "L_rec": 0.9439832474657162,
+    "NMI": 0.12424765135176928,
+    "clean_reconstruction_loss": 0.9207773804664612
+  },
+  "positive_control_required": true,
+  "project_id": "adaptive_corruption_probe",
+  "protocol_id": "adaptive_corruption_probe_b0_v1",
+  "raw_arrays_persisted": false,
+  "role": "sparse_text_1",
+  "seed": 42,
+  "source": {
+    "H0_path": "/data/luolie/ToPoGate/result/representation_consumer_probe/S0_freeze/datasets/sms_spam_collection/H0.npy",
+    "H0_sha256": "eb66da22b1dc6881353658fbf4fc79966e6acc2c470221d7fe1a0ed9988ffc16",
+    "budget_manifest_sha256": "b618080e7c2ff2b8e889d92a773f1b282caac062fdc824cf010f32342c1e9a06",
+    "budget_profile": {
+      "budget_cap": 8,
+      "effective_budget_hash": "80f0142bcdeae7c87911f90a2b83dd80a974614365c21be6244d5283c9cd1032",
+      "effective_budget_max": 8,
+      "effective_budget_mean": 7.616766467065868,
+      "effective_budget_min": 0,
+      "fraction_budget_below_cap": 0.04790419161676647,
+      "fraction_budget_zero": 0.04790419161676647,
+      "zero_budget_nodes": 40
+    },
+    "labels_used": false,
+    "shape": [
+      835,
+      128
+    ],
+    "source": "representation_consumer_probe/S0_freeze"
+  },
+  "stage": "B1",
+  "status": "completed_valid",
+  "support_definition": "abs(H0_ij)>=max(1e-6,0.05*row_max_abs)"
+}

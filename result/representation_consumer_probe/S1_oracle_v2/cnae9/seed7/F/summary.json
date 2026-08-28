@@ -1,0 +1,52 @@
+{
+  "H0_sha256": "2d336fbc47b8176601807776581273948ad6124ec3f543477d12ae4b496b8deb",
+  "K": 9,
+  "K_source": "benchmark_oracle_from_y",
+  "arm": "F",
+  "artifacts": {
+    "embedding": "/data/luolie/ToPoGate/result/representation_consumer_probe/S1_oracle_v2/cnae9/seed7/F/embedding.npy",
+    "labels_true": "/data/luolie/ToPoGate/result/representation_consumer_probe/S1_oracle_v2/cnae9/seed7/F/labels_true.npy",
+    "predictions": "/data/luolie/ToPoGate/result/representation_consumer_probe/S1_oracle_v2/cnae9/seed7/F/predictions.npy"
+  },
+  "budget_profile": {
+    "budget_cap": 8,
+    "effective_budget_hash": "93d9ad6d95b7f05cccb949c6959407a9a177294786a2a22fde027586a25b7ec0",
+    "effective_budget_max": 8,
+    "effective_budget_mean": 7.992592592592593,
+    "effective_budget_min": 0,
+    "fraction_budget_below_cap": 0.000925925925925926,
+    "fraction_budget_zero": 0.000925925925925926,
+    "zero_budget_nodes": 1
+  },
+  "consumer": "Spectral",
+  "consumer_metadata": {
+    "K_used_in_readout": true,
+    "K_used_in_representation": false,
+    "consumer": "FeatureOnlyKMeans",
+    "kmeans_n_init": 20,
+    "kmeans_random_state": 7,
+    "labels_vector_used_in_fit": false,
+    "status": "completed"
+  },
+  "dataset": "cnae9",
+  "execution_status": "completed",
+  "feature_only_input": "H0_raw",
+  "graph_diagnostics": {
+    "graph_condition": "none"
+  },
+  "graph_hash": null,
+  "labels_used_during_fit": false,
+  "labels_used_for_outer_metrics": true,
+  "labels_vector_used_in_fit": false,
+  "metrics": {
+    "ACC": 0.4027777777777778,
+    "ARI": 0.17575324516472987,
+    "NMI": 0.4152434684041026
+  },
+  "project_id": "representation_consumer_probe",
+  "protocol_id": "representation_consumer_probe_s1_opportunity_spectral_v2",
+  "seed": 7,
+  "source_path": "/data/luolie/ToPoGate/datasets/cnae9.npz",
+  "source_sha256": "e3a22bcfa761a837b8881a3a1966f6008d911b77948b76a4e4a8ca2aae65a71e",
+  "status": "completed_valid"
+}

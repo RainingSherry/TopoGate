@@ -1,0 +1,11 @@
+{
+  "audit_ok": true,
+  "does_not_change_fit_or_gates": true,
+  "gpu_runs_started": 0,
+  "labels_not_loaded": true,
+  "project_id": "corruption_objective_compatibility_probe",
+  "protocol_id": "corruption_objective_compatibility_probe_e0_e4_v1",
+  "rows": 6,
+  "stage": "E3_raw_audit",
+  "support_semantics": "raw_X_zero_nonzero_descriptive_only; H0_threshold_support remains separate"
+}

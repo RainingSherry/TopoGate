@@ -1,0 +1,37 @@
+{
+  "file_count": 6,
+  "files": [
+    {
+      "path": "audit.json",
+      "sha256": "d76240a16e23adc328b4e4f4894660287f0951741300d5ca85aeac3ef3c4ffe8",
+      "size_bytes": 281
+    },
+    {
+      "path": "embedding.npy",
+      "sha256": "eb66da22b1dc6881353658fbf4fc79966e6acc2c470221d7fe1a0ed9988ffc16",
+      "size_bytes": 427648
+    },
+    {
+      "path": "labels_true.npy",
+      "sha256": "8d880d9da03dd2db6352293820ccb74f4b34b7719aadc931fac96b6d6025e142",
+      "size_bytes": 6808
+    },
+    {
+      "path": "predictions.npy",
+      "sha256": "17585934cba6df38c5e33b7105bf8d9e9bd6a123da8cf00a34cf3807da01b8d5",
+      "size_bytes": 6808
+    },
+    {
+      "path": "resolved_config.json",
+      "sha256": "4e5d024b404067e0c7cb902194f798d78dc611257bd8e5026aa444858104ca4b",
+      "size_bytes": 487
+    },
+    {
+      "path": "summary.json",
+      "sha256": "5ad876953ae4899d61d876ac8e5d08eb7331d59c8066957571ee4094f8f24857",
+      "size_bytes": 2009
+    }
+  ],
+  "manifest_id": "representation_consumer_probe_s1_artifacts_v1",
+  "root": "/data/luolie/ToPoGate/result/representation_consumer_probe/S1_oracle_v2/sms_spam_collection/seed123/F"
+}

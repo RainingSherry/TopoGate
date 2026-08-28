@@ -1,0 +1,11 @@
+{
+  "status": "incomplete_compute",
+  "run_key": "covtype__libsvm_dense_control::v22_topology_discriminator_cooperative_keep_gate::seed42",
+  "dataset_id": "covtype__libsvm_dense_control",
+  "dataset": "covtype",
+  "returncode": -15,
+  "error": "returncode=-15; log=result/V22/v22_full_cooperative_single_seed_20260812/logs/covtype__libsvm_dense_control.seed42.log",
+  "launcher_status": "interrupted",
+  "generated_at": "2026-08-12T01:05:33.855684+00:00",
+  "claim_boundary": "no model result; retained as incomplete compute"
+}

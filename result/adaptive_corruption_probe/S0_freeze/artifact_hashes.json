@@ -1,0 +1,13 @@
+{
+  "algorithm": "sha256_file",
+  "files": {
+    "audit.json": "acfc03d7fc62b5a65cfc5c3c842b171a0045192faef518a139a4d522ec2ee8a1",
+    "decision.json": "fbfceae7525c73c66bb1dd4ec3a7d4f380fab82115e62d40526b432cac356c4c",
+    "resolved_config.json": "47e2bede6d68ab86a00155c6b027340e47f95c69b35cc39e7e1e3d4e69669260",
+    "run_manifest.json": "9f12c01d42952ca74e0cd8335661123aa132c1f46728be311c8ee5e9ff53c000",
+    "source_manifest.json": "f7724e79acd167f55746a0acb72b89c3e07b865bb0327776c9433ea7e1b9c7fd"
+  },
+  "project_id": "adaptive_corruption_probe",
+  "raw_artifacts_included": false,
+  "stage": "S0"
+}

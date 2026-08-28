@@ -1,0 +1,84 @@
+{
+  "anchor_disjoint_all": true,
+  "candidate_pool_frozen": true,
+  "datasets": [
+    "cnae9",
+    "Campbell",
+    "sms_spam_collection"
+  ],
+  "fold_count": 5,
+  "gpu_firewall": {
+    "forbidden": [
+      0,
+      7
+    ],
+    "tiny_mlp_gpu_enabled": true,
+    "visible_cuda": "1"
+  },
+  "issues": [],
+  "labels_used_for_outer_metrics": true,
+  "labels_used_in_diagnostic_target_builder": true,
+  "labels_used_in_feature_extraction": false,
+  "labels_used_in_scorer": true,
+  "oof_coverage_100pct": true,
+  "oracle_arm": "O_pool_inherited_diagnostic_only",
+  "preflight": {
+    "datasets": [
+      {
+        "anchor_count": 1079,
+        "budget_capacity_sufficient": true,
+        "dataset": "cnae9",
+        "edge_count": 21580,
+        "groupkfold_anchor_disjoint": true,
+        "labels_used_in_diagnostic_target": true,
+        "labels_used_in_feature_extraction": false,
+        "o_pool_reference_graphs_present": true,
+        "oof_contract": "5-fold GroupKFold by anchor; full coverage asserted during run",
+        "r_reference_graphs_present": true,
+        "target_binary": true
+      },
+      {
+        "anchor_count": 9993,
+        "budget_capacity_sufficient": true,
+        "dataset": "Campbell",
+        "edge_count": 199860,
+        "groupkfold_anchor_disjoint": true,
+        "labels_used_in_diagnostic_target": true,
+        "labels_used_in_feature_extraction": false,
+        "o_pool_reference_graphs_present": true,
+        "oof_contract": "5-fold GroupKFold by anchor; full coverage asserted during run",
+        "r_reference_graphs_present": true,
+        "target_binary": true
+      },
+      {
+        "anchor_count": 795,
+        "budget_capacity_sufficient": true,
+        "dataset": "sms_spam_collection",
+        "edge_count": 15900,
+        "groupkfold_anchor_disjoint": true,
+        "labels_used_in_diagnostic_target": true,
+        "labels_used_in_feature_extraction": false,
+        "o_pool_reference_graphs_present": true,
+        "oof_contract": "5-fold GroupKFold by anchor; full coverage asserted during run",
+        "r_reference_graphs_present": true,
+        "target_binary": true
+      }
+    ],
+    "oof_coverage_required": 1.0,
+    "status": "completed_valid"
+  },
+  "project_id": "learned_relation_rule_probe",
+  "reference_arm": "R_inherited_matched_random",
+  "row_budget_frozen": true,
+  "scorers": [
+    "Logistic",
+    "TinyMLP"
+  ],
+  "stage": "A1",
+  "status": "completed_valid",
+  "views": [
+    "Full",
+    "No-geometry",
+    "No-rank"
+  ]
+}

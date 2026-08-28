@@ -1,0 +1,22 @@
+{
+  "dataset_name": "real-sim",
+  "input_protocol": "shared_text",
+  "n_samples": 72309,
+  "n_features_original": 20958,
+  "n_features_selected": 2000,
+  "feature_cap": 2000,
+  "feature_selection": "top_variance_label_free",
+  "selected_feature_indices_count": 2000,
+  "source_zero_fraction": 0.997552490645593,
+  "selected_zero_fraction": 0.9832098493963407,
+  "graph_view_storage": "csr",
+  "graph_view_scaler": "StandardScaler_with_mean_false",
+  "model_view_scaler": "StandardScaler_with_mean_true",
+  "count_transform": "identity",
+  "labels_used": false,
+  "K_used": false,
+  "full_pairwise_matrix_materialized": false,
+  "labels_used_during_fit": false,
+  "K_used_during_fit": false,
+  "K_source": "benchmark_oracle_from_y"
+}

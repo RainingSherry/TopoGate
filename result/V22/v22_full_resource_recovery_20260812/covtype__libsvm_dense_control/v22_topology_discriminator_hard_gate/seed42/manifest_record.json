@@ -1,0 +1,18 @@
+{
+  "dataset_id": "covtype__libsvm_dense_control",
+  "name": "covtype",
+  "stratum": "new_dense_control",
+  "input_protocol": "clubench_bridge",
+  "source_path": "/data/luolie/ToPoGate/datasets/external/v22_dataset_extension_20260812/processed/covtype.npz",
+  "source_sha256": "bb1eac10dca43a5e29b807f0e7d16c1cba9b49e42923650293c4d0cf80e8c979",
+  "source_archive_sha256": "c0a2544b2740b435d0d51934116c7d4762f4154fa0c032fe9f9b4180717c4acf",
+  "n_samples": 581012,
+  "n_features_original": 54,
+  "labels_available_outer_only": true,
+  "expected_labels_unique": 7,
+  "k_source": "benchmark_oracle_from_y",
+  "source_manifest": "datasets/external/v22_dataset_extension_20260812/manifest.json",
+  "run_key": "covtype__libsvm_dense_control::v22_topology_discriminator_hard_gate::seed42",
+  "batch_size": 4096,
+  "topology_cache_source": "result/V22/v22_full_single_seed_20260812/covtype__libsvm_dense_control/v22_topology_discriminator_hard_gate/seed42/cache"
+}

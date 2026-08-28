@@ -1,0 +1,22 @@
+# V13 hard-gate TopoGate: Gumbel-Top-k, K=2, lambda=0.1
+variant_name: topogate_v13_topk2
+mask_loss_weight: 0.1
+mask_loss_mode: additive
+decoder_mode: legacy_mask_conditioned
+topology_enabled: true
+topology_mode: topk2
+lambda_topology: 0.1
+topology_warmup_epochs: 20
+topology_ramp_epochs: 10
+gumbel_tau: 1.0
+gumbel_tau_min: 0.1
+gumbel_tau_anneal_epochs: 50
+top_k_neighbors: 2
+neighbor_k: 5
+description: >-
+  V13: replaces softmax gate with Gumbel-Top-k hard selection. Training uses
+  straight-through Gumbel-Softmax relaxation (tau from 1.0 to 0.1 over
+  50 epochs). Inference applies hard top-k truncation so effective_neighbors
+  is exactly top_k_neighbors. No rank_loss (it is replaced by the hard
+  ordering property of top-k). lambda_topology starts at 0.1 after warmup
+  and ramps over 10 epochs.

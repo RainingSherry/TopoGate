@@ -1,0 +1,90 @@
+{
+  "H0_sha256": "cc344ae77640145fab73d231a44b5cb768cf088d471bf1cd836d38963a6d62a3",
+  "K": 3,
+  "K_source": "benchmark_oracle_from_y",
+  "arm": "R",
+  "artifacts": {
+    "embedding": "/data/luolie/ToPoGate/result/representation_consumer_probe/S1_oracle_v2/hate_speech/seed42/R/embedding.npy",
+    "labels_true": "/data/luolie/ToPoGate/result/representation_consumer_probe/S1_oracle_v2/hate_speech/seed42/R/labels_true.npy",
+    "predictions": "/data/luolie/ToPoGate/result/representation_consumer_probe/S1_oracle_v2/hate_speech/seed42/R/predictions.npy"
+  },
+  "budget_profile": {
+    "budget_cap": 8,
+    "effective_budget_hash": "44be4fd2e35f826c687a9f35edb0bcd5cfded3be5d50f6c56e8132443c7cc5a7",
+    "effective_budget_max": 8,
+    "effective_budget_mean": 7.664700403601366,
+    "effective_budget_min": 0,
+    "fraction_budget_below_cap": 0.04191244954982925,
+    "fraction_budget_zero": 0.04191244954982925,
+    "zero_budget_nodes": 135
+  },
+  "consumer": "Spectral",
+  "consumer_metadata": {
+    "K_used_in_readout": true,
+    "K_used_in_representation": true,
+    "active_embedding_finite": true,
+    "active_nodes": 3086,
+    "consumer": "Spectral",
+    "drop_first": false,
+    "eigenvalues": [
+      0.004928999788986844,
+      0.009380281973806325,
+      0.013688052829346029
+    ],
+    "isolated_nodes": 135,
+    "isolated_rows_zero": true,
+    "kmeans_n_init": 20,
+    "kmeans_random_state": 42,
+    "labels_vector_used_in_fit": false,
+    "maxiter": 30860,
+    "n_clusters": 3,
+    "prediction_unique": 3,
+    "status": "completed",
+    "tol": 1e-06,
+    "which": "SM"
+  },
+  "dataset": "hate_speech",
+  "execution_status": "completed",
+  "feature_only_input": null,
+  "graph_diagnostics": {
+    "budget_audit": {
+      "budget_cap": 8,
+      "effective_budget_hash": "44be4fd2e35f826c687a9f35edb0bcd5cfded3be5d50f6c56e8132443c7cc5a7",
+      "graph_nnz": 24688,
+      "row_count_max": 8,
+      "row_count_min": 0,
+      "row_counts_match": true
+    },
+    "candidate_recall_at_b_mean": 0.8598914452365521,
+    "candidate_recall_at_b_rows": 3086,
+    "connected_components": 136,
+    "degree_cv": 0.7047746174827617,
+    "degree_mean": 5.677694348362209,
+    "degree_std": 4.001494862551014,
+    "directed_edge_count": 24688,
+    "edge_count": 43770,
+    "edge_purity": 0.7609321453050034,
+    "giant_component_ratio": 0.9580875504501708,
+    "graph_condition": "R",
+    "ground_truth_ncut": 1.4365738894694562,
+    "isolated_nodes": 135,
+    "labels_used_for_diagnostic": true,
+    "pool_oracle_same_class_recall_at_b_mean": 0.7847942320155541,
+    "pool_oracle_same_class_recall_at_b_rows": 3086
+  },
+  "graph_hash": "0d18266c0e253fa869ee7f0f327a3ddc90b13b3ed421f242e2507bc78ef3c378",
+  "labels_used_during_fit": false,
+  "labels_used_for_outer_metrics": true,
+  "labels_vector_used_in_fit": false,
+  "metrics": {
+    "ACC": 0.6861223222601677,
+    "ARI": -0.011182804754186643,
+    "NMI": 0.0297384317018142
+  },
+  "project_id": "representation_consumer_probe",
+  "protocol_id": "representation_consumer_probe_s1_opportunity_spectral_v2",
+  "seed": 42,
+  "source_path": "/data/luolie/ToPoGate/datasets/hate_speech.npz",
+  "source_sha256": "c39fc08366c0423b8a2f4e3543df6d5b06f2e0b065813e120263b99e7d1e44bb",
+  "status": "completed_valid"
+}

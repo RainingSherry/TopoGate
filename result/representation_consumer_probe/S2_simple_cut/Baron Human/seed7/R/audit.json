@@ -1,0 +1,13 @@
+{
+  "K_source": "benchmark_oracle_from_y",
+  "K_used_in_representation": false,
+  "arm": "R",
+  "audit_ok": true,
+  "dataset": "Baron Human",
+  "labels_used_during_fit": false,
+  "labels_used_for_outer_metrics": true,
+  "labels_used_in_oracle_graph": false,
+  "protocol_id": "representation_consumer_probe_s2_opportunity_simplecut_v1",
+  "s1_graph_reused": true,
+  "seed": 7
+}

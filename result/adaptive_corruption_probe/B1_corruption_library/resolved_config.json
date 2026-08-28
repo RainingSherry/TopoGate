@@ -1,0 +1,150 @@
+{
+  "backbone": {
+    "activation": "ReLU",
+    "batch_size": 512,
+    "corruption_rate": 0.25,
+    "decoder_dims": [
+      32,
+      64,
+      "d_eff"
+    ],
+    "encoder_dims": [
+      "d_eff",
+      64,
+      32
+    ],
+    "epochs": 30,
+    "input": "audited_S0_H0",
+    "learning_rate": 0.001,
+    "optimizer": "Adam",
+    "pair_budget_rule": "m_i=min(ceil(rate*active_i), floor(active_i/2), inactive_i); all arms change 2*m_i coordinates",
+    "readout": "clean_embedding_known_K_KMeans",
+    "standardization": "clean_H0_column_mean_std_fit_once_per_dataset",
+    "support_definition": "abs(H0_ij)>=max(1e-6,0.05*row_max_abs)"
+  },
+  "base_commit": "c80877cf904e41950315d37b95374825c33a7362",
+  "corruption_arms": [
+    "C_clean_no_corruption",
+    "C0_MatchedRandom",
+    "C1_ValueOnly",
+    "C2_SupportOnly",
+    "C3_MixedMatched",
+    "C4_StaticHard"
+  ],
+  "corruption_rate": 0.25,
+  "cross_track_holdout_disjointness_required": true,
+  "decision_hierarchy": {
+    "level_1_corruption_matters": {
+      "library_contrast": "max_C Delta_clean(C)",
+      "primary_contrast": "ARI(C0_MatchedRandom)-ARI(C_clean_no_corruption)"
+    },
+    "level_2_structured_beats_random": {
+      "arms": [
+        "C1_ValueOnly",
+        "C2_SupportOnly",
+        "C3_MixedMatched",
+        "C4_StaticHard"
+      ],
+      "contrast": "Delta_random(C)=ARI(C)-ARI(C0_MatchedRandom)"
+    },
+    "level_3_adaptation_necessary": {
+      "minimum_distinct_role_winners": 2,
+      "minimum_material_delta_random": 0.03,
+      "terminal_if_not_met": "random_corruption_sufficient"
+    },
+    "simple_principle": {
+      "minimum_material_datasets_for_same_arm": 2
+    }
+  },
+  "development_overlap_allowed_but_audited": true,
+  "development_panel": [
+    "sms_spam_collection",
+    "hate_speech",
+    "Mouse_retina",
+    "Baron Human",
+    "cnae9",
+    "Campbell"
+  ],
+  "final_holdout_overlap_forbidden": true,
+  "forbidden_gpu_ids": [
+    0,
+    7
+  ],
+  "h0_support_threshold_ratio": 0.05,
+  "holdout_seeds": [
+    42,
+    123,
+    7,
+    3032,
+    3033
+  ],
+  "holdout_status": "not_yet_selected_outcome_independently_before_B5",
+  "initial_stage": "B1",
+  "k_source": "benchmark_oracle_from_y_outer_readout_only",
+  "labels_used_during_fit": false,
+  "legal_gpu_pool": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "locked_stages": [
+    "B2",
+    "B3",
+    "B4",
+    "B5"
+  ],
+  "matching_fields": [
+    "requested_change_ratio",
+    "effective_changed_coordinates",
+    "support_change_ratio",
+    "value_change_ratio",
+    "total_absolute_change"
+  ],
+  "material_delta_ari": 0.03,
+  "old_projects_read_only": [
+    "representation_consumer_probe",
+    "relation_selection_probe"
+  ],
+  "positive_control": {
+    "is_clustering_evidence": false,
+    "kind": "synthetic_support_value_sensitivity",
+    "labels_used": false,
+    "must_pass_before_real_null_decision": true
+  },
+  "positive_control_status": "completed_valid",
+  "primary_seeds": [
+    42,
+    123,
+    7
+  ],
+  "project_id": "adaptive_corruption_probe",
+  "protocol_id": "adaptive_corruption_probe_b0_v1",
+  "publication_exclusions": [
+    "raw_data",
+    "weights",
+    "embeddings",
+    "predictions",
+    "graphs",
+    "logs",
+    "caches"
+  ],
+  "raw_artifacts_published": false,
+  "role_by_dataset": {
+    "Baron Human": "registered_scrna_count_2",
+    "Campbell": "registered_scrna_count_3_boundary_control",
+    "Mouse_retina": "registered_scrna_count_1",
+    "cnae9": "generic_non_expression_sparse_high_dimensional_control",
+    "hate_speech": "sparse_text_2",
+    "sms_spam_collection": "sparse_text_1"
+  },
+  "stage": "B1",
+  "structured_arms": [
+    "C1_ValueOnly",
+    "C2_SupportOnly",
+    "C3_MixedMatched",
+    "C4_StaticHard"
+  ]
+}

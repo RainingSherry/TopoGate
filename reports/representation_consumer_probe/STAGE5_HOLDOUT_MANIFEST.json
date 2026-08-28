@@ -1,0 +1,79 @@
+{
+  "manifest_id": "representation_consumer_probe_holdout_v1",
+  "status": "dormant_due_to_adapter_not_estimable",
+  "dormant_reason": "S0 adapter_not_estimable permanently closes the T-related causal chain in this project",
+  "current_project_authorized": false,
+  "frozen_before_holdout_outcomes": true,
+  "selection_basis": "label_free_dataset_characteristics_only",
+  "selection_features": [
+    "log_n",
+    "log_d",
+    "sparsity",
+    "intrinsic_dim_proxy",
+    "nn_distance_mean",
+    "candidate_connectivity"
+  ],
+  "selection_algorithm": "zscore_features_then_farthest_point_traversal_with_domain_quota",
+  "selection_seed": 20260817,
+  "universe_source": "result/V25_systematic_mechanism_study/A2/holdout_candidate_manifest.json",
+  "universe_dataset_ids": [
+    "arcene__uci_highdim",
+    "covtype__libsvm_dense_control",
+    "dexter__uci_sparse_highdim",
+    "dorothea__uci_sparse_highdim",
+    "gina_prior2__local_sparse_highdim",
+    "gisette__uci_highdim_dense",
+    "madelon__uci_highdim_control",
+    "micro_mass__local_sparse_highdim",
+    "mnist__libsvm_dense_control",
+    "quake_smartseq2_lung__local_sparse_expression",
+    "fabert__local_sparse_text",
+    "fbis_wc__local_sparse_text",
+    "internet_advertisements__uci_sparse",
+    "news20__libsvm_sparse_highdim",
+    "rcv1_train__libsvm_sparse_highdim",
+    "real_sim__libsvm_sparse_highdim",
+    "sector__libsvm_sparse_highdim",
+    "sms_spam_full__uci_sparse_text",
+    "tr45_wc__local_sparse_text"
+  ],
+  "selected_dataset_ids": [
+    "arcene__uci_highdim",
+    "covtype__libsvm_dense_control",
+    "dexter__uci_sparse_highdim",
+    "gisette__uci_highdim_dense",
+    "madelon__uci_highdim_control",
+    "mnist__libsvm_dense_control",
+    "quake_smartseq2_lung__local_sparse_expression",
+    "internet_advertisements__uci_sparse",
+    "news20__libsvm_sparse_highdim",
+    "rcv1_train__libsvm_sparse_highdim",
+    "real_sim__libsvm_sparse_highdim",
+    "sector__libsvm_sparse_highdim"
+  ],
+  "non_selected_dataset_ids": [
+    "dorothea__uci_sparse_highdim",
+    "gina_prior2__local_sparse_highdim",
+    "micro_mass__local_sparse_highdim",
+    "fabert__local_sparse_text",
+    "fbis_wc__local_sparse_text",
+    "sms_spam_full__uci_sparse_text",
+    "tr45_wc__local_sparse_text"
+  ],
+  "excluded_dataset_ids": [
+    "pbmc3k__10x_unlabelled_count",
+    "pbmc_1k_v3__10x_unlabelled_count"
+  ],
+  "exclusion_rule": "input_adapter_not_frozen_for_protocol",
+  "source_hash_overrides_measured_at_freeze": {
+    "internet_advertisements__uci_sparse": {
+      "source_path": "/data/luolie/ToPoGate/datasets/external/v9_related_20260806/processed/internet_advertisements.npz",
+      "source_sha256": "28cbd0c5d1351470a7492353218cd727dc3cd64c5260869d44529aa75abdf1e2"
+    }
+  },
+  "seeds": [42, 123, 7, 3032, 3033],
+  "outcome_features_used": false,
+  "historical_ari_used": false,
+  "pilot_outcome_used": false,
+  "dataset_membership_frozen": true
+}

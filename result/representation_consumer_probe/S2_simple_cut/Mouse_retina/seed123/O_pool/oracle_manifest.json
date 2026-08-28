@@ -1,0 +1,9 @@
+{
+  "arm": "O_pool",
+  "labels_used": true,
+  "method_claim": false,
+  "purpose": "diagnostic_only",
+  "s1_source_graph_hash": "c4c54b69de1b2d5586caf7ed0c494edb93a4ba25f14873e4fd41cd7d9256f9e4",
+  "source_graph": "reused_from_S1_H0_positive_cosine",
+  "weights_changed_by_oracle": false
+}

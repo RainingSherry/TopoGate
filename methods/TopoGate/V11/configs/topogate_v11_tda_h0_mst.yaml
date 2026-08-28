@@ -1,0 +1,7 @@
+# Reversible TDA pilot. Unspecified fields inherit V11Config defaults; the
+# resolved full configuration is saved in each run's summary.json.
+tda_prior_mode: h0_mst
+tda_prior_weight: 1.0
+tda_scale_mode: median
+tda_scale_quantile: 0.50
+tda_scale_floor: 0.000001

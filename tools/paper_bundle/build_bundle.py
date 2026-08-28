@@ -143,28 +143,43 @@ def validate_pdf_bytes(data: bytes) -> bool:
 
 def download_pdf(row, dst):
     tried = []
-    queue = list(row["urls"])
-    queue += openalex_candidates(row["title"])
-    queue += semanticscholar_candidates(row["title"])
-    queue += crossref_candidates(row["title"])
     seen = set()
-    while queue:
-        u = queue.pop(0)
-        if not u or u in seen:
-            continue
-        seen.add(u)
-        tried.append(u)
-        try:
-            r = get(u, 75)
-            if r.ok and is_pdf_response(r) and validate_pdf_bytes(r.content):
-                dst.parent.mkdir(parents=True, exist_ok=True)
-                dst.write_bytes(r.content)
-                return True, r.url, len(r.content), tried
-            ct = (r.headers.get("content-type") or "").lower()
-            if r.ok and ("html" in ct or r.text[:200].lstrip().startswith("<")):
-                queue += [x for x in html_candidates(r.url, r.text) if x not in seen]
-        except Exception as e:
-            print("download candidate failed", u, repr(e), file=sys.stderr)
+
+    def try_queue(queue):
+        while queue:
+            u = queue.pop(0)
+            if not u or u in seen:
+                continue
+            seen.add(u)
+            tried.append(u)
+            try:
+                r = get(u, 45)
+                if r.ok and is_pdf_response(r) and validate_pdf_bytes(r.content):
+                    dst.parent.mkdir(parents=True, exist_ok=True)
+                    dst.write_bytes(r.content)
+                    return True, r.url, len(r.content)
+                ct = (r.headers.get("content-type") or "").lower()
+                if r.ok and ("html" in ct or r.text[:200].lstrip().startswith("<")):
+                    queue += [x for x in html_candidates(r.url, r.text) if x not in seen]
+            except Exception as e:
+                print("download candidate failed", u, repr(e), file=sys.stderr)
+        return None
+
+    # First use the explicit links from the user's table. Most are direct PDFs.
+    hit = try_queue(list(row["urls"]))
+    if hit:
+        ok, src, size = hit
+        return ok, src, size, tried
+
+    # Only query discovery APIs when the supplied links fail.
+    fallbacks = []
+    fallbacks += openalex_candidates(row["title"])
+    fallbacks += semanticscholar_candidates(row["title"])
+    fallbacks += crossref_candidates(row["title"])
+    hit = try_queue(fallbacks)
+    if hit:
+        ok, src, size = hit
+        return ok, src, size, tried
     return False, None, 0, tried
 
 def pdf_to_markdown(pdf: Path, row):

@@ -386,7 +386,12 @@ def main():
     out = Path("recovery_output")
     out.mkdir(exist_ok=True)
     report = []
-    for pid, target in TARGETS.items():
+    only = os.environ.get("RECOVER_ID", "").strip()
+    selected = TARGETS
+    if only:
+        wanted = {int(x) for x in only.split(",") if x.strip()}
+        selected = {pid: target for pid, target in TARGETS.items() if pid in wanted}
+    for pid, target in selected.items():
         stem = safe_stem(pid, target["title"])
         base = out / target["category"]
         pdf = base / "pdf" / f"{stem}.pdf"

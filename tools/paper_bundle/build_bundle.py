@@ -254,37 +254,64 @@ def should_skip_block(block):
 
 def translate_markdown(md):
     blocks = re.split(r"(\n\s*\n)", md)
-    out, failures = [], 0
+    out = list(blocks)
+    translatable = []
     in_code = False
     seen_reference_heading = False
     for idx, block in enumerate(blocks):
         stripped = block.strip()
         if not stripped:
-            out.append(block)
             continue
         if stripped.startswith(FENCE):
             if stripped.count(FENCE) % 2 == 1:
                 in_code = not in_code
-            out.append(block)
             continue
         if re.match(r"^#{1,6}\s+(references|bibliography)\s*$", stripped, re.I):
             seen_reference_heading = True
-            out.append(block)
             continue
         if seen_reference_heading or in_code or should_skip_block(block):
-            out.append(block)
             continue
         m = re.match(r"^(\s*(?:#{1,6}\s+|[-*+]\s+|\d+[.)]\s+|>\s+)?)([\s\S]*)$", block)
-        prefix, core = m.group(1), m.group(2)
+        translatable.append((idx, m.group(1), m.group(2)))
+
+    failures = 0
+    pos = 0
+    while pos < len(translatable):
+        batch = []
+        size = 0
+        while pos < len(translatable):
+            idx, prefix, core = translatable[pos]
+            marker = f"ZXQBLOCK{idx:05d}QXZ"
+            addition = marker + "\n" + core + "\n"
+            if batch and size + len(addition) > 4200:
+                break
+            batch.append((idx, prefix, core, marker))
+            size += len(addition)
+            pos += 1
+        packed = "\n".join(marker + "\n" + core for idx, prefix, core, marker in batch)
         try:
-            translated = "".join(google_translate(x) for x in split_text(core))
-            out.append(prefix + translated)
+            translated = google_translate(packed)
+            positions = []
+            for idx, prefix, core, marker in batch:
+                p = translated.find(marker)
+                if p < 0:
+                    raise ValueError("batch marker missing")
+                positions.append((p, idx, prefix, marker))
+            positions.sort()
+            for k, (p, idx, prefix, marker) in enumerate(positions):
+                s = p + len(marker)
+                e = positions[k + 1][0] if k + 1 < len(positions) else len(translated)
+                core_zh = translated[s:e].strip("\n ")
+                out[idx] = prefix + core_zh
         except Exception as e:
-            failures += 1
-            print("translate block failed", repr(e), file=sys.stderr)
-            out.append(block)
-        if idx % 10 == 0:
-            time.sleep(0.12)
+            print("batch translate failed; falling back", repr(e), file=sys.stderr)
+            for idx, prefix, core, marker in batch:
+                try:
+                    out[idx] = prefix + "".join(google_translate(x) for x in split_text(core))
+                except Exception as e2:
+                    failures += 1
+                    print("translate block failed", repr(e2), file=sys.stderr)
+        time.sleep(0.08)
     return "".join(out), failures
 
 def chinese_ratio(text):

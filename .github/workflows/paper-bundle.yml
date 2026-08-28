@@ -22,14 +22,7 @@ jobs:
       max-parallel: 8
       matrix:
         category:
-          - 01_TFM_PFN
-          - 02_CrossTable_Multimodal_Semantic
-          - 03_Unsupervised_Clustering_FM
-          - 04_Deep_Clustering_Local_Graph_Topology
-          - 05_Tabular_SSL
           - 06_Tabular_Generation_Schema
-          - 07_Schema_Semantics_ColumnTyping
-          - 08_Surveys
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

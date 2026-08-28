@@ -1,0 +1,107 @@
+name: Temporary paper bundle builder
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.github/workflows/paper-bundle.yml'
+      - 'tools/paper_bundle/**'
+
+permissions:
+  contents: read
+
+env:
+  PYTHONUNBUFFERED: '1'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        category:
+          - 01_TFM_PFN
+          - 02_CrossTable_Multimodal_Semantic
+          - 03_Unsupervised_Clustering_FM
+          - 04_Deep_Clustering_Local_Graph_Topology
+          - 05_Tabular_SSL
+          - 06_Tabular_Generation_Schema
+          - 07_Schema_Semantics_ColumnTyping
+          - 08_Surveys
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install PDF/HTTP dependencies
+        run: python -m pip install -U requests beautifulsoup4 pymupdf pymupdf4llm
+      - name: Download, convert and translate
+        run: python tools/paper_bundle/build_bundle.py --category '${{ matrix.category }}'
+      - name: Upload category result
+        uses: actions/upload-artifact@v4
+        with:
+          name: category-${{ matrix.category }}
+          path: output/${{ matrix.category }}
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 1
+
+  aggregate:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Download category artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: category-*
+          path: collected
+      - name: Build requested ZIP layout
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p final/pdf_zips final/markdown/English final/markdown/中文 final/reports
+          for d in collected/category-*; do
+            [ -d "$d" ] || continue
+            cat="${d#collected/category-}"
+            if [ -d "$d/pdf" ]; then (cd "$d/pdf" && zip -q -r "$GITHUB_WORKSPACE/final/pdf_zips/${cat}.zip" .); fi
+            if [ -d "$d/md_en" ]; then mkdir -p "final/markdown/English/$cat"; cp -a "$d/md_en/." "final/markdown/English/$cat/"; fi
+            if [ -d "$d/md_zh" ]; then mkdir -p "final/markdown/中文/$cat"; cp -a "$d/md_zh/." "final/markdown/中文/$cat/"; fi
+            if [ -f "$d/report.json" ]; then cp "$d/report.json" "final/reports/${cat}.json"; fi
+          done
+          (cd final/markdown && zip -q -r ../markdown_all.zip .)
+          cat > final/类别说明.txt <<'EOF'
+          01_TFM_PFN = TFM/PFN 与表格基础模型
+          02_CrossTable_Multimodal_Semantic = 跨表、多模态与语义表示
+          03_Unsupervised_Clustering_FM = 无监督聚类基础模型与 Benchmark
+          04_Deep_Clustering_Local_Graph_Topology = 深度聚类、局部结构、图与拓扑
+          05_Tabular_SSL = 表格自监督学习
+          06_Tabular_Generation_Schema = 表格生成与 Schema 条件生成
+          07_Schema_Semantics_ColumnTyping = Schema 语义与列类型
+          08_Surveys = 综述
+          EOF
+          python - <<'PY'
+          import json,csv,glob
+          rows=[]
+          for p in glob.glob('final/reports/*.json'):
+              rows.extend(json.load(open(p,encoding='utf-8')))
+          rows.sort(key=lambda x:x['id'])
+          with open('final/report.csv','w',encoding='utf-8-sig',newline='') as f:
+              fields=['id','title','category','pdf','md_en','md_zh','source_used','bytes','zh_ratio']
+              w=csv.DictWriter(f,fieldnames=fields); w.writeheader()
+              w.writerows({k:r.get(k,'') for k in fields} for r in rows)
+          failed=[r for r in rows if r.get('pdf')!='ok' or r.get('md_en')!='ok' or r.get('md_zh')!='ok']
+          json.dump({'total':len(rows),'complete':len(rows)-len(failed),'failed':failed},
+                    open('final/STATUS.json','w',encoding='utf-8'),ensure_ascii=False,indent=2)
+          print('TOTAL',len(rows),'FAILED_OR_PARTIAL',len(failed))
+          PY
+      - name: Upload final bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: paper-bundle-final
+          path: final
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 1

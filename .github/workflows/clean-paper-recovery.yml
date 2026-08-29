@@ -1,0 +1,59 @@
+name: Clean targeted paper recovery
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    paths:
+      - '.github/workflows/clean-paper-recovery.yml'
+      - 'tools/paper_recovery_clean/**'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        paper_id: [1, 18, 24, 46, 57, 60, 62, 70, 71, 72]
+    env:
+      RECOVER_ID: '${{ matrix.paper_id }}'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: python -m pip install -U requests pymupdf pymupdf4llm
+      - name: Fetch existing English Markdown when translation-only
+        if: contains('1,24,57,71', format('{0}', matrix.paper_id))
+        env:
+          GH_TOKEN: '${{ github.token }}'
+        shell: bash
+        run: |
+          set -euo pipefail
+          case "${RECOVER_ID}" in
+            1)  aid=9683662245; cat=01 ;;
+            24) aid=9683820829; cat=03 ;;
+            57) aid=9683489728; cat=06 ;;
+            71) aid=9683538402; cat=08 ;;
+            *) exit 0 ;;
+          esac
+          mkdir -p "source/${cat}" /tmp/src
+          curl -L --fail --retry 3             -H "Authorization: Bearer ${GH_TOKEN}"             -H "Accept: application/vnd.github+json"             -H "X-GitHub-Api-Version: 2022-11-28"             "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/artifacts/${aid}/zip"             -o "/tmp/src/${aid}.zip"
+          unzip -q "/tmp/src/${aid}.zip" -d "source/${cat}"
+      - name: Recover paper
+        run: python tools/paper_recovery_clean/recover.py
+      - name: Upload result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: clean-recovery-${{ matrix.paper_id }}
+          path: recovery_output/${{ matrix.paper_id }}
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 1

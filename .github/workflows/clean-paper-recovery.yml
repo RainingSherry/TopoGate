@@ -21,7 +21,8 @@ jobs:
       matrix:
         paper_id: [18, 46, 60, 62, 70, 72]
     env:
-      RECOVER_ID: '${{ matrix.paper_id }}'\n      SKIP_TRANSLATE: '1'
+      RECOVER_ID: '${{ matrix.paper_id }}'
+      SKIP_TRANSLATE: '1'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

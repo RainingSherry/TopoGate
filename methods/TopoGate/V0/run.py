@@ -57,6 +57,7 @@ LABEL_CANDIDATES = (
 
 @dataclass(frozen=True)
 class InputBundle:
+    # labels 仅由外层 benchmark runner 保存；训练器收到的只有 X。
     X: np.ndarray
     labels: np.ndarray | None
     label_values: list[str] | None
@@ -107,6 +108,7 @@ def _first_npz(payload: Any, names: tuple[str, ...]) -> np.ndarray | None:
 
 
 def _load_npz(path: Path) -> tuple[np.ndarray, np.ndarray | None, dict[str, Any]]:
+    # 同时兼容普通 dense NPZ 和 scipy CSR 的四数组存储，不改变输入数值语义。
     with np.load(path, allow_pickle=False) as payload:
         sparse_keys = {"data", "indices", "indptr", "shape"}
         if sparse_keys.issubset(payload.files):
@@ -123,6 +125,7 @@ def _load_npz(path: Path) -> tuple[np.ndarray, np.ndarray | None, dict[str, Any]
             X = _first_npz(payload, ("X", "x", "features", "data"))
             if X is None:
                 raise ValueError(f"NPZ has no X/x/features/data matrix: {path}")
+        # 标签可以被读取用于 K/最终指标，但从这里开始只留在外层 runner。
         labels = _first_npz(payload, ("y", "labels", "label"))
         keys = list(payload.files)
     if X.ndim != 2 or X.shape[0] < 2 or X.shape[1] == 0:
@@ -141,6 +144,7 @@ def _load_npz(path: Path) -> tuple[np.ndarray, np.ndarray | None, dict[str, Any]
 def _encode_labels(labels: np.ndarray | None) -> tuple[np.ndarray | None, list[str] | None]:
     if labels is None:
         return None, None
+    # 评估指标需要整数标签；LabelEncoder 只改变外层表示，不参与模型拟合。
     values = np.asarray(labels).reshape(-1)
     if values.size == 0:
         return None, None
@@ -165,6 +169,8 @@ def _prepare_array(
 ) -> tuple[np.ndarray, dict[str, Any]]:
     """Apply deterministic, label-free preprocessing to an NPZ matrix."""
 
+    # NPZ 预处理完全由 X 决定：计数归一化/log1p -> 方差特征选择 -> 可选标准化。
+    # 这里明确不接收 labels，防止标签泄漏到模型输入或特征选择。
     raw = np.asarray(values, dtype=np.float32)
     if raw.ndim != 2 or raw.shape[0] < 2 or raw.shape[1] == 0:
         raise ValueError("input matrix must have shape [n_samples>=2, n_features>=1]")
@@ -180,6 +186,7 @@ def _prepare_array(
     work = raw.astype(np.float32, copy=True)
     normalization = "none"
     if mode == "raw":
+        # 原始计数先按每个细胞的总量归一化，再 log1p；零计数行保持全零。
         row_sum = work.sum(axis=1, keepdims=True)
         scale = np.divide(
             float(config.target_sum),
@@ -198,12 +205,14 @@ def _prepare_array(
     selected = np.arange(original_features, dtype=np.int64)
     selection_strategy = "disabled"
     if int(config.n_top_features) > 0 and original_features > int(config.n_top_features):
+        # 只按无标签方差排序；lexsort 的原始索引 tie-break 保证确定性。
         variance = np.nan_to_num(np.var(work, axis=0), nan=-np.inf, posinf=-np.inf, neginf=-np.inf)
         order = np.lexsort((np.arange(original_features, dtype=np.int64), -variance))
         selected = np.sort(order[: int(config.n_top_features)]).astype(np.int64)
         work = work[:, selected]
         selection_strategy = "variance_top_features"
     if config.scale_input:
+        # 标准化参数也只从当前输入 X 拟合，避免使用标签或外部 oracle。
         work = StandardScaler(with_mean=True, with_std=True).fit_transform(work).astype(np.float32)
         scale_method = "sklearn_standard_scaler"
     else:
@@ -238,6 +247,8 @@ def _load_h5ad(path: Path, config: V0Config, label_key: str) -> InputBundle:
         raise RuntimeError("h5ad input requires scanpy and its anndata dependencies") from exc
 
     adata = sc.read_h5ad(path)
+    # h5ad 的 count/raw 选择、HVG 和 scaling 沿用 family 工具；obs 标签仅在
+    # 外层读取后保存，不会传给 fit_predict。
     source_x, gene_names, var, source_desc, inferred_mode = family.select_count_source(
         adata, config.input_mode
     )
@@ -296,6 +307,7 @@ def _load_h5ad(path: Path, config: V0Config, label_key: str) -> InputBundle:
 
 
 def load_input(path: str | Path, config: V0Config, label_key: str = "auto") -> InputBundle:
+    # 根据后缀选择输入适配器；两条路径都返回统一的 InputBundle 契约。
     source = Path(path)
     if source.suffix.lower() == ".npz":
         raw, raw_labels, profile = _load_npz(source)
@@ -312,6 +324,8 @@ def load_input(path: str | Path, config: V0Config, label_key: str = "auto") -> I
 def resolve_runtime_device(device: str, gpu: int) -> str:
     """Resolve ``auto|cpu|cuda`` and reject physical GPU 0/7."""
 
+    # CLI 的 gpu 是物理卡候选；若 CUDA_VISIBLE_DEVICES 已设置，则转换为
+    # torch 需要的逻辑序号，同时拒绝包含 0/7 的可见列表。
     choice = str(device).lower()
     if choice not in {"auto", "cpu", "cuda"}:
         raise ValueError("device must be auto, cpu, or cuda")
@@ -348,6 +362,7 @@ def resolve_runtime_device(device: str, gpu: int) -> str:
 
 
 def _mapped_predictions(y_true: np.ndarray, predictions: np.ndarray) -> np.ndarray:
+    # 聚类标签本身无序，Hungarian matching 只用于报告 ACC/F1，不参与训练或选参。
     true_values = np.unique(y_true)
     pred_values = np.unique(predictions)
     width = max(len(true_values), len(pred_values))
@@ -364,6 +379,7 @@ def _mapped_predictions(y_true: np.ndarray, predictions: np.ndarray) -> np.ndarr
 
 
 def clustering_metrics(labels: np.ndarray | None, predictions: np.ndarray) -> dict[str, Any]:
+    # 这是 fit 完成后的外层评估；无标签输入仍可输出 KMeans 协议说明。
     if labels is None:
         return {"labels_available": False, "cluster_method": "kmeans_known_k"}
     y = np.asarray(labels, dtype=np.int64).reshape(-1)
@@ -397,6 +413,8 @@ def run_one(
 ) -> dict[str, Any]:
     """Run one auditable V0 fit and write a self-contained output directory."""
 
+    # run_one 负责输入、K 协议、标签隔离和产物落盘；真正的无标签训练在
+    # trainer.fit_predict 中完成。
     source = Path(data_path)
     output = Path(save_dir)
     output.mkdir(parents=True, exist_ok=True)
@@ -426,6 +444,7 @@ def run_one(
     if n_clusters is None:
         if labels is None:
             raise ValueError("n_clusters is required for an input without benchmark labels")
+        # benchmark 标签只能提供 oracle K；标签值本身不会传入 fit_predict。
         K = int(np.unique(labels).size)
         k_source = "benchmark_oracle_from_y"
     else:
@@ -434,6 +453,7 @@ def run_one(
     if K <= 0 or K > bundle.X.shape[0]:
         raise ValueError("n_clusters must be in [1, n_samples]")
 
+    # resolved_config 同时记录输入 hash、seed、设备和 K 来源，是本次运行的协议快照。
     resolved = config.resolved_dict()
     resolved.update(
         {
@@ -459,6 +479,7 @@ def run_one(
             {str(index): str(value) for index, value in enumerate(label_values)},
         )
 
+    # 关键隔离边界：这里只传 bundle.X；labels 仅留在本函数用于 readout 后评估。
     predictions, embedding, diagnostics = fit_predict(
         bundle.X,
         n_clusters=K,
@@ -469,6 +490,7 @@ def run_one(
     if predictions is None:  # K is always supplied by this outer runner
         raise AssertionError("V0 runner expected a KMeans prediction")
     predictions = np.asarray(predictions, dtype=np.int64)
+    # 预测、embedding、图/gate 数组和 JSON 诊断组成可复核的输出契约。
     np.save(output / "predictions.npy", predictions)
     np.save(output / "embedding_final.npy", embedding.astype(np.float32))
     if labels is not None:
@@ -499,6 +521,7 @@ def run_one(
         },
         output / "model.pt",
     )
+    # 指标在模型完成后计算；任何指标都不会反向影响模型参数或配置选择。
     metrics = clustering_metrics(labels, predictions)
     _write_json(output / "metrics.json", metrics)
     summary: dict[str, Any] = {
@@ -553,6 +576,7 @@ def run_one(
     _write_json(output / "run_record.json", record)
 
     if bundle.adata is not None and not no_save_h5ad:
+        # h5ad 写回是可选的展示产物，失败只记录 warning，不改变已完成的核心结果。
         try:
             import methods.shared_utils as shared_utils
 
@@ -570,7 +594,22 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument("--data-path", "--data_path", dest="data_path", required=True)
     parser.add_argument("--save-dir", "--save_dir", dest="save_dir", required=True)
     parser.add_argument("--config", default=None)
-    parser.add_argument("--parameterization", "--variant", dest="parameterization", default=None)
+    parameterization = parser.add_mutually_exclusive_group()
+    parameterization.add_argument(
+        "--parameterization",
+        "--variant",
+        dest="parameterization",
+        default=None,
+        help="F/fixed or T/topology; historical short aliases are -f/-F and -t/-T",
+    )
+    # 保留历史单字母开关，便于直接替换旧 NeighborMix runner；它们写入同一个
+    # 原始参数值，随后由 load_config 统一归一化为 fixed/topology。
+    parameterization.add_argument(
+        "-f", "-F", dest="parameterization", action="store_const", const="fixed"
+    )
+    parameterization.add_argument(
+        "-t", "-T", dest="parameterization", action="store_const", const="topology"
+    )
     parser.add_argument("--dataset-name", "--dataset_name", dest="dataset_name", default=None)
     parser.add_argument("--label-key", "--label_key", dest="label_key", default="auto")
     parser.add_argument("--n-clusters", "--n_clusters", dest="n_clusters", type=int, default=None)

@@ -26,6 +26,7 @@ from typing import Any
 import yaml
 
 
+# 历史命令行/论文记号统一映射到两个 canonical 参数化，避免 F/T 分支复制。
 PARAMETERIZATION_ALIASES = {
     "f": "fixed",
     "-f": "fixed",
@@ -47,6 +48,7 @@ EDGE_RELIABILITY_MODES = frozenset(
 def normalize_parameterization(value: str) -> str:
     """Resolve the documented F/T aliases to one canonical value."""
 
+    # 配置文件和 CLI 都经过这里；之后内部代码只比较 fixed/topology。
     key = str(value).strip().lower()
     try:
         return PARAMETERIZATION_ALIASES[key]
@@ -63,21 +65,21 @@ class V0Config:
     protocol_id: str = "topogate_v0_scvicar_v1"
     parameterization: str = "fixed"
 
-    # Shared scMAE backbone and objective.
+    # 共享的 scMAE backbone 与重构/mask 目标；F/T 不在这些字段上分叉。
     hidden_size: int = 128
     dropout: float = 0.0
     masked_data_weight: float = 0.75
     mask_loss_weight: float = 0.70
     mask_ratio: float = 0.40
 
-    # Optimization.
+    # 优化器和 DataLoader 的公共协议。
     epochs: int = 80
     batch_size: int = 256
     lr: float = 1e-3
     num_workers: int = 0
     drop_last: bool = False
 
-    # Vicinal corruption.
+    # 邻域 pseudo-view corruption 的公共参数。
     use_pseudo: bool = True
     pseudo_weight: float = 0.30
     alpha: float = 0.90
@@ -87,8 +89,8 @@ class V0Config:
     knn_pca_dim: int = 50
     tau: float = 0.20
 
-    # Topology parameterization.  These fields are recorded for fixed runs too
-    # so a resolved config fully describes the shared operator.
+    # T 的 topology 参数。即使运行 F 也保留这些字段，保证 resolved config
+    # 能完整描述同一个 V0 operator，便于跨参数化审计。
     edge_reliability_mode: str = "sim_mutual_snn_distance"
     gamma_sim: float = 1.0
     gamma_mutual: float = 1.0
@@ -101,7 +103,7 @@ class V0Config:
     beta_perturb: float = 2.0
     beta_uncertainty: float = 1.0
 
-    # Final readout and optional input preprocessing used by the CLI.
+    # CLI 预处理和最终 KMeans readout；它们不改变 backbone 的定义。
     kmeans_n_init: int = 20
     n_top_features: int = 1000
     target_sum: float = 10_000.0
@@ -110,6 +112,7 @@ class V0Config:
     evaluate_unsupervised: bool = False
 
     def __post_init__(self) -> None:
+        # dataclass 创建时立即校验，避免非法配置在训练数小时后才暴露。
         canonical = normalize_parameterization(self.parameterization)
         object.__setattr__(self, "parameterization", canonical)
         if not str(self.protocol_id).strip():
@@ -173,6 +176,8 @@ class V0Config:
 
     @property
     def graph_enabled(self) -> bool:
+        # pseudo 分支只有在开关、权重、邻居数都有效时才建图；关闭时 trainer
+        # 返回空图并保持诊断形状，避免引入隐式的 fallback 算法。
         return bool(
             self.use_pseudo
             and self.pseudo_weight > 0.0
@@ -182,20 +187,25 @@ class V0Config:
 
     @property
     def mix_mode(self) -> str:
+        # 这是审计字段：fixed 对应 F 的基础概率，reliability 对应 T 的边重加权。
         return "reliability" if self.parameterization == "topology" else "fixed"
 
     @property
     def gate_mode(self) -> str:
+        # F 使用全体共享 gate，T 使用由拓扑统计量解析得到的 node gate。
         return "topology" if self.parameterization == "topology" else "fixed"
 
     def for_parameterization(self, value: str) -> "V0Config":
         """Return the same protocol with a canonical F/T parameterization."""
 
+        # replace 保留所有共享协议，只替换参数化；返回的新对象仍会触发校验。
         return replace(self, parameterization=normalize_parameterization(value))
 
     def resolved_dict(self) -> dict[str, Any]:
         """Return the config plus effective operator fields for audit logs."""
 
+        # 除原始字段外写入实际生效的 mix/gate/reliability 语义，避免只看默认值
+        # 无法判断某次 F/T 运行究竟走了哪条计算路径。
         payload = asdict(self)
         payload.update(
             {
@@ -230,6 +240,8 @@ def load_config(
 ) -> V0Config:
     """Load a YAML mapping and apply explicit non-``None`` overrides."""
 
+    # YAML 提供可复现实验协议，显式 CLI override 拥有更高优先级；variant 是
+    # 兼容历史配置的参数化别名，最终仍由 V0Config 统一归一化和校验。
     payload: dict[str, Any] = {}
     if path is not None:
         with open(path, "r", encoding="utf-8") as handle:

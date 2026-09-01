@@ -6,6 +6,9 @@ scMAE 编码器、掩码预测器、解码器、训练循环和 KMeans readout�
 corruption 的参数化不同。旧实现没有被移动、删除或修改，仍可作为数值和实验
 协议对照。
 
+完整的实现对齐公式、符号表、函数对照、梯度路径和 F/T 边界见
+[FORMAL_SPECIFICATION.md](FORMAL_SPECIFICATION.md)。
+
 ## 历史位置与 V0 映射
 
 | 论文/历史名称 | plantnet 中的 canonical 源码 | V0 设置 |

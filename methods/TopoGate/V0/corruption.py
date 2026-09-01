@@ -33,6 +33,7 @@ def compute_node_gate(
     path in :func:`make_pseudo_batch`.
     """
 
+    # 先把 F/T 别名归一化，后续分支只处理 fixed/topology 两种 canonical 名称。
     canonical = normalize_parameterization(parameterization)
     n_samples, k = graph.indices.shape
     if not 0.0 <= float(alpha) <= 1.0:
@@ -41,6 +42,7 @@ def compute_node_gate(
         raise ValueError("gate_min/gate_max must satisfy 0 <= gate_min <= gate_max")
 
     if canonical == "fixed":
+        # F 的混合强度是全体样本共享的常数，pseudo loss 不做 gate 加权。
         gate = np.full(n_samples, 1.0 - float(alpha), dtype=np.float32)
         sample_weight = np.ones(n_samples, dtype=np.float32)
         perturb = np.zeros(n_samples, dtype=np.float32)
@@ -63,8 +65,8 @@ def compute_node_gate(
         }
         return gate, sample_weight, summary
 
-    # T's gate is defined even when the graph has no edges; in that case the
-    # only sensible corruption is zero, which also keeps pseudo loss disabled.
+    # T 的 gate 由 mutual/SNN/perturbation 等无标签统计量解析计算。
+    # 无边图时没有可靠邻居，gate 直接置零，让 pseudo corruption 失效。
     if k == 0:
         gate = np.zeros(n_samples, dtype=np.float32)
         perturb = np.zeros(n_samples, dtype=np.float32)
@@ -80,17 +82,19 @@ def compute_node_gate(
                 raise ValueError(f"uncertainty must have shape ({n_samples},), got {unc.shape}")
             if not np.all(np.isfinite(unc)):
                 raise ValueError("uncertainty must be finite")
+        # logits 只是固定公式的中间量，不属于 nn.Module，也不会参与反向传播。
         logits = (
             float(beta_mutual) * mutual_ratio
             + float(beta_snn) * snn_avg
             - float(beta_perturb) * perturb
             - float(beta_uncertainty) * unc
         )
-        # Clipping avoids overflow for explicitly large diagnostic coefficients.
+        # 大系数诊断配置可能产生极端 logits，裁剪后再计算 sigmoid 防止 exp 溢出。
         sigmoid = 1.0 / (1.0 + np.exp(-np.clip(logits, -60.0, 60.0)))
         gate = (
             float(gate_min) + (float(gate_max) - float(gate_min)) * sigmoid
         ).astype(np.float32)
+    # T 的 pseudo 样本权重按本次数据中观察到的最大 gate 归一化；F 已在上面返回全 1。
     empirical_max_gate = float(np.max(gate)) if gate.size else 0.0
     sample_weight = np.clip(
         gate / max(empirical_max_gate, 1e-8), 0.0, 1.0
@@ -127,6 +131,7 @@ def _row_and_probabilities(
     row = graph.indices[cell]
     if row.size == 0:
         return row, np.zeros(0, dtype=np.float32)
+    # F 使用基础概率，T 使用 reliability 调整后的 edge_weights。
     probs = graph.probs[cell] if normalize_parameterization(parameterization) == "fixed" else edge_weights[cell]
     # NumPy's Generator.choice checks the probability sum tightly.  Keep this
     # local sampling representation in float64 so a float32 graph row whose sum
@@ -169,6 +174,7 @@ def make_pseudo_batch(
         raise IndexError("batch_indices contains an out-of-range cell")
     if graph.indices.shape[0] != data.shape[0]:
         raise ValueError("graph and data_np must contain the same number of cells")
+    # 没有可用邻居时保持 anchor 原样，并返回单位权重以维持调用方契约。
     if graph.indices.shape[1] == 0 or int(mix_neighbors) <= 0:
         unit = torch.ones(batch_x.shape[0], dtype=batch_x.dtype, device=batch_x.device)
         return batch_x.detach(), unit, {
@@ -182,11 +188,13 @@ def make_pseudo_batch(
     k = int(graph.indices.shape[1])
     m = max(1, min(int(mix_neighbors), k))
     if neighbor_estimator == "full":
+        # full 是确定性的诊断路径：使用整行概率，不进行随机抽样。
         neighbor_mean = np.empty((indices.shape[0], data.shape[1]), dtype=np.float32)
         for position, cell_value in enumerate(indices):
             row, probs = _row_and_probabilities(graph, edge_weights, int(cell_value), canonical)
             neighbor_mean[position] = np.sum(data[row] * probs[:, None], axis=0).astype(np.float32)
     else:
+        # current/uniform_sample 都先按 P_i 有放回抽样，再决定插值权重的形式。
         sampled = np.empty((indices.shape[0], m), dtype=np.int64)
         interpolation_weights = np.empty((indices.shape[0], m), dtype=np.float32)
         for position, cell_value in enumerate(indices):
@@ -195,8 +203,10 @@ def make_pseudo_batch(
             sampled[position] = row[choices]
             picked = probs[choices]
             if neighbor_estimator == "current":
+                # 当前历史 F/T 语义：抽中的概率重新归一化，重复抽到同一邻居也合法。
                 interpolation_weights[position] = picked / max(float(picked.sum()), 1e-12)
             else:
+                # uniform_sample 只保留抽样分布，插值本身对抽中的邻居等权。
                 interpolation_weights[position] = 1.0 / float(m)
         neighbor_mean = np.sum(
             data[sampled] * interpolation_weights[:, :, None], axis=1
@@ -209,6 +219,7 @@ def make_pseudo_batch(
         gate_batch = np.full(indices.shape[0], 1.0 - float(alpha), dtype=np.float32)
         sample_weight_np = np.ones(indices.shape[0], dtype=np.float32)
     else:
+        # T 的 gate 同时控制邻居注入比例和 pseudo loss 的样本权重。
         gate_batch = gates[indices]
         sample_weight_np = np.clip(
             gate_batch / max(float(np.max(gates)) if gates.size else 1.0, 1e-8),
@@ -216,10 +227,12 @@ def make_pseudo_batch(
             1.0,
         ).astype(np.float32)
     anchor = data[indices]
+    # pseudo-cell 是 anchor 与邻居估计的凸组合；目标仍由 trainer 设为 clean anchor。
     mixed = (1.0 - gate_batch[:, None]) * anchor + gate_batch[:, None] * neighbor_mean
     perturb = np.linalg.norm(neighbor_mean - anchor, axis=1) / (
         np.linalg.norm(anchor, axis=1) + 1e-6
     )
+    # graph/gate 在 NumPy 中计算，显式 detach 保证它们不会伪装成可学习路径。
     pseudo = torch.as_tensor(mixed, dtype=batch_x.dtype, device=batch_x.device)
     sample_weight = torch.as_tensor(
         sample_weight_np, dtype=batch_x.dtype, device=batch_x.device
@@ -246,6 +259,7 @@ def apply_scmae_noise(
         raise ValueError(f"x must be two-dimensional, got {tuple(x.shape)}")
     if not 0.0 <= float(mask_ratio) <= 1.0:
         raise ValueError("mask_ratio must be in [0, 1]")
+    # 每个 feature 独立决定是否交换；交换来源只限于当前 mini-batch 的随机行置换。
     selected = torch.rand(
         x.shape, dtype=torch.float32, device=x.device, generator=generator
     ) < float(mask_ratio)
@@ -255,6 +269,7 @@ def apply_scmae_noise(
         else x[torch.randperm(x.shape[0], device=x.device, generator=generator)]
     )
     corrupted = torch.where(selected, replacement, x)
+    # 候选位置若恰好换到相同数值，最终不计入 mask，与历史实现保持一致。
     return corrupted, (corrupted != x).to(dtype=x.dtype)
 
 

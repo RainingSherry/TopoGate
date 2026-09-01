@@ -22,6 +22,7 @@ from .graph import (
 from .model import WeightedAutoEncoder
 
 
+# 仓库级 GPU 防火墙：物理卡 0/7 禁止使用，其余训练卡显式列入白名单。
 ALLOWED_PHYSICAL_GPUS = frozenset({1, 2, 3, 4, 5, 6})
 FORBIDDEN_PHYSICAL_GPUS = frozenset({0, 7})
 
@@ -31,11 +32,14 @@ def resolve_device(device: str | torch.device) -> torch.device:
 
     requested = torch.device(device)
     if requested.type == "cpu":
+        # CPU 不需要做 CUDA_VISIBLE_DEVICES 映射，也不触碰任何 GPU 状态。
         return requested
     if requested.type != "cuda":
         raise ValueError(f"unsupported device type: {requested.type}")
     visible = [item.strip() for item in os.environ.get("CUDA_VISIBLE_DEVICES", "").split(",") if item.strip()]
     if visible:
+        # 设置 CUDA_VISIBLE_DEVICES 后，torch.cuda 使用的是逻辑序号；这里
+        # 先审计其对应的物理卡，再把 requested.index 限制在可见列表范围内。
         try:
             visible_physical = {int(item) for item in visible}
         except ValueError as exc:
@@ -55,6 +59,7 @@ def resolve_device(device: str | torch.device) -> torch.device:
         return torch.device(f"cuda:{int(requested.index)}")
     if requested.index is None:
         raise ValueError("CUDA device must include a physical index")
+    # 未设置可见列表时，cuda:N 直接按物理编号解释，因此仍必须经过白名单。
     physical = int(requested.index)
     if physical in FORBIDDEN_PHYSICAL_GPUS or physical not in ALLOWED_PHYSICAL_GPUS:
         raise ValueError(
@@ -69,6 +74,8 @@ def resolve_device(device: str | torch.device) -> torch.device:
 def seed_runtime(seed: int, device: torch.device) -> None:
     """Seed independent Python, NumPy, and torch streams."""
 
+    # 同时固定 Python、NumPy、PyTorch（以及 CUDA）随机流，保证图抽样、
+    # DataLoader 顺序、mask 噪声和网络初始化都能由同一个 seed 复现。
     random.seed(int(seed))
     np.random.seed(int(seed))
     torch.manual_seed(int(seed))
@@ -79,6 +86,7 @@ def seed_runtime(seed: int, device: torch.device) -> None:
 
 
 def _torch_generator(device: torch.device, seed: int) -> torch.Generator:
+    # 为 real/pseudo 噪声建立独立 generator，避免一个随机调用改变另一条路径。
     generator = torch.Generator(device=device.type)
     generator.manual_seed(int(seed))
     return generator
@@ -103,6 +111,7 @@ def extract_embedding(
     batch_size: int,
     device: torch.device,
 ) -> np.ndarray:
+    # 训练结束后只对干净输入运行 encoder；这里不再生成 mask 或 pseudo view。
     model.eval()
     tensor = torch.as_tensor(data_np, dtype=torch.float32)
     loader = DataLoader(
@@ -112,6 +121,7 @@ def extract_embedding(
         drop_last=False,
     )
     rows = [model.feature(batch[0].to(device)).detach().cpu().numpy() for batch in loader]
+    # 固定顺序拼回所有样本，并把异常浮点值转换为可供 KMeans 使用的有限值。
     embedding = np.concatenate(rows, axis=0).astype(np.float32, copy=False)
     return np.nan_to_num(embedding, nan=0.0, posinf=0.0, neginf=0.0)
 
@@ -124,6 +134,7 @@ def _build_operator_state(
     """Build graph, edge weights, node gates, and summaries for either F or T."""
 
     if not config.graph_enabled:
+        # 关闭 pseudo 分支时仍返回形状完整的空图和诊断，保持输出契约一致。
         graph = _empty_graph(data_np.shape[0])
         empty = np.zeros((data_np.shape[0], 0), dtype=np.float32)
         gate, _sample_weight, gate_summary = compute_node_gate(
@@ -146,6 +157,8 @@ def _build_operator_state(
         }
         return graph, empty, empty, gate, edge_summary, gate_summary
 
+    # 拓扑算子按固定顺序构建：PCA/kNN 图 -> edge reliability/weights -> node gate。
+    # 整个过程只接收表达矩阵，不读取 benchmark 标签。
     graph = build_pca_knn_graph(
         data_np,
         k=min(int(config.neighbor_k), max(1, data_np.shape[0] - 1)),
@@ -154,6 +167,7 @@ def _build_operator_state(
         seed=int(seed),
     )
     if config.parameterization == "topology":
+        # T 用 topology reliability 重加权邻居分布；F 直接沿用基础 kNN 概率。
         reliability, edge_weights, edge_summary = compute_edge_reliability(
             graph,
             mode=config.edge_reliability_mode,
@@ -175,6 +189,8 @@ def _build_operator_state(
             gamma_snn=0.0,
             gamma_distance=0.0,
         )
+    # sample_weight 的数组由 gate 函数同步计算；trainer 只在 T 的 pseudo loss
+    # 中使用它，F 的返回值保持单位权重。
     gate, _sample_weight, gate_summary = compute_node_gate(
         graph,
         parameterization=config.parameterization,
@@ -206,6 +222,8 @@ def fit_predict(
     against labels after this function returns.
     """
 
+    # 这是模型的无标签入口：X 是训练、建图、扰动和 readout 的唯一数据输入。
+    # n_clusters 只决定训练后的 KMeans 簇数，不参与参数学习。
     data = np.ascontiguousarray(np.asarray(X, dtype=np.float32))
     if data.ndim != 2 or data.shape[0] < 2 or data.shape[1] == 0:
         raise ValueError("X must contain at least two samples and one feature")
@@ -225,6 +243,7 @@ def fit_predict(
     loader_generator = torch.Generator(device="cpu")
     loader_generator.manual_seed(int(seed))
     drop_last = bool(config.drop_last and data.shape[0] >= int(config.batch_size))
+    # DataLoader 的索引与表达值保持绑定，pseudo 构造需要用索引回查全量图。
     train_loader = DataLoader(
         TensorDataset(indices, tensor),
         batch_size=int(config.batch_size),
@@ -233,6 +252,8 @@ def fit_predict(
         generator=loader_generator,
         num_workers=int(config.num_workers),
     )
+    # F/T 使用同一个 WeightedAutoEncoder；optimizer 的参数集合因此只有共享
+    # scMAE backbone，不存在隐藏的 F/T 可学习 gate 或 edge 参数。
     model = WeightedAutoEncoder(
         num_genes=int(data.shape[1]),
         hidden_size=int(config.hidden_size),
@@ -241,6 +262,7 @@ def fit_predict(
         mask_loss_weight=float(config.mask_loss_weight),
     ).to(runtime_device)
     optimizer = torch.optim.Adam(model.parameters(), lr=float(config.lr))
+    # 图抽样和两类 scMAE mask 使用彼此独立的随机流，且 seed 偏移固定可审计。
     mix_rng = np.random.default_rng(
         int(seed) + (2027 if config.parameterization == "fixed" else 3089)
     )
@@ -273,6 +295,7 @@ def fit_predict(
         for batch_indices_tensor, batch_cpu in train_loader:
             batch_indices = batch_indices_tensor.numpy().astype(np.int64, copy=False)
             batch = batch_cpu.to(runtime_device)
+            # real view 以当前 batch 的 clean expression 为目标，执行历史 row-swap mask。
             corrupted, real_mask = apply_scmae_noise(
                 batch, float(config.mask_ratio), generator=real_noise_generator
             )
@@ -286,6 +309,8 @@ def fit_predict(
             }
             mix_info = {"mean_node_gate": 0.0, "mean_perturb_norm": 0.0}
             if pseudo_enabled:
+                # pseudo view 的输入由图上的邻居凸组合得到，目标仍是该 batch 的
+                # clean anchor；T 另外用 topology gate 给每个样本加权。
                 pseudo_batch, sample_weight, mix_info = make_pseudo_batch(
                     data_np=data,
                     batch_indices=batch_indices,
@@ -316,6 +341,8 @@ def fit_predict(
 
             if not torch.isfinite(loss):
                 raise FloatingPointError("non-finite V0 training loss")
+            # 反向传播只更新 model.parameters()；图、edge weight、node gate 和
+            # pseudo-cell 都是 detached 的无梯度统计量。
             optimizer.zero_grad(set_to_none=True)
             loss.backward()
             optimizer.step()
@@ -337,9 +364,11 @@ def fit_predict(
         for key in tracked:
             history[key].append(totals[key] / max(1, n_batches))
 
+    # 训练后的 clean embedding 是唯一的聚类 readout 输入；训练标签从未进入此函数。
     embedding = extract_embedding(model, data, config.batch_size, runtime_device)
     predictions = None
     if n_clusters is not None:
+        # KMeans 只在训练完成后执行，n_clusters 是外部协议提供的 readout 参数。
         predictions = KMeans(
             n_clusters=int(n_clusters),
             n_init=int(config.kmeans_n_init),
@@ -363,6 +392,7 @@ def fit_predict(
     graph.profile["parameterization"] = config.parameterization
     graph.profile["mix_mode"] = config.mix_mode
     graph.profile["pseudo_enabled"] = pseudo_enabled
+    # 保存图、gate、history 和模型参数用于审计；这些对象不含 ground-truth 标签。
     diagnostics: dict[str, Any] = {
         "neighbor_indices": graph.indices,
         "neighbor_base_probs": graph.probs,

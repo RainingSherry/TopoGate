@@ -1,0 +1,190 @@
+{
+  "audit_version": "topogate_v0_formal_repro_audit_v1",
+  "audit_ok": true,
+  "audited_at": "2026-09-01T19:38:48+08:00",
+  "output_root": "/data/luolie/ToPoGate/result/v0/formal_v0_repro_v2",
+  "protocol_id": "topogate_v0_scvicar_v1",
+  "matrix": {
+    "datasets": [
+      "Blood_BoneMarrow",
+      "Human_Pancreas_1",
+      "Human_Pancreas_3",
+      "Mouse_Pancreas_1",
+      "PRJNA895163",
+      "TabulaSapiens_Pancreas"
+    ],
+    "parameterizations": [
+      "fixed",
+      "topology"
+    ],
+    "seeds": [
+      42,
+      123,
+      7
+    ],
+    "expected_cells": 36,
+    "canonical_key_count": 36
+  },
+  "execution": {
+    "status": "completed",
+    "completed_valid": 36,
+    "reused": 0,
+    "incomplete_compute": 0,
+    "planned": 0,
+    "protocol_mismatch": 0,
+    "updated_at": "2026-09-01T11:19:10.844439+00:00"
+  },
+  "checks": {
+    "canonical_keys_exact_once": true,
+    "execution_completed": true,
+    "source_hashes_current": true,
+    "config_hashes_current": true,
+    "code_hashes_current": true,
+    "protocol_and_required_artifacts": true,
+    "array_shapes": true,
+    "finite_metrics_embeddings": true,
+    "labels_isolation_and_k_protocol": true,
+    "k_matches_labels_true_unique_count": true
+  },
+  "observed_k_from_saved_labels_true": {
+    "Blood_BoneMarrow": 30,
+    "Human_Pancreas_1": 6,
+    "Human_Pancreas_3": 13,
+    "Mouse_Pancreas_1": 10,
+    "PRJNA895163": 12,
+    "TabulaSapiens_Pancreas": 16
+  },
+  "input_anchors": {
+    "Blood_BoneMarrow": {
+      "path": "/data/luolie/biopipeline/dimension-reduction/plantnet/result/scvicar_attribution_v2/datasets/Blood_BoneMarrow.h5ad",
+      "sha256": "3f51f1d3728539b74f6b01a48f0dfcde63247bcf91808b2f4079efff73bc0c77",
+      "n_clusters": 30
+    },
+    "Human_Pancreas_1": {
+      "path": "/data/luolie/biopipeline/dimension-reduction/plantnet/result/scvicar_attribution_v2/datasets/Human_Pancreas_1.h5ad",
+      "sha256": "115836148077a97c783016b66fd775d980c3d44a0c95c14c2c9656c329f5fde2",
+      "n_clusters": 6
+    },
+    "Human_Pancreas_3": {
+      "path": "/data/luolie/biopipeline/dimension-reduction/plantnet/result/scvicar_attribution_v2/datasets/Human_Pancreas_3.h5ad",
+      "sha256": "3449593a0feb60337872627907d35add3a477326a3bc46eaba8619280f648a13",
+      "n_clusters": 13
+    },
+    "Mouse_Pancreas_1": {
+      "path": "/data/luolie/biopipeline/dimension-reduction/plantnet/result/scvicar_attribution_v2/datasets/Mouse_Pancreas_1.h5ad",
+      "sha256": "178a8c89ee1dae1adf0564dc3fa019ebec1f3a3a2ef7516a7ad15b571ac7ad1a",
+      "n_clusters": 10
+    },
+    "PRJNA895163": {
+      "path": "/data/luolie/biopipeline/dimension-reduction/plantnet/result/scvicar_attribution_v2/datasets/PRJNA895163.h5ad",
+      "sha256": "4720016d69f5c5ee0cb27973061a2c537c6b35b23767019aeb416f34dd66f2c3",
+      "n_clusters": 12
+    },
+    "TabulaSapiens_Pancreas": {
+      "path": "/data/luolie/biopipeline/dimension-reduction/plantnet/result/scvicar_attribution_v2/datasets/TabulaSapiens_Pancreas.h5ad",
+      "sha256": "a73015faf0a985e12131515e8b6462e83b5c88e4561b109179d3e03947a925ef",
+      "n_clusters": 16
+    }
+  },
+  "config_anchors": {
+    "fixed": {
+      "path": "/home/luolie/ToPoGate/methods/TopoGate/V0/configs/topogate_v0_fixed.yaml",
+      "sha256": "e6ee922142cfea14b8c7de8fdf5fec21791e053a0af6304fe2cead7ed964b5f0"
+    },
+    "topology": {
+      "path": "/home/luolie/ToPoGate/methods/TopoGate/V0/configs/topogate_v0_topology.yaml",
+      "sha256": "d5a1a0df62c3bf7e5741b20c20dc39ac033a5865cf43bbfc0cc779499f02a645"
+    }
+  },
+  "code_sha256": {
+    "methods/TopoGate/V0/config.py": "2b9f5aebb3f7eaeaeeac3a9a8ae7e831cd9d117262f9901705a2f79f3604099f",
+    "methods/TopoGate/V0/corruption.py": "dd1ba5cc96c743d5935c2948b7345543c6d5ee442b902119779a54584e7c410f",
+    "methods/TopoGate/V0/diagnostics.py": "010b2f034cd79345561743d2514b0f837dfb24a0a4f0ac9c4ac05c787437c5d8",
+    "methods/TopoGate/V0/graph.py": "7df1b85700bf3c00654f3a163553adeb015bd7a65ac980b675118ecfc96ebeaf",
+    "methods/TopoGate/V0/model.py": "2fbd1dec24c96e5b557d7ac652eedec5dc96b8b48ec5f6ba65977b01dfdf23d9",
+    "methods/TopoGate/V0/run.py": "b8105bbacec163a2a5929212487e9db9cbc15d91aa1bdb456387a9dd83e16b30",
+    "methods/TopoGate/V0/trainer.py": "47306629b794389bb4ed7f067490b4a9fe5b79afa3eb87db3dc42d12d0bc7339"
+  },
+  "descriptive_metrics_all_36_runs": {
+    "fixed": {
+      "acc": {
+        "mean": 0.6825652166037491,
+        "std": 0.17126737538742473
+      },
+      "nmi": {
+        "mean": 0.7257638092866249,
+        "std": 0.17348605164287853
+      },
+      "ari": {
+        "mean": 0.6036918272046192,
+        "std": 0.2702732147046212
+      },
+      "ami": {
+        "mean": 0.7245239600272866,
+        "std": 0.17324692009683235
+      },
+      "f1_macro": {
+        "mean": 0.6066884377502835,
+        "std": 0.16460034087000722
+      },
+      "fmi": {
+        "mean": 0.6841471121444327,
+        "std": 0.22163054465147858
+      }
+    },
+    "topology": {
+      "acc": {
+        "mean": 0.6929392126362337,
+        "std": 0.17340287312900957
+      },
+      "nmi": {
+        "mean": 0.7293725180850625,
+        "std": 0.18036810572116344
+      },
+      "ari": {
+        "mean": 0.6202378506254156,
+        "std": 0.2781879090185191
+      },
+      "ami": {
+        "mean": 0.7281324661155615,
+        "std": 0.18013325235334682
+      },
+      "f1_macro": {
+        "mean": 0.6071062041832923,
+        "std": 0.15225966026210805
+      },
+      "fmi": {
+        "mean": 0.6987864274728727,
+        "std": 0.2262164525481432
+      }
+    }
+  },
+  "paired_topology_minus_fixed_all_18_pairs": {
+    "acc": {
+      "mean": 0.010373996032484616,
+      "std": 0.049643469213480895
+    },
+    "nmi": {
+      "mean": 0.0036087087984376775,
+      "std": 0.022245472179680845
+    },
+    "ari": {
+      "mean": 0.01654602342079639,
+      "std": 0.047936248796912176
+    },
+    "ami": {
+      "mean": 0.0036085060882749174,
+      "std": 0.022387898315448275
+    },
+    "f1_macro": {
+      "mean": 0.0004177664330088217,
+      "std": 0.039533028874768554
+    },
+    "fmi": {
+      "mean": 0.014639315328440058,
+      "std": 0.03700104810552398
+    }
+  },
+  "errors": [],
+  "boundary": "Known-K real-label benchmark; labels are post-fit readout/evaluation metadata and are not efficacy evidence for unsupervised deployment."
+}

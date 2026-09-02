@@ -1,0 +1,799 @@
+{
+  "datasets": {
+    "Blood_BoneMarrow": {
+      "path": "/data/luolie/biopipeline/dimension-reduction/plantnet/result/scvicar_attribution_v2/datasets/Blood_BoneMarrow.h5ad",
+      "sha256": "3f51f1d3728539b74f6b01a48f0dfcde63247bcf91808b2f4079efff73bc0c77"
+    },
+    "Human_Pancreas_1": {
+      "path": "/data/luolie/biopipeline/dimension-reduction/plantnet/result/scvicar_attribution_v2/datasets/Human_Pancreas_1.h5ad",
+      "sha256": "115836148077a97c783016b66fd775d980c3d44a0c95c14c2c9656c329f5fde2"
+    },
+    "Human_Pancreas_3": {
+      "path": "/data/luolie/biopipeline/dimension-reduction/plantnet/result/scvicar_attribution_v2/datasets/Human_Pancreas_3.h5ad",
+      "sha256": "3449593a0feb60337872627907d35add3a477326a3bc46eaba8619280f648a13"
+    },
+    "Mouse_Pancreas_1": {
+      "path": "/data/luolie/biopipeline/dimension-reduction/plantnet/result/scvicar_attribution_v2/datasets/Mouse_Pancreas_1.h5ad",
+      "sha256": "178a8c89ee1dae1adf0564dc3fa019ebec1f3a3a2ef7516a7ad15b571ac7ad1a"
+    },
+    "PRJNA895163": {
+      "path": "/data/luolie/biopipeline/dimension-reduction/plantnet/result/scvicar_attribution_v2/datasets/PRJNA895163.h5ad",
+      "sha256": "4720016d69f5c5ee0cb27973061a2c537c6b35b23767019aeb416f34dd66f2c3"
+    },
+    "TabulaSapiens_Pancreas": {
+      "path": "/data/luolie/biopipeline/dimension-reduction/plantnet/result/scvicar_attribution_v2/datasets/TabulaSapiens_Pancreas.h5ad",
+      "sha256": "a73015faf0a985e12131515e8b6462e83b5c88e4561b109179d3e03947a925ef"
+    }
+  },
+  "freeze_sha256": "a5593876d82e1fa279a9bd045c58378cdeb53c52bff292cbd6642e59f396fb30",
+  "matrix": [
+    {
+      "dataset": "Blood_BoneMarrow",
+      "seed": 42,
+      "variant": "nomix"
+    },
+    {
+      "dataset": "Blood_BoneMarrow",
+      "seed": 2024,
+      "variant": "nomix"
+    },
+    {
+      "dataset": "Blood_BoneMarrow",
+      "seed": 3407,
+      "variant": "nomix"
+    },
+    {
+      "dataset": "Blood_BoneMarrow",
+      "seed": 42,
+      "variant": "clean_pair"
+    },
+    {
+      "dataset": "Blood_BoneMarrow",
+      "seed": 2024,
+      "variant": "clean_pair"
+    },
+    {
+      "dataset": "Blood_BoneMarrow",
+      "seed": 3407,
+      "variant": "clean_pair"
+    },
+    {
+      "dataset": "Blood_BoneMarrow",
+      "seed": 42,
+      "variant": "fixed"
+    },
+    {
+      "dataset": "Blood_BoneMarrow",
+      "seed": 2024,
+      "variant": "fixed"
+    },
+    {
+      "dataset": "Blood_BoneMarrow",
+      "seed": 3407,
+      "variant": "fixed"
+    },
+    {
+      "dataset": "Blood_BoneMarrow",
+      "seed": 42,
+      "variant": "adaptive_mix_only"
+    },
+    {
+      "dataset": "Blood_BoneMarrow",
+      "seed": 2024,
+      "variant": "adaptive_mix_only"
+    },
+    {
+      "dataset": "Blood_BoneMarrow",
+      "seed": 3407,
+      "variant": "adaptive_mix_only"
+    },
+    {
+      "dataset": "Blood_BoneMarrow",
+      "seed": 42,
+      "variant": "adaptive_weight_only"
+    },
+    {
+      "dataset": "Blood_BoneMarrow",
+      "seed": 2024,
+      "variant": "adaptive_weight_only"
+    },
+    {
+      "dataset": "Blood_BoneMarrow",
+      "seed": 3407,
+      "variant": "adaptive_weight_only"
+    },
+    {
+      "dataset": "Blood_BoneMarrow",
+      "seed": 42,
+      "variant": "gate_coupled"
+    },
+    {
+      "dataset": "Blood_BoneMarrow",
+      "seed": 2024,
+      "variant": "gate_coupled"
+    },
+    {
+      "dataset": "Blood_BoneMarrow",
+      "seed": 3407,
+      "variant": "gate_coupled"
+    },
+    {
+      "dataset": "Blood_BoneMarrow",
+      "seed": 42,
+      "variant": "topology_full"
+    },
+    {
+      "dataset": "Blood_BoneMarrow",
+      "seed": 2024,
+      "variant": "topology_full"
+    },
+    {
+      "dataset": "Blood_BoneMarrow",
+      "seed": 3407,
+      "variant": "topology_full"
+    },
+    {
+      "dataset": "Human_Pancreas_1",
+      "seed": 42,
+      "variant": "nomix"
+    },
+    {
+      "dataset": "Human_Pancreas_1",
+      "seed": 2024,
+      "variant": "nomix"
+    },
+    {
+      "dataset": "Human_Pancreas_1",
+      "seed": 3407,
+      "variant": "nomix"
+    },
+    {
+      "dataset": "Human_Pancreas_1",
+      "seed": 42,
+      "variant": "clean_pair"
+    },
+    {
+      "dataset": "Human_Pancreas_1",
+      "seed": 2024,
+      "variant": "clean_pair"
+    },
+    {
+      "dataset": "Human_Pancreas_1",
+      "seed": 3407,
+      "variant": "clean_pair"
+    },
+    {
+      "dataset": "Human_Pancreas_1",
+      "seed": 42,
+      "variant": "fixed"
+    },
+    {
+      "dataset": "Human_Pancreas_1",
+      "seed": 2024,
+      "variant": "fixed"
+    },
+    {
+      "dataset": "Human_Pancreas_1",
+      "seed": 3407,
+      "variant": "fixed"
+    },
+    {
+      "dataset": "Human_Pancreas_1",
+      "seed": 42,
+      "variant": "adaptive_mix_only"
+    },
+    {
+      "dataset": "Human_Pancreas_1",
+      "seed": 2024,
+      "variant": "adaptive_mix_only"
+    },
+    {
+      "dataset": "Human_Pancreas_1",
+      "seed": 3407,
+      "variant": "adaptive_mix_only"
+    },
+    {
+      "dataset": "Human_Pancreas_1",
+      "seed": 42,
+      "variant": "adaptive_weight_only"
+    },
+    {
+      "dataset": "Human_Pancreas_1",
+      "seed": 2024,
+      "variant": "adaptive_weight_only"
+    },
+    {
+      "dataset": "Human_Pancreas_1",
+      "seed": 3407,
+      "variant": "adaptive_weight_only"
+    },
+    {
+      "dataset": "Human_Pancreas_1",
+      "seed": 42,
+      "variant": "gate_coupled"
+    },
+    {
+      "dataset": "Human_Pancreas_1",
+      "seed": 2024,
+      "variant": "gate_coupled"
+    },
+    {
+      "dataset": "Human_Pancreas_1",
+      "seed": 3407,
+      "variant": "gate_coupled"
+    },
+    {
+      "dataset": "Human_Pancreas_1",
+      "seed": 42,
+      "variant": "topology_full"
+    },
+    {
+      "dataset": "Human_Pancreas_1",
+      "seed": 2024,
+      "variant": "topology_full"
+    },
+    {
+      "dataset": "Human_Pancreas_1",
+      "seed": 3407,
+      "variant": "topology_full"
+    },
+    {
+      "dataset": "Human_Pancreas_3",
+      "seed": 42,
+      "variant": "nomix"
+    },
+    {
+      "dataset": "Human_Pancreas_3",
+      "seed": 2024,
+      "variant": "nomix"
+    },
+    {
+      "dataset": "Human_Pancreas_3",
+      "seed": 3407,
+      "variant": "nomix"
+    },
+    {
+      "dataset": "Human_Pancreas_3",
+      "seed": 42,
+      "variant": "clean_pair"
+    },
+    {
+      "dataset": "Human_Pancreas_3",
+      "seed": 2024,
+      "variant": "clean_pair"
+    },
+    {
+      "dataset": "Human_Pancreas_3",
+      "seed": 3407,
+      "variant": "clean_pair"
+    },
+    {
+      "dataset": "Human_Pancreas_3",
+      "seed": 42,
+      "variant": "fixed"
+    },
+    {
+      "dataset": "Human_Pancreas_3",
+      "seed": 2024,
+      "variant": "fixed"
+    },
+    {
+      "dataset": "Human_Pancreas_3",
+      "seed": 3407,
+      "variant": "fixed"
+    },
+    {
+      "dataset": "Human_Pancreas_3",
+      "seed": 42,
+      "variant": "adaptive_mix_only"
+    },
+    {
+      "dataset": "Human_Pancreas_3",
+      "seed": 2024,
+      "variant": "adaptive_mix_only"
+    },
+    {
+      "dataset": "Human_Pancreas_3",
+      "seed": 3407,
+      "variant": "adaptive_mix_only"
+    },
+    {
+      "dataset": "Human_Pancreas_3",
+      "seed": 42,
+      "variant": "adaptive_weight_only"
+    },
+    {
+      "dataset": "Human_Pancreas_3",
+      "seed": 2024,
+      "variant": "adaptive_weight_only"
+    },
+    {
+      "dataset": "Human_Pancreas_3",
+      "seed": 3407,
+      "variant": "adaptive_weight_only"
+    },
+    {
+      "dataset": "Human_Pancreas_3",
+      "seed": 42,
+      "variant": "gate_coupled"
+    },
+    {
+      "dataset": "Human_Pancreas_3",
+      "seed": 2024,
+      "variant": "gate_coupled"
+    },
+    {
+      "dataset": "Human_Pancreas_3",
+      "seed": 3407,
+      "variant": "gate_coupled"
+    },
+    {
+      "dataset": "Human_Pancreas_3",
+      "seed": 42,
+      "variant": "topology_full"
+    },
+    {
+      "dataset": "Human_Pancreas_3",
+      "seed": 2024,
+      "variant": "topology_full"
+    },
+    {
+      "dataset": "Human_Pancreas_3",
+      "seed": 3407,
+      "variant": "topology_full"
+    },
+    {
+      "dataset": "Mouse_Pancreas_1",
+      "seed": 42,
+      "variant": "nomix"
+    },
+    {
+      "dataset": "Mouse_Pancreas_1",
+      "seed": 2024,
+      "variant": "nomix"
+    },
+    {
+      "dataset": "Mouse_Pancreas_1",
+      "seed": 3407,
+      "variant": "nomix"
+    },
+    {
+      "dataset": "Mouse_Pancreas_1",
+      "seed": 42,
+      "variant": "clean_pair"
+    },
+    {
+      "dataset": "Mouse_Pancreas_1",
+      "seed": 2024,
+      "variant": "clean_pair"
+    },
+    {
+      "dataset": "Mouse_Pancreas_1",
+      "seed": 3407,
+      "variant": "clean_pair"
+    },
+    {
+      "dataset": "Mouse_Pancreas_1",
+      "seed": 42,
+      "variant": "fixed"
+    },
+    {
+      "dataset": "Mouse_Pancreas_1",
+      "seed": 2024,
+      "variant": "fixed"
+    },
+    {
+      "dataset": "Mouse_Pancreas_1",
+      "seed": 3407,
+      "variant": "fixed"
+    },
+    {
+      "dataset": "Mouse_Pancreas_1",
+      "seed": 42,
+      "variant": "adaptive_mix_only"
+    },
+    {
+      "dataset": "Mouse_Pancreas_1",
+      "seed": 2024,
+      "variant": "adaptive_mix_only"
+    },
+    {
+      "dataset": "Mouse_Pancreas_1",
+      "seed": 3407,
+      "variant": "adaptive_mix_only"
+    },
+    {
+      "dataset": "Mouse_Pancreas_1",
+      "seed": 42,
+      "variant": "adaptive_weight_only"
+    },
+    {
+      "dataset": "Mouse_Pancreas_1",
+      "seed": 2024,
+      "variant": "adaptive_weight_only"
+    },
+    {
+      "dataset": "Mouse_Pancreas_1",
+      "seed": 3407,
+      "variant": "adaptive_weight_only"
+    },
+    {
+      "dataset": "Mouse_Pancreas_1",
+      "seed": 42,
+      "variant": "gate_coupled"
+    },
+    {
+      "dataset": "Mouse_Pancreas_1",
+      "seed": 2024,
+      "variant": "gate_coupled"
+    },
+    {
+      "dataset": "Mouse_Pancreas_1",
+      "seed": 3407,
+      "variant": "gate_coupled"
+    },
+    {
+      "dataset": "Mouse_Pancreas_1",
+      "seed": 42,
+      "variant": "topology_full"
+    },
+    {
+      "dataset": "Mouse_Pancreas_1",
+      "seed": 2024,
+      "variant": "topology_full"
+    },
+    {
+      "dataset": "Mouse_Pancreas_1",
+      "seed": 3407,
+      "variant": "topology_full"
+    },
+    {
+      "dataset": "PRJNA895163",
+      "seed": 42,
+      "variant": "nomix"
+    },
+    {
+      "dataset": "PRJNA895163",
+      "seed": 2024,
+      "variant": "nomix"
+    },
+    {
+      "dataset": "PRJNA895163",
+      "seed": 3407,
+      "variant": "nomix"
+    },
+    {
+      "dataset": "PRJNA895163",
+      "seed": 42,
+      "variant": "clean_pair"
+    },
+    {
+      "dataset": "PRJNA895163",
+      "seed": 2024,
+      "variant": "clean_pair"
+    },
+    {
+      "dataset": "PRJNA895163",
+      "seed": 3407,
+      "variant": "clean_pair"
+    },
+    {
+      "dataset": "PRJNA895163",
+      "seed": 42,
+      "variant": "fixed"
+    },
+    {
+      "dataset": "PRJNA895163",
+      "seed": 2024,
+      "variant": "fixed"
+    },
+    {
+      "dataset": "PRJNA895163",
+      "seed": 3407,
+      "variant": "fixed"
+    },
+    {
+      "dataset": "PRJNA895163",
+      "seed": 42,
+      "variant": "adaptive_mix_only"
+    },
+    {
+      "dataset": "PRJNA895163",
+      "seed": 2024,
+      "variant": "adaptive_mix_only"
+    },
+    {
+      "dataset": "PRJNA895163",
+      "seed": 3407,
+      "variant": "adaptive_mix_only"
+    },
+    {
+      "dataset": "PRJNA895163",
+      "seed": 42,
+      "variant": "adaptive_weight_only"
+    },
+    {
+      "dataset": "PRJNA895163",
+      "seed": 2024,
+      "variant": "adaptive_weight_only"
+    },
+    {
+      "dataset": "PRJNA895163",
+      "seed": 3407,
+      "variant": "adaptive_weight_only"
+    },
+    {
+      "dataset": "PRJNA895163",
+      "seed": 42,
+      "variant": "gate_coupled"
+    },
+    {
+      "dataset": "PRJNA895163",
+      "seed": 2024,
+      "variant": "gate_coupled"
+    },
+    {
+      "dataset": "PRJNA895163",
+      "seed": 3407,
+      "variant": "gate_coupled"
+    },
+    {
+      "dataset": "PRJNA895163",
+      "seed": 42,
+      "variant": "topology_full"
+    },
+    {
+      "dataset": "PRJNA895163",
+      "seed": 2024,
+      "variant": "topology_full"
+    },
+    {
+      "dataset": "PRJNA895163",
+      "seed": 3407,
+      "variant": "topology_full"
+    },
+    {
+      "dataset": "TabulaSapiens_Pancreas",
+      "seed": 42,
+      "variant": "nomix"
+    },
+    {
+      "dataset": "TabulaSapiens_Pancreas",
+      "seed": 2024,
+      "variant": "nomix"
+    },
+    {
+      "dataset": "TabulaSapiens_Pancreas",
+      "seed": 3407,
+      "variant": "nomix"
+    },
+    {
+      "dataset": "TabulaSapiens_Pancreas",
+      "seed": 42,
+      "variant": "clean_pair"
+    },
+    {
+      "dataset": "TabulaSapiens_Pancreas",
+      "seed": 2024,
+      "variant": "clean_pair"
+    },
+    {
+      "dataset": "TabulaSapiens_Pancreas",
+      "seed": 3407,
+      "variant": "clean_pair"
+    },
+    {
+      "dataset": "TabulaSapiens_Pancreas",
+      "seed": 42,
+      "variant": "fixed"
+    },
+    {
+      "dataset": "TabulaSapiens_Pancreas",
+      "seed": 2024,
+      "variant": "fixed"
+    },
+    {
+      "dataset": "TabulaSapiens_Pancreas",
+      "seed": 3407,
+      "variant": "fixed"
+    },
+    {
+      "dataset": "TabulaSapiens_Pancreas",
+      "seed": 42,
+      "variant": "adaptive_mix_only"
+    },
+    {
+      "dataset": "TabulaSapiens_Pancreas",
+      "seed": 2024,
+      "variant": "adaptive_mix_only"
+    },
+    {
+      "dataset": "TabulaSapiens_Pancreas",
+      "seed": 3407,
+      "variant": "adaptive_mix_only"
+    },
+    {
+      "dataset": "TabulaSapiens_Pancreas",
+      "seed": 42,
+      "variant": "adaptive_weight_only"
+    },
+    {
+      "dataset": "TabulaSapiens_Pancreas",
+      "seed": 2024,
+      "variant": "adaptive_weight_only"
+    },
+    {
+      "dataset": "TabulaSapiens_Pancreas",
+      "seed": 3407,
+      "variant": "adaptive_weight_only"
+    },
+    {
+      "dataset": "TabulaSapiens_Pancreas",
+      "seed": 42,
+      "variant": "gate_coupled"
+    },
+    {
+      "dataset": "TabulaSapiens_Pancreas",
+      "seed": 2024,
+      "variant": "gate_coupled"
+    },
+    {
+      "dataset": "TabulaSapiens_Pancreas",
+      "seed": 3407,
+      "variant": "gate_coupled"
+    },
+    {
+      "dataset": "TabulaSapiens_Pancreas",
+      "seed": 42,
+      "variant": "topology_full"
+    },
+    {
+      "dataset": "TabulaSapiens_Pancreas",
+      "seed": 2024,
+      "variant": "topology_full"
+    },
+    {
+      "dataset": "TabulaSapiens_Pancreas",
+      "seed": 3407,
+      "variant": "topology_full"
+    }
+  ],
+  "protocol": {
+    "common_model_args": {
+      "batch_size": 256,
+      "beta_mutual": 1.0,
+      "beta_perturb": 2.0,
+      "beta_snn": 1.0,
+      "beta_uncertainty": 1.0,
+      "contrast_partition_mode": "none",
+      "contrast_projection_dim": 0,
+      "contrast_weight": 0.0,
+      "dropout": 0.0,
+      "epochs": 80,
+      "gamma_distance": 1.0,
+      "gamma_mutual": 1.0,
+      "gamma_sim": 1.0,
+      "gamma_snn": 1.0,
+      "gate_max": 0.1,
+      "gate_min": 0.0,
+      "hidden_size": 128,
+      "input_mode": "auto",
+      "knn_pca_dim": 50,
+      "label_key": "resolved_label",
+      "lr": 0.001,
+      "mask_loss_weight": 0.7,
+      "mask_ratio": 0.4,
+      "masked_data_weight": 0.75,
+      "mix_neighbors": 4,
+      "n_top_genes": 1000,
+      "neighbor_estimator": "current",
+      "neighbor_k": 5,
+      "pseudo_weight": 0.3,
+      "scale_input": true,
+      "stress_bad_edge_ratio": 0.0,
+      "target_sum": 10000.0,
+      "tau": 0.2
+    },
+    "datasets": {
+      "Blood_BoneMarrow": {
+        "expected_clusters": 30,
+        "source_label_key": "cell_type"
+      },
+      "Human_Pancreas_1": {
+        "expected_clusters": 6,
+        "source_label_key": "cell_type"
+      },
+      "Human_Pancreas_3": {
+        "expected_clusters": 13,
+        "source_label_key": "cell_type"
+      },
+      "Mouse_Pancreas_1": {
+        "expected_clusters": 10,
+        "source_label_key": "cell_type"
+      },
+      "PRJNA895163": {
+        "expected_clusters": 12,
+        "source_label_key": "resolved_label"
+      },
+      "TabulaSapiens_Pancreas": {
+        "expected_clusters": 16,
+        "source_label_key": "cell_type"
+      }
+    },
+    "protocol_version": "attribution_v2",
+    "seeds": [
+      42,
+      2024,
+      3407
+    ],
+    "variants": {
+      "adaptive_mix_only": {
+        "attribution_mode": "adaptive_mix_uniform_weight",
+        "edge_reliability_mode": "none",
+        "gate_mode": "topology",
+        "method_name": "scVICAR-AdaptiveMix",
+        "mix_mode": "reliability",
+        "variant_name": "a2_adaptive_mix_uniform_weight"
+      },
+      "adaptive_weight_only": {
+        "attribution_mode": "fixed_mix_adaptive_weight",
+        "edge_reliability_mode": "none",
+        "gate_mode": "constant",
+        "method_name": "scVICAR-AdaptiveWeight",
+        "mix_mode": "fixed",
+        "variant_name": "a2_fixed_mix_adaptive_weight"
+      },
+      "clean_pair": {
+        "attribution_mode": "clean_pair",
+        "edge_reliability_mode": "none",
+        "gate_mode": "constant",
+        "method_name": "scVICAR-CleanPair",
+        "mix_mode": "fixed",
+        "variant_name": "a2_clean_pair"
+      },
+      "fixed": {
+        "attribution_mode": "legacy",
+        "edge_reliability_mode": "none",
+        "gate_mode": "constant",
+        "method_name": "scVICAR-F",
+        "mix_mode": "fixed",
+        "variant_name": "a2_fixed_uniform"
+      },
+      "gate_coupled": {
+        "attribution_mode": "legacy",
+        "edge_reliability_mode": "none",
+        "gate_mode": "topology",
+        "method_name": "scVICAR-GateCoupled",
+        "mix_mode": "reliability",
+        "variant_name": "a2_adaptive_mix_adaptive_weight"
+      },
+      "nomix": {
+        "attribution_mode": "legacy",
+        "edge_reliability_mode": "none",
+        "gate_mode": "none",
+        "method_name": "scVICAR-NoMix",
+        "mix_mode": "none",
+        "mix_neighbors": 0,
+        "neighbor_k": 0,
+        "pseudo_weight": 0.0,
+        "variant_name": "a2_nomix"
+      },
+      "topology_full": {
+        "attribution_mode": "legacy",
+        "edge_reliability_mode": "sim_mutual_snn_distance",
+        "gate_mode": "topology",
+        "method_name": "scVICAR-T",
+        "mix_mode": "reliability",
+        "variant_name": "a2_topology_full"
+      }
+    }
+  },
+  "source_sha256": {
+    "experimental_retired_models/RG_NeighborMix_scMAE/mixing.py": "ee692124006c3ad430b110accbb902e930484fe6a39beb38257c503c475df391",
+    "experimental_retired_models/RG_NeighborMix_scMAE/run.py": "c87bc899394e7be34ff112d9065ff6f155b28dc62a3eda11daed1bc7d12f56a8",
+    "methods/DeepLearning/scMAE_family.py": "0c242803fe8b5b1c81c3109b32c21ef504a5a88af4bfd6b3aece4a461a85841e",
+    "papers/scVICAR/code/attribution_v2_config.py": "63100dfc897dd15e59d6e5db46682da5215f6438b9431c4170c9245460c8ecf9",
+    "papers/scVICAR/code/attribution_v2_model.py": "79072663f2baa92076533ba3b0edf646125353a4950947bbe479c559174ff960",
+    "papers/scVICAR/code/run_attribution_v2.py": "8ed7751449c270d96fa299cac4b6787876bbdaa08562f5b8b9d5994dbfde92f4"
+  }
+}

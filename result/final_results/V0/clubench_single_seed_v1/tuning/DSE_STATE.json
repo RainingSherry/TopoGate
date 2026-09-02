@@ -1,0 +1,8 @@
+{
+  "status": "completed",
+  "total_iterations": 50,
+  "best_params": {
+    "fixed": "F_anchor",
+    "topology": "T_anchor"
+  }
+}

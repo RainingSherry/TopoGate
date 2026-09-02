@@ -530,8 +530,10 @@ V0 使用 Adam：
 \]
 
 每个 epoch 遍历 DataLoader；`seed` 同时控制 Python、NumPy、PyTorch、batch
-shuffle、邻居抽样和两套 row-swap noise 随机流。优化器只接收
-`model.parameters()`，不接收图或 gate。
+shuffle、邻居抽样和两套 row-swap noise 随机流。当前 V0 唯一允许的随机协议是
+`rng_protocol=isolated_v0`：DataLoader、邻居抽样、真实 view 和 pseudo view
+使用相互独立的 V0-local 子流；不执行旧 PlantNet 随机状态回放或隐藏的辅助抽样。
+优化器只接收 `model.parameters()`，不接收图或 gate。
 
 训练完成后进入 `eval()`，对干净输入 `x_i` 提取
 

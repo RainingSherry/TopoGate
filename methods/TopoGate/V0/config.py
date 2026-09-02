@@ -43,12 +43,8 @@ NEIGHBOR_ESTIMATORS = frozenset({"current", "uniform_sample", "full"})
 EDGE_RELIABILITY_MODES = frozenset(
     {"none", "sim", "sim_mutual", "sim_mutual_snn", "sim_mutual_snn_distance"}
 )
-# The default isolates each stochastic component, which is the documented V0
-# runtime.  ``legacy_plantnet`` exists only for a controlled reproduction of
-# the retired F/T runners: it intentionally replays their shared torch stream
-# and their topology-only unused NumPy draws.  It is never selected by a
-# normal V0 configuration or CLUBench run.
-RNG_PROTOCOLS = frozenset({"isolated_v0", "legacy_plantnet"})
+# V0 isolates each stochastic component under its single documented protocol.
+RNG_PROTOCOLS = frozenset({"isolated_v0"})
 
 
 def normalize_parameterization(value: str) -> str:
@@ -118,8 +114,8 @@ class V0Config:
     evaluate_unsupervised: bool = False
 
     # Runtime stochasticity is a protocol field rather than an implicit code
-    # path.  This keeps strict historical-parity jobs auditable without
-    # changing the default V0 reproducibility contract.
+    # path.  V0 deliberately exposes one protocol; historical PlantNet
+    # random-state replay is not a valid V0 configuration.
     rng_protocol: str = "isolated_v0"
 
     def __post_init__(self) -> None:

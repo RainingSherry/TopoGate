@@ -1,0 +1,153 @@
+{
+  "status": "recovered_exact_parity",
+  "supersedes_only": "a1 launcher missing-array diagnosis",
+  "does_not_modify": "four original training outputs",
+  "legacy_output_root": "/home/luolie/biopipeline/dimension-reduction/plantnet/result/v0/legacy_parity_plantnet_a1",
+  "v0_output_root": "/home/luolie/ToPoGate/result/v0/legacy_parity_plantnet_a1",
+  "all_compared_arrays_exact": true,
+  "records": {
+    "fixed/embedding": {
+      "shape_old": [
+        15486,
+        128
+      ],
+      "shape_v0": [
+        15486,
+        128
+      ],
+      "exact_equal": true,
+      "max_abs_difference": 0.0
+    },
+    "fixed/predictions": {
+      "shape_old": [
+        15486
+      ],
+      "shape_v0": [
+        15486
+      ],
+      "exact_equal": true,
+      "max_abs_difference": 0.0
+    },
+    "fixed/gene_names": {
+      "shape_old": [
+        1000
+      ],
+      "shape_v0": [
+        1000
+      ],
+      "exact_equal": true
+    },
+    "topology/embedding": {
+      "shape_old": [
+        15486,
+        128
+      ],
+      "shape_v0": [
+        15486,
+        128
+      ],
+      "exact_equal": true,
+      "max_abs_difference": 0.0
+    },
+    "topology/predictions": {
+      "shape_old": [
+        15486
+      ],
+      "shape_v0": [
+        15486
+      ],
+      "exact_equal": true,
+      "max_abs_difference": 0.0
+    },
+    "topology/gene_names": {
+      "shape_old": [
+        1000
+      ],
+      "shape_v0": [
+        1000
+      ],
+      "exact_equal": true
+    },
+    "topology/neighbor_indices": {
+      "shape_old": [
+        15486,
+        10
+      ],
+      "shape_v0": [
+        15486,
+        10
+      ],
+      "exact_equal": true,
+      "max_abs_difference": 0.0
+    },
+    "topology/neighbor_base_probs": {
+      "shape_old": [
+        15486,
+        10
+      ],
+      "shape_v0": [
+        15486,
+        10
+      ],
+      "exact_equal": true,
+      "max_abs_difference": 0.0
+    },
+    "topology/neighbor_similarity": {
+      "shape_old": [
+        15486,
+        10
+      ],
+      "shape_v0": [
+        15486,
+        10
+      ],
+      "exact_equal": true,
+      "max_abs_difference": 0.0
+    },
+    "topology/neighbor_distance": {
+      "shape_old": [
+        15486,
+        10
+      ],
+      "shape_v0": [
+        15486,
+        10
+      ],
+      "exact_equal": true,
+      "max_abs_difference": 0.0
+    },
+    "topology/edge_reliability": {
+      "shape_old": [
+        15486,
+        10
+      ],
+      "shape_v0": [
+        15486,
+        10
+      ],
+      "exact_equal": true,
+      "max_abs_difference": 0.0
+    },
+    "topology/node_gate": {
+      "shape_old": [
+        15486
+      ],
+      "shape_v0": [
+        15486
+      ],
+      "exact_equal": true,
+      "max_abs_difference": 0.0
+    },
+    "topology/pseudo_perturbation": {
+      "shape_old": [
+        15486
+      ],
+      "shape_v0": [
+        15486
+      ],
+      "exact_equal": true,
+      "max_abs_difference": 0.0
+    }
+  },
+  "fixed_missing_topology_diagnostics": "expected: frozen F runner does not emit them"
+}

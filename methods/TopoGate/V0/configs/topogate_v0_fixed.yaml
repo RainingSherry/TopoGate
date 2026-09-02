@@ -26,3 +26,4 @@ n_top_features: 1000
 target_sum: 10000.0
 input_mode: auto
 scale_input: true
+rng_protocol: isolated_v0

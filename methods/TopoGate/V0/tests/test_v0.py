@@ -47,6 +47,15 @@ def test_parameterization_aliases_and_yaml_configs() -> None:
     assert topology.parameterization == "topology"
     assert fixed.resolved_dict()["effective_edge_reliability_mode"] == "base_probability"
     assert topology.resolved_dict()["effective_edge_reliability_mode"] == "sim_mutual_snn_distance"
+    assert fixed.rng_protocol == topology.rng_protocol == "isolated_v0"
+
+
+def test_v0_rejects_the_retired_plantnet_rng_protocol() -> None:
+    """The old PlantNet random stream cannot be selected through V0."""
+
+    with pytest.raises(ValueError, match="rng_protocol"):
+        load_config(overrides={"rng_protocol": "legacy_plantnet"})
+    assert V0Config().rng_protocol == "isolated_v0"
 
 
 def test_graph_probabilities_and_reliability_are_row_normalized() -> None:

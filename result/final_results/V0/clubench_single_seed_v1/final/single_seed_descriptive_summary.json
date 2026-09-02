@@ -1,0 +1,110 @@
+{
+  "status": "completed",
+  "evidence_level": "single_seed_descriptive_only",
+  "claim_boundary": "No robustness, significance, or superiority conclusion is licensed by one seed.",
+  "metric_aggregation": "unweighted macro across 131 datasets",
+  "variants": {
+    "fixed": {
+      "acc": {
+        "mean": 0.6050358012137028,
+        "std": 0.21506998962423302,
+        "median": 0.575,
+        "min": 0.065,
+        "max": 1.0
+      },
+      "ari": {
+        "mean": 0.32171329942242255,
+        "std": 0.2992464917303157,
+        "median": 0.25206855319809324,
+        "min": -0.03933686424430485,
+        "max": 1.0
+      },
+      "n_pred_clusters": {
+        "mean": 5.900763358778626,
+        "std": 5.626891487689268,
+        "median": 4.0,
+        "min": 2.0,
+        "max": 40.0
+      },
+      "nmi": {
+        "mean": 0.37520104124482645,
+        "std": 0.30397121172814334,
+        "median": 0.33847294600439903,
+        "min": 5.1351896070144633e-08,
+        "max": 1.0
+      }
+    },
+    "topology": {
+      "acc": {
+        "mean": 0.604697844321657,
+        "std": 0.21645133021852486,
+        "median": 0.5842457420924574,
+        "min": 0.0656,
+        "max": 1.0
+      },
+      "ari": {
+        "mean": 0.32218142677233097,
+        "std": 0.3006498302690177,
+        "median": 0.24813770392770357,
+        "min": -0.03915007252523661,
+        "max": 1.0
+      },
+      "n_pred_clusters": {
+        "mean": 5.900763358778626,
+        "std": 5.626891487689268,
+        "median": 4.0,
+        "min": 2.0,
+        "max": 40.0
+      },
+      "nmi": {
+        "mean": 0.37477170928906456,
+        "std": 0.3056800309477044,
+        "median": 0.3341815731421563,
+        "min": 1.2841197256470371e-07,
+        "max": 1.0
+      }
+    }
+  },
+  "paired_topology_minus_fixed": {
+    "acc": {
+      "mean": -0.0003379568920459666,
+      "std": 0.021579541498483498,
+      "median": 0.0,
+      "min": -0.1410658307210031,
+      "max": 0.07430555555555551,
+      "positive_count": 63,
+      "negative_count": 42,
+      "zero_count": 26
+    },
+    "ari": {
+      "mean": 0.000468127349908369,
+      "std": 0.0180356045456215,
+      "median": 0.0,
+      "min": -0.08196413623454152,
+      "max": 0.05290700259384373,
+      "positive_count": 60,
+      "negative_count": 51,
+      "zero_count": 20
+    },
+    "n_pred_clusters": {
+      "mean": 0.0,
+      "std": 0.0,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "positive_count": 0,
+      "negative_count": 0,
+      "zero_count": 131
+    },
+    "nmi": {
+      "mean": -0.00042933195576189766,
+      "std": 0.017147126145363824,
+      "median": 0.0,
+      "min": -0.09238999846589843,
+      "max": 0.047234038196799166,
+      "positive_count": 61,
+      "negative_count": 51,
+      "zero_count": 19
+    }
+  }
+}

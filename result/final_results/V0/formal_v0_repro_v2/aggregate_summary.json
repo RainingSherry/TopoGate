@@ -1,0 +1,8 @@
+{
+  "status": "completed",
+  "n_rows": 36,
+  "expected_rows": 36,
+  "run_level_metrics": "/home/luolie/ToPoGate/result/v0/formal_v0_repro_v2/run_level_metrics.csv",
+  "summary_metrics": "/home/luolie/ToPoGate/result/v0/formal_v0_repro_v2/summary_metrics.csv",
+  "created_at": "2026-09-01T11:19:10.844041+00:00"
+}

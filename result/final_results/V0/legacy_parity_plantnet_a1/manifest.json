@@ -1,0 +1,369 @@
+{
+  "status": "completed",
+  "protocol_id": "topogate_v0_legacy_parity_v1",
+  "parity_target": "retired_NeighborMix_F_and_RG_reliability_T_current_defaults",
+  "dataset": "Blood_BoneMarrow",
+  "source_path": "/data/luolie/biopipeline/dimension-reduction/plantnet/result/scvicar_attribution_v2/datasets/Blood_BoneMarrow.h5ad",
+  "source_sha256": "3f51f1d3728539b74f6b01a48f0dfcde63247bcf91808b2f4079efff73bc0c77",
+  "seed": 42,
+  "epochs": 80,
+  "n_clusters": 30,
+  "K_source": "fixed_diagnostic_K_for_legacy_trajectory_parity",
+  "not_for_formal_benchmark_aggregation": true,
+  "parameterizations": [
+    "fixed",
+    "topology"
+  ],
+  "gpu_preflight": {
+    "gpu": 4,
+    "memory_used_mib": 4.0,
+    "utilization_gpu_pct": 0.0,
+    "status": "legal_idle_gpu"
+  },
+  "environment": {
+    "interpreter": "/data/luolie/conda/envs/scclubench-sccdcg-h100/bin/python",
+    "host_python": "3.10.20",
+    "variables": {
+      "PYTHONHASHSEED": "42",
+      "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "NUMBA_DISABLE_JIT": "1"
+    }
+  },
+  "labels_used_for_training_or_selection": false,
+  "runs": {
+    "fixed": {
+      "status": "completed",
+      "legacy": {
+        "return_code": 0,
+        "wall_seconds": 128.10913467407227,
+        "cwd": "/home/luolie/biopipeline/dimension-reduction/plantnet",
+        "command": [
+          "/data/luolie/conda/envs/scclubench-sccdcg-h100/bin/python",
+          "/home/luolie/biopipeline/dimension-reduction/plantnet/experimental_retired_models/NeighborMix_scMAE/run.py",
+          "--method_name",
+          "legacy_f_parity",
+          "--variant_name",
+          "legacy_f_parity",
+          "--use_pseudo",
+          "true",
+          "--alpha",
+          "0.9",
+          "--data_path",
+          "/data/luolie/biopipeline/dimension-reduction/plantnet/result/scvicar_attribution_v2/datasets/Blood_BoneMarrow.h5ad",
+          "--save_dir",
+          "result/v0/legacy_parity_plantnet_a1/fixed/seed_42/retired",
+          "--dataset_name",
+          "Blood_BoneMarrow",
+          "--label_key",
+          "resolved_label",
+          "--input_mode",
+          "raw",
+          "--n_top_genes",
+          "1000",
+          "--target_sum",
+          "10000",
+          "--scale_input",
+          "true",
+          "--n_clusters",
+          "30",
+          "--hidden_size",
+          "128",
+          "--dropout",
+          "0",
+          "--masked_data_weight",
+          "0.75",
+          "--mask_loss_weight",
+          "0.7",
+          "--epochs",
+          "80",
+          "--batch_size",
+          "256",
+          "--lr",
+          "0.001",
+          "--mask_ratio",
+          "0.4",
+          "--pseudo_weight",
+          "0.3",
+          "--neighbor_k",
+          "5",
+          "--mix_neighbors",
+          "4",
+          "--tau",
+          "0.2",
+          "--knn_pca_dim",
+          "50",
+          "--seed",
+          "42",
+          "--gpu",
+          "4",
+          "--no_save_h5ad"
+        ],
+        "log": "result/v0/legacy_parity_plantnet_a1/fixed/seed_42/retired/run.log"
+      },
+      "v0": {
+        "return_code": 0,
+        "wall_seconds": 137.915461063385,
+        "cwd": "/home/luolie/ToPoGate",
+        "command": [
+          "/data/luolie/conda/envs/scclubench-sccdcg-h100/bin/python",
+          "-m",
+          "methods.TopoGate.V0.run",
+          "--data-path",
+          "/data/luolie/biopipeline/dimension-reduction/plantnet/result/scvicar_attribution_v2/datasets/Blood_BoneMarrow.h5ad",
+          "--save-dir",
+          "result/v0/legacy_parity_plantnet_a1/fixed/seed_42/v0",
+          "--config",
+          "result/v0/legacy_parity_plantnet_a1/fixed/seed_42/v0_resolved_input.yaml",
+          "--parameterization",
+          "fixed",
+          "--dataset-name",
+          "Blood_BoneMarrow",
+          "--label-key",
+          "resolved_label",
+          "--n-clusters",
+          "30",
+          "--seed",
+          "42",
+          "--device",
+          "cuda",
+          "--gpu",
+          "4",
+          "--no-save-h5ad"
+        ],
+        "log": "result/v0/legacy_parity_plantnet_a1/fixed/seed_42/v0/run.log"
+      },
+      "v0_config": "result/v0/legacy_parity_plantnet_a1/fixed/seed_42/v0_resolved_input.yaml",
+      "v0_config_sha256": "7ff93aef531562e934d324b9fa7ff70181426afce4e86e3ae361c8d2cfe6198c",
+      "arrays": {
+        "embedding": {
+          "status": "missing",
+          "old_present": false,
+          "v0_present": true
+        },
+        "predictions": {
+          "status": "missing",
+          "old_present": false,
+          "v0_present": true
+        },
+        "gene_names": {
+          "status": "missing",
+          "old_present": false,
+          "v0_present": true
+        },
+        "neighbor_indices": {
+          "status": "missing",
+          "old_present": false,
+          "v0_present": true
+        },
+        "neighbor_base_probs": {
+          "status": "missing",
+          "old_present": false,
+          "v0_present": true
+        },
+        "neighbor_similarity": {
+          "status": "missing",
+          "old_present": false,
+          "v0_present": true
+        },
+        "neighbor_distance": {
+          "status": "missing",
+          "old_present": false,
+          "v0_present": true
+        },
+        "edge_reliability": {
+          "status": "missing",
+          "old_present": false,
+          "v0_present": true
+        },
+        "node_gate": {
+          "status": "missing",
+          "old_present": false,
+          "v0_present": true
+        }
+      }
+    },
+    "topology": {
+      "status": "completed",
+      "legacy": {
+        "return_code": 0,
+        "wall_seconds": 169.4718108177185,
+        "cwd": "/home/luolie/biopipeline/dimension-reduction/plantnet",
+        "command": [
+          "/data/luolie/conda/envs/scclubench-sccdcg-h100/bin/python",
+          "/home/luolie/biopipeline/dimension-reduction/plantnet/experimental_retired_models/RG_NeighborMix_scMAE/run.py",
+          "--method_name",
+          "legacy_t_parity",
+          "--variant_name",
+          "legacy_t_parity",
+          "--mix_mode",
+          "reliability",
+          "--gate_mode",
+          "topology",
+          "--edge_reliability_mode",
+          "sim_mutual_snn_distance",
+          "--gate_min",
+          "0",
+          "--gate_max",
+          "0.15",
+          "--gamma_sim",
+          "1",
+          "--gamma_mutual",
+          "1",
+          "--gamma_snn",
+          "1",
+          "--gamma_distance",
+          "1",
+          "--beta_mutual",
+          "1",
+          "--beta_snn",
+          "1",
+          "--beta_perturb",
+          "2",
+          "--beta_uncertainty",
+          "1",
+          "--neighbor_estimator",
+          "current",
+          "--contrast_weight",
+          "0",
+          "--contrast_projection_dim",
+          "0",
+          "--data_path",
+          "/data/luolie/biopipeline/dimension-reduction/plantnet/result/scvicar_attribution_v2/datasets/Blood_BoneMarrow.h5ad",
+          "--save_dir",
+          "result/v0/legacy_parity_plantnet_a1/topology/seed_42/retired",
+          "--dataset_name",
+          "Blood_BoneMarrow",
+          "--label_key",
+          "resolved_label",
+          "--input_mode",
+          "raw",
+          "--n_top_genes",
+          "1000",
+          "--target_sum",
+          "10000",
+          "--scale_input",
+          "true",
+          "--n_clusters",
+          "30",
+          "--hidden_size",
+          "128",
+          "--dropout",
+          "0",
+          "--masked_data_weight",
+          "0.75",
+          "--mask_loss_weight",
+          "0.7",
+          "--epochs",
+          "80",
+          "--batch_size",
+          "256",
+          "--lr",
+          "0.001",
+          "--mask_ratio",
+          "0.4",
+          "--pseudo_weight",
+          "0.3",
+          "--neighbor_k",
+          "10",
+          "--mix_neighbors",
+          "4",
+          "--tau",
+          "0.2",
+          "--knn_pca_dim",
+          "50",
+          "--seed",
+          "42",
+          "--gpu",
+          "4",
+          "--no_save_h5ad"
+        ],
+        "log": "result/v0/legacy_parity_plantnet_a1/topology/seed_42/retired/run.log"
+      },
+      "v0": {
+        "return_code": 0,
+        "wall_seconds": 168.400732755661,
+        "cwd": "/home/luolie/ToPoGate",
+        "command": [
+          "/data/luolie/conda/envs/scclubench-sccdcg-h100/bin/python",
+          "-m",
+          "methods.TopoGate.V0.run",
+          "--data-path",
+          "/data/luolie/biopipeline/dimension-reduction/plantnet/result/scvicar_attribution_v2/datasets/Blood_BoneMarrow.h5ad",
+          "--save-dir",
+          "result/v0/legacy_parity_plantnet_a1/topology/seed_42/v0",
+          "--config",
+          "result/v0/legacy_parity_plantnet_a1/topology/seed_42/v0_resolved_input.yaml",
+          "--parameterization",
+          "topology",
+          "--dataset-name",
+          "Blood_BoneMarrow",
+          "--label-key",
+          "resolved_label",
+          "--n-clusters",
+          "30",
+          "--seed",
+          "42",
+          "--device",
+          "cuda",
+          "--gpu",
+          "4",
+          "--no-save-h5ad"
+        ],
+        "log": "result/v0/legacy_parity_plantnet_a1/topology/seed_42/v0/run.log"
+      },
+      "v0_config": "result/v0/legacy_parity_plantnet_a1/topology/seed_42/v0_resolved_input.yaml",
+      "v0_config_sha256": "3b9f71b4b19a6ab9c2ffbf88e4cfe6234bb9b71901ec61d7656f8af82fc61155",
+      "arrays": {
+        "embedding": {
+          "status": "missing",
+          "old_present": false,
+          "v0_present": true
+        },
+        "predictions": {
+          "status": "missing",
+          "old_present": false,
+          "v0_present": true
+        },
+        "gene_names": {
+          "status": "missing",
+          "old_present": false,
+          "v0_present": true
+        },
+        "neighbor_indices": {
+          "status": "missing",
+          "old_present": false,
+          "v0_present": true
+        },
+        "neighbor_base_probs": {
+          "status": "missing",
+          "old_present": false,
+          "v0_present": true
+        },
+        "neighbor_similarity": {
+          "status": "missing",
+          "old_present": false,
+          "v0_present": true
+        },
+        "neighbor_distance": {
+          "status": "missing",
+          "old_present": false,
+          "v0_present": true
+        },
+        "edge_reliability": {
+          "status": "missing",
+          "old_present": false,
+          "v0_present": true
+        },
+        "node_gate": {
+          "status": "missing",
+          "old_present": false,
+          "v0_present": true
+        }
+      }
+    }
+  }
+}

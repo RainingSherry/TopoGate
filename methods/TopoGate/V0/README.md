@@ -1,10 +1,10 @@
 # TopoGate V0: unified scVICAR
 
-V0 是把 plantnet 中历史的 `NeighborMix_scMAE`（scVICAR-F）与
+V0 是把 PlantNet 中历史的 `NeighborMix_scMAE`（scVICAR-F）与
 `RG_NeighborMix_scMAE`（scVICAR-T）合并后的模型身份重构。两者共享同一个
 scMAE 编码器、掩码预测器、解码器、训练循环和 KMeans readout；只有 vicinal
-corruption 的参数化不同。旧实现没有被移动、删除或修改，仍可作为数值和实验
-协议对照。
+corruption 的参数化不同。V0 运行时不导入旧 PlantNet runner，也不接受旧随机流；
+历史源代码和已完成的等效性结果仅作为只读溯源。
 
 完整的实现对齐公式、符号表、函数对照、梯度路径和 F/T 边界见
 [FORMAL_SPECIFICATION.md](FORMAL_SPECIFICATION.md)。
@@ -135,9 +135,10 @@ runner 在 `--save-dir` 写出一组可审计文件：
 
 ## 兼容边界
 
-- `methods/NeighborMix_scMAE/` 与 plantnet retired T 目录保持冻结，不由 V0 导入
-  其 runner，也不改变其历史输出。
-- V0 的统一训练循环只保留 F/T 两种论文参数化；历史 T 的 random/far/mutual
-  压力消融仍应在 retired runner 中复现，不会被误称为 V0 主模型。
+- `methods/NeighborMix_scMAE/` 与 PlantNet retired 目录保持冻结，不由 V0 导入
+  其 runner，也不改变其历史输出；它们不属于当前 V0 的执行路径。
+- V0 的统一训练循环只保留 F/T 两种论文参数化和 `rng_protocol=isolated_v0`。
+  历史 T 的 random/far/mutual 压力消融及旧随机状态回放不再有 V0 可执行入口，
+  不会被误称为 V0 主模型。
 - F/T 的数据预处理、K 协议和 benchmark 标签来源由外层 runner 记录；核心
   `fit_predict` 只接收 `X`，不会猜测 K 或生成标签。

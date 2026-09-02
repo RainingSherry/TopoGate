@@ -1,0 +1,207 @@
+{
+  "manifest_version": "v0_legacy_attribution_v2_20260901",
+  "created_at": "2026-09-01T13:57:42+08:00",
+  "purpose": "Stage completed legacy equivalent evidence for the unified TopoGate V0 model identity.",
+  "status": "legacy_equivalent_evidence_only",
+  "direct_v0_run": false,
+  "scientific_claim_boundary": "This bundle does not constitute a current V0 formal GPU run or evidence of V0 clustering efficacy.",
+  "source": {
+    "source_project": "plantnet",
+    "source_root": "/home/luolie/biopipeline/dimension-reduction/plantnet",
+    "source_protocol": "scvicar_attribution_v2",
+    "formal_root": "/home/luolie/biopipeline/dimension-reduction/plantnet/result/scvicar_attribution_v2/formal",
+    "aggregate_root": "/home/luolie/biopipeline/dimension-reduction/plantnet/papers/scVICAR/experiments/attribution_v2/aggregate",
+    "protocol_readme": "/home/luolie/biopipeline/dimension-reduction/plantnet/papers/scVICAR/experiments/attribution_v2/README.md",
+    "source_freeze_sha256": "a5593876d82e1fa279a9bd045c58378cdeb53c52bff292cbd6642e59f396fb30",
+    "source_freeze_file": "source_freeze.json",
+    "source_verification_status": "confirmed_from_disk",
+    "source_verification_notes": [
+      "run_status.csv contains 126 rows and all rows have status=success",
+      "orchestration_summary.json reports completed=126, expected=126, failed_attempts=0",
+      "representative fixed and topology_full args/config/summary files were read for every dataset family",
+      "all 126 run directories contain the same 39-file output contract"
+    ]
+  },
+  "destination": {
+    "logical_path": "/home/luolie/ToPoGate/result/v0/legacy_attribution_v2",
+    "resolved_path": "/data/luolie/ToPoGate/result/v0/legacy_attribution_v2",
+    "copy_mode": "verbatim_copy",
+    "input_h5ad_copied": false,
+    "input_h5ad_note": "Frozen source paths and SHA256 values remain in source_freeze.json; input datasets were not duplicated into result/.",
+    "run_artifacts_renamed": false,
+    "renamed_files": [],
+    "normalized_v0_view": false
+  },
+  "matrix": {
+    "datasets": [
+      "Blood_BoneMarrow",
+      "Human_Pancreas_1",
+      "Human_Pancreas_3",
+      "Mouse_Pancreas_1",
+      "PRJNA895163",
+      "TabulaSapiens_Pancreas"
+    ],
+    "variants_copied": [
+      "nomix",
+      "clean_pair",
+      "fixed",
+      "adaptive_mix_only",
+      "adaptive_weight_only",
+      "gate_coupled",
+      "topology_full"
+    ],
+    "seeds": [42, 2024, 3407],
+    "expected_runs": 126,
+    "verified_source_runs": 126,
+    "copied_run_directories": 126,
+    "copied_formal_run_files": 4914,
+    "source_formal_run_bytes": 4072658040,
+    "destination_payload_files_excluding_manifest": 4927,
+    "destination_payload_bytes_excluding_manifest": 4073454695,
+    "output_files_per_run": 39,
+    "status_file": "run_status.csv",
+    "completion_summary": "formal/orchestration_summary.json"
+  },
+  "v0_mapping": {
+    "F": {
+      "source_variant": "fixed",
+      "source_method": "scVICAR-F",
+      "source_variant_name": "a2_fixed_uniform",
+      "v0_parameterization": "fixed",
+      "mapping_strength": "model_identity_only",
+      "direct_v0_run": false,
+      "verbatim_destination": "formal/runs/<dataset>/fixed/seed_<seed>/"
+    },
+    "T": {
+      "source_variant": "topology_full",
+      "source_method": "scVICAR-T",
+      "source_variant_name": "a2_topology_full",
+      "v0_parameterization": "topology",
+      "mapping_strength": "model_identity_only_provisional",
+      "direct_v0_run": false,
+      "verbatim_destination": "formal/runs/<dataset>/topology_full/seed_<seed>/",
+      "executable_rg_parity": "not_claimed"
+    }
+  },
+  "source_parameters": {
+    "common": {
+      "neighbor_k": 5,
+      "mix_neighbors": 4,
+      "pseudo_weight": 0.3,
+      "gate_min": 0.0,
+      "gate_max": 0.1,
+      "beta_mutual": 1.0,
+      "beta_snn": 1.0,
+      "beta_perturb": 2.0,
+      "beta_uncertainty": 1.0,
+      "mask_ratio": 0.4,
+      "hidden_size": 128,
+      "epochs": 80,
+      "batch_size": 256,
+      "knn_pca_dim": 50,
+      "tau": 0.2,
+      "n_top_genes": 1000,
+      "target_sum": 10000.0,
+      "scale_input": true,
+      "preprocessing_source": "shared plantnet methods/DeepLearning/scMAE_family.py; source and ToPoGate copies both hash to 0c242803fe8b5b1c81c3109b32c21ef504a5a88af4bfd6b3aece4a461a85841e"
+    },
+    "fixed": {
+      "edge_reliability_mode": "none",
+      "gate_mode": "constant",
+      "mix_mode": "fixed",
+      "current_v0_config_neighbor_k": 5,
+      "current_v0_config_gate_max": 0.15,
+      "mismatches": [
+        "historical gate_max field is 0.1; current V0 fixed YAML records 0.15 (fixed constant-gate data path remains legacy)",
+        "historical runner and RNG stream are not the V0 runner, so numeric reproduction is not claimed"
+      ]
+    },
+    "topology_full": {
+      "edge_reliability_mode": "sim_mutual_snn_distance",
+      "gate_mode": "topology",
+      "mix_mode": "reliability",
+      "current_v0_config_neighbor_k": 10,
+      "current_v0_config_gate_max": 0.15,
+      "mismatches": [
+        "historical neighbor_k is 5; current V0 topology YAML uses 10",
+        "historical gate_max is 0.1; current V0 topology YAML uses 0.15",
+        "beta values are explicit analytic values (1, 1, 2, 1) in the frozen attribution_v2 args; learnable-beta parity with retired exploratory variants is not claimed",
+        "historical runner and RNG stream are not the V0 runner, so numeric reproduction is not claimed"
+      ]
+    }
+  },
+  "preprocessing_verification": {
+    "source_observed": {
+      "input_mode": "raw",
+      "normalization": "normalize_total(target_sum=10000.0) + log1p when raw",
+      "scale_input": true,
+      "hvg_flavor": "seurat",
+      "hvg_strategy_counts": {
+        "seurat": 105,
+        "variance_fallback": 21
+      }
+    },
+    "v0_h5ad_path": "strict_hvg_subset using the same shared scMAE_family implementation hash; no seurat_v3 path was observed in the copied source run metadata",
+    "label_free": true,
+    "numeric_equivalence": "not_claimed"
+  },
+  "labels_and_k": {
+    "labels_used_during_fit": false,
+    "source_summary_label_leakage_false": true,
+    "source_label_keys": {
+      "Blood_BoneMarrow": "cell_type",
+      "Human_Pancreas_1": "cell_type",
+      "Human_Pancreas_3": "cell_type",
+      "Mouse_Pancreas_1": "cell_type",
+      "PRJNA895163": "resolved_label",
+      "TabulaSapiens_Pancreas": "cell_type"
+    },
+    "k_source": "frozen attribution_v2 dataset expected_clusters supplied to the benchmark-known-K outer readout",
+    "k_used_by_optimizer": false,
+    "labels_present_in_verbatim_runs": true,
+    "labels_semantics_warning": "legacy labels.npy is retained verbatim; it is not renamed to labels_true.npy",
+    "post_fit_only_boundary": "Labels and K are benchmark/readout metadata; this bundle is not evidence that the historical runner satisfied the current V0 runner contract beyond the recorded summary flags."
+  },
+  "integrity": {
+    "destination_hash_list": "file_hashes.sha256",
+    "destination_hash_list_sha256": "75f43ab73e78bd38aeb583ab81a16eb87bbda9e5a1f4590cc20babb12c6fbbd2",
+    "metadata_hashes": {
+      "source_freeze.json": "6f3e2cd898799614777f1258c9a6473f1ef2a5221b310068a66ecb0fbb2708d8",
+      "run_status.csv": "376a9780d0a7f2a77818a5a2e1a2e7d42a90b30d76ac11183b50939669b64f92",
+      "formal/orchestration_summary.json": "7a7a5350073f6a5a215045767893cdd9c5b5560b11f66d56d4ada8db4b1dac20",
+      "source_protocol/README.md": "6ef74a32e17c4577b768262d7f1f6194b69aeb5ac478985ecbacaf9e69dac3c4"
+    },
+    "required_audits": [
+      "checksum-aware rsync dry-run reports no source/destination differences",
+      "independent source/destination file count and byte audit passes",
+      "representative fixed/topology_full summary, args and preprocess records agree with source freeze"
+    ]
+  },
+  "review": {
+    "skill": "auto-review-loop",
+    "review_independence": "cross-family",
+    "reviewer_model": "claude-sonnet-4-5",
+    "initial_job_id": "eb80cbee49004011a7e1aeec5e564d62",
+    "initial_job_status": "completed",
+    "initial_response_status": "empty_response_stop_reason_tool_use",
+    "followup_job_id": "1ab266025ceb448cace2fa1daed58a9b",
+    "followup_thread_id": "6bbb0ff3-ed58-4bcd-8a80-15d9e4f9dd34",
+    "followup_score": 6,
+    "followup_verdict": "not ready",
+    "followup_limitation": "Claude could not read the external source paths in its sandbox; its not-ready verdict is an infrastructure-limited review, not evidence of a copy mismatch.",
+    "followup_actions": [
+      "record source verification status and exact parameter deltas",
+      "keep F/T mapping model-identity-only and T parity provisional",
+      "copy artifacts verbatim with no legacy filename relabeling"
+    ],
+    "followup_acceptance_status": "accepted_as_infrastructure_limited_not_ready",
+    "final_job_id": "aad43204a108428cba08829f8a03ab87",
+    "final_thread_id": "6bbb0ff3-ed58-4bcd-8a80-15d9e4f9dd34",
+    "final_score": 8.0,
+    "final_verdict": "ready",
+    "final_trace_id": "auto-review-loop/20260901_v0_data_staging_run01/003-round-2-adjudication",
+    "final_review_state": "review-stage/V0_data_staging/REVIEW_STATE.json",
+    "acceptance_status": "accepted",
+    "acceptance_scope": "legacy data staging and provenance only; no current V0 efficacy claim"
+  }
+}

@@ -1,0 +1,3426 @@
+{
+  "status": "completed",
+  "evidence_level": "single_seed_benchmark",
+  "performance_conclusion_allowed": false,
+  "single_seed_caveat": "single-seed descriptive benchmark only",
+  "seed": 42,
+  "shard_index": 0,
+  "num_shards": 1,
+  "dataset_count_this_shard": 131,
+  "parameterizations": [
+    "fixed",
+    "topology"
+  ],
+  "protocol_sha256": "c2a0b19ca8f8493ad50ae924343f9154a86bee6bbb942d445c76e5da4b2d94a1",
+  "new_run_count": 262,
+  "reused_run_count": 0,
+  "incomplete_count": 0,
+  "results": [
+    {
+      "status": "completed",
+      "run_key": "echocardiogram::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/echocardiogram/fixed/seed_42",
+      "metrics": {
+        "acc": 0.819672131147541,
+        "nmi": 0.2921285470221093,
+        "ari": 0.3919942588310342,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "echocardiogram::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/echocardiogram/topology/seed_42",
+      "metrics": {
+        "acc": 0.819672131147541,
+        "nmi": 0.2921285470221093,
+        "ari": 0.3919942588310342,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "skillcraft1_master_table_dataset::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/skillcraft1_master_table_dataset/fixed/seed_42",
+      "metrics": {
+        "acc": 0.32697547683923706,
+        "nmi": 0.16084754184458133,
+        "ari": 0.08832993483183904,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 6
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "skillcraft1_master_table_dataset::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/skillcraft1_master_table_dataset/topology/seed_42",
+      "metrics": {
+        "acc": 0.3293975174084166,
+        "nmi": 0.16045862054959537,
+        "ari": 0.08770579601759596,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 6
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "breast_cancer_wisconsin_original::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/breast_cancer_wisconsin_original/fixed/seed_42",
+      "metrics": {
+        "acc": 0.9619326500732065,
+        "nmi": 0.7856846670965525,
+        "ari": 0.852639411224325,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "breast_cancer_wisconsin_original::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/breast_cancer_wisconsin_original/topology/seed_42",
+      "metrics": {
+        "acc": 0.9736456808199122,
+        "nmi": 0.8287411626113679,
+        "ari": 0.896606689978286,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "smoker_condition::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/smoker_condition/fixed/seed_42",
+      "metrics": {
+        "acc": 0.9881422924901185,
+        "nmi": 0.905610083660548,
+        "ari": 0.9530082643948444,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "smoker_condition::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/smoker_condition/topology/seed_42",
+      "metrics": {
+        "acc": 0.9881422924901185,
+        "nmi": 0.905610083660548,
+        "ari": 0.9530082643948444,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "glass_identification::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/glass_identification/fixed/seed_42",
+      "metrics": {
+        "acc": 0.4485981308411215,
+        "nmi": 0.3408742470692063,
+        "ari": 0.1931013333005108,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 6
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "glass_identification::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/glass_identification/topology/seed_42",
+      "metrics": {
+        "acc": 0.4439252336448598,
+        "nmi": 0.3341815731421563,
+        "ari": 0.18861213116225223,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 6
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "statlog_image_segmentation::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/statlog_image_segmentation/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5852813852813853,
+        "nmi": 0.6004484327791884,
+        "ari": 0.47585442141751844,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 7
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "statlog_image_segmentation::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/statlog_image_segmentation/topology/seed_42",
+      "metrics": {
+        "acc": 0.6073593073593073,
+        "nmi": 0.6373169735226418,
+        "ari": 0.5065565058367908,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 7
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "planning_relax::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/planning_relax/fixed/seed_42",
+      "metrics": {
+        "acc": 0.554945054945055,
+        "nmi": 0.0027582886664338268,
+        "ari": 0.004484432846309635,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "planning_relax::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/planning_relax/topology/seed_42",
+      "metrics": {
+        "acc": 0.5439560439560439,
+        "nmi": 0.0024145995570573043,
+        "ari": 0.0018446471532271881,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "customer_classification::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/customer_classification/fixed/seed_42",
+      "metrics": {
+        "acc": 0.326,
+        "nmi": 0.01774043703800871,
+        "ari": 0.013084559399147485,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 4
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "customer_classification::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/customer_classification/topology/seed_42",
+      "metrics": {
+        "acc": 0.325,
+        "nmi": 0.018875961563225387,
+        "ari": 0.013912429394342186,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 4
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "pima_indians_diabetes_database::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/pima_indians_diabetes_database/fixed/seed_42",
+      "metrics": {
+        "acc": 0.6419270833333334,
+        "nmi": 0.046690173118535135,
+        "ari": 0.07724280747818893,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "pima_indians_diabetes_database::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/pima_indians_diabetes_database/topology/seed_42",
+      "metrics": {
+        "acc": 0.64453125,
+        "nmi": 0.04825288595624059,
+        "ari": 0.08009318945079816,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "mobile_price_classification::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/mobile_price_classification/fixed/seed_42",
+      "metrics": {
+        "acc": 0.2715,
+        "nmi": 0.003328733690867708,
+        "ari": 0.0015953520676982161,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 4
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "mobile_price_classification::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/mobile_price_classification/topology/seed_42",
+      "metrics": {
+        "acc": 0.2745,
+        "nmi": 0.0039052608583855257,
+        "ari": 0.002031075131985757,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 4
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "spambase::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/spambase/fixed/seed_42",
+      "metrics": {
+        "acc": 0.8878504672897196,
+        "nmi": 0.4811220177542861,
+        "ari": 0.600853967500099,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "spambase::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/spambase/topology/seed_42",
+      "metrics": {
+        "acc": 0.8941534449032819,
+        "nmi": 0.49973421711706145,
+        "ari": 0.6203913790834149,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "rice_seed_gonen_jasmine::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/rice_seed_gonen_jasmine/fixed/seed_42",
+      "metrics": {
+        "acc": 0.980998099809981,
+        "nmi": 0.8763142296461188,
+        "ari": 0.9254168988405925,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "rice_seed_gonen_jasmine::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/rice_seed_gonen_jasmine/topology/seed_42",
+      "metrics": {
+        "acc": 0.9808980898089809,
+        "nmi": 0.8758294866875428,
+        "ari": 0.9250319619757276,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "heart_attack_analysis_prediction_dataset::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/heart_attack_analysis_prediction_dataset/fixed/seed_42",
+      "metrics": {
+        "acc": 0.7953795379537953,
+        "nmi": 0.2684349501378831,
+        "ari": 0.34673502249035476,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "heart_attack_analysis_prediction_dataset::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/heart_attack_analysis_prediction_dataset/topology/seed_42",
+      "metrics": {
+        "acc": 0.7953795379537953,
+        "nmi": 0.2684349501378831,
+        "ari": 0.34673502249035476,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "user_knowledge_modeling::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/user_knowledge_modeling/fixed/seed_42",
+      "metrics": {
+        "acc": 0.38372093023255816,
+        "nmi": 0.14892285443399328,
+        "ari": 0.10297686100271757,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 4
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "user_knowledge_modeling::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/user_knowledge_modeling/topology/seed_42",
+      "metrics": {
+        "acc": 0.38372093023255816,
+        "nmi": 0.14892285443399328,
+        "ari": 0.10297686100271757,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 4
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "world12d::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/world12d/fixed/seed_42",
+      "metrics": {
+        "acc": 0.7266666666666667,
+        "nmi": 0.719501611433726,
+        "ari": 0.669470665480452,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 5
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "world12d::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/world12d/topology/seed_42",
+      "metrics": {
+        "acc": 0.7266666666666667,
+        "nmi": 0.719501611433726,
+        "ari": 0.669470665480452,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 5
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "pumpkin_seeds::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/pumpkin_seeds/fixed/seed_42",
+      "metrics": {
+        "acc": 0.8068,
+        "nmi": 0.29141400706167486,
+        "ari": 0.3762521330797382,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "pumpkin_seeds::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/pumpkin_seeds/topology/seed_42",
+      "metrics": {
+        "acc": 0.8048,
+        "nmi": 0.28723388593888816,
+        "ari": 0.3713577573442531,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "iris::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/iris/fixed/seed_42",
+      "metrics": {
+        "acc": 0.86,
+        "nmi": 0.7247410982638743,
+        "ari": 0.6702972634476798,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "iris::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/iris/topology/seed_42",
+      "metrics": {
+        "acc": 0.86,
+        "nmi": 0.7247410982638743,
+        "ari": 0.6702972634476798,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "wine::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/wine/fixed/seed_42",
+      "metrics": {
+        "acc": 0.9606741573033708,
+        "nmi": 0.8495731215730754,
+        "ari": 0.8804328774184622,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "wine::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/wine/topology/seed_42",
+      "metrics": {
+        "acc": 0.9606741573033708,
+        "nmi": 0.8495731215730754,
+        "ari": 0.8804328774184622,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "letter_recognition::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/letter_recognition/fixed/seed_42",
+      "metrics": {
+        "acc": 0.2634107285828663,
+        "nmi": 0.37452490446123265,
+        "ari": 0.12265743285911435,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 26
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "letter_recognition::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/letter_recognition/topology/seed_42",
+      "metrics": {
+        "acc": 0.25650520416333067,
+        "nmi": 0.37466217575746485,
+        "ari": 0.12853971430320998,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 26
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "mammographic_mass::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/mammographic_mass/fixed/seed_42",
+      "metrics": {
+        "acc": 0.8012048192771084,
+        "nmi": 0.3126616168162937,
+        "ari": 0.36213799912622985,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "mammographic_mass::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/mammographic_mass/topology/seed_42",
+      "metrics": {
+        "acc": 0.8,
+        "nmi": 0.3152928350812259,
+        "ari": 0.35923883826058206,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "breast_tissue::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/breast_tissue/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5283018867924528,
+        "nmi": 0.5457032463896319,
+        "ari": 0.3357526519454017,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 6
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "breast_tissue::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/breast_tissue/topology/seed_42",
+      "metrics": {
+        "acc": 0.5471698113207547,
+        "nmi": 0.5556365333466777,
+        "ari": 0.3507546579411958,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 6
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "hepatitis::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/hepatitis/fixed/seed_42",
+      "metrics": {
+        "acc": 0.6625,
+        "nmi": 0.15582677991920357,
+        "ari": 0.09840079370143046,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "hepatitis::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/hepatitis/topology/seed_42",
+      "metrics": {
+        "acc": 0.7,
+        "nmi": 0.13881675272832658,
+        "ari": 0.14230287187494825,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "predicting_pulsar_star::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/predicting_pulsar_star/fixed/seed_42",
+      "metrics": {
+        "acc": 0.9686185700420575,
+        "nmi": 0.6134056931899146,
+        "ari": 0.7532402106195032,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "predicting_pulsar_star::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/predicting_pulsar_star/topology/seed_42",
+      "metrics": {
+        "acc": 0.9685107300765664,
+        "nmi": 0.6123738834033237,
+        "ari": 0.7522936642618219,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "breast_cancer_wisconsin_prognostic::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/breast_cancer_wisconsin_prognostic/fixed/seed_42",
+      "metrics": {
+        "acc": 0.9226713532513181,
+        "nmi": 0.6005216659804329,
+        "ari": 0.7121200288336492,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "breast_cancer_wisconsin_prognostic::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/breast_cancer_wisconsin_prognostic/topology/seed_42",
+      "metrics": {
+        "acc": 0.9209138840070299,
+        "nmi": 0.5946661503989346,
+        "ari": 0.7060940598260634,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "wireless_indoor_localization::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/wireless_indoor_localization/fixed/seed_42",
+      "metrics": {
+        "acc": 0.9085,
+        "nmi": 0.7875346956217385,
+        "ari": 0.7731441793376811,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 4
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "wireless_indoor_localization::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/wireless_indoor_localization/topology/seed_42",
+      "metrics": {
+        "acc": 0.9065,
+        "nmi": 0.7821074200953928,
+        "ari": 0.7679131226950927,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 4
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "date_fruit::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/date_fruit/fixed/seed_42",
+      "metrics": {
+        "acc": 0.7249443207126949,
+        "nmi": 0.7156713797882162,
+        "ari": 0.6939915473180324,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 7
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "date_fruit::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/date_fruit/topology/seed_42",
+      "metrics": {
+        "acc": 0.7260579064587973,
+        "nmi": 0.719095639292399,
+        "ari": 0.6976736123146019,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 7
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "zoo::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/zoo/fixed/seed_42",
+      "metrics": {
+        "acc": 0.801980198019802,
+        "nmi": 0.789519941939147,
+        "ari": 0.658724145114801,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 7
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "zoo::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/zoo/topology/seed_42",
+      "metrics": {
+        "acc": 0.801980198019802,
+        "nmi": 0.788976134388601,
+        "ari": 0.6572197026270574,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 7
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "htru2::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/htru2/fixed/seed_42",
+      "metrics": {
+        "acc": 0.9710971097109711,
+        "nmi": 0.626088971587159,
+        "ari": 0.7794761558940051,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "htru2::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/htru2/topology/seed_42",
+      "metrics": {
+        "acc": 0.9712971297129713,
+        "nmi": 0.6280557145918707,
+        "ari": 0.7811539728999772,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "ionosphere::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/ionosphere/fixed/seed_42",
+      "metrics": {
+        "acc": 0.717948717948718,
+        "nmi": 0.1452182631316898,
+        "ari": 0.18755291913205108,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "ionosphere::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/ionosphere/topology/seed_42",
+      "metrics": {
+        "acc": 0.717948717948718,
+        "nmi": 0.1452182631316898,
+        "ari": 0.18755291913205108,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "music_genre_classification::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/music_genre_classification/fixed/seed_42",
+      "metrics": {
+        "acc": 0.37,
+        "nmi": 0.3149915830297232,
+        "ari": 0.18592092639170632,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "music_genre_classification::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/music_genre_classification/topology/seed_42",
+      "metrics": {
+        "acc": 0.347,
+        "nmi": 0.31332551998058916,
+        "ari": 0.17669920813151424,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "spectf_heart::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/spectf_heart/fixed/seed_42",
+      "metrics": {
+        "acc": 0.6625,
+        "nmi": 0.226048587240751,
+        "ari": 0.09941925770140764,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "spectf_heart::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/spectf_heart/topology/seed_42",
+      "metrics": {
+        "acc": 0.6875,
+        "nmi": 0.25821680907612976,
+        "ari": 0.1339445883994419,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "rice_dataset_cammeo_and_osmancik::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/rice_dataset_cammeo_and_osmancik/fixed/seed_42",
+      "metrics": {
+        "acc": 0.9178477690288714,
+        "nmi": 0.585283407477904,
+        "ari": 0.698153304933576,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "rice_dataset_cammeo_and_osmancik::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/rice_dataset_cammeo_and_osmancik/topology/seed_42",
+      "metrics": {
+        "acc": 0.9178477690288714,
+        "nmi": 0.585400028865495,
+        "ari": 0.6981449166888436,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "ph_recognition::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/ph_recognition/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5513016845329249,
+        "nmi": 0.6153029873054686,
+        "ari": 0.40030289564486415,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 15
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "ph_recognition::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/ph_recognition/topology/seed_42",
+      "metrics": {
+        "acc": 0.5405819295558959,
+        "nmi": 0.6008217610582379,
+        "ari": 0.3873069313619594,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 15
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "banknote_authentication::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/banknote_authentication/fixed/seed_42",
+      "metrics": {
+        "acc": 0.565597667638484,
+        "nmi": 0.013598818048879701,
+        "ari": 0.0164847198432341,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "banknote_authentication::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/banknote_authentication/topology/seed_42",
+      "metrics": {
+        "acc": 0.565597667638484,
+        "nmi": 0.013598818048879701,
+        "ari": 0.0164847198432341,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "wine_quality::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/wine_quality/fixed/seed_42",
+      "metrics": {
+        "acc": 0.36014775292427664,
+        "nmi": 0.05994084073179098,
+        "ari": 0.04146375192344493,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 5
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "wine_quality::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/wine_quality/topology/seed_42",
+      "metrics": {
+        "acc": 0.3546070182639031,
+        "nmi": 0.059321368890304114,
+        "ari": 0.039901993539617084,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 5
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "cardiovascular_study::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/cardiovascular_study/fixed/seed_42",
+      "metrics": {
+        "acc": 0.6050563717116502,
+        "nmi": 0.02464371519001003,
+        "ari": 0.03580111321538419,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "cardiovascular_study::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/cardiovascular_study/topology/seed_42",
+      "metrics": {
+        "acc": 0.5910488554834301,
+        "nmi": 0.02111421713628552,
+        "ari": 0.02786808128791443,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "statlog_german_credit::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/statlog_german_credit/fixed/seed_42",
+      "metrics": {
+        "acc": 0.564,
+        "nmi": 0.0093282977612556,
+        "ari": 0.014830591977750576,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "statlog_german_credit::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/statlog_german_credit/topology/seed_42",
+      "metrics": {
+        "acc": 0.57,
+        "nmi": 0.010419290572630654,
+        "ari": 0.017670835317811166,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "boston::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/boston/fixed/seed_42",
+      "metrics": {
+        "acc": 0.8831168831168831,
+        "nmi": 0.6776970088035842,
+        "ari": 0.6465418756089331,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "boston::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/boston/topology/seed_42",
+      "metrics": {
+        "acc": 0.8831168831168831,
+        "nmi": 0.6776970088035842,
+        "ari": 0.6465418756089331,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "seismic_bumps::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/seismic_bumps/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5371517027863777,
+        "nmi": 0.013536980681189815,
+        "ari": 0.00478644936158056,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "seismic_bumps::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/seismic_bumps/topology/seed_42",
+      "metrics": {
+        "acc": 0.5526315789473685,
+        "nmi": 0.012852606433355018,
+        "ari": 0.008120340652565667,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "dry_bean::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/dry_bean/fixed/seed_42",
+      "metrics": {
+        "acc": 0.862258677603281,
+        "nmi": 0.7496405163975189,
+        "ari": 0.6829617341129894,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 7
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "dry_bean::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/dry_bean/topology/seed_42",
+      "metrics": {
+        "acc": 0.8627588276482945,
+        "nmi": 0.7495656197520002,
+        "ari": 0.683661901398965,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 7
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "credit_risk_classification::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/credit_risk_classification/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5635245901639344,
+        "nmi": 0.002983314853276979,
+        "ari": 0.009079000997087645,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "credit_risk_classification::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/credit_risk_classification/topology/seed_42",
+      "metrics": {
+        "acc": 0.5809426229508197,
+        "nmi": 0.003501532348480015,
+        "ari": -0.01836688111265613,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "epileptic_seizure_recognition::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/epileptic_seizure_recognition/fixed/seed_42",
+      "metrics": {
+        "acc": 0.2525217391304348,
+        "nmi": 0.1218747902392088,
+        "ari": 0.02517180485866672,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 5
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "epileptic_seizure_recognition::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/epileptic_seizure_recognition/topology/seed_42",
+      "metrics": {
+        "acc": 0.25356521739130433,
+        "nmi": 0.11328190227810601,
+        "ari": 0.02268426766253804,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 5
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "website_phishing::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/website_phishing/fixed/seed_42",
+      "metrics": {
+        "acc": 0.6282335550628233,
+        "nmi": 0.2737486611247415,
+        "ari": 0.2817651343444936,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "website_phishing::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/website_phishing/topology/seed_42",
+      "metrics": {
+        "acc": 0.5868440502586844,
+        "nmi": 0.2134812131905411,
+        "ari": 0.24813770392770357,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "optical_recognition_of_handwritten_digits::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/optical_recognition_of_handwritten_digits/fixed/seed_42",
+      "metrics": {
+        "acc": 0.7444415380591158,
+        "nmi": 0.7308505491979462,
+        "ari": 0.601871319900233,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "optical_recognition_of_handwritten_digits::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/optical_recognition_of_handwritten_digits/topology/seed_42",
+      "metrics": {
+        "acc": 0.7454878367773999,
+        "nmi": 0.7423818910123239,
+        "ari": 0.608110181384538,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "siberian_weather_stats::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/siberian_weather_stats/fixed/seed_42",
+      "metrics": {
+        "acc": 0.2899786780383795,
+        "nmi": 0.08832166399681936,
+        "ari": 0.027664245149363803,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 7
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "siberian_weather_stats::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/siberian_weather_stats/topology/seed_42",
+      "metrics": {
+        "acc": 0.2835820895522388,
+        "nmi": 0.088710417840207,
+        "ari": 0.02454448537736826,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 7
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "orbit_classification_for_prediction_nasa::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/orbit_classification_for_prediction_nasa/fixed/seed_42",
+      "metrics": {
+        "acc": 0.4529616724738676,
+        "nmi": 0.08784027777001652,
+        "ari": 0.015505687482275706,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "orbit_classification_for_prediction_nasa::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/orbit_classification_for_prediction_nasa/topology/seed_42",
+      "metrics": {
+        "acc": 0.44831591173054586,
+        "nmi": 0.08922254153878002,
+        "ari": 0.012757781865368247,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "magic_gamma_telescope::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/magic_gamma_telescope/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5820582058205821,
+        "nmi": 0.006992132656517755,
+        "ari": 0.021285574918745165,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "magic_gamma_telescope::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/magic_gamma_telescope/topology/seed_42",
+      "metrics": {
+        "acc": 0.5831583158315832,
+        "nmi": 0.007130418782614332,
+        "ari": 0.021794715280591407,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "raisin::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/raisin/fixed/seed_42",
+      "metrics": {
+        "acc": 0.8155555555555556,
+        "nmi": 0.3722589045066089,
+        "ari": 0.3976871681204254,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "raisin::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/raisin/topology/seed_42",
+      "metrics": {
+        "acc": 0.8155555555555556,
+        "nmi": 0.3722589045066089,
+        "ari": 0.3976871681204254,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "patient_treatment_classification::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/patient_treatment_classification/fixed/seed_42",
+      "metrics": {
+        "acc": 0.541704442429737,
+        "nmi": 0.010911777955784943,
+        "ari": 0.005632411163746373,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "patient_treatment_classification::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/patient_treatment_classification/topology/seed_42",
+      "metrics": {
+        "acc": 0.5432910244786945,
+        "nmi": 0.010887162924898261,
+        "ari": 0.006353912586374593,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "fetal_health_classification::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/fetal_health_classification/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5094073377234243,
+        "nmi": 0.12183454951632047,
+        "ari": 0.045156709760049776,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "fetal_health_classification::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/fetal_health_classification/topology/seed_42",
+      "metrics": {
+        "acc": 0.4501411100658514,
+        "nmi": 0.092601854978005,
+        "ari": 0.021317392170698567,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "dermatology::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/dermatology/fixed/seed_42",
+      "metrics": {
+        "acc": 0.9413407821229051,
+        "nmi": 0.9113350781706439,
+        "ari": 0.9115716888221274,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 6
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "dermatology::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/dermatology/topology/seed_42",
+      "metrics": {
+        "acc": 0.9608938547486033,
+        "nmi": 0.9344683018504609,
+        "ari": 0.9356801453681439,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 6
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "secom::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/secom/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5054243777919591,
+        "nmi": 0.007337649636239074,
+        "ari": -0.002696876420711892,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "secom::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/secom/topology/seed_42",
+      "metrics": {
+        "acc": 0.5181876196553925,
+        "nmi": 0.006994678760940564,
+        "ari": -0.004610290535718674,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "paris_housing_classification::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/paris_housing_classification/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5089,
+        "nmi": 0.00019978480488525079,
+        "ari": 0.00020757815086810917,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "paris_housing_classification::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/paris_housing_classification/topology/seed_42",
+      "metrics": {
+        "acc": 0.5101,
+        "nmi": 0.0002001884001017768,
+        "ari": 0.00025451446395501314,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "seeds::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/seeds/fixed/seed_42",
+      "metrics": {
+        "acc": 0.9142857142857143,
+        "nmi": 0.719142453243399,
+        "ari": 0.7635214382015387,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "seeds::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/seeds/topology/seed_42",
+      "metrics": {
+        "acc": 0.9142857142857143,
+        "nmi": 0.719142453243399,
+        "ari": 0.7635214382015387,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "wine_customer::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/wine_customer/fixed/seed_42",
+      "metrics": {
+        "acc": 0.9606741573033708,
+        "nmi": 0.8495731215730754,
+        "ari": 0.8804328774184622,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "wine_customer::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/wine_customer/topology/seed_42",
+      "metrics": {
+        "acc": 0.9606741573033708,
+        "nmi": 0.8495731215730754,
+        "ari": 0.8804328774184622,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "crowdsourced_mapping::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/crowdsourced_mapping/fixed/seed_42",
+      "metrics": {
+        "acc": 0.48784635390617187,
+        "nmi": 0.26691125145140926,
+        "ari": 0.08711585906930586,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 4
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "crowdsourced_mapping::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/crowdsourced_mapping/topology/seed_42",
+      "metrics": {
+        "acc": 0.48794638391517453,
+        "nmi": 0.2673309676579227,
+        "ari": 0.08741410037697625,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 4
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "durum_wheat_features::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/durum_wheat_features/fixed/seed_42",
+      "metrics": {
+        "acc": 0.49277777777777776,
+        "nmi": 0.546242579606322,
+        "ari": 0.37981781145888355,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "durum_wheat_features::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/durum_wheat_features/topology/seed_42",
+      "metrics": {
+        "acc": 0.49277777777777776,
+        "nmi": 0.546242579606322,
+        "ari": 0.37981781145888355,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "classification_in_asteroseismology::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/classification_in_asteroseismology/fixed/seed_42",
+      "metrics": {
+        "acc": 0.9040959040959041,
+        "nmi": 0.581500190341839,
+        "ari": 0.6489888012391813,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "classification_in_asteroseismology::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/classification_in_asteroseismology/topology/seed_42",
+      "metrics": {
+        "acc": 0.9040959040959041,
+        "nmi": 0.581500190341839,
+        "ari": 0.6489888012391813,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "birds_bones_and_living_habits::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/birds_bones_and_living_habits/fixed/seed_42",
+      "metrics": {
+        "acc": 0.43341404358353514,
+        "nmi": 0.25509240682628725,
+        "ari": 0.23455832248590158,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 6
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "birds_bones_and_living_habits::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/birds_bones_and_living_habits/topology/seed_42",
+      "metrics": {
+        "acc": 0.43341404358353514,
+        "nmi": 0.2550924068262872,
+        "ari": 0.23455832248590158,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 6
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "microbes::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/microbes/fixed/seed_42",
+      "metrics": {
+        "acc": 0.2302151075537769,
+        "nmi": 0.1072398298216231,
+        "ari": 0.04715518439174495,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "microbes::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/microbes/topology/seed_42",
+      "metrics": {
+        "acc": 0.2321160580290145,
+        "nmi": 0.10948385976442084,
+        "ari": 0.04801107740032074,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "image_segmentation::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/image_segmentation/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5238095238095238,
+        "nmi": 0.5637454273180225,
+        "ari": 0.4084780480306883,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 7
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "image_segmentation::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/image_segmentation/topology/seed_42",
+      "metrics": {
+        "acc": 0.5428571428571428,
+        "nmi": 0.6109794655148216,
+        "ari": 0.41826676373505983,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 7
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "water_quality::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/water_quality/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5062158130283441,
+        "nmi": 0.0008777598066893423,
+        "ari": -0.0007711739614254746,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "water_quality::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/water_quality/topology/seed_42",
+      "metrics": {
+        "acc": 0.5047240179015415,
+        "nmi": 0.000738478374462694,
+        "ari": -0.0008446396244532469,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "insurance_company_benchmark::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/insurance_company_benchmark/fixed/seed_42",
+      "metrics": {
+        "acc": 0.6865338371693576,
+        "nmi": 0.017464550296660608,
+        "ari": 0.0429936733474675,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "insurance_company_benchmark::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/insurance_company_benchmark/topology/seed_42",
+      "metrics": {
+        "acc": 0.6733081415321196,
+        "nmi": 0.016589477208000348,
+        "ari": 0.038543511156827116,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "harbermans_survival::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/harbermans_survival/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5490196078431373,
+        "nmi": 0.011040309240036728,
+        "ari": 0.00703990457726788,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "harbermans_survival::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/harbermans_survival/topology/seed_42",
+      "metrics": {
+        "acc": 0.5490196078431373,
+        "nmi": 0.011040309240036728,
+        "ari": 0.00703990457726788,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "yeast::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/yeast/fixed/seed_42",
+      "metrics": {
+        "acc": 0.3728581220013708,
+        "nmi": 0.21094078837284616,
+        "ari": 0.10862744693312636,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 8
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "yeast::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/yeast/topology/seed_42",
+      "metrics": {
+        "acc": 0.37559972583961615,
+        "nmi": 0.20591527831696882,
+        "ari": 0.10815349580353883,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 8
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "heart_disease::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/heart_disease/fixed/seed_42",
+      "metrics": {
+        "acc": 0.40404040404040403,
+        "nmi": 0.2171186082622986,
+        "ari": 0.16212012562165887,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 5
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "heart_disease::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/heart_disease/topology/seed_42",
+      "metrics": {
+        "acc": 0.4276094276094276,
+        "nmi": 0.2293313112037597,
+        "ari": 0.17859154163935953,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 5
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "ecoli::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/ecoli/fixed/seed_42",
+      "metrics": {
+        "acc": 0.8256880733944955,
+        "nmi": 0.7040512372706725,
+        "ari": 0.7373344000042401,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 5
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "ecoli::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/ecoli/topology/seed_42",
+      "metrics": {
+        "acc": 0.8165137614678899,
+        "nmi": 0.6820863101257965,
+        "ari": 0.735773319216215,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 5
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "extyaleb::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/extyaleb/fixed/seed_42",
+      "metrics": {
+        "acc": 0.7210031347962382,
+        "nmi": 0.5915961251971031,
+        "ari": 0.3619512170981809,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 5
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "extyaleb::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/extyaleb/topology/seed_42",
+      "metrics": {
+        "acc": 0.5799373040752351,
+        "nmi": 0.5172443482785998,
+        "ari": 0.2799870808636394,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 5
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "breast_cancer_coimbra::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/breast_cancer_coimbra/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5344827586206896,
+        "nmi": 0.0063728277071435635,
+        "ari": -0.003970715969723291,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "breast_cancer_coimbra::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/breast_cancer_coimbra/topology/seed_42",
+      "metrics": {
+        "acc": 0.5344827586206896,
+        "nmi": 0.0063728277071435635,
+        "ari": -0.003970715969723291,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "student_grade::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/student_grade/fixed/seed_42",
+      "metrics": {
+        "acc": 0.6759493670886076,
+        "nmi": 0.06798044844939909,
+        "ari": 0.11647988258807769,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "student_grade::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/student_grade/topology/seed_42",
+      "metrics": {
+        "acc": 0.7012658227848101,
+        "nmi": 0.08313324425869076,
+        "ari": 0.15006044270461608,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "human_stress_detection::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/human_stress_detection/fixed/seed_42",
+      "metrics": {
+        "acc": 0.8135932033983009,
+        "nmi": 0.708056213886788,
+        "ari": 0.6156569797571462,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "human_stress_detection::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/human_stress_detection/topology/seed_42",
+      "metrics": {
+        "acc": 0.8135932033983009,
+        "nmi": 0.708056213886788,
+        "ari": 0.6156569797571462,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "fraud_detection_bank::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/fraud_detection_bank/fixed/seed_42",
+      "metrics": {
+        "acc": 0.6151615161516152,
+        "nmi": 0.08557492708140667,
+        "ari": 0.050697173792325044,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "fraud_detection_bank::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/fraud_detection_bank/topology/seed_42",
+      "metrics": {
+        "acc": 0.594059405940594,
+        "nmi": 0.08169527129458021,
+        "ari": 0.02921446861817782,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "pen_based_recognition_of_handwritten_digits::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/pen_based_recognition_of_handwritten_digits/fixed/seed_42",
+      "metrics": {
+        "acc": 0.744195356285028,
+        "nmi": 0.6908858489287916,
+        "ari": 0.5684939719029714,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "pen_based_recognition_of_handwritten_digits::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/pen_based_recognition_of_handwritten_digits/topology/seed_42",
+      "metrics": {
+        "acc": 0.7540699226047505,
+        "nmi": 0.7038321285376173,
+        "ari": 0.5848538109581889,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "diabetic_retinopathy_debrecen::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/diabetic_retinopathy_debrecen/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5317115551694179,
+        "nmi": 0.003945795863437417,
+        "ari": 0.0030942494822090525,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "diabetic_retinopathy_debrecen::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/diabetic_retinopathy_debrecen/topology/seed_42",
+      "metrics": {
+        "acc": 0.5386620330147698,
+        "nmi": 0.005361236526705521,
+        "ari": 0.005072015906263341,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "pistachio::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/pistachio/fixed/seed_42",
+      "metrics": {
+        "acc": 0.7774674115456238,
+        "nmi": 0.25853038018204505,
+        "ari": 0.3075748099639855,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "pistachio::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/pistachio/topology/seed_42",
+      "metrics": {
+        "acc": 0.7774674115456238,
+        "nmi": 0.25805447718267865,
+        "ari": 0.30757832210570135,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "turkish_music_emotion::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/turkish_music_emotion/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5925,
+        "nmi": 0.34216330733474243,
+        "ari": 0.3076852012472815,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 4
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "turkish_music_emotion::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/turkish_music_emotion/topology/seed_42",
+      "metrics": {
+        "acc": 0.59,
+        "nmi": 0.3422158009995968,
+        "ari": 0.30789474146518,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 4
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "parkinsons::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/parkinsons/fixed/seed_42",
+      "metrics": {
+        "acc": 0.6666666666666666,
+        "nmi": 0.26318832266793946,
+        "ari": 0.10191159420841979,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "parkinsons::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/parkinsons/topology/seed_42",
+      "metrics": {
+        "acc": 0.6512820512820513,
+        "nmi": 0.2507853181313192,
+        "ari": 0.07960940400520328,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "weather::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/weather/fixed/seed_42",
+      "metrics": {
+        "acc": 1.0,
+        "nmi": 1.0,
+        "ari": 1.0,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 7
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "weather::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/weather/topology/seed_42",
+      "metrics": {
+        "acc": 1.0,
+        "nmi": 1.0,
+        "ari": 1.0,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 7
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "blood_transfusion_service_center::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/blood_transfusion_service_center/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5347593582887701,
+        "nmi": 0.015845063857247637,
+        "ari": -0.028100251754089284,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "blood_transfusion_service_center::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/blood_transfusion_service_center/topology/seed_42",
+      "metrics": {
+        "acc": 0.5187165775401069,
+        "nmi": 0.013486180897426876,
+        "ari": -0.01953633647268743,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "mfeat-karhunen::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/mfeat-karhunen/fixed/seed_42",
+      "metrics": {
+        "acc": 0.7585,
+        "nmi": 0.7330912065677728,
+        "ari": 0.6460740793169851,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "mfeat-karhunen::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/mfeat-karhunen/topology/seed_42",
+      "metrics": {
+        "acc": 0.6875,
+        "nmi": 0.6927639408822384,
+        "ari": 0.5851924535658066,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "mfeat-factors::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/mfeat-factors/fixed/seed_42",
+      "metrics": {
+        "acc": 0.767,
+        "nmi": 0.781711201675551,
+        "ari": 0.6918835496924328,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "mfeat-factors::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/mfeat-factors/topology/seed_42",
+      "metrics": {
+        "acc": 0.77,
+        "nmi": 0.7840740290737304,
+        "ari": 0.6972750634738564,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "wall-robot-navigation::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/wall-robot-navigation/fixed/seed_42",
+      "metrics": {
+        "acc": 0.4351173020527859,
+        "nmi": 0.10594461953290593,
+        "ari": 0.060064201442296565,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 4
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "wall-robot-navigation::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/wall-robot-navigation/topology/seed_42",
+      "metrics": {
+        "acc": 0.43566715542521994,
+        "nmi": 0.10610834893742598,
+        "ari": 0.06041499247087593,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 4
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "Waveform::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/Waveform/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5008,
+        "nmi": 0.3655476530569833,
+        "ari": 0.25206855319809324,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "Waveform::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/Waveform/topology/seed_42",
+      "metrics": {
+        "acc": 0.5008,
+        "nmi": 0.36376679156844344,
+        "ari": 0.25148719537615,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "gas-drift::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/gas-drift/fixed/seed_42",
+      "metrics": {
+        "acc": 0.4645,
+        "nmi": 0.33847294600439903,
+        "ari": 0.14591633255752265,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 6
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "gas-drift::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/gas-drift/topology/seed_42",
+      "metrics": {
+        "acc": 0.4659,
+        "nmi": 0.3408660990035267,
+        "ari": 0.14758635376628798,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 6
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "mfeat-morphological::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/mfeat-morphological/fixed/seed_42",
+      "metrics": {
+        "acc": 0.674,
+        "nmi": 0.6694119064739946,
+        "ari": 0.5465002593259299,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "mfeat-morphological::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/mfeat-morphological/topology/seed_42",
+      "metrics": {
+        "acc": 0.6395,
+        "nmi": 0.6522804009663309,
+        "ari": 0.519606189499663,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "JapaneseVowels::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/JapaneseVowels/fixed/seed_42",
+      "metrics": {
+        "acc": 0.38379680754944284,
+        "nmi": 0.38312416236779484,
+        "ari": 0.21388714729847308,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 9
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "JapaneseVowels::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/JapaneseVowels/topology/seed_42",
+      "metrics": {
+        "acc": 0.4061841180604357,
+        "nmi": 0.40548293930549484,
+        "ari": 0.2315602606469717,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 9
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "rmftsa_sleepdata::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/rmftsa_sleepdata/fixed/seed_42",
+      "metrics": {
+        "acc": 0.36328125,
+        "nmi": 0.03926702286282192,
+        "ari": 0.04556838535282602,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 4
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "rmftsa_sleepdata::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/rmftsa_sleepdata/topology/seed_42",
+      "metrics": {
+        "acc": 0.3642578125,
+        "nmi": 0.03989799463444214,
+        "ari": 0.046334356847851046,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 4
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "first-order-theorem-proving::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/first-order-theorem-proving/fixed/seed_42",
+      "metrics": {
+        "acc": 0.2536776724419745,
+        "nmi": 0.0537897014928824,
+        "ari": 0.009918555742496619,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 6
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "first-order-theorem-proving::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/first-order-theorem-proving/topology/seed_42",
+      "metrics": {
+        "acc": 0.2540045766590389,
+        "nmi": 0.05859495839492537,
+        "ari": 0.02344994247679802,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 6
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "gina_prior2::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/gina_prior2/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5495963091118801,
+        "nmi": 0.5101205243590315,
+        "ari": 0.379036532265471,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "gina_prior2::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/gina_prior2/topology/seed_42",
+      "metrics": {
+        "acc": 0.553921568627451,
+        "nmi": 0.5112804771466802,
+        "ari": 0.374085382930985,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "fabert::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/fabert/fixed/seed_42",
+      "metrics": {
+        "acc": 0.2975597911861114,
+        "nmi": 0.13976933420533277,
+        "ari": 0.08404483995696001,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 7
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "fabert::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/fabert/topology/seed_42",
+      "metrics": {
+        "acc": 0.21913317955566347,
+        "nmi": 0.04737933573943435,
+        "ari": 0.01183398965646303,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 7
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "dilbert::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/dilbert/fixed/seed_42",
+      "metrics": {
+        "acc": 0.3815,
+        "nmi": 0.15369384330662028,
+        "ari": 0.10768463005598079,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 5
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "dilbert::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/dilbert/topology/seed_42",
+      "metrics": {
+        "acc": 0.3829,
+        "nmi": 0.15386289821033844,
+        "ari": 0.1089602054488785,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 5
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "synthetic_control::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/synthetic_control/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5683333333333334,
+        "nmi": 0.7777967665054436,
+        "ari": 0.6029787898537564,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 6
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "synthetic_control::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/synthetic_control/topology/seed_42",
+      "metrics": {
+        "acc": 0.5683333333333334,
+        "nmi": 0.7807653890747829,
+        "ari": 0.604964245081408,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 6
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "Drug Consumption::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/Drug Consumption/fixed/seed_42",
+      "metrics": {
+        "acc": 0.3156089193825043,
+        "nmi": 0.006788265534858017,
+        "ari": 0.008863718938511442,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 4
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "Drug Consumption::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/Drug Consumption/topology/seed_42",
+      "metrics": {
+        "acc": 0.31446540880503143,
+        "nmi": 0.007054632363221169,
+        "ari": 0.008093191907209356,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 4
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "shuttle::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/shuttle/fixed/seed_42",
+      "metrics": {
+        "acc": 0.7267,
+        "nmi": 0.04638540973841559,
+        "ari": 0.125804563499159,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "shuttle::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/shuttle/topology/seed_42",
+      "metrics": {
+        "acc": 0.7268,
+        "nmi": 0.04629873911407159,
+        "ari": 0.12576935137698506,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "tr45.wc::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/tr45.wc/fixed/seed_42",
+      "metrics": {
+        "acc": 0.2618343195266272,
+        "nmi": 0.1624558161727273,
+        "ari": 0.016957021102296098,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 9
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "tr45.wc::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/tr45.wc/topology/seed_42",
+      "metrics": {
+        "acc": 0.26479289940828404,
+        "nmi": 0.19443761805934984,
+        "ari": 0.012541327623137994,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 9
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "steel-plates-fault::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/steel-plates-fault/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5095311695002576,
+        "nmi": 0.09499614669996526,
+        "ari": -0.03933686424430485,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "steel-plates-fault::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/steel-plates-fault/topology/seed_42",
+      "metrics": {
+        "acc": 0.508500772797527,
+        "nmi": 0.09121133040012687,
+        "ari": -0.03915007252523661,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "fbis.wc::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/fbis.wc/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5286885245901639,
+        "nmi": 0.49987580115610253,
+        "ari": 0.3463423631086687,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 11
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "fbis.wc::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/fbis.wc/topology/seed_42",
+      "metrics": {
+        "acc": 0.5031876138433515,
+        "nmi": 0.47422428718565385,
+        "ari": 0.30428040278324064,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 11
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "mfeat-fourier::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/mfeat-fourier/fixed/seed_42",
+      "metrics": {
+        "acc": 0.599,
+        "nmi": 0.5255695466346998,
+        "ari": 0.3946044664911895,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "mfeat-fourier::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/mfeat-fourier/topology/seed_42",
+      "metrics": {
+        "acc": 0.598,
+        "nmi": 0.5649978582052644,
+        "ari": 0.4286393605478298,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "vehicle::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/vehicle/fixed/seed_42",
+      "metrics": {
+        "acc": 0.35106382978723405,
+        "nmi": 0.09026422848833159,
+        "ari": 0.06570407348014391,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 4
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "vehicle::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/vehicle/topology/seed_42",
+      "metrics": {
+        "acc": 0.3557919621749409,
+        "nmi": 0.1164259627405641,
+        "ari": 0.07807710260995232,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 4
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "micro-mass::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/micro-mass/fixed/seed_42",
+      "metrics": {
+        "acc": 0.575,
+        "nmi": 0.7429370880975041,
+        "ari": 0.4897230198764351,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "micro-mass::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/micro-mass/topology/seed_42",
+      "metrics": {
+        "acc": 0.6,
+        "nmi": 0.7315309876306034,
+        "ari": 0.47384154872027867,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "ISOLET::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/ISOLET/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5385404642811338,
+        "nmi": 0.7307278558190983,
+        "ari": 0.4512530717939029,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 26
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "ISOLET::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/ISOLET/topology/seed_42",
+      "metrics": {
+        "acc": 0.5847120687443889,
+        "nmi": 0.737201277204889,
+        "ari": 0.5016748843898866,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 26
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "poker-hand::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/poker-hand/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5006,
+        "nmi": 5.1351896070144633e-08,
+        "ari": -9.997230401848953e-05,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "poker-hand::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/poker-hand/topology/seed_42",
+      "metrics": {
+        "acc": 0.5009,
+        "nmi": 1.2841197256470371e-07,
+        "ari": -9.793293795349074e-05,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "tamilnadu-electricity::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/tamilnadu-electricity/fixed/seed_42",
+      "metrics": {
+        "acc": 0.065,
+        "nmi": 0.006115871786054008,
+        "ari": -7.307695938645653e-05,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 20
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "tamilnadu-electricity::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/tamilnadu-electricity/topology/seed_42",
+      "metrics": {
+        "acc": 0.0656,
+        "nmi": 0.006269489311390974,
+        "ari": -7.7181806879825e-06,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 20
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "mnist64::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/mnist64/fixed/seed_42",
+      "metrics": {
+        "acc": 0.9158964879852126,
+        "nmi": 0.8228562061295281,
+        "ari": 0.8151862008663662,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 6
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "mnist64::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/mnist64/topology/seed_42",
+      "metrics": {
+        "acc": 0.9094269870609981,
+        "nmi": 0.8134822408714516,
+        "ari": 0.802266016563521,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 6
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "MNIST_CLIP::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/MNIST_CLIP/fixed/seed_42",
+      "metrics": {
+        "acc": 0.7795118047218887,
+        "nmi": 0.7107368793157047,
+        "ari": 0.5934979114750443,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "MNIST_CLIP::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/MNIST_CLIP/topology/seed_42",
+      "metrics": {
+        "acc": 0.7824129651860744,
+        "nmi": 0.7117370238855159,
+        "ari": 0.6019090943269,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "fashion_mnist::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/fashion_mnist/fixed/seed_42",
+      "metrics": {
+        "acc": 0.549,
+        "nmi": 0.5470873119961346,
+        "ari": 0.37760803094460754,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "fashion_mnist::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/fashion_mnist/topology/seed_42",
+      "metrics": {
+        "acc": 0.546,
+        "nmi": 0.5428654226263878,
+        "ari": 0.3730475733471206,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "FashionMNIST_CLIP::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/FashionMNIST_CLIP/fixed/seed_42",
+      "metrics": {
+        "acc": 0.6341,
+        "nmi": 0.6886015088783333,
+        "ari": 0.5314648256378187,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "FashionMNIST_CLIP::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/FashionMNIST_CLIP/topology/seed_42",
+      "metrics": {
+        "acc": 0.6342,
+        "nmi": 0.6891339327268171,
+        "ari": 0.5318018181859716,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "cifar10::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/cifar10/fixed/seed_42",
+      "metrics": {
+        "acc": 0.2169230769230769,
+        "nmi": 0.07572512353057478,
+        "ari": 0.036708023077082694,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "cifar10::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/cifar10/topology/seed_42",
+      "metrics": {
+        "acc": 0.21753846153846154,
+        "nmi": 0.07605358472797734,
+        "ari": 0.03667692274971372,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "CIFAR10_CLIP::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/CIFAR10_CLIP/fixed/seed_42",
+      "metrics": {
+        "acc": 0.7851,
+        "nmi": 0.7104150659608613,
+        "ari": 0.5234140752846309,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "CIFAR10_CLIP::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/CIFAR10_CLIP/topology/seed_42",
+      "metrics": {
+        "acc": 0.7886,
+        "nmi": 0.7130973122046015,
+        "ari": 0.5301453144415427,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "coil20::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/coil20/fixed/seed_42",
+      "metrics": {
+        "acc": 0.6868055555555556,
+        "nmi": 0.8197815798025027,
+        "ari": 0.655360867276127,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 20
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "coil20::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/coil20/topology/seed_42",
+      "metrics": {
+        "acc": 0.6916666666666667,
+        "nmi": 0.8208497164628692,
+        "ari": 0.6446726455165015,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 20
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "COIL20_CLIP::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/COIL20_CLIP/fixed/seed_42",
+      "metrics": {
+        "acc": 0.7784722222222222,
+        "nmi": 0.9339936621107757,
+        "ari": 0.7705348796929608,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 20
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "COIL20_CLIP::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/COIL20_CLIP/topology/seed_42",
+      "metrics": {
+        "acc": 0.8527777777777777,
+        "nmi": 0.953618073929166,
+        "ari": 0.8234418822868045,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 20
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "labeled_faces_in_the_wild::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/labeled_faces_in_the_wild/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5222727272727272,
+        "nmi": 0.0014325530816457492,
+        "ari": 0.0015304068029879153,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "labeled_faces_in_the_wild::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/labeled_faces_in_the_wild/topology/seed_42",
+      "metrics": {
+        "acc": 0.5195454545454545,
+        "nmi": 0.0011050893522332956,
+        "ari": 0.0010745959226431455,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "flickr_material_database::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/flickr_material_database/fixed/seed_42",
+      "metrics": {
+        "acc": 0.43430290872617855,
+        "nmi": 0.38509426898960986,
+        "ari": 0.2429316481936782,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "flickr_material_database::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/flickr_material_database/topology/seed_42",
+      "metrics": {
+        "acc": 0.4353059177532598,
+        "nmi": 0.38201253807306035,
+        "ari": 0.22928610448624848,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "street_view_house_numbers::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/street_view_house_numbers/fixed/seed_42",
+      "metrics": {
+        "acc": 0.16120218579234974,
+        "nmi": 0.034285796419979864,
+        "ari": 0.002616600303312538,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "street_view_house_numbers::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/street_view_house_numbers/topology/seed_42",
+      "metrics": {
+        "acc": 0.15437158469945356,
+        "nmi": 0.03079095095417779,
+        "ari": -0.0003173733299228192,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 10
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "har::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/har/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5496598639455782,
+        "nmi": 0.5157101665735155,
+        "ari": 0.343158817050674,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 6
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "har::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/har/topology/seed_42",
+      "metrics": {
+        "acc": 0.545578231292517,
+        "nmi": 0.5242885446219325,
+        "ari": 0.3490167965998149,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 6
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "Indian_pines::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/Indian_pines/fixed/seed_42",
+      "metrics": {
+        "acc": 0.587378640776699,
+        "nmi": 0.47327838118143384,
+        "ari": 0.3145412359896828,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 5
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "Indian_pines::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/Indian_pines/topology/seed_42",
+      "metrics": {
+        "acc": 0.5876044253781892,
+        "nmi": 0.4730694088586455,
+        "ari": 0.31512015951077255,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 5
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "satellite_image::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/satellite_image/fixed/seed_42",
+      "metrics": {
+        "acc": 0.657964257964258,
+        "nmi": 0.627153604042684,
+        "ari": 0.5323832747935215,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 6
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "satellite_image::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/satellite_image/topology/seed_42",
+      "metrics": {
+        "acc": 0.65998445998446,
+        "nmi": 0.6276866865617404,
+        "ari": 0.5336071813049681,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 6
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "olivetti_faces::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/olivetti_faces/fixed/seed_42",
+      "metrics": {
+        "acc": 0.645,
+        "nmi": 0.8221389333876157,
+        "ari": 0.5256265942779955,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 40
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "olivetti_faces::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/olivetti_faces/topology/seed_42",
+      "metrics": {
+        "acc": 0.635,
+        "nmi": 0.8140201281116528,
+        "ari": 0.5089056801103029,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 40
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "PCam::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/PCam/fixed/seed_42",
+      "metrics": {
+        "acc": 0.61175,
+        "nmi": 0.06678574987259733,
+        "ari": 0.04975038723793944,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "PCam::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/PCam/topology/seed_42",
+      "metrics": {
+        "acc": 0.6105,
+        "nmi": 0.06438060586996104,
+        "ari": 0.04863820796967046,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "cnae9::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/cnae9/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5851851851851851,
+        "nmi": 0.5773853264494758,
+        "ari": 0.3437251777448868,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 9
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "cnae9::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/cnae9/topology/seed_42",
+      "metrics": {
+        "acc": 0.5907407407407408,
+        "nmi": 0.6024976011082817,
+        "ari": 0.3477706815006503,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 9
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "imdb::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/imdb/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5732307692307692,
+        "nmi": 0.016046353092826402,
+        "ari": 0.02115678086203163,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "imdb::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/imdb/topology/seed_42",
+      "metrics": {
+        "acc": 0.5935384615384616,
+        "nmi": 0.026693334579612513,
+        "ari": 0.03471113825124484,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "hate_speech::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/hate_speech/fixed/seed_42",
+      "metrics": {
+        "acc": 0.4613474076373797,
+        "nmi": 0.05625363388844299,
+        "ari": -0.02254303368338431,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "hate_speech::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/hate_speech/topology/seed_42",
+      "metrics": {
+        "acc": 0.5274759391493326,
+        "nmi": 0.02227429172445698,
+        "ari": 0.020142046521825115,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "sentiment_labeld_sentences::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/sentiment_labeld_sentences/fixed/seed_42",
+      "metrics": {
+        "acc": 0.5509461426491994,
+        "nmi": 0.008259669740790008,
+        "ari": 0.01005197269480651,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "sentiment_labeld_sentences::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/sentiment_labeld_sentences/topology/seed_42",
+      "metrics": {
+        "acc": 0.5676855895196506,
+        "nmi": 0.0149121035347909,
+        "ari": 0.017999296748513555,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "sms_spam_collection::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/sms_spam_collection/fixed/seed_42",
+      "metrics": {
+        "acc": 0.9712574850299401,
+        "nmi": 0.6987211961423118,
+        "ari": 0.838190738034659,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "sms_spam_collection::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/sms_spam_collection/topology/seed_42",
+      "metrics": {
+        "acc": 0.9712574850299401,
+        "nmi": 0.7007543676007618,
+        "ari": 0.8372688699548169,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "wos::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/wos/fixed/seed_42",
+      "metrics": {
+        "acc": 0.4542362708812644,
+        "nmi": 0.33904364352912697,
+        "ari": 0.22267059311585852,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 7
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "wos::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/wos/topology/seed_42",
+      "metrics": {
+        "acc": 0.4561368410523157,
+        "nmi": 0.3405293859223916,
+        "ari": 0.22313315914893192,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 7
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "enron::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/enron/fixed/seed_42",
+      "metrics": {
+        "acc": 0.937993799379938,
+        "nmi": 0.7225981178773098,
+        "ari": 0.7673312457199379,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "enron::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/enron/topology/seed_42",
+      "metrics": {
+        "acc": 0.9430943094309431,
+        "nmi": 0.738522812979356,
+        "ari": 0.7853089831231992,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 2
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "reuters::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/reuters/fixed/seed_42",
+      "metrics": {
+        "acc": 0.583029197080292,
+        "nmi": 0.3664238269254561,
+        "ari": 0.3284466561817878,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "reuters::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/reuters/topology/seed_42",
+      "metrics": {
+        "acc": 0.5842457420924574,
+        "nmi": 0.3690776159944685,
+        "ari": 0.3331863739513307,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 3
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "20newsgroups::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/20newsgroups/fixed/seed_42",
+      "metrics": {
+        "acc": 0.1900710639575618,
+        "nmi": 0.1879283785650364,
+        "ari": 0.0688250924753908,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 20
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "20newsgroups::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/20newsgroups/topology/seed_42",
+      "metrics": {
+        "acc": 0.17705935341807627,
+        "nmi": 0.16872912363891293,
+        "ari": 0.06098574867074501,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 20
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "Mouse_retina::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/Mouse_retina/fixed/seed_42",
+      "metrics": {
+        "acc": 0.9845545977011494,
+        "nmi": 0.9041096514781412,
+        "ari": 0.943335272093149,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 5
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "Mouse_retina::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/Mouse_retina/topology/seed_42",
+      "metrics": {
+        "acc": 0.9815613026819924,
+        "nmi": 0.8833329666095261,
+        "ari": 0.9323486545801096,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 5
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "Campbell::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/Campbell/fixed/seed_42",
+      "metrics": {
+        "acc": 0.30351245872110477,
+        "nmi": 0.32707204941731094,
+        "ari": 0.22741400748004367,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 14
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "Campbell::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/Campbell/topology/seed_42",
+      "metrics": {
+        "acc": 0.3161212848994296,
+        "nmi": 0.31916177319557976,
+        "ari": 0.24764885486244248,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 14
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "Baron Human::topogate_v0::fixed::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/Baron Human/fixed/seed_42",
+      "metrics": {
+        "acc": 0.46751863684771033,
+        "nmi": 0.4601669420017242,
+        "ari": 0.2577322738414579,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 9
+      }
+    },
+    {
+      "status": "completed",
+      "run_key": "Baron Human::topogate_v0::topology::seed42",
+      "output": "result/v0/clubench_single_seed_v1/final/Baron Human/topology/seed_42",
+      "metrics": {
+        "acc": 0.47059519583481246,
+        "nmi": 0.47014565660313407,
+        "ari": 0.2623834627645968,
+        "uses_known_k": true,
+        "cluster_method": "kmeans_known_k",
+        "n_pred_clusters": 9
+      }
+    }
+  ]
+}

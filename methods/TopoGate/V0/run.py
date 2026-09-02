@@ -619,8 +619,9 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument("--epochs", type=int, default=None)
     parser.add_argument("--batch-size", "--batch_size", dest="batch_size", type=int, default=None)
     parser.add_argument("--hidden-size", "--hidden_size", dest="hidden_size", type=int, default=None)
-    # Common legacy flags remain available as explicit config overrides. The
-    # YAML files are still the recommended way to freeze a formal protocol.
+    # Shared scalar flags remain available as explicit config overrides. The
+    # YAML files are still the recommended way to freeze a formal protocol;
+    # this does not re-enable any retired PlantNet runtime path.
     for option, dest, kind in (
         (("--lr",), "lr", float),
         (("--mask-ratio", "--mask_ratio"), "mask_ratio", float),

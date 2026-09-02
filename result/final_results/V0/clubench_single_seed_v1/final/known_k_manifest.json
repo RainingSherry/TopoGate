@@ -1,0 +1,791 @@
+{
+  "protocol": "clubench_known_K_outer_readout_v1",
+  "datasets": {
+    "echocardiogram.npz": {
+      "n_clusters": 2,
+      "source_sha256": "120daafe425aeb25de45097a53ddce9dc63e3f791212bbb7ad660ff8d98138b3",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "skillcraft1_master_table_dataset.npz": {
+      "n_clusters": 6,
+      "source_sha256": "7b631b837dc2d2c3897048b738760758ee264fa265d39f8d64b5342ed1d0c4e6",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "breast_cancer_wisconsin_original.npz": {
+      "n_clusters": 2,
+      "source_sha256": "3ba1713b62cf59ab7944eb4c3d13d579c92f6d9ec6632f8e6b4977045ecb15bf",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "smoker_condition.npz": {
+      "n_clusters": 2,
+      "source_sha256": "72059a5b8a91cb4e79a8104e37e3e8a72c9c59f033d55316f4d6ca4a3d953015",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "glass_identification.npz": {
+      "n_clusters": 6,
+      "source_sha256": "bd1e797ec7e193469b008935e0c0540e20bf0367cde44ef2f3854f5dbc9df92d",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "statlog_image_segmentation.npz": {
+      "n_clusters": 7,
+      "source_sha256": "91e660327f9bf4d975b85f2f6976112be7f6f6a8e9d4b3da73dd802e9373e110",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "planning_relax.npz": {
+      "n_clusters": 2,
+      "source_sha256": "93fcf72ee36ee679432d7f1baa1815c984d9c6169d455f755954ee9235c07a37",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "customer_classification.npz": {
+      "n_clusters": 4,
+      "source_sha256": "cb06b906be36aca17a3bf7a17a01e38410b0c8ea195911f659b8102bacbb1348",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "pima_indians_diabetes_database.npz": {
+      "n_clusters": 2,
+      "source_sha256": "0d7cfea8778d1747e1f5528dfe30a3377c803f00927e1b2f194a29171dc7878b",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "mobile_price_classification.npz": {
+      "n_clusters": 4,
+      "source_sha256": "1ca76f152a8388edd4c585cecd6b1030cd8b4ecd45d712d8bb011b03d0b144ac",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "spambase.npz": {
+      "n_clusters": 2,
+      "source_sha256": "28ecfe66283f4220b62aa7a5afeb3c5e17d04eb9b5f17c99c2fb3cfcbe371bbc",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "rice_seed_gonen_jasmine.npz": {
+      "n_clusters": 2,
+      "source_sha256": "bda6ab1ea99e568bf76986c7136166d9423034c2c58a690a5a50945fd1e3e176",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "heart_attack_analysis_prediction_dataset.npz": {
+      "n_clusters": 2,
+      "source_sha256": "3a4c4a7b5a8274047f01743383a3820a31f402938804e5c8449eda611a6f3367",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "user_knowledge_modeling.npz": {
+      "n_clusters": 4,
+      "source_sha256": "1d14976bba930fe9f1cbaab97f3ee497b847d606f0d3b2247eaa0f0bf5f48737",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "world12d.npz": {
+      "n_clusters": 5,
+      "source_sha256": "a373aae836adc5d864eb9dcca93a96fa811ef6d9067b1da2bc6a70f8f3cfeaae",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "pumpkin_seeds.npz": {
+      "n_clusters": 2,
+      "source_sha256": "31dbf3e77a71494a687ec609a6c7d478c1995a763a0055d2f95f7991c99e1da4",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "iris.npz": {
+      "n_clusters": 3,
+      "source_sha256": "c31ba1e4f6d7a1dbeb7287dac646598d95986cf0d5a6b26705f684da53f33fd5",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "wine.npz": {
+      "n_clusters": 3,
+      "source_sha256": "a594c68a514ba87162d48f25a27fc61c1f11301d50222770836c5796769f77a5",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "letter_recognition.npz": {
+      "n_clusters": 26,
+      "source_sha256": "5179303d010fd9765be3a4156e0dee887ec47efd7190fa24c0ca1e66423ad3a0",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "mammographic_mass.npz": {
+      "n_clusters": 2,
+      "source_sha256": "82143d6fd3cdee084a96f5e87ea60b55589103f20e99bc3e292f99e06aeeffd5",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "breast_tissue.npz": {
+      "n_clusters": 6,
+      "source_sha256": "be5bc11beaf38be195e11283808133b094d8f7902f90eb2c2ce1823c218a2f4e",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "hepatitis.npz": {
+      "n_clusters": 2,
+      "source_sha256": "a52ea2fd9e5c34ce82573a4d2ddcd17ec32e2e04504495e41c868da89c31abf9",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "predicting_pulsar_star.npz": {
+      "n_clusters": 2,
+      "source_sha256": "0ec9e5f111758950239301729cf7fed236abeb5426b61d74163732f57dc7113d",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "breast_cancer_wisconsin_prognostic.npz": {
+      "n_clusters": 2,
+      "source_sha256": "4d81be40659ac3574e5b804c3d9fd88702c0bf81f852714c833bc13cc9279946",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "wireless_indoor_localization.npz": {
+      "n_clusters": 4,
+      "source_sha256": "44b04751c1f3f6dd7010530029bf3edeaf8b9980e3bd256b6663e882226a8a82",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "date_fruit.npz": {
+      "n_clusters": 7,
+      "source_sha256": "bf5a860259aa1130ec4d1cb445f2daf87a916bd0cf10bfd7227713fcac15d627",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "zoo.npz": {
+      "n_clusters": 7,
+      "source_sha256": "fa8510d935fe4814620954faa6fd683deee27eee831f090e4d23fb33ab323d4e",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "htru2.npz": {
+      "n_clusters": 2,
+      "source_sha256": "3c712cf75174bf7f4e3f0a021e80b2b5482c6c706e1b69d6e3f1ab49f0d99510",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "ionosphere.npz": {
+      "n_clusters": 2,
+      "source_sha256": "8a1cce5b11f2699fe6da2f6a0379d605b42cf6290ec312e6fbd6f220c2c736b7",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "music_genre_classification.npz": {
+      "n_clusters": 10,
+      "source_sha256": "30491c6533a5096eb238592fe5b70191a93ec6991dfe821ede7eefebafe635ce",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "spectf_heart.npz": {
+      "n_clusters": 2,
+      "source_sha256": "8fa734ef46443d2fb8728d2cd316cc40997063bc56abe05edab1ed722ea36db1",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "rice_dataset_cammeo_and_osmancik.npz": {
+      "n_clusters": 2,
+      "source_sha256": "67bc38e177b997cda847b19c565ccb4bc52f10a6656ba03bd126e3bb2218e7c5",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "ph_recognition.npz": {
+      "n_clusters": 15,
+      "source_sha256": "fe299bc9920ffaa870fb8fd294482cb0a74db4759f5d6342880b9eeec06d7370",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "banknote_authentication.npz": {
+      "n_clusters": 2,
+      "source_sha256": "cc9c529e27bf88969c356f4843b63766030d20c731245a828cda0ed1f17aef7a",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "wine_quality.npz": {
+      "n_clusters": 5,
+      "source_sha256": "30550b65fd082c8b499a2082cf83c0d7045b3af8a2cc358de948ef78c63e045f",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "cardiovascular_study.npz": {
+      "n_clusters": 2,
+      "source_sha256": "1aa5a73966a0fca784393ee57f2a397087f452b9b7a214335bfe5dd558f5ff6f",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "statlog_german_credit.npz": {
+      "n_clusters": 2,
+      "source_sha256": "6ce6830eb434bc2e7a19f4a7d4d26ec637a4b3991708148c6ea3cd5479c49e1e",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "boston.npz": {
+      "n_clusters": 3,
+      "source_sha256": "5e5e6460334c578398a6203567d042d9bfc1d88740fbc5dedfc64528fb1cec88",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "seismic_bumps.npz": {
+      "n_clusters": 2,
+      "source_sha256": "af892def384c597fb4ab361a7738c5757d152f3d5fa4a9ccc2785cdd6c93d97a",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "dry_bean.npz": {
+      "n_clusters": 7,
+      "source_sha256": "7bf64321e94f34c435c1d545917cda00911c9d1921f4ecde598371a57cb49e4c",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "credit_risk_classification.npz": {
+      "n_clusters": 2,
+      "source_sha256": "e0e67add279a60a97f2b4233d1080efc3c616e5fe190d8a346ec233e236727e2",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "epileptic_seizure_recognition.npz": {
+      "n_clusters": 5,
+      "source_sha256": "d063f1bcaf76e895d6befd1eae36b05f30cf78320cbd1b7cce5fd230d36b40ef",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "website_phishing.npz": {
+      "n_clusters": 3,
+      "source_sha256": "fc9f5a9662411b6422750dde291b73177bbfac7c08f5ce1e2b7f74e0d859f92e",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "optical_recognition_of_handwritten_digits.npz": {
+      "n_clusters": 10,
+      "source_sha256": "18474ef1ac1437ea5b0679418a2655d94c5323346e711cb469b13cb185406221",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "siberian_weather_stats.npz": {
+      "n_clusters": 7,
+      "source_sha256": "4614473a793412163c14e08e8edf6ca6f6454882989eeef39c30bb4112f9c63c",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "orbit_classification_for_prediction_nasa.npz": {
+      "n_clusters": 3,
+      "source_sha256": "bdb0ca09a4651089a97c1366de085e7b66d9020012701e74e1e7e4c69d1d02c5",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "magic_gamma_telescope.npz": {
+      "n_clusters": 2,
+      "source_sha256": "60b6fd364ba4346542614956ea42fc344dc70144e3e98597bdcd70f92494adaf",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "raisin.npz": {
+      "n_clusters": 2,
+      "source_sha256": "a714d731ce7c003b050dcd61bb26637a5808f0600a53aa8f6971655b8c12f709",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "patient_treatment_classification.npz": {
+      "n_clusters": 2,
+      "source_sha256": "632de83b2daeca0230d6d44c38eaf469c531d6024b626f39f29ec7c72b07c07b",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "fetal_health_classification.npz": {
+      "n_clusters": 3,
+      "source_sha256": "a378d109394a69625eb5672a39fe6563a31761f24e964ac856c9e2dbf7409e4a",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "dermatology.npz": {
+      "n_clusters": 6,
+      "source_sha256": "0bede9e2822d10b693b64f0bad98b7222d3d253bfcc3c945455e4676f73ad49f",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "secom.npz": {
+      "n_clusters": 2,
+      "source_sha256": "6e5388e9efa60a50961c8faa5bc2c448909c09cac124f43eb472c12864fd207a",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "paris_housing_classification.npz": {
+      "n_clusters": 2,
+      "source_sha256": "ce7e2bee8632f38514995e7114392f4df5f157614a8d8e56851eaf1017c01609",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "seeds.npz": {
+      "n_clusters": 3,
+      "source_sha256": "9c1375865055e07edb6daad3abc6896e1aba52f1473428297b1767991d5627a6",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "wine_customer.npz": {
+      "n_clusters": 3,
+      "source_sha256": "4f43b9af224dc61c8bd022d29cfc9af0aef18babe9b15deefce0d4a5846eab3a",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "crowdsourced_mapping.npz": {
+      "n_clusters": 4,
+      "source_sha256": "9c80244df8b5e093d558c36c531054d96425631fbe68ccd79fd62507db908db9",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "durum_wheat_features.npz": {
+      "n_clusters": 3,
+      "source_sha256": "fcd590ba701dd29777185964dda7fad1d436377fdd0ba662c7248265d92f9e25",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "classification_in_asteroseismology.npz": {
+      "n_clusters": 2,
+      "source_sha256": "e3ac681a82fe020140378e1a977d1d554ceb1073d705e95ec4acbfdcef3ca43f",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "birds_bones_and_living_habits.npz": {
+      "n_clusters": 6,
+      "source_sha256": "9b76d262c24d2e6ddd9ddee7fb3aa20d5bbafcdfb6beedcffc0148166369175e",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "microbes.npz": {
+      "n_clusters": 10,
+      "source_sha256": "59fecdf62717b78aaff904682a285015f26834abf75745c539a50b5266f34100",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "image_segmentation.npz": {
+      "n_clusters": 7,
+      "source_sha256": "fa7e9febb8b33ed322453d237ee9aa4787219c66f42d53e3c54b37a67c722f4a",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "water_quality.npz": {
+      "n_clusters": 2,
+      "source_sha256": "2f0495718a18a5a589d6706932bb17693cf76a738760dabd0b491a9dbd2ff1dc",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "insurance_company_benchmark.npz": {
+      "n_clusters": 2,
+      "source_sha256": "d1919a74df67090f8eff1ebcf23b06d6befa562eb1f965c83b4b79e9e303b6cf",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "harbermans_survival.npz": {
+      "n_clusters": 2,
+      "source_sha256": "5605ce8669238f7294821a4d403ea9e914f2f86354f0fc046233990dcfbc96c7",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "yeast.npz": {
+      "n_clusters": 8,
+      "source_sha256": "76fe9a68337702474294d60f757f712aea91fba3924c1a967faf9cec2dd5e955",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "heart_disease.npz": {
+      "n_clusters": 5,
+      "source_sha256": "c5f173a31064fe2aa49da20b4da1d3a73da41420e0c308a52680b8fd604bc412",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "ecoli.npz": {
+      "n_clusters": 5,
+      "source_sha256": "a8c7517b3e68c1d27f2f6920d4cd705281b1e12c207be82839de627b97f629e6",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "extyaleb.npz": {
+      "n_clusters": 5,
+      "source_sha256": "4be8a8d10b157be84878cdc168c6fda60e5311eb831a384bdf9708bf237b4dab",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "breast_cancer_coimbra.npz": {
+      "n_clusters": 2,
+      "source_sha256": "f2d0b55ac02802747cc13906edf04fd76274f30abeac8f9ca7ff90811d381829",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "student_grade.npz": {
+      "n_clusters": 2,
+      "source_sha256": "e2c9a3acc90310063588b92ad3ae4fb221cfe1392ed32773054bca04900fbd45",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "human_stress_detection.npz": {
+      "n_clusters": 3,
+      "source_sha256": "7420d9fdb12712c37177303425846f51a2dc55bc770c7bd4cb23e76912c7e3fa",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "fraud_detection_bank.npz": {
+      "n_clusters": 2,
+      "source_sha256": "2bd698a08ab9dceed52b4bcfedb9435b385a72456badf90febcac07a42c66eba",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "pen_based_recognition_of_handwritten_digits.npz": {
+      "n_clusters": 10,
+      "source_sha256": "c84d60518da920e23c757e751e42bbea213d5e68b751790e69fd6d4cc8d6d2a3",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "diabetic_retinopathy_debrecen.npz": {
+      "n_clusters": 2,
+      "source_sha256": "1af52cc9db4a129973d413b64ca8faa31c2c5b9d49acfa8494628189852fe5ce",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "pistachio.npz": {
+      "n_clusters": 2,
+      "source_sha256": "4b46e833ef8c8c10612db7619a32f8f43dc5bb7115ece53392fdf58563c8d91c",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "turkish_music_emotion.npz": {
+      "n_clusters": 4,
+      "source_sha256": "a5bdf1cc255babc19277e10f7abb2907cb8e3aea5fb1870438723dcfd1a7d714",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "parkinsons.npz": {
+      "n_clusters": 2,
+      "source_sha256": "f2d9725e336aa805860318a3971011d749ab8983c5fae910d7036a6cdad12480",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "weather.npz": {
+      "n_clusters": 7,
+      "source_sha256": "0cbec6e78a038f320c99b15181ab0565ec124167dfcacc4ce350d1ecf6dad366",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "blood_transfusion_service_center.npz": {
+      "n_clusters": 2,
+      "source_sha256": "4c9278dfd77a3191141205185b4c1767a51376e8f586c112ea7780cb4e6a241f",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "mfeat-karhunen.npz": {
+      "n_clusters": 10,
+      "source_sha256": "8a72b97187ef262202fd7335ac17f5540b43517c8b82cd074de909137fbe687f",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "mfeat-factors.npz": {
+      "n_clusters": 10,
+      "source_sha256": "c2846bfff61071cb25f2bcb1830261ae6d6b08646091e663d82670f56f333255",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "wall-robot-navigation.npz": {
+      "n_clusters": 4,
+      "source_sha256": "07e5cb2d298c7bc582016afc7d6693fae9c7ac3f051fe5a81b8f2db6a0eb5900",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "Waveform.npz": {
+      "n_clusters": 3,
+      "source_sha256": "2d67472ed4d551afa339acf8f2407bc7b82eb62e89444f6f772dc1fcfb998dc0",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "gas-drift.npz": {
+      "n_clusters": 6,
+      "source_sha256": "58b41daa32784a0d0bfb03bbddd960d6da080e6d278835af1adff01621787b94",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "mfeat-morphological.npz": {
+      "n_clusters": 10,
+      "source_sha256": "54a56fcd40797345556d235bee9c429a3b6b83fe47ffe2ee653e713adbd17e62",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "JapaneseVowels.npz": {
+      "n_clusters": 9,
+      "source_sha256": "46cf4191f158a04353de1daa1180b204db81196b6c6aa4c7a91e9b575aea7edc",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "rmftsa_sleepdata.npz": {
+      "n_clusters": 4,
+      "source_sha256": "ca90d0492615e02ee1f24a057df8d8aa6a369171523e2d8954c6daaa31f17a38",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "first-order-theorem-proving.npz": {
+      "n_clusters": 6,
+      "source_sha256": "667cca3fb6e9ddc0c531ab776d2bc8fbbe071272068283e300bf5be459ab0069",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "gina_prior2.npz": {
+      "n_clusters": 10,
+      "source_sha256": "9f63ba9a466d7cb69ba25de618a1e33882c808e0125f08d47a73d3f8f4c5d068",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "fabert.npz": {
+      "n_clusters": 7,
+      "source_sha256": "afec068227c7cd5b9f10f383bb06b0cc848417ed47a163e7b74a8e543b2084ca",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "dilbert.npz": {
+      "n_clusters": 5,
+      "source_sha256": "20f3652805b617a7fdbb5ee50cfe0443fe9f55bdbccc700f97cd13e2d7b65e48",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "synthetic_control.npz": {
+      "n_clusters": 6,
+      "source_sha256": "91b516372b9816404f4e3cbf26ac50f0620f18c314c2ca3d65bd5dbafda470b9",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "Drug Consumption.npz": {
+      "n_clusters": 4,
+      "source_sha256": "3cdd87d998466a00bc2268586be544530a2c89d488fb685b34e0e41f5ef04759",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "shuttle.npz": {
+      "n_clusters": 2,
+      "source_sha256": "2a453368c3298e679273e61a909209116fed1860b18075e595c5c77c55a8fb7b",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "tr45.wc.npz": {
+      "n_clusters": 9,
+      "source_sha256": "7781fae2d4cea9f63aac18285a1b54e9097d4f4254c9c0e2ebafb60b6d13973c",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "steel-plates-fault.npz": {
+      "n_clusters": 2,
+      "source_sha256": "db99b1a19d8b255925957763845f147ec66d2fff22e3c13dde8f01becd51a8f3",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "fbis.wc.npz": {
+      "n_clusters": 11,
+      "source_sha256": "4c6426783b253f08d6be75aaa2a6e165f93691ac6bfa0b970c2ec142644a0aa6",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "mfeat-fourier.npz": {
+      "n_clusters": 10,
+      "source_sha256": "06cd9b3fb8e6293daef1c8c31c79abb699c3e2ba228e466984c0c02cb70ec977",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "vehicle.npz": {
+      "n_clusters": 4,
+      "source_sha256": "2e8709f54a322f2d93b142a820062d2be1f6b154682a12954cfe804224fe65ef",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "micro-mass.npz": {
+      "n_clusters": 10,
+      "source_sha256": "bd69f15acd129faf2ffd7e19a85037870884c801a6187c68e74fe897d629b40c",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "ISOLET.npz": {
+      "n_clusters": 26,
+      "source_sha256": "6b4853a4b97c8649722d2d28460060d23898246bad5025bd298e9aa27c9b1083",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "poker-hand.npz": {
+      "n_clusters": 2,
+      "source_sha256": "b2f8c5de07630322a8dd827aff3c7046e4ba91a84d0a2590a70bed663db00ce5",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "tamilnadu-electricity.npz": {
+      "n_clusters": 20,
+      "source_sha256": "090a28981e760cc3c04d8410e767e9461d2fa2ba837157d0db03a205f756f567",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "mnist64.npz": {
+      "n_clusters": 6,
+      "source_sha256": "54c25f1bf649919a6a302fe7b283c4cd0674f956771e41f0eee02a0ac03d1c93",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "MNIST_CLIP.npz": {
+      "n_clusters": 10,
+      "source_sha256": "c53a53c42b84900972e51fb3273d9beedb8ade688ca34a14cf2961c1b798478c",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "fashion_mnist.npz": {
+      "n_clusters": 10,
+      "source_sha256": "00fd65f40b783d1bbcb7b933c232e990096735f6d4da156702da2541d8c62044",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "FashionMNIST_CLIP.npz": {
+      "n_clusters": 10,
+      "source_sha256": "3c4b95037c85b48d865d197de9f38b82ab411ef48ae66fe33da5c03529546afb",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "cifar10.npz": {
+      "n_clusters": 10,
+      "source_sha256": "d86268218b1c20efaf28db4eba6614b833cb3a4c83a395b84d1b3209e441b7c5",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "CIFAR10_CLIP.npz": {
+      "n_clusters": 10,
+      "source_sha256": "92594530e8a7958bf7c8043661188f501c22d45ed4b96e8193a3e6a5e8ebc097",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "coil20.npz": {
+      "n_clusters": 20,
+      "source_sha256": "c191ce523e8a25938bcfdf1f66262270a9ce637ea8786c860ae5e2f252c34ba1",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "COIL20_CLIP.npz": {
+      "n_clusters": 20,
+      "source_sha256": "63aac0b5b88f84946745b1930071b711d45428d5dd8995ef896ba0fd5fcf0e36",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "labeled_faces_in_the_wild.npz": {
+      "n_clusters": 2,
+      "source_sha256": "0733fb284af6c65e22c2247cb097e40381ff607b7ee65364854bc80d8a8446df",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "flickr_material_database.npz": {
+      "n_clusters": 10,
+      "source_sha256": "1be9ec6098fcb721f47c4fddf04047b6f6c6b96623174db9ef700343e009b444",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "street_view_house_numbers.npz": {
+      "n_clusters": 10,
+      "source_sha256": "ae9bc60050c7acdaeb5679edda33939f3b13dbe3686fe6430eae83b6bcef0b4b",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "har.npz": {
+      "n_clusters": 6,
+      "source_sha256": "d721df683494b0b820863c166038634f0ca7922b87d51820b15c6bcc9b6aa9f6",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "Indian_pines.npz": {
+      "n_clusters": 5,
+      "source_sha256": "67ab1a25361c559aea7244a63122453116eeb89493647e88a66fd15acf1ff83a",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "satellite_image.npz": {
+      "n_clusters": 6,
+      "source_sha256": "173f3f03a97f62105fe8539de98b08841da0e206032b83fa40eb21c1bf5b8cdd",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "olivetti_faces.npz": {
+      "n_clusters": 40,
+      "source_sha256": "392d3df0955d81240a34e931b51b88067c9a4eaa69459a53290c60c704ee7a9f",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "PCam.npz": {
+      "n_clusters": 2,
+      "source_sha256": "ab640878f228489c64c6df74d876373f3d793186d58853f7edf9658f88951b3a",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "cnae9.npz": {
+      "n_clusters": 9,
+      "source_sha256": "e3a22bcfa761a837b8881a3a1966f6008d911b77948b76a4e4a8ca2aae65a71e",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "imdb.npz": {
+      "n_clusters": 2,
+      "source_sha256": "2b4e1db921dbe16c094844ada1f02f36bcc6781886f8c3a07830776de84200cc",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "hate_speech.npz": {
+      "n_clusters": 3,
+      "source_sha256": "c39fc08366c0423b8a2f4e3543df6d5b06f2e0b065813e120263b99e7d1e44bb",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "sentiment_labeld_sentences.npz": {
+      "n_clusters": 2,
+      "source_sha256": "8f5363cdbad8dcd77cbcac71306c1ddcfbd71d386d37a096b4d765c316845051",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "sms_spam_collection.npz": {
+      "n_clusters": 2,
+      "source_sha256": "1d9c068c43dc4f58e759169906dae9dff0ac6a8def7315ce7e4989a3b28d7070",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "wos.npz": {
+      "n_clusters": 7,
+      "source_sha256": "1064adcc7593a0cb419f575ac1ec0d1135cf641668706a6b94cd05525599e4ef",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "enron.npz": {
+      "n_clusters": 2,
+      "source_sha256": "b948a134030457668937d969f8848d81aaff669a2a730475b2ea83addbab9347",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "reuters.npz": {
+      "n_clusters": 3,
+      "source_sha256": "d1f30aa9700da83e903cc1d726e75be2623ac5c99efe476fcdf19eced589c27e",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "20newsgroups.npz": {
+      "n_clusters": 20,
+      "source_sha256": "c55eacb12cce06546cc8e738597c0dbfabf435f3e6d573ec2996149e83134f1e",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "Mouse_retina.npz": {
+      "n_clusters": 5,
+      "source_sha256": "d3bc2eb08d95acd12d324f668c537ae4208de57c355862f8e5800d4ba1e727c1",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "Campbell.npz": {
+      "n_clusters": 14,
+      "source_sha256": "f26c9568baf8e8fade7a61e6fed80f16ceb3980afe38b7c9ccbe9aaad2b96e04",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    },
+    "Baron Human.npz": {
+      "n_clusters": 9,
+      "source_sha256": "99c5bb7a272f5b22d64949179c6d49b4b52220670f3a7cef38e9e405902249d8",
+      "K_source": "benchmark_oracle_from_y",
+      "labels_used_only_for_outer_readout": true
+    }
+  }
+}

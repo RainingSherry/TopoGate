@@ -127,18 +127,33 @@ def _row_and_probabilities(
     edge_weights: np.ndarray,
     cell: int,
     parameterization: str,
-) -> tuple[np.ndarray, np.ndarray]:
+    *,
+    legacy_plantnet: bool = False,
+) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     row = graph.indices[cell]
     if row.size == 0:
-        return row, np.zeros(0, dtype=np.float32)
+        empty = np.zeros(0, dtype=np.float32)
+        return row, empty, empty
     # F 使用基础概率，T 使用 reliability 调整后的 edge_weights。
     probs = graph.probs[cell] if normalize_parameterization(parameterization) == "fixed" else edge_weights[cell]
-    # NumPy's Generator.choice checks the probability sum tightly.  Keep this
-    # local sampling representation in float64 so a float32 graph row whose sum
-    # is off by a few ulps cannot make an otherwise valid batch fail.
-    probs = np.asarray(probs, dtype=np.float64)
-    probs = probs / np.clip(float(probs.sum()), 1e-12, None)
-    return row, probs
+    if legacy_plantnet:
+        # The retired F runner gave ``graph.probs`` directly to ``choice``;
+        # retired T normalized its float32 reliability row first.  Preserve the
+        # distinction only for the explicit strict-parity protocol.
+        probs = np.asarray(probs, dtype=np.float32)
+        if normalize_parameterization(parameterization) == "topology":
+            # Retired T normalizes only its ``choice`` probabilities.  Its
+            # interpolation weights are selected from the original edge row
+            # and then normalized, a tiny but observable floating-point order.
+            return row, probs / np.clip(probs.sum(), 1e-12, None), probs
+        return row, probs, probs
+    else:
+        # NumPy's Generator.choice checks the probability sum tightly.  Keep
+        # V0's default local sampling representation in float64 so a float32
+        # graph row whose sum is off by a few ulps cannot fail a normal run.
+        probs = np.asarray(probs, dtype=np.float64)
+        probs = probs / np.clip(float(probs.sum()), 1e-12, None)
+    return row, probs, probs
 
 
 def make_pseudo_batch(
@@ -154,6 +169,7 @@ def make_pseudo_batch(
     alpha: float = 0.90,
     rng: np.random.Generator,
     neighbor_estimator: str = "current",
+    legacy_plantnet: bool = False,
 ) -> tuple[torch.Tensor, torch.Tensor, dict[str, Any]]:
     """Construct a detached pseudo-cell view for one batch.
 
@@ -191,17 +207,21 @@ def make_pseudo_batch(
         # full 是确定性的诊断路径：使用整行概率，不进行随机抽样。
         neighbor_mean = np.empty((indices.shape[0], data.shape[1]), dtype=np.float32)
         for position, cell_value in enumerate(indices):
-            row, probs = _row_and_probabilities(graph, edge_weights, int(cell_value), canonical)
+            row, probs, _ = _row_and_probabilities(
+                graph, edge_weights, int(cell_value), canonical, legacy_plantnet=legacy_plantnet
+            )
             neighbor_mean[position] = np.sum(data[row] * probs[:, None], axis=0).astype(np.float32)
     else:
         # current/uniform_sample 都先按 P_i 有放回抽样，再决定插值权重的形式。
         sampled = np.empty((indices.shape[0], m), dtype=np.int64)
         interpolation_weights = np.empty((indices.shape[0], m), dtype=np.float32)
         for position, cell_value in enumerate(indices):
-            row, probs = _row_and_probabilities(graph, edge_weights, int(cell_value), canonical)
-            choices = rng.choice(row.shape[0], size=m, replace=True, p=probs)
+            row, choice_probs, interpolation_probs = _row_and_probabilities(
+                graph, edge_weights, int(cell_value), canonical, legacy_plantnet=legacy_plantnet
+            )
+            choices = rng.choice(row.shape[0], size=m, replace=True, p=choice_probs)
             sampled[position] = row[choices]
-            picked = probs[choices]
+            picked = interpolation_probs[choices]
             if neighbor_estimator == "current":
                 # 当前历史 F/T 语义：抽中的概率重新归一化，重复抽到同一邻居也合法。
                 interpolation_weights[position] = picked / max(float(picked.sum()), 1e-12)
@@ -233,7 +253,16 @@ def make_pseudo_batch(
         np.linalg.norm(anchor, axis=1) + 1e-6
     )
     # graph/gate 在 NumPy 中计算，显式 detach 保证它们不会伪装成可学习路径。
-    pseudo = torch.as_tensor(mixed, dtype=batch_x.dtype, device=batch_x.device)
+    if legacy_plantnet and canonical == "fixed":
+        # Retired F performed its final convex combination on the torch device
+        # after converting only the neighbour mean.  Preserve that reduction
+        # order for trajectory-parity runs.
+        neighbor_tensor = torch.as_tensor(
+            neighbor_mean, dtype=batch_x.dtype, device=batch_x.device
+        )
+        pseudo = float(alpha) * batch_x + (1.0 - float(alpha)) * neighbor_tensor
+    else:
+        pseudo = torch.as_tensor(mixed, dtype=batch_x.dtype, device=batch_x.device)
     sample_weight = torch.as_tensor(
         sample_weight_np, dtype=batch_x.dtype, device=batch_x.device
     )
@@ -252,6 +281,7 @@ def apply_scmae_noise(
     mask_ratio: float,
     *,
     generator: torch.Generator | None = None,
+    legacy_plantnet: bool = False,
 ) -> tuple[torch.Tensor, torch.Tensor]:
     """Apply the historical elementwise row-swap corruption and effective mask."""
 
@@ -260,14 +290,21 @@ def apply_scmae_noise(
     if not 0.0 <= float(mask_ratio) <= 1.0:
         raise ValueError("mask_ratio must be in [0, 1]")
     # 每个 feature 独立决定是否交换；交换来源只限于当前 mini-batch 的随机行置换。
-    selected = torch.rand(
-        x.shape, dtype=torch.float32, device=x.device, generator=generator
-    ) < float(mask_ratio)
-    replacement = (
-        x
-        if x.shape[0] <= 1
-        else x[torch.randperm(x.shape[0], device=x.device, generator=generator)]
-    )
+    # The historical runner used the global torch stream and ``bernoulli``.
+    # Keep that replay path explicit; the normal V0 path keeps independent
+    # generators for stronger component-level reproducibility.
+    if legacy_plantnet:
+        selected = torch.bernoulli(float(mask_ratio) * torch.ones_like(x)).bool()
+        replacement = x if x.shape[0] <= 1 else x[torch.randperm(x.shape[0], device=x.device)]
+    else:
+        selected = torch.rand(
+            x.shape, dtype=torch.float32, device=x.device, generator=generator
+        ) < float(mask_ratio)
+        replacement = (
+            x
+            if x.shape[0] <= 1
+            else x[torch.randperm(x.shape[0], device=x.device, generator=generator)]
+        )
     corrupted = torch.where(selected, replacement, x)
     # 候选位置若恰好换到相同数值，最终不计入 mask，与历史实现保持一致。
     return corrupted, (corrupted != x).to(dtype=x.dtype)

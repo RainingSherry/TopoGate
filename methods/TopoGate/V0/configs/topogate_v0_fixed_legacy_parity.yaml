@@ -1,0 +1,29 @@
+# Strict replay of the retired NeighborMix-scMAE F runner.  This file is only
+# for scripts/V0/run_legacy_parity.py; normal V0 and CLUBench use their own
+# resolved configs and keep rng_protocol=isolated_v0.
+protocol_id: topogate_v0_legacy_parity_v1
+parameterization: fixed
+rng_protocol: legacy_plantnet
+hidden_size: 128
+epochs: 80
+batch_size: 256
+lr: 0.001
+mask_ratio: 0.4
+dropout: 0.0
+masked_data_weight: 0.75
+mask_loss_weight: 0.7
+use_pseudo: true
+pseudo_weight: 0.3
+alpha: 0.9
+neighbor_k: 5
+mix_neighbors: 4
+neighbor_estimator: current
+drop_last: true
+knn_pca_dim: 50
+tau: 0.2
+input_mode: raw
+n_top_features: 1000
+target_sum: 10000.0
+scale_input: true
+kmeans_n_init: 20
+

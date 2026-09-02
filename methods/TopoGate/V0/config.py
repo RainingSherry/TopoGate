@@ -43,6 +43,12 @@ NEIGHBOR_ESTIMATORS = frozenset({"current", "uniform_sample", "full"})
 EDGE_RELIABILITY_MODES = frozenset(
     {"none", "sim", "sim_mutual", "sim_mutual_snn", "sim_mutual_snn_distance"}
 )
+# The default isolates each stochastic component, which is the documented V0
+# runtime.  ``legacy_plantnet`` exists only for a controlled reproduction of
+# the retired F/T runners: it intentionally replays their shared torch stream
+# and their topology-only unused NumPy draws.  It is never selected by a
+# normal V0 configuration or CLUBench run.
+RNG_PROTOCOLS = frozenset({"isolated_v0", "legacy_plantnet"})
 
 
 def normalize_parameterization(value: str) -> str:
@@ -111,6 +117,11 @@ class V0Config:
     scale_input: bool = True
     evaluate_unsupervised: bool = False
 
+    # Runtime stochasticity is a protocol field rather than an implicit code
+    # path.  This keeps strict historical-parity jobs auditable without
+    # changing the default V0 reproducibility contract.
+    rng_protocol: str = "isolated_v0"
+
     def __post_init__(self) -> None:
         # dataclass 创建时立即校验，避免非法配置在训练数小时后才暴露。
         canonical = normalize_parameterization(self.parameterization)
@@ -171,6 +182,8 @@ class V0Config:
             raise ValueError(
                 f"edge_reliability_mode must be one of {sorted(EDGE_RELIABILITY_MODES)}"
             )
+        if self.rng_protocol not in RNG_PROTOCOLS:
+            raise ValueError(f"rng_protocol must be one of {sorted(RNG_PROTOCOLS)}")
         if self.input_mode not in {"auto", "raw", "log1p"}:
             raise ValueError("input_mode must be auto, raw, or log1p")
 
@@ -229,6 +242,7 @@ class V0Config:
                 "effective_pseudo_loss_weight": (
                     float(self.pseudo_weight) if self.graph_enabled else 0.0
                 ),
+                "rng_protocol": self.rng_protocol,
             }
         )
         return payload
@@ -263,6 +277,7 @@ __all__ = [
     "EDGE_RELIABILITY_MODES",
     "NEIGHBOR_ESTIMATORS",
     "PARAMETERIZATIONS",
+    "RNG_PROTOCOLS",
     "V0Config",
     "load_config",
     "normalize_parameterization",

@@ -92,6 +92,47 @@ def _torch_generator(device: torch.device, seed: int) -> torch.Generator:
     return generator
 
 
+def _consume_legacy_topology_auxiliary_draws(
+    graph: NeighborGraph,
+    mix_neighbors: int,
+    rng: np.random.Generator,
+) -> None:
+    """Replay retired T's unused random/far-neighbour RNG draws.
+
+    The legacy reliability path built these two arrays before training even
+    though it never consumed them afterwards.  They shift the later pseudo
+    neighbour samples, so strict trajectory parity has to reproduce the draws
+    without importing or modifying the frozen retired implementation.
+    """
+
+    n_samples = int(graph.indices.shape[0])
+    if n_samples <= 1:
+        return
+    width = max(1, min(int(mix_neighbors), n_samples - 1))
+    all_indices = np.arange(n_samples, dtype=np.int64)
+    for sample in range(n_samples):
+        banned = {sample}
+        banned.update(np.asarray(graph.indices[sample], dtype=np.int64).tolist())
+        candidates = np.setdiff1d(
+            all_indices,
+            np.fromiter(banned, dtype=np.int64),
+            assume_unique=False,
+        )
+        if candidates.size == 0:
+            candidates = all_indices[all_indices != sample]
+        rng.choice(candidates, size=width, replace=candidates.size < width)
+    for sample in range(n_samples):
+        candidates = rng.choice(
+            all_indices[all_indices != sample],
+            size=min(96, n_samples - 1),
+            replace=False,
+        )
+        similarity = graph.embedding[candidates] @ graph.embedding[sample]
+        far = candidates[np.argsort(similarity)[:width]]
+        if far.size < width:
+            rng.choice(candidates, size=width, replace=True)
+
+
 def _empty_graph(n_samples: int) -> NeighborGraph:
     # Calling the public graph builder keeps the empty shape/profile contract in
     # one place and avoids a second, subtly different sentinel object.
@@ -234,15 +275,36 @@ def fit_predict(
 
     runtime_device = resolve_device(device)
     seed_runtime(int(seed), runtime_device)
+    legacy_plantnet = config.rng_protocol == "legacy_plantnet"
+    if legacy_plantnet and runtime_device.type == "cuda":
+        # ``family.set_seed`` in the retired runners called both forms.  Keep
+        # their order for the parity protocol while leaving normal V0 unchanged.
+        torch.cuda.manual_seed(int(seed))
+        torch.cuda.manual_seed_all(int(seed))
     graph, edge_reliability, edge_weights, node_gate, edge_summary, gate_summary = _build_operator_state(
         data, config, int(seed)
     )
+
+    # The historical F/T both use these offsets.  T also consumed auxiliary
+    # random/far-neighbour arrays before its first active pseudo draw.
+    mix_rng = np.random.default_rng(
+        int(seed) + (2027 if config.parameterization == "fixed" else 3089)
+    )
+    if legacy_plantnet and config.parameterization == "topology":
+        _consume_legacy_topology_auxiliary_draws(graph, int(config.mix_neighbors), mix_rng)
 
     indices = torch.arange(data.shape[0], dtype=torch.long)
     tensor = torch.as_tensor(data, dtype=torch.float32)
     loader_generator = torch.Generator(device="cpu")
     loader_generator.manual_seed(int(seed))
-    drop_last = bool(config.drop_last and data.shape[0] >= int(config.batch_size))
+    # Retired PlantNet F passed ``drop_last=True`` directly to DataLoader, even
+    # when the whole dataset was smaller than one batch.  Preserve that edge
+    # case only in the explicit parity protocol; ordinary V0 remains friendly
+    # to small CPU-smoke datasets.
+    drop_last = bool(
+        config.drop_last
+        and (legacy_plantnet or data.shape[0] >= int(config.batch_size))
+    )
     # DataLoader 的索引与表达值保持绑定，pseudo 构造需要用索引回查全量图。
     train_loader = DataLoader(
         TensorDataset(indices, tensor),
@@ -262,12 +324,10 @@ def fit_predict(
         mask_loss_weight=float(config.mask_loss_weight),
     ).to(runtime_device)
     optimizer = torch.optim.Adam(model.parameters(), lr=float(config.lr))
-    # 图抽样和两类 scMAE mask 使用彼此独立的随机流，且 seed 偏移固定可审计。
-    mix_rng = np.random.default_rng(
-        int(seed) + (2027 if config.parameterization == "fixed" else 3089)
-    )
-    real_noise_generator = _torch_generator(runtime_device, int(seed) + 400_003)
-    pseudo_noise_generator = _torch_generator(runtime_device, int(seed) + 500_003)
+    # Normal V0 isolates graph sampling and two noise streams.  The explicit
+    # legacy protocol instead uses retired F/T's shared global torch stream.
+    real_noise_generator = None if legacy_plantnet else _torch_generator(runtime_device, int(seed) + 400_003)
+    pseudo_noise_generator = None if legacy_plantnet else _torch_generator(runtime_device, int(seed) + 500_003)
     pseudo_enabled = bool(config.graph_enabled and graph.indices.shape[1] > 0)
 
     history: dict[str, Any] = {
@@ -288,6 +348,34 @@ def fit_predict(
     }
     tracked = [key for key, value in history.items() if isinstance(value, list)]
 
+    def _loss_for_protocol(
+        corrupted: torch.Tensor,
+        target: torch.Tensor,
+        mask: torch.Tensor,
+        *,
+        sample_weight: torch.Tensor | None = None,
+    ) -> tuple[torch.Tensor, dict[str, torch.Tensor]]:
+        """Use the retired scalar F reduction only in strict parity mode."""
+
+        if legacy_plantnet and config.parameterization == "fixed":
+            # Historical NeighborMix F called the inherited ``loss_mask``
+            # directly.  It is algebraically equal to V0's unweighted method,
+            # but its reduction order is not bit-identical on GPU.
+            _, scalar_loss = model.loss_mask(corrupted, target, mask)
+            zero = torch.zeros((), dtype=scalar_loss.dtype, device=scalar_loss.device)
+            return scalar_loss, {
+                "reconstruction_loss": scalar_loss.detach(),
+                "mask_loss": zero,
+                "mask_positive_rate": mask.mean().detach(),
+            }
+        _, scalar_loss, parts = model.loss_mask_weighted(
+            corrupted,
+            target,
+            mask,
+            sample_weight=sample_weight,
+        )
+        return scalar_loss, parts
+
     for _epoch in range(1, int(config.epochs) + 1):
         model.train()
         totals = {key: 0.0 for key in tracked}
@@ -297,9 +385,12 @@ def fit_predict(
             batch = batch_cpu.to(runtime_device)
             # real view 以当前 batch 的 clean expression 为目标，执行历史 row-swap mask。
             corrupted, real_mask = apply_scmae_noise(
-                batch, float(config.mask_ratio), generator=real_noise_generator
+                batch,
+                float(config.mask_ratio),
+                generator=real_noise_generator,
+                legacy_plantnet=legacy_plantnet,
             )
-            _, real_loss, real_parts = model.loss_mask_weighted(corrupted, batch, real_mask)
+            real_loss, real_parts = _loss_for_protocol(corrupted, batch, real_mask)
             loss = real_loss
             pseudo_loss = torch.zeros((), dtype=batch.dtype, device=runtime_device)
             pseudo_parts = {
@@ -323,15 +414,17 @@ def fit_predict(
                     alpha=float(config.alpha),
                     rng=mix_rng,
                     neighbor_estimator=config.neighbor_estimator,
+                    legacy_plantnet=legacy_plantnet,
                 )
                 pseudo_corrupted, pseudo_mask = apply_scmae_noise(
                     pseudo_batch,
                     float(config.mask_ratio),
                     generator=pseudo_noise_generator,
+                    legacy_plantnet=legacy_plantnet,
                 )
                 # F deliberately has no per-sample gate weighting; T does.
                 pseudo_weight = sample_weight if config.parameterization == "topology" else None
-                _, pseudo_loss, pseudo_parts = model.loss_mask_weighted(
+                pseudo_loss, pseudo_parts = _loss_for_protocol(
                     pseudo_corrupted,
                     batch,
                     pseudo_mask,
@@ -439,6 +532,7 @@ def fit_predict(
             "labels_used_for_loss": False,
             "labels_used_for_selection": False,
             "model_parameter_count": int(sum(parameter.numel() for parameter in model.parameters())),
+            "rng_protocol": config.rng_protocol,
         },
     }
     return predictions, embedding, diagnostics

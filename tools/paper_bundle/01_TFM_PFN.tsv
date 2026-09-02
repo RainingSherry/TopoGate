@@ -1,0 +1,16 @@
+1	TabPFN: A Transformer That Solves Small Tabular Classification Problems in a Second	https://arxiv.org/pdf/2207.01848.pdf
+2	Accurate Predictions on Small Data with a Tabular Foundation Model	https://www.nature.com/articles/s41586-024-08328-6;;https://www.nature.com/articles/s41586-024-08328-6.pdf;;https://europepmc.org/articles/PMC11711098?pdf=render
+3	TabPFN-3: Technical Report	https://arxiv.org/pdf/2605.13986.pdf
+4	TabICL: A Tabular Foundation Model for In-Context Learning on Large Data	https://raw.githubusercontent.com/mlresearch/v267/main/assets/qu25d/qu25d.pdf
+5	TabICLv2: A Better, Faster, Scalable, and Open Tabular Foundation Model	https://arxiv.org/pdf/2602.11139.pdf
+6	Mitra: Mixed Synthetic Priors for Enhancing Tabular Foundation Models	https://arxiv.org/pdf/2510.21204.pdf
+7	Fine-tuned In-Context Learning Transformers are Excellent Tabular Data Classifiers	https://arxiv.org/pdf/2405.13396.pdf
+8	TabDPT: Scaling Tabular Foundation Models on Real Data	https://openreview.net/pdf?id=pIZxEOZCId
+9	TabSwift: An Efficient Tabular Foundation Model with Row-Wise Attention	https://arxiv.org/pdf/2606.07345.pdf
+10	LimiX: Unleashing Structured-Data Modeling Capability for Generalist Intelligence	https://arxiv.org/pdf/2509.03505.pdf
+11	LimiX-2M: Mitigating Low-Rank Collapse and Attention Bottlenecks in Tabular Foundation Models	https://arxiv.org/pdf/2606.04485.pdf
+12	MotherNet: Fast Training and Inference via Hyper-Network Transformers	https://openreview.net/pdf?id=6H4jRWKFc3
+13	EquiTabPFN: A Target-Permutation Equivariant Prior Fitted Network	https://openreview.net/pdf/12b8fa9c18e305ef370707719907840de729744c.pdf
+14	Real-TabPFN: Improving Tabular Foundation Models via Continued Pre-training With Real-World Data	https://arxiv.org/pdf/2507.03971.pdf
+36	LUCoS: Latent Unsupervised Context Selection for Tabular Foundation Models	https://arxiv.org/pdf/2605.27254.pdf
+51	HyperFast: Instant Classification for Tabular Data	https://arxiv.org/pdf/2402.14335.pdf

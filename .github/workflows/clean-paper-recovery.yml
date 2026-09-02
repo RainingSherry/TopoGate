@@ -1,0 +1,43 @@
+name: Clean targeted paper recovery
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    paths:
+      - '.github/workflows/clean-paper-recovery.yml'
+      - 'tools/paper_recovery_clean/**'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        paper_id: [18, 46, 60, 62, 70, 72]
+    env:
+      RECOVER_ID: '${{ matrix.paper_id }}'
+      SKIP_TRANSLATE: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: python -m pip install -U requests pymupdf pymupdf4llm
+      - name: Recover paper
+        run: python tools/paper_recovery_clean/recover.py
+      - name: Upload result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: clean-recovery-${{ matrix.paper_id }}
+          path: recovery_output/${{ matrix.paper_id }}
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 1

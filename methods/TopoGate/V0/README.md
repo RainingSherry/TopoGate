@@ -13,8 +13,8 @@ corruption 的参数化不同。旧实现没有被移动、删除或修改，仍
 
 | 论文/历史名称 | plantnet 中的 canonical 源码 | V0 设置 |
 | --- | --- | --- |
-| scVICAR-F / NeighborMix | `/home/luolie/biopipeline/dimension-reduction/plantnet/experimental_retired_models/NeighborMix_scMAE/`（本仓库同步入口为 `methods/NeighborMix_scMAE/`） | `parameterization: fixed` 或 CLI `F` |
-| scVICAR-T / RG-NeighborMix | `/home/luolie/biopipeline/dimension-reduction/plantnet/experimental_retired_models/RG_NeighborMix_scMAE/` | `parameterization: topology` 或 CLI `T` |
+| scVICAR-F / NeighborMix | `plantnet/experimental_retired_models/NeighborMix_scMAE/`（本仓库同步入口为 `methods/NeighborMix_scMAE/`） | `parameterization: fixed` 或 CLI `F` |
+| scVICAR-T / RG-NeighborMix | `plantnet/experimental_retired_models/RG_NeighborMix_scMAE/` | `parameterization: topology` 或 CLI `T` |
 
 统一后的计算路径为：
 

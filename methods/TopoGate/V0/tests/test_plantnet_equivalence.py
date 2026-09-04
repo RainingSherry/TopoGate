@@ -23,7 +23,7 @@ from methods.TopoGate.V0.corruption import (
 from methods.TopoGate.V0.graph import build_pca_knn_graph, compute_edge_reliability
 
 
-PLANTNET_ROOT = Path("/home/luolie/biopipeline/dimension-reduction/plantnet")
+PLANTNET_ROOT = Path(os.environ.get("PLANTNET_ROOT", "plantnet"))
 
 
 def _plantnet_modules():

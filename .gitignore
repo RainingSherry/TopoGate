@@ -1,0 +1,22 @@
+# Data and generated model artifacts
+datasets/
+*.npz
+*.h5
+*.h5ad
+*.npy
+*.pt
+*.pth
+*.ckpt
+
+# Runtime output
+result/*/
+logs/
+cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local configuration
+.env
+.venv/
+venv/

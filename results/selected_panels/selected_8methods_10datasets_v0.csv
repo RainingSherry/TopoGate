@@ -1,0 +1,89 @@
+row_type,dataset,dataset_type,method,source,parameterization,n_seeds,seed_protocol,status,ACC,NMI,ARI,rank_ACC,rank_NMI,rank_ARI
+dataset,iris,tabular,KMeans,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.8306670000,0.6567150000,0.6161100000,3,4,3
+dataset,iris,tabular,DEC,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.9160000000,0.7968170000,0.7892630000,1,1,1
+dataset,iris,tabular,EDESC,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.8186670000,0.6346140000,0.5947770000,4,6,4
+dataset,iris,tabular,GCEALS,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.6000000000,0.5679835500,0.4217354172,8,8,8
+dataset,iris,tabular,IDC,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.8133333333,0.6166224200,0.5801379164,5,7,6
+dataset,iris,tabular,TableDC,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.8133333333,0.6444837346,0.5874228392,5,5,5
+dataset,iris,tabular,ZEUS,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.7400000000,0.6740140709,0.5536041212,7,3,7
+dataset,iris,tabular,ToPoGate V0,topogate_frozen_eval,fixed,5,"5-seed mean (42,123,7,2025,3407)",completed,0.8666666667,0.7021510932,0.6779467556,2,2,2
+dataset,har,image,KMeans,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.5088440000,0.5867000000,0.4076860000,4,4,5
+dataset,har,image,DEC,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.5591840000,0.5919150000,0.4963350000,2,3,1
+dataset,har,image,EDESC,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.5551020000,0.5833670000,0.4335210000,3,5,4
+dataset,har,image,GCEALS,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.4312925170,0.5060952707,0.3068051835,7,6,6
+dataset,har,image,IDC,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.3414965986,0.4645405749,0.2969601055,8,7,7
+dataset,har,image,TableDC,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.4326530612,0.4452554418,0.2727582227,6,8,8
+dataset,har,image,ZEUS,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.4965986395,0.6679257336,0.4492842470,5,1,3
+dataset,har,image,ToPoGate V0,topogate_frozen_eval,fixed,5,"5-seed mean (42,123,7,2025,3407)",completed,0.6685714286,0.6155842759,0.4906022372,1,2,2
+dataset,spambase,tabular,KMeans,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.8493810000,0.3785450000,0.4875010000,4,4,4
+dataset,spambase,tabular,DEC,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.5507500000,0.0098370000,0.0099380000,8,7,6
+dataset,spambase,tabular,EDESC,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.8758970000,0.4706120000,0.5651680000,2,2,2
+dataset,spambase,tabular,GCEALS,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.8678548142,0.4418896020,0.5382920354,3,3,3
+dataset,spambase,tabular,IDC,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.5985655292,0.0104172154,-0.0049496989,6,5,8
+dataset,spambase,tabular,TableDC,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.5842208216,0.0003897158,0.0044192929,7,8,7
+dataset,spambase,tabular,ZEUS,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.6072592915,0.0098981238,0.0289396134,5,6,5
+dataset,spambase,tabular,ToPoGate V0,topogate_frozen_eval,fixed,5,"5-seed mean (42,123,7,2025,3407)",completed,0.8973701369,0.5114603821,0.6309511100,1,1,1
+dataset,sms_spam_collection,text,KMeans,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.4721420000,0.3211060000,0.2451110000,8,5,6
+dataset,sms_spam_collection,text,DEC,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.4831120000,0.3827090000,0.2737310000,7,4,5
+dataset,sms_spam_collection,text,EDESC,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.5766730000,0.4209460000,0.3301500000,6,3,3
+dataset,sms_spam_collection,text,GCEALS,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.9580838323,0.5965256290,0.7665686104,2,2,2
+dataset,sms_spam_collection,text,IDC,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.6778443114,0.1809188975,0.1206812755,4,7,7
+dataset,sms_spam_collection,text,TableDC,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.8011976048,0.1955348314,0.2907929251,3,6,4
+dataset,sms_spam_collection,text,ZEUS,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.6215568862,0.0906606657,0.0572418854,5,8,8
+dataset,sms_spam_collection,text,ToPoGate V0,topogate_frozen_eval,fixed,5,"5-seed mean (42,123,7,2025,3407)",completed,0.9640718563,0.6417785789,0.8027582433,1,1,1
+dataset,enron,text,KMeans,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.8280110000,0.5222010000,0.5547750000,6,6,6
+dataset,enron,text,DEC,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.6958330000,0.4047540000,0.3533100000,7,7,7
+dataset,enron,text,EDESC,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.8833640000,0.6744570000,0.6885790000,5,4,4
+dataset,enron,text,GCEALS,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.9783978398,0.8607449155,0.9154495213,1,1,1
+dataset,enron,text,IDC,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.6279627963,0.0781631453,0.0654252616,8,8,8
+dataset,enron,text,TableDC,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.9145914591,0.6061905227,0.6875133423,4,5,5
+dataset,enron,text,ZEUS,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.9591959196,0.7548126728,0.8434279112,2,3,2
+dataset,enron,text,ToPoGate V0,topogate_frozen_eval,fixed,5,"5-seed mean (42,123,7,2025,3407)",completed,0.9503750375,0.7630245468,0.8117484010,3,2,3
+dataset,ISOLET,tabular,KMeans,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.5743230000,0.7253250000,0.5126170000,3,4,2
+dataset,ISOLET,tabular,DEC,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.4578430000,0.6231650000,0.3603880000,7,7,7
+dataset,ISOLET,tabular,EDESC,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.5650120000,0.7051160000,0.4751650000,4,5,4
+dataset,ISOLET,tabular,GCEALS,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.6060023086,0.7286122211,0.5124314139,2,3,3
+dataset,ISOLET,tabular,IDC,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.1719892266,0.3809180429,0.0692451504,8,8,8
+dataset,ISOLET,tabular,TableDC,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.5187892779,0.6315120079,0.4033068193,6,6,6
+dataset,ISOLET,tabular,ZEUS,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.5244324740,0.7309947095,0.4708886257,5,2,5
+dataset,ISOLET,tabular,ToPoGate V0,topogate_frozen_eval,fixed,5,"5-seed mean (42,123,7,2025,3407)",completed,0.6152622804,0.7504439179,0.5404406663,1,1,1
+dataset,reuters,text,KMeans,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.1678510000,0.1508510000,0.0538330000,7,7,7
+dataset,reuters,text,DEC,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.1090980000,0.0798380000,0.0220280000,8,8,8
+dataset,reuters,text,EDESC,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.2036230000,0.2055350000,0.0941020000,6,6,6
+dataset,reuters,text,GCEALS,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.8144768856,0.5820133039,0.5343393393,1,1,1
+dataset,reuters,text,IDC,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.5770985401,0.3657120295,0.2779980058,3,2,3
+dataset,reuters,text,TableDC,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.6000608273,0.2879196583,0.3004226433,2,5,2
+dataset,reuters,text,ZEUS,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.5512469586,0.3296667011,0.2328292826,4,3,4
+dataset,reuters,text,ToPoGate V0,topogate_frozen_eval,topology,5,"5-seed mean (42,123,7,2025,3407)",completed,0.5307785888,0.2976854208,0.1993988547,5,4,5
+dataset,cnae9,text,KMeans,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.6348920000,0.0537580000,0.0725760000,2,7,4
+dataset,cnae9,text,DEC,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.5865230000,0.0331990000,0.0448800000,4,8,5
+dataset,cnae9,text,EDESC,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.6880000000,0.1071510000,0.1441950000,1,4,2
+dataset,cnae9,text,GCEALS,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.1962962963,0.1088219826,0.0160777923,6,3,8
+dataset,cnae9,text,IDC,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.1712962963,0.0719717827,0.0279969392,8,5,6
+dataset,cnae9,text,TableDC,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.1851851852,0.0553572255,0.0246599439,7,6,7
+dataset,cnae9,text,ZEUS,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.4064814815,0.3722792306,0.1158445699,5,2,3
+dataset,cnae9,text,ToPoGate V0,topogate_frozen_eval,fixed,5,"5-seed mean (42,123,7,2025,3407)",completed,0.5966666667,0.5577390170,0.3649739283,3,1,1
+dataset,Campbell,bioinfo,KMeans,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.5557500000,0.0099370000,0.0121900000,2,8,8
+dataset,Campbell,bioinfo,DEC,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.6309000000,0.0652830000,0.0715620000,1,6,6
+dataset,Campbell,bioinfo,EDESC,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.5539500000,0.0141250000,0.0184230000,3,7,7
+dataset,Campbell,bioinfo,GCEALS,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.3997798459,0.3590500301,0.3138535632,6,2,1
+dataset,Campbell,bioinfo,IDC,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.4566196337,0.1075703410,0.1479395953,4,5,5
+dataset,Campbell,bioinfo,TableDC,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.4132893025,0.1408839934,0.1987689624,5,4,3
+dataset,Campbell,bioinfo,ZEUS,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.3653557490,0.4084378157,0.2358399585,7,1,2
+dataset,Campbell,bioinfo,ToPoGate V0,topogate_frozen_eval,fixed,5,"5-seed mean (42,123,7,2025,3407)",completed,0.2755528870,0.3499487598,0.1572131081,8,3,4
+dataset,Mouse_retina,bioinfo,KMeans,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.4623040000,0.2796790000,0.3465270000,6,7,6
+dataset,Mouse_retina,bioinfo,DEC,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.1842290000,0.0387860000,0.0614040000,8,8,8
+dataset,Mouse_retina,bioinfo,EDESC,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,completed_point_estimate,0.3860300000,0.3879230000,0.2689380000,7,5,7
+dataset,Mouse_retina,bioinfo,GCEALS,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.9090038314,0.6558613554,0.7260684616,3,3,3
+dataset,Mouse_retina,bioinfo,IDC,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.9075670498,0.6426768352,0.7170159215,4,4,4
+dataset,Mouse_retina,bioinfo,TableDC,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.6884578544,0.3746064025,0.4237996072,5,6,5
+dataset,Mouse_retina,bioinfo,ZEUS,external_extension,,1,single run; baseline CSV has no seed field,completed_point_estimate,0.9297174330,0.7356898645,0.7389976225,2,2,2
+dataset,Mouse_retina,bioinfo,ToPoGate V0,topogate_frozen_eval,fixed,5,"5-seed mean (42,123,7,2025,3407)",completed,0.9877155172,0.9242822121,0.9561392224,1,1,1
+macro_mean_10_datasets,__MACRO_MEAN__,mixed,KMeans,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,summary,0.5884165000,0.3684817000,0.3308926000,6,5,5
+macro_mean_10_datasets,__MACRO_MEAN__,mixed,DEC,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,summary,0.5173472000,0.3026303000,0.2482839000,8,7,7
+macro_mean_10_datasets,__MACRO_MEAN__,mixed,EDESC,official_clubench,,,CLUBench best_hpc archive; seed metadata unavailable,summary,0.6106318000,0.4203846000,0.3613018000,4,4,4
+macro_mean_10_datasets,__MACRO_MEAN__,mixed,GCEALS,external_extension,,1,single run; baseline CSV has no seed field,summary,0.6761188171,0.5407597860,0.5051621338,2,2,2
+macro_mean_10_datasets,__MACRO_MEAN__,mixed,IDC,external_extension,,1,single run; baseline CSV has no seed field,summary,0.5343773315,0.2919511284,0.2298450472,7,8,8
+macro_mean_10_datasets,__MACRO_MEAN__,mixed,TableDC,external_extension,,1,single run; baseline CSV has no seed field,summary,0.5951778727,0.3382133534,0.3193864598,5,6,6
+macro_mean_10_datasets,__MACRO_MEAN__,mixed,ZEUS,external_extension,,1,single run; baseline CSV has no seed field,summary,0.6201844833,0.4774379588,0.3726897837,3,3,3
+macro_mean_10_datasets,__MACRO_MEAN__,mixed,ToPoGate V0,topogate_frozen_eval,,5,"5-seed mean (42,123,7,2025,3407)",summary,0.7353031066,0.6114098204,0.5632172527,1,1,1

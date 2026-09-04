@@ -1,0 +1,14 @@
+{
+  "protocol_id": "topogate_v0_frozen_summary_v1",
+  "final_root": "/data/luolie/ToPoGate/result/v0_t_only_final_eval_v2_20260904",
+  "completed_seed_rows": 765,
+  "datasets": 153,
+  "status_counts": {
+    "completed": 153
+  },
+  "parameterization_frequency": {
+    "topology": 153
+  },
+  "baseline_files": [],
+  "paired_comparisons": 0
+}

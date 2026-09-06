@@ -1,0 +1,50 @@
+{
+  "seeds": [
+    42,
+    123,
+    7,
+    2025,
+    3407
+  ],
+  "table1_datasets": [
+    "Pollen",
+    "Wang",
+    "Mouse_retina"
+  ],
+  "table1_methods": [
+    "ToPoGate V0",
+    "scMAE",
+    "scVI",
+    "scDCC",
+    "scDeepCluster",
+    "scRCL",
+    "scCDCG",
+    "scNAME",
+    "PCA+KMeans",
+    "ZEUS",
+    "TableDC",
+    "IDC",
+    "GCEALS"
+  ],
+  "table2_datasets": [
+    "breast_cancer_wisconsin_original",
+    "spambase",
+    "sms_spam_collection",
+    "ISOLET",
+    "Mouse_retina"
+  ],
+  "table2_methods": [
+    "ToPoGate V0",
+    "ZEUS",
+    "TableDC",
+    "IDC",
+    "GCEALS",
+    "KMeans",
+    "GMM",
+    "Spectral clustering",
+    "Agglomerative",
+    "EDESC"
+  ],
+  "historical_rows_used": false,
+  "label_protocol": "labels_used_during_fit=false; K is from fixed registry; labels read after fit_predict"
+}

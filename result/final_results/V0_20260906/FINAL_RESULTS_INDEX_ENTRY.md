@@ -1,0 +1,1 @@
+| V0 (2026-09-06) | `V0_20260906/` | V0-T frozen Full-weight operator ablation (8 datasets × 15 variants × 5 seeds), T+ ablation, 5-seed baseline tables, and corrected biological summary; metadata-only, with label-free fitting and post-embedding oracle-K readout boundary. |

@@ -1,0 +1,251 @@
+{
+  "protocol_id": "topogate_v0_bio_content_dedup_audit_v1",
+  "labels_read": false,
+  "hash_scope": "HDF5 X payload only (csr data/indices/indptr plus shape)",
+  "entries": [
+    {
+      "dataset_id": "Macosko",
+      "path": "scCluBench-data/processed_scmae/Macosko.h5ad",
+      "x_shape": [
+        44808,
+        23288
+      ],
+      "x_sha256": "cd3c94db6efb244531bd58a4ec22a04210c867665e3e6b0bb1334e2ebae59d6c",
+      "duplicate_of": null,
+      "status": "unique"
+    },
+    {
+      "dataset_id": "Melanoma_5K",
+      "path": "scCluBench-data/processed_scmae/Melanoma_5K.h5ad",
+      "x_shape": [
+        4513,
+        23684
+      ],
+      "x_sha256": "41eac2ab05a8800ef17b370c7d300434cbe4ed363e7018a8c4f83637e5c6eff4",
+      "duplicate_of": null,
+      "status": "unique"
+    },
+    {
+      "dataset_id": "Pollen",
+      "path": "scCluBench-data/processed/Pollen.h5ad",
+      "x_shape": [
+        301,
+        21721
+      ],
+      "x_sha256": "3ca1fdb80a0d0bcfb94229f35aa8d5eb4825167ebaeeb2ca8cd13af752e453a8",
+      "duplicate_of": null,
+      "status": "unique"
+    },
+    {
+      "dataset_id": "Wang",
+      "path": "scCluBench-data/processed/Wang.h5ad",
+      "x_shape": [
+        9519,
+        14561
+      ],
+      "x_sha256": "41c9c40b2d653bd80de9566c3f19bee4caf2c4640e84e84ab03795307f5f8c03",
+      "duplicate_of": null,
+      "status": "unique"
+    },
+    {
+      "dataset_id": "Quake_10x_Spleen",
+      "path": "scCluBench-data/processed_scmae/Quake_10x_Spleen.h5ad",
+      "x_shape": [
+        9552,
+        23341
+      ],
+      "x_sha256": "d477cb9059a713d6a6ae8f30844e60c02516b3c7d60636ec249780f1b9a1d3a1",
+      "duplicate_of": null,
+      "status": "unique"
+    },
+    {
+      "dataset_id": "Quake_Smart-seq2_Lung",
+      "path": "scCluBench-data/processed/Quake_Smart-seq2_Lung.h5ad",
+      "x_shape": [
+        1676,
+        23341
+      ],
+      "x_sha256": "f29544fff7385b0e49ec7dd22e1f37f94511b27619210fffbf3c113f415311f4",
+      "duplicate_of": null,
+      "status": "unique"
+    },
+    {
+      "dataset_id": "Bach",
+      "path": "scCluBench-data/processed_scmae/Bach.h5ad",
+      "x_shape": [
+        23184,
+        19965
+      ],
+      "x_sha256": "c79fc8e3f41fc2d5498d5aa5af12473da35c492f1cdcecb65b32c10725502284",
+      "duplicate_of": null,
+      "status": "unique"
+    },
+    {
+      "dataset_id": "Baron",
+      "path": "scCluBench-data/processed_scmae/Baron.h5ad",
+      "x_shape": [
+        8569,
+        20125
+      ],
+      "x_sha256": "8bc4114ed4d841db57416e9534cedf27089ff790aec0e880c7fd0c461fe0612f",
+      "duplicate_of": null,
+      "status": "unique"
+    },
+    {
+      "dataset_id": "Guo",
+      "path": "scCluBench-data/processed_scmae/Guo.h5ad",
+      "x_shape": [
+        6490,
+        27477
+      ],
+      "x_sha256": "4fa7cf4c153d0ed68e0c79c5253610c09aca00defca20cb857ca946b14a53a3f",
+      "duplicate_of": null,
+      "status": "unique"
+    },
+    {
+      "dataset_id": "Limb_Muscle",
+      "path": "scCluBench-data/processed_scmae/Limb_Muscle.h5ad",
+      "x_shape": [
+        3909,
+        23341
+      ],
+      "x_sha256": "2c3039666188e3e15c432113bf19db224498758e0746b2e9ba78c333dd9c7909",
+      "duplicate_of": null,
+      "status": "unique"
+    },
+    {
+      "dataset_id": "Shekhar",
+      "path": "scCluBench-data/processed_scmae/Shekhar.h5ad",
+      "x_shape": [
+        26830,
+        13166
+      ],
+      "x_sha256": "83923ea7f12107e87b5e5244d042199f07aa84e58a70ed4e428fc6bd261e75e6",
+      "duplicate_of": null,
+      "status": "unique"
+    },
+    {
+      "dataset_id": "Tosches",
+      "path": "scCluBench-data/processed_scmae/Tosches.h5ad",
+      "x_shape": [
+        18664,
+        23500
+      ],
+      "x_sha256": "b770a93b0abee026b93b761ccdc25c59f7b48843d8275bd61967feb2b924e8f2",
+      "duplicate_of": null,
+      "status": "unique"
+    },
+    {
+      "dataset_id": "Young",
+      "path": "scCluBench-data/processed_scmae/Young.h5ad",
+      "x_shape": [
+        5685,
+        33658
+      ],
+      "x_sha256": "5c39a19fe74cbf1cdc48bcf88f55c0e23b8305a0c57aa898944c501352da8c3f",
+      "duplicate_of": null,
+      "status": "unique"
+    },
+    {
+      "dataset_id": "hrvatin",
+      "path": "scCluBench-data/scMAE/hrvatin.h5",
+      "x_shape": [
+        48266,
+        25187
+      ],
+      "x_sha256": "c5a2369dc8883679cd8c3705af82910ddf5d8252dee8d6ca26d5eb3a687cc2fb",
+      "duplicate_of": null,
+      "status": "unique"
+    },
+    {
+      "dataset_id": "worm_neuron_cell",
+      "path": "scCluBench-data/processed_scmae/worm_neuron_cell.h5ad",
+      "x_shape": [
+        4186,
+        13488
+      ],
+      "x_sha256": "3efd88c8a6b231504fae2ae639f212273197631ba24a6b6e2e7fbfa310acda02",
+      "duplicate_of": null,
+      "status": "unique"
+    },
+    {
+      "dataset_id": "Blood_BoneMarrow",
+      "path": "scCluBench-data/\u5176\u4ed6/Blood_BoneMarrow.h5ad",
+      "x_shape": [
+        15502,
+        61497
+      ],
+      "x_sha256": "05001a96d05f1a9f790ee09bfe4b74db5c9db0085a6eb84dac2cb7b3d4fccbcd",
+      "duplicate_of": null,
+      "status": "unique"
+    },
+    {
+      "dataset_id": "Bone_Marrow",
+      "path": "scCluBench-data/\u5176\u4ed6/Bone_Marrow.h5ad",
+      "x_shape": [
+        8357,
+        61497
+      ],
+      "x_sha256": "54e39533dd1a73ae3479b44cf1758a8f4779662424be6f59ac741a273117bb42",
+      "duplicate_of": null,
+      "status": "unique"
+    },
+    {
+      "dataset_id": "Human_Pancreas_1",
+      "path": "scCluBench-data/\u5176\u4ed6/Human_Pancreas_1.h5ad",
+      "x_shape": [
+        2544,
+        61497
+      ],
+      "x_sha256": "a567a04a144cbceff80f27795d6c1873b376530a089d95faa8174fe26503e32a",
+      "duplicate_of": null,
+      "status": "unique"
+    },
+    {
+      "dataset_id": "Human_Pancreas_3",
+      "path": "scCluBench-data/\u5176\u4ed6/Human_Pancreas_3.h5ad",
+      "x_shape": [
+        8569,
+        20125
+      ],
+      "x_sha256": "8bc4114ed4d841db57416e9534cedf27089ff790aec0e880c7fd0c461fe0612f",
+      "duplicate_of": "Baron",
+      "status": "duplicate_content"
+    },
+    {
+      "dataset_id": "Mouse_Pancreas_1",
+      "path": "scCluBench-data/\u5176\u4ed6/Mouse_Pancreas_1.h5ad",
+      "x_shape": [
+        1886,
+        14878
+      ],
+      "x_sha256": "0f4733f7efa29bd223f3dc58fd40081ab7785b5a47be37a37dda38f973fff6ac",
+      "duplicate_of": null,
+      "status": "unique"
+    },
+    {
+      "dataset_id": "PRJNA895163",
+      "path": "scCluBench-data/processed_benchmark/PRJNA895163.h5ad",
+      "x_shape": [
+        50380,
+        25415
+      ],
+      "x_sha256": "d1a8d6130b9527dca19bfa1b866c6f7c9fa46feedb9146a6d6b0215d7617fdb4",
+      "duplicate_of": null,
+      "status": "unique"
+    },
+    {
+      "dataset_id": "TabulaSapiens_Pancreas",
+      "path": "scCluBench-data/\u5176\u4ed6/TabulaSapiens_Pancreas.h5ad",
+      "x_shape": [
+        14140,
+        61497
+      ],
+      "x_sha256": "83f0302e61f0a317d7e0cfd2cd4b5c19cf15bb59cb80ecd8b9fcbcbb9cf876a6",
+      "duplicate_of": null,
+      "status": "unique"
+    }
+  ],
+  "unique_count": 21,
+  "duplicate_count": 1
+}

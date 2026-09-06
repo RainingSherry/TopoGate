@@ -1,0 +1,25 @@
+{
+  "protocol_id": "topogate_v0_frozen_full_weight_operator_ablation_v1",
+  "n_eval_rows": 600,
+  "n_completed": 600,
+  "labels_used_during_fit": false,
+  "training_enabled_eval": false,
+  "weights_frozen_eval": true,
+  "variants": [
+    "T_full",
+    "F_matched_total_mix",
+    "T_shuffled_gate",
+    "T_fixed_mean_gate",
+    "T_random_neighbor",
+    "T_no_vicinal",
+    "T_uniform_pseudo_loss",
+    "T_edge_none",
+    "T_edge_sim",
+    "T_edge_sim_mutual",
+    "T_edge_sim_mutual_snn",
+    "T_edge_sim_mutual_snn_distance",
+    "T_beta_no_mutual",
+    "T_beta_no_snn",
+    "T_beta_no_perturb"
+  ]
+}

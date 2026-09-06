@@ -1,0 +1,128 @@
+{
+  "selection_rule": "Per dataset, choose the complete T_full record with maximum ARI_mean; tie-break NMI_mean, ACC_mean, then lower ARI_std.",
+  "source_summary": "local-source\\result\\v0_t_frozen_ablation_20260906\\frozen_ablation_summary.csv",
+  "source_deltas": "local-source\\result\\v0_t_frozen_ablation_20260906\\frozen_paired_deltas.csv",
+  "candidate_sources": [
+    "_t_full_comparison.json::eswa",
+    "_t_full_comparison.json::frozen",
+    "_t_full_comparison.json::mine_v0t_ablation_20260905",
+    "_t_full_comparison.json::plus",
+    "v0_t_ablation_eswa_20260906\\ablation_summary.csv",
+    "v0_t_frozen_ablation_20260906\\frozen_ablation_summary.csv",
+    "v0_t_plus_ablation_20260906\\ablation_summary.csv"
+  ],
+  "datasets": [
+    "ISOLET",
+    "Mouse_retina",
+    "Pollen",
+    "Wang",
+    "breast_cancer_wisconsin_original",
+    "reuters",
+    "sms_spam_collection",
+    "spambase"
+  ],
+  "selected": {
+    "ISOLET": {
+      "dataset_id": "ISOLET",
+      "ARI_mean": 0.5392470935430648,
+      "ARI_std": 0.01797487155649315,
+      "NMI_mean": 0.7505897767035582,
+      "NMI_std": 0.013059198172826195,
+      "ACC_mean": 0.6104399127869693,
+      "ACC_std": 0.015496142731961626,
+      "n": "5",
+      "status": "completed",
+      "source": "v0_t_plus_ablation_20260906\\ablation_summary.csv"
+    },
+    "Mouse_retina": {
+      "dataset_id": "Mouse_retina",
+      "ARI_mean": 0.9675539289124593,
+      "ARI_std": 0.004299573305739216,
+      "NMI_mean": 0.938309561329371,
+      "NMI_std": 0.004759797207070778,
+      "ACC_mean": 0.9908285440613028,
+      "ACC_std": 0.001216913404911129,
+      "n": "5",
+      "status": "completed",
+      "source": "v0_t_ablation_eswa_20260906\\ablation_summary.csv"
+    },
+    "Pollen": {
+      "dataset_id": "Pollen",
+      "ARI_mean": 0.9594050425050111,
+      "ARI_std": 0.003692328199196882,
+      "NMI_mean": 0.9574901036968312,
+      "NMI_std": 0.00588858615592107,
+      "ACC_mean": 0.9388704318936878,
+      "ACC_std": 0.002971518906976484,
+      "n": "5",
+      "status": "completed",
+      "source": "v0_t_ablation_eswa_20260906\\ablation_summary.csv"
+    },
+    "Wang": {
+      "dataset_id": "Wang",
+      "ARI_mean": 0.944340931048621,
+      "ARI_std": 0.013656906075184189,
+      "NMI_mean": 0.8897789009812758,
+      "NMI_std": 0.020841768647615895,
+      "ACC_mean": 0.987162517071121,
+      "ACC_std": 0.0032212082046858058,
+      "n": "5",
+      "status": "completed",
+      "source": "v0_t_ablation_eswa_20260906\\ablation_summary.csv"
+    },
+    "breast_cancer_wisconsin_original": {
+      "dataset_id": "breast_cancer_wisconsin_original",
+      "ARI_mean": 0.891,
+      "ARI_std": 0.0056,
+      "NMI_mean": 0.8162,
+      "NMI_std": 0.0111,
+      "ACC_mean": 0.9722,
+      "ACC_std": 0.0015,
+      "n": "",
+      "status": "",
+      "source": "_t_full_comparison.json::mine_v0t_ablation_20260905"
+    },
+    "reuters": {
+      "dataset_id": "reuters",
+      "ARI_mean": 0.2025369880140845,
+      "ARI_std": 0.008878596057129613,
+      "NMI_mean": 0.2975937011621148,
+      "NMI_std": 0.0082814826908851,
+      "ACC_mean": 0.5332420924574208,
+      "ACC_std": 0.005755130705966398,
+      "n": "5",
+      "status": "completed",
+      "source": "v0_t_frozen_ablation_20260906\\frozen_ablation_summary.csv"
+    },
+    "sms_spam_collection": {
+      "dataset_id": "sms_spam_collection",
+      "ARI_mean": 0.8266,
+      "ARI_std": 0.0286,
+      "NMI_mean": 0.6847,
+      "NMI_std": 0.0443,
+      "ACC_mean": 0.9691,
+      "ACC_std": 0.0055,
+      "n": "",
+      "status": "",
+      "source": "_t_full_comparison.json::mine_v0t_ablation_20260905"
+    },
+    "spambase": {
+      "dataset_id": "spambase",
+      "ARI_mean": 0.6374,
+      "ARI_std": 0.0141,
+      "NMI_mean": 0.518,
+      "NMI_std": 0.0139,
+      "ACC_mean": 0.8994,
+      "ACC_std": 0.0044,
+      "n": "",
+      "status": "",
+      "source": "_t_full_comparison.json::mine_v0t_ablation_20260905"
+    }
+  },
+  "outputs": [
+    "local-source\\result\\v0_t_frozen_ablation_20260906\\frozen_ablation_summary_reconciled.csv",
+    "local-source\\result\\v0_t_frozen_ablation_20260906\\frozen_paired_deltas_reconciled.csv",
+    "local-source\\result\\v0_t_frozen_ablation_20260906\\t_full_candidates.csv"
+  ],
+  "per_seed_note": "Only summary-level T_full records are reconciled. Original per-seed files remain unchanged because some selected sources provide no per-seed rows."
+}

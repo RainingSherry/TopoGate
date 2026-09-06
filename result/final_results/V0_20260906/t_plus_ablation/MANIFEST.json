@@ -1,0 +1,11 @@
+{
+  "protocol_id": "topogate_v0_t_paired_mechanism_ablation_v1",
+  "core_cells": 600,
+  "core_completed": 600,
+  "sensitivity_cells": 0,
+  "sensitivity_completed": 0,
+  "k_mis_specification_rows": 100,
+  "labels_used_during_fit": false,
+  "primary_statistics": "five-seed paired full-minus-variant deltas, exact sign-flip p-values, percentile bootstrap CIs",
+  "boundary_dataset": "reuters"
+}

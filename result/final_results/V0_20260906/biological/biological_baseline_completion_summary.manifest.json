@@ -1,0 +1,18 @@
+{
+  "datasets": [
+    "Mouse_retina",
+    "Quake_Smart-seq2_Lung",
+    "Pollen",
+    "Wang",
+    "Young"
+  ],
+  "models": [
+    "ZEUS",
+    "TableDC",
+    "IDC",
+    "GCEALS"
+  ],
+  "completed_combinations": 20,
+  "result_protocol": "X-only model fit with benchmark oracle-K selected from y before fit",
+  "strict_label_free_claim": false
+}

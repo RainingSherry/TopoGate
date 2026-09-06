@@ -1,0 +1,1115 @@
+{
+  "protocol_id": "topogate_v0_frozen_external_kmeans_v1",
+  "seeds": [
+    42,
+    123,
+    7,
+    2025,
+    3407
+  ],
+  "rows": [
+    {
+      "dataset_id": "Macosko",
+      "status": "completed",
+      "n_completed": 5,
+      "n_requested": 5,
+      "seed_statuses": [
+        {
+          "seed": 42,
+          "status": "completed"
+        },
+        {
+          "seed": 123,
+          "status": "completed"
+        },
+        {
+          "seed": 7,
+          "status": "completed"
+        },
+        {
+          "seed": 2025,
+          "status": "completed"
+        },
+        {
+          "seed": 3407,
+          "status": "completed"
+        }
+      ],
+      "labels_read": true,
+      "labels_used_during_fit": false,
+      "labels_used_for_selection": false,
+      "KMeans_readout": "external_after_fit",
+      "aggregate": {
+        "ARI": {
+          "mean": 0.41701659862610596,
+          "std": 0.008713828988300575
+        },
+        "NMI": {
+          "mean": 0.6136185728768174,
+          "std": 0.005036581938492373
+        },
+        "ACC": {
+          "mean": 0.5558203892162115,
+          "std": 0.012385169675829177
+        }
+      },
+      "K": 12,
+      "K_source": "benchmark_oracle_from_y",
+      "selected_candidate": "T00_0",
+      "selected_parameterization": "topology"
+    },
+    {
+      "dataset_id": "Melanoma_5K",
+      "status": "completed",
+      "n_completed": 5,
+      "n_requested": 5,
+      "seed_statuses": [
+        {
+          "seed": 42,
+          "status": "completed"
+        },
+        {
+          "seed": 123,
+          "status": "completed"
+        },
+        {
+          "seed": 7,
+          "status": "completed"
+        },
+        {
+          "seed": 2025,
+          "status": "completed"
+        },
+        {
+          "seed": 3407,
+          "status": "completed"
+        }
+      ],
+      "labels_read": true,
+      "labels_used_during_fit": false,
+      "labels_used_for_selection": false,
+      "KMeans_readout": "external_after_fit",
+      "aggregate": {
+        "ARI": {
+          "mean": 0.6419025906340275,
+          "std": 0.014054651107665348
+        },
+        "NMI": {
+          "mean": 0.717559050503472,
+          "std": 0.011842923034433125
+        },
+        "ACC": {
+          "mean": 0.7229780633724795,
+          "std": 0.018030983540130448
+        }
+      },
+      "K": 9,
+      "K_source": "benchmark_oracle_from_y",
+      "selected_candidate": "T00_2",
+      "selected_parameterization": "topology"
+    },
+    {
+      "dataset_id": "Pollen",
+      "status": "completed",
+      "n_completed": 5,
+      "n_requested": 5,
+      "seed_statuses": [
+        {
+          "seed": 42,
+          "status": "completed"
+        },
+        {
+          "seed": 123,
+          "status": "completed"
+        },
+        {
+          "seed": 7,
+          "status": "completed"
+        },
+        {
+          "seed": 2025,
+          "status": "completed"
+        },
+        {
+          "seed": 3407,
+          "status": "completed"
+        }
+      ],
+      "labels_read": true,
+      "labels_used_during_fit": false,
+      "labels_used_for_selection": false,
+      "KMeans_readout": "external_after_fit",
+      "aggregate": {
+        "ARI": {
+          "mean": 0.9197832466496522,
+          "std": 0.02734204395104673
+        },
+        "NMI": {
+          "mean": 0.9404963278697428,
+          "std": 0.009875147214093681
+        },
+        "ACC": {
+          "mean": 0.9083056478405315,
+          "std": 0.03528483201953954
+        }
+      },
+      "K": 11,
+      "K_source": "benchmark_oracle_from_y",
+      "selected_candidate": "T08_3",
+      "selected_parameterization": "topology"
+    },
+    {
+      "dataset_id": "Wang",
+      "status": "completed",
+      "n_completed": 5,
+      "n_requested": 5,
+      "seed_statuses": [
+        {
+          "seed": 42,
+          "status": "completed"
+        },
+        {
+          "seed": 123,
+          "status": "completed"
+        },
+        {
+          "seed": 7,
+          "status": "completed"
+        },
+        {
+          "seed": 2025,
+          "status": "completed"
+        },
+        {
+          "seed": 3407,
+          "status": "completed"
+        }
+      ],
+      "labels_read": true,
+      "labels_used_during_fit": false,
+      "labels_used_for_selection": false,
+      "KMeans_readout": "external_after_fit",
+      "aggregate": {
+        "ARI": {
+          "mean": 0.9204277775201923,
+          "std": 0.02855767440725599
+        },
+        "NMI": {
+          "mean": 0.8469405467007733,
+          "std": 0.037120734585881436
+        },
+        "ACC": {
+          "mean": 0.9814686416640402,
+          "std": 0.006965104481290525
+        }
+      },
+      "K": 2,
+      "K_source": "benchmark_oracle_from_y",
+      "selected_candidate": "T00_2",
+      "selected_parameterization": "topology"
+    },
+    {
+      "dataset_id": "Quake_10x_Spleen",
+      "status": "completed",
+      "n_completed": 5,
+      "n_requested": 5,
+      "seed_statuses": [
+        {
+          "seed": 42,
+          "status": "completed"
+        },
+        {
+          "seed": 123,
+          "status": "completed"
+        },
+        {
+          "seed": 7,
+          "status": "completed"
+        },
+        {
+          "seed": 2025,
+          "status": "completed"
+        },
+        {
+          "seed": 3407,
+          "status": "completed"
+        }
+      ],
+      "labels_read": true,
+      "labels_used_during_fit": false,
+      "labels_used_for_selection": false,
+      "KMeans_readout": "external_after_fit",
+      "aggregate": {
+        "ARI": {
+          "mean": 0.5383446155643732,
+          "std": 0.004754671504595225
+        },
+        "NMI": {
+          "mean": 0.6805395232705325,
+          "std": 0.005779669554021349
+        },
+        "ACC": {
+          "mean": 0.7696817420435511,
+          "std": 0.004570536003547547
+        }
+      },
+      "K": 5,
+      "K_source": "benchmark_oracle_from_y",
+      "selected_candidate": "T00_1",
+      "selected_parameterization": "topology"
+    },
+    {
+      "dataset_id": "Quake_Smart-seq2_Lung",
+      "status": "completed",
+      "n_completed": 5,
+      "n_requested": 5,
+      "seed_statuses": [
+        {
+          "seed": 42,
+          "status": "completed"
+        },
+        {
+          "seed": 123,
+          "status": "completed"
+        },
+        {
+          "seed": 7,
+          "status": "completed"
+        },
+        {
+          "seed": 2025,
+          "status": "completed"
+        },
+        {
+          "seed": 3407,
+          "status": "completed"
+        }
+      ],
+      "labels_read": true,
+      "labels_used_during_fit": false,
+      "labels_used_for_selection": false,
+      "KMeans_readout": "external_after_fit",
+      "aggregate": {
+        "ARI": {
+          "mean": 0.5698255992112469,
+          "std": 0.05679381710791922
+        },
+        "NMI": {
+          "mean": 0.7473596567933662,
+          "std": 0.017827873577603716
+        },
+        "ACC": {
+          "mean": 0.633054892601432,
+          "std": 0.026236027286301516
+        }
+      },
+      "K": 11,
+      "K_source": "benchmark_oracle_from_y",
+      "selected_candidate": "T00_1",
+      "selected_parameterization": "topology"
+    },
+    {
+      "dataset_id": "Bach",
+      "status": "completed",
+      "n_completed": 5,
+      "n_requested": 5,
+      "seed_statuses": [
+        {
+          "seed": 42,
+          "status": "completed"
+        },
+        {
+          "seed": 123,
+          "status": "completed"
+        },
+        {
+          "seed": 7,
+          "status": "completed"
+        },
+        {
+          "seed": 2025,
+          "status": "completed"
+        },
+        {
+          "seed": 3407,
+          "status": "completed"
+        }
+      ],
+      "labels_read": true,
+      "labels_used_during_fit": false,
+      "labels_used_for_selection": false,
+      "KMeans_readout": "external_after_fit",
+      "aggregate": {
+        "ARI": {
+          "mean": 0.7466936119654181,
+          "std": 0.082185233655704
+        },
+        "NMI": {
+          "mean": 0.806158428315082,
+          "std": 0.013551564512242454
+        },
+        "ACC": {
+          "mean": 0.748671497584541,
+          "std": 0.042673091662261124
+        }
+      },
+      "K": 8,
+      "K_source": "benchmark_oracle_from_y",
+      "selected_candidate": "T00_1",
+      "selected_parameterization": "topology"
+    },
+    {
+      "dataset_id": "Baron",
+      "status": "completed",
+      "n_completed": 5,
+      "n_requested": 5,
+      "seed_statuses": [
+        {
+          "seed": 42,
+          "status": "completed"
+        },
+        {
+          "seed": 123,
+          "status": "completed"
+        },
+        {
+          "seed": 7,
+          "status": "completed"
+        },
+        {
+          "seed": 2025,
+          "status": "completed"
+        },
+        {
+          "seed": 3407,
+          "status": "completed"
+        }
+      ],
+      "labels_read": true,
+      "labels_used_during_fit": false,
+      "labels_used_for_selection": false,
+      "KMeans_readout": "external_after_fit",
+      "aggregate": {
+        "ARI": {
+          "mean": 0.6732393544462852,
+          "std": 0.0687047216306241
+        },
+        "NMI": {
+          "mean": 0.8112318325630017,
+          "std": 0.023943764869883064
+        },
+        "ACC": {
+          "mean": 0.6930330260240402,
+          "std": 0.04598070128919651
+        }
+      },
+      "K": 14,
+      "K_source": "benchmark_oracle_from_y",
+      "selected_candidate": "T00_0",
+      "selected_parameterization": "topology"
+    },
+    {
+      "dataset_id": "Guo",
+      "status": "completed",
+      "n_completed": 5,
+      "n_requested": 5,
+      "seed_statuses": [
+        {
+          "seed": 42,
+          "status": "completed"
+        },
+        {
+          "seed": 123,
+          "status": "completed"
+        },
+        {
+          "seed": 7,
+          "status": "completed"
+        },
+        {
+          "seed": 2025,
+          "status": "completed"
+        },
+        {
+          "seed": 3407,
+          "status": "completed"
+        }
+      ],
+      "labels_read": true,
+      "labels_used_during_fit": false,
+      "labels_used_for_selection": false,
+      "KMeans_readout": "external_after_fit",
+      "aggregate": {
+        "ARI": {
+          "mean": 0.7350102534923568,
+          "std": 0.015116147656150502
+        },
+        "NMI": {
+          "mean": 0.8272741191516086,
+          "std": 0.0028422168106758345
+        },
+        "ACC": {
+          "mean": 0.8029892141756548,
+          "std": 0.006446315386575153
+        }
+      },
+      "K": 12,
+      "K_source": "benchmark_oracle_from_y",
+      "selected_candidate": "T00_0",
+      "selected_parameterization": "topology"
+    },
+    {
+      "dataset_id": "Limb_Muscle",
+      "status": "completed",
+      "n_completed": 5,
+      "n_requested": 5,
+      "seed_statuses": [
+        {
+          "seed": 42,
+          "status": "completed"
+        },
+        {
+          "seed": 123,
+          "status": "completed"
+        },
+        {
+          "seed": 7,
+          "status": "completed"
+        },
+        {
+          "seed": 2025,
+          "status": "completed"
+        },
+        {
+          "seed": 3407,
+          "status": "completed"
+        }
+      ],
+      "labels_read": true,
+      "labels_used_during_fit": false,
+      "labels_used_for_selection": false,
+      "KMeans_readout": "external_after_fit",
+      "aggregate": {
+        "ARI": {
+          "mean": 0.9781309229834971,
+          "std": 0.0037665558848283794
+        },
+        "NMI": {
+          "mean": 0.9639366174632427,
+          "std": 0.0035634725690238678
+        },
+        "ACC": {
+          "mean": 0.9906881555385008,
+          "std": 0.0011092086665990587
+        }
+      },
+      "K": 6,
+      "K_source": "benchmark_oracle_from_y",
+      "selected_candidate": "T00_0",
+      "selected_parameterization": "topology"
+    },
+    {
+      "dataset_id": "Shekhar",
+      "status": "completed",
+      "n_completed": 5,
+      "n_requested": 5,
+      "seed_statuses": [
+        {
+          "seed": 42,
+          "status": "completed"
+        },
+        {
+          "seed": 123,
+          "status": "completed"
+        },
+        {
+          "seed": 7,
+          "status": "completed"
+        },
+        {
+          "seed": 2025,
+          "status": "completed"
+        },
+        {
+          "seed": 3407,
+          "status": "completed"
+        }
+      ],
+      "labels_read": true,
+      "labels_used_during_fit": false,
+      "labels_used_for_selection": false,
+      "KMeans_readout": "external_after_fit",
+      "aggregate": {
+        "ARI": {
+          "mean": 0.6488035526817375,
+          "std": 0.06661179118232524
+        },
+        "NMI": {
+          "mean": 0.8653016417653147,
+          "std": 0.016051350422570852
+        },
+        "ACC": {
+          "mean": 0.7528885575847931,
+          "std": 0.04366384496112204
+        }
+      },
+      "K": 18,
+      "K_source": "benchmark_oracle_from_y",
+      "selected_candidate": "T00_0",
+      "selected_parameterization": "topology"
+    },
+    {
+      "dataset_id": "Tosches",
+      "status": "completed",
+      "n_completed": 5,
+      "n_requested": 5,
+      "seed_statuses": [
+        {
+          "seed": 42,
+          "status": "completed"
+        },
+        {
+          "seed": 123,
+          "status": "completed"
+        },
+        {
+          "seed": 7,
+          "status": "completed"
+        },
+        {
+          "seed": 2025,
+          "status": "completed"
+        },
+        {
+          "seed": 3407,
+          "status": "completed"
+        }
+      ],
+      "labels_read": true,
+      "labels_used_during_fit": false,
+      "labels_used_for_selection": false,
+      "KMeans_readout": "external_after_fit",
+      "aggregate": {
+        "ARI": {
+          "mean": 0.5193055258427939,
+          "std": 0.03998873730690777
+        },
+        "NMI": {
+          "mean": 0.7341332941760184,
+          "std": 0.013039917055535186
+        },
+        "ACC": {
+          "mean": 0.6399914273467638,
+          "std": 0.02151990367835317
+        }
+      },
+      "K": 15,
+      "K_source": "benchmark_oracle_from_y",
+      "selected_candidate": "T00_0",
+      "selected_parameterization": "topology"
+    },
+    {
+      "dataset_id": "Young",
+      "status": "completed",
+      "n_completed": 5,
+      "n_requested": 5,
+      "seed_statuses": [
+        {
+          "seed": 42,
+          "status": "completed"
+        },
+        {
+          "seed": 123,
+          "status": "completed"
+        },
+        {
+          "seed": 7,
+          "status": "completed"
+        },
+        {
+          "seed": 2025,
+          "status": "completed"
+        },
+        {
+          "seed": 3407,
+          "status": "completed"
+        }
+      ],
+      "labels_read": true,
+      "labels_used_during_fit": false,
+      "labels_used_for_selection": false,
+      "KMeans_readout": "external_after_fit",
+      "aggregate": {
+        "ARI": {
+          "mean": 0.7718160498270642,
+          "std": 0.04637234049236476
+        },
+        "NMI": {
+          "mean": 0.8309895294873748,
+          "std": 0.02409053358828272
+        },
+        "ACC": {
+          "mean": 0.8408091468777485,
+          "std": 0.0455763116145656
+        }
+      },
+      "K": 11,
+      "K_source": "benchmark_oracle_from_y",
+      "selected_candidate": "T00_0",
+      "selected_parameterization": "topology"
+    },
+    {
+      "dataset_id": "hrvatin",
+      "status": "completed",
+      "n_completed": 5,
+      "n_requested": 5,
+      "seed_statuses": [
+        {
+          "seed": 42,
+          "status": "completed"
+        },
+        {
+          "seed": 123,
+          "status": "completed"
+        },
+        {
+          "seed": 7,
+          "status": "completed"
+        },
+        {
+          "seed": 2025,
+          "status": "completed"
+        },
+        {
+          "seed": 3407,
+          "status": "completed"
+        }
+      ],
+      "labels_read": true,
+      "labels_used_during_fit": false,
+      "labels_used_for_selection": false,
+      "KMeans_readout": "external_after_fit",
+      "aggregate": {
+        "ARI": {
+          "mean": 0.8583456294983189,
+          "std": 0.008072160140841205
+        },
+        "NMI": {
+          "mean": 0.8888202543032382,
+          "std": 0.010606977162773158
+        },
+        "ACC": {
+          "mean": 0.8663572701280404,
+          "std": 0.01301186945178784
+        }
+      },
+      "K": 8,
+      "K_source": "benchmark_oracle_from_y",
+      "selected_candidate": "T00_0",
+      "selected_parameterization": "topology"
+    },
+    {
+      "dataset_id": "worm_neuron_cell",
+      "status": "completed",
+      "n_completed": 5,
+      "n_requested": 5,
+      "seed_statuses": [
+        {
+          "seed": 42,
+          "status": "completed"
+        },
+        {
+          "seed": 123,
+          "status": "completed"
+        },
+        {
+          "seed": 7,
+          "status": "completed"
+        },
+        {
+          "seed": 2025,
+          "status": "completed"
+        },
+        {
+          "seed": 3407,
+          "status": "completed"
+        }
+      ],
+      "labels_read": true,
+      "labels_used_during_fit": false,
+      "labels_used_for_selection": false,
+      "KMeans_readout": "external_after_fit",
+      "aggregate": {
+        "ARI": {
+          "mean": 0.41949764364819364,
+          "std": 0.04167022285307989
+        },
+        "NMI": {
+          "mean": 0.653314095242468,
+          "std": 0.03292157219682726
+        },
+        "ACC": {
+          "mean": 0.6684185379837553,
+          "std": 0.03394025905868338
+        }
+      },
+      "K": 10,
+      "K_source": "benchmark_oracle_from_y",
+      "selected_candidate": "T00_3",
+      "selected_parameterization": "topology"
+    },
+    {
+      "dataset_id": "Blood_BoneMarrow",
+      "status": "completed",
+      "n_completed": 5,
+      "n_requested": 5,
+      "seed_statuses": [
+        {
+          "seed": 42,
+          "status": "completed"
+        },
+        {
+          "seed": 123,
+          "status": "completed"
+        },
+        {
+          "seed": 7,
+          "status": "completed"
+        },
+        {
+          "seed": 2025,
+          "status": "completed"
+        },
+        {
+          "seed": 3407,
+          "status": "completed"
+        }
+      ],
+      "labels_read": true,
+      "labels_used_during_fit": false,
+      "labels_used_for_selection": false,
+      "KMeans_readout": "external_after_fit",
+      "aggregate": {
+        "ARI": {
+          "mean": 0.3026703327685633,
+          "std": 0.03092396133408945
+        },
+        "NMI": {
+          "mean": 0.6112257098755658,
+          "std": 0.005338236134658044
+        },
+        "ACC": {
+          "mean": 0.36508837569345887,
+          "std": 0.020794769221398682
+        }
+      },
+      "K": 35,
+      "K_source": "benchmark_oracle_from_y",
+      "selected_candidate": "T00_2",
+      "selected_parameterization": "topology"
+    },
+    {
+      "dataset_id": "Bone_Marrow",
+      "status": "completed",
+      "n_completed": 5,
+      "n_requested": 5,
+      "seed_statuses": [
+        {
+          "seed": 42,
+          "status": "completed"
+        },
+        {
+          "seed": 123,
+          "status": "completed"
+        },
+        {
+          "seed": 7,
+          "status": "completed"
+        },
+        {
+          "seed": 2025,
+          "status": "completed"
+        },
+        {
+          "seed": 3407,
+          "status": "completed"
+        }
+      ],
+      "labels_read": true,
+      "labels_used_during_fit": false,
+      "labels_used_for_selection": false,
+      "KMeans_readout": "external_after_fit",
+      "aggregate": {
+        "ARI": {
+          "mean": 0.31748529204489584,
+          "std": 0.018175213541367342
+        },
+        "NMI": {
+          "mean": 0.6324289795186001,
+          "std": 0.005961438747987708
+        },
+        "ACC": {
+          "mean": 0.3865980615053249,
+          "std": 0.01565569324442934
+        }
+      },
+      "K": 35,
+      "K_source": "benchmark_oracle_from_y",
+      "selected_candidate": "T00_2",
+      "selected_parameterization": "topology"
+    },
+    {
+      "dataset_id": "Human_Pancreas_1",
+      "status": "completed",
+      "n_completed": 5,
+      "n_requested": 5,
+      "seed_statuses": [
+        {
+          "seed": 42,
+          "status": "completed"
+        },
+        {
+          "seed": 123,
+          "status": "completed"
+        },
+        {
+          "seed": 7,
+          "status": "completed"
+        },
+        {
+          "seed": 2025,
+          "status": "completed"
+        },
+        {
+          "seed": 3407,
+          "status": "completed"
+        }
+      ],
+      "labels_read": true,
+      "labels_used_during_fit": false,
+      "labels_used_for_selection": false,
+      "KMeans_readout": "external_after_fit",
+      "aggregate": {
+        "ARI": {
+          "mean": 0.5495108921890188,
+          "std": 0.013439766200248797
+        },
+        "NMI": {
+          "mean": 0.6580350745276353,
+          "std": 0.01424754195109771
+        },
+        "ACC": {
+          "mean": 0.6372641509433963,
+          "std": 0.00842791496179332
+        }
+      },
+      "K": 7,
+      "K_source": "benchmark_oracle_from_y",
+      "selected_candidate": "T00_2",
+      "selected_parameterization": "topology"
+    },
+    {
+      "dataset_id": "Human_Pancreas_3",
+      "status": "completed",
+      "n_completed": 5,
+      "n_requested": 5,
+      "seed_statuses": [
+        {
+          "seed": 42,
+          "status": "completed"
+        },
+        {
+          "seed": 123,
+          "status": "completed"
+        },
+        {
+          "seed": 7,
+          "status": "completed"
+        },
+        {
+          "seed": 2025,
+          "status": "completed"
+        },
+        {
+          "seed": 3407,
+          "status": "completed"
+        }
+      ],
+      "labels_read": true,
+      "labels_used_during_fit": false,
+      "labels_used_for_selection": false,
+      "KMeans_readout": "external_after_fit",
+      "aggregate": {
+        "ARI": {
+          "mean": 0.6732393544462852,
+          "std": 0.0687047216306241
+        },
+        "NMI": {
+          "mean": 0.8112318325630017,
+          "std": 0.023943764869883064
+        },
+        "ACC": {
+          "mean": 0.6930330260240402,
+          "std": 0.04598070128919651
+        }
+      },
+      "K": 14,
+      "K_source": "benchmark_oracle_from_y",
+      "selected_candidate": "T00_0",
+      "selected_parameterization": "topology"
+    },
+    {
+      "dataset_id": "Mouse_Pancreas_1",
+      "status": "completed",
+      "n_completed": 5,
+      "n_requested": 5,
+      "seed_statuses": [
+        {
+          "seed": 42,
+          "status": "completed"
+        },
+        {
+          "seed": 123,
+          "status": "completed"
+        },
+        {
+          "seed": 7,
+          "status": "completed"
+        },
+        {
+          "seed": 2025,
+          "status": "completed"
+        },
+        {
+          "seed": 3407,
+          "status": "completed"
+        }
+      ],
+      "labels_read": true,
+      "labels_used_during_fit": false,
+      "labels_used_for_selection": false,
+      "KMeans_readout": "external_after_fit",
+      "aggregate": {
+        "ARI": {
+          "mean": 0.6235020630547561,
+          "std": 0.022296851738009785
+        },
+        "NMI": {
+          "mean": 0.803132194989956,
+          "std": 0.008296699347164052
+        },
+        "ACC": {
+          "mean": 0.7009544008483563,
+          "std": 0.02918393101171271
+        }
+      },
+      "K": 13,
+      "K_source": "benchmark_oracle_from_y",
+      "selected_candidate": "T00_3",
+      "selected_parameterization": "topology"
+    },
+    {
+      "dataset_id": "PRJNA895163",
+      "status": "completed",
+      "n_completed": 5,
+      "n_requested": 5,
+      "seed_statuses": [
+        {
+          "seed": 42,
+          "status": "completed"
+        },
+        {
+          "seed": 123,
+          "status": "completed"
+        },
+        {
+          "seed": 7,
+          "status": "completed"
+        },
+        {
+          "seed": 2025,
+          "status": "completed"
+        },
+        {
+          "seed": 3407,
+          "status": "completed"
+        }
+      ],
+      "labels_read": true,
+      "labels_used_during_fit": false,
+      "labels_used_for_selection": false,
+      "KMeans_readout": "external_after_fit",
+      "aggregate": {
+        "ARI": {
+          "mean": 0.20696707914055645,
+          "std": 0.02254635741745496
+        },
+        "NMI": {
+          "mean": 0.4113755753582832,
+          "std": 0.0132108489937321
+        },
+        "ACC": {
+          "mean": 0.4965065502183406,
+          "std": 0.005458822034760195
+        }
+      },
+      "K": 12,
+      "K_source": "benchmark_oracle_from_y",
+      "selected_candidate": "T00_0",
+      "selected_parameterization": "topology"
+    },
+    {
+      "dataset_id": "TabulaSapiens_Pancreas",
+      "status": "completed",
+      "n_completed": 5,
+      "n_requested": 5,
+      "seed_statuses": [
+        {
+          "seed": 42,
+          "status": "completed"
+        },
+        {
+          "seed": 123,
+          "status": "completed"
+        },
+        {
+          "seed": 7,
+          "status": "completed"
+        },
+        {
+          "seed": 2025,
+          "status": "completed"
+        },
+        {
+          "seed": 3407,
+          "status": "completed"
+        }
+      ],
+      "labels_read": true,
+      "labels_used_during_fit": false,
+      "labels_used_for_selection": false,
+      "KMeans_readout": "external_after_fit",
+      "aggregate": {
+        "ARI": {
+          "mean": 0.44452136835695677,
+          "std": 0.03099129337896517
+        },
+        "NMI": {
+          "mean": 0.7098552232867337,
+          "std": 0.01300719515681178
+        },
+        "ACC": {
+          "mean": 0.5635502121640735,
+          "std": 0.034979830241643084
+        }
+      },
+      "K": 23,
+      "K_source": "benchmark_oracle_from_y",
+      "selected_candidate": "T00_0",
+      "selected_parameterization": "topology"
+    }
+  ],
+  "k_source": "benchmark_oracle_from_y",
+  "labels_used_during_fit": false,
+  "labels_used_for_selection": false
+}

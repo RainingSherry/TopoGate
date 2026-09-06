@@ -35,6 +35,7 @@ and smoke/debug outputs are excluded.
 | V20 | `V20/` | Eight-dataset seed-42 coarse screen represented by the eight final run summaries; no matched control aggregate was produced. |
 | V21 | `V21/` | Complete six-dataset graph-fix matrix: 36/36 valid jobs with aggregate and paired tables. |
 | V22 | `V22/` | Cooperative Keep-Gate 16-job single-seed audit plus hard-gate controls; two cooperative jobs remain `incomplete_compute`. |
+| V0 (2026-09-06) | `V0_20260906/` | V0-T frozen Full-weight operator ablation (8 datasets × 15 variants × 5 seeds), T+ ablation, 5-seed baseline tables, and corrected biological summary; metadata-only, with label-free fitting and post-embedding oracle-K readout boundary. |
 
 The files are copied from the local result volume without recomputing metrics.
 The original source paths and hashes remain in the local audit records; this

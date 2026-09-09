@@ -290,6 +290,9 @@ def run_dataset(row, out, args):
                 n_clusters=int(row["n_clusters"]), config=config, seed=seed, device=args.device)
             if not np.isfinite(embedding).all():
                 raise ValueError("non-finite embedding")
+            if final:
+                np.save(path.parent / f"embedding_seed_{seed}.npy", embedding)
+                np.save(path.parent / f"predictions_seed_{seed}.npy", pred)
             score = float(adjusted_rand_score(y[score_rows], pred))
             if final:
                 from .run import clustering_metrics

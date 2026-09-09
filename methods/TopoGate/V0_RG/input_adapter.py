@@ -4,9 +4,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-import anndata as ad
 import numpy as np
-import scanpy as sc
 import scipy.sparse as sp
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 
@@ -198,6 +196,9 @@ def _hvg_subset(
     X: np.ndarray | sp.spmatrix,
     n_top_features: int,
 ) -> tuple[ad.AnnData, np.ndarray, dict[str, Any]]:
+    import anndata as ad
+    import scanpy as sc
+
     work = ad.AnnData(X=_csr_float32(X))
     target = min(int(n_top_features), int(work.n_vars))
     if target <= 0:
@@ -268,7 +269,7 @@ def prepare_input(
         raise ValueError("X must be a non-empty two-dimensional matrix")
     key = str(dataset_name).strip().lower()
     source = _csr_float32(X)
-    if source.data.size and float(np.min(source.data)) < 0.0:
+    if input_protocol == "rg_native" and source.data.size and float(np.min(source.data)) < 0.0:
         raise ValueError("V0_RG selected sparse/count inputs must be non-negative before scaling")
     zero_fraction_before = float(1.0 - source.nnz / float(source.shape[0] * source.shape[1]))
     count_like = bool(
@@ -286,6 +287,7 @@ def prepare_input(
     scale_method = "sklearn_standard_scaler"
     input_kind = BIOLOGICAL_INPUT_KIND.get(key, "sparse_text_features")
     if input_protocol == "rg_native":
+        import scanpy as sc
         if input_kind not in {"raw_count", "log1p_expression"}:
             raise ValueError(f"rg_native is only registered for biological inputs, got {dataset_name!r}")
         if input_kind == "raw_count":

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass, replace
+import math
 from pathlib import Path
 from typing import Any
 
@@ -29,6 +30,12 @@ class V0_RGConfig:
     mix_neighbors: int = 4
     knn_pca_dim: int = 50
     tau: float = 0.2
+    # Optional center/radius parameterization of the existing bounded gate.
+    gate_center: float | None = None
+    gate_adaptivity: float | None = None
+    edge_reliability_mode: str = "sim_mutual_snn_distance"
+    neighbor_estimator: str = "current"
+    auxiliary_weighting: str = "gate"
     gate_min: float = 0.0
     gate_max: float = 0.15
     pseudo_weight: float = 0.3
@@ -46,6 +53,24 @@ class V0_RGConfig:
     num_workers: int = 0
 
     def __post_init__(self) -> None:
+        for name, value in asdict(self).items():
+            if isinstance(value, (int, float)) and not math.isfinite(value):
+                raise ValueError(f"{name} must be finite")
+        if self.edge_reliability_mode not in {"none", "sim", "sim_mutual", "sim_mutual_snn", "sim_mutual_snn_distance"}:
+            raise ValueError("unknown edge_reliability_mode")
+        if self.neighbor_estimator not in {"current", "uniform_sample", "full"}:
+            raise ValueError("unknown neighbor_estimator")
+        if self.auxiliary_weighting not in {"gate", "uniform"}:
+            raise ValueError("auxiliary_weighting must be gate or uniform")
+        if (self.gate_center is None) != (self.gate_adaptivity is None):
+            raise ValueError("gate_center and gate_adaptivity must be supplied together")
+        if self.gate_center is not None:
+            if not 0 <= self.gate_adaptivity <= 1 or not 0 <= self.gate_center < 1:
+                raise ValueError("invalid center/adaptivity")
+            if self.gate_center * (1 + self.gate_adaptivity) >= 1:
+                raise ValueError("effective gate_max must be < 1")
+            if self.gate_min != 0.0 or self.gate_max != 0.15:
+                raise ValueError("use either center/adaptivity or legacy gate bounds")
         if not self.protocol_id:
             raise ValueError("protocol_id must be non-empty")
         if self.variant not in VARIANTS:
@@ -92,6 +117,12 @@ class V0_RGConfig:
         if self.lr <= 0.0 or self.tau <= 0.0 or self.target_sum <= 0.0:
             raise ValueError("lr, tau, and target_sum must be positive")
 
+    def gate_bounds(self) -> tuple[float, float]:
+        if self.gate_center is None:
+            return float(self.gate_min), float(self.gate_max)
+        return (self.gate_center * (1 - self.gate_adaptivity),
+                self.gate_center * (1 + self.gate_adaptivity))
+
     def for_variant(self, variant: str) -> "V0_RGConfig":
         if variant not in VARIANTS:
             raise ValueError(f"variant must be one of {sorted(VARIANTS)}")
@@ -103,9 +134,11 @@ class V0_RGConfig:
             {
                 "graph_enabled": self.variant == "rg_full",
                 "mix_mode": "reliability" if self.variant == "rg_full" else "none",
-                "gate_mode": "topology" if self.variant == "rg_full" else "none",
+                "gate_mode": ("constant" if self.gate_bounds()[0] == self.gate_bounds()[1] else "topology") if self.variant == "rg_full" else "none",
+                "effective_gate_min": self.gate_bounds()[0],
+                "effective_gate_max": self.gate_bounds()[1],
                 "edge_reliability_mode": (
-                    "sim_mutual_snn_distance" if self.variant == "rg_full" else "none"
+                    self.edge_reliability_mode if self.variant == "rg_full" else "none"
                 ),
                 "effective_neighbor_k": self.neighbor_k if self.variant == "rg_full" else 0,
                 "effective_mix_neighbors": self.mix_neighbors if self.variant == "rg_full" else 0,

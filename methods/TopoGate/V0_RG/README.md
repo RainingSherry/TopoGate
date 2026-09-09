@@ -60,3 +60,38 @@ python scripts/V0_RG/summarize_unsupervised_tuning.py \
 Selection uses an equal-weight, per-dataset/seed X-only rank score over masked
 recovery, latent-view stability, and input-neighbor preservation. The selected
 configuration is an engineering configuration, not an ARI-selected oracle.
+
+## Unified ToPoGate search (2026-09-09)
+
+`rg_full` now denotes the common neighborhood-corruption structure. Set equal
+legacy gate bounds, or `gate_center` with `gate_adaptivity: 0`, for constant
+mixing. `edge_reliability_mode: none` retains the base neighbor probabilities.
+Thus edge modulation and node adaptivity can be combined independently with
+one backbone and anchor-target objective. Existing config defaults are unchanged.
+Use one gate parameterization at a time. Example endpoint configs are in
+`configs/unified_constant.yaml` and `configs/unified_topology.yaml`.
+
+The new self-contained `tuning` module implements per-dataset validation-label
+selection, distinct from the historical X-only workflow above. It fits feature
+selection, scaling, training graph, encoder and KMeans centers on training rows;
+refits on train+validation only after freezing; evaluates test rows in a separate
+`--stage final` command. Calling the original `run` command still means full-data
+fitting and does not implement this split protocol.
+
+```bash
+python -m methods.TopoGate.V0_RG.tuning --help
+python -m unittest methods.TopoGate.V0_RG.tests.test_unified -v
+```
+
+Install `optuna` in addition to the repository training requirements. Read the
+[full execution and publication plan](docs/TUNING_PLAN_ZH.md), fill an actual
+manifest using `configs/tuning_manifest.example.json`, and inspect the
+[historical dataset inventory](docs/dataset_inventory.csv). The inventory has
+157 names, not 157 verified independent datasets. Supplied aggregate TSVs do
+not contain sufficient provenance to replay their underlying runs.
+
+`neighbor_estimator` also accepts `uniform_sample` and `full`, and
+`auxiliary_weighting` accepts `uniform` for explicit mechanism ablations. The
+main search keeps the original `current` estimator and gate-weighted auxiliary
+loss. Operator endpoints are covered by tests; historical full-run bitwise
+parity across different RNG/preprocessing protocols is not claimed.

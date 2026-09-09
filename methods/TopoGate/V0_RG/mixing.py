@@ -1,7 +1,10 @@
 from __future__ import annotations
 
 import numpy as np
-import torch
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    import torch
 
 from .graph import NeighborGraph
 
@@ -73,36 +76,32 @@ def make_pseudo_batch(
     node_gate: np.ndarray,
     mix_neighbors: int,
     rng: np.random.Generator,
+    neighbor_estimator: str = "current",
+    auxiliary_weighting: str = "gate",
 ) -> tuple[torch.Tensor, torch.Tensor, dict]:
-    """Sample reliability-weighted neighbors using the original current estimator."""
+    """Construct an anchor-target view; defaults preserve the original estimator."""
+    import torch
+
+    if neighbor_estimator not in {"current", "uniform_sample", "full"}:
+        raise ValueError("unknown neighbor_estimator")
+    if auxiliary_weighting not in {"gate", "uniform"}:
+        raise ValueError("unknown auxiliary_weighting")
     if graph.indices.shape[1] == 0 or int(mix_neighbors) <= 0:
         zeros = torch.zeros(batch_x.shape[0], dtype=batch_x.dtype, device=batch_x.device)
         return batch_x.detach(), zeros, {"mean_node_gate": 0.0, "mean_perturb_norm": 0.0}
     batch_size = int(batch_indices.shape[0])
     k = int(graph.indices.shape[1])
     sampled_count = max(1, min(int(mix_neighbors), k))
-    sampled = np.empty((batch_size, sampled_count), dtype=np.int64)
-    weights = np.empty((batch_size, sampled_count), dtype=np.float32)
-    for position, sample in enumerate(batch_indices):
-        row = graph.indices[sample]
-        probs = edge_weights[sample]
-        choices = rng.choice(
-            row.shape[0],
-            size=sampled_count,
-            replace=True,
-            p=probs / np.clip(probs.sum(), 1e-12, None),
-        )
-        sampled[position] = row[choices]
-        selected = probs[choices].astype(np.float32, copy=False)
-        weights[position] = selected / max(float(selected.sum()), 1e-12)
-    neighbor_expression = data_np[sampled]
-    neighbor_mean = np.sum(neighbor_expression * weights[:, :, None], axis=1).astype(np.float32)
+    neighbor_mean = estimate_neighbors(
+        data_np, batch_indices, graph, edge_weights, sampled_count, rng, neighbor_estimator
+    )
     gate = np.asarray(node_gate[batch_indices], dtype=np.float32)
     anchor = data_np[batch_indices]
     mixed = (1.0 - gate[:, None]) * anchor + gate[:, None] * neighbor_mean
     perturbation = np.linalg.norm(neighbor_mean - anchor, axis=1) / (
         np.linalg.norm(anchor, axis=1) + 1e-6
     )
+    actual_displacement = np.linalg.norm(mixed - anchor, axis=1)
     x_prime = torch.as_tensor(mixed, dtype=batch_x.dtype, device=batch_x.device)
     sample_weight = torch.as_tensor(
         np.clip(
@@ -113,8 +112,34 @@ def make_pseudo_batch(
         dtype=batch_x.dtype,
         device=batch_x.device,
     )
+    if auxiliary_weighting == "uniform":
+        sample_weight = torch.ones_like(sample_weight)
     return x_prime.detach(), sample_weight, {
         "mean_node_gate": float(np.mean(gate)),
         "mean_perturb_norm": float(np.mean(perturbation)),
+        "mean_actual_displacement": float(np.mean(actual_displacement)),
         "fraction_zero_gate": float(np.mean(gate <= 0.0)),
     }
+
+
+def estimate_neighbors(data, batch_indices, graph, edge_weights, sampled_count, rng,
+                       estimator="current"):
+    """NumPy aggregation, separated for distributional and legacy-parity tests."""
+    if estimator not in {"current", "uniform_sample", "full"}:
+        raise ValueError("unknown neighbor estimator")
+    if estimator == "full":
+        # Avoid a batch x k x d allocation for wide biological matrices.
+        return np.asarray([np.sum(data[graph.indices[i]] * edge_weights[i, :, None], axis=0)
+                           for i in batch_indices], dtype=np.float32)
+    sampled = np.empty((len(batch_indices), sampled_count), dtype=np.int64)
+    weights = np.empty((len(batch_indices), sampled_count), dtype=np.float32)
+    for position, sample in enumerate(batch_indices):
+        row = graph.indices[sample]
+        probs = edge_weights[sample]
+        choices = rng.choice(row.shape[0], size=sampled_count, replace=True,
+                             p=probs / np.clip(probs.sum(), 1e-12, None))
+        sampled[position] = row[choices]
+        selected = probs[choices].astype(np.float32, copy=False)
+        weights[position] = (selected / max(float(selected.sum()), 1e-12)
+                             if estimator == "current" else 1.0 / sampled_count)
+    return np.sum(data[sampled] * weights[:, :, None], axis=1).astype(np.float32)

@@ -86,7 +86,9 @@ def _extract_embedding(
     )
     rows = [model.feature(batch[0].to(device)).detach().cpu().numpy() for batch in loader]
     embedding = np.concatenate(rows, axis=0).astype(np.float32)
-    return np.nan_to_num(embedding, nan=0.0, posinf=0.0, neginf=0.0)
+    if not np.isfinite(embedding).all():
+        raise ValueError("encoder produced non-finite embeddings")
+    return embedding
 
 
 def _neighbor_overlap(
@@ -210,11 +212,11 @@ def fit_predict(
         raise ValueError("X must contain at least two samples and one feature")
     if not np.all(np.isfinite(data_np)):
         raise ValueError("X contains non-finite values after preprocessing")
-    if n_clusters is not None and (int(n_clusters) <= 0 or int(n_clusters) > data_np.shape[0]):
-        raise ValueError("n_clusters must be in [1, n_samples]")
     fit_data_np = data_np if fit_X is None else np.ascontiguousarray(np.asarray(fit_X, dtype=np.float32))
     if fit_data_np.ndim != 2 or fit_data_np.shape[0] < 2 or fit_data_np.shape[1] != data_np.shape[1]:
         raise ValueError("fit_X must have at least two rows and the same feature width as X")
+    if n_clusters is not None and (int(n_clusters) <= 0 or int(n_clusters) > fit_data_np.shape[0]):
+        raise ValueError("n_clusters must be in [1, fit_n_samples]")
     if not np.all(np.isfinite(fit_data_np)):
         raise ValueError("fit_X contains non-finite values")
     evaluation_np = None if evaluation_X is None else np.ascontiguousarray(np.asarray(evaluation_X, dtype=np.float32))
@@ -232,6 +234,7 @@ def fit_predict(
     rng = np.random.default_rng(int(seed) + 3089)
     graph_enabled = config.variant == "rg_full"
 
+    gate_min, gate_max = config.gate_bounds()
     if graph_enabled:
         graph = build_pca_knn_graph(
             fit_data_np,
@@ -247,7 +250,7 @@ def fit_predict(
         )
         edge_reliability, edge_weights, edge_summary = compute_edge_reliability(
             graph,
-            mode="sim_mutual_snn_distance",
+            mode=config.edge_reliability_mode,
             gamma_sim=config.gamma_sim,
             gamma_mutual=config.gamma_mutual,
             gamma_snn=config.gamma_snn,
@@ -257,8 +260,8 @@ def fit_predict(
             graph,
             edge_weights=edge_weights,
             gate_mode="topology",
-            gate_min=config.gate_min,
-            gate_max=config.gate_max,
+            gate_min=gate_min,
+            gate_max=gate_max,
             beta_mutual=config.beta_mutual,
             beta_snn=config.beta_snn,
             beta_perturb=config.beta_perturb,
@@ -327,6 +330,7 @@ def fit_predict(
         "pseudo_mask_loss": [],
         "mean_node_gate": [],
         "mean_pseudo_perturbation": [],
+        "mean_actual_displacement": [],
         "real_mask_rate": [],
         "pseudo_mask_rate": [],
         "variant": config.variant,
@@ -366,6 +370,8 @@ def fit_predict(
                     node_gate=node_gate,
                     mix_neighbors=config.mix_neighbors,
                     rng=rng,
+                    neighbor_estimator=config.neighbor_estimator,
+                    auxiliary_weighting=config.auxiliary_weighting,
                 )
                 pseudo_corrupted, pseudo_mask = apply_scmae_noise(
                     pseudo_batch,
@@ -380,6 +386,8 @@ def fit_predict(
                 )
                 loss = loss + float(config.pseudo_weight) * pseudo_loss
             optimizer.zero_grad(set_to_none=True)
+            if not torch.isfinite(loss):
+                raise ValueError("non-finite training loss")
             loss.backward()
             optimizer.step()
 
@@ -394,6 +402,7 @@ def fit_predict(
             totals["pseudo_mask_loss"] += float(pseudo_parts["mask_loss"].cpu())
             totals["mean_node_gate"] += float(mix_info["mean_node_gate"])
             totals["mean_pseudo_perturbation"] += float(mix_info["mean_perturb_norm"])
+            totals["mean_actual_displacement"] += float(mix_info.get("mean_actual_displacement", 0.0))
             totals["real_mask_rate"] += float(real_mask.mean().detach().cpu())
             totals["pseudo_mask_rate"] += (
                 float(pseudo_parts["mask_positive_rate"].cpu()) if pseudo_enabled else 0.0
@@ -405,11 +414,17 @@ def fit_predict(
     embedding = _extract_embedding(model, data_np, config.batch_size, runtime_device)
     predictions = None
     if n_clusters is not None:
-        predictions = KMeans(
+        readout = KMeans(
             n_clusters=int(n_clusters),
             n_init=int(config.kmeans_n_init),
             random_state=int(seed),
-        ).fit_predict(embedding).astype(np.int64)
+        )
+        if fit_X is None:
+            predictions = readout.fit_predict(embedding).astype(np.int64)
+        else:
+            fit_embedding = _extract_embedding(model, fit_data_np, config.batch_size, runtime_device)
+            readout.fit(fit_embedding)
+            predictions = readout.predict(embedding).astype(np.int64)
     perturbation_proxy = (
         (1.0 - np.sum(graph.probs * graph.similarity, axis=1)).astype(np.float32)
         if graph.probs.size
@@ -485,8 +500,11 @@ def fit_predict(
             "graph_enabled": bool(graph_enabled),
             "pseudo_enabled": bool(pseudo_enabled),
             "mix_mode": "reliability" if graph_enabled else "none",
-            "gate_mode": "topology" if graph_enabled else "none",
-            "edge_reliability_mode": "sim_mutual_snn_distance" if graph_enabled else "none",
+            "gate_mode": config.resolved_dict()["gate_mode"],
+            "edge_reliability_mode": config.edge_reliability_mode if graph_enabled else "none",
+            "neighbor_estimator": config.neighbor_estimator,
+            "auxiliary_weighting": config.auxiliary_weighting,
+            "readout_fit_scope": "fit_X" if fit_X is not None else "X",
             "contrast_enabled": False,
             "K_used_only_in_readout": n_clusters is not None,
             "readout_enabled": n_clusters is not None,

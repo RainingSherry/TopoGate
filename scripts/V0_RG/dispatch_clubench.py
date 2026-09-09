@@ -40,21 +40,23 @@ def run_one(args: argparse.Namespace, dataset_id: str, gpu: int) -> dict:
         state = out / f"state_{args.stage}.json"
         if state.exists() and json.loads(state.read_text()).get("status") == "completed":
             return {"dataset_id": dataset_id, "status": "reused"}
-        attempt = 1
-        while (out / f"attempt_{attempt}").exists():
-            attempt += 1
-        attempt_dir = out / f"attempt_{attempt}"
-        log = attempt_dir.with_suffix(".log")
-        attempt_dir.mkdir(parents=True)
-        atomic_json(state, {"dataset_id": dataset_id, "stage": args.stage, "status": "running", "attempt": attempt, "gpu": gpu, "started": time.time()})
-        env = dict(os.environ)
-        env["CUDA_VISIBLE_DEVICES"] = str(gpu)
-        cmd = [args.python, "-m", "methods.TopoGate.V0_RG.tuning", "--manifest", str(args.manifest), "--output-dir", str(args.output), "--dataset-id", dataset_id, "--stage", args.stage, "--device", "cuda", "--gpu", "0", "--epochs", str(args.epochs), "--trials", str(args.trials)]
-        with log.open("w", encoding="utf-8") as handle:
-            rc = subprocess.run(cmd, cwd=args.repo, env=env, stdout=handle, stderr=subprocess.STDOUT).returncode
-        status = "completed" if rc == 0 else "failed"
-        atomic_json(state, {"dataset_id": dataset_id, "stage": args.stage, "status": status, "attempt": attempt, "gpu": gpu, "returncode": rc, "log": str(log), "finished": time.time()})
-        return {"dataset_id": dataset_id, "status": status, "returncode": rc}
+        previous = sorted(out.glob("attempt_*.log"))
+        first_attempt = len(previous) + 1
+        for attempt in range(first_attempt, args.max_attempts + 1):
+            attempt_dir = out / f"attempt_{attempt}"
+            log = attempt_dir.with_suffix(".log")
+            attempt_dir.mkdir(parents=True, exist_ok=True)
+            atomic_json(state, {"dataset_id": dataset_id, "stage": args.stage, "status": "running", "attempt": attempt, "gpu": gpu, "started": time.time()})
+            env = dict(os.environ)
+            env["CUDA_VISIBLE_DEVICES"] = str(gpu)
+            cmd = [args.python, "-m", "methods.TopoGate.V0_RG.tuning", "--manifest", str(args.manifest), "--output-dir", str(args.output), "--dataset-id", dataset_id, "--stage", args.stage, "--device", "cuda", "--gpu", "0", "--epochs", str(args.epochs), "--trials", str(args.trials)]
+            with log.open("w", encoding="utf-8") as handle:
+                rc = subprocess.run(cmd, cwd=args.repo, env=env, stdout=handle, stderr=subprocess.STDOUT).returncode
+            status = "completed" if rc == 0 else "failed"
+            atomic_json(state, {"dataset_id": dataset_id, "stage": args.stage, "status": status, "attempt": attempt, "gpu": gpu, "returncode": rc, "log": str(log), "finished": time.time()})
+            if rc == 0:
+                return {"dataset_id": dataset_id, "status": status, "returncode": rc, "attempt": attempt}
+        return {"dataset_id": dataset_id, "status": "failed", "returncode": rc, "attempt": args.max_attempts}
     finally:
         lock.unlink(missing_ok=True)
 
@@ -68,10 +70,16 @@ def main() -> None:
     p.add_argument("--stage", choices=("search", "final"), required=True)
     p.add_argument("--gpu", type=int, choices=ALLOWED_GPUS, required=True)
     p.add_argument("--dataset-id")
+    p.add_argument("--shard-index", type=int, choices=range(len(ALLOWED_GPUS)))
     p.add_argument("--epochs", type=int, default=80)
     p.add_argument("--trials", type=int, default=32)
+    p.add_argument("--max-attempts", type=int, default=3)
     args = p.parse_args()
     ids = load_ids(args.manifest)
+    if args.shard_index is not None:
+        if args.gpu != ALLOWED_GPUS[args.shard_index]:
+            raise SystemExit("shard-index must map to its fixed physical GPU")
+        ids = ids[args.shard_index::len(ALLOWED_GPUS)]
     if args.dataset_id:
         ids = [x for x in ids if x == args.dataset_id]
         if not ids:

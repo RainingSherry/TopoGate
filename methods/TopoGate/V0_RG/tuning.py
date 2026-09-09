@@ -293,6 +293,9 @@ def run_dataset(row, out, args):
             if final:
                 np.save(path.parent / f"embedding_seed_{seed}.npy", embedding)
                 np.save(path.parent / f"predictions_seed_{seed}.npy", pred)
+                import torch
+                torch.save(diagnostics["model_state_dict"], path.parent / f"model_seed_{seed}.pt")
+                np.save(path.parent / f"cluster_centers_seed_{seed}.npy", diagnostics["cluster_centers"])
             score = float(adjusted_rand_score(y[score_rows], pred))
             if final:
                 from .run import clustering_metrics

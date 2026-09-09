@@ -413,6 +413,7 @@ def fit_predict(
 
     embedding = _extract_embedding(model, data_np, config.batch_size, runtime_device)
     predictions = None
+    cluster_centers = None
     if n_clusters is not None:
         readout = KMeans(
             n_clusters=int(n_clusters),
@@ -425,6 +426,7 @@ def fit_predict(
             fit_embedding = _extract_embedding(model, fit_data_np, config.batch_size, runtime_device)
             readout.fit(fit_embedding)
             predictions = readout.predict(embedding).astype(np.int64)
+        cluster_centers = np.asarray(readout.cluster_centers_, dtype=np.float32)
     perturbation_proxy = (
         (1.0 - np.sum(graph.probs * graph.similarity, axis=1)).astype(np.float32)
         if graph.probs.size
@@ -475,6 +477,8 @@ def fit_predict(
             }
         )
     diagnostics: dict[str, Any] = {
+        "model_state_dict": {k: v.detach().cpu().clone() for k, v in model.state_dict().items()},
+        "cluster_centers": cluster_centers,
         "neighbor_indices": graph.indices,
         "neighbor_base_probs": graph.probs,
         "neighbor_similarity": graph.similarity,

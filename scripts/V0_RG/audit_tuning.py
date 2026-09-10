@@ -56,7 +56,7 @@ def main():
         try:
             con=sqlite3.connect(d/"search.db"); ndb=con.execute("select count(*) from trials where state='COMPLETE'").fetchone()[0]; con.close()
         except Exception: ndb=""
-        budgets.append({"panel":panel,"dataset_id":d.name,"screen_records":len(seed42),"top4_seed_records":len(seed_extra),"final_records":len(ffiles),"total_records":len(seed42)+len(seed_extra)+len(ffiles),"search_db_complete_trials":ndb,"budget_expected":"32+12+5=49 records (40 validation + 5 final; trial-level 32+8+5 trainings)"})
+        budgets.append({"panel":panel,"dataset_id":d.name,"screen_records":len(seed42),"top4_seed_records":len(seed_extra),"final_records":len(ffiles),"total_records":len(seed42)+len(seed_extra)+len(ffiles),"search_db_complete_trials":ndb,"anchor_records":max(0,len(seed42)-int(ndb or 0)),"budget_ok":len(seed42)==32 and int(ndb or 0)+max(0,len(seed42)-int(ndb or 0))==32,"budget_expected":"28 Optuna trials + 4 independent anchor records = 32 screen candidates; 40 validation records + 5 final records"})
     write(out/"tuning_completion_audit.csv",audit); write(out/"validation_test_gap.csv",gaps); write(out/"search_budget_accounting.csv",budgets); write(out/"trials_long_corrected.csv",trials)
     write(out/"hyperparameter_selection_frequency.csv",[{"parameter":k,"value":v,"count":n,"fraction":n/len(ds)} for (k,v),n in sorted(freq.items())]); write(out/"gate_regime_summary.csv",[{"gate_regime":k[0],"edge_regime":k[1],"count":n,"fraction":n/len(ds)} for k,n in sorted(regimes.items())])
     print(json.dumps({"datasets":len(ds),"audit_ok":sum(x["ok"] for x in audit),"audit_failed":sum(not x["ok"] for x in audit),"validation_test_gaps":len(gaps)}))

@@ -84,7 +84,7 @@ def load_npz(path: str | Path) -> LoadedNPZ:
 
 
 def load_matrix(path: str | Path, labels_path: str | Path | None = None) -> LoadedNPZ:
-    """Load NPZ, NPY, CSV, or TSV without assuming scRNA semantics."""
+    """Load NPZ, NPY, HDF5, CSV, or TSV without assuming scRNA semantics."""
     source = Path(path)
     suffix = source.suffix.lower()
     if suffix == ".npz":
@@ -96,6 +96,17 @@ def load_matrix(path: str | Path, labels_path: str | Path | None = None) -> Load
         loaded = LoadedNPZ(values, None, {"path": str(source.resolve()), "format": "npy",
             "n_samples_original": int(values.shape[0]), "n_features_original": int(values.shape[1]),
             "sparse_storage": False, "labels_loaded_by_outer_runner": False})
+    elif suffix in {".h5", ".hdf5"}:
+        import h5py
+        with h5py.File(source, "r") as h:
+            if "X" not in h:
+                raise ValueError(f"HDF5 has no X dataset: {source}")
+            values = np.asarray(h["X"])
+            h5labels = np.asarray(h["Y"]) if "Y" in h else None
+        loaded = LoadedNPZ(values, h5labels, {"path": str(source.resolve()), "format": "h5",
+            "n_samples_original": int(values.shape[0]), "n_features_original": int(values.shape[1]),
+            "sparse_storage": False, "labels_loaded_by_outer_runner": h5labels is not None,
+            "matrix_key": "X", "label_key": "Y" if h5labels is not None else None})
     elif suffix in {".csv", ".tsv", ".txt"}:
         delimiter = "\t" if suffix in {".tsv", ".txt"} else ","
         values = np.loadtxt(source, delimiter=delimiter, ndmin=2)

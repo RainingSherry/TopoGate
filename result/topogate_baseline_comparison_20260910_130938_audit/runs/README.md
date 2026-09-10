@@ -1,0 +1,1 @@
+The strict KMeans/PCA+KMeans panel completed on the remote persistent output. Per-dataset JSON summaries and test predictions remain at `/data/luolie/ToPoGate/result/topogate_baseline_strict_kmeans_20260910/`; this archive keeps a compact summary snapshot and checksums rather than copying raw predictions. The 32-trial/5-seed ToPoGate outputs remain a separate background panel.

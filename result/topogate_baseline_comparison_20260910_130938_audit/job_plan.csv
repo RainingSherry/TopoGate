@@ -1,0 +1,13 @@
+﻿model,panel,protocol,reusable_runs,new_fits,new_inference,new_readouts,priority,status,reason
+TopoGate,clubench,required_60_20_20_seed42_123_7_8candidates,0,1965,1965,393,P1,complete,Strict 8-candidate search and 3-seed final evaluation complete for 131 datasets
+KMeans,clubench,required_60_20_20_seed42_123_7_8candidates,0,393,393,393,P1,complete,Strict split baseline complete for 131 datasets x 3 seeds
+PCA+KMeans,clubench,required_60_20_20_seed42_123_7_8candidates,0,1179,1179,1179,P1,complete,Three PCA candidates per dataset with validation selection; final 131 datasets x 3 seeds complete
+scMAE,clubench,required_60_20_20_seed42_123_7_8candidates,0,0,0,0,P1,audit_only_reuse,No formal run launched; historical assets fail protocol match or native interface verification
+IDEC,clubench,required_60_20_20_seed42_123_7_8candidates,0,0,0,0,P2,blocked_pending_freeze,No formal run launched; historical assets fail protocol match or native interface verification
+EDESC,clubench,required_60_20_20_seed42_123_7_8candidates,0,0,0,0,P2,blocked_pending_freeze,No formal run launched; historical assets fail protocol match or native interface verification
+TableDC,clubench,required_60_20_20_seed42_123_7_8candidates,0,0,0,0,P2,audit_only_reuse,No formal run launched; historical assets fail protocol match or native interface verification
+ZEUS,clubench,required_60_20_20_seed42_123_7_8candidates,0,0,0,0,P2,audit_only_reuse,No formal run launched; historical assets fail protocol match or native interface verification
+scNAME,biology,required_60_20_20_seed42_123_7_8candidates,0,0,0,0,P2,blocked_pending_freeze,No formal run launched; historical assets fail protocol match or native interface verification
+scDeepCluster,biology,required_60_20_20_seed42_123_7_8candidates,0,0,0,0,P2,blocked_pending_freeze,No formal run launched; historical assets fail protocol match or native interface verification
+scCDCG,biology,required_60_20_20_seed42_123_7_8candidates,0,0,0,0,P2,blocked_pending_freeze,No formal run launched; historical assets fail protocol match or native interface verification
+TopoGate_constant_gate,clubench,required_60_20_20_seed42_123_7_8candidates,0,0,0,0,P1,audit_only_reuse,No formal run launched; historical assets fail protocol match or native interface verification

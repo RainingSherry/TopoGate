@@ -1,0 +1,13 @@
+﻿model,panel,new_fits,new_inference,new_readouts,training_saved,status
+TopoGate,clubench,1965,1965,393,not applicable; strict 8-candidate search plus final stage,complete
+KMeans,clubench,393,393,393,not applicable; strict split CPU runner,complete
+PCA+KMeans,clubench,1179,1179,1179,not applicable; 3 candidates per dataset,complete
+scMAE,clubench,0,0,0,not counted; historical artifacts are protocol-mismatched,not_started
+IDEC,clubench,0,0,0,not counted; historical artifacts are protocol-mismatched,not_started
+EDESC,clubench,0,0,0,not counted; historical artifacts are protocol-mismatched,not_started
+TableDC,clubench,0,0,0,not counted; historical artifacts are protocol-mismatched,not_started
+ZEUS,clubench,0,0,0,not counted; historical artifacts are protocol-mismatched,not_started
+scNAME,biology,0,0,0,not counted; historical artifacts are protocol-mismatched,not_started
+scDeepCluster,biology,0,0,0,not counted; historical artifacts are protocol-mismatched,not_started
+scCDCG,biology,0,0,0,not counted; historical artifacts are protocol-mismatched,not_started
+TopoGate_constant_gate,clubench,0,0,0,not counted; historical artifacts are protocol-mismatched,not_started

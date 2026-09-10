@@ -1,0 +1,4 @@
+﻿panel,protocol,model,dataset_count,coverage,ARI_macro_mean,NMI_macro_mean,ACC_macro_mean,status
+CLUBench,strict_split_kmeans_baselines_v1,KMeans,131,1.0,0.30385427178408253,0.35634883514536647,0.6105890821234022,complete
+CLUBench,strict_split_kmeans_baselines_v1,PCA+KMeans,131,1.0,0.23497440660982563,0.3079431791814335,0.5724056315087477,complete
+CLUBench,strict8_topogate_v1,TopoGate_strict8,131,1.0,0.33921453216232916,0.3978583581697617,0.6264972465917993,complete

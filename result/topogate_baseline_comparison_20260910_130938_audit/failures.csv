@@ -1,0 +1,12 @@
+﻿model,panel,status,reason,evidence
+KMeans,clubench,complete,Strict split runner completed all 131 datasets with finite 42/123/7 metrics.,remote_snapshot/strict_kmeans_summaries.json
+PCA+KMeans,clubench,complete,Strict split runner completed all 131 datasets with finite 42/123/7 metrics.,remote_snapshot/strict_kmeans_summaries.json
+scMAE,clubench,not_run,Historical control is five-seed/full-dataset or V0-RG ablation; no current inductive prediction artifact.,"protocol.json, v0-RG/STATUS.json, historical cross tables"
+IDEC,clubench,not_run,"Native adapter, configuration and reproducible checkpoint not verified.","protocol.json, v0-RG/STATUS.json, historical cross tables"
+EDESC,clubench,not_run,"Archive point estimates exist, but no protocol-matched checkpoint or native adapter verified.","protocol.json, v0-RG/STATUS.json, historical cross tables"
+TableDC,clubench,not_run,Existing rows are oracle-K/full-dataset historical baseline; not promotable to main panel.,"protocol.json, v0-RG/STATUS.json, historical cross tables"
+ZEUS,clubench,not_run,Existing rows are oracle-K/full-dataset historical baseline; zero-shot semantics and split protocol not verified.,"protocol.json, v0-RG/STATUS.json, historical cross tables"
+scNAME,biology,not_run,Biology-only native adapter and protocol-matched result not verified.,"protocol.json, v0-RG/STATUS.json, historical cross tables"
+scDeepCluster,biology,not_run,Biology-only native adapter and protocol-matched result not verified.,"protocol.json, v0-RG/STATUS.json, historical cross tables"
+scCDCG,biology,not_run,Biology-only native adapter and protocol-matched result not verified.,"protocol.json, v0-RG/STATUS.json, historical cross tables"
+TopoGate_constant_gate,clubench,not_run,Existing V0-RG fixed-gate ablation is historical and not the current V16.1 matched budget.,"protocol.json, v0-RG/STATUS.json, historical cross tables"

@@ -1,0 +1,6 @@
+﻿asset,location,available,interpretation
+local_131_task_npz,S:\Creation\写论文\武汉理工\论文们\TopoGate\datasets,False,Only 14 biological/scCluBench NPZs exist; no 131-task CLUBench NPZ set.
+saved_split_indices,S:\Creation\写论文\武汉理工\论文们\TopoGate\datasets,False,No protocol-bound train/validation/test index manifest was found.
+server_mount,/data/luolie/ToPoGate,False,Expected server path is not mounted in this workspace.
+clubench_source_code,S:\Creation\写论文\武汉理工\论文们\TopoGate\review_remote\baseline\CLUBench,True,Source code exists but does not establish runnable data/checkpoint availability.
+historical_metrics,S:\Creation\写论文\武汉理工\论文们\TopoGate\papers\正文草稿\过期表格\library_cross_all_20260909.tsv,True,Metrics are retained as background only because protocol and artifact identity are not sufficient for reuse.

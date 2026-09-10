@@ -1,0 +1,115 @@
+{
+  "archive_id": "topogate_baseline_comparison_20260910_130938_audit",
+  "created_at": "2026-09-10T13:09:39",
+  "protocol": {
+    "status": "audit_only_no_formal_new_fits",
+    "source_protocol": "Temp/topogate_protocol_20260910/protocol.json",
+    "required_protocol": {
+      "split": [
+        0.6,
+        0.2,
+        0.2
+      ],
+      "seeds": [
+        42,
+        123,
+        7
+      ],
+      "candidate_budget": 8,
+      "std_ddof": 1
+    },
+    "observed_protocol_mismatch": [
+      "source is prelaunch",
+      "source search budget is 32",
+      "source final seeds include 2025 and 3407",
+      "historical baseline rows are oracle-K/full-dataset and generally seed=42"
+    ],
+    "labels": {
+      "fit": false,
+      "validation_selection": true,
+      "test_selection": false
+    },
+    "decision": "do_not_start_full_131_task_training_until_protocol_and_manifest_are frozen"
+  },
+  "source_files": [
+    {
+      "path": "Temp\\topogate_protocol_20260910\\protocol.json",
+      "exists": true,
+      "sha256": "eaa534b38b0671d1bacaea9c9c2a4aa1086d518465a7ed750f1246f69305592c"
+    },
+    {
+      "path": "papers\\正文草稿\\过期表格\\library_cross_all_20260909.tsv",
+      "exists": true,
+      "sha256": "582cc56dda2cf559a03883ebd88644d77bf9fe582a93e1caff0ba7eb3a45a1c9"
+    },
+    {
+      "path": "papers\\正文草稿\\过期表格\\library_cross_macro_20260909.tsv",
+      "exists": true,
+      "sha256": "a2f23533be69b954f921ccb41f375be5ae9705ee843de970ce43f49fbb1811fb"
+    },
+    {
+      "path": "papers\\正文草稿\\过期表格\\library_cross_coverage_20260909.tsv",
+      "exists": true,
+      "sha256": "f716cdf1b74e87afb8f06567917cb381b52699065646b0f5ea9eb89146fccba7"
+    },
+    {
+      "path": "papers\\实验\\全库交叉汇总_模型x数据集x指标_20260910.xlsx",
+      "exists": true,
+      "sha256": "e82d8dfbfd2274fd3c990fea5d8232706891023363ab24c8f1b7c3584e23a1ee"
+    },
+    {
+      "path": "audit_sources\\baseline_comparison_summary.csv",
+      "exists": true,
+      "sha256": "fa580963fe41db923a2b6e6585f69af8ffcc9e8726d18107672d05c3551bdc91"
+    },
+    {
+      "path": "audit_sources\\biological_baseline_completion_summary_20260905.csv",
+      "exists": true,
+      "sha256": "a834439687d58f17fd0b14ac43af2c1c5c358806cd3c789c85dc7b86d5c0d28b"
+    },
+    {
+      "path": "papers\\实验\\v0-RG\\v0_rg_bundle.json",
+      "exists": true,
+      "sha256": "f8411207ee12570b983529959bd813ed1ab747064b0bda1fa27ac7fc90901094"
+    },
+    {
+      "path": "papers\\实验\\v0-RG\\STATUS.json",
+      "exists": true,
+      "sha256": "e1f6decfd1d95371c8aec3745f86e901c4f3604972d91b69becc028302018425"
+    },
+    {
+      "path": "papers\\实验\\v0-RG\\EXPERIMENT_NOTES.json",
+      "exists": true,
+      "sha256": "22b74b448165c2d6d4ef180d4f6ad4a352dc9e22c38fb5f4af411435ccf9e4a1"
+    }
+  ],
+  "local_npz_count": 14,
+  "local_npz": [
+    "datasets\\external\\GSE81904_Shekhar\\Shekhar.npz",
+    "datasets\\scCluBench\\selected\\AMB.npz",
+    "datasets\\scCluBench\\selected\\Baron_Human.npz",
+    "datasets\\scCluBench\\selected\\Baron_Mouse.npz",
+    "datasets\\scCluBench\\selected\\Kang_PBMC_ABC.npz",
+    "datasets\\scCluBench\\selected\\Macosko.npz",
+    "datasets\\scCluBench\\selected\\Muraro.npz",
+    "datasets\\scCluBench\\selected\\PBMC3K.npz",
+    "datasets\\scCluBench\\selected\\Segerstolpe.npz",
+    "datasets\\scCluBench\\selected\\Segerstolpe_filtered.npz",
+    "datasets\\scCluBench\\selected\\TabulaMuris.npz",
+    "datasets\\scCluBench\\selected\\Xin.npz",
+    "datasets\\scCluBench\\selected\\Zheng68K.npz",
+    "datasets\\scCluBench\\selected\\ZhengSorted.npz"
+  ],
+  "formal_runs_started": 131,
+  "formal_predictions_saved": 786,
+  "strict_baseline_panel": {
+    "models": ["KMeans", "PCA+KMeans"],
+    "datasets": 131,
+    "seeds": [42, 123, 7],
+    "remote_output": "/data/luolie/ToPoGate/result/topogate_baseline_strict_kmeans_20260910/",
+    "summary_snapshot": "remote_snapshot/strict_kmeans_summaries.json"
+  },
+  "historical_rows_saved": 1342,
+  "git_repository_detected": false,
+  "data_availability_file": "data_availability.csv"
+}

@@ -1,0 +1,30 @@
+{
+  "status": "partial_formal_panel_strict_baselines_complete",
+  "source_protocol": "Temp/topogate_protocol_20260910/protocol.json",
+  "required_protocol": {
+    "split": [
+      0.6,
+      0.2,
+      0.2
+    ],
+    "seeds": [
+      42,
+      123,
+      7
+    ],
+    "candidate_budget": 8,
+    "std_ddof": 1
+  },
+  "observed_protocol_mismatch": [
+    "source is prelaunch",
+    "source search budget is 32",
+    "source final seeds include 2025 and 3407",
+    "historical baseline rows are oracle-K/full-dataset and generally seed=42"
+  ],
+  "labels": {
+    "fit": false,
+    "validation_selection": true,
+    "test_selection": false
+  },
+  "decision": "strict KMeans/PCA+KMeans panel completed; keep 32-trial/5-seed ToPoGate outputs background-only and do not mix into 8-candidate main panel"
+}

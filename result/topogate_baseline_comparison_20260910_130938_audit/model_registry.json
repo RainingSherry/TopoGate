@@ -1,0 +1,86 @@
+{
+  "models": [
+    {
+      "name": "KMeans",
+      "panel": "general",
+      "status": "strict_split_complete",
+      "native_output": "KMeans fitted on train+validation; test assignment via saved centers"
+    },
+    {
+      "name": "PCA+KMeans",
+      "panel": "general",
+      "status": "strict_split_complete",
+      "native_output": "PCA fitted on train+validation; KMeans assignment via saved centers"
+    },
+    {
+      "name": "scMAE",
+      "panel": "general",
+      "status": "historical_asset_or_unavailable",
+      "native_output": "not verified for current inductive protocol"
+    },
+    {
+      "name": "IDEC",
+      "panel": "general",
+      "status": "historical_asset_or_unavailable",
+      "native_output": "not verified for current inductive protocol"
+    },
+    {
+      "name": "EDESC",
+      "panel": "general",
+      "status": "historical_asset_or_unavailable",
+      "native_output": "not verified for current inductive protocol"
+    },
+    {
+      "name": "TableDC",
+      "panel": "general",
+      "status": "historical_asset_or_unavailable",
+      "native_output": "not verified for current inductive protocol"
+    },
+    {
+      "name": "ZEUS",
+      "panel": "general",
+      "status": "historical_asset_or_unavailable",
+      "native_output": "not verified for current inductive protocol"
+    },
+    {
+      "name": "scNAME",
+      "panel": "biology",
+      "status": "historical_asset_or_unavailable",
+      "native_output": "not verified for current inductive protocol"
+    },
+    {
+      "name": "scDeepCluster",
+      "panel": "biology",
+      "status": "historical_asset_or_unavailable",
+      "native_output": "not verified for current inductive protocol"
+    },
+    {
+      "name": "scCDCG",
+      "panel": "biology",
+      "status": "historical_asset_or_unavailable",
+      "native_output": "not verified for current inductive protocol"
+    },
+    {
+      "name": "TopoGate",
+      "panel": "general",
+      "status": "strict8_search_running",
+      "native_output": "patched V0-RG tuner; final seeds 42/123/7; isolated remote run"
+    },
+    {
+      "name": "TopoGate_constant_gate",
+      "panel": "general",
+      "status": "historical_asset_or_unavailable",
+      "native_output": "not verified for current inductive protocol"
+    },
+    {
+      "name": "Spectral Clustering",
+      "panel": "general",
+      "status": "historical_asset_or_unavailable",
+      "native_output": "not verified for current inductive protocol"
+    }
+  ],
+  "notes": [
+    "Existing assets include TableDC, ZEUS, IDC/GCEALS and scMAE-derived summaries; IDEC/EDESC/scNAME/scDeepCluster/scCDCG native interfaces were not verified in this checkout.",
+    "IDC/GCEALS are not in the requested fixed comparison list and are retained only as historical context."
+  ]
+}

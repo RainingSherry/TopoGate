@@ -9,7 +9,7 @@ from pathlib import Path
 import json
 import numpy as np
 from .config import V0_RGConfig
-from .input_adapter import load_matrix
+from .input_adapter import load_matrix, encode_labels
 from .tuning import SplitPreprocessor
 from .trainer import fit_predict
 from .run import clustering_metrics
@@ -25,6 +25,7 @@ def run_transductive(data_path, output_dir, *, config: V0_RGConfig, n_clusters: 
     loaded = load_matrix(data_path, labels_path=labels_path)
     X = loaded.X
     labels = None if loaded.labels is None else np.asarray(loaded.labels).reshape(-1)
+    labels, label_classes = encode_labels(labels)
     if labels is not None and len(labels) != X.shape[0]:
         raise ValueError("label count does not match X rows")
     prep = SplitPreprocessor(input_kind, feature_limit).fit(X)

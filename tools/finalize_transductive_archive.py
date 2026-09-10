@@ -32,6 +32,12 @@ def main(root):
         with (root/name).open('w',encoding='utf-8',newline='') as f:
             w=csv.DictWriter(f,fieldnames=fields); w.writeheader(); w.writerows(rows)
     write('job_plan.csv',plan,['model','dataset','seed_set','protocol','planned_action','status','reason'])
+    # Make every NA cell auditable, not only runtime exceptions.
+    na_rows=[]
+    for x in plan:
+        if x['status']!='completed':
+            na_rows.append({'model':x['model'],'dataset':x['dataset'],'reason':x['reason'],'error_type':'missing_or_inapplicable','error_message':'No complete finite target-seed transductive record'})
+    write('failures.csv',na_rows,['model','dataset','reason','error_type','error_message'])
     audit=[]
     for x in ledger:
         audit.append({'model':x.get('model'),'dataset':x.get('dataset'),'seed':x.get('seed'),'source':x.get('source','new_run'),'accepted': 'yes' if x.get('status')=='completed' else 'no','protocol':x.get('protocol','transductive'),'historical_source_path':x.get('historical_source_path',''),'reason':'accepted target seed record' if x.get('status')=='completed' else 'incomplete'})

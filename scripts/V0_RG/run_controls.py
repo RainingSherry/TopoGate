@@ -22,17 +22,24 @@ def main():
     for path in (a.clubench_manifest,a.biology_manifest): manifests += json.loads(path.read_text())["datasets"]
     lookup={r["dataset_id"]:r for r in manifests}; rows=[]; protocol={"selection":"fixed type/scale strata before score inspection","datasets":list(DATASETS),"seeds":list(SEEDS),"split_seed":9102026,"fit_scope":"train_validation","score_scope":"test","labels_used_for_fit":False}
     (a.output/"controls_protocol.json").parent.mkdir(parents=True,exist_ok=True); (a.output/"controls_protocol.json").write_text(json.dumps(protocol,indent=2))
+    out_csv = a.output/"controls_metrics_per_seed.csv"
+    existing = []
+    if out_csv.exists():
+        with out_csv.open(newline="") as f: existing = list(csv.DictReader(f))
+    done = {(r["dataset_id"], r["method"], int(r["seed"])) for r in existing}
     for dataset_id in DATASETS:
         row=lookup[dataset_id]; loaded=load_matrix(row["path"],row.get("labels_path")); X,y=loaded.X,np.asarray(loaded.labels).reshape(-1); train,val,test=split_rows(len(y),9102026); fit=np.concatenate([train,val]); prep=SplitPreprocessor(row["input_kind"],2000).fit(X[fit]); fit_x,test_x=prep.transform(X[fit]),prep.transform(X[test]); k=int(row["n_clusters"])
         for method in ("kmeans","pca_kmeans"):
             for seed in SEEDS:
+                if (dataset_id, method, seed) in done: continue
                 started=time.time(); fit_space=fit_x; score_space=test_x; pca_dim=None
                 if method=="pca_kmeans":
                     pca_dim=min(50,fit_x.shape[0]-1,fit_x.shape[1]); reducer=PCA(n_components=pca_dim,svd_solver="randomized",random_state=seed); fit_space=reducer.fit_transform(fit_x); score_space=reducer.transform(test_x)
                 model=KMeans(n_clusters=k,n_init=20,random_state=seed); model.fit(fit_space); pred=model.predict(score_space); truth=y[test]
                 rows.append({"dataset_id":dataset_id,"method":method,"seed":seed,"ari":float(adjusted_rand_score(truth,pred)),"nmi":float(normalized_mutual_info_score(truth,pred)),"wall_seconds":time.time()-started,"pca_dim":pca_dim or ""})
+                existing.append(rows[-1])
+                with out_csv.open("w", newline="") as f:
+                    fields=sorted({k for r in existing for k in r}); w=csv.DictWriter(f,fieldnames=fields); w.writeheader(); w.writerows(existing)
         print(dataset_id,flush=True)
-    fields=sorted({k for r in rows for k in r});
-    with (a.output/"controls_metrics_per_seed.csv").open("w",newline="") as f: w=csv.DictWriter(f,fieldnames=fields); w.writeheader(); w.writerows(rows)
-    print(json.dumps({"datasets":len(DATASETS),"rows":len(rows)}))
+    print(json.dumps({"datasets":len(DATASETS),"rows":len(existing)}))
 if __name__=="__main__": main()

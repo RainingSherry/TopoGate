@@ -1,0 +1,23 @@
+{
+  "goal": "topogate_baseline_comparison_minimal_sufficient",
+  "status": "incomplete",
+  "verified_complete": [
+    "KMeans: 131 datasets, fixed 60/20/20 indices, seeds 42/123/7",
+    "PCA+KMeans: 131 datasets, validation-only PCA selection, seeds 42/123/7",
+    "ToPoGate_strict8: 131 datasets, eight-candidate budget, seeds 42/123/7",
+    "archive_integrity: manifest and files match"
+  ],
+  "not_verified": {
+    "scMAE": "existing assets cover only five datasets and five seeds; no 131-task strict run",
+    "TopoGate_constant_gate": "historical V0/V0-T ablation; current V16.1 strict run absent",
+    "IDEC": "native wrapper exposes fit_predict only; no test-safe predict/transform artifact",
+    "EDESC": "native wrapper exposes fit_predict only; historical aggregate-only outputs",
+    "TableDC": "native wrapper exposes fit_predict only; historical aggregate-only outputs",
+    "ZEUS": "wrapper combines preprocessing and KMeans in fit_predict; embedding-only API absent",
+    "scNAME": "protocol-matched native run not verified",
+    "scDeepCluster": "protocol-matched native run not verified",
+    "scCDCG": "protocol-matched native run not verified"
+  },
+  "promotion_rule": "Do not add a model to the matched-budget main table without fixed indices, label-free fit, reproducible predictions, and independently recomputable test metrics.",
+  "last_verified_utc": "2026-09-11"
+}

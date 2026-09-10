@@ -1,0 +1,15 @@
+import fs from "node:fs/promises";
+import { Workbook, SpreadsheetFile } from "@oai/artifact-tool";
+const out = "S:/Creation/写论文/武汉理工/论文们/TopoGate/papers/实验/0911调参以及全模型x数据集汇总/TopoGate传导式调参.xlsx";
+const ids = JSON.parse(await fs.readFile("dataset_ids.json","utf8"));
+const datasets = ids;
+const wb=Workbook.create(); const s=wb.worksheets.add("Results"); const p=wb.worksheets.add("Protocol");
+s.showGridLines=false; p.showGridLines=false;
+s.getRange("A1:AO1").merge(); s.getRange("A1").values=[["ToPoGate 传导式调参结果（64 candidates × 3 seeds）"]];
+s.getRange("A2").values=[["本表按数据集逐行追加；空白指标表示该数据集尚未完成本轮正式传导式调参。"]];
+const models=["ToPoGate_transductive","scMAE","constant_gate","KMeans","PCA_KMeans"]; const headers=["dataset_id","panel","status","evaluation_mode","screen_budget","selection_seeds","final_seeds",...models.flatMap(m=>[`${m}_ARI_mean`,`${m}_ARI_std`,`${m}_NMI_mean`,`${m}_NMI_std`,`${m}_ACC_mean`,`${m}_ACC_std`]),"selected_config_hash","selection_hash","source_path","notes"];
+s.getRange(`A4:AO${4+datasets.length}`).values=[headers,...datasets.map(([id,panel])=>[id,panel,"pending","transductive",64,"42,123,7","42,123,7",...Array(30).fill(null),"","","","未启动本轮正式运行；不填入旧结果"])];
+s.getRange("A4:AO4").format={fill:"#1F4E78",font:{name:"Arial",bold:true,color:"#FFFFFF"},wrapText:true}; s.getRange(`A5:AO${4+datasets.length}`).format={font:{name:"Arial",size:10},verticalAlignment:"center"};
+s.getRange(`H5:AK${4+datasets.length}`).format.numberFormat="0.0000"; s.getRange("A1:AO1").format.font={name:"Arial",size:14,bold:true,color:"#1F1F1F"}; s.getRange("A2:AO2").format.font={name:"Arial",size:10,italic:true,color:"#666666"}; s.getRange(`A4:AO${4+datasets.length}`).format.borders={preset:"inside",style:"thin",color:"#D9E2F3"}; s.freezePanes.freezeRows(4); s.getRange(`A4:AO${4+datasets.length}`).format.autofitColumns();
+const prot=[["field","value"],["protocol_id","topogate_transductive_perdataset_64x3_v1"],["evaluation_mode","transductive"],["screen_candidates",64],["screen_seeds","42,123,7"],["final_seeds","42,123,7"],["epochs",80],["formal_datasets",147],["allowed_physical_gpus","4,5,6,7"],["note","本工作簿为增量结果表；正式运行完成一项后追加一行并保存。旧结果目录只读。"]]; p.getRange(`A1:B${prot.length}`).values=prot; p.getRange("A1:B1").format={fill:"#1F4E78",font:{name:"Arial",bold:true,color:"#FFFFFF"}}; p.getRange(`A1:B${prot.length}`).format.font={name:"Arial",size:10}; p.getRange(`A1:B${prot.length}`).format.autofitColumns(); p.freezePanes.freezeRows(1);
+wb.recalculate(); const preview=await wb.render({sheetName:"Results",range:"A1:AO18",scale:1,format:"png"}); await fs.writeFile(out.replace(/\.xlsx$/,"_preview.png"),new Uint8Array(await preview.arrayBuffer())); const x=await SpreadsheetFile.exportXlsx(wb); await x.save(out);

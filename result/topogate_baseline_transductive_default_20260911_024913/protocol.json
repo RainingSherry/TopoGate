@@ -1,0 +1,25 @@
+{
+  "protocol": "transductive",
+  "seeds": [
+    42,
+    123,
+    7
+  ],
+  "models": [
+    "ToPoGate_strict8",
+    "KMeans",
+    "PCA+KMeans",
+    "scMAE",
+    "IDEC",
+    "EDESC",
+    "TableDC",
+    "ZEUS",
+    "scNAME",
+    "scDeepCluster",
+    "scCDCG"
+  ],
+  "clubench_count": 137,
+  "biology_count": 15,
+  "default_parameters_only": true,
+  "created_at": "2026-09-11T03:15:52"
+}

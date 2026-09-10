@@ -1,0 +1,7 @@
+model,dataset,reason
+KMeans/PCA+KMeans,Blood_BoneMarrow,KeyError('x is not a file in the archive')
+KMeans/PCA+KMeans,Human_Pancreas_1,KeyError('x is not a file in the archive')
+KMeans/PCA+KMeans,Human_Pancreas_3,KeyError('x is not a file in the archive')
+KMeans/PCA+KMeans,Mouse_Pancreas_1,KeyError('x is not a file in the archive')
+KMeans/PCA+KMeans,PRJNA895163,KeyError('x is not a file in the archive')
+KMeans/PCA+KMeans,TabulaSapiens_Pancreas,KeyError('x is not a file in the archive')

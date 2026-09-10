@@ -1,0 +1,22 @@
+{
+  "models": [
+    "ToPoGate_strict8",
+    "KMeans",
+    "PCA+KMeans",
+    "scMAE",
+    "IDEC",
+    "EDESC",
+    "TableDC",
+    "ZEUS",
+    "scNAME",
+    "scDeepCluster",
+    "scCDCG"
+  ],
+  "protocol": "transductive",
+  "seeds": [
+    42,
+    123,
+    7
+  ],
+  "default_parameters_only": true
+}

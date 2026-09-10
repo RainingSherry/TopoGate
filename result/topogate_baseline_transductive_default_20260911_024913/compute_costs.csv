@@ -1,0 +1,12 @@
+model,new_run_count,historical_reuse_count
+ToPoGate_strict8,0,0
+KMeans,393,0
+PCA+KMeans,393,0
+scMAE,0,0
+IDEC,0,0
+EDESC,0,15
+TableDC,0,21
+ZEUS,0,21
+scNAME,0,0
+scDeepCluster,0,0
+scCDCG,0,0

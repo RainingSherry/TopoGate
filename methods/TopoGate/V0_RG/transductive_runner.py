@@ -19,7 +19,8 @@ SEEDS = (42, 123, 7)
 
 def run_transductive(data_path, output_dir, *, config: V0_RGConfig, n_clusters: int,
                      labels_path=None, seed: int, input_kind: str = "general",
-                     feature_limit: int = 2000, device: str = "cpu") -> dict:
+                     feature_limit: int = 2000, device: str = "cpu", score_indices=None,
+                     score_name: str = "validation") -> dict:
     out = Path(output_dir); out.mkdir(parents=True, exist_ok=True)
     loaded = load_matrix(data_path, labels_path=labels_path)
     X = loaded.X
@@ -37,7 +38,9 @@ def run_transductive(data_path, output_dir, *, config: V0_RGConfig, n_clusters: 
               "selection_labels": "validation_only", "test_used_for_selection": False,
               "seed": int(seed), "config": asdict(config), "preprocessing_hash": prep.fingerprint,
               "n_samples": int(X.shape[0]), "n_features": int(X.shape[1]), "status": "completed"}
-    if labels is not None: record["metrics"] = clustering_metrics(labels, pred)
+    if labels is not None:
+        idx = np.arange(len(labels)) if score_indices is None else np.asarray(score_indices, dtype=int)
+        record[f"{score_name}_metrics"] = clustering_metrics(labels[idx], pred[idx])
     np.save(out / f"predictions_seed_{seed}.npy", pred.astype(np.int64)); np.save(out / f"embedding_seed_{seed}.npy", embedding.astype(np.float32))
     (out / f"record_seed_{seed}.json").write_text(json.dumps(record, indent=2, ensure_ascii=False), encoding="utf-8")
     return record

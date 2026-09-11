@@ -23,7 +23,29 @@ def main() -> None:
     p=argparse.ArgumentParser(); p.add_argument('--data-path',required=True); p.add_argument('--out',required=True)
     p.add_argument('--n-clusters',type=int,required=True); p.add_argument('--device',default='cpu'); a=p.parse_args()
     out=Path(a.out); out.mkdir(parents=True,exist_ok=True)
-    selected=json.loads((out/'selected.json').read_text()) if (out/'selected.json').exists() else json.loads((out/'search_summary.json').read_text())
+    selected_path = out / 'selected.json'
+    if selected_path.exists():
+        selected = json.loads(selected_path.read_text())
+    else:
+        search_path = out / 'search_summary.json'
+        search = json.loads(search_path.read_text())
+        winner = search['winner']
+        selected = {
+            'dataset_id': out.name,
+            'protocol_id': search.get('protocol_id', PROTOCOL_ID),
+            'screen_candidates': search.get('screen_candidates'),
+            'selection_seeds': search.get('selection_seeds'),
+            'selection_metric': 'validation_ari_mean',
+            'selection_tiebreakers': ['validation_ari_std', 'config_hash'],
+            'winner': winner,
+            'selection_hash': selection_hash(winner),
+            'provenance': {
+                'source': 'derived_at_final_start_from_existing_search_summary',
+                'search_summary_sha256': hashlib.sha256(search_path.read_bytes()).hexdigest(),
+                'note': 'Derived before final execution; no candidate ranking was recomputed.',
+            },
+        }
+        atomic_json(selected_path, selected)
     winner=selected['winner']; raw=winner['config']
     frozen_selection_hash=selected.get('selection_hash',selection_hash(winner))
     allowed={f.name for f in fields(V0_RGConfig)}; cfg=V0_RGConfig(**{k:v for k,v in raw.items() if k in allowed})

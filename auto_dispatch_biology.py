@@ -65,7 +65,15 @@ def main() -> None:
     log = scheduler / 'biology_dispatch.log'
     rows = biology_rows()
     cursor = 0
+    clubench = [row for row in json.loads((ROOT / 'manifest.json').read_text())['datasets'] if row.get('panel') == 'clubench']
     while True:
+        clubench_searches = sum((ROOT / 'datasets' / row['dataset_id'] / 'search_summary.json').exists() for row in clubench)
+        clubench_finals = sum((ROOT / 'datasets' / row['dataset_id'] / 'final_summary.json').exists() for row in clubench)
+        if clubench_searches < len(clubench) or clubench_finals < len(clubench):
+            with log.open('a', encoding='utf-8') as handle:
+                handle.write(f'gate_wait clubench_search={clubench_searches}/{len(clubench)} clubench_final={clubench_finals}/{len(clubench)}\n')
+            time.sleep(POLL_SECONDS)
+            continue
         for kind in ('search', 'final'):
             for row in rows:
                 output = ROOT / 'datasets' / row['dataset_id']

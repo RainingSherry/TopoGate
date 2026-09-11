@@ -36,22 +36,27 @@ def main() -> None:
         if (path / "search_summary.json").exists():
             completed_search.append(row["dataset_id"])
         else:
-            candidate = path / "candidate_000"
-            if candidate.is_dir():
-                records = list(candidate.glob("record_seed_*.json"))
-                if records:
-                    newest_record = max(record.stat().st_mtime for record in records)
-                    age_gap_seconds = newest_record - candidate.stat().st_mtime
-                    # A normal directory/file write gap is seconds. A large gap
-                    # is evidence that the candidate directory predates its
-                    # current record and therefore may have been overwritten.
-                    if age_gap_seconds > 300:
-                        unfinished_overwrite_evidence.append({
-                            "dataset_id": row["dataset_id"],
-                            "candidate": "candidate_000",
-                            "directory_to_latest_record_seconds": round(age_gap_seconds, 3),
-                            "interpretation": "possible prior attempt overwritten; preserve as audit gap",
-                        })
+            candidate_dirs = sorted(path.glob("candidate_*"))
+            completed_indices = sorted(
+                int(candidate.name.rsplit("_", 1)[1])
+                for candidate in candidate_dirs
+                if len(list(candidate.glob("record_seed_*.json"))) == 3
+            )
+            empty_indices = sorted(
+                int(candidate.name.rsplit("_", 1)[1])
+                for candidate in candidate_dirs
+                if not list(candidate.glob("record_seed_*.json"))
+            )
+            if completed_indices and empty_indices and max(empty_indices) > max(completed_indices):
+                unfinished_overwrite_evidence.append({
+                    "dataset_id": row["dataset_id"],
+                    "completed_candidate_max": max(completed_indices),
+                    "empty_candidate_indices": empty_indices,
+                    "interpretation": (
+                        "high-index empty candidate directories predate the current contiguous "
+                        "record sequence; retry provenance is incomplete and must not be called audited"
+                    ),
+                })
         final_path = path / "final_summary.json"
         if not final_path.exists():
             continue

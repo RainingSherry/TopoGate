@@ -21,7 +21,9 @@ def atomic_json(path: Path, value: object) -> None:
 
 def main() -> None:
     p=argparse.ArgumentParser(); p.add_argument('--data-path',required=True); p.add_argument('--out',required=True)
-    p.add_argument('--n-clusters',type=int,required=True); p.add_argument('--device',default='cpu'); a=p.parse_args()
+    p.add_argument('--n-clusters',type=int,required=True); p.add_argument('--device',default='cpu')
+    p.add_argument('--input-kind', choices=('general', 'raw_count', 'log1p_expression'), default='general')
+    a=p.parse_args()
     out=Path(a.out); out.mkdir(parents=True,exist_ok=True)
     selected_path = out / 'selected.json'
     if selected_path.exists():
@@ -53,13 +55,13 @@ def main() -> None:
     labels=np.asarray(load_matrix(a.data_path).labels).reshape(-1); _,_,test=split_rows(len(labels))
     records=[]
     for seed in SEEDS:
-        rec=run_transductive(a.data_path,out/'final'/f'seed_{seed}',config=cfg,n_clusters=a.n_clusters,seed=seed,device=a.device,score_indices=test,score_name='test')
+        rec=run_transductive(a.data_path,out/'final'/f'seed_{seed}',config=cfg,n_clusters=a.n_clusters,seed=seed,input_kind=a.input_kind,device=a.device,score_indices=test,score_name='test')
         records.append(rec)
     metrics={str(r['seed']):r['test_metrics'] for r in records}
     keys=['ari','nmi','acc','ami','f1_macro','fmi']
     mean={k:float(np.mean([m[k] for m in metrics.values()])) for k in keys if k in next(iter(metrics.values()))}
     std={k:float(np.std([m[k] for m in metrics.values()],ddof=1)) for k in mean}
-    summary={'dataset_id':out.name,'status':'completed_runtime_audit_pending','protocol_id':PROTOCOL_ID,'evaluation_mode':'transductive','screen_candidates':64,'selection_seeds':list(SEEDS),'final_seeds':list(SEEDS),'selection_hash':frozen_selection_hash,'winner_config_hash':winner['config_hash'],'final_records':len(records),'final_test_metrics':metrics,'final_test_mean':mean,'final_test_std':std}
+    summary={'dataset_id':out.name,'status':'completed_runtime_audit_pending','protocol_id':PROTOCOL_ID,'evaluation_mode':'transductive','input_kind':a.input_kind,'screen_candidates':64,'selection_seeds':list(SEEDS),'final_seeds':list(SEEDS),'selection_hash':frozen_selection_hash,'winner_config_hash':winner['config_hash'],'final_records':len(records),'final_test_metrics':metrics,'final_test_mean':mean,'final_test_std':std}
     atomic_json(out/'final_summary.json',summary)
     print(json.dumps({'dataset_id':out.name,'final_records':len(records),'mean':mean},ensure_ascii=False))
 if __name__=='__main__': main()

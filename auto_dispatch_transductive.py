@@ -40,10 +40,11 @@ def launch(kind, row, gpu):
     if kind == 'search':
         cmd = [PYTHON, '-m', 'methods.TopoGate.V0_RG.transductive_search',
                str(row['canonical_path']), str(out), '--n-clusters', str(k),
-               '--input-kind', 'general', '--device', 'cuda:0']
+               '--input-kind', str(row.get('input_kind', 'general')), '--device', 'cuda:0']
     else:
         cmd = [PYTHON, str(FINAL), '--data-path', str(row['canonical_path']),
                '--out', str(out), '--n-clusters', str(k), '--device', 'cuda:0']
+        cmd.extend(['--input-kind', str(row.get('input_kind', 'general'))])
     env = os.environ.copy(); env['CUDA_VISIBLE_DEVICES'] = str(gpu)
     with log.open('a', encoding='utf-8') as fh:
         p = subprocess.Popen(cmd, cwd=REPO, env=env, stdout=fh, stderr=subprocess.STDOUT,

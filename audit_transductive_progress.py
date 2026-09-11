@@ -29,11 +29,29 @@ def main() -> None:
         "preprocessors": 0,
         "cluster_centers": 0,
     }
+    unfinished_overwrite_evidence = []
 
     for row in rows:
         path = datasets / row["dataset_id"]
         if (path / "search_summary.json").exists():
             completed_search.append(row["dataset_id"])
+        else:
+            candidate = path / "candidate_000"
+            if candidate.is_dir():
+                records = list(candidate.glob("record_seed_*.json"))
+                if records:
+                    newest_record = max(record.stat().st_mtime for record in records)
+                    age_gap_seconds = newest_record - candidate.stat().st_mtime
+                    # A normal directory/file write gap is seconds. A large gap
+                    # is evidence that the candidate directory predates its
+                    # current record and therefore may have been overwritten.
+                    if age_gap_seconds > 300:
+                        unfinished_overwrite_evidence.append({
+                            "dataset_id": row["dataset_id"],
+                            "candidate": "candidate_000",
+                            "directory_to_latest_record_seconds": round(age_gap_seconds, 3),
+                            "interpretation": "possible prior attempt overwritten; preserve as audit gap",
+                        })
         final_path = path / "final_summary.json"
         if not final_path.exists():
             continue
@@ -63,6 +81,7 @@ def main() -> None:
         "pending_search": sorted(set(row["dataset_id"] for row in rows) - set(completed_search)),
         "pending_final": sorted(set(completed_search) - set(completed_final)),
         "selection_hash_failures": hash_failures,
+        "unfinished_overwrite_evidence": unfinished_overwrite_evidence,
         "final_artifact_coverage": artifact_coverage,
         "status": "interim_not_formal_completion",
     }

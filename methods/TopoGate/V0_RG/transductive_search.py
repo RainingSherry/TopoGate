@@ -1,6 +1,6 @@
 """Per-dataset 64-candidate/3-seed transductive search driver."""
 from __future__ import annotations
-import argparse, json
+import argparse, hashlib, json
 from dataclasses import replace, asdict
 from pathlib import Path
 import numpy as np
@@ -8,6 +8,17 @@ from .config import V0_RGConfig
 from .input_adapter import load_matrix
 from .tuning import split_rows, initial_candidates, suggest_config, digest
 from .transductive_runner import run_transductive, PROTOCOL_ID, SEEDS
+
+
+def atomic_json(path: Path, value: object) -> None:
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(json.dumps(value, indent=2, ensure_ascii=False), encoding="utf-8")
+    temporary.replace(path)
+
+
+def selection_hash(winner: dict) -> str:
+    encoded = json.dumps(winner, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(encoded.encode("utf-8")).hexdigest()
 
 def run_search(data_path, out, *, n_clusters, input_kind="general", device="cpu", trials=64, search_seed=9102026):
     if trials != 64: raise ValueError("this protocol requires exactly 64 candidates")
@@ -27,7 +38,11 @@ def run_search(data_path, out, *, n_clusters, input_kind="general", device="cpu"
     def objective(trial): return eval_cfg(suggest_config(trial,base),len(records))
     study.optimize(objective,n_trials=trials-len(candidates))
     winner=sorted(records,key=lambda r:(-r["validation_ari_mean"],r["validation_ari_std"],r["config_hash"]))[0]
-    (out/"search_summary.json").write_text(json.dumps({"protocol_id":PROTOCOL_ID,"screen_candidates":len(records),"selection_seeds":list(SEEDS),"validation_only":True,"winner":winner,"candidates":records},indent=2))
+    selected={"dataset_id":out.name,"protocol_id":PROTOCOL_ID,"screen_candidates":len(records),"selection_seeds":list(SEEDS),"selection_metric":"validation_ari_mean","selection_tiebreakers":["validation_ari_std","config_hash"],"winner":winner,"selection_hash":selection_hash(winner),"provenance":{"source":"written_at_search_completion"}}
+    # The scheduler only observes search_summary.json, so publish the frozen
+    # selection first and make both files visible atomically.
+    atomic_json(out/"selected.json",selected)
+    atomic_json(out/"search_summary.json",{"protocol_id":PROTOCOL_ID,"screen_candidates":len(records),"selection_seeds":list(SEEDS),"validation_only":True,"winner":winner,"candidates":records})
     return winner
 
 if __name__=="__main__":

@@ -250,7 +250,7 @@ def fit_predict(
         )
         edge_reliability, edge_weights, edge_summary = compute_edge_reliability(
             graph,
-            mode=config.edge_reliability_mode,
+            mode=config.edge_reliability_mode if config.edge_modulation_enabled else "none",
             gamma_sim=config.gamma_sim,
             gamma_mutual=config.gamma_mutual,
             gamma_snn=config.gamma_snn,
@@ -317,7 +317,10 @@ def fit_predict(
         mask_loss_weight=config.mask_loss_weight,
     ).to(runtime_device)
     optimizer = torch.optim.Adam(model.parameters(), lr=float(config.lr))
-    pseudo_enabled = graph_enabled and float(config.pseudo_weight) > 0.0
+    branch_weight = (float(config.anchor_auxiliary_weight)
+                     if config.auxiliary_input_mode == "anchor"
+                     else float(config.neighbor_auxiliary_weight))
+    pseudo_enabled = graph_enabled and float(config.pseudo_weight) > 0.0 and branch_weight > 0.0
     real_noise_generator = _make_torch_generator(runtime_device, int(seed) + 400_003)
     pseudo_noise_generator = _make_torch_generator(runtime_device, int(seed) + 500_003)
     history: dict[str, Any] = {
@@ -372,19 +375,26 @@ def fit_predict(
                     rng=rng,
                     neighbor_estimator=config.neighbor_estimator,
                     auxiliary_weighting=config.auxiliary_weighting,
+                    mix_strength_mode=config.mix_strength_mode,
+                    fixed_mix_strength=config.fixed_mix_strength,
                 )
-                pseudo_corrupted, pseudo_mask = apply_scmae_noise(
-                    pseudo_batch,
-                    config.mask_ratio,
-                    generator=pseudo_noise_generator,
-                )
+                auxiliary_input = batch if config.auxiliary_input_mode == "anchor" else pseudo_batch
+                if config.auxiliary_mask_mode == "independent":
+                    pseudo_corrupted, pseudo_mask = apply_scmae_noise(
+                        auxiliary_input, config.mask_ratio, generator=pseudo_noise_generator)
+                else:
+                    replacement = auxiliary_input if auxiliary_input.shape[0] <= 1 else auxiliary_input[
+                        torch.randperm(auxiliary_input.shape[0], device=runtime_device,
+                                       generator=pseudo_noise_generator)]
+                    pseudo_corrupted = torch.where(real_mask.bool(), replacement, auxiliary_input)
+                    pseudo_mask = (pseudo_corrupted != auxiliary_input).to(dtype=auxiliary_input.dtype)
                 _, pseudo_loss, pseudo_parts = model.loss_mask_weighted(
                     pseudo_corrupted,
-                    batch,
+                    pseudo_batch if config.mixed_observation_target else batch,
                     pseudo_mask,
                     sample_weight=sample_weight,
                 )
-                loss = loss + float(config.pseudo_weight) * pseudo_loss
+                loss = loss + float(config.pseudo_weight) * branch_weight * pseudo_loss
             optimizer.zero_grad(set_to_none=True)
             if not torch.isfinite(loss):
                 raise ValueError("non-finite training loss")
@@ -413,6 +423,7 @@ def fit_predict(
 
     embedding = _extract_embedding(model, data_np, config.batch_size, runtime_device)
     predictions = None
+    cluster_centers = None
     if n_clusters is not None:
         readout = KMeans(
             n_clusters=int(n_clusters),
@@ -425,6 +436,7 @@ def fit_predict(
             fit_embedding = _extract_embedding(model, fit_data_np, config.batch_size, runtime_device)
             readout.fit(fit_embedding)
             predictions = readout.predict(embedding).astype(np.int64)
+        cluster_centers = np.asarray(readout.cluster_centers_, dtype=np.float32)
     perturbation_proxy = (
         (1.0 - np.sum(graph.probs * graph.similarity, axis=1)).astype(np.float32)
         if graph.probs.size
@@ -475,6 +487,8 @@ def fit_predict(
             }
         )
     diagnostics: dict[str, Any] = {
+        "model_state_dict": {k: v.detach().cpu() for k, v in model.state_dict().items()},
+        "cluster_centers": cluster_centers,
         "neighbor_indices": graph.indices,
         "neighbor_base_probs": graph.probs,
         "neighbor_similarity": graph.similarity,
@@ -504,6 +518,14 @@ def fit_predict(
             "edge_reliability_mode": config.edge_reliability_mode if graph_enabled else "none",
             "neighbor_estimator": config.neighbor_estimator,
             "auxiliary_weighting": config.auxiliary_weighting,
+            "auxiliary_input_mode": config.auxiliary_input_mode,
+            "auxiliary_mask_mode": config.auxiliary_mask_mode,
+            "anchor_auxiliary_weight": float(config.anchor_auxiliary_weight),
+            "neighbor_auxiliary_weight": float(config.neighbor_auxiliary_weight),
+            "mix_strength_mode": config.mix_strength_mode,
+            "fixed_mix_strength": config.fixed_mix_strength,
+            "mixed_observation_target": bool(config.mixed_observation_target),
+            "edge_modulation_enabled": bool(config.edge_modulation_enabled),
             "readout_fit_scope": "fit_X" if fit_X is not None else "X",
             "contrast_enabled": False,
             "K_used_only_in_readout": n_clusters is not None,

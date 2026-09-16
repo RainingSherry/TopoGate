@@ -36,6 +36,14 @@ class V0_RGConfig:
     edge_reliability_mode: str = "sim_mutual_snn_distance"
     neighbor_estimator: str = "current"
     auxiliary_weighting: str = "gate"
+    anchor_auxiliary_weight: float = 0.0
+    neighbor_auxiliary_weight: float = 1.0
+    auxiliary_mask_mode: str = "independent"
+    auxiliary_input_mode: str = "mixed_neighbor"
+    mix_strength_mode: str = "per_sample_gate"
+    fixed_mix_strength: float | None = None
+    mixed_observation_target: bool = False
+    edge_modulation_enabled: bool = True
     gate_min: float = 0.0
     gate_max: float = 0.15
     pseudo_weight: float = 0.3
@@ -62,6 +70,16 @@ class V0_RGConfig:
             raise ValueError("unknown neighbor_estimator")
         if self.auxiliary_weighting not in {"gate", "uniform"}:
             raise ValueError("auxiliary_weighting must be gate or uniform")
+        if self.auxiliary_mask_mode not in {"shared", "independent"}:
+            raise ValueError("auxiliary_mask_mode must be shared or independent")
+        if self.auxiliary_input_mode not in {"anchor", "mixed_neighbor"}:
+            raise ValueError("auxiliary_input_mode must be anchor or mixed_neighbor")
+        if self.mix_strength_mode not in {"per_sample_gate", "fixed_train_mean"}:
+            raise ValueError("unknown mix_strength_mode")
+        if self.fixed_mix_strength is not None and not 0.0 <= float(self.fixed_mix_strength) < 1.0:
+            raise ValueError("fixed_mix_strength must be in [0,1)")
+        if self.anchor_auxiliary_weight < 0 or self.neighbor_auxiliary_weight < 0:
+            raise ValueError("auxiliary branch weights must be non-negative")
         if (self.gate_center is None) != (self.gate_adaptivity is None):
             raise ValueError("gate_center and gate_adaptivity must be supplied together")
         if self.gate_center is not None:

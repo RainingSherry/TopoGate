@@ -78,6 +78,8 @@ def make_pseudo_batch(
     rng: np.random.Generator,
     neighbor_estimator: str = "current",
     auxiliary_weighting: str = "gate",
+    mix_strength_mode: str = "per_sample_gate",
+    fixed_mix_strength: float | None = None,
 ) -> tuple[torch.Tensor, torch.Tensor, dict]:
     """Construct an anchor-target view; defaults preserve the original estimator."""
     import torch
@@ -97,7 +99,15 @@ def make_pseudo_batch(
     )
     gate = np.asarray(node_gate[batch_indices], dtype=np.float32)
     anchor = data_np[batch_indices]
-    mixed = (1.0 - gate[:, None]) * anchor + gate[:, None] * neighbor_mean
+    if mix_strength_mode == "fixed_train_mean":
+        if fixed_mix_strength is None:
+            raise ValueError("fixed_mix_strength is required for fixed_train_mean")
+        mix_gate = np.full_like(gate, float(fixed_mix_strength))
+    elif mix_strength_mode == "per_sample_gate":
+        mix_gate = gate
+    else:
+        raise ValueError("unknown mix_strength_mode")
+    mixed = (1.0 - mix_gate[:, None]) * anchor + mix_gate[:, None] * neighbor_mean
     perturbation = np.linalg.norm(neighbor_mean - anchor, axis=1) / (
         np.linalg.norm(anchor, axis=1) + 1e-6
     )
@@ -116,6 +126,7 @@ def make_pseudo_batch(
         sample_weight = torch.ones_like(sample_weight)
     return x_prime.detach(), sample_weight, {
         "mean_node_gate": float(np.mean(gate)),
+        "mean_mix_strength": float(np.mean(mix_gate)),
         "mean_perturb_norm": float(np.mean(perturbation)),
         "mean_actual_displacement": float(np.mean(actual_displacement)),
         "fraction_zero_gate": float(np.mean(gate <= 0.0)),

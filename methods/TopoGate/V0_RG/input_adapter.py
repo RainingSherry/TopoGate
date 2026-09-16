@@ -4,7 +4,9 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+import h5py
 import numpy as np
+import pandas as pd
 import scipy.sparse as sp
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 
@@ -82,12 +84,175 @@ def load_npz(path: str | Path) -> LoadedNPZ:
     )
 
 
+def _decode_values(values: np.ndarray) -> np.ndarray:
+    """Decode HDF5 categorical/string payloads without loading AnnData metadata."""
+    raw = np.asarray(values).reshape(-1)
+    return np.asarray(
+        [value.decode("utf-8") if isinstance(value, bytes) else str(value) for value in raw],
+        dtype=str,
+    )
 
-def load_matrix(path: str | Path, labels_path: str | Path | None = None) -> LoadedNPZ:
-    """Load NPZ, NPY, CSV, or TSV without assuming scRNA semantics."""
+
+def _h5_csr_matrix(handle: h5py.File, matrix_key: str) -> np.ndarray | sp.csr_matrix:
+    if matrix_key not in handle:
+        raise ValueError(f"HDF5 matrix key is absent: {matrix_key}")
+    node = handle[matrix_key]
+    if isinstance(node, h5py.Dataset):
+        values = np.asarray(node[:])
+        if values.ndim != 2:
+            raise ValueError("HDF5 matrix dataset must be two-dimensional")
+        return values
+    required = {"data", "indices", "indptr"}
+    if not isinstance(node, h5py.Group) or not required.issubset(node.keys()):
+        raise ValueError("HDF5 matrix must be a dense dataset or CSR group")
+    indptr = np.asarray(node["indptr"][:], dtype=np.int64)
+    indices = np.asarray(node["indices"][:], dtype=np.int64)
+    data = np.asarray(node["data"][:])
+    shape = tuple(int(value) for value in np.asarray(node.attrs.get("shape", ())).reshape(-1))
+    if len(shape) != 2:
+        if "var" not in handle or "_index" not in handle["var"]:
+            raise ValueError("CSR H5AD lacks shape metadata and var/_index")
+        shape = (int(indptr.size - 1), int(handle["var"]["_index"].shape[0]))
+    matrix = sp.csr_matrix((data, indices, indptr), shape=shape)
+    if matrix.shape[0] != indptr.size - 1:
+        raise ValueError("invalid HDF5 CSR indptr")
+    return matrix
+
+
+def _h5_labels(handle: h5py.File, label_key: str) -> np.ndarray:
+    if label_key not in handle:
+        raise ValueError(f"HDF5 label key is absent: {label_key}")
+    node = handle[label_key]
+    if isinstance(node, h5py.Dataset):
+        return _decode_values(node[:])
+    if not isinstance(node, h5py.Group) or not {"categories", "codes"}.issubset(node.keys()):
+        raise ValueError("HDF5 labels must be a dataset or categorical categories/codes group")
+    categories = _decode_values(node["categories"][:])
+    codes = np.asarray(node["codes"][:], dtype=np.int64).reshape(-1)
+    if np.any(codes < 0) or np.any(codes >= len(categories)):
+        raise ValueError("HDF5 categorical labels contain missing or invalid codes")
+    return categories[codes]
+
+
+def load_h5_matrix(
+    path: str | Path,
+    *,
+    matrix_key: str = "X",
+    label_key: str | None = None,
+) -> LoadedNPZ:
+    """Read only the HDF5 nodes required by the registered experiment."""
+    source = Path(path)
+    with h5py.File(source, "r") as handle:
+        X = _h5_csr_matrix(handle, matrix_key)
+        labels = _h5_labels(handle, label_key) if label_key else None
+        profile = {
+            "path": str(source.resolve()),
+            "format": "h5ad" if source.suffix.lower() == ".h5ad" else "h5",
+            "matrix_key": matrix_key,
+            "label_key": label_key,
+            "top_level_keys": sorted(handle.keys()),
+            "matrix_storage": "csr" if sp.issparse(X) else "dense",
+            "n_samples_original": int(X.shape[0]),
+            "n_features_original": int(X.shape[1]),
+            "sparse_storage": bool(sp.issparse(X)),
+            "labels_loaded_by_outer_runner": labels is not None,
+            "ignored_h5ad_groups": ["uns"] if source.suffix.lower() == ".h5ad" else [],
+        }
+    if X.ndim != 2 or X.shape[0] == 0 or X.shape[1] == 0:
+        raise ValueError("HDF5 X must be a non-empty two-dimensional matrix")
+    if labels is not None and labels.size != X.shape[0]:
+        raise ValueError("HDF5 label count does not match input rows")
+    return LoadedNPZ(X=X, labels=labels, profile=profile)
+
+
+def load_hrvatin_geo_csv(
+    path: str | Path,
+    labels_path: str | Path,
+    *,
+    label_column: str,
+) -> LoadedNPZ:
+    """Load the canonical gene-by-cell GEO CSV as retained-cell-by-gene expression.
+
+    The explicit ID join and source-column map make the removal of cells with
+    missing maintype labels reproducible without creating a persistent raw copy.
+    """
+    source = Path(path)
+    assignments_path = Path(labels_path)
+    assignments = pd.read_csv(assignments_path, index_col=0, compression="infer")
+    if label_column not in assignments.columns:
+        raise ValueError(f"label column is absent: {label_column}")
+    if assignments.index.has_duplicates:
+        raise ValueError("assignment cell identifiers are not unique")
+    labels_series = assignments[label_column]
+    keep = labels_series.notna() & labels_series.astype(str).str.strip().ne("")
+    retained_ids = labels_series.index[keep].astype(str).to_numpy()
+    if retained_ids.size == 0:
+        raise ValueError("no non-missing labels remain after filtering")
+    header = pd.read_csv(source, nrows=0, compression="infer")
+    if header.shape[1] < 2:
+        raise ValueError("GEO matrix must contain a feature column and cell columns")
+    feature_column = str(header.columns[0])
+    source_cell_ids = header.columns[1:].astype(str).to_numpy()
+    if len(np.unique(source_cell_ids)) != source_cell_ids.size:
+        raise ValueError("GEO matrix cell identifiers are not unique")
+    positions = {value: index for index, value in enumerate(source_cell_ids)}
+    missing = sorted(set(retained_ids) - set(positions))
+    if missing:
+        raise ValueError(f"{len(missing)} retained labels are absent from the GEO matrix")
+    selected = [feature_column, *retained_ids.tolist()]
+    matrix_by_gene = pd.read_csv(
+        source,
+        usecols=selected,
+        index_col=0,
+        dtype={cell_id: np.float32 for cell_id in retained_ids},
+        compression="infer",
+    )
+    matrix_by_gene = matrix_by_gene.loc[:, retained_ids]
+    X = np.ascontiguousarray(matrix_by_gene.to_numpy(dtype=np.float32, copy=True).T)
+    if not np.isfinite(X).all():
+        raise ValueError("GEO matrix contains non-finite values")
+    labels = labels_series.loc[retained_ids].astype(str).to_numpy()
+    profile = {
+        "path": str(source.resolve()),
+        "format": "geo_csv_gzip",
+        "orientation_source": "gene_by_cell",
+        "orientation_loaded": "cell_by_gene",
+        "labels_path": str(assignments_path.resolve()),
+        "label_column": label_column,
+        "n_samples_original": int(source_cell_ids.size),
+        "n_samples_original_with_assignment": int(assignments.shape[0]),
+        "n_samples_retained": int(retained_ids.size),
+        "n_samples_excluded_missing_label": int((~keep).sum()),
+        "n_features_original": int(matrix_by_gene.shape[0]),
+        "source_cell_ids": retained_ids.tolist(),
+        "source_cell_column_indices": [int(positions[value]) for value in retained_ids],
+        "labels_loaded_by_outer_runner": True,
+        "sparse_storage": False,
+        "raw_data_hash_policy": "no_full_sha256",
+    }
+    return LoadedNPZ(X=X, labels=labels, profile=profile)
+
+
+
+def load_matrix(
+    path: str | Path,
+    labels_path: str | Path | None = None,
+    *,
+    matrix_key: str = "X",
+    label_key: str | None = None,
+    label_column: str | None = None,
+    input_adapter: str | None = None,
+) -> LoadedNPZ:
+    """Load a registered matrix without silently inferring biological semantics."""
     source = Path(path)
     suffix = source.suffix.lower()
-    if suffix == ".npz":
+    if input_adapter == "hrvatin_geo_csv":
+        if labels_path is None or not label_column:
+            raise ValueError("hrvatin_geo_csv requires labels_path and label_column")
+        return load_hrvatin_geo_csv(source, labels_path, label_column=label_column)
+    if suffix in {".h5", ".h5ad"}:
+        loaded = load_h5_matrix(source, matrix_key=matrix_key, label_key=label_key)
+    elif suffix == ".npz":
         loaded = load_npz(source)
     elif suffix == ".npy":
         values = np.load(source, allow_pickle=False)
@@ -105,7 +270,7 @@ def load_matrix(path: str | Path, labels_path: str | Path | None = None) -> Load
     else:
         raise ValueError(f"unsupported matrix format: {source}")
     labels = loaded.labels
-    if labels_path is not None:
+    if labels_path is not None and label_key is None:
         labels = np.loadtxt(labels_path, dtype=str, ndmin=1).reshape(-1)
     if labels is not None and len(labels) != loaded.X.shape[0]:
         raise ValueError("label count does not match input rows")

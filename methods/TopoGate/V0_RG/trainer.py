@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import random
-from typing import Any
+from typing import Any, Callable
 
 import numpy as np
 import torch
@@ -197,6 +197,7 @@ def fit_predict(
     evaluation_mask_ratio: float | None = None,
     evaluation_graph_config: V0_RGConfig | None = None,
     precomputed_graph_embeddings: dict[int, np.ndarray] | None = None,
+    checkpoint_callback: Callable[[dict[str, Any]], None] | None = None,
 ) -> tuple[np.ndarray | None, np.ndarray, dict[str, Any]]:
     """Fit V0_RG without labels; optional K is used only by the final KMeans readout.
 
@@ -420,6 +421,26 @@ def fit_predict(
             n_batches += 1
         for key in tracked:
             history[key].append(totals[key] / max(1, n_batches))
+        if checkpoint_callback is not None:
+            checkpoint_callback(
+                {
+                    "epoch": int(_epoch),
+                    "model_state_dict": {key: value.detach().cpu() for key, value in model.state_dict().items()},
+                    "optimizer_state_dict": optimizer.state_dict(),
+                    "local_numpy_rng_state": rng.bit_generator.state,
+                    "loader_generator_state": loader_generator.get_state().cpu(),
+                    "real_noise_generator_state": real_noise_generator.get_state().cpu(),
+                    "pseudo_noise_generator_state": pseudo_noise_generator.get_state().cpu(),
+                    "python_random_state": random.getstate(),
+                    "numpy_random_state": np.random.get_state(),
+                    "torch_rng_state": torch.get_rng_state().cpu(),
+                    "cuda_rng_state": (
+                        torch.cuda.get_rng_state(runtime_device).cpu()
+                        if runtime_device.type == "cuda"
+                        else None
+                    ),
+                }
+            )
 
     embedding = _extract_embedding(model, data_np, config.batch_size, runtime_device)
     predictions = None
@@ -488,6 +509,21 @@ def fit_predict(
         )
     diagnostics: dict[str, Any] = {
         "model_state_dict": {k: v.detach().cpu() for k, v in model.state_dict().items()},
+        "optimizer_state_dict": optimizer.state_dict(),
+        "rng_state": {
+            "local_numpy_rng_state": rng.bit_generator.state,
+            "loader_generator_state": loader_generator.get_state().cpu(),
+            "real_noise_generator_state": real_noise_generator.get_state().cpu(),
+            "pseudo_noise_generator_state": pseudo_noise_generator.get_state().cpu(),
+            "python_random_state": random.getstate(),
+            "numpy_random_state": np.random.get_state(),
+            "torch_rng_state": torch.get_rng_state().cpu(),
+            "cuda_rng_state": (
+                torch.cuda.get_rng_state(runtime_device).cpu()
+                if runtime_device.type == "cuda"
+                else None
+            ),
+        },
         "cluster_centers": cluster_centers,
         "neighbor_indices": graph.indices,
         "neighbor_base_probs": graph.probs,
@@ -535,3 +571,46 @@ def fit_predict(
         },
     }
     return predictions, embedding, diagnostics
+
+
+def predict_from_saved_state(
+    X: np.ndarray,
+    *,
+    config: V0_RGConfig,
+    device: str | torch.device,
+    model_state_dict: dict[str, Any],
+    cluster_centers: np.ndarray,
+) -> tuple[np.ndarray, np.ndarray]:
+    """Encode held-out rows from a saved final model and frozen KMeans centers.
+
+    This deliberately performs no fitting: it is the artifact verification path
+    used by the held-out tuning runner after a final seed has been saved.
+    """
+    data_np = np.ascontiguousarray(np.asarray(X, dtype=np.float32))
+    if data_np.ndim != 2 or data_np.shape[0] == 0 or data_np.shape[1] == 0:
+        raise ValueError("X must be a non-empty two-dimensional matrix")
+    if not np.all(np.isfinite(data_np)):
+        raise ValueError("X contains non-finite values after preprocessing")
+    centers = np.ascontiguousarray(np.asarray(cluster_centers, dtype=np.float32))
+    if centers.ndim != 2 or centers.shape[0] == 0:
+        raise ValueError("cluster_centers must be a non-empty two-dimensional matrix")
+
+    runtime_device = _resolve_device(device)
+    model = WeightedAutoEncoder(
+        num_genes=data_np.shape[1],
+        hidden_size=config.hidden_size,
+        dropout=config.dropout,
+        masked_data_weight=config.masked_data_weight,
+        mask_loss_weight=config.mask_loss_weight,
+    ).to(runtime_device)
+    model.load_state_dict(model_state_dict)
+    embedding = _extract_embedding(model, data_np, config.batch_size, runtime_device)
+    if centers.shape[1] != embedding.shape[1]:
+        raise ValueError("saved cluster center width does not match model embedding")
+    squared_distance = np.sum(
+        (embedding[:, None, :] - centers[None, :, :]) ** 2,
+        axis=2,
+        dtype=np.float64,
+    )
+    predictions = np.argmin(squared_distance, axis=1).astype(np.int64)
+    return predictions, embedding

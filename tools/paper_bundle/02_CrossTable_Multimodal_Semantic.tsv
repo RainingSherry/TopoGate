@@ -1,0 +1,15 @@
+15	ConTextTab: A Semantics-Aware Tabular In-Context Learner	https://proceedings.neurips.cc/paper_files/paper/2025/file/d807e7678ba3afd3a904f4af52819e77-Paper-Conference.pdf
+16	TabSTAR: A Tabular Foundation Model for Tabular Data with Text Fields	https://proceedings.neurips.cc/paper_files/paper/2025/file/faf6e23e198314c7728eaa6ac44ae079-Paper-Conference.pdf
+17	CARTE: Pretraining and Transfer for Tabular Learning	https://raw.githubusercontent.com/mlresearch/v235/main/assets/kim24d/kim24d.pdf
+18	Table Foundation Models: on Knowledge Pre-training for Tabular Learning	https://openreview.net/pdf?id=QV4P8Csw17
+19	MultiModalPFN: Extending Prior-Data Fitted Networks for Multimodal Tabular Learning	https://openaccess.thecvf.com/content/CVPR2026/papers/Kim_MultiModalPFN_Extending_Prior-Data_Fitted_Networks_for_Multimodal_Tabular_Learning_CVPR_2026_paper.pdf
+20	TransTab: Learning Transferable Tabular Transformers Across Tables	https://papers.neurips.cc/paper_files/paper/2022/file/1377f76686d56439a2bd7a91859972f5-Paper-Conference.pdf
+21	Revisiting Multimodal Transformers for Tabular Data with Text Fields	https://aclanthology.org/2024.findings-acl.87.pdf
+22	TIP: Tabular-Image Pre-training for Multimodal Classification with Incomplete Data	https://arxiv.org/pdf/2407.07582.pdf
+23	Unleashing the Power of Image-Tabular Self-Supervised Learning via Breaking Cross-Tabular Barriers	https://ojs.aaai.org/index.php/AAAI/article/download/37408/41370;;https://ojs.aaai.org/index.php/AAAI/article/view/37408
+49	Deep Sets	https://arxiv.org/pdf/1703.06114.pdf
+50	Set Transformer: A Framework for Attention-based Permutation-Invariant Neural Networks	https://proceedings.mlr.press/v97/lee19d/lee19d.pdf
+54	Beyond Statistical Co-occurrence: Unlocking Intrinsic Semantics for Tabular Data Clustering	https://arxiv.org/pdf/2604.10865.pdf
+55	GRACE: LLM-Grounded Semantic Metric Spaces for Scalable Mixed-Data Clustering	https://arxiv.org/pdf/2608.07881.pdf
+56	STAR: Semantic Table Representation with Header-Aware Clustering and Adaptive Weighted Fusion	https://arxiv.org/pdf/2601.15860.pdf
+58	Learning Transferable Visual Models From Natural Language Supervision	https://proceedings.mlr.press/v139/radford21a/radford21a.pdf

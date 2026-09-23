@@ -1,0 +1,79 @@
+{
+  "protocol": "v0rg_four_step_mechanism_v1",
+  "remote_repo": "PATH_TO_V0RG_WORKTREE_AT_3BE1251",
+  "remote_python": "python",
+  "cohort": "./PATH_TO_YOUR_PRIVATE_COHORT.json",
+  "reference_runner": "scripts/run_frozen_v0_rg_raw_corruption.py",
+  "output_root": "../../../../result/v0rg_noise_mechanism_20260923",
+  "datasets": [
+    "Mouse_retina",
+    "dermatology",
+    "har",
+    "micro-mass"
+  ],
+  "variants": [
+    "full",
+    "base_scmae",
+    "no_edge_modulation",
+    "fixed_mix_original_aux",
+    "mixed_observation_reconstruction"
+  ],
+  "model_seeds": [
+    42,
+    123,
+    7
+  ],
+  "noise_seeds": [
+    3001,
+    3002,
+    3003,
+    3004,
+    3005
+  ],
+  "seed_role": "reuse_existing_confirmation_realizations; not a newly unseen holdout",
+  "conditions": [
+    {
+      "corruption": "gaussian",
+      "severity": 0.2
+    },
+    {
+      "corruption": "gaussian",
+      "severity": 0.4
+    },
+    {
+      "corruption": "replacement",
+      "severity": 0.1
+    },
+    {
+      "corruption": "replacement",
+      "severity": 0.2
+    }
+  ],
+  "max_mmd_rows": 512,
+  "max_correlation_features": 128,
+  "diagnostic_seed": 9102026,
+  "clean_replay_atol": 2e-05,
+  "clean_replay_rtol": 2e-05,
+  "direction_multipliers": [
+    0.5,
+    1.0,
+    2.0
+  ],
+  "direction_seed": 9102027,
+  "allowed_gpu_ids": [
+    1,
+    4,
+    5
+  ],
+  "default_device": "cpu",
+  "new_training_allowed": false,
+  "label_policy": "labels only for post-hoc ARI/purity and class summaries; never noise, graph, feature selection, projections, strengths or predictions",
+  "colors": {
+    "full": "#B5465D",
+    "control": "#797A8E",
+    "light_red": "#E29DAB",
+    "light_gray": "#ACBAC1",
+    "background": "#F4F0EA"
+  },
+  "configuration_note": "Copy this file to config.json and set cohort to your local private dataset/checkpoint manifest before running."
+}

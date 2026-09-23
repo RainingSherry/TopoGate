@@ -8,6 +8,7 @@ audit summaries. It does not publish the paper or any paper source bundle.
 
 ## Included
 
+- `experiments/V0_RG/noise_mechanism_20260923/`: frozen-checkpoint V0_RG noise-mechanism analysis scripts and a sanitized configuration template. No dataset binaries, checkpoints, cohort manifests, or derived result arrays are included. The mechanism runner pins the audited V0_RG source commit and records its source hashes.
 - Core TopoGate/scMAE dependencies, versioned source code, configurations,
   tests, and runnable scripts already present in the repository, including
   V18 latent-gate, V19 RG adapter, V20 adversarial mask, V21 assignment-gate,
@@ -59,6 +60,7 @@ audit summaries. It does not publish the paper or any paper source bundle.
 - Model checkpoints, optimizer state, topology memmaps, prediction/embedding
   arrays, caches, and temporary logs.
 - Raw download archives and all dataset binaries.
+- Private cohort manifests, machine-specific path configurations, and experiment outputs from the mechanism study.
 - All paper files, manuscript sources, and literature PDFs.
 
 The excluded artifacts remain on the project data volume. Where retained,

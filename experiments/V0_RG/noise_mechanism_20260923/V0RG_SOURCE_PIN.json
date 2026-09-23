@@ -1,0 +1,20 @@
+{
+  "commit": "3be12512b571207d7b287df4f2a5836bd9354622",
+  "verified_exact_file_hash_match": true,
+  "files_sha256": {
+    "methods/TopoGate/V0_RG/__init__.py": "163b89d82bdc9388f76bec6639c4f8fc5515ee1c0de0a733b8171acd894113f3",
+    "methods/TopoGate/V0_RG/config.py": "0983f6b3ac6f10c66fce54e09da6cb076e024a2a6ce708f628362e5b4bd0a4c2",
+    "methods/TopoGate/V0_RG/graph.py": "d108d58c9c623165782b51bce23af730a589b5c822af33364a1526a5ba641cd9",
+    "methods/TopoGate/V0_RG/input_adapter.py": "b66f6540e4c21c8b1cc29d0c1b51917fdac5a6c1033b929c70a5b26976b365dd",
+    "methods/TopoGate/V0_RG/mixing.py": "995e4fefe9a32daa29bc7bc8daeaf4fa797a8aeda7cbaad4d1823f28eef4b46c",
+    "methods/TopoGate/V0_RG/model.py": "84abc0cb981933ce8dd00feb58effc92ea9c9111c63a7c50bb1675590082b107",
+    "methods/TopoGate/V0_RG/run.py": "1206d461cdb716c3b1c532cd06d48f40457483400d2e5b8cdaee88e5344558e5",
+    "methods/TopoGate/V0_RG/tests/__init__.py": "13c17be95211710f8ee35ef5effae8f0bcc08efebbc529ad08f3a34a7dc16abd",
+    "methods/TopoGate/V0_RG/tests/conftest.py": "1421bf7bbcce478b7adae9d3365a198f22b0ebf86f3831e3205f46bf5064bcdf",
+    "methods/TopoGate/V0_RG/tests/test_unified.py": "c2b20764aac3a87d5ffd6713128dd1f45508a94d003e1bfd5098661ce908e91d",
+    "methods/TopoGate/V0_RG/tests/test_v0_rg_ari_dev.py": "8068abac23fc0a62f345f1c4d20d584ec99354b62b8b2e2d7ba9db2245e93a8f",
+    "methods/TopoGate/V0_RG/tests/test_v0_rg_tuning_v2.py": "86542b6f58aa81ffcce50ded93b4170ba102669a5a082e6a6b14d904f7ba0485",
+    "methods/TopoGate/V0_RG/trainer.py": "cb81c13dbbe60bdb1a4e3d403a4f70e530d321b73b1e068756d110f93a24a224",
+    "methods/TopoGate/V0_RG/tuning.py": "ad2a8b9be454f00c75d635882fc550ba9c1583f3e8867cebb88ccf28ce3ff459"
+  }
+}

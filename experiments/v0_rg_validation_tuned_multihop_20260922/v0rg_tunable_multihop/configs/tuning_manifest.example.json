@@ -1,0 +1,23 @@
+{
+  "description": "Examples only. Replace paths and register every dataset before a formal full-library run.",
+  "datasets": [
+    {
+      "dataset_id": "ISOLET",
+      "path": "/absolute/path/ISOLET.npz",
+      "input_kind": "general",
+      "n_clusters": 26,
+      "panel": "clubench",
+      "source_group": "ISOLET",
+      "representation": "CLUBench-provided"
+    },
+    {
+      "dataset_id": "biology_example",
+      "path": "/absolute/path/biology_example.npz",
+      "input_kind": "raw_count",
+      "n_clusters": 3,
+      "panel": "biology",
+      "source_group": "example-study",
+      "representation": "example_only_replace_with_verified_metadata"
+    }
+  ]
+}

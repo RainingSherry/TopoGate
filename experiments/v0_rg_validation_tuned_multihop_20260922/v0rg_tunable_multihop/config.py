@@ -11,7 +11,7 @@ import yaml
 VARIANTS = frozenset({"scmae_only", "rg_full"})
 INPUT_PROTOCOLS = frozenset({"rg_native", "clubench_bridge", "shared_text"})
 _EXPANDED_PATH_VARIANTS = frozenset(
-    f"H{max_hop}_B{width}" for max_hop in range(2, 6) for width in (1, 2, 4)
+    f"H{max_hop}_B{width}" for max_hop in (2, 3, 4, 5, 6, 8) for width in (1, 2, 4)
 )
 HOP_VARIANTS = frozenset({"H1", "H12", "H123", "Kwide2", "Kwide3"}) | _EXPANDED_PATH_VARIANTS
 
@@ -33,6 +33,8 @@ class V0_RGConfig:
     neighbor_k: int = 10
     mix_neighbors: int = 4
     hop_variant: str = "H1"
+    high_hop_probability_multiplier: float = 1.0
+    mix_amplitude_multiplier: float = 1.0
     knn_pca_dim: int = 50
     tau: float = 0.2
     # Optional center/radius parameterization of the existing bounded gate.
@@ -84,6 +86,12 @@ class V0_RGConfig:
             raise ValueError(f"hop_variant must be one of {sorted(HOP_VARIANTS)}")
         if self.variant != "rg_full" and self.hop_variant != "H1":
             raise ValueError("fixed multihop variants require variant='rg_full'")
+        if self.high_hop_probability_multiplier <= 0.0:
+            raise ValueError("high_hop_probability_multiplier must be positive")
+        if self.mix_amplitude_multiplier <= 0.0:
+            raise ValueError("mix_amplitude_multiplier must be positive")
+        if self.hop_variant == "H1" and self.high_hop_probability_multiplier != 1.0:
+            raise ValueError("H1 has no high-hop probability to rescale")
         positive_ints = {
             "hidden_size": self.hidden_size,
             "epochs": self.epochs,
@@ -125,6 +133,8 @@ class V0_RGConfig:
             raise ValueError("RG reliability and gate coefficients must be non-negative")
         if self.lr <= 0.0 or self.tau <= 0.0 or self.target_sum <= 0.0:
             raise ValueError("lr, tau, and target_sum must be positive")
+        if self.gate_bounds()[1] * float(self.mix_amplitude_multiplier) >= 1.0:
+            raise ValueError("scaled mixing amplitude must remain below one")
 
     def gate_bounds(self) -> tuple[float, float]:
         if self.gate_center is None:

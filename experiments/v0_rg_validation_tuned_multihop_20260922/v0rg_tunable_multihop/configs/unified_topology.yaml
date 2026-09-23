@@ -1,0 +1,11 @@
+protocol_id: topogate_unified_topology_v1
+variant: rg_full
+edge_reliability_mode: sim_mutual_snn_distance
+gate_center: 0.075
+gate_adaptivity: 1.0
+neighbor_k: 10
+mix_neighbors: 4
+neighbor_estimator: current
+auxiliary_weighting: gate
+pseudo_weight: 0.3
+beta_uncertainty: 0.0

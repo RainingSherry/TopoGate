@@ -1,0 +1,11 @@
+protocol_id: topogate_unified_constant_v1
+variant: rg_full
+edge_reliability_mode: none
+gate_center: 0.1
+gate_adaptivity: 0.0
+neighbor_k: 5
+mix_neighbors: 4
+neighbor_estimator: current
+auxiliary_weighting: gate
+pseudo_weight: 0.3
+beta_uncertainty: 0.0

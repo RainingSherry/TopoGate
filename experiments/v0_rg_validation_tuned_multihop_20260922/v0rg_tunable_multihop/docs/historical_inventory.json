@@ -1,0 +1,22 @@
+{
+  "source": "library_cross_all_20260909(1).tsv",
+  "sha256": "582cc56dda2cf559a03883ebd88644d77bf9fe582a93e1caff0ba7eb3a45a1c9",
+  "rows": 4166,
+  "model_identifiers": 82,
+  "dataset_names": 157,
+  "clubench_archive_dataset_names": 131,
+  "additional_names": 26,
+  "protocol_counts": {
+    "ahdpc131_1run": 393,
+    "paper_table2_5seed": 50,
+    "clubench_archive_besthpc": 3144,
+    "paper_table1_5seed": 18,
+    "eswa_protocol_5seed": 72,
+    "v0t_frozen_5seed": 153,
+    "eswa_5seed": 224,
+    "comparison_1run": 75,
+    "extended_1run": 37
+  },
+  "automatic_reusable_runs": 0,
+  "reason": "Aggregated metrics do not include run configuration, data/split fingerprint or code version. This does not prove any underlying run is invalid."
+}

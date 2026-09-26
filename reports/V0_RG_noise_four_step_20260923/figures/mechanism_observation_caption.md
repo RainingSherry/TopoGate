@@ -1,0 +1,3 @@
+# Frozen-model observation
+
+Input and latent displacement are reported in their respective clean-normalized spaces. The full-dimensional displacement is not inferred from a 2-D layout. Red points are equally weighted model-seed means after averaging noise seeds. Error bars are sample SD across model-seed means, not confidence intervals; missing SD is omitted. Within-model noise SD and exact replication counts are in the source CSV. Grey ticks are clean ARI. Noise severities are protocol values, not a claim of equal damage. These selected cases and descriptive associations do not establish mediation.

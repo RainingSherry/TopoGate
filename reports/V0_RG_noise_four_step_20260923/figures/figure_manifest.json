@@ -1,0 +1,128 @@
+{
+  "backend": "Python matplotlib",
+  "generated": [
+    {
+      "figure": "mechanism_observation",
+      "files": [
+        "figures/mechanism_observation.svg",
+        "figures/mechanism_observation.pdf",
+        "figures/mechanism_observation.png"
+      ],
+      "source_rows": 64,
+      "visual_qa": "Inspect PNG at final size; not automatically certified."
+    },
+    {
+      "figure": "input_structure",
+      "files": [
+        "figures/input_structure.svg",
+        "figures/input_structure.pdf",
+        "figures/input_structure.png"
+      ],
+      "source_rows": 48,
+      "visual_qa": "Inspect PNG at final size; not automatically certified."
+    },
+    {
+      "figure": "effective_ablations",
+      "files": [
+        "figures/effective_ablations.svg",
+        "figures/effective_ablations.pdf",
+        "figures/effective_ablations.png"
+      ],
+      "source_rows": 40,
+      "visual_qa": "Inspect PNG at final size; not automatically certified."
+    },
+    {
+      "figure": "effective_ablations_Mouse_retina",
+      "files": [
+        "figures/effective_ablations_Mouse_retina.svg",
+        "figures/effective_ablations_Mouse_retina.pdf",
+        "figures/effective_ablations_Mouse_retina.png"
+      ],
+      "source_rows": 12,
+      "visual_qa": "Inspect PNG at final size; not automatically certified."
+    },
+    {
+      "figure": "effective_ablations_dermatology",
+      "files": [
+        "figures/effective_ablations_dermatology.svg",
+        "figures/effective_ablations_dermatology.pdf",
+        "figures/effective_ablations_dermatology.png"
+      ],
+      "source_rows": 8,
+      "visual_qa": "Inspect PNG at final size; not automatically certified."
+    },
+    {
+      "figure": "effective_ablations_har",
+      "files": [
+        "figures/effective_ablations_har.svg",
+        "figures/effective_ablations_har.pdf",
+        "figures/effective_ablations_har.png"
+      ],
+      "source_rows": 8,
+      "visual_qa": "Inspect PNG at final size; not automatically certified."
+    },
+    {
+      "figure": "effective_ablations_micro-mass",
+      "files": [
+        "figures/effective_ablations_micro-mass.svg",
+        "figures/effective_ablations_micro-mass.pdf",
+        "figures/effective_ablations_micro-mass.png"
+      ],
+      "source_rows": 12,
+      "visual_qa": "Inspect PNG at final size; not automatically certified."
+    },
+    {
+      "figure": "matched_directions",
+      "files": [
+        "figures/matched_directions.svg",
+        "figures/matched_directions.pdf",
+        "figures/matched_directions.png"
+      ],
+      "source_rows": 252,
+      "visual_qa": "Inspect PNG at final size; not automatically certified."
+    },
+    {
+      "figure": "layout_Mouse_retina_m123_n3001",
+      "files": [
+        "figures/layout_Mouse_retina_m123_n3001.svg",
+        "figures/layout_Mouse_retina_m123_n3001.pdf",
+        "figures/layout_Mouse_retina_m123_n3001.png"
+      ],
+      "source_rows": 150,
+      "visual_qa": "Inspect PNG at final size; not automatically certified."
+    },
+    {
+      "figure": "layout_dermatology_m123_n3001",
+      "files": [
+        "figures/layout_dermatology_m123_n3001.svg",
+        "figures/layout_dermatology_m123_n3001.pdf",
+        "figures/layout_dermatology_m123_n3001.png"
+      ],
+      "source_rows": 72,
+      "visual_qa": "Inspect PNG at final size; not automatically certified."
+    },
+    {
+      "figure": "layout_har_m123_n3001",
+      "files": [
+        "figures/layout_har_m123_n3001.svg",
+        "figures/layout_har_m123_n3001.pdf",
+        "figures/layout_har_m123_n3001.png"
+      ],
+      "source_rows": 147,
+      "visual_qa": "Inspect PNG at final size; not automatically certified."
+    },
+    {
+      "figure": "layout_micro-mass_m123_n3001",
+      "files": [
+        "figures/layout_micro-mass_m123_n3001.svg",
+        "figures/layout_micro-mass_m123_n3001.pdf",
+        "figures/layout_micro-mass_m123_n3001.png"
+      ],
+      "source_rows": 72,
+      "visual_qa": "Inspect PNG at final size; not automatically certified."
+    }
+  ],
+  "skipped": [],
+  "smoke_validation_only": false,
+  "contract": "Selected-case exploratory/mechanism diagnostics; no fabricated data or inference of broad robustness."
+}

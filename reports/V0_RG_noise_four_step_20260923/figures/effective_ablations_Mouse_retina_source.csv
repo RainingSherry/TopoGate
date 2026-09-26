@@ -1,0 +1,13 @@
+protocol,stage,dataset,variant,corruption,severity,metric,mean,model_seed_sd,mean_within_model_noise_sd,n_model_seeds,n_noise_min,n_noise_max,model_seeds,equal_noise_seed_coverage
+v0rg_four_step_mechanism_v1,observe,Mouse_retina,base_scmae,gaussian,0.2,delta_full_minus_ablation,-0.00016515597640892238,0.0010983515198112722,0.0030472304823041594,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,Mouse_retina,base_scmae,gaussian,0.4,delta_full_minus_ablation,-3.4885863782381995e-05,0.0008681369793474281,0.0030247929918792538,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,Mouse_retina,base_scmae,replacement,0.1,delta_full_minus_ablation,0.0012197034366481009,0.001152442115068119,0.0030069978473656147,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,Mouse_retina,base_scmae,replacement,0.2,delta_full_minus_ablation,0.0007163847427126945,0.001921924695896138,0.0034496488437437012,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,Mouse_retina,fixed_mix_original_aux,gaussian,0.2,delta_full_minus_ablation,-0.0014984492395185697,0.0020275296585367613,0.0024560618786906856,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,Mouse_retina,fixed_mix_original_aux,gaussian,0.4,delta_full_minus_ablation,-0.0010620071510769602,0.0029665530538564417,0.0031183130583397186,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,Mouse_retina,fixed_mix_original_aux,replacement,0.1,delta_full_minus_ablation,-0.0016462512897811752,0.002830535836123449,0.00275506979847926,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,Mouse_retina,fixed_mix_original_aux,replacement,0.2,delta_full_minus_ablation,-0.0027100987764861807,0.0027247376357945234,0.003588030237134162,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,Mouse_retina,mixed_observation_reconstruction,gaussian,0.2,delta_full_minus_ablation,-0.0001481718238132294,0.0020919792404145783,0.0014728956567242012,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,Mouse_retina,mixed_observation_reconstruction,gaussian,0.4,delta_full_minus_ablation,-0.00029302298019571186,0.0022566388895583706,0.0015696152976173922,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,Mouse_retina,mixed_observation_reconstruction,replacement,0.1,delta_full_minus_ablation,0.0004939599269016807,0.003554672294340311,0.0019811513054267833,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,Mouse_retina,mixed_observation_reconstruction,replacement,0.2,delta_full_minus_ablation,3.7115117714980016e-06,0.005482474635173985,0.0021077263298863295,3,5,5,123;42;7,True

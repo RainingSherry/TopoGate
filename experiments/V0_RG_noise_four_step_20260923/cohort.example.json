@@ -1,0 +1,29 @@
+{
+  "schema": "v0_rg_four_case_public_path_template_v1",
+  "entries": [
+    {
+      "dataset": "Mouse_retina",
+      "data_path": "/ABS/PATH/TO/datasets/Mouse_retina.npz",
+      "input_kind": "general",
+      "checkpoint_root": "/ABS/PATH/TO/checkpoints/Mouse_retina/full/current"
+    },
+    {
+      "dataset": "dermatology",
+      "data_path": "/ABS/PATH/TO/datasets/dermatology.npz",
+      "input_kind": "general",
+      "checkpoint_root": "/ABS/PATH/TO/checkpoints/dermatology/full/current"
+    },
+    {
+      "dataset": "har",
+      "data_path": "/ABS/PATH/TO/datasets/har.npz",
+      "input_kind": "general",
+      "checkpoint_root": "/ABS/PATH/TO/checkpoints/har/full/current"
+    },
+    {
+      "dataset": "micro-mass",
+      "data_path": "/ABS/PATH/TO/datasets/micro-mass.npz",
+      "input_kind": "general",
+      "checkpoint_root": "/ABS/PATH/TO/checkpoints/micro-mass/full/current"
+    }
+  ]
+}

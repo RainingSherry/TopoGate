@@ -1,0 +1,32 @@
+{
+  "actual": {
+    "directions": {
+      "completed_validated": 378
+    },
+    "observe": {
+      "completed_validated": 840
+    }
+  },
+  "checked_utc": "2026-09-23T04:56:28.920352+00:00",
+  "expected": {
+    "directions": 378,
+    "observe": 840
+  },
+  "issues": [],
+  "pairing": {
+    "directions_failed": 0,
+    "directions_passed": 270,
+    "observe_failed": 0,
+    "observe_passed": 600
+  },
+  "sample_issue_limit": 1000,
+  "schema": "four_step_file_audit_v1",
+  "status": "complete",
+  "variant_coverage": {
+    "base_scmae": 12,
+    "fixed_mix_original_aux": 3,
+    "full": 12,
+    "mixed_observation_reconstruction": 12,
+    "no_edge_modulation": 3
+  }
+}

@@ -1,0 +1,3 @@
+# Input damage and neighbourhood structure
+
+Each point is one corruption condition, averaged within model seed then across model seeds. Horizontal position is RMS input displacement normalized by clean RMS scale. Vertical metrics describe the clean-fitted graph diagnostic reported by the probe, not the legacy all-row Euclidean snapshot. Graph replay scope and status remain in probe records. Purity is a post-hoc label-based diagnostic only. Gaussian circles and replacement squares are not claimed to be equally damaging. These are descriptive associations in selected cases; uncertainty and replication counts remain in summary tables.

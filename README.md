@@ -28,6 +28,10 @@ caller to provide input data and an output directory.
   runtime dependencies retained for the included code paths.
 - `reports/`: curated result facts, aggregate tables, and experiment reports;
   it contains no raw model outputs.
+- `experiments/V0_RG_noise_four_step_20260923/` and
+  `reports/V0_RG_noise_four_step_20260923/`: audited frozen-checkpoint noise
+  probes for four selected V0_RG cases, with per-run numeric metrics, paired
+  ablations, figures, and explicit mechanism-claim limits.
 - `result/final_results/`: the largest final result table or summary retained
   for each audited V version. Check its README for coverage and evidence
   boundaries.

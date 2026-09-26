@@ -1,0 +1,9 @@
+protocol,stage,dataset,variant,corruption,severity,metric,mean,model_seed_sd,mean_within_model_noise_sd,n_model_seeds,n_noise_min,n_noise_max,model_seeds,equal_noise_seed_coverage
+v0rg_four_step_mechanism_v1,observe,dermatology,base_scmae,gaussian,0.2,delta_full_minus_ablation,0.0006789335294586844,0.0011759473679845026,0.0015181415240734743,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,dermatology,base_scmae,gaussian,0.4,delta_full_minus_ablation,0.001443839395158745,0.002500803190384464,0.0034265557707223236,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,dermatology,base_scmae,replacement,0.1,delta_full_minus_ablation,0.008231898814394662,0.01425806698929756,0.00901984623715609,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,dermatology,base_scmae,replacement,0.2,delta_full_minus_ablation,0.0008175187114188408,0.00806741946174911,0.01818701280050071,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,dermatology,mixed_observation_reconstruction,gaussian,0.2,delta_full_minus_ablation,0.0,0.0,0.0,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,dermatology,mixed_observation_reconstruction,gaussian,0.4,delta_full_minus_ablation,0.0,0.0,0.0,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,dermatology,mixed_observation_reconstruction,replacement,0.1,delta_full_minus_ablation,0.0,0.0,0.0,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,dermatology,mixed_observation_reconstruction,replacement,0.2,delta_full_minus_ablation,0.0,0.0,0.0,3,5,5,123;42;7,True

@@ -1,0 +1,13 @@
+protocol,stage,dataset,variant,corruption,severity,metric,mean,model_seed_sd,mean_within_model_noise_sd,n_model_seeds,n_noise_min,n_noise_max,model_seeds,equal_noise_seed_coverage
+v0rg_four_step_mechanism_v1,observe,micro-mass,base_scmae,gaussian,0.2,delta_full_minus_ablation,0.0038475720792715998,0.007151778556129449,0.012167109762655701,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,micro-mass,base_scmae,gaussian,0.4,delta_full_minus_ablation,0.004279656171153223,0.010722010260323583,0.02076252092699808,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,micro-mass,base_scmae,replacement,0.1,delta_full_minus_ablation,0.0003910052260290541,0.008914569266623958,0.023634337850743883,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,micro-mass,base_scmae,replacement,0.2,delta_full_minus_ablation,0.009917795146380434,0.0161602028737727,0.02532412516212548,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,micro-mass,mixed_observation_reconstruction,gaussian,0.2,delta_full_minus_ablation,0.012129209522615425,0.020924537547781112,0.003272612793924177,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,micro-mass,mixed_observation_reconstruction,gaussian,0.4,delta_full_minus_ablation,0.011646204687206785,0.015395009034790953,0.007188431116717363,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,micro-mass,mixed_observation_reconstruction,replacement,0.1,delta_full_minus_ablation,0.005905226367848353,0.009029897925015884,0.013655401472775967,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,micro-mass,mixed_observation_reconstruction,replacement,0.2,delta_full_minus_ablation,0.01022501764630476,0.02135818621332097,0.01595361721512263,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,micro-mass,no_edge_modulation,gaussian,0.2,delta_full_minus_ablation,-0.0011094601250865401,0.025713112579129307,0.02218829093290672,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,micro-mass,no_edge_modulation,gaussian,0.4,delta_full_minus_ablation,0.01163956004104151,0.0248360111505612,0.023257258228188155,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,micro-mass,no_edge_modulation,replacement,0.1,delta_full_minus_ablation,0.0006213281888444831,0.009533030307919483,0.026544621667515266,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,micro-mass,no_edge_modulation,replacement,0.2,delta_full_minus_ablation,0.0009243174336434802,0.020746175162782647,0.03688317077096664,3,5,5,123;42;7,True

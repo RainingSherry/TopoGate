@@ -1,0 +1,593 @@
+{
+  "schema": "v0rg_noise_four_step_publication_v1",
+  "study_date": "2026-09-23",
+  "publication_scope": "completed_four_case_frozen_checkpoint_study_only",
+  "base_commit": "9d97dba291641a1d7d16e8c3919fc602ec13cb15",
+  "coverage": {
+    "observe": 840,
+    "directions": 378,
+    "strict_pairs": 870,
+    "audit_issues": 0
+  },
+  "original_unpublished_full_archive": {
+    "sha256": "d8af6b2f8c085b5f530055e1c106d790de5dc52a511285c049c38b06cadee2",
+    "bytes": 668367339,
+    "contents": "per-run embeddings, predictions, metrics, provenance, logs, and figures",
+    "git_policy": "excluded_from_repository"
+  },
+  "original_audited_reference_runner_sha256": "9a5482b7886e18d9095e8e9e25b3a2bfa0616f21d258743e28f09e28785d27e3",
+  "original_audited_config_sha256": "dd198498bc486bb3a8a66d084885dd67c9b9ba209e0c9de691159b5d4b69cc19",
+  "original_numeric_table_sha256": {
+    "metrics.csv": "00327ca5cd466fcf917473bc8dc4f28ee2e928bb9c8c574a4855adb07b2c354f",
+    "paired_ablations.csv": "5e2b5a3f1f5ce89e715b808969d01f5bdd9466babd5efc35731d4a57822eebb9",
+    "paired_seed_summary.csv": "d41d2eccaac5cab16987218524182363529c5fa55977f8db5cf26b3736a9ddcf",
+    "paired_summary.csv": "901a29090ea57e905bd480ff3d5aa9a7827f3424339732e30d5964ce631f2767",
+    "pairing_rejections.csv": "7703741f562b3f2c276fc35a9aba6f2de114df21e80f56ebf257cdb5ea03115c",
+    "seed_summary.csv": "45c0e9ad9211bb46996bb88604a6ac6de5d1fe14cdca79ff26b4772982d0f2af",
+    "summary.csv": "8b4d9623b3c9b90cafa65fe602eb826d34a8fc99284fdaf3b54cb2d2f8216768"
+  },
+  "v0rg_source_snapshot_sha256": {
+    "__init__.py": "163b89d82bdc9388f76bec6639c4f8fc5515ee1c0de0a733b8171acd894113f3",
+    "config.py": "0983f6b3ac6f10c66fce54e09da6cb076e024a2a6ce708f628362e5b4bd0a4c2",
+    "graph.py": "d108d58c9c623165782b51bce23af730a589b5c822af33364a1526a5ba641cd9",
+    "input_adapter.py": "b66f6540e4c21c8b1cc29d0c1b51917fdac5a6c1033b929c70a5b26976b365dd",
+    "mixing.py": "995e4fefe9a32daa29bc7bc8daeaf4fa797a8aeda7cbaad4d1823f28eef4b46c",
+    "model.py": "84abc0cb981933ce8dd00feb58effc92ea9c9111c63a7c50bb1675590082b107",
+    "run.py": "1206d461cdb716c3b1c532cd06d48f40457483400d2e5b8cdaee88e5344558e5",
+    "tests/__init__.py": "13c17be95211710f8ee35ef5effae8f0bcc08efebbc529ad08f3a34a7dc16abd",
+    "tests/conftest.py": "1421bf7bbcce478b7adae9d3365a198f22b0ebf86f3831e3205f46bf5064bcdf",
+    "tests/test_unified.py": "c2b20764aac3a87d5ffd6713128dd1f45508a94d003e1bfd5098661ce908e91d",
+    "tests/test_v0_rg_ari_dev.py": "8068abac23fc0a62f345f1c4d20d584ec99354b62b8b2e2d7ba9db2245e93a8f",
+    "tests/test_v0_rg_tuning_v2.py": "86542b6f58aa81ffcce50ded93b4170ba102669a5a082e6a6b14d904f7ba0485",
+    "trainer.py": "cb81c13dbbe60bdb1a4e3d403a4f70e530d321b73b1e068756d110f93a24a224",
+    "tuning.py": "ad2a8b9be454f00c75d635882fc550ba9c1583f3e8867cebb88ccf28ce3ff459"
+  },
+  "publication_transforms": [
+    "absolute server paths in CSV/JSON changed to run-relative or symbolic paths",
+    "public config/cohort are path templates, not the original byte-identical config",
+    "reference runner uses a relative import path and portable default output root",
+    "no numeric metric was recalculated"
+  ],
+  "published_files": [
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/.gitattributes",
+      "bytes": 35,
+      "sha256": "8ec6519aa485fd5dbf22c65591ac7c98cfcf94d37d83abe74e24ce8e612fe77c"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/README.md",
+      "bytes": 4024,
+      "sha256": "e58a249b12380e8b0b0400f24da8b6e3876576d4b77c8c1de4d5811aed31809a"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/cohort.example.json",
+      "bytes": 934,
+      "sha256": "6740e35c5e9b42b7d8cf421fd128563d82bb3b6efe752867e99907ae7cc986c6"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/config.example.json",
+      "bytes": 1800,
+      "sha256": "4a77c00fc3e6155570e82e1d81aca9112e460eb961dcfe44ddc9270880ae1523"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/scripts/audit_checkpoints.py",
+      "bytes": 15366,
+      "sha256": "fb29cf4c0269df81eb98a706e622978e16fd251c10b16f9f2c24ac49635782b0"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/scripts/audit_full_results.py",
+      "bytes": 7380,
+      "sha256": "5563807da37392eeaa0695c58b37a3cf8f811de980ddfd0ad26460db234760a1"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/scripts/common.py",
+      "bytes": 11468,
+      "sha256": "3feea2513b217f19a583d2d11359635f00b3ad178979618fcf87d0243e14b781"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/scripts/metrics.py",
+      "bytes": 14703,
+      "sha256": "50bd94441a99f79342289009dc6e11ad43742f486b78a6e8bfb168fea7d7f2ea"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/scripts/plot_results.py",
+      "bytes": 29659,
+      "sha256": "9282e624f5501aef4a7b675b6fa00a4886907fea5f174d05fa96800fdd840d49"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/scripts/probe.py",
+      "bytes": 19444,
+      "sha256": "9bb85a3729840e1eaa04f676ffcf22b708dfe41e1b6b20fbb0f76eb3c6cc4a0f"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/scripts/run_frozen_v0_rg_raw_corruption.py",
+      "bytes": 21539,
+      "sha256": "b3213ac5b238487dc6f35d9532f08217af1657cb131f6cb275b9e45d97a71ea4"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/scripts/run_full_four_steps.py",
+      "bytes": 5506,
+      "sha256": "5426dcb31dc2c3857b98b5f04c6376542dc8504d5fc529de68c4e1e77f134c1b"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/scripts/run_stages.py",
+      "bytes": 6179,
+      "sha256": "5ac19b77aece2c9f27cd5e9e1799a71028bd8cea8b649bb46b0d1ed3861c9ac9"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/scripts/summarize.py",
+      "bytes": 15914,
+      "sha256": "97829ef114dc7a4c2b01cb17b486fb1895bcc5ce3923e0fa83d5f9bd2b042b66"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/scripts/test_numerics.py",
+      "bytes": 5840,
+      "sha256": "78779257be72c209192b739d909c1d9d3f98691f871c96b23a120130e3b68d17"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/source_snapshot/methods/TopoGate/V0_RG/__init__.py",
+      "bytes": 385,
+      "sha256": "163b89d82bdc9388f76bec6639c4f8fc5515ee1c0de0a733b8171acd894113f3"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/source_snapshot/methods/TopoGate/V0_RG/config.py",
+      "bytes": 8490,
+      "sha256": "0983f6b3ac6f10c66fce54e09da6cb076e024a2a6ce708f628362e5b4bd0a4c2"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/source_snapshot/methods/TopoGate/V0_RG/graph.py",
+      "bytes": 7802,
+      "sha256": "d108d58c9c623165782b51bce23af730a589b5c822af33364a1526a5ba641cd9"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/source_snapshot/methods/TopoGate/V0_RG/input_adapter.py",
+      "bytes": 13235,
+      "sha256": "b66f6540e4c21c8b1cc29d0c1b51917fdac5a6c1033b929c70a5b26976b365dd"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/source_snapshot/methods/TopoGate/V0_RG/mixing.py",
+      "bytes": 6937,
+      "sha256": "995e4fefe9a32daa29bc7bc8daeaf4fa797a8aeda7cbaad4d1823f28eef4b46c"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/source_snapshot/methods/TopoGate/V0_RG/model.py",
+      "bytes": 3132,
+      "sha256": "84abc0cb981933ce8dd00feb58effc92ea9c9111c63a7c50bb1675590082b107"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/source_snapshot/methods/TopoGate/V0_RG/run.py",
+      "bytes": 15299,
+      "sha256": "1206d461cdb716c3b1c532cd06d48f40457483400d2e5b8cdaee88e5344558e5"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/source_snapshot/methods/TopoGate/V0_RG/tests/__init__.py",
+      "bytes": 38,
+      "sha256": "13c17be95211710f8ee35ef5effae8f0bcc08efebbc529ad08f3a34a7dc16abd"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/source_snapshot/methods/TopoGate/V0_RG/tests/conftest.py",
+      "bytes": 181,
+      "sha256": "1421bf7bbcce478b7adae9d3365a198f22b0ebf86f3831e3205f46bf5064bcdf"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/source_snapshot/methods/TopoGate/V0_RG/tests/test_unified.py",
+      "bytes": 6837,
+      "sha256": "c2b20764aac3a87d5ffd6713128dd1f45508a94d003e1bfd5098661ce908e91d"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/source_snapshot/methods/TopoGate/V0_RG/tests/test_v0_rg_ari_dev.py",
+      "bytes": 2556,
+      "sha256": "8068abac23fc0a62f345f1c4d20d584ec99354b62b8b2e2d7ba9db2245e93a8f"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/source_snapshot/methods/TopoGate/V0_RG/tests/test_v0_rg_tuning_v2.py",
+      "bytes": 4449,
+      "sha256": "86542b6f58aa81ffcce50ded93b4170ba102669a5a082e6a6b14d904f7ba0485"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/source_snapshot/methods/TopoGate/V0_RG/trainer.py",
+      "bytes": 24162,
+      "sha256": "cb81c13dbbe60bdb1a4e3d403a4f70e530d321b73b1e068756d110f93a24a224"
+    },
+    {
+      "path": "experiments/V0_RG_noise_four_step_20260923/source_snapshot/methods/TopoGate/V0_RG/tuning.py",
+      "bytes": 20467,
+      "sha256": "ad2a8b9be454f00c75d635882fc550ba9c1583f3e8867cebb88ccf28ce3ff459"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/.gitattributes",
+      "bytes": 48,
+      "sha256": "8b3d6e320cb5f5763a6cb637f6bac61d379b4547c6dfe283f5efb8a14670be60"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/AUTO_REVIEW.md",
+      "bytes": 3245,
+      "sha256": "1eb5f73c7c42f62cb89335ab23f977c8396835826c59828c19faea7a34d8cf51"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/CODE_CONTRACT.md",
+      "bytes": 3475,
+      "sha256": "66cd08cce9a5ff356f17b403608c1aa85eeb0ff00354cd62116b46c1e0716cfd"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/FIGURE_CONTRACT.md",
+      "bytes": 4262,
+      "sha256": "42fbf4b9edb6c17152637b66af9448dd9587db37f373f99fe5768fa5a43badc4"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/FILE_AUDIT.json",
+      "bytes": 663,
+      "sha256": "cda82344d58111c8722a756eb53de13c58d9158d65d5292080846fff59637937"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/FINAL_REPORT.md",
+      "bytes": 7061,
+      "sha256": "459faf186fd5cd65a5a7ed8d34e480208285f0a175dac2d53c716b7df7c41fd0"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/PLAN.md",
+      "bytes": 13944,
+      "sha256": "98877e1c3af0df86d7777fda0c9ca399d24ee9d1ba7bc4d951350a9826b85235"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/README.md",
+      "bytes": 1683,
+      "sha256": "55e34c7d9bb7cb62928b82c362de70164a4dc6db61555d62b5afa70d220dbf66"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/VALIDATION.md",
+      "bytes": 3467,
+      "sha256": "76e509d21d6ea4789767fb4697d7f81fb7f043c50a9d3cfb4243845b10adee5c"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations.pdf",
+      "bytes": 22092,
+      "sha256": "909aa9312f4a4a4856918eda7b8e49d7cc639f31638a94448dcdd2bfb8d5fa56"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations.png",
+      "bytes": 433236,
+      "sha256": "9cb6ef88f64e992bc4cb345f1ca9cc9765f355284152cc170ecebd804cfb3441"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations.svg",
+      "bytes": 71089,
+      "sha256": "0772ac283614267670461f16cee4405af6eebc77e8a638e3d77cca44590f14a4"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations_Mouse_retina.pdf",
+      "bytes": 14073,
+      "sha256": "13448f38c09821ff1f790bbc295397efa1e20ac19f5bd2d6c8175c21d1c2ae14"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations_Mouse_retina.png",
+      "bytes": 148642,
+      "sha256": "33b8da86e0ceda037d87eba813dd374860ce1e82e37bcc0cd1c0eee8ffef0902"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations_Mouse_retina.svg",
+      "bytes": 23517,
+      "sha256": "f1d09fed94ee2397c9dfd873eee127ce709dd5b8cd17bb536acb08dd5145668c"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations_Mouse_retina_caption.md",
+      "bytes": 517,
+      "sha256": "e9d76dcad8106f2e167a180cca9a80533ee8e057203d971d8361fe86e9ff1699"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations_Mouse_retina_source.csv",
+      "bytes": 2571,
+      "sha256": "e9d845c141bc5b6899f34f3411d51197f0bd1d788c4042576942fafdbad492a7"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations_caption.md",
+      "bytes": 493,
+      "sha256": "5a67e4f76c018a22f633dca7bed87778725a002732bcbc1b966308e9a82727b1"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations_dermatology.pdf",
+      "bytes": 12979,
+      "sha256": "ac6e82d2af1eaab0999e287e8575317b9c7d0b8520af07cf40e09fa226cbe4a8"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations_dermatology.png",
+      "bytes": 108878,
+      "sha256": "75c02d542af228950dd1e946c7665dedf1d374789274def9979a189298ec11a8"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations_dermatology.svg",
+      "bytes": 17641,
+      "sha256": "460fe6f94fd63e5093484e9c87427d7af297bf73e358f4ab8fafecf5bf90eb89"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations_dermatology_caption.md",
+      "bytes": 516,
+      "sha256": "ec43209034d0dc1138ce283fddb0c77b7ee95d9b158cb3c79b773a0b4fd088ce"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations_dermatology_source.csv",
+      "bytes": 1534,
+      "sha256": "e768c7977acd87a4e1be143f7606f2e1a4a31c21a1d9212bede2738e543e1f00"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations_har.pdf",
+      "bytes": 12715,
+      "sha256": "c95e0bee177514b60942be77387d0fc7f90434288b3c36bf2fa2c2c4c1f93e1b"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations_har.png",
+      "bytes": 105754,
+      "sha256": "39aa1cbc68c72207822ae6273716d0562af08460af625a7f24c17f1fc858cfc8"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations_har.svg",
+      "bytes": 18859,
+      "sha256": "19bf94667949d12aef6e0ce330a5c6b77474dc7b7ccfe26e89a458e4db6f9963"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations_har_caption.md",
+      "bytes": 508,
+      "sha256": "3cae6fd70d6d2737b15526e83d476ad1e5c081c168275d190075656a8211d6c7"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations_har_source.csv",
+      "bytes": 1638,
+      "sha256": "fb3ad0e35446cb9a194df82e2284eee7879bfffaadc270ef9fca6885567af0f5"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations_micro-mass.pdf",
+      "bytes": 13874,
+      "sha256": "74c5f3d9d3aa725537188ff4fd27b01eedeb436e0d4f1f65a72fa2bb0209e5aa"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations_micro-mass.png",
+      "bytes": 145671,
+      "sha256": "c00eaf74a70e704ba9191de1a2540190d216b70caa902565d1f2543d6a9a7def"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations_micro-mass.svg",
+      "bytes": 22879,
+      "sha256": "47105d10b26f30d556e33bc3359e172ce25d3e722e6803bbd702eea50cf757fd"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations_micro-mass_caption.md",
+      "bytes": 515,
+      "sha256": "d195c4b79e9526ec8818a2562faeea1cf22ef1e574b696d861155f70e70b5a92"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations_micro-mass_source.csv",
+      "bytes": 2485,
+      "sha256": "837beaa392ff79c90ddea151ac1e6824f9cc08d0ce454db551884cd7ea8b239d"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/effective_ablations_source.csv",
+      "bytes": 7685,
+      "sha256": "f6dd5e00c3ca17f902ba40098c0c2c9ac34ebd2b353b5991bee8e57e2cc3bc32"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/figure_manifest.json",
+      "bytes": 4329,
+      "sha256": "556cb8bd2515ba3f8202a01bcc227030e54183289f06c119a7c7ef0ba85c0c8c"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/input_structure.pdf",
+      "bytes": 20908,
+      "sha256": "ac21abf479fc8d413412863c1546af8da99c4782e979cbd4a680e8531e62c424"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/input_structure.png",
+      "bytes": 207605,
+      "sha256": "cd54fb4a4ecf224dd8b452ec77566b2440aa0ea6a82ec2bb26ddabb9bfcbb294"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/input_structure.svg",
+      "bytes": 69826,
+      "sha256": "25fa9666001cdacb8e12038bc8ec4dc5a2c3f144ea656a6655e5d7780984dc59"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/input_structure_caption.md",
+      "bytes": 640,
+      "sha256": "fc002825bdd00c259617353266887cf0fea12f8dc7f80ae063ce58736cd4adaa"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/input_structure_source.csv",
+      "bytes": 10127,
+      "sha256": "d12f73aa534169179ffc2a4da10ccbc2b563c424e834b51baefa0df728eba7b5"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/layout_Mouse_retina_m123_n3001.pdf",
+      "bytes": 29268,
+      "sha256": "f3a91634ec5cce3ab59831af5a11b423f6a35f6cc37742dbc913840c74569dc3"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/layout_Mouse_retina_m123_n3001.png",
+      "bytes": 101552,
+      "sha256": "57eb814bbeffd491ffb4c058273c996a81615dd69c2a1ce44633709eb0306863"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/layout_Mouse_retina_m123_n3001.svg",
+      "bytes": 97252,
+      "sha256": "b1bcdc6cc61f74e90ac4eeba5f2a34814e8c0c25d482fa3a4f2da2e2c560ade4"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/layout_Mouse_retina_m123_n3001_caption.md",
+      "bytes": 445,
+      "sha256": "75368e88e9147c678242479c8ce4bb58efc9e434a39576c8a5f2e4e88b96fb19"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/layout_Mouse_retina_m123_n3001_source.csv",
+      "bytes": 12582,
+      "sha256": "0eb7e7a43d9627a0837163f934a0ec2446ccd7795ac75ebd6b2998ae11bebc63"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/layout_dermatology_m123_n3001.pdf",
+      "bytes": 20662,
+      "sha256": "11ef0a5017b8c2e056c525dc2ab87dabe2ab29688f667bbc3481a8d49d2b4e07"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/layout_dermatology_m123_n3001.png",
+      "bytes": 123668,
+      "sha256": "23ed5b1cac75ee48e035e9c33bb84c5d393540de7f031e326bba9fa613c0a605"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/layout_dermatology_m123_n3001.svg",
+      "bytes": 51779,
+      "sha256": "0f0c4f6b36099387dac8f0bf1db4c6a2a9b29f14d56e8ee77c64a25ebdd150c7"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/layout_dermatology_m123_n3001_caption.md",
+      "bytes": 445,
+      "sha256": "75368e88e9147c678242479c8ce4bb58efc9e434a39576c8a5f2e4e88b96fb19"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/layout_dermatology_m123_n3001_source.csv",
+      "bytes": 5870,
+      "sha256": "9752a55c6009b903198e80288bb1be82372d4be0a0c2aa485878c2cf3b6d0cf7"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/layout_har_m123_n3001.pdf",
+      "bytes": 28722,
+      "sha256": "46f31d6dec73e20cdf36eab1a996619f807f34270feeae7759ff25ed0823ad2e"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/layout_har_m123_n3001.png",
+      "bytes": 133808,
+      "sha256": "d0066d9208670dfa9603fab06d32736e0f8ed472be14a21a7f56f59e70a59e25"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/layout_har_m123_n3001.svg",
+      "bytes": 93679,
+      "sha256": "03442148744b45cbfd4cecb6691e6d148453e73d8d75ab78a5b78cbab480b0e7"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/layout_har_m123_n3001_caption.md",
+      "bytes": 445,
+      "sha256": "75368e88e9147c678242479c8ce4bb58efc9e434a39576c8a5f2e4e88b96fb19"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/layout_har_m123_n3001_source.csv",
+      "bytes": 11936,
+      "sha256": "dea8e5ea3c209857160390f0f2280ea36305ab6fb5d95c956ec46f7cf064da64"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/layout_micro-mass_m123_n3001.pdf",
+      "bytes": 20351,
+      "sha256": "6a323cb0e2d16b5969e0ae99e2583eab38fb35498dc6ca2b927c395db2d035cc"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/layout_micro-mass_m123_n3001.png",
+      "bytes": 125788,
+      "sha256": "4f9aca26cd8dccad28eceefc9e19bf1cbcd886c43d5c13a5e48a72087aa90540"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/layout_micro-mass_m123_n3001.svg",
+      "bytes": 52100,
+      "sha256": "75fd49b0c5c6a95fe996009357b52ad1cd8720ace72fddb7e7dc48bc8b0b1406"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/layout_micro-mass_m123_n3001_caption.md",
+      "bytes": 445,
+      "sha256": "75368e88e9147c678242479c8ce4bb58efc9e434a39576c8a5f2e4e88b96fb19"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/layout_micro-mass_m123_n3001_source.csv",
+      "bytes": 5948,
+      "sha256": "3304a574f4618d54d022dd0cc4bb5532f4905d28265368824f79eb4bc71f7513"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/matched_directions.pdf",
+      "bytes": 49243,
+      "sha256": "b3fb0b3653c19c696b9fa1be9dc38a84d59cae05b468625cd96942d106f54835"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/matched_directions.png",
+      "bytes": 335186,
+      "sha256": "0dd4e109a690327fc5dba5a60f6f1c21b15e658a64267dd833eb98bb0eaa2138"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/matched_directions.svg",
+      "bytes": 283677,
+      "sha256": "65ae296c69aa6ca8055bd8728bec1530b6892c0b5c7ba3751e6cd6e486eefed6"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/matched_directions_caption.md",
+      "bytes": 899,
+      "sha256": "a976c031067cfe416f6c99ff7f5f1fdfcf7d86f02bc32673f3c946be05e3a321"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/matched_directions_source.csv",
+      "bytes": 47067,
+      "sha256": "ccb40423cb2de898966ddb0ffbc9b9658bdbcb864e7c445bfd7cabd482df76cd"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/mechanism_observation.pdf",
+      "bytes": 34910,
+      "sha256": "34bed819d9275c52ecc394f3902543fc4daea0459588f8022f057d25baa09887"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/mechanism_observation.png",
+      "bytes": 251323,
+      "sha256": "c0b10e52debf9123c3c0452b2cba7af7742f71ea8fc8374a9fd481ae27c453e1"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/mechanism_observation.svg",
+      "bytes": 117043,
+      "sha256": "4ff7a916a5bba3cad0db9a53fbb947f349456ba2d42ee85d2f91fc3a33420f38"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/mechanism_observation_caption.md",
+      "bytes": 607,
+      "sha256": "d11c7e8b74ea300c218591c59492fb13d2280d50bee0a580439b3442cec10463"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/figures/mechanism_observation_source.csv",
+      "bytes": 10868,
+      "sha256": "c7090927d2d804aae6e27ff95a876f18f3dd4be3d0211368bac28ac62b030b96"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/inventories/checkpoints.json",
+      "bytes": 571421,
+      "sha256": "b5c73fef6e89e2fd9f9e00e213d6d3ebd7837c4402777d49b8cb85d1bac47da8"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/tables/metrics.csv",
+      "bytes": 20019693,
+      "sha256": "0445ef08c710da08100a2f7541767fa7cd22f6222734ebc32dadbd73bff4b5e3"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/tables/paired_ablations.csv",
+      "bytes": 551472,
+      "sha256": "0f63958c64e74dda4b66dabc5597cfeca9126ff7dd3ad31cf03270f482295398"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/tables/paired_seed_summary.csv",
+      "bytes": 59012,
+      "sha256": "d41d2eccaac5cab16987218524182363529c5fa55977f8db5cf26b3736a9ddcf"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/tables/paired_summary.csv",
+      "bytes": 22353,
+      "sha256": "901a29090ea57e905bd480ff3d5aa9a7827f3424339732e30d5964ce631f2767"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/tables/pairing_rejections.csv",
+      "bytes": 8,
+      "sha256": "7703741f562b3f2c276fc35a9aba6f2de114df21e80f56ebf257cdb5ea03115c"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/tables/seed_summary.csv",
+      "bytes": 6742207,
+      "sha256": "45c0e9ad9211bb46996bb88604a6ac6de5d1fe14cdca79ff26b4772982d0f2af"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/tables/summary.csv",
+      "bytes": 2456056,
+      "sha256": "8b4d9623b3c9b90cafa65fe602eb826d34a8fc99284fdaf3b54cb2d2f8216768"
+    },
+    {
+      "path": "reports/V0_RG_noise_four_step_20260923/tables/summary_manifest.json",
+      "bytes": 118729,
+      "sha256": "0d7c214d24a2f64167c0d660da09ee9b5f052dd7df2a3e1fa4b9b1233e671c2f"
+    }
+  ]
+}

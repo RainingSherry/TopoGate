@@ -1,0 +1,9 @@
+protocol,stage,dataset,variant,corruption,severity,metric,mean,model_seed_sd,mean_within_model_noise_sd,n_model_seeds,n_noise_min,n_noise_max,model_seeds,equal_noise_seed_coverage
+v0rg_four_step_mechanism_v1,observe,har,base_scmae,gaussian,0.2,delta_full_minus_ablation,0.0006565982030754128,0.004129399485493165,0.009142901516072287,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,har,base_scmae,gaussian,0.4,delta_full_minus_ablation,0.002182516521077223,0.002904745775831825,0.012996121194037388,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,har,base_scmae,replacement,0.1,delta_full_minus_ablation,-0.007216164864054649,0.015297112261964221,0.006477164071613372,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,har,base_scmae,replacement,0.2,delta_full_minus_ablation,-0.00023157732742148409,0.017813718785770222,0.01932309023097469,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,har,mixed_observation_reconstruction,gaussian,0.2,delta_full_minus_ablation,0.0,0.0,0.0,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,har,mixed_observation_reconstruction,gaussian,0.4,delta_full_minus_ablation,-0.0007611062633563185,0.0012491374654699848,0.0017018853429655854,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,har,mixed_observation_reconstruction,replacement,0.1,delta_full_minus_ablation,-0.0014071601889197093,0.0024372729415971565,0.002870882449019167,3,5,5,123;42;7,True
+v0rg_four_step_mechanism_v1,observe,har,mixed_observation_reconstruction,replacement,0.2,delta_full_minus_ablation,-5.5107032942010765e-05,9.544818090993446e-05,6.377983107467601e-05,3,5,5,123;42;7,True

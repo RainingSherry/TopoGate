@@ -1,0 +1,8 @@
+{
+  "status": "completed",
+  "posthoc_full_x_labels_loaded": true,
+  "labels_used_for_graph_or_sources": false,
+  "source_selection": "precommitted_feature_only_anchors",
+  "gene_and_donor_identity": "unavailable_unverified",
+  "errors": []
+}

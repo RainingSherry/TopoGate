@@ -91,3 +91,7 @@ python scripts/V17/run_reference.py --help
 
 Data-dependent runs require a real input file supplied by the caller; no sample
 dataset is committed here.
+
+## Multihop V0_RG studies
+
+The deeper-hop implementation snapshots and compact completed results are in [the multihop research snapshot](reports/multihop_20260926/README.md). The source-coverage/scHNTL comparison in that snapshot is explicitly interim.

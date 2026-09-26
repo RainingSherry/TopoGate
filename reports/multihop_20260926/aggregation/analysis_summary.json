@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "failures": [],
+  "posthoc_full_x_labels_loaded": true,
+  "labels_used_for_model_fit": false,
+  "independent_training_seeds": 3,
+  "readout_repeats_per_seed": 20,
+  "scope": "selected_case_descriptive_analysis_not_new_model_selection"
+}

@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "lock_sha256": "b575f5d50cf8c37e836c2f7d6ce877b21ca46671910f6aa859bf5bffbe535a33",
+  "nature": "retrospective descriptive; full/test values were not used for selection and historical full/test results were already exposed to prior research decisions",
+  "budget_note": "subsampling of historically adaptive configs; exploratory, not a randomized equal-budget experiment",
+  "shared_policy_lodo_status": "unavailable",
+  "output_sha256": {
+    "retrospective_selected.csv": "ad30334a635ac7daad197faff2f35bbac608b88a9041fadaef967aac00a8f3e5",
+    "retrospective_paired.csv": "6078fb2512908f56d00f520cae3f7500344125f722c6bc0a092bd5f8854a0b8d",
+    "retrospective_all_configs.csv": "75a02eb86103b84671e06182a5bea827b741a87b28327876dd5bbdc058a7d250",
+    "search_budget_sensitivity.csv": "dacb7d983961df5cd8f02657ca4be85ff80d562e117b723bf5c3985d4586fc11",
+    "search_budget_curve.csv": "368059a85b43cb52c00ebc5db1dbff3b8e56cf7d27f2f4f9f7f1af3197374177",
+    "shared_policy_coverage.csv": "6d2642df5f852833744435d09f12922eb94e429a43204a03ee8c5be4c3675ccc",
+    "shared_policy_lodo.json": "27a064439ae4c795b399a431d6d53bc6d871ee04ea58a9b1d7bf944061a91def"
+  }
+}

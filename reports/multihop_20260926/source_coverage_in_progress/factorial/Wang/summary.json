@@ -1,0 +1,86 @@
+{
+  "status": "completed",
+  "dataset": "Wang",
+  "mode": "factorial",
+  "n_records": 10,
+  "expected": 10,
+  "effects": {
+    "multihop_minus_H1": {
+      "mean": -0.0006421602818031946,
+      "sd_training_seeds": 0.001340168997388696,
+      "positive": 1,
+      "n_training_seeds": 5,
+      "per_seed": [
+        -0.0004626025948551993,
+        -2.169839747845348e-05,
+        -0.0026992445119763397,
+        0.0009205284973518024,
+        -0.000947784402057783
+      ]
+    }
+  },
+  "alignment": {
+    "source": "<PROJECT_ROOT>/datasets/eswa_prepared_v1/Wang.npz",
+    "source_sha256": "69f65504e3734f0592fe7d100dd96d9f1abe9533a5bb6b4273f8c14df2d4fc92",
+    "feature_sha256": "16059a4050abf7ebb3c5bea39c1d41ff7de5846bacc2d049983c9f3963097d51",
+    "matrix_row_alignment_verified": true
+  },
+  "labels_used_for_model_fit": false,
+  "posthoc_full_x_labels_loaded": true,
+  "selection_performed": false,
+  "source_coverage": [
+    {
+      "seed": 1019,
+      "arm": "flat_anchor",
+      "mode": "actual_full_training_trace",
+      "same_mass": 0.9896587917849932,
+      "far_mass": 0.7471700837037691,
+      "new_community_mass": 0.025605434574514602,
+      "same_new_community_mass": 0.024978371331189134
+    },
+    {
+      "seed": 2027,
+      "arm": "flat_anchor",
+      "mode": "actual_full_training_trace",
+      "same_mass": 0.9899283824085119,
+      "far_mass": 0.7472329160811664,
+      "new_community_mass": 0.0263083176216893,
+      "same_new_community_mass": 0.025737322816993993
+    },
+    {
+      "seed": 3037,
+      "arm": "flat_anchor",
+      "mode": "actual_full_training_trace",
+      "same_mass": 0.9901596917520297,
+      "far_mass": 0.7476497772054516,
+      "new_community_mass": 0.0256307531536396,
+      "same_new_community_mass": 0.02521865443048946
+    },
+    {
+      "seed": 4051,
+      "arm": "flat_anchor",
+      "mode": "actual_full_training_trace",
+      "same_mass": 0.9899977679378588,
+      "far_mass": 0.7471884202237288,
+      "new_community_mass": 0.025091282448132923,
+      "same_new_community_mass": 0.024644752743592752
+    },
+    {
+      "seed": 5059,
+      "arm": "flat_anchor",
+      "mode": "actual_full_training_trace",
+      "same_mass": 0.9903287667956358,
+      "far_mass": 0.7468996719235185,
+      "new_community_mass": 0.025831673907460176,
+      "same_new_community_mass": 0.02526232729834379
+    }
+  ],
+  "community_policy": "Louvain resolution1 seed20260925 fixed reference graph per dataset",
+  "readout_policy": "20 states10..29 n_init20; mean primary; minimum inertia secondary",
+  "limitations": [
+    "new seeds are optimization replicates, not new datasets",
+    "source coverage correlations are posthoc associations",
+    "historical source draws are MC candidate probabilities, not true training mixture mass",
+    "donor and gene-program semantics require separate aligned metadata analysis"
+  ]
+}

@@ -1,0 +1,464 @@
+{
+  "protocol": "validation_only_19_dataset_multihop_tuning_v1",
+  "test_labels_loaded": false,
+  "datasets_planned": 19,
+  "datasets_summarized": 19,
+  "rows": [
+    {
+      "dataset": "Baron",
+      "best_config_id": "H8_B1_q2_a1",
+      "hop_variant": "H8_B1",
+      "high_hop_probability_multiplier": 2.0,
+      "mix_amplitude_multiplier": 1.0,
+      "validation_ari_mean": 0.9171115164909689,
+      "validation_ari_std": 0.00990579612276417,
+      "best_tuned_h1_config_id": "H1_q1_a0p75",
+      "tuned_h1_validation_ari_mean": 0.8353643079380402,
+      "paired_delta_mean": 0.08174720855292868,
+      "positive_seed_count": 2,
+      "seed_deltas": {
+        "42": 0.12232912072099156,
+        "123": 0.12896544285228062,
+        "7": -0.006052937914486134
+      },
+      "complete_config_count": 44,
+      "checkpoint_paths": {
+        "42": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/Baron/H8_B1_q2_a1/seed_42/attempt_002/model_seed_42.pt",
+        "123": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/Baron/H8_B1_q2_a1/seed_123/attempt_001/model_seed_123.pt",
+        "7": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/Baron/H8_B1_q2_a1/seed_7/attempt_002/model_seed_7.pt"
+      }
+    },
+    {
+      "dataset": "student_grade",
+      "best_config_id": "H4_B1_q1_a1p5",
+      "hop_variant": "H4_B1",
+      "high_hop_probability_multiplier": 1.0,
+      "mix_amplitude_multiplier": 1.5,
+      "validation_ari_mean": 0.43945884955909015,
+      "validation_ari_std": 0.0013270801994608088,
+      "best_tuned_h1_config_id": "H1_q1_a0p75",
+      "tuned_h1_validation_ari_mean": 0.3872429812833528,
+      "paired_delta_mean": 0.05221586827573732,
+      "positive_seed_count": 2,
+      "seed_deltas": {
+        "42": 0.09529015025069326,
+        "123": -0.0344748644451886,
+        "7": 0.0958323190217073
+      },
+      "complete_config_count": 45,
+      "checkpoint_paths": {
+        "42": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/student_grade/H4_B1_q1_a1p5/seed_42/attempt_001/model_seed_42.pt",
+        "123": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/student_grade/H4_B1_q1_a1p5/seed_123/attempt_001/model_seed_123.pt",
+        "7": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/student_grade/H4_B1_q1_a1p5/seed_7/attempt_001/model_seed_7.pt"
+      }
+    },
+    {
+      "dataset": "cnae9",
+      "best_config_id": "H2_B1_q1_a1",
+      "hop_variant": "H2_B1",
+      "high_hop_probability_multiplier": 1.0,
+      "mix_amplitude_multiplier": 1.0,
+      "validation_ari_mean": 0.6698265618906138,
+      "validation_ari_std": 0.011854566996493959,
+      "best_tuned_h1_config_id": "H1_q1_a1",
+      "tuned_h1_validation_ari_mean": 0.629920471885477,
+      "paired_delta_mean": 0.039906090005136896,
+      "positive_seed_count": 3,
+      "seed_deltas": {
+        "42": 0.01710885945901297,
+        "123": 0.09590018175954618,
+        "7": 0.006709228796851541
+      },
+      "complete_config_count": 44,
+      "checkpoint_paths": {
+        "42": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/pilot_runs/cnae9_equivalence/H2_B1/seed_42/model_seed_42.pt",
+        "123": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/pilot_queue/runs/cnae9/H2_B1/seed_123/attempt_001/model_seed_123.pt",
+        "7": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/pilot_queue/runs/cnae9/H2_B1/seed_7/attempt_001/model_seed_7.pt"
+      }
+    },
+    {
+      "dataset": "hepatitis",
+      "best_config_id": "H2_B1_q1_a1",
+      "hop_variant": "H2_B1",
+      "high_hop_probability_multiplier": 1.0,
+      "mix_amplitude_multiplier": 1.0,
+      "validation_ari_mean": 0.16904761904761906,
+      "validation_ari_std": 0.04377327693059581,
+      "best_tuned_h1_config_id": "H1_q1_a1",
+      "tuned_h1_validation_ari_mean": 0.1380952380952381,
+      "paired_delta_mean": 0.030952380952380957,
+      "positive_seed_count": 1,
+      "seed_deltas": {
+        "42": 0.0,
+        "123": 0.09285714285714287,
+        "7": 0.0
+      },
+      "complete_config_count": 44,
+      "checkpoint_paths": {
+        "42": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/pilot_queue/runs/hepatitis/H2_B1/seed_42/attempt_001/model_seed_42.pt",
+        "123": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/pilot_queue/runs/hepatitis/H2_B1/seed_123/attempt_001/model_seed_123.pt",
+        "7": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/pilot_queue/runs/hepatitis/H2_B1/seed_7/attempt_001/model_seed_7.pt"
+      }
+    },
+    {
+      "dataset": "micro-mass",
+      "best_config_id": "H3_B4_q1_a1",
+      "hop_variant": "H3_B4",
+      "high_hop_probability_multiplier": 1.0,
+      "mix_amplitude_multiplier": 1.0,
+      "validation_ari_mean": 0.6500921212626594,
+      "validation_ari_std": 0.054248340311253945,
+      "best_tuned_h1_config_id": "H1_q1_a0p5",
+      "tuned_h1_validation_ari_mean": 0.6250520219352768,
+      "paired_delta_mean": 0.02504009932738264,
+      "positive_seed_count": 2,
+      "seed_deltas": {
+        "42": -0.005023075657579756,
+        "123": 0.06910771807946359,
+        "7": 0.01103565556026409
+      },
+      "complete_config_count": 45,
+      "checkpoint_paths": {
+        "42": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/pilot_queue/runs/micro-mass/H3_B4/seed_42/attempt_001/model_seed_42.pt",
+        "123": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/pilot_queue/runs/micro-mass/H3_B4/seed_123/attempt_001/model_seed_123.pt",
+        "7": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/pilot_queue/runs/micro-mass/H3_B4/seed_7/attempt_001/model_seed_7.pt"
+      }
+    },
+    {
+      "dataset": "breast_cancer_wisconsin_original",
+      "best_config_id": "H6_B1_q1_a1",
+      "hop_variant": "H6_B1",
+      "high_hop_probability_multiplier": 1.0,
+      "mix_amplitude_multiplier": 1.0,
+      "validation_ari_mean": 0.97057889751305,
+      "validation_ari_std": 0.0,
+      "best_tuned_h1_config_id": "H1_q1_a1",
+      "tuned_h1_validation_ari_mean": 0.9512825683468388,
+      "paired_delta_mean": 0.019296329166211306,
+      "positive_seed_count": 2,
+      "seed_deltas": {
+        "42": 0.0,
+        "123": 0.028944493749316957,
+        "7": 0.028944493749316957
+      },
+      "complete_config_count": 44,
+      "checkpoint_paths": {
+        "42": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_a/runs/breast_cancer_wisconsin_original/H6_B1_q1_a1/seed_42/attempt_001/model_seed_42.pt",
+        "123": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_a/runs/breast_cancer_wisconsin_original/H6_B1_q1_a1/seed_123/attempt_001/model_seed_123.pt",
+        "7": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_a/runs/breast_cancer_wisconsin_original/H6_B1_q1_a1/seed_7/attempt_001/model_seed_7.pt"
+      }
+    },
+    {
+      "dataset": "worm_neuron_cell",
+      "best_config_id": "H2_B4_q1_a0p75",
+      "hop_variant": "H2_B4",
+      "high_hop_probability_multiplier": 1.0,
+      "mix_amplitude_multiplier": 0.75,
+      "validation_ari_mean": 0.6634294449433555,
+      "validation_ari_std": 0.009436521550909217,
+      "best_tuned_h1_config_id": "H1_q1_a0p75",
+      "tuned_h1_validation_ari_mean": 0.6457663258991794,
+      "paired_delta_mean": 0.017663119044176168,
+      "positive_seed_count": 2,
+      "seed_deltas": {
+        "42": 0.015841144567057208,
+        "123": 0.04468412796868537,
+        "7": -0.007535915403214077
+      },
+      "complete_config_count": 45,
+      "checkpoint_paths": {
+        "42": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/worm_neuron_cell/H2_B4_q1_a0p75/seed_42/attempt_001/model_seed_42.pt",
+        "123": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/worm_neuron_cell/H2_B4_q1_a0p75/seed_123/attempt_001/model_seed_123.pt",
+        "7": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/worm_neuron_cell/H2_B4_q1_a0p75/seed_7/attempt_001/model_seed_7.pt"
+      }
+    },
+    {
+      "dataset": "heart_attack_analysis_prediction_dataset",
+      "best_config_id": "H2_B4_q2_a1",
+      "hop_variant": "H2_B4",
+      "high_hop_probability_multiplier": 2.0,
+      "mix_amplitude_multiplier": 1.0,
+      "validation_ari_mean": 0.5542563368937649,
+      "validation_ari_std": 0.04632005596865163,
+      "best_tuned_h1_config_id": "H1_q1_a1",
+      "tuned_h1_validation_ari_mean": 0.5374846963900564,
+      "paired_delta_mean": 0.016771640503708458,
+      "positive_seed_count": 1,
+      "seed_deltas": {
+        "42": 0.0,
+        "123": 0.05031492151112538,
+        "7": 0.0
+      },
+      "complete_config_count": 44,
+      "checkpoint_paths": {
+        "42": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/heart_attack_analysis_prediction_dataset/H2_B4_q2_a1/seed_42/attempt_001/model_seed_42.pt",
+        "123": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/heart_attack_analysis_prediction_dataset/H2_B4_q2_a1/seed_123/attempt_001/model_seed_123.pt",
+        "7": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/heart_attack_analysis_prediction_dataset/H2_B4_q2_a1/seed_7/attempt_001/model_seed_7.pt"
+      }
+    },
+    {
+      "dataset": "turkish_music_emotion",
+      "best_config_id": "H5_B2_q2_a1",
+      "hop_variant": "H5_B2",
+      "high_hop_probability_multiplier": 2.0,
+      "mix_amplitude_multiplier": 1.0,
+      "validation_ari_mean": 0.3079057769024995,
+      "validation_ari_std": 0.03215912029474587,
+      "best_tuned_h1_config_id": "H1_q1_a1",
+      "tuned_h1_validation_ari_mean": 0.3012306272750153,
+      "paired_delta_mean": 0.006675149627484149,
+      "positive_seed_count": 2,
+      "seed_deltas": {
+        "42": 0.0,
+        "123": 0.015377794119237398,
+        "7": 0.004647654763215048
+      },
+      "complete_config_count": 44,
+      "checkpoint_paths": {
+        "42": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/turkish_music_emotion/H5_B2_q2_a1/seed_42/attempt_001/model_seed_42.pt",
+        "123": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/turkish_music_emotion/H5_B2_q2_a1/seed_123/attempt_001/model_seed_123.pt",
+        "7": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/turkish_music_emotion/H5_B2_q2_a1/seed_7/attempt_001/model_seed_7.pt"
+      }
+    },
+    {
+      "dataset": "Quake_Smart-seq2_Lung",
+      "best_config_id": "H3_B1_q1_a1",
+      "hop_variant": "H3_B1",
+      "high_hop_probability_multiplier": 1.0,
+      "mix_amplitude_multiplier": 1.0,
+      "validation_ari_mean": 0.7420740803038814,
+      "validation_ari_std": 0.0021065602896749055,
+      "best_tuned_h1_config_id": "H1_q1_a1",
+      "tuned_h1_validation_ari_mean": 0.7362363062059359,
+      "paired_delta_mean": 0.00583777409794554,
+      "positive_seed_count": 2,
+      "seed_deltas": {
+        "42": 0.0,
+        "123": 0.0015904278485798784,
+        "7": 0.01592289444525674
+      },
+      "complete_config_count": 44,
+      "checkpoint_paths": {
+        "42": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/pilot_queue/runs/Quake_Smart-seq2_Lung/H3_B1/seed_42/attempt_001/model_seed_42.pt",
+        "123": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/pilot_queue/runs/Quake_Smart-seq2_Lung/H3_B1/seed_123/attempt_001/model_seed_123.pt",
+        "7": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/pilot_queue/runs/Quake_Smart-seq2_Lung/H3_B1/seed_7/attempt_001/model_seed_7.pt"
+      }
+    },
+    {
+      "dataset": "Melanoma_5K",
+      "best_config_id": "H4_B1_q1_a1p5",
+      "hop_variant": "H4_B1",
+      "high_hop_probability_multiplier": 1.0,
+      "mix_amplitude_multiplier": 1.5,
+      "validation_ari_mean": 0.6718458351663086,
+      "validation_ari_std": 0.0037486220720376515,
+      "best_tuned_h1_config_id": "H1_q1_a1p5",
+      "tuned_h1_validation_ari_mean": 0.6684962132831771,
+      "paired_delta_mean": 0.0033496218831315185,
+      "positive_seed_count": 2,
+      "seed_deltas": {
+        "42": -0.0010702853855159011,
+        "123": 0.002722043349535519,
+        "7": 0.008397107685374938
+      },
+      "complete_config_count": 46,
+      "checkpoint_paths": {
+        "42": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/Melanoma_5K/H4_B1_q1_a1p5/seed_42/attempt_001/model_seed_42.pt",
+        "123": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/Melanoma_5K/H4_B1_q1_a1p5/seed_123/attempt_001/model_seed_123.pt",
+        "7": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/Melanoma_5K/H4_B1_q1_a1p5/seed_7/attempt_001/model_seed_7.pt"
+      }
+    },
+    {
+      "dataset": "Quake_10x_Spleen",
+      "best_config_id": "H4_B1_q1_a1",
+      "hop_variant": "H4_B1",
+      "high_hop_probability_multiplier": 1.0,
+      "mix_amplitude_multiplier": 1.0,
+      "validation_ari_mean": 0.9526202686154412,
+      "validation_ari_std": 0.0039327434080542395,
+      "best_tuned_h1_config_id": "H1_q1_a0p75",
+      "tuned_h1_validation_ari_mean": 0.9494149124026012,
+      "paired_delta_mean": 0.003205356212839979,
+      "positive_seed_count": 2,
+      "seed_deltas": {
+        "42": 0.005286320562446267,
+        "123": 0.010893461957898753,
+        "7": -0.006563713881825084
+      },
+      "complete_config_count": 44,
+      "checkpoint_paths": {
+        "42": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/pilot_queue/runs/Quake_10x_Spleen/H4_B1/seed_42/attempt_001/model_seed_42.pt",
+        "123": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/pilot_queue/runs/Quake_10x_Spleen/H4_B1/seed_123/attempt_001/model_seed_123.pt",
+        "7": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/pilot_queue/runs/Quake_10x_Spleen/H4_B1/seed_7/attempt_001/model_seed_7.pt"
+      }
+    },
+    {
+      "dataset": "birds_bones_and_living_habits",
+      "best_config_id": "H4_B4_q1_a1",
+      "hop_variant": "H4_B4",
+      "high_hop_probability_multiplier": 1.0,
+      "mix_amplitude_multiplier": 1.0,
+      "validation_ari_mean": 0.28649333654091297,
+      "validation_ari_std": 0.01577857174169625,
+      "best_tuned_h1_config_id": "H1_q1_a1",
+      "tuned_h1_validation_ari_mean": 0.2834474665228316,
+      "paired_delta_mean": 0.0030458700180814127,
+      "positive_seed_count": 1,
+      "seed_deltas": {
+        "42": 0.0,
+        "123": 0.03571197643792762,
+        "7": -0.02657436638368338
+      },
+      "complete_config_count": 44,
+      "checkpoint_paths": {
+        "42": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/pilot_queue/runs/birds_bones_and_living_habits/H4_B4/seed_42/attempt_001/model_seed_42.pt",
+        "123": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/pilot_queue/runs/birds_bones_and_living_habits/H4_B4/seed_123/attempt_001/model_seed_123.pt",
+        "7": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/pilot_queue/runs/birds_bones_and_living_habits/H4_B4/seed_7/attempt_001/model_seed_7.pt"
+      }
+    },
+    {
+      "dataset": "ISOLET",
+      "best_config_id": "H3_B2_q1_a0p75",
+      "hop_variant": "H3_B2",
+      "high_hop_probability_multiplier": 1.0,
+      "mix_amplitude_multiplier": 0.75,
+      "validation_ari_mean": 0.547306399774255,
+      "validation_ari_std": 0.009086447251811756,
+      "best_tuned_h1_config_id": "H1_q1_a1p25",
+      "tuned_h1_validation_ari_mean": 0.5445525416432122,
+      "paired_delta_mean": 0.0027538581310427115,
+      "positive_seed_count": 2,
+      "seed_deltas": {
+        "42": 0.029688940944077813,
+        "123": 0.019003449532489336,
+        "7": -0.040430816083439014
+      },
+      "complete_config_count": 44,
+      "checkpoint_paths": {
+        "42": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/ISOLET/H3_B2_q1_a0p75/seed_42/attempt_001/model_seed_42.pt",
+        "123": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/ISOLET/H3_B2_q1_a0p75/seed_123/attempt_001/model_seed_123.pt",
+        "7": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/ISOLET/H3_B2_q1_a0p75/seed_7/attempt_001/model_seed_7.pt"
+      }
+    },
+    {
+      "dataset": "Limb_Muscle",
+      "best_config_id": "H3_B4_q1_a1p5",
+      "hop_variant": "H3_B4",
+      "high_hop_probability_multiplier": 1.0,
+      "mix_amplitude_multiplier": 1.5,
+      "validation_ari_mean": 0.9980756408062342,
+      "validation_ari_std": 0.0027214548707009036,
+      "best_tuned_h1_config_id": "H1_q1_a1",
+      "tuned_h1_validation_ari_mean": 0.9956868768852888,
+      "paired_delta_mean": 0.002388763920945447,
+      "positive_seed_count": 2,
+      "seed_deltas": {
+        "42": 0.004099578536042925,
+        "123": 0.005773077581297303,
+        "7": -0.0027063643545038873
+      },
+      "complete_config_count": 45,
+      "checkpoint_paths": {
+        "42": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/Limb_Muscle/H3_B4_q1_a1p5/seed_42/attempt_001/model_seed_42.pt",
+        "123": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/Limb_Muscle/H3_B4_q1_a1p5/seed_123/attempt_001/model_seed_123.pt",
+        "7": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/Limb_Muscle/H3_B4_q1_a1p5/seed_7/attempt_001/model_seed_7.pt"
+      }
+    },
+    {
+      "dataset": "statlog_image_segmentation",
+      "best_config_id": "H4_B1_q1_a1",
+      "hop_variant": "H4_B1",
+      "high_hop_probability_multiplier": 1.0,
+      "mix_amplitude_multiplier": 1.0,
+      "validation_ari_mean": 0.5726185040910196,
+      "validation_ari_std": 0.010662549452896316,
+      "best_tuned_h1_config_id": "H1_q1_a0p75",
+      "tuned_h1_validation_ari_mean": 0.5705020857766859,
+      "paired_delta_mean": 0.0021164183143336235,
+      "positive_seed_count": 2,
+      "seed_deltas": {
+        "42": 0.0,
+        "123": 0.0032708839659180144,
+        "7": 0.003078370977082856
+      },
+      "complete_config_count": 44,
+      "checkpoint_paths": {
+        "42": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/pilot_queue/runs/statlog_image_segmentation/H4_B1/seed_42/attempt_001/model_seed_42.pt",
+        "123": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/pilot_queue/runs/statlog_image_segmentation/H4_B1/seed_123/attempt_001/model_seed_123.pt",
+        "7": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/pilot_queue/runs/statlog_image_segmentation/H4_B1/seed_7/attempt_001/model_seed_7.pt"
+      }
+    },
+    {
+      "dataset": "rice_dataset_cammeo_and_osmancik",
+      "best_config_id": "H6_B2_q1_a1p5",
+      "hop_variant": "H6_B2",
+      "high_hop_probability_multiplier": 1.0,
+      "mix_amplitude_multiplier": 1.5,
+      "validation_ari_mean": 0.696075105255628,
+      "validation_ari_std": 0.007202162341195689,
+      "best_tuned_h1_config_id": "H1_q1_a1p25",
+      "tuned_h1_validation_ari_mean": 0.6946208411023537,
+      "paired_delta_mean": 0.0014542641532742835,
+      "positive_seed_count": 1,
+      "seed_deltas": {
+        "42": 0.0,
+        "123": 0.004362792459822851,
+        "7": 0.0
+      },
+      "complete_config_count": 44,
+      "checkpoint_paths": {
+        "42": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/rice_dataset_cammeo_and_osmancik/H6_B2_q1_a1p5/seed_42/attempt_001/model_seed_42.pt",
+        "123": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/rice_dataset_cammeo_and_osmancik/H6_B2_q1_a1p5/seed_123/attempt_001/model_seed_123.pt",
+        "7": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/rice_dataset_cammeo_and_osmancik/H6_B2_q1_a1p5/seed_7/attempt_001/model_seed_7.pt"
+      }
+    },
+    {
+      "dataset": "Mouse_retina",
+      "best_config_id": "H1_q1_a1p25",
+      "hop_variant": "H1",
+      "high_hop_probability_multiplier": 1.0,
+      "mix_amplitude_multiplier": 1.25,
+      "validation_ari_mean": 0.9681611669087615,
+      "validation_ari_std": 0.005512514193694151,
+      "best_tuned_h1_config_id": "H1_q1_a1p25",
+      "tuned_h1_validation_ari_mean": 0.9681611669087615,
+      "paired_delta_mean": 0.0,
+      "positive_seed_count": 0,
+      "seed_deltas": {
+        "42": 0.0,
+        "123": 0.0,
+        "7": 0.0
+      },
+      "complete_config_count": 44,
+      "checkpoint_paths": {
+        "42": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/Mouse_retina/H1_q1_a1p25/seed_42/attempt_001/model_seed_42.pt",
+        "123": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/Mouse_retina/H1_q1_a1p25/seed_123/attempt_001/model_seed_123.pt",
+        "7": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/Mouse_retina/H1_q1_a1p25/seed_7/attempt_001/model_seed_7.pt"
+      }
+    },
+    {
+      "dataset": "harbermans_survival",
+      "best_config_id": "H1_q1_a0p75",
+      "hop_variant": "H1",
+      "high_hop_probability_multiplier": 1.0,
+      "mix_amplitude_multiplier": 0.75,
+      "validation_ari_mean": 0.2956829566239251,
+      "validation_ari_std": 0.05894251466799745,
+      "best_tuned_h1_config_id": "H1_q1_a0p75",
+      "tuned_h1_validation_ari_mean": 0.2956829566239251,
+      "paired_delta_mean": 0.0,
+      "positive_seed_count": 0,
+      "seed_deltas": {
+        "42": 0.0,
+        "123": 0.0,
+        "7": 0.0
+      },
+      "complete_config_count": 44,
+      "checkpoint_paths": {
+        "42": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/harbermans_survival/H1_q1_a0p75/seed_42/attempt_001/model_seed_42.pt",
+        "123": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/harbermans_survival/H1_q1_a0p75/seed_123/attempt_001/model_seed_123.pt",
+        "7": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/harbermans_survival/H1_q1_a0p75/seed_7/attempt_001/model_seed_7.pt"
+      }
+    }
+  ]
+}

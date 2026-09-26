@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "nature": "training-free prior statistics",
+  "alphas": [
+    0.1,
+    0.2,
+    0.5
+  ],
+  "output_sha256": {
+    "source_prior_sensitivity.json": "b902b768455ac4ad8f948a7384087cc76a38a574dda3a062908f1aab8f104517"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "Tosches": {
+    "best_hop": 8,
+    "best_config_id": "H8_B2",
+    "validation_ari_mean": 0.7326297624711225,
+    "checkpoint_paths": {
+      "42": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/top5_h1_h8_20260923/width/runs/Tosches/H8_B2/seed_42/attempt_001/model_seed_42.pt",
+      "123": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/top5_h1_h8_20260923/width/runs/Tosches/H8_B2/seed_123/attempt_001/model_seed_123.pt",
+      "7": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/top5_h1_h8_20260923/width/runs/Tosches/H8_B2/seed_7/attempt_001/model_seed_7.pt"
+    }
+  },
+  "fabert": {
+    "best_hop": 8,
+    "best_config_id": "H8_B1_q1_a1p5",
+    "validation_ari_mean": 0.06038015890098488,
+    "checkpoint_paths": {
+      "42": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/top5_h1_h8_20260923/strength/runs/fabert/H8_B1_q1_a1p5/seed_42/attempt_001/model_seed_42.pt",
+      "123": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/top5_h1_h8_20260923/strength/runs/fabert/H8_B1_q1_a1p5/seed_123/attempt_001/model_seed_123.pt",
+      "7": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/top5_h1_h8_20260923/strength/runs/fabert/H8_B1_q1_a1p5/seed_7/attempt_001/model_seed_7.pt"
+    }
+  },
+  "Baron": {
+    "best_hop": 8,
+    "best_config_id": "H8_B1_q2_a1",
+    "validation_ari_mean": 0.9171115164909689,
+    "checkpoint_paths": {
+      "42": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/Baron/H8_B1_q2_a1/seed_42/attempt_002/model_seed_42.pt",
+      "123": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/Baron/H8_B1_q2_a1/seed_123/attempt_001/model_seed_123.pt",
+      "7": "<PROJECT_ROOT>/experiments/v0_rg_validation_tuned_multihop_20260922/tuning19/stage_b/runs/Baron/H8_B1_q2_a1/seed_7/attempt_002/model_seed_7.pt"
+    }
+  }
+}

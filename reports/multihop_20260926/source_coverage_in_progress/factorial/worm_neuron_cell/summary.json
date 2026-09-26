@@ -1,0 +1,125 @@
+{
+  "status": "completed",
+  "dataset": "worm_neuron_cell",
+  "mode": "factorial",
+  "n_records": 25,
+  "expected": 25,
+  "effects": {
+    "interaction": {
+      "mean": 0.0009686804803994864,
+      "sd_training_seeds": 0.007347594443948778,
+      "positive": 3,
+      "n_training_seeds": 5,
+      "per_seed": [
+        0.011907132222448102,
+        -0.0050018589012390535,
+        0.0002044049628698863,
+        -0.006194368572520537,
+        0.003928092690439033
+      ]
+    },
+    "multihop_minus_H1": {
+      "mean": 0.0028824080663859995,
+      "sd_training_seeds": 0.010355746455005777,
+      "positive": 3,
+      "n_training_seeds": 5,
+      "per_seed": [
+        0.008007473644047969,
+        0.008134639124022902,
+        0.0138694662297284,
+        -0.004181728755665248,
+        -0.011417809910204024
+      ]
+    },
+    "prior": {
+      "mean": 3.40033936930606e-05,
+      "sd_training_seeds": 0.0033867307985269365,
+      "positive": 2,
+      "n_training_seeds": 5,
+      "per_seed": [
+        0.002573013601953389,
+        -0.0020240054486514447,
+        -8.992306209720802e-05,
+        -0.004334921857372609,
+        0.004045853734633176
+      ]
+    },
+    "target": {
+      "mean": 0.0017064662541039332,
+      "sd_training_seeds": 0.006409101738177444,
+      "positive": 3,
+      "n_training_seeds": 5,
+      "per_seed": [
+        0.004264359056105449,
+        -0.0015443857609270806,
+        0.002840411250822794,
+        -0.0070525399879903805,
+        0.010024486712508884
+      ]
+    }
+  },
+  "alignment": {
+    "source": "<REMOTE_PATH>",
+    "source_sha256": "4f2a3c4b8492bcd11d957a8a74098ba258c271d714718c175854a7c44b1e31e6",
+    "feature_sha256": "8b4c67b68d958c4119055c7840dda6b72fdecb294004353f58da3b5203e8d155",
+    "matrix_row_alignment_verified": true
+  },
+  "labels_used_for_model_fit": false,
+  "posthoc_full_x_labels_loaded": true,
+  "selection_performed": false,
+  "source_coverage": [
+    {
+      "seed": 1019,
+      "arm": "flat_anchor",
+      "mode": "actual_full_training_trace",
+      "same_mass": 0.8796327571138844,
+      "far_mass": 0.7081713753394195,
+      "new_community_mass": 0.0465990736790742,
+      "same_new_community_mass": 0.02782543120755671
+    },
+    {
+      "seed": 2027,
+      "arm": "flat_anchor",
+      "mode": "actual_full_training_trace",
+      "same_mass": 0.8797502083777419,
+      "far_mass": 0.7067219116736104,
+      "new_community_mass": 0.05019329015717848,
+      "same_new_community_mass": 0.02899851271951238
+    },
+    {
+      "seed": 3037,
+      "arm": "flat_anchor",
+      "mode": "actual_full_training_trace",
+      "same_mass": 0.8803546690562195,
+      "far_mass": 0.7072348678437742,
+      "new_community_mass": 0.05018007204900305,
+      "same_new_community_mass": 0.029629839423292306
+    },
+    {
+      "seed": 4051,
+      "arm": "flat_anchor",
+      "mode": "actual_full_training_trace",
+      "same_mass": 0.8815264294964629,
+      "far_mass": 0.7069410296004549,
+      "new_community_mass": 0.0487418522051353,
+      "same_new_community_mass": 0.02893511400081203
+    },
+    {
+      "seed": 5059,
+      "arm": "flat_anchor",
+      "mode": "actual_full_training_trace",
+      "same_mass": 0.8789626902416809,
+      "far_mass": 0.7071883012987358,
+      "new_community_mass": 0.045507263686468506,
+      "same_new_community_mass": 0.025399596156877174
+    }
+  ],
+  "community_policy": "Louvain resolution1 seed20260925 fixed reference graph per dataset",
+  "readout_policy": "20 states10..29 n_init20; mean primary; minimum inertia secondary",
+  "limitations": [
+    "new seeds are optimization replicates, not new datasets",
+    "source coverage correlations are posthoc associations",
+    "historical source draws are MC candidate probabilities, not true training mixture mass",
+    "donor and gene-program semantics require separate aligned metadata analysis"
+  ]
+}

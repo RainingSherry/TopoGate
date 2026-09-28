@@ -1,0 +1,16 @@
+strategy,seed,candidate_count_mean,candidate_count_min,candidate_count_max,fraction_candidates_community_absent_from_h1_mean,candidate_probability_mass_community_absent_from_h1_mean,actual_training_displacement_mean,coverage_source
+H1,7,30.0,30,30,0.0,0.0,,historical_reconstructed_frozen_graph_plan
+H1,42,30.0,30,30,0.0,0.0,,historical_reconstructed_frozen_graph_plan
+H1,123,30.0,30,30,0.0,0.0,,historical_reconstructed_frozen_graph_plan
+H2,7,59.93324775353017,45,60,0.0034979081140171587,0.002834530004597266,,historical_reconstructed_frozen_graph_plan
+H2,42,59.934414750846074,46,60,0.0036055364766581373,0.0029133990127090345,,historical_reconstructed_frozen_graph_plan
+H2,123,59.933481152993345,46,60,0.0036686354991219508,0.002981982157818265,,historical_reconstructed_frozen_graph_plan
+H4,7,119.66262107597153,54,120,0.063829493483112,0.057067000155903824,,historical_reconstructed_frozen_graph_plan
+H4,42,119.65865328509744,54,120,0.06443494345066109,0.05704570142914364,,historical_reconstructed_frozen_graph_plan
+H4,123,119.65771968724472,54,120,0.06467841961676243,0.05716690153959655,,historical_reconstructed_frozen_graph_plan
+H8,7,239.38020772552224,174,240,0.4153989652767857,0.40225317611972966,,historical_reconstructed_frozen_graph_plan
+H8,42,239.38230832069087,174,240,0.4167929533055027,0.40366949911816097,,historical_reconstructed_frozen_graph_plan
+H8,123,239.29326642548722,174,240,0.41766053895407185,0.40386937382014687,,historical_reconstructed_frozen_graph_plan
+Kwide,7,239.38020772552224,174,240,0.045667345153021836,0.023879727964750318,2.3654301240129887,actual_saved_training_graph_and_plan
+Kwide,42,239.38230832069087,174,240,0.04622359833247929,0.023871497026039874,2.36390325205103,actual_saved_training_graph_and_plan
+Kwide,123,239.29326642548722,174,240,0.04673685206190869,0.024266305679005336,2.36306448569731,actual_saved_training_graph_and_plan

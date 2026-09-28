@@ -1,0 +1,171 @@
+{
+  "kind": "read_only_checkpoint_preflight",
+  "labels_loaded": false,
+  "new_training": false,
+  "device": "cpu",
+  "rows": [
+    {
+      "dataset": "Baron",
+      "depth": "H1",
+      "seed": 7,
+      "preprocessing_hash": "36a1f9f81efc0279e12a1c0ce0bb7f3a455037542c56202c16557ceb8acec1b3",
+      "max_absolute_difference": 4.291534423828125e-06,
+      "relative_frobenius_difference": 3.572276341401448e-07,
+      "clean_embedding_agrees": true
+    },
+    {
+      "dataset": "Baron",
+      "depth": "H1",
+      "seed": 42,
+      "preprocessing_hash": "36a1f9f81efc0279e12a1c0ce0bb7f3a455037542c56202c16557ceb8acec1b3",
+      "max_absolute_difference": 5.066394805908203e-06,
+      "relative_frobenius_difference": 3.8813379887869814e-07,
+      "clean_embedding_agrees": true
+    },
+    {
+      "dataset": "Baron",
+      "depth": "H1",
+      "seed": 123,
+      "preprocessing_hash": "36a1f9f81efc0279e12a1c0ce0bb7f3a455037542c56202c16557ceb8acec1b3",
+      "max_absolute_difference": 4.0531158447265625e-06,
+      "relative_frobenius_difference": 3.9527782291770563e-07,
+      "clean_embedding_agrees": true
+    },
+    {
+      "dataset": "Baron",
+      "depth": "H8",
+      "seed": 7,
+      "preprocessing_hash": "36a1f9f81efc0279e12a1c0ce0bb7f3a455037542c56202c16557ceb8acec1b3",
+      "max_absolute_difference": 6.198883056640625e-06,
+      "relative_frobenius_difference": 3.5689359378920926e-07,
+      "clean_embedding_agrees": true
+    },
+    {
+      "dataset": "Baron",
+      "depth": "H8",
+      "seed": 42,
+      "preprocessing_hash": "36a1f9f81efc0279e12a1c0ce0bb7f3a455037542c56202c16557ceb8acec1b3",
+      "max_absolute_difference": 5.7220458984375e-06,
+      "relative_frobenius_difference": 4.1215491819457384e-07,
+      "clean_embedding_agrees": true
+    },
+    {
+      "dataset": "Baron",
+      "depth": "H8",
+      "seed": 123,
+      "preprocessing_hash": "36a1f9f81efc0279e12a1c0ce0bb7f3a455037542c56202c16557ceb8acec1b3",
+      "max_absolute_difference": 5.245208740234375e-06,
+      "relative_frobenius_difference": 4.1887381030392135e-07,
+      "clean_embedding_agrees": true
+    },
+    {
+      "dataset": "Quake_Smart-seq2_Lung",
+      "depth": "H1",
+      "seed": 7,
+      "preprocessing_hash": "84efacd71f9fe69605049d18b22005246749243553d2f63cca63fa3dac84282b",
+      "max_absolute_difference": 2.1457672119140625e-06,
+      "relative_frobenius_difference": 2.369049525441369e-07,
+      "clean_embedding_agrees": true
+    },
+    {
+      "dataset": "Quake_Smart-seq2_Lung",
+      "depth": "H1",
+      "seed": 42,
+      "preprocessing_hash": "84efacd71f9fe69605049d18b22005246749243553d2f63cca63fa3dac84282b",
+      "max_absolute_difference": 2.384185791015625e-06,
+      "relative_frobenius_difference": 2.2277454547747766e-07,
+      "clean_embedding_agrees": true
+    },
+    {
+      "dataset": "Quake_Smart-seq2_Lung",
+      "depth": "H1",
+      "seed": 123,
+      "preprocessing_hash": "84efacd71f9fe69605049d18b22005246749243553d2f63cca63fa3dac84282b",
+      "max_absolute_difference": 2.1457672119140625e-06,
+      "relative_frobenius_difference": 2.3253733161254786e-07,
+      "clean_embedding_agrees": true
+    },
+    {
+      "dataset": "Quake_Smart-seq2_Lung",
+      "depth": "H8",
+      "seed": 7,
+      "preprocessing_hash": "84efacd71f9fe69605049d18b22005246749243553d2f63cca63fa3dac84282b",
+      "max_absolute_difference": 2.86102294921875e-06,
+      "relative_frobenius_difference": 2.3124816550534888e-07,
+      "clean_embedding_agrees": true
+    },
+    {
+      "dataset": "Quake_Smart-seq2_Lung",
+      "depth": "H8",
+      "seed": 42,
+      "preprocessing_hash": "84efacd71f9fe69605049d18b22005246749243553d2f63cca63fa3dac84282b",
+      "max_absolute_difference": 2.6226043701171875e-06,
+      "relative_frobenius_difference": 2.240441290268791e-07,
+      "clean_embedding_agrees": true
+    },
+    {
+      "dataset": "Quake_Smart-seq2_Lung",
+      "depth": "H8",
+      "seed": 123,
+      "preprocessing_hash": "84efacd71f9fe69605049d18b22005246749243553d2f63cca63fa3dac84282b",
+      "max_absolute_difference": 2.6226043701171875e-06,
+      "relative_frobenius_difference": 2.2659477849629184e-07,
+      "clean_embedding_agrees": true
+    },
+    {
+      "dataset": "student_grade",
+      "depth": "H1",
+      "seed": 7,
+      "preprocessing_hash": "e7f9d67e095db1dfdac5799dfcb11d4a65528e30e144d57e69734c7837474757",
+      "max_absolute_difference": 8.344650268554688e-07,
+      "relative_frobenius_difference": 1.7888737602334004e-07,
+      "clean_embedding_agrees": true
+    },
+    {
+      "dataset": "student_grade",
+      "depth": "H1",
+      "seed": 42,
+      "preprocessing_hash": "e7f9d67e095db1dfdac5799dfcb11d4a65528e30e144d57e69734c7837474757",
+      "max_absolute_difference": 1.0728836059570312e-06,
+      "relative_frobenius_difference": 1.8151251879316987e-07,
+      "clean_embedding_agrees": true
+    },
+    {
+      "dataset": "student_grade",
+      "depth": "H1",
+      "seed": 123,
+      "preprocessing_hash": "e7f9d67e095db1dfdac5799dfcb11d4a65528e30e144d57e69734c7837474757",
+      "max_absolute_difference": 8.344650268554688e-07,
+      "relative_frobenius_difference": 1.7870375756956491e-07,
+      "clean_embedding_agrees": true
+    },
+    {
+      "dataset": "student_grade",
+      "depth": "H4",
+      "seed": 7,
+      "preprocessing_hash": "e7f9d67e095db1dfdac5799dfcb11d4a65528e30e144d57e69734c7837474757",
+      "max_absolute_difference": 9.5367431640625e-07,
+      "relative_frobenius_difference": 1.792806187950191e-07,
+      "clean_embedding_agrees": true
+    },
+    {
+      "dataset": "student_grade",
+      "depth": "H4",
+      "seed": 42,
+      "preprocessing_hash": "e7f9d67e095db1dfdac5799dfcb11d4a65528e30e144d57e69734c7837474757",
+      "max_absolute_difference": 1.1920928955078125e-06,
+      "relative_frobenius_difference": 1.8701771864471084e-07,
+      "clean_embedding_agrees": true
+    },
+    {
+      "dataset": "student_grade",
+      "depth": "H4",
+      "seed": 123,
+      "preprocessing_hash": "e7f9d67e095db1dfdac5799dfcb11d4a65528e30e144d57e69734c7837474757",
+      "max_absolute_difference": 9.5367431640625e-07,
+      "relative_frobenius_difference": 1.8165907533784775e-07,
+      "clean_embedding_agrees": true
+    }
+  ],
+  "all_clean_embeddings_agree": true
+}

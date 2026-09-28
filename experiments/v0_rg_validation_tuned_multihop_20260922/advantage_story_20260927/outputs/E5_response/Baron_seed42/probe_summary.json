@@ -1,0 +1,994 @@
+{
+  "protocol_id": "source_coverage_direction_probe_v1",
+  "status": "completed",
+  "label_reads": false,
+  "labels_loaded": false,
+  "labels_used": false,
+  "record_path": "/data/luolie/ToPoGate/experiments/v0_rg_validation_tuned_multihop_20260922/advantage_story_20260927/outputs/E5_response/Baron_seed42/adapter_H8/record.json",
+  "reference_record_path": "/data/luolie/ToPoGate/experiments/v0_rg_validation_tuned_multihop_20260922/advantage_story_20260927/outputs/E5_response/Baron_seed42/adapter_H1/record.json",
+  "features_path": "/data/luolie/ToPoGate/experiments/v0_rg_validation_tuned_multihop_20260922/splits/Baron/features_only.npz",
+  "feature_sha256": "a579e073f047e0aa2ef9d96257e8c4c0e33c5f0f69ba22070fd5a7fe52b78569",
+  "feature_hash_checks": {
+    "record": "sha256_equal",
+    "reference": "sha256_equal"
+  },
+  "seed": 42,
+  "record_arm": null,
+  "config_difference": {
+    "hop_variant": [
+      "H1",
+      "H8_B1"
+    ],
+    "protocol_id": [
+      "topogate_transductive_perdataset_64x3_v1",
+      "v0_rg_multihop_tuning19_validation_v1"
+    ]
+  },
+  "record_config_sha256": "5531fd5d2a376eb6a812c9267bef910eb4833bf0b6bf1154e188f95d147400bf",
+  "reference_config_sha256": "7856213d288274f9a7eeb0c6852a83ce7ca8a4d9ee1af16dd4ae69fcb732431a",
+  "preprocessing": {
+    "input_kind": "raw_count",
+    "feature_limit": 2000,
+    "target_sum": 10000.0,
+    "fingerprint": "36a1f9f81efc0279e12a1c0ce0bb7f3a455037542c56202c16557ceb8acec1b3",
+    "preprocessor_npz_sha256": "c8dbe3a42adbdae6911f5c4c300ded13cba246724d403117aad6b6a0357d14a6",
+    "transformed_shape": [
+      8569,
+      2000
+    ]
+  },
+  "models": {
+    "reference_h1": {
+      "n_tensors": 14,
+      "n_parameters": 5078432,
+      "state_sha256": "e67c6dc448191735d62bf32522fee994e9a83850cedbfce8484a76c5bce3de91",
+      "model_file_sha256": "87276ef79b5c76208f6ce5cd5398eca1cc917e21277fb326b81c46d2f4b81376",
+      "embedding_file_sha256": "4203c9e5bf9f45dc3146a0e32f9e5802109eb2e7976d3b4740066364f105e66e",
+      "embedding_reproduction_max_abs_diff": 5.066394805908203e-06,
+      "embedding_rtol": 0.0001,
+      "embedding_atol": 0.0001,
+      "global_embedding_scale": 4.308519020161567,
+      "hop_variant": "H1",
+      "artifact_hashes_verified": {}
+    },
+    "record_multihop": {
+      "n_tensors": 14,
+      "n_parameters": 5078432,
+      "state_sha256": "13803b8e6d78461d06dcf0c0aa11c8f31c1a03b7d802d241ff4faad0f9981c9b",
+      "model_file_sha256": "3eecc90e1e9a88efe159c4310e5f68857034ded153dd655d4176aec1c97ae180",
+      "embedding_file_sha256": "e769253298856cc80bb0c00e553274c2fc0d96d3f722cc266d30148e1ccdd104",
+      "embedding_reproduction_max_abs_diff": 5.7220458984375e-06,
+      "embedding_rtol": 0.0001,
+      "embedding_atol": 0.0001,
+      "global_embedding_scale": 4.34344809914821,
+      "hop_variant": "H8_B1",
+      "artifact_hashes_verified": {}
+    }
+  },
+  "graph": {
+    "provenance": "recomputed_deterministically_from_preprocessed_features_with_record_config",
+    "checks": {
+      "record": {
+        "hop_profile_keys_verified": [
+          "variant",
+          "construction",
+          "path_score",
+          "base_neighbor_k",
+          "max_hop",
+          "shell_width_multiplier",
+          "high_hop_probability_multiplier",
+          "fixed_draw_count",
+          "mean_candidate_count",
+          "max_candidate_count",
+          "shell_mean_selected_count",
+          "shell_nonempty_fraction",
+          "path_mass_retained_after_topk"
+        ],
+        "graph_gate_summary_verified": "absent_for_this_record_format"
+      },
+      "reference": {
+        "hop_profile_keys_verified": [
+          "variant",
+          "construction",
+          "base_neighbor_k",
+          "fixed_draw_count"
+        ],
+        "graph_gate_summary_verified": "absent_for_this_record_format"
+      }
+    },
+    "plan_profile": {
+      "variant": "H8_B1",
+      "construction": "directed_exact_shortest_path_shells",
+      "path_score": "frozen_edge_weight_transition_power",
+      "base_neighbor_k": 30,
+      "max_hop": 8,
+      "shell_width_multiplier": 1,
+      "high_hop_probability_multiplier": 1.0,
+      "fixed_draw_count": 4,
+      "mean_candidate_count": 239.38230832069087,
+      "max_candidate_count": 240,
+      "shell_mean_selected_count": {
+        "1": 30.0,
+        "2": 29.934414750846074,
+        "3": 29.858676625043763,
+        "4": 29.86556190920761,
+        "5": 29.857859726922626,
+        "6": 29.95308670790057,
+        "7": 29.99066402147275,
+        "8": 29.922044579297467
+      },
+      "shell_nonempty_fraction": {
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 1.0,
+        "5": 1.0,
+        "6": 1.0,
+        "7": 1.0,
+        "8": 1.0
+      },
+      "path_mass_retained_after_topk": {
+        "2": 0.5268613760789354,
+        "3": 0.4962693990278693,
+        "4": 0.5201651701648642,
+        "5": 0.5410625046635934,
+        "6": 0.5583002290387842,
+        "7": 0.560115726314711,
+        "8": 0.5364426577480548
+      },
+      "global_padding": false,
+      "node_gate_recomputed": false,
+      "auxiliary_weight_recomputed": false
+    },
+    "record_plan_reconstructible": true
+  },
+  "direction_families": {
+    "h1_graph": "monte_carlo_from_reconstructed_graph_edge_weights",
+    "plan_all": "monte_carlo_from_reconstructed_exact_hop_plan_approximate_historical_summary_match_not_actual_training_draw",
+    "plan_far": "monte_carlo_from_reconstructed_exact_hop_plan_hops_ge_2_renormalized_approximate_historical_summary_match_not_actual_training_draw",
+    "trace": "unavailable_no_saved_trace_for_record"
+  },
+  "direction_notation": "d = x_donor - x_anchor in preprocessed model-input space; random = seeded Gaussian rescaled to ||d|| per anchor (same vectors for both models); MC = Monte Carlo draw from reconstructed weights, not a historical training draw",
+  "exclusions": {
+    "h1_graph": {
+      "n_anchors": 512,
+      "no_donor": 0,
+      "zero_norm_direction": 0,
+      "evaluated": 512
+    },
+    "plan_all": {
+      "n_anchors": 512,
+      "no_donor": 0,
+      "zero_norm_direction": 0,
+      "evaluated": 512
+    },
+    "plan_far": {
+      "n_anchors": 512,
+      "no_donor": 0,
+      "zero_norm_direction": 0,
+      "evaluated": 512
+    }
+  },
+  "anchors": {
+    "count": 512,
+    "max": 512,
+    "seed": 20260925,
+    "selection": "uniform_without_replacement_feature_only",
+    "sha256": "84f552268ecb5802d0c3368e31604d6b664ac76f4d78693c72324257bdac2e84"
+  },
+  "lambdas": [
+    0.25,
+    0.5
+  ],
+  "input_global_scale": 44.721359556049116,
+  "evaluation": {
+    "mask_noise_applied": false,
+    "model_training_mode": false,
+    "dropout_active": false,
+    "forward": "WeightedAutoEncoder.forward_mask on uncorrupted x + lambda*d; decoder receives mask-predictor logits of that input",
+    "decoder_target": "the anchor's preprocessed model input, not a denoised truth",
+    "encoder_scale": "per-model RMS radius of its reproduced all-sample embedding",
+    "no_gene_program_inference": true
+  },
+  "summary": {
+    "reference_h1|h1_graph|source|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.09825081105583801,
+        "median": 0.052715416921710445,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.008506420126650482,
+        "median": 0.0007836371660232544,
+        "fraction_positive": 0.626953125
+      }
+    },
+    "reference_h1|h1_graph|source|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.2018914279670969,
+        "median": 0.10369920101175228,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.03213007585145533,
+        "median": 0.003210976719856262,
+        "fraction_positive": 0.740234375
+      }
+    },
+    "reference_h1|h1_graph|random_norm_matched|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.05745342071242285,
+        "median": 0.03751928950448503,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.000802363152615726,
+        "median": 0.0004995614290237427,
+        "fraction_positive": 0.609375
+      }
+    },
+    "reference_h1|h1_graph|random_norm_matched|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.11613629702226952,
+        "median": 0.07524943201648679,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.004332724725827575,
+        "median": 0.0017451345920562744,
+        "fraction_positive": 0.6875
+      }
+    },
+    "record_multihop|h1_graph|source|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.09653826369486124,
+        "median": 0.051874538084483696,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.007366657839156687,
+        "median": -0.00045162439346313477,
+        "fraction_positive": 0.451171875
+      }
+    },
+    "record_multihop|h1_graph|source|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.1974760040282679,
+        "median": 0.10154981208999996,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.02968838589731604,
+        "median": 0.0015721917152404785,
+        "fraction_positive": 0.603515625
+      }
+    },
+    "record_multihop|h1_graph|random_norm_matched|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.058181757603205646,
+        "median": 0.038381938888525424,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.000598226033616811,
+        "median": 0.000839725136756897,
+        "fraction_positive": 0.599609375
+      }
+    },
+    "record_multihop|h1_graph|random_norm_matched|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.11757359973640909,
+        "median": 0.07715324752456261,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.004212710540741682,
+        "median": 0.0027838945388793945,
+        "fraction_positive": 0.669921875
+      }
+    },
+    "paired_record_minus_reference|h1_graph|source|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": -0.0017125473609767713,
+        "median": 0.00012382738245918928,
+        "fraction_positive": 0.509765625
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": -0.0011397622874937952,
+        "median": -0.001490861177444458,
+        "fraction_positive": 0.263671875
+      }
+    },
+    "paired_record_minus_reference|h1_graph|source|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": -0.004415423938828994,
+        "median": -0.0004896130044625031,
+        "fraction_positive": 0.482421875
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": -0.0024416899541392922,
+        "median": -0.0019973814487457275,
+        "fraction_positive": 0.330078125
+      }
+    },
+    "paired_record_minus_reference|h1_graph|random_norm_matched|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.0007283368907827949,
+        "median": 0.0007571932236940231,
+        "fraction_positive": 0.552734375
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": -0.00020413711899891496,
+        "median": 0.00019071996212005615,
+        "fraction_positive": 0.53515625
+      }
+    },
+    "paired_record_minus_reference|h1_graph|random_norm_matched|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.001437302714139583,
+        "median": 0.0016243905979400758,
+        "fraction_positive": 0.5625
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": -0.00012001418508589268,
+        "median": 0.0005434602499008179,
+        "fraction_positive": 0.55078125
+      }
+    },
+    "source_minus_random|reference_h1|h1_graph|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.04079739034341516,
+        "median": 0.016995205992633745,
+        "fraction_positive": 0.865234375
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.007704056974034756,
+        "median": 0.0005324780941009521,
+        "fraction_positive": 0.572265625
+      }
+    },
+    "source_minus_random|reference_h1|h1_graph|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.08575513094482738,
+        "median": 0.03237165015262805,
+        "fraction_positive": 0.853515625
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.027797351125627756,
+        "median": 0.0019172430038452148,
+        "fraction_positive": 0.6328125
+      }
+    },
+    "source_minus_random|record_multihop|h1_graph|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.03835650609165559,
+        "median": 0.016861373967232827,
+        "fraction_positive": 0.833984375
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.006768431805539876,
+        "median": -0.0009116232395172119,
+        "fraction_positive": 0.419921875
+      }
+    },
+    "source_minus_random|record_multihop|h1_graph|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.0799024042918588,
+        "median": 0.033431037107899055,
+        "fraction_positive": 0.8203125
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.025475675356574357,
+        "median": 0.00018712878227233887,
+        "fraction_positive": 0.509765625
+      }
+    },
+    "reference_h1|plan_all|source|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.14759890084225152,
+        "median": 0.11445472072065407,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.008017175307031721,
+        "median": 0.002355530858039856,
+        "fraction_positive": 0.763671875
+      }
+    },
+    "reference_h1|plan_all|source|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.3537881426371277,
+        "median": 0.2440083581032146,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.06899053644156083,
+        "median": 0.012933224439620972,
+        "fraction_positive": 0.90625
+      }
+    },
+    "reference_h1|plan_all|random_norm_matched|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.06087772481726958,
+        "median": 0.04158110642173235,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.0009176631574518979,
+        "median": 0.0005497336387634277,
+        "fraction_positive": 0.61328125
+      }
+    },
+    "reference_h1|plan_all|random_norm_matched|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.12307732314086972,
+        "median": 0.08171939876002812,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.0049114220310002565,
+        "median": 0.0021555721759796143,
+        "fraction_positive": 0.693359375
+      }
+    },
+    "record_multihop|plan_all|source|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.1489858479956349,
+        "median": 0.11243311422330772,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.00016287789912894368,
+        "median": -0.0027753710746765137,
+        "fraction_positive": 0.2890625
+      }
+    },
+    "record_multihop|plan_all|source|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.3517671221610613,
+        "median": 0.23878728017050443,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.05636861833045259,
+        "median": 0.005253702402114868,
+        "fraction_positive": 0.6953125
+      }
+    },
+    "record_multihop|plan_all|random_norm_matched|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.06154231085789542,
+        "median": 0.041672412585458965,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.0007813943666405976,
+        "median": 0.0009539872407913208,
+        "fraction_positive": 0.609375
+      }
+    },
+    "record_multihop|plan_all|random_norm_matched|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.12431779342748056,
+        "median": 0.08319638127819062,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.004839763860218227,
+        "median": 0.0031799376010894775,
+        "fraction_positive": 0.69140625
+      }
+    },
+    "paired_record_minus_reference|plan_all|source|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.0013869471533833858,
+        "median": 0.00023449876296665478,
+        "fraction_positive": 0.51171875
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": -0.007854297407902777,
+        "median": -0.005080133676528931,
+        "fraction_positive": 0.119140625
+      }
+    },
+    "paired_record_minus_reference|plan_all|source|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": -0.002021020476066418,
+        "median": -0.0016797929491003255,
+        "fraction_positive": 0.44921875
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": -0.012621918111108243,
+        "median": -0.007019639015197754,
+        "fraction_positive": 0.173828125
+      }
+    },
+    "paired_record_minus_reference|plan_all|random_norm_matched|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.0006645860406258368,
+        "median": 0.0008019132486648366,
+        "fraction_positive": 0.552734375
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": -0.00013626879081130028,
+        "median": 0.00022846460342407227,
+        "fraction_positive": 0.52734375
+      }
+    },
+    "paired_record_minus_reference|plan_all|random_norm_matched|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.0012404702866108367,
+        "median": 0.0014937205787251481,
+        "fraction_positive": 0.556640625
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": -7.165817078202963e-05,
+        "median": 0.0007486045360565186,
+        "fraction_positive": 0.556640625
+      }
+    },
+    "source_minus_random|reference_h1|plan_all|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.08672117602498194,
+        "median": 0.06750527895067895,
+        "fraction_positive": 0.953125
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.007099512149579823,
+        "median": 0.002014562487602234,
+        "fraction_positive": 0.72265625
+      }
+    },
+    "source_minus_random|reference_h1|plan_all|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.23071081949625802,
+        "median": 0.15311437374705217,
+        "fraction_positive": 0.970703125
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.06407911441056058,
+        "median": 0.011343047022819519,
+        "fraction_positive": 0.857421875
+      }
+    },
+    "source_minus_random|record_multihop|plan_all|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.0874435371377395,
+        "median": 0.06743331337654475,
+        "fraction_positive": 0.9453125
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": -0.0006185164675116539,
+        "median": -0.003319874405860901,
+        "fraction_positive": 0.296875
+      }
+    },
+    "source_minus_random|record_multihop|plan_all|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.22744932873358076,
+        "median": 0.14662813529264687,
+        "fraction_positive": 0.958984375
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.051528854470234364,
+        "median": 0.0032300353050231934,
+        "fraction_positive": 0.603515625
+      }
+    },
+    "reference_h1|plan_far|source|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.16264678564038748,
+        "median": 0.12263663431812585,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.008295973297208548,
+        "median": 0.0026967525482177734,
+        "fraction_positive": 0.791015625
+      }
+    },
+    "reference_h1|plan_far|source|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.3900448777418827,
+        "median": 0.2663385652250232,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.07752707105828449,
+        "median": 0.01501193642616272,
+        "fraction_positive": 0.923828125
+      }
+    },
+    "reference_h1|plan_far|random_norm_matched|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.06178597270131842,
+        "median": 0.04185028761170766,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.0008909014286473393,
+        "median": 0.0005788803100585938,
+        "fraction_positive": 0.615234375
+      }
+    },
+    "reference_h1|plan_far|random_norm_matched|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.12492240906587188,
+        "median": 0.08439336462233765,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.004824502801056951,
+        "median": 0.0024179816246032715,
+        "fraction_positive": 0.697265625
+      }
+    },
+    "record_multihop|plan_far|source|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.1641756284583786,
+        "median": 0.12293170895975239,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": -0.0008308443357236683,
+        "median": -0.003381684422492981,
+        "fraction_positive": 0.302734375
+      }
+    },
+    "record_multihop|plan_far|source|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.38641063683448124,
+        "median": 0.26567011269144647,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.06017575255827978,
+        "median": 0.007106184959411621,
+        "fraction_positive": 0.685546875
+      }
+    },
+    "record_multihop|plan_far|random_norm_matched|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.06257905351227953,
+        "median": 0.04283146815370299,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.0007664887816645205,
+        "median": 0.000924915075302124,
+        "fraction_positive": 0.61328125
+      }
+    },
+    "record_multihop|plan_far|random_norm_matched|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.12645410907206311,
+        "median": 0.08557082143255959,
+        "fraction_positive": 1.0
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.004790668492205441,
+        "median": 0.0034478306770324707,
+        "fraction_positive": 0.697265625
+      }
+    },
+    "paired_record_minus_reference|plan_far|source|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.0015288428179911033,
+        "median": 0.0007042035667653539,
+        "fraction_positive": 0.541015625
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": -0.009126817632932216,
+        "median": -0.0062506794929504395,
+        "fraction_positive": 0.095703125
+      }
+    },
+    "paired_record_minus_reference|plan_far|source|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": -0.003634240907401366,
+        "median": -0.0011166092398025643,
+        "fraction_positive": 0.46875
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": -0.01735131850000471,
+        "median": -0.009455740451812744,
+        "fraction_positive": 0.1328125
+      }
+    },
+    "paired_record_minus_reference|plan_far|random_norm_matched|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.0007930808109611109,
+        "median": 0.0007981921618311853,
+        "fraction_positive": 0.552734375
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": -0.00012441264698281884,
+        "median": 0.00025194883346557617,
+        "fraction_positive": 0.529296875
+      }
+    },
+    "paired_record_minus_reference|plan_far|random_norm_matched|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.0015317000061912307,
+        "median": 0.0015563431130402317,
+        "fraction_positive": 0.5625
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": -3.3834308851510286e-05,
+        "median": 0.0008891671895980835,
+        "fraction_positive": 0.55078125
+      }
+    },
+    "source_minus_random|reference_h1|plan_far|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.10086081293906908,
+        "median": 0.0791689043046479,
+        "fraction_positive": 0.98046875
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.007405071868561208,
+        "median": 0.0022048652172088623,
+        "fraction_positive": 0.7109375
+      }
+    },
+    "source_minus_random|reference_h1|plan_far|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.26512246867601075,
+        "median": 0.1829277840565374,
+        "fraction_positive": 0.990234375
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.07270256825722754,
+        "median": 0.013409852981567383,
+        "fraction_positive": 0.892578125
+      }
+    },
+    "source_minus_random|record_multihop|plan_far|lambda=0.25": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.10159657494609908,
+        "median": 0.07792206194200955,
+        "fraction_positive": 0.9765625
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": -0.0015973331173881888,
+        "median": -0.0037626922130584717,
+        "fraction_positive": 0.283203125
+      }
+    },
+    "source_minus_random|record_multihop|plan_far|lambda=0.5": {
+      "encoder_response_normalized": {
+        "n": 512,
+        "mean": 0.2599565277624182,
+        "median": 0.1739415422428266,
+        "fraction_positive": 0.984375
+      },
+      "decoder_anchor_mse_delta": {
+        "n": 512,
+        "mean": 0.05538508406607434,
+        "median": 0.005034774541854858,
+        "fraction_positive": 0.611328125
+      }
+    }
+  },
+  "core_source_hashes": {
+    "__init__.py": "163b89d82bdc9388f76bec6639c4f8fc5515ee1c0de0a733b8171acd894113f3",
+    "build_pilot_manifest.py": "c575c6d4ab0c7750585055bdaa7677b415ffd1e8f0a2b951ed5ab87248881f59",
+    "build_rank1_manifest.py": "53e889750042eac94c8abe2654f4eaf36a5535361c2cc5bf7948566ed7e9d4c3",
+    "config.py": "9694206547e886a10f4314e1425a4876aeb41c3f7489fc94e9cd1a0c5e29a721",
+    "final_test_scorer.py": "649d6c6b5ec13e1b38076e6a8242643b6712e1213afb53156d8db898b2040d96",
+    "graph.py": "d108d58c9c623165782b51bce23af730a589b5c822af33364a1526a5ba641cd9",
+    "hop_neighborhoods.py": "7d5e414040b49007b6e81302ba4ad6b8894576dc34c445b98434cf5d9c48c798",
+    "hop_sampling.py": "e3011938b7eb416869629f8bf2e32251fc315be57dbc00b3c8bda4e11d9c4882",
+    "input_adapter.py": "fb9be8e59d6f467d4b451faab3c9bebf3129520d75c9a441269f342aa1d9e0da",
+    "mixing.py": "7f89b02eb9545c58d5c679ba51584578a5c4f4116acf6704f85e49752edd3769",
+    "model.py": "84abc0cb981933ce8dd00feb58effc92ea9c9111c63a7c50bb1675590082b107",
+    "prepare_rank1_splits.py": "1f9c3332feda7105cf5b85c10358b05f8b2787101d7254f0ac47d2a77a9f154a",
+    "run.py": "1206d461cdb716c3b1c532cd06d48f40457483400d2e5b8cdaee88e5344558e5",
+    "run_pilot_queue.py": "42e432e2c95fe81f4b49c9b0b924195a8dfc8cf726927054f6c811d11a691280",
+    "select_validation.py": "87d268269558ec56dca834939ee148d2e0a8be75843fd9095c725fc95e6bb6f9",
+    "summarize_rank1_validation.py": "1f07130dc00d31d22edf289039a8b975547c0e69dfdbc7b83f4dbbb52d3bcd8b",
+    "trainer.py": "b88fc9ce05ee467a2d72d51ae46e22de7cc3a46b2fcac180429f1f523ac46404",
+    "transductive_runner.py": "e63a1a7538d3cd43fa6acd3709d0850af470ddd28b6d6f9ab7ec9c3a99b1bd2b",
+    "transductive_search.py": "f4279cce5df7fe0e64631bd1fd68ffdb70ed99e39f1556d36ccd27b166a48d00",
+    "tuning.py": "69885f2a3af85b9ff5bb54eda046a6f59a8fd10928381ea0b71f6463b887d84c",
+    "tuning19_pipeline.py": "ab5824d9257f154ba77ca5b51d882bd3771747ce6eed02e64737f1a2d40e3b74",
+    "validation_protocol.py": "2ae9c1007cebb0d8810f2efdec8be2468901869cca2fc4e0a0b51f9a0d8de42e"
+  },
+  "environment": {
+    "python": "3.10.20 (main, Mar 11 2026, 17:46:40) [GCC 14.3.0]",
+    "numpy": "1.26.4",
+    "torch": "2.4.0+cu121",
+    "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.35",
+    "host": "gpu",
+    "device": "cpu",
+    "script_sha256": "d5408a6a950d8e232cf1dcbb15818099475f8e4c23e1c655d2076335e8d7ab42"
+  },
+  "historical_profile_diagnostic_tolerance": {
+    "field": "path_mass_retained_after_topk",
+    "absolute_tolerance": 0.0001,
+    "other_fields_unchanged": true,
+    "observed_differences": [
+      {
+        "hop": "2",
+        "saved": 0.5268620989368319,
+        "rebuilt": 0.5268613760789354,
+        "absolute_difference": 7.228578965401411e-07
+      },
+      {
+        "hop": "3",
+        "saved": 0.4962608983953358,
+        "rebuilt": 0.4962693990278693,
+        "absolute_difference": 8.500632533492425e-06
+      },
+      {
+        "hop": "4",
+        "saved": 0.5201733831164059,
+        "rebuilt": 0.5201651701648642,
+        "absolute_difference": 8.212951541741731e-06
+      },
+      {
+        "hop": "5",
+        "saved": 0.5410730128553675,
+        "rebuilt": 0.5410625046635934,
+        "absolute_difference": 1.050819177406126e-05
+      },
+      {
+        "hop": "6",
+        "saved": 0.5582937258017109,
+        "rebuilt": 0.5583002290387842,
+        "absolute_difference": 6.503237073296475e-06
+      },
+      {
+        "hop": "7",
+        "saved": 0.560112100198449,
+        "rebuilt": 0.560115726314711,
+        "absolute_difference": 3.626116261923329e-06
+      },
+      {
+        "hop": "8",
+        "saved": 0.5364327553204663,
+        "rebuilt": 0.5364426577480548,
+        "absolute_difference": 9.902427588470708e-06
+      },
+      {
+        "hop": "2",
+        "saved": 0.5268620989368319,
+        "rebuilt": 0.5268613760789354,
+        "absolute_difference": 7.228578965401411e-07
+      },
+      {
+        "hop": "3",
+        "saved": 0.4962608983953358,
+        "rebuilt": 0.4962693990278693,
+        "absolute_difference": 8.500632533492425e-06
+      },
+      {
+        "hop": "4",
+        "saved": 0.5201733831164059,
+        "rebuilt": 0.5201651701648642,
+        "absolute_difference": 8.212951541741731e-06
+      },
+      {
+        "hop": "5",
+        "saved": 0.5410730128553675,
+        "rebuilt": 0.5410625046635934,
+        "absolute_difference": 1.050819177406126e-05
+      },
+      {
+        "hop": "6",
+        "saved": 0.5582937258017109,
+        "rebuilt": 0.5583002290387842,
+        "absolute_difference": 6.503237073296475e-06
+      },
+      {
+        "hop": "7",
+        "saved": 0.560112100198449,
+        "rebuilt": 0.560115726314711,
+        "absolute_difference": 3.626116261923329e-06
+      },
+      {
+        "hop": "8",
+        "saved": 0.5364327553204663,
+        "rebuilt": 0.5364426577480548,
+        "absolute_difference": 9.902427588470708e-06
+      }
+    ]
+  },
+  "preprocessor_provenance": "posthoc fingerprint-verified reconstruction",
+  "rows_file": "probe_rows.csv",
+  "rows_sha256": "0ab5e257374415a2379cf66e31e70ded1b1bdfbfe58cd05fd7641c202abf8996"
+}

@@ -13,6 +13,9 @@ audit summaries. It does not publish the paper or any paper source bundle.
   V18 latent-gate, V19 RG adapter, V20 adversarial mask, V21 assignment-gate,
   V22 discriminator/Keep-Gate implementations, and ACCG's joint-action
   constrained selection policy.
+- `experiments/v0_rg_validation_tuned_multihop_20260922/`: the frozen V0_RG
+  multihop implementation, three-case mechanism study code, compact result
+  tables and figures, audit notes, and checksums for retained checkpoints.
 - `reports/ACCG/`: frozen synthetic contract, method protocol, and sanitized
   weight-free real-panel audit. The real clustering-improvement claim is
   retained as an auditable No-Go result rather than omitted.
@@ -56,8 +59,10 @@ audit summaries. It does not publish the paper or any paper source bundle.
 
 ## Excluded
 
-- Model checkpoints, optimizer state, topology memmaps, prediction/embedding
-  arrays, caches, and temporary logs.
+- Model checkpoints, optimizer state, topology memmaps, per-sample prediction
+  and embedding arrays, caches, and temporary logs. The multihop experiment
+  publishes only aggregate tables and figures; its checkpoint hashes and
+  sizes are indexed without publishing the 691 MB of model artifacts.
 - Raw download archives and all dataset binaries.
 - All paper files, manuscript sources, and literature PDFs.
 

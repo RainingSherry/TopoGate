@@ -1,0 +1,10 @@
+{
+  "n": 59,
+  "positive": 46,
+  "negative": 8,
+  "tied": 5,
+  "all_three_positive": 22,
+  "mean_delta": 0.005656848337799428,
+  "new_training": false,
+  "source_hashes_verified": true
+}

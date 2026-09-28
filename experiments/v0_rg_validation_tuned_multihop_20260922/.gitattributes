@@ -1,0 +1,2 @@
+# Keep the frozen experiment files byte-identical across operating systems.
+* -text

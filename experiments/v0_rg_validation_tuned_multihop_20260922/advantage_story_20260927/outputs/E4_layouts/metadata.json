@@ -1,0 +1,59 @@
+{
+  "input_sha256": {
+    "Baron/community_ids.npy": "a27751048a1896ff093a6a6e67475329a708d48a03785ed275760eb6727d1452",
+    "Baron/fixed_input_layout.npz": "90a6b90d850e8c09798e6fb66cc7d658ecd562a63464251ff00680cb299e19ca",
+    "Baron/frozen_readouts_10.npz": "de1c0b7394c6b4e14efe6e321bc415c53288a9e40ef4a12740365f339d0cd951",
+    "Quake_Smart-seq2_Lung/community_ids.npy": "7611fc1943a5c3258c5f91ae0fe4c16cff91b3812392ecf8def90238bc045f8b",
+    "Quake_Smart-seq2_Lung/fixed_input_layout.npz": "59934d6768b2c7adbf4481f1d90a22b23d1603dd4a8a6b2203de1e70e427a113",
+    "Quake_Smart-seq2_Lung/frozen_readouts_10.npz": "798dffdc926364ff16f2715b22d7027b545d3837a92d7b9c49286a2c254864de",
+    "student_grade/community_ids.npy": "d79f7dcee253be4110f74039f8bf1e3566ebcefc0bb54c69c18a2f89ff157287",
+    "student_grade/fixed_input_layout.npz": "e1e72120a9b1a57bbfc2dff5c3e0d7d5b5d55ae01c303bf0f9148ca8bc27839e",
+    "student_grade/frozen_readouts_10.npz": "96319f74c970e16490715697d4ddadbc6d31412f19fc43a107ae2fa6a21544a5"
+  },
+  "code_sha256": "c1fed48e6b015d2bfd67952ea85bd790a36adb53a9afce5f81c5c1c58b25552d",
+  "labels_used_for_model_fit": false,
+  "posthoc_full_x_labels_loaded": true,
+  "date": "2026-09-27",
+  "datasets": [
+    "Baron",
+    "Quake_Smart-seq2_Lung",
+    "student_grade"
+  ],
+  "class_names": {
+    "Baron": [
+      "acinar",
+      "activated_stellate",
+      "alpha",
+      "beta",
+      "delta",
+      "ductal",
+      "endothelial",
+      "epsilon",
+      "gamma",
+      "macrophage",
+      "mast",
+      "quiescent_stellate",
+      "schwann",
+      "t_cell"
+    ],
+    "Quake_Smart-seq2_Lung": [
+      "0",
+      "1",
+      "10",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "student_grade": [
+      "0",
+      "1"
+    ]
+  },
+  "layout_interpretation": "Fixed input-space tSNE coordinates, not learned embedding movement; color is per-anchor cross-community same-class coassignment averaged within readout then seed.",
+  "note": "Fixed input layout, full multi-seed average, gray=no eligible pairs, post-hoc only"
+}

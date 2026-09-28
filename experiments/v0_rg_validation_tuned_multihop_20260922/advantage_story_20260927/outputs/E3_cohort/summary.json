@@ -1,0 +1,50 @@
+{
+  "datasets": 59,
+  "positive": 44,
+  "negative": 10,
+  "tied": 5,
+  "all_three_positive": 22,
+  "mean_delta_ARI": 0.00566471913582416,
+  "both_pair_errors_reduced": 30,
+  "cases": {
+    "Baron": {
+      "ARI_H1": 0.7710395332928283,
+      "ARI_multi": 0.8377027565373331,
+      "delta_ARI": 0.06666322324450487,
+      "split_reduction_pp": 7.41533866149103,
+      "merge_reduction_pp": 0.53932536245969,
+      "macro_split_reduction_pp": 0.8764425552978304,
+      "macro_merge_reduction_pp": 0.06131552490459685,
+      "delta_ARI_seed_sd": 0.025615270155938175,
+      "split_reduction_pp_seed_sd": 2.082180301215565,
+      "merge_reduction_pp_seed_sd": 0.48887630056559894,
+      "positive_ARI_seeds": 3
+    },
+    "Quake_Smart-seq2_Lung": {
+      "ARI_H1": 0.7068704184741753,
+      "ARI_multi": 0.7382005277197821,
+      "delta_ARI": 0.03133010924560679,
+      "split_reduction_pp": 3.617070377352912,
+      "merge_reduction_pp": 0.04025230978815334,
+      "macro_split_reduction_pp": 0.7603828311086298,
+      "macro_merge_reduction_pp": 0.1679060959488564,
+      "delta_ARI_seed_sd": 0.01276824135650832,
+      "split_reduction_pp_seed_sd": 1.2439203921359545,
+      "merge_reduction_pp_seed_sd": 0.23981012582983172,
+      "positive_ARI_seeds": 3
+    },
+    "student_grade": {
+      "ARI_H1": 0.32816742948925987,
+      "ARI_multi": 0.367868646356853,
+      "delta_ARI": 0.03970121686759318,
+      "split_reduction_pp": 2.19554940620316,
+      "merge_reduction_pp": 1.7823899371069132,
+      "macro_split_reduction_pp": 1.425147106805726,
+      "macro_merge_reduction_pp": 1.7823899371069132,
+      "delta_ARI_seed_sd": 0.023583351657621,
+      "split_reduction_pp_seed_sd": 1.5472637286109832,
+      "merge_reduction_pp_seed_sd": 0.7951944543129243,
+      "positive_ARI_seeds": 3
+    }
+  }
+}

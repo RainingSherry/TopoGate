@@ -303,7 +303,8 @@ def fit_predict(
     if graph_enabled and config.hop_variant != "H1":
         if config.hop_variant not in {"Kwide2", "Kwide3"}:
             hop_plan = build_exact_hop_plan(
-                graph, edge_weights, config.hop_variant, config.mix_neighbors
+                graph, edge_weights, config.hop_variant, config.mix_neighbors,
+                config.high_hop_probability_multiplier,
             )
         else:
             reference_variant = "H12" if config.hop_variant == "Kwide2" else "H123"
@@ -408,6 +409,7 @@ def fit_predict(
                         rng=rng,
                         neighbor_estimator=config.neighbor_estimator,
                         auxiliary_weighting=config.auxiliary_weighting,
+                        mix_amplitude_multiplier=config.mix_amplitude_multiplier,
                     )
                 else:
                     pseudo_batch, sample_weight, mix_info = make_pseudo_batch_from_plan(
@@ -419,6 +421,7 @@ def fit_predict(
                         rng=rng,
                         neighbor_estimator=config.neighbor_estimator,
                         auxiliary_weighting=config.auxiliary_weighting,
+                        mix_amplitude_multiplier=config.mix_amplitude_multiplier,
                     )
                 pseudo_corrupted, pseudo_mask = apply_scmae_noise(
                     pseudo_batch,

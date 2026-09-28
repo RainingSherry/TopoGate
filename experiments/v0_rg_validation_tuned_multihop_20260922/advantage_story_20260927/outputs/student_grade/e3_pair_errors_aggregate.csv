@@ -1,0 +1,3 @@
+case,arm,split_rate_mean,split_rate_std,merge_rate_mean,merge_rate_std,uncertainty_unit
+student_grade,H1,0.34306852684576655,0.014836550420548203,0.3251852926947267,0.0025880364662569186,training_seed_mean_of_10_readouts
+student_grade,multihop,0.32111303278373493,0.009458810787974729,0.30736139332365753,0.006661660514364517,training_seed_mean_of_10_readouts

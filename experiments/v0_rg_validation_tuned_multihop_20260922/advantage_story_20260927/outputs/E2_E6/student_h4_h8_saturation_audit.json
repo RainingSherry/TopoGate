@@ -1,0 +1,45 @@
+{
+  "status": "completed",
+  "rows": [
+    {
+      "seed": 7,
+      "offsets": true,
+      "nodes": true,
+      "probs": true,
+      "hops": true,
+      "draw_count": true,
+      "h4_max_hop": 4,
+      "h8_max_hop": 4,
+      "max_probability_delta": 0.0,
+      "embedding_exact_equal": true,
+      "max_embedding_delta": 0.0
+    },
+    {
+      "seed": 42,
+      "offsets": true,
+      "nodes": true,
+      "probs": true,
+      "hops": true,
+      "draw_count": true,
+      "h4_max_hop": 4,
+      "h8_max_hop": 4,
+      "max_probability_delta": 0.0,
+      "embedding_exact_equal": true,
+      "max_embedding_delta": 0.0
+    },
+    {
+      "seed": 123,
+      "offsets": true,
+      "nodes": true,
+      "probs": true,
+      "hops": true,
+      "draw_count": true,
+      "h4_max_hop": 4,
+      "h8_max_hop": 4,
+      "max_probability_delta": 0.0,
+      "embedding_exact_equal": true,
+      "max_embedding_delta": 0.0
+    }
+  ],
+  "interpretation": "H4/H8 candidate identity and saved-embedding comparison; no training"
+}

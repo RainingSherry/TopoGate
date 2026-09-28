@@ -98,9 +98,9 @@ def resolve_path_variant(hop_variant: str) -> tuple[int, int]:
     legacy = {"H12": (2, 1), "H123": (3, 1)}
     if hop_variant in legacy:
         return legacy[hop_variant]
-    matched = re.fullmatch(r"H([2-5])_B(1|2|4)", str(hop_variant))
+    matched = re.fullmatch(r"H(2|3|4|5|6|7|8)_B(1|2|4)", str(hop_variant))
     if matched is None:
-        raise ValueError("path variants must be H12, H123, or H{2..5}_B{1,2,4}")
+        raise ValueError("path variants must be H12, H123, or H{2,3,4,5,6,7,8}_B{1,2,4}")
     return int(matched.group(1)), int(matched.group(2))
 
 
@@ -109,6 +109,7 @@ def build_exact_hop_plan(
     edge_weights: np.ndarray,
     hop_variant: str,
     mix_neighbors: int,
+    high_hop_probability_multiplier: float = 1.0,
 ) -> FixedCandidatePlan:
     """Build fixed path candidates from exact shells of the frozen graph."""
     max_hop, shell_width_multiplier = resolve_path_variant(hop_variant)
@@ -150,13 +151,22 @@ def build_exact_hop_plan(
         available = [hop for hop in range(1, max_hop + 1) if selected[hop][0].size]
         if not available:
             raise RuntimeError("the original one-hop graph unexpectedly produced an empty candidate row")
-        shell_mass = 1.0 / float(len(available))
+        shell_multipliers = np.asarray(
+            [1.0 if hop == 1 else float(high_hop_probability_multiplier) for hop in available],
+            dtype=np.float64,
+        )
+        shell_multipliers /= np.clip(float(shell_multipliers.sum()), 1e-12, None)
         row_nodes: list[np.ndarray] = []
         probabilities: list[np.ndarray] = []
         labels: list[np.ndarray] = []
-        for hop in available:
+        for hop, shell_mass in zip(available, shell_multipliers):
             nodes, score = selected[hop]
             normalized = score / np.clip(float(score.sum()), 1e-12, None)
+            normalized_sum = float(normalized.sum())
+            if not np.isclose(normalized_sum, 1.0, rtol=1e-10, atol=1e-12):
+                if normalized_sum <= 0.0 or not np.isfinite(normalized_sum):
+                    raise ValueError("exact-shell scores cannot be normalized")
+                normalized = normalized / normalized_sum
             row_nodes.append(nodes)
             probabilities.append(shell_mass * normalized)
             labels.append(np.full(nodes.size, hop, dtype=np.int8))
@@ -171,6 +181,7 @@ def build_exact_hop_plan(
         "base_neighbor_k": int(base_k),
         "max_hop": int(max_hop),
         "shell_width_multiplier": int(shell_width_multiplier),
+        "high_hop_probability_multiplier": float(high_hop_probability_multiplier),
         "fixed_draw_count": int(draw_count),
         "mean_candidate_count": float(np.mean([row.size for row in rows])),
         "max_candidate_count": int(max(row.size for row in rows)),
@@ -335,6 +346,7 @@ def make_pseudo_batch_from_plan(
     rng: np.random.Generator,
     neighbor_estimator: str = "current",
     auxiliary_weighting: str = "gate",
+    mix_amplitude_multiplier: float = 1.0,
 ):
     """Construct the auxiliary view while preserving V0_RG's mixing semantics."""
     import torch
@@ -346,7 +358,7 @@ def make_pseudo_batch_from_plan(
     )
     gate = np.asarray(node_gate[batch_indices], dtype=np.float32)
     anchor = data_np[batch_indices]
-    mix_gate = gate
+    mix_gate = np.clip(gate * float(mix_amplitude_multiplier), 0.0, 1.0).astype(np.float32)
     mixed = (1.0 - mix_gate[:, None]) * anchor + mix_gate[:, None] * neighbor_mean
     perturbation = np.linalg.norm(neighbor_mean - anchor, axis=1) / (
         np.linalg.norm(anchor, axis=1) + 1e-6
@@ -366,6 +378,7 @@ def make_pseudo_batch_from_plan(
     return torch.as_tensor(mixed, dtype=batch_x.dtype, device=batch_x.device).detach(), sample_weight, {
         "mean_node_gate": float(np.mean(gate)),
         "mean_mix_strength": float(np.mean(mix_gate)),
+        "mix_amplitude_multiplier": float(mix_amplitude_multiplier),
         "mean_perturb_norm": float(np.mean(perturbation)),
         "mean_actual_displacement": float(np.mean(actual_displacement)),
         "fraction_zero_gate": float(np.mean(gate <= 0.0)),

@@ -1,0 +1,3 @@
+case,arm,split_rate_mean,split_rate_std,merge_rate_mean,merge_rate_std,uncertainty_unit
+Quake_Smart-seq2_Lung,H1,0.3312279537346695,0.007892783117494338,0.022775458265700665,0.0011367126343377275,training_seed_mean_of_10_readouts
+Quake_Smart-seq2_Lung,multihop,0.2950572499611404,0.015514769363750057,0.022372935167819148,0.0035330006363168418,training_seed_mean_of_10_readouts

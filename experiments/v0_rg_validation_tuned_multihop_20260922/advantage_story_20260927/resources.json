@@ -1,0 +1,16 @@
+{
+  "gpus": [
+    2,
+    4
+  ],
+  "initial_workers_per_gpu": 4,
+  "max_workers_per_gpu": 16,
+  "start_free_mb": 6000,
+  "reserve_mb_per_task": 4000,
+  "cpu_workers": 4,
+  "cpu_threads_per_task": 2,
+  "min_host_available_mb": 64000,
+  "reserve_host_mb_per_task": 1024,
+  "poll_seconds": 15,
+  "python": "/data/luolie/conda/envs/scssl_bench_py310/bin/python"
+}

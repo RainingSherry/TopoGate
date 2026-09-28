@@ -1,0 +1,113 @@
+{
+  "schema": "topogate_frozen_source_v1",
+  "files": [
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/v0rg_tunable_multihop/__init__.py",
+      "sha256": "163b89d82bdc9388f76bec6639c4f8fc5515ee1c0de0a733b8171acd894113f3"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/v0rg_tunable_multihop/build_pilot_manifest.py",
+      "sha256": "c575c6d4ab0c7750585055bdaa7677b415ffd1e8f0a2b951ed5ab87248881f59"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/v0rg_tunable_multihop/build_rank1_manifest.py",
+      "sha256": "53e889750042eac94c8abe2654f4eaf36a5535361c2cc5bf7948566ed7e9d4c3"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/v0rg_tunable_multihop/config.py",
+      "sha256": "9694206547e886a10f4314e1425a4876aeb41c3f7489fc94e9cd1a0c5e29a721"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/v0rg_tunable_multihop/final_test_scorer.py",
+      "sha256": "649d6c6b5ec13e1b38076e6a8242643b6712e1213afb53156d8db898b2040d96"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/v0rg_tunable_multihop/graph.py",
+      "sha256": "d108d58c9c623165782b51bce23af730a589b5c822af33364a1526a5ba641cd9"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/v0rg_tunable_multihop/hop_neighborhoods.py",
+      "sha256": "7d5e414040b49007b6e81302ba4ad6b8894576dc34c445b98434cf5d9c48c798"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/v0rg_tunable_multihop/hop_sampling.py",
+      "sha256": "e3011938b7eb416869629f8bf2e32251fc315be57dbc00b3c8bda4e11d9c4882"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/v0rg_tunable_multihop/input_adapter.py",
+      "sha256": "fb9be8e59d6f467d4b451faab3c9bebf3129520d75c9a441269f342aa1d9e0da"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/v0rg_tunable_multihop/mixing.py",
+      "sha256": "7f89b02eb9545c58d5c679ba51584578a5c4f4116acf6704f85e49752edd3769"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/v0rg_tunable_multihop/model.py",
+      "sha256": "84abc0cb981933ce8dd00feb58effc92ea9c9111c63a7c50bb1675590082b107"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/v0rg_tunable_multihop/prepare_rank1_splits.py",
+      "sha256": "1f9c3332feda7105cf5b85c10358b05f8b2787101d7254f0ac47d2a77a9f154a"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/v0rg_tunable_multihop/run.py",
+      "sha256": "1206d461cdb716c3b1c532cd06d48f40457483400d2e5b8cdaee88e5344558e5"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/v0rg_tunable_multihop/run_pilot_queue.py",
+      "sha256": "42e432e2c95fe81f4b49c9b0b924195a8dfc8cf726927054f6c811d11a691280"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/v0rg_tunable_multihop/select_validation.py",
+      "sha256": "87d268269558ec56dca834939ee148d2e0a8be75843fd9095c725fc95e6bb6f9"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/v0rg_tunable_multihop/summarize_rank1_validation.py",
+      "sha256": "1f07130dc00d31d22edf289039a8b975547c0e69dfdbc7b83f4dbbb52d3bcd8b"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/v0rg_tunable_multihop/trainer.py",
+      "sha256": "b88fc9ce05ee467a2d72d51ae46e22de7cc3a46b2fcac180429f1f523ac46404"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/v0rg_tunable_multihop/transductive_runner.py",
+      "sha256": "e63a1a7538d3cd43fa6acd3709d0850af470ddd28b6d6f9ab7ec9c3a99b1bd2b"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/v0rg_tunable_multihop/transductive_search.py",
+      "sha256": "f4279cce5df7fe0e64631bd1fd68ffdb70ed99e39f1556d36ccd27b166a48d00"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/v0rg_tunable_multihop/tuning.py",
+      "sha256": "69885f2a3af85b9ff5bb54eda046a6f59a8fd10928381ea0b71f6463b887d84c"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/v0rg_tunable_multihop/tuning19_pipeline.py",
+      "sha256": "ab5824d9257f154ba77ca5b51d882bd3771747ce6eed02e64737f1a2d40e3b74"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/v0rg_tunable_multihop/validation_protocol.py",
+      "sha256": "2ae9c1007cebb0d8810f2efdec8be2468901869cca2fc4e0a0b51f9a0d8de42e"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/source_coverage_20260925/run_factorial.py",
+      "sha256": "d4ec58ba8e6f2bd205f806df85390388ba0a29bd08f828402cbe03ad89efbab6"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/source_coverage_20260925/factorial_plan.py",
+      "sha256": "da659fab5b65bd2cbacf41c7fd6e1758c607aad9c0e534732a9ec00e34f94f76"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/source_coverage_20260925/common.py",
+      "sha256": "cf3ba72fce5d661a6d24e037d3d30e5e7c071b8592d70c027a704dd055aa60a4"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/source_coverage_20260925/probe_directions.py",
+      "sha256": "d5408a6a950d8e232cf1dcbb15818099475f8e4c23e1c655d2076335e8d7ab42"
+    },
+    {
+      "path": "experiments/v0_rg_validation_tuned_multihop_20260922/multihop_mechanism_20260924/intervention_plan.py",
+      "sha256": "ef37ef113dee0d88407971d3c2e58e26fbe8d431013685556686164be663b4a8"
+    }
+  ]
+}

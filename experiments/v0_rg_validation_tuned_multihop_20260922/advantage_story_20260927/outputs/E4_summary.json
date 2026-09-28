@@ -1,0 +1,29 @@
+[
+  {
+    "dataset": "Baron",
+    "within_H1": 0.9431807417609797,
+    "within_multihop": 0.9553535853665431,
+    "within_delta_pp": 1.2172843605563477,
+    "cross_H1": 0.5765196086061313,
+    "cross_multihop": 0.6959968614416695,
+    "cross_delta_pp": 11.947725283553822
+  },
+  {
+    "dataset": "Quake_Smart-seq2_Lung",
+    "within_H1": 0.9915766536331052,
+    "within_multihop": 0.9941711469534048,
+    "within_delta_pp": 0.25944933202995957,
+    "cross_H1": 0.5700890394669834,
+    "cross_multihop": 0.6165241611849682,
+    "cross_delta_pp": 4.643512171798481
+  },
+  {
+    "dataset": "student_grade",
+    "within_H1": 0.8905165202843998,
+    "within_multihop": 0.8904189321065106,
+    "within_delta_pp": -0.009758817788918517,
+    "cross_H1": 0.5908385353490528,
+    "cross_multihop": 0.6190339536305632,
+    "cross_delta_pp": 2.81954182815104
+  }
+]

@@ -9,10 +9,11 @@ code paths, the independent post-V25 ACCG route, the independent
 support-oracle study, curated auditable result tables, and concise evidence summaries; it
 does not publish papers or dataset binaries.
 
-This repository intentionally excludes raw datasets, model outputs,
-checkpoints, papers, logs, caches, and local machine paths. Curated result
-metadata is retained under `result/final_results/`; runners still expect the
-caller to provide input data and an output directory.
+This repository intentionally excludes raw datasets, checkpoints, per-sample
+predictions and embeddings, manuscript sources, logs, and caches. Curated
+tables and figures are retained with their experiment records; frozen scripts
+may include original research-server paths that must be mapped to a new host.
+Runners still expect the caller to provide input data and an output directory.
 
 ## Contents
 
@@ -24,6 +25,10 @@ caller to provide input data and an output directory.
   preparation, audits, and summarizers.
 - `methods/NeighborMix_scMAE/model.py`: the scMAE backbone used by several
   TopoGate variants.
+- `experiments/v0_rg_validation_tuned_multihop_20260922/advantage_story_20260927/`:
+  frozen V0_RG multihop code, aggregate results, figures, and evidence audit
+  for the 59-dataset selected cohort and three detailed cases. The adjacent
+  `weight_index_20260927.json` records hashes for the 45 retained model units.
 - `methods/DeepLearning/scMAE_family.py` and `methods/shared_utils.py`: direct
   runtime dependencies retained for the included code paths.
 - `reports/`: curated result facts, aggregate tables, and experiment reports;

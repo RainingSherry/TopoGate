@@ -1,0 +1,1681 @@
+{
+  "schema": "advantage_story_base_queue_v1",
+  "tasks": [
+    {
+      "id": "Quake_Smart-seq2_Lung__H2__seed7",
+      "kind": "gpu",
+      "command": [
+        "fit_worker.py",
+        "--task",
+        "tasks/Quake_Smart-seq2_Lung__H2__seed7.json",
+        "--out",
+        "outputs/train/Quake_Smart-seq2_Lung__H2__seed7",
+        "--device",
+        "cuda:0"
+      ],
+      "out": "outputs/train/Quake_Smart-seq2_Lung__H2__seed7",
+      "required_artifacts": [
+        "model.pt",
+        "embedding.npy",
+        "predictions.npy",
+        "history.json",
+        "plan.npz",
+        "graph.npz",
+        "preprocessor.npz",
+        "source_trace.bin",
+        "source_trace.json",
+        "displacement_by_anchor.npz"
+      ]
+    },
+    {
+      "id": "student_grade__H2__seed7",
+      "kind": "gpu",
+      "command": [
+        "fit_worker.py",
+        "--task",
+        "tasks/student_grade__H2__seed7.json",
+        "--out",
+        "outputs/train/student_grade__H2__seed7",
+        "--device",
+        "cuda:0"
+      ],
+      "out": "outputs/train/student_grade__H2__seed7",
+      "required_artifacts": [
+        "model.pt",
+        "embedding.npy",
+        "predictions.npy",
+        "history.json",
+        "plan.npz",
+        "graph.npz",
+        "preprocessor.npz",
+        "source_trace.bin",
+        "source_trace.json",
+        "displacement_by_anchor.npz"
+      ]
+    },
+    {
+      "id": "Baron__Kwide__seed7",
+      "kind": "gpu",
+      "command": [
+        "fit_worker.py",
+        "--task",
+        "tasks/Baron__Kwide__seed7.json",
+        "--out",
+        "outputs/train/Baron__Kwide__seed7",
+        "--device",
+        "cuda:0"
+      ],
+      "out": "outputs/train/Baron__Kwide__seed7",
+      "required_artifacts": [
+        "model.pt",
+        "embedding.npy",
+        "predictions.npy",
+        "history.json",
+        "plan.npz",
+        "graph.npz",
+        "preprocessor.npz",
+        "source_trace.bin",
+        "source_trace.json",
+        "displacement_by_anchor.npz",
+        "reference_plan.npz"
+      ]
+    },
+    {
+      "id": "Quake_Smart-seq2_Lung__H2__seed42",
+      "kind": "gpu",
+      "command": [
+        "fit_worker.py",
+        "--task",
+        "tasks/Quake_Smart-seq2_Lung__H2__seed42.json",
+        "--out",
+        "outputs/train/Quake_Smart-seq2_Lung__H2__seed42",
+        "--device",
+        "cuda:0"
+      ],
+      "out": "outputs/train/Quake_Smart-seq2_Lung__H2__seed42",
+      "required_artifacts": [
+        "model.pt",
+        "embedding.npy",
+        "predictions.npy",
+        "history.json",
+        "plan.npz",
+        "graph.npz",
+        "preprocessor.npz",
+        "source_trace.bin",
+        "source_trace.json",
+        "displacement_by_anchor.npz"
+      ]
+    },
+    {
+      "id": "student_grade__H2__seed42",
+      "kind": "gpu",
+      "command": [
+        "fit_worker.py",
+        "--task",
+        "tasks/student_grade__H2__seed42.json",
+        "--out",
+        "outputs/train/student_grade__H2__seed42",
+        "--device",
+        "cuda:0"
+      ],
+      "out": "outputs/train/student_grade__H2__seed42",
+      "required_artifacts": [
+        "model.pt",
+        "embedding.npy",
+        "predictions.npy",
+        "history.json",
+        "plan.npz",
+        "graph.npz",
+        "preprocessor.npz",
+        "source_trace.bin",
+        "source_trace.json",
+        "displacement_by_anchor.npz"
+      ]
+    },
+    {
+      "id": "Baron__Kwide__seed42",
+      "kind": "gpu",
+      "command": [
+        "fit_worker.py",
+        "--task",
+        "tasks/Baron__Kwide__seed42.json",
+        "--out",
+        "outputs/train/Baron__Kwide__seed42",
+        "--device",
+        "cuda:0"
+      ],
+      "out": "outputs/train/Baron__Kwide__seed42",
+      "required_artifacts": [
+        "model.pt",
+        "embedding.npy",
+        "predictions.npy",
+        "history.json",
+        "plan.npz",
+        "graph.npz",
+        "preprocessor.npz",
+        "source_trace.bin",
+        "source_trace.json",
+        "displacement_by_anchor.npz",
+        "reference_plan.npz"
+      ]
+    },
+    {
+      "id": "Quake_Smart-seq2_Lung__H2__seed123",
+      "kind": "gpu",
+      "command": [
+        "fit_worker.py",
+        "--task",
+        "tasks/Quake_Smart-seq2_Lung__H2__seed123.json",
+        "--out",
+        "outputs/train/Quake_Smart-seq2_Lung__H2__seed123",
+        "--device",
+        "cuda:0"
+      ],
+      "out": "outputs/train/Quake_Smart-seq2_Lung__H2__seed123",
+      "required_artifacts": [
+        "model.pt",
+        "embedding.npy",
+        "predictions.npy",
+        "history.json",
+        "plan.npz",
+        "graph.npz",
+        "preprocessor.npz",
+        "source_trace.bin",
+        "source_trace.json",
+        "displacement_by_anchor.npz"
+      ]
+    },
+    {
+      "id": "student_grade__H2__seed123",
+      "kind": "gpu",
+      "command": [
+        "fit_worker.py",
+        "--task",
+        "tasks/student_grade__H2__seed123.json",
+        "--out",
+        "outputs/train/student_grade__H2__seed123",
+        "--device",
+        "cuda:0"
+      ],
+      "out": "outputs/train/student_grade__H2__seed123",
+      "required_artifacts": [
+        "model.pt",
+        "embedding.npy",
+        "predictions.npy",
+        "history.json",
+        "plan.npz",
+        "graph.npz",
+        "preprocessor.npz",
+        "source_trace.bin",
+        "source_trace.json",
+        "displacement_by_anchor.npz"
+      ]
+    },
+    {
+      "id": "Baron__Kwide__seed123",
+      "kind": "gpu",
+      "command": [
+        "fit_worker.py",
+        "--task",
+        "tasks/Baron__Kwide__seed123.json",
+        "--out",
+        "outputs/train/Baron__Kwide__seed123",
+        "--device",
+        "cuda:0"
+      ],
+      "out": "outputs/train/Baron__Kwide__seed123",
+      "required_artifacts": [
+        "model.pt",
+        "embedding.npy",
+        "predictions.npy",
+        "history.json",
+        "plan.npz",
+        "graph.npz",
+        "preprocessor.npz",
+        "source_trace.bin",
+        "source_trace.json",
+        "displacement_by_anchor.npz",
+        "reference_plan.npz"
+      ]
+    },
+    {
+      "id": "Quake_Smart-seq2_Lung__H4__seed7",
+      "kind": "gpu",
+      "command": [
+        "fit_worker.py",
+        "--task",
+        "tasks/Quake_Smart-seq2_Lung__H4__seed7.json",
+        "--out",
+        "outputs/train/Quake_Smart-seq2_Lung__H4__seed7",
+        "--device",
+        "cuda:0"
+      ],
+      "out": "outputs/train/Quake_Smart-seq2_Lung__H4__seed7",
+      "required_artifacts": [
+        "model.pt",
+        "embedding.npy",
+        "predictions.npy",
+        "history.json",
+        "plan.npz",
+        "graph.npz",
+        "preprocessor.npz",
+        "source_trace.bin",
+        "source_trace.json",
+        "displacement_by_anchor.npz"
+      ]
+    },
+    {
+      "id": "student_grade__H8__seed7",
+      "kind": "gpu",
+      "command": [
+        "fit_worker.py",
+        "--task",
+        "tasks/student_grade__H8__seed7.json",
+        "--out",
+        "outputs/train/student_grade__H8__seed7",
+        "--device",
+        "cuda:0"
+      ],
+      "out": "outputs/train/student_grade__H8__seed7",
+      "required_artifacts": [
+        "model.pt",
+        "embedding.npy",
+        "predictions.npy",
+        "history.json",
+        "plan.npz",
+        "graph.npz",
+        "preprocessor.npz",
+        "source_trace.bin",
+        "source_trace.json",
+        "displacement_by_anchor.npz"
+      ]
+    },
+    {
+      "id": "Quake_Smart-seq2_Lung__H4__seed42",
+      "kind": "gpu",
+      "command": [
+        "fit_worker.py",
+        "--task",
+        "tasks/Quake_Smart-seq2_Lung__H4__seed42.json",
+        "--out",
+        "outputs/train/Quake_Smart-seq2_Lung__H4__seed42",
+        "--device",
+        "cuda:0"
+      ],
+      "out": "outputs/train/Quake_Smart-seq2_Lung__H4__seed42",
+      "required_artifacts": [
+        "model.pt",
+        "embedding.npy",
+        "predictions.npy",
+        "history.json",
+        "plan.npz",
+        "graph.npz",
+        "preprocessor.npz",
+        "source_trace.bin",
+        "source_trace.json",
+        "displacement_by_anchor.npz"
+      ]
+    },
+    {
+      "id": "student_grade__H8__seed42",
+      "kind": "gpu",
+      "command": [
+        "fit_worker.py",
+        "--task",
+        "tasks/student_grade__H8__seed42.json",
+        "--out",
+        "outputs/train/student_grade__H8__seed42",
+        "--device",
+        "cuda:0"
+      ],
+      "out": "outputs/train/student_grade__H8__seed42",
+      "required_artifacts": [
+        "model.pt",
+        "embedding.npy",
+        "predictions.npy",
+        "history.json",
+        "plan.npz",
+        "graph.npz",
+        "preprocessor.npz",
+        "source_trace.bin",
+        "source_trace.json",
+        "displacement_by_anchor.npz"
+      ]
+    },
+    {
+      "id": "Quake_Smart-seq2_Lung__H4__seed123",
+      "kind": "gpu",
+      "command": [
+        "fit_worker.py",
+        "--task",
+        "tasks/Quake_Smart-seq2_Lung__H4__seed123.json",
+        "--out",
+        "outputs/train/Quake_Smart-seq2_Lung__H4__seed123",
+        "--device",
+        "cuda:0"
+      ],
+      "out": "outputs/train/Quake_Smart-seq2_Lung__H4__seed123",
+      "required_artifacts": [
+        "model.pt",
+        "embedding.npy",
+        "predictions.npy",
+        "history.json",
+        "plan.npz",
+        "graph.npz",
+        "preprocessor.npz",
+        "source_trace.bin",
+        "source_trace.json",
+        "displacement_by_anchor.npz"
+      ]
+    },
+    {
+      "id": "student_grade__H8__seed123",
+      "kind": "gpu",
+      "command": [
+        "fit_worker.py",
+        "--task",
+        "tasks/student_grade__H8__seed123.json",
+        "--out",
+        "outputs/train/student_grade__H8__seed123",
+        "--device",
+        "cuda:0"
+      ],
+      "out": "outputs/train/student_grade__H8__seed123",
+      "required_artifacts": [
+        "model.pt",
+        "embedding.npy",
+        "predictions.npy",
+        "history.json",
+        "plan.npz",
+        "graph.npz",
+        "preprocessor.npz",
+        "source_trace.bin",
+        "source_trace.json",
+        "displacement_by_anchor.npz"
+      ]
+    },
+    {
+      "id": "Quake_Smart-seq2_Lung__Kwide__seed7",
+      "kind": "gpu",
+      "command": [
+        "fit_worker.py",
+        "--task",
+        "tasks/Quake_Smart-seq2_Lung__Kwide__seed7.json",
+        "--out",
+        "outputs/train/Quake_Smart-seq2_Lung__Kwide__seed7",
+        "--device",
+        "cuda:0"
+      ],
+      "out": "outputs/train/Quake_Smart-seq2_Lung__Kwide__seed7",
+      "required_artifacts": [
+        "model.pt",
+        "embedding.npy",
+        "predictions.npy",
+        "history.json",
+        "plan.npz",
+        "graph.npz",
+        "preprocessor.npz",
+        "source_trace.bin",
+        "source_trace.json",
+        "displacement_by_anchor.npz",
+        "reference_plan.npz"
+      ]
+    },
+    {
+      "id": "student_grade__Kwide__seed7",
+      "kind": "gpu",
+      "command": [
+        "fit_worker.py",
+        "--task",
+        "tasks/student_grade__Kwide__seed7.json",
+        "--out",
+        "outputs/train/student_grade__Kwide__seed7",
+        "--device",
+        "cuda:0"
+      ],
+      "out": "outputs/train/student_grade__Kwide__seed7",
+      "required_artifacts": [
+        "model.pt",
+        "embedding.npy",
+        "predictions.npy",
+        "history.json",
+        "plan.npz",
+        "graph.npz",
+        "preprocessor.npz",
+        "source_trace.bin",
+        "source_trace.json",
+        "displacement_by_anchor.npz",
+        "reference_plan.npz"
+      ]
+    },
+    {
+      "id": "Quake_Smart-seq2_Lung__Kwide__seed42",
+      "kind": "gpu",
+      "command": [
+        "fit_worker.py",
+        "--task",
+        "tasks/Quake_Smart-seq2_Lung__Kwide__seed42.json",
+        "--out",
+        "outputs/train/Quake_Smart-seq2_Lung__Kwide__seed42",
+        "--device",
+        "cuda:0"
+      ],
+      "out": "outputs/train/Quake_Smart-seq2_Lung__Kwide__seed42",
+      "required_artifacts": [
+        "model.pt",
+        "embedding.npy",
+        "predictions.npy",
+        "history.json",
+        "plan.npz",
+        "graph.npz",
+        "preprocessor.npz",
+        "source_trace.bin",
+        "source_trace.json",
+        "displacement_by_anchor.npz",
+        "reference_plan.npz"
+      ]
+    },
+    {
+      "id": "student_grade__Kwide__seed42",
+      "kind": "gpu",
+      "command": [
+        "fit_worker.py",
+        "--task",
+        "tasks/student_grade__Kwide__seed42.json",
+        "--out",
+        "outputs/train/student_grade__Kwide__seed42",
+        "--device",
+        "cuda:0"
+      ],
+      "out": "outputs/train/student_grade__Kwide__seed42",
+      "required_artifacts": [
+        "model.pt",
+        "embedding.npy",
+        "predictions.npy",
+        "history.json",
+        "plan.npz",
+        "graph.npz",
+        "preprocessor.npz",
+        "source_trace.bin",
+        "source_trace.json",
+        "displacement_by_anchor.npz",
+        "reference_plan.npz"
+      ]
+    },
+    {
+      "id": "Quake_Smart-seq2_Lung__Kwide__seed123",
+      "kind": "gpu",
+      "command": [
+        "fit_worker.py",
+        "--task",
+        "tasks/Quake_Smart-seq2_Lung__Kwide__seed123.json",
+        "--out",
+        "outputs/train/Quake_Smart-seq2_Lung__Kwide__seed123",
+        "--device",
+        "cuda:0"
+      ],
+      "out": "outputs/train/Quake_Smart-seq2_Lung__Kwide__seed123",
+      "required_artifacts": [
+        "model.pt",
+        "embedding.npy",
+        "predictions.npy",
+        "history.json",
+        "plan.npz",
+        "graph.npz",
+        "preprocessor.npz",
+        "source_trace.bin",
+        "source_trace.json",
+        "displacement_by_anchor.npz",
+        "reference_plan.npz"
+      ]
+    },
+    {
+      "id": "student_grade__Kwide__seed123",
+      "kind": "gpu",
+      "command": [
+        "fit_worker.py",
+        "--task",
+        "tasks/student_grade__Kwide__seed123.json",
+        "--out",
+        "outputs/train/student_grade__Kwide__seed123",
+        "--device",
+        "cuda:0"
+      ],
+      "out": "outputs/train/student_grade__Kwide__seed123",
+      "required_artifacts": [
+        "model.pt",
+        "embedding.npy",
+        "predictions.npy",
+        "history.json",
+        "plan.npz",
+        "graph.npz",
+        "preprocessor.npz",
+        "source_trace.bin",
+        "source_trace.json",
+        "displacement_by_anchor.npz",
+        "reference_plan.npz"
+      ]
+    },
+    {
+      "id": "cohort__Bach",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "Bach",
+        "--out",
+        "outputs/cohort/Bach"
+      ],
+      "out": "outputs/cohort/Bach",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__Baron",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "Baron",
+        "--out",
+        "outputs/cohort/Baron"
+      ],
+      "out": "outputs/cohort/Baron",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__Campbell",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "Campbell",
+        "--out",
+        "outputs/cohort/Campbell"
+      ],
+      "out": "outputs/cohort/Campbell",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__Drug_Consumption",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "Drug_Consumption",
+        "--out",
+        "outputs/cohort/Drug_Consumption"
+      ],
+      "out": "outputs/cohort/Drug_Consumption",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__Guo",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "Guo",
+        "--out",
+        "outputs/cohort/Guo"
+      ],
+      "out": "outputs/cohort/Guo",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__ISOLET",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "ISOLET",
+        "--out",
+        "outputs/cohort/ISOLET"
+      ],
+      "out": "outputs/cohort/ISOLET",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__Limb_Muscle",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "Limb_Muscle",
+        "--out",
+        "outputs/cohort/Limb_Muscle"
+      ],
+      "out": "outputs/cohort/Limb_Muscle",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__Macosko",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "Macosko",
+        "--out",
+        "outputs/cohort/Macosko"
+      ],
+      "out": "outputs/cohort/Macosko",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__Melanoma_5K",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "Melanoma_5K",
+        "--out",
+        "outputs/cohort/Melanoma_5K"
+      ],
+      "out": "outputs/cohort/Melanoma_5K",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__Mouse_retina",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "Mouse_retina",
+        "--out",
+        "outputs/cohort/Mouse_retina"
+      ],
+      "out": "outputs/cohort/Mouse_retina",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__Quake_10x_Spleen",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "Quake_10x_Spleen",
+        "--out",
+        "outputs/cohort/Quake_10x_Spleen"
+      ],
+      "out": "outputs/cohort/Quake_10x_Spleen",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__Quake_Smart-seq2_Lung",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "Quake_Smart-seq2_Lung",
+        "--out",
+        "outputs/cohort/Quake_Smart-seq2_Lung"
+      ],
+      "out": "outputs/cohort/Quake_Smart-seq2_Lung",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__Tosches",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "Tosches",
+        "--out",
+        "outputs/cohort/Tosches"
+      ],
+      "out": "outputs/cohort/Tosches",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__Young",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "Young",
+        "--out",
+        "outputs/cohort/Young"
+      ],
+      "out": "outputs/cohort/Young",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__birds_bones_and_living_habits",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "birds_bones_and_living_habits",
+        "--out",
+        "outputs/cohort/birds_bones_and_living_habits"
+      ],
+      "out": "outputs/cohort/birds_bones_and_living_habits",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__boston",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "boston",
+        "--out",
+        "outputs/cohort/boston"
+      ],
+      "out": "outputs/cohort/boston",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__breast_cancer_wisconsin_original",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "breast_cancer_wisconsin_original",
+        "--out",
+        "outputs/cohort/breast_cancer_wisconsin_original"
+      ],
+      "out": "outputs/cohort/breast_cancer_wisconsin_original",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__cifar10",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "cifar10",
+        "--out",
+        "outputs/cohort/cifar10"
+      ],
+      "out": "outputs/cohort/cifar10",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__classification_in_asteroseismology",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "classification_in_asteroseismology",
+        "--out",
+        "outputs/cohort/classification_in_asteroseismology"
+      ],
+      "out": "outputs/cohort/classification_in_asteroseismology",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__coil20",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "coil20",
+        "--out",
+        "outputs/cohort/coil20"
+      ],
+      "out": "outputs/cohort/coil20",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__dermatology",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "dermatology",
+        "--out",
+        "outputs/cohort/dermatology"
+      ],
+      "out": "outputs/cohort/dermatology",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__dry_bean",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "dry_bean",
+        "--out",
+        "outputs/cohort/dry_bean"
+      ],
+      "out": "outputs/cohort/dry_bean",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__ecoli",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "ecoli",
+        "--out",
+        "outputs/cohort/ecoli"
+      ],
+      "out": "outputs/cohort/ecoli",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__enron",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "enron",
+        "--out",
+        "outputs/cohort/enron"
+      ],
+      "out": "outputs/cohort/enron",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__fabert",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "fabert",
+        "--out",
+        "outputs/cohort/fabert"
+      ],
+      "out": "outputs/cohort/fabert",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__flickr_material_database",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "flickr_material_database",
+        "--out",
+        "outputs/cohort/flickr_material_database"
+      ],
+      "out": "outputs/cohort/flickr_material_database",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__har",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "har",
+        "--out",
+        "outputs/cohort/har"
+      ],
+      "out": "outputs/cohort/har",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__harbermans_survival",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "harbermans_survival",
+        "--out",
+        "outputs/cohort/harbermans_survival"
+      ],
+      "out": "outputs/cohort/harbermans_survival",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__hate_speech",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "hate_speech",
+        "--out",
+        "outputs/cohort/hate_speech"
+      ],
+      "out": "outputs/cohort/hate_speech",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__heart_attack_analysis_prediction_dataset",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "heart_attack_analysis_prediction_dataset",
+        "--out",
+        "outputs/cohort/heart_attack_analysis_prediction_dataset"
+      ],
+      "out": "outputs/cohort/heart_attack_analysis_prediction_dataset",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__hepatitis",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "hepatitis",
+        "--out",
+        "outputs/cohort/hepatitis"
+      ],
+      "out": "outputs/cohort/hepatitis",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__htru2",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "htru2",
+        "--out",
+        "outputs/cohort/htru2"
+      ],
+      "out": "outputs/cohort/htru2",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__image_segmentation",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "image_segmentation",
+        "--out",
+        "outputs/cohort/image_segmentation"
+      ],
+      "out": "outputs/cohort/image_segmentation",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__imdb",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "imdb",
+        "--out",
+        "outputs/cohort/imdb"
+      ],
+      "out": "outputs/cohort/imdb",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__iris",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "iris",
+        "--out",
+        "outputs/cohort/iris"
+      ],
+      "out": "outputs/cohort/iris",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__labeled_faces_in_the_wild",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "labeled_faces_in_the_wild",
+        "--out",
+        "outputs/cohort/labeled_faces_in_the_wild"
+      ],
+      "out": "outputs/cohort/labeled_faces_in_the_wild",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__mfeat-factors",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "mfeat-factors",
+        "--out",
+        "outputs/cohort/mfeat-factors"
+      ],
+      "out": "outputs/cohort/mfeat-factors",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__micro-mass",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "micro-mass",
+        "--out",
+        "outputs/cohort/micro-mass"
+      ],
+      "out": "outputs/cohort/micro-mass",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__olivetti_faces",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "olivetti_faces",
+        "--out",
+        "outputs/cohort/olivetti_faces"
+      ],
+      "out": "outputs/cohort/olivetti_faces",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__optical_recognition_of_handwritten_digits",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "optical_recognition_of_handwritten_digits",
+        "--out",
+        "outputs/cohort/optical_recognition_of_handwritten_digits"
+      ],
+      "out": "outputs/cohort/optical_recognition_of_handwritten_digits",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__orbit_classification_for_prediction_nasa",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "orbit_classification_for_prediction_nasa",
+        "--out",
+        "outputs/cohort/orbit_classification_for_prediction_nasa"
+      ],
+      "out": "outputs/cohort/orbit_classification_for_prediction_nasa",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__patient_treatment_classification",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "patient_treatment_classification",
+        "--out",
+        "outputs/cohort/patient_treatment_classification"
+      ],
+      "out": "outputs/cohort/patient_treatment_classification",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__pen_based_recognition_of_handwritten_digits",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "pen_based_recognition_of_handwritten_digits",
+        "--out",
+        "outputs/cohort/pen_based_recognition_of_handwritten_digits"
+      ],
+      "out": "outputs/cohort/pen_based_recognition_of_handwritten_digits",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__predicting_pulsar_star",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "predicting_pulsar_star",
+        "--out",
+        "outputs/cohort/predicting_pulsar_star"
+      ],
+      "out": "outputs/cohort/predicting_pulsar_star",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__pumpkin_seeds",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "pumpkin_seeds",
+        "--out",
+        "outputs/cohort/pumpkin_seeds"
+      ],
+      "out": "outputs/cohort/pumpkin_seeds",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__reuters",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "reuters",
+        "--out",
+        "outputs/cohort/reuters"
+      ],
+      "out": "outputs/cohort/reuters",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__rice_dataset_cammeo_and_osmancik",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "rice_dataset_cammeo_and_osmancik",
+        "--out",
+        "outputs/cohort/rice_dataset_cammeo_and_osmancik"
+      ],
+      "out": "outputs/cohort/rice_dataset_cammeo_and_osmancik",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__seismic_bumps",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "seismic_bumps",
+        "--out",
+        "outputs/cohort/seismic_bumps"
+      ],
+      "out": "outputs/cohort/seismic_bumps",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__siberian_weather_stats",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "siberian_weather_stats",
+        "--out",
+        "outputs/cohort/siberian_weather_stats"
+      ],
+      "out": "outputs/cohort/siberian_weather_stats",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__smoker_condition",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "smoker_condition",
+        "--out",
+        "outputs/cohort/smoker_condition"
+      ],
+      "out": "outputs/cohort/smoker_condition",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__sms_spam_collection",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "sms_spam_collection",
+        "--out",
+        "outputs/cohort/sms_spam_collection"
+      ],
+      "out": "outputs/cohort/sms_spam_collection",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__spambase",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "spambase",
+        "--out",
+        "outputs/cohort/spambase"
+      ],
+      "out": "outputs/cohort/spambase",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__statlog_image_segmentation",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "statlog_image_segmentation",
+        "--out",
+        "outputs/cohort/statlog_image_segmentation"
+      ],
+      "out": "outputs/cohort/statlog_image_segmentation",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__student_grade",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "student_grade",
+        "--out",
+        "outputs/cohort/student_grade"
+      ],
+      "out": "outputs/cohort/student_grade",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__tr45.wc",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "tr45.wc",
+        "--out",
+        "outputs/cohort/tr45.wc"
+      ],
+      "out": "outputs/cohort/tr45.wc",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__turkish_music_emotion",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "turkish_music_emotion",
+        "--out",
+        "outputs/cohort/turkish_music_emotion"
+      ],
+      "out": "outputs/cohort/turkish_music_emotion",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__weather",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "weather",
+        "--out",
+        "outputs/cohort/weather"
+      ],
+      "out": "outputs/cohort/weather",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__wine_quality",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "wine_quality",
+        "--out",
+        "outputs/cohort/wine_quality"
+      ],
+      "out": "outputs/cohort/wine_quality",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    },
+    {
+      "id": "cohort__worm_neuron_cell",
+      "kind": "cpu",
+      "command": [
+        "cohort_worker.py",
+        "--dataset",
+        "worm_neuron_cell",
+        "--out",
+        "outputs/cohort/worm_neuron_cell"
+      ],
+      "out": "outputs/cohort/worm_neuron_cell",
+      "required_artifacts": [
+        "frozen_readouts_10.npz",
+        "fixed_input_layout.npz",
+        "e3_per_readout.csv",
+        "e3_per_seed.csv",
+        "e3_aggregate.csv"
+      ]
+    }
+  ]
+}
